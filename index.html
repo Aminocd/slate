@@ -225,7 +225,10 @@
             <a href="#users" class="toc-h1 toc-link" data-title="Users">Users</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-full-account-info-of-authorized-user" class="toc-h2 toc-link" data-title="Get Full Account Info of Authorized User">Get Full Account Info of Authorized User</a>
+                    <a href="#get-a-user" class="toc-h2 toc-link" data-title="Get a User">Get a User</a>
+                  </li>
+                  <li>
+                    <a href="#get-authorized-user" class="toc-h2 toc-link" data-title="Get Authorized User">Get Authorized User</a>
                   </li>
                   <li>
                     <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
@@ -251,8 +254,7 @@
 <p>Welcome to the MyCurrency API! The MyCurrency API endpoints are hosted at https://api.mycurrency.com</p>
 
 <p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a> &lt;!--- need to add link here --&gt;. Feel free to make pull requests if you have suggestions on how to augment it.</p>
-<h1 id='users'>Users</h1><h2 id='get-full-account-info-of-authorized-user'>Get Full Account Info of Authorized User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/users/2"</span>
-  -H <span class="s2">"Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao"</span>
+<h1 id='users'>Users</h1><h2 id='get-a-user'>Get a User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/users/2"</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -275,7 +277,36 @@
 <p><code>GET https://api.mycurrency.com/users/&lt;ID&gt;</code></p>
 
 <aside class="notice">
-Authentication: the request requires the OAuth access-token associated with the User being returned 
+Authentication: not required
+</aside>
+<h2 id='get-authorized-user'>Get Authorized User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/users/2"</span>
+  -H <span class="s2">"Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"users"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RonaldMcDonald"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-08T01:22:54.571-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"get-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/002/original/afternoon_portrait.jpg?1534139495"</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RonaldMcDonald@mcdonalds.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sub-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-14T14:51:07.965-07:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves the current user.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://api.mycurrency.com/users/&lt;ID&gt;</code></p>
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
 
 <table><thead>
@@ -329,7 +360,7 @@ Remember — a happy kitten is an authenticated kitten!
 <p>This endpoint retrieves a specific kitten.</p>
 
 <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
+<h3 id='http-request-3'>HTTP Request</h3>
 <p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
@@ -368,7 +399,7 @@ Remember — a happy kitten is an authenticated kitten!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+<h3 id='http-request-4'>HTTP Request</h3>
 <p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
