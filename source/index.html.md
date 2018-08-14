@@ -23,7 +23,7 @@ This example API documentation page was created with [Slate](https://github.com/
 
 # Users
 
-## Get Full Account Information on Authorized User
+## Get Full Account Information of Authorized User
 
 ```shell
 curl "https://api.mycurrency.com/users/2"
