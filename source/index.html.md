@@ -23,56 +23,35 @@ This example API documentation page was created with [Slate](https://github.com/
 
 # Users
 
-## Get All Users
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
+## Get A Particular User
 
 ```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
+curl "https://api.mycurrency.com/users/2"
+  -H "Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
+{
+  "data": {
+    "id": "2",
+    "type": "users",
+    "attributes": {
+    "username": "RonaldMcDonald",
+    "created-at": "2018-08-08T01:22:54.571-07:00",
+    "active": true,
+    "avatar-file-name": "afternoon_portrait.jpg",
+    "avatar-content-type": "image/jpeg",
+    "avatar-file-size": 17442,
+    "avatar-updated-at": "2018-08-12T22:51:35.311-07:00",
+    "get-avatar-url": "/system/users/avatars/000/000/002/original/afternoon_portrait.jpg?1534139495"
+    }
   }
-]
+}
 ```
 
-This endpoint retrieves all kittens.
+This endpoint retrieves a particular user by ID.
 
 ### HTTP Request
 
