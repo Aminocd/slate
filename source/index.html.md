@@ -23,11 +23,10 @@ This example API documentation page was created with [Slate](https://github.com/
 
 # Users
 
-## Get Full Account Info of Authorized User
+## Get a User
 
 ```shell
 curl "https://api.mycurrency.com/users/2"
-  -H "Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao"
 ```
 
 > The above command returns JSON structured like this:
@@ -54,7 +53,43 @@ This endpoint retrieves a particular user by ID.
 `GET https://api.mycurrency.com/users/<ID>`
 
 <aside class="notice">
-Authentication: the request requires the OAuth access-token associated with the User being returned 
+Authentication: not required
+</aside>
+## Get Authorized User
+
+```shell
+curl "https://api.mycurrency.com/users/2"
+  -H "Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "2",
+    "type": "users",
+    "attributes": {
+      "username": "RonaldMcDonald",
+      "created-at": "2018-08-08T01:22:54.571-07:00",
+      "active": true,
+      "get-avatar-url": "/system/users/avatars/000/000/002/original/afternoon_portrait.jpg?1534139495"
+      "email": "RonaldMcDonald@mcdonalds.com",
+      "sub-location-id": 1,
+      "updated-at": "2018-08-14T14:51:07.965-07:00"
+    }
+  }
+}
+```
+
+This endpoint retrieves the current user.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<ID>`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
 
 Parameter | Default | Description
