@@ -5,7 +5,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - shell
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a> <!- need to add link here ->
+  - <a href='#'>Sign Up for a Developer Key</a> <!--- need to add link here -->
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -19,7 +19,7 @@ search: true
 Welcome to the MyCurrency API! The MyCurrency API endpoints are hosted at https://api.mycurrency.com
 
 
-This example API documentation page was created with [Slate](https://github.com/lord/slate) <!- need to add link here ->. Feel free to make pull requests if you have suggestions on how to augment it.
+This example API documentation page was created with [Slate](https://github.com/lord/slate) <!--- need to add link here -->. Feel free to make pull requests if you have suggestions on how to augment it.
 
 # Users
 
