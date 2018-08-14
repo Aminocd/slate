@@ -26,7 +26,8 @@ This example API documentation page was created with [Slate](https://github.com/
 ## Get a User
 
 ```shell
-curl 'https://api.mycurrency.com/users/2' -H 'Host: api.mycurrency.com' -H 'Accept: application/json' -H 'Content-Type: application/json'
+curl 'https://api.mycurrency.com/users/2' 
+  -H 'Host: api.mycurrency.com' -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
 
 > The above command returns JSON structured like this:
