@@ -23,7 +23,7 @@ This example API documentation page was created with [Slate](https://github.com/
 
 # Users
 
-## Get A Particular User
+## Get A Particular User - Authorized
 
 ```shell
 curl "https://api.mycurrency.com/users/2"
@@ -53,7 +53,9 @@ This endpoint retrieves a particular user by ID.
 
 `GET https://api.mycurrency.com/users/<ID>`
 
-### Authorization
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User being returned 
+</aside>
 
 Parameter | Default | Description
 --------- | ------- | -----------
