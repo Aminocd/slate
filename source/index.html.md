@@ -41,10 +41,6 @@ curl "https://api.mycurrency.com/users/2"
     "username": "RonaldMcDonald",
     "created-at": "2018-08-08T01:22:54.571-07:00",
     "active": true,
-    "avatar-file-name": "afternoon_portrait.jpg",
-    "avatar-content-type": "image/jpeg",
-    "avatar-file-size": 17442,
-    "avatar-updated-at": "2018-08-12T22:51:35.311-07:00",
     "get-avatar-url": "/system/users/avatars/000/000/002/original/afternoon_portrait.jpg?1534139495"
     }
   }
@@ -57,7 +53,7 @@ This endpoint retrieves a particular user by ID.
 
 `GET https://api.mycurrency.com/users/<ID>`
 
-### Query Parameters
+### Authorization
 
 Parameter | Default | Description
 --------- | ------- | -----------
