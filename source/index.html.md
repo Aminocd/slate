@@ -46,7 +46,7 @@ curl "https://api.mycurrency.com/users/2"
 }
 ```
 
-This endpoint retrieves a particular user by ID.
+This endpoint retrieves a particular user by ID and its basic public information.
 
 ### HTTP Request
 
@@ -82,7 +82,7 @@ curl "https://api.mycurrency.com/users/2"
 }
 ```
 
-This endpoint retrieves the current user.
+This endpoint retrieves the current user and its full information.
 
 ### HTTP Request
 
