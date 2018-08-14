@@ -38,10 +38,10 @@ curl 'https://api.mycurrency.com/users/2'
     "id": "2",
     "type": "users",
     "attributes": {
-    "username": "RonaldMcDonald",
-    "created-at": "2018-08-08T01:22:54.571-07:00",
-    "active": true,
-    "get-avatar-url": "/system/users/avatars/000/000/002/original/afternoon_portrait.jpg?1534139495"
+      "username": "RonaldMcDonald",
+      "created-at": "2018-08-08T01:22:54.571-07:00",
+      "active": true,
+      "get-avatar-url": "/system/users/avatars/000/000/002/original/afternoon_portrait.jpg?1534139495"
     }
   }
 }
