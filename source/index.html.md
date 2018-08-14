@@ -55,7 +55,7 @@ This endpoint retrieves a particular user by ID.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET https://api.mycurrency.com/users/<ID>`
 
 ### Query Parameters
 
