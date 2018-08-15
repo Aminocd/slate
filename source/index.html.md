@@ -94,7 +94,7 @@ This endpoint retrieves the current user and its full information.
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
 
-### RESPONSE
+#### RESPONSE
 
 Parameter | Default | Description
 --------- | ------- | -----------
