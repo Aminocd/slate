@@ -94,16 +94,16 @@ curl "https://api.mycurrency.com/users/2"
 
 This endpoint retrieves the current user and its full information.
 
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
 ### RESPONSE
 
 Parameter | Description
 --------- | -----------
 include_cats | If set to true, the result will also include cats.
 available | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="notice">
-Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
-</aside>
 
 ### ARGUMENTS
 
