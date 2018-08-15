@@ -94,6 +94,10 @@ curl "https://api.mycurrency.com/users/2"
 
 This endpoint retrieves the current user and its full information.
 
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<ID>`
+
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
