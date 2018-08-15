@@ -94,6 +94,8 @@ This endpoint retrieves the current user and its full information.
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
 
+##### RESPONSE
+
 Parameter | Default | Description
 --------- | ------- | -----------
 include_cats | false | If set to true, the result will also include cats.
