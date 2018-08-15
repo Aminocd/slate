@@ -56,6 +56,14 @@ This endpoint retrieves a particular user by ID and its basic public information
 <aside class="notice">
 Authentication: not required
 </aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+include_cats | If set to true, the result will also include cats.
+available | If set to false, the result will include kittens that have already been adopted.
+
 ## Get Authorized User
 
 ```shell
@@ -86,14 +94,30 @@ curl "https://api.mycurrency.com/users/2"
 
 This endpoint retrieves the current user and its full information.
 
-### HTTP Request
+### RESPONSE
 
-`GET https://api.mycurrency.com/users/<ID>`
+Parameter | Description
+--------- | -----------
+include_cats | If set to true, the result will also include cats.
+available | If set to false, the result will include kittens that have already been adopted.
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
 
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+include_cats | false | If set to true, the result will also include cats.
+available | true | If set to false, the result will include kittens that have already been adopted.
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+include_cats | If set to true, the result will also include cats.
+available | If set to false, the result will include kittens that have already been adopted.
 ### RESPONSE
 
 Parameter | Default | Description
