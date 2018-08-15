@@ -320,6 +320,10 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the current user and its full information.</p>
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
 <h3 id='response-2'>RESPONSE</h3>
 <table><thead>
 <tr>
@@ -336,10 +340,6 @@ Authentication: not required
 <td>If set to false, the result will include kittens that have already been adopted.</td>
 </tr>
 </tbody></table>
-
-<aside class="notice">
-Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
-</aside>
 <h3 id='arguments'>ARGUMENTS</h3>
 <table><thead>
 <tr>
