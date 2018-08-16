@@ -228,7 +228,7 @@
                     <a href="#get-a-user" class="toc-h2 toc-link" data-title="Get a User">Get a User</a>
                   </li>
                   <li>
-                    <a href="#get-authorized-user" class="toc-h2 toc-link" data-title="Get Authorized User">Get Authorized User</a>
+                    <a href="#get-an-authorized-user" class="toc-h2 toc-link" data-title="Get An Authorized User">Get An Authorized User</a>
                   </li>
                   <li>
                     <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
@@ -288,15 +288,23 @@ Authentication: not required
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>If set to true, the result will also include cats.</td>
+<td>username</td>
+<td>The username that the user is identified by</td>
 </tr>
 <tr>
-<td>available</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>created_at</td>
+<td>When the user was created</td>
+</tr>
+<tr>
+<td>active</td>
+<td>Whether the user is active or not</td>
+</tr>
+<tr>
+<td>get-avatar-url</td>
+<td>The URL at which the user profile picture can be found</td>
 </tr>
 </tbody></table>
-<h2 id='get-authorized-user'>Get Authorized User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/users/2"</span>
+<h2 id='get-an-authorized-user'>Get An Authorized User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/users/2"</span>
   -H <span class="s2">"Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao"</span> 
   -H <span class="s1">'Host: api.mycurrency.com'</span> -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
@@ -334,12 +342,32 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>If set to true, the result will also include cats.</td>
+<td>username</td>
+<td>The username that the user is identified by</td>
 </tr>
 <tr>
-<td>available</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>created-at</td>
+<td>The time and date when the user was created</td>
+</tr>
+<tr>
+<td>active</td>
+<td>Whether the user is active or not</td>
+</tr>
+<tr>
+<td>get-avatar-url</td>
+<td>The URL at which the user profile picture can be found</td>
+</tr>
+<tr>
+<td>email</td>
+<td>The email address associated with the user account</td>
+</tr>
+<tr>
+<td>sub-location-id</td>
+<td>The ID of the sub location associated with the user account</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the user was last updated</td>
 </tr>
 </tbody></table>
 <h3 id='arguments'>ARGUMENTS</h3>
@@ -353,34 +381,18 @@ Authentication: the request requires the OAuth access-token associated with the 
 </thead><tbody>
 <tr>
 <td>include_cats</td>
-<td>false</td>
 <td>If set to true, the result will also include cats.</td>
+<td></td>
 <td></td>
 </tr>
 <tr>
 <td>available</td>
-<td>true</td>
 <td>If set to false, the result will include kittens that have already been adopted.</td>
+<td></td>
 <td></td>
 </tr>
 </tbody></table>
 <h3 id='response-3'>RESPONSE</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
-<h3 id='response-4'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
