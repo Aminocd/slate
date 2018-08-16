@@ -230,6 +230,14 @@
                   <li>
                     <a href="#get-an-authorized-user" class="toc-h2 toc-link" data-title="Get An Authorized User">Get An Authorized User</a>
                   </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#issuers" class="toc-h1 toc-link" data-title="Issuers">Issuers</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-an-issuer" class="toc-h2 toc-link" data-title="Get an Issuer">Get an Issuer</a>
+                  </li>
                   <li>
                     <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
                   </li>
@@ -273,7 +281,7 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves a particular user by ID and its basic public information.</p>
+<p>This endpoint retrieves a particular user and its basic public information by ID.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;ID&gt;</code></p>
 
@@ -293,7 +301,7 @@ Authentication: not required
 </tr>
 <tr>
 <td>created_at</td>
-<td>When the user was created</td>
+<td>The time and date when the user was created</td>
 </tr>
 <tr>
 <td>active</td>
@@ -370,6 +378,51 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The time and date when the user was last updated</td>
 </tr>
 </tbody></table>
+<h1 id='issuers'>Issuers</h1><h2 id='get-an-issuer'>Get an Issuer</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/users/2/issuer'</span> 
+  -H <span class="s1">'Host: api.mycurrency.com'</span> -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"issuers"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-08T01:22:54.571-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-08T01:22:54.571-07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a particular issuer and its basic public information by the ID of its associated user.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://api.mycurrency.com/users/&lt;ID&gt;/issuer</code></p>
+
+<aside class="notice">
+Authentication: not required
+</aside>
+<h3 id='response-3'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user-id</td>
+<td>The ID of the user that owns the issuer account</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>The time and date when the issuer account was created</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>The time and date when the issuer account was last updated</td>
+</tr>
+</tbody></table>
 <h3 id='arguments'>ARGUMENTS</h3>
 <table><thead>
 <tr>
@@ -392,7 +445,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td></td>
 </tr>
 </tbody></table>
-<h3 id='response-3'>RESPONSE</h3>
+<h3 id='response-4'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -444,7 +497,7 @@ Remember — a happy kitten is an authenticated kitten!
 <p>This endpoint retrieves a specific kitten.</p>
 
 <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-3'>HTTP Request</h3>
+<h3 id='http-request-4'>HTTP Request</h3>
 <p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
@@ -483,7 +536,7 @@ Remember — a happy kitten is an authenticated kitten!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-4'>HTTP Request</h3>
+<h3 id='http-request-5'>HTTP Request</h3>
 <p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
