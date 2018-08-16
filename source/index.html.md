@@ -47,7 +47,7 @@ curl 'https://api.mycurrency.com/users/2'
 }
 ```
 
-This endpoint retrieves a particular user by ID and its basic public information.
+This endpoint retrieves a particular user and its basic public information by ID.
 
 ### HTTP Request
 
@@ -62,7 +62,7 @@ Authentication: not required
 Parameter | Description
 --------- | -----------
 username | The username that the user is identified by
-created_at | When the user was created
+created_at | The time and date when the user was created
 active | Whether the user is active or not
 get-avatar-url | The URL at which the user profile picture can be found
 
@@ -115,6 +115,50 @@ get-avatar-url | The URL at which the user profile picture can be found
 email | The email address associated with the user account
 sub-location-id | The ID of the sub location associated with the user account
 updated-at | The time and date when the user was last updated
+
+# Issuers
+
+## Get an Issuer
+
+```shell
+curl 'https://api.mycurrency.com/users/2/issuer' 
+  -H 'Host: api.mycurrency.com' -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "2",
+    "type": "issuers",
+    "attributes": {
+      "user-id": 2
+      "created-at": "2018-08-08T01:22:54.571-07:00",
+      "updated-at": "2018-08-08T01:22:54.571-07:00",
+    }
+  }
+}
+```
+
+This endpoint retrieves a particular issuer and its basic public information by the ID of its associated user.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<ID>/issuer`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+user-id | The ID of the user that owns the issuer account
+created_at | The time and date when the issuer account was created
+updated_at | The time and date when the issuer account was last updated
+
 
 ### ARGUMENTS
 
