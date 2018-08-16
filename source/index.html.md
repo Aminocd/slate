@@ -61,10 +61,12 @@ Authentication: not required
 
 Parameter | Description
 --------- | -----------
-include_cats | If set to true, the result will also include cats.
-available | If set to false, the result will include kittens that have already been adopted.
+username | The username that the user is identified by
+created_at | When the user was created
+active | Whether the user is active or not
+get-avatar-url | The URL at which the user profile picture can be found
 
-## Get Authorized User
+## Get An Authorized User
 
 ```shell
 curl "https://api.mycurrency.com/users/2"
@@ -106,22 +108,21 @@ Authentication: the request requires the OAuth access-token associated with the 
 
 Parameter | Description
 --------- | -----------
-include_cats | If set to true, the result will also include cats.
-available | If set to false, the result will include kittens that have already been adopted.
+username | The username that the user is identified by
+created-at | The time and date when the user was created
+active | Whether the user is active or not
+get-avatar-url | The URL at which the user profile picture can be found
+email | The email address associated with the user account
+sub-location-id | The ID of the sub location associated with the user account
+updated-at | The time and date when the user was last updated
 
 ### ARGUMENTS
 
 Parameter | Type | Required | Description
 --------- | ------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-### RESPONSE
-
-Parameter | Description
---------- | -----------
 include_cats | If set to true, the result will also include cats.
 available | If set to false, the result will include kittens that have already been adopted.
+
 ### RESPONSE
 
 Parameter | Default | Description
