@@ -66,7 +66,7 @@ created_at | The time and date when the user was created
 active | Whether the user is active or not
 get-avatar-url | The URL at which the user profile picture can be found
 
-## Get An Authorized User
+## Get a User with Authorization
 
 ```shell
 curl "https://api.mycurrency.com/users/2"
@@ -145,7 +145,7 @@ This endpoint retrieves a particular issuer and its basic public information by 
 
 ### HTTP Request
 
-`GET https://api.mycurrency.com/users/<ID>/issuer`
+`GET https://api.mycurrency.com/users/<USER-ID>/issuer`
 
 <aside class="notice">
 Authentication: not required
@@ -159,7 +159,111 @@ user-id | The ID of the user that owns the issuer account
 created_at | The time and date when the issuer account was created
 updated_at | The time and date when the issuer account was last updated
 
+# Currencies
 
+## Get a Currency
+
+```shell
+curl 'https://api.mycurrency.com/currencies/2' 
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "2",
+    "type": "currencies",
+    "attributes": {
+      "issuer-id": 2,
+      "burn-rate": 450,
+      "name": "ACME Toon Shop dollars",
+      "description": "Spendable at any ACME Toon Shop",
+      "created-at": "2018-08-12T01:17:31.176-07:00",
+      "updated-at": "2018-08-12T23:49:56.793-07:00",
+      "get-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
+    }
+  }
+}
+```
+
+This endpoint retrieves a particular currency and its basic public information by ID.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/currencies/<ID>`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+issuer-id | The ID of the issuer account that issued the currency
+burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
+name | The name of the currency
+created_at | The time and date when the currency was created
+updated_at | The time and date when the currency was last updated
+
+## List Currencies
+
+```shell
+curl "https://api.mycurrency.com/currencies"
+  -H 'Host: api.mycurrency.com' -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "2",
+    "type": "users",
+    "attributes": {
+      "username": "RonaldMcDonald",
+      "created-at": "2018-08-08T01:22:54.571-07:00",
+      "active": true,
+      "get-avatar-url": "/system/users/avatars/000/000/002/original/afternoon_portrait.jpg?1534139495"
+      "email": "RonaldMcDonald@mcdonalds.com",
+      "sub-location-id": 1,
+      "updated-at": "2018-08-14T14:51:07.965-07:00"
+    }
+  }
+}
+```
+
+This endpoint retrieves the current user and its full information.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<ID>`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+username | The username that the user is identified by
+created-at | The time and date when the user was created
+active | Whether the user is active or not
+get-avatar-url | The URL at which the user profile picture can be found
+email | The email address associated with the user account
+sub-location-id | The ID of the sub location associated with the user account
+updated-at | The time and date when the user was last updated
+
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+include_cats | If set to true, the result will also include cats.
+available | If set to false, the result will include kittens that have already been adopted.
 ### ARGUMENTS
 
 Parameter | Type | Required | Description
