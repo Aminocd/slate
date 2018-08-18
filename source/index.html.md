@@ -225,12 +225,12 @@ curl "https://api.mycurrency.com/currencies"
         "type": "currencies",
         "attributes": {
           "issuer-id": 1,
-          "burn-rate": 450,
-          "name": "ACME Toon Shop dollars",
-          "description": "Spendable at any ACME Toon Shop",
-          "created-at": "2018-08-12T01:17:31.176-07:00",
-          "updated-at": "2018-08-12T23:49:56.793-07:00",
-          "get-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
+          "burn-rate": 740,
+          "name": "Calm dollars",
+          "description": "Redeemable for services at Calm Massage Therapy",
+          "created-at": "2017-05-22T17:03:08.287-07:00",
+          "updated-at": "2017-05-22T17:58:08.738-07:00",
+          "get-icon-url": "/system/currencies/icons/000/000/002/original/calm_dollars.png?1534619841"
         }
       },
       {
@@ -238,12 +238,12 @@ curl "https://api.mycurrency.com/currencies"
         "type": "currencies",
         "attributes": {
           "issuer-id": 2,
-          "burn-rate": 740,
-          "name": "Calm dollars",
-          "description": "Redeemable for services at Calm Massage Therapy",
-          "created-at": "2017-05-22T17:03:08.287-07:00",
-          "updated-at": "2017-05-22T17:58:08.738-07:00",
-          "get-icon-url": "/system/currencies/icons/000/000/002/original/calm_dollars.png?1534619841"
+          "burn-rate": 450,
+          "name": "ACME Toon Shop dollars",
+          "description": "Spendable at any ACME Toon Shop",
+          "created-at": "2018-08-12T01:17:31.176-07:00",
+          "updated-at": "2018-08-12T23:49:56.793-07:00",
+          "get-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
         }
       },
       {
