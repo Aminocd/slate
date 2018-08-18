@@ -303,13 +303,11 @@ Authentication: not required
 
 Parameter | Description
 --------- | -----------
-username | The username that the user is identified by
-created-at | The time and date when the user was created
-active | Whether the user is active or not
-get-avatar-url | The URL at which the user profile picture can be found
-email | The email address associated with the user account
-sub-location-id | The ID of the sub location associated with the user account
-updated-at | The time and date when the user was last updated
+issuer-id | The ID of the issuer account that issued the currency
+burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
+name | The name of the currency
+created_at | The time and date when the currency was created
+updated_at | The time and date when the currency was last updated
 
 
 ### ARGUMENTS
