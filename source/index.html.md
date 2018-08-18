@@ -228,9 +228,9 @@ curl "https://api.mycurrency.com/currencies"
           "burn-rate": 740,
           "name": "Calm dollars",
           "description": "Redeemable for services at Calm Massage Therapy",
-          "created-at": "2017-05-22T17:03:08.287-07:00",
-          "updated-at": "2017-05-22T17:58:08.738-07:00",
-          "get-icon-url": "/system/currencies/icons/000/000/002/original/calm_dollars.png?1534619841"
+          "created-at": "2017-08-10T17:03:08.287-07:00",
+          "updated-at": "2017-08-10T17:58:08.738-07:00",
+          "get-icon-url": "/system/currencies/icons/000/000/001/original/calm_dollars.png?1534619841"
         }
       },
       {
