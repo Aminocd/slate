@@ -219,30 +219,84 @@ curl "https://api.mycurrency.com/currencies"
 
 ```json
 {
-  "data": {
-    "id": "2",
-    "type": "users",
-    "attributes": {
-      "username": "RonaldMcDonald",
-      "created-at": "2018-08-08T01:22:54.571-07:00",
-      "active": true,
-      "get-avatar-url": "/system/users/avatars/000/000/002/original/afternoon_portrait.jpg?1534139495"
-      "email": "RonaldMcDonald@mcdonalds.com",
-      "sub-location-id": 1,
-      "updated-at": "2018-08-14T14:51:07.965-07:00"
-    }
-  }
+  "data": [
+      {
+        "id": "1",
+        "type": "currencies",
+        "attributes": {
+          "issuer-id": 1,
+          "burn-rate": 450,
+          "name": "ACME Toon Shop dollars",
+          "description": "Spendable at any ACME Toon Shop",
+          "created-at": "2018-08-12T01:17:31.176-07:00",
+          "updated-at": "2018-08-12T23:49:56.793-07:00",
+          "get-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
+        }
+      },
+      {
+        "id": "2",
+        "type": "currencies",
+        "attributes": {
+          "issuer-id": 2,
+          "burn-rate": 740,
+          "name": "Calm dollars",
+          "description": "Redeemable for services at Calm Massage Therapy",
+          "created-at": "2017-05-22T17:03:08.287-07:00",
+          "updated-at": "2017-05-22T17:58:08.738-07:00",
+          "get-icon-url": "/system/currencies/icons/000/000/002/original/calm_dollars.png?1534619841"
+        }
+      },
+      {
+        "id": "3",
+        "type": "currencies",
+        "attributes": {
+          "issuer-id": 2,
+          "burn-rate": 420,
+          "name": "Horizon Cloud Computing dollars",
+          "description": "Redeemable for Horizon Cloud Computing services",
+          "created-at": "2018-09-22T17:10:21.588-07:00",
+          "updated-at": "2018-09-22T17:10:21.588-07:00",
+          "get-icon-url": "/system/currencies/icons/000/000/003/original/horizon-cloud.png?1534243939"
+        }
+      },
+      {
+        "id": "4",
+        "type": "currencies",
+        "attributes": {
+          "issuer-id": 3,
+          "burn-rate": 550,
+          "name": "Tom's Fruitstand bucks",
+          "description": "Redeem Tom's Fruitstand bucks for delicious fruit with",
+          "created-at": "2018-09-22T17:10:21.588-07:00",
+          "updated-at": "2018-09-22T17:10:21.588-07:00",
+          "get-icon-url": "/system/currencies/icons/000/000/004/original/Tom-bucks.png?1534148467"
+        }
+      },
+      {
+        "id": "5",
+        "type": "currencies",
+        "attributes": {
+          "issuer-id": 4,
+          "burn-rate": 500,
+          "name": "Chilli pesos",
+          "description": "Chilli pesos are backed by chillis",
+          "created-at": "2018-09-22T18:57:27.193-07:00",
+          "updated-at": "2018-09-22T18:57:27.193-07:00",
+          "get-icon-url": "/system/currencies/icons/000/000/005/original/chilli-pesos.png?153414511"
+        }
+      }
+  ]
 }
 ```
 
-This endpoint retrieves the current user and its full information.
+This endpoint retrieves all currencies.
 
 ### HTTP Request
 
-`GET https://api.mycurrency.com/users/<ID>`
+`GET https://api.mycurrency.com/currencies`
 
 <aside class="notice">
-Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+Authentication: not required
 </aside>
 
 ### RESPONSE
@@ -258,12 +312,6 @@ sub-location-id | The ID of the sub location associated with the user account
 updated-at | The time and date when the user was last updated
 
 
-### ARGUMENTS
-
-Parameter | Type | Required | Description
---------- | ------- | ------- | -----------
-include_cats | If set to true, the result will also include cats.
-available | If set to false, the result will include kittens that have already been adopted.
 ### ARGUMENTS
 
 Parameter | Type | Required | Description
