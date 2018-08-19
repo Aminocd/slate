@@ -286,8 +286,7 @@ curl "https://api.mycurrency.com/currencies"
         "get-icon-url": "/system/currencies/icons/000/000/005/original/chilli-pesos.png?153414511"
       }
     }
-  ]
-
+  ],
   "links": {
     "self": "http://api.mycurrency.com/currencies?",
     "first": "http://api.mycurrency.com/currencies?page=1&per_page=25",
@@ -295,7 +294,6 @@ curl "https://api.mycurrency.com/currencies"
     "next": null,
     "last": "http://api.mycurrency.com/currencies?page=1&per_page=25"
   },
-
   "meta": {
     "pagination": {
       "per-page": null,
@@ -311,6 +309,160 @@ This endpoint retrieves all currencies.
 ### HTTP Request
 
 `GET https://api.mycurrency.com/currencies`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+issuer-id | The ID of the issuer account that issued the currency
+burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
+name | The name of the currency
+description | The description of the currency
+created-at | The time and date when the currency was created
+updated-at | The time and date when the currency was last updated
+
+## List a User's Currencies
+
+```shell
+curl "https://api.mycurrency.com/currencies?user_id=2" 
+  -H 'Host: api.mycurrency.com' -H 'Accept: application/json' -H 'Content-Type: application/json
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "2",
+      "type": "currencies",
+      "attributes": {
+        "issuer-id": 2,
+        "burn-rate": 450,
+        "name": "ACME Toon Shop dollars",
+        "description": "Spendable at any ACME Toon Shop",
+        "created-at": "2018-08-12T01:17:31.176-07:00",
+        "updated-at": "2018-08-12T23:49:56.793-07:00",
+        "get-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
+      }
+    },
+    {
+      "id": "3",
+      "type": "currencies",
+      "attributes": {
+        "issuer-id": 2,
+        "burn-rate": 420,
+        "name": "Horizon Cloud Computing dollars",
+        "description": "Redeemable for Horizon Cloud Computing services",
+        "created-at": "2018-09-22T17:10:21.588-07:00",
+        "updated-at": "2018-09-22T17:10:21.588-07:00",
+        "get-icon-url": "/system/currencies/icons/000/000/003/original/horizon-cloud.png?1534243939"
+      }
+    }  
+  ],
+  "links": {
+    "self": "http://api.mycurrency.com/currencies?user_id=2",
+    "first": "http://api.mycurrency.com/currencies?page=1&per_page=25&user_id=2",
+    "prev": null,
+    "next": null,
+    "last": "http://api.mycurrency.com/currencies?page=1&per_page=25&user_id=2"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "2"
+    }
+  } 
+}
+```
+
+This endpoint retrieves all currencies belonging to the user associated with the ID provided.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/currencies?user_id={}`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+issuer-id | The ID of the issuer account that issued the currency
+burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
+name | The name of the currency
+description | The description of the currency
+created-at | The time and date when the currency was created
+updated-at | The time and date when the currency was last updated
+
+## Create Currency
+
+```shell
+curl "https://api.mycurrency.com/currencies?user_id=2" 
+  -H 'Host: api.mycurrency.com' -H 'Accept: application/json' -H 'Content-Type: application/json
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "2",
+      "type": "currencies",
+      "attributes": {
+        "issuer-id": 2,
+        "burn-rate": 450,
+        "name": "ACME Toon Shop dollars",
+        "description": "Spendable at any ACME Toon Shop",
+        "created-at": "2018-08-12T01:17:31.176-07:00",
+        "updated-at": "2018-08-12T23:49:56.793-07:00",
+        "get-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
+      }
+    },
+    {
+      "id": "3",
+      "type": "currencies",
+      "attributes": {
+        "issuer-id": 2,
+        "burn-rate": 420,
+        "name": "Horizon Cloud Computing dollars",
+        "description": "Redeemable for Horizon Cloud Computing services",
+        "created-at": "2018-09-22T17:10:21.588-07:00",
+        "updated-at": "2018-09-22T17:10:21.588-07:00",
+        "get-icon-url": "/system/currencies/icons/000/000/003/original/horizon-cloud.png?1534243939"
+      }
+    }  
+  ],
+  "links": {
+    "self": "http://api.mycurrency.com/currencies?user_id=2",
+    "first": "http://api.mycurrency.com/currencies?page=1&per_page=25&user_id=2",
+    "prev": null,
+    "next": null,
+    "last": "http://api.mycurrency.com/currencies?page=1&per_page=25&user_id=2"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "2"
+    }
+  } 
+}
+```
+
+This endpoint retrieves all currencies belonging to the user associated with the ID provided.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/currencies?user_id={}`
 
 <aside class="notice">
 Authentication: not required
