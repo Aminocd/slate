@@ -408,7 +408,10 @@ get-icon-url | The URL at which the currency icon picture can be found
 ## Create Currency
 
 ```shell
-curl -X POST https://api.mycurrency.com/users/2/issuer/currencies -d '{"currency": { "burn_rate": 550, "name": "Calm dollars", "description": "Redeemable for services at Calm Massage Therapy" } }' -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' -H 'Accept: application/json' -H 'Content-Type: application/json'
+curl -X POST https://api.mycurrency.com/users/2/issuer/currencies 
+  -d '{"currency": { "burn_rate": 550, "name": "Calm dollars", "description": "Redeemable for services at Calm Massage Therapy" } }' 
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' 
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
 
 > The above command returns JSON structured like this:
