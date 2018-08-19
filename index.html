@@ -726,7 +726,10 @@ Authentication: not required
 <td>The URL at which the currency icon picture can be found</td>
 </tr>
 </tbody></table>
-<h2 id='create-currency'>Create Currency</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.mycurrency.com/users/2/issuer/currencies -d <span class="s1">'{"currency": { "burn_rate": 550, "name": "Calm dollars", "description": "Redeemable for services at Calm Massage Therapy" } }'</span> -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span> -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
+<h2 id='create-currency'>Create Currency</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.mycurrency.com/users/2/issuer/currencies 
+  -d <span class="s1">'{"currency": { "burn_rate": 550, "name": "Calm dollars", "description": "Redeemable for services at Calm Massage Therapy" } }'</span> 
+  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span> 
+  -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
