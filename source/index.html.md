@@ -267,7 +267,7 @@ curl "https://api.mycurrency.com/currencies"
         "issuer-id": 3,
         "burn-rate": 550,
         "name": "Tom's Fruitstand bucks",
-        "description": "Redeem Tom's Fruitstand bucks for delicious fruit with",
+        "description": "Redeem Tom's Fruitstand bucks for delicious fruit",
         "created-at": "2018-09-22T17:10:21.588-07:00",
         "updated-at": "2018-09-22T17:10:21.588-07:00",
         "get-icon-url": "/system/currencies/icons/000/000/004/original/Tom-bucks.png?1534148467"
