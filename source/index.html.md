@@ -232,7 +232,7 @@ curl "https://api.mycurrency.com/currencies"
         "description": "Redeemable for services at Calm Massage Therapy",
         "created-at": "2017-08-10T17:03:08.287-07:00",
         "updated-at": "2017-08-10T17:58:08.738-07:00",
-        "get-icon-url": "/system/currencies/icons/000/000/001/original/calm_dollars.png?1534619841"
+        "get-icon-url": "/system/currencies/icons/000/000/001/original/calm_dollars.jpg?1534619841"
       }
     },
     {
@@ -409,7 +409,7 @@ get-icon-url | The URL at which the currency icon picture can be found
 
 ```shell
 curl -X POST https://api.mycurrency.com/users/2/issuer/currencies 
-  -d '{"currency": { "burn_rate": 550, "name": "Calm dollars", "description": "Redeemable for services at Calm Massage Therapy" } }' 
+  -d '{"currency": { "burn_rate": 740, "name": "Calm dollars", "description": "Redeemable for services at Calm Massage Therapy" } }' 
   -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' 
   -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
@@ -422,8 +422,8 @@ curl -X POST https://api.mycurrency.com/users/2/issuer/currencies
     "id":"1",
     "type":"currencies",
     "attributes": {
-      "issuer-id":2,
-      "burn-rate":550,
+      "issuer-id": 2,
+      "burn-rate": 740,
       "name": "Calm dollars",
       "description": "Redeemable for services at Calm Massage Therapy",
       "created-at": "2017-08-10T17:03:08.287-07:00",
@@ -451,6 +451,7 @@ Parameter | Type | Required | Description
 burn_rate | integer | yes | The annual rate at which holdings of the currency burn, by basis point (100 = 1%)
 name | string | yes |  The name of the currency
 description | string | no | The description of the currency
+icon | filename | no | The image file to be uploaded as currency's icon picture
 
 ### RESPONSE
 
@@ -464,18 +465,60 @@ created-at | The time and date when the currency was created
 updated-at | The time and date when the currency was last updated
 get-icon-url | The URL at which the currency icon picture can be found
 
+## Update Currency
+
+```shell
+curl -X PUT https://api.mycurrency.com/users/2/issuer/currencies/1 
+  -F 'currency[icon]=@calm_dollars.jpg' 
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNTM0NzEyOTMzLCJleHAiOjE1MzQ3OTkzMzMsImp0aSI6IjJmZDEwYWI0LThiMzMtNDBkZS05Yjk2LTZhODg0MjYyZjZmNiJ9.KNlOx2bWEp2l7-GN0olrH3vC-SVmeilYRylVtunJYWg' 
+  -H 'Accept: application/json' -H 'Content-Type: multipart/form-data'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id":"1",
+    "type":"currencies",
+    "attributes": {
+      "issuer-id": 2,
+      "burn-rate": 740,
+      "name": "Calm dollars",
+      "description": "Redeemable for services at Calm Massage Therapy",
+      "created-at": "2017-08-10T17:03:08.287-07:00",
+      "updated-at": "2017-08-10T17:58:08.738-07:00",
+      "get-icon-url": "/system/currencies/icons/000/000/001/original/calm_dollars.jpg?1534619841"
+    }
+  }
+}
+```
+
+Updates a currency.
+
+### HTTP Request
+
+`PUT https://api.mycurrency.com/users/<USER-ID>/issuer/currencies/<ID>`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
 
 ### ARGUMENTS
 
 Parameter | Type | Required | Description
 --------- | ------- | ------- | -----------
-include_cats | If set to true, the result will also include cats.
-available | If set to false, the result will include kittens that have already been adopted.
+description | string | no | The description of the currency
+icon | filename | no | The image file to be uploaded as currency's icon picture
 
 ### RESPONSE
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
+Parameter | Description
+--------- | -----------
+issuer-id | The ID of the issuer account that issued the currency
+burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
+name | The name of the currency
+description | The description of the currency
+created-at | The time and date when the currency was created
+updated-at | The time and date when the currency was last updated
+get-icon-url | The URL at which the currency icon picture can be found
