@@ -208,6 +208,7 @@ name | The name of the currency
 description | The description of the currency
 created-at | The time and date when the currency was created
 updated-at | The time and date when the currency was last updated
+get-icon-url | The URL at which the currency icon picture can be found
 
 ## List Currencies
 
@@ -225,7 +226,7 @@ curl "https://api.mycurrency.com/currencies"
       "id": "1",
       "type": "currencies",
       "attributes": {
-        "issuer-id": 1,
+        "issuer-id": 2,
         "burn-rate": 740,
         "name": "Calm dollars",
         "description": "Redeemable for services at Calm Massage Therapy",
@@ -238,7 +239,7 @@ curl "https://api.mycurrency.com/currencies"
       "id": "2",
       "type": "currencies",
       "attributes": {
-        "issuer-id": 2,
+        "issuer-id": 3,
         "burn-rate": 450,
         "name": "ACME Toon Shop dollars",
         "description": "Spendable at any ACME Toon Shop",
@@ -251,7 +252,7 @@ curl "https://api.mycurrency.com/currencies"
       "id": "3",
       "type": "currencies",
       "attributes": {
-        "issuer-id": 2,
+        "issuer-id": 3,
         "burn-rate": 420,
         "name": "Horizon Cloud Computing dollars",
         "description": "Redeemable for Horizon Cloud Computing services",
@@ -264,7 +265,7 @@ curl "https://api.mycurrency.com/currencies"
       "id": "4",
       "type": "currencies",
       "attributes": {
-        "issuer-id": 3,
+        "issuer-id": 4,
         "burn-rate": 550,
         "name": "Tom's Fruitstand bucks",
         "description": "Redeem Tom's Fruitstand bucks for delicious fruit",
@@ -277,7 +278,7 @@ curl "https://api.mycurrency.com/currencies"
       "id": "5",
       "type": "currencies",
       "attributes": {
-        "issuer-id": 4,
+        "issuer-id": 5,
         "burn-rate": 500,
         "name": "Chilli pesos",
         "description": "Chilli pesos are backed by chillis",
@@ -324,11 +325,12 @@ name | The name of the currency
 description | The description of the currency
 created-at | The time and date when the currency was created
 updated-at | The time and date when the currency was last updated
+get-icon-url | The URL at which the currency icon picture can be found
 
 ## List a User's Currencies
 
 ```shell
-curl "https://api.mycurrency.com/currencies?user_id=2" 
+curl "https://api.mycurrency.com/currencies?user_id=3" 
   -H 'Host: api.mycurrency.com' -H 'Accept: application/json' -H 'Content-Type: application/json
 ```
 
@@ -341,7 +343,7 @@ curl "https://api.mycurrency.com/currencies?user_id=2"
       "id": "2",
       "type": "currencies",
       "attributes": {
-        "issuer-id": 2,
+        "issuer-id": 3,
         "burn-rate": 450,
         "name": "ACME Toon Shop dollars",
         "description": "Spendable at any ACME Toon Shop",
@@ -354,7 +356,7 @@ curl "https://api.mycurrency.com/currencies?user_id=2"
       "id": "3",
       "type": "currencies",
       "attributes": {
-        "issuer-id": 2,
+        "issuer-id": 3,
         "burn-rate": 420,
         "name": "Horizon Cloud Computing dollars",
         "description": "Redeemable for Horizon Cloud Computing services",
@@ -365,11 +367,11 @@ curl "https://api.mycurrency.com/currencies?user_id=2"
     }  
   ],
   "links": {
-    "self": "http://api.mycurrency.com/currencies?user_id=2",
-    "first": "http://api.mycurrency.com/currencies?page=1&per_page=25&user_id=2",
+    "self": "http://api.mycurrency.com/currencies?user_id=3",
+    "first": "http://api.mycurrency.com/currencies?page=1&per_page=25&user_id=3",
     "prev": null,
     "next": null,
-    "last": "http://api.mycurrency.com/currencies?page=1&per_page=25&user_id=2"
+    "last": "http://api.mycurrency.com/currencies?page=1&per_page=25&user_id=3"
   },
   "meta": {
     "pagination": {
@@ -401,72 +403,51 @@ name | The name of the currency
 description | The description of the currency
 created-at | The time and date when the currency was created
 updated-at | The time and date when the currency was last updated
+get-icon-url | The URL at which the currency icon picture can be found
 
 ## Create Currency
 
 ```shell
-curl "https://api.mycurrency.com/currencies?user_id=2" 
-  -H 'Host: api.mycurrency.com' -H 'Accept: application/json' -H 'Content-Type: application/json
+curl -X POST https://api.mycurrency.com/users/2/issuer/currencies -d '{"currency": { "burn_rate": 550, "name": "Calm dollars", "description": "Redeemable for services at Calm Massage Therapy" } }' -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "data": [
-    {
-      "id": "2",
-      "type": "currencies",
-      "attributes": {
-        "issuer-id": 2,
-        "burn-rate": 450,
-        "name": "ACME Toon Shop dollars",
-        "description": "Spendable at any ACME Toon Shop",
-        "created-at": "2018-08-12T01:17:31.176-07:00",
-        "updated-at": "2018-08-12T23:49:56.793-07:00",
-        "get-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
-      }
-    },
-    {
-      "id": "3",
-      "type": "currencies",
-      "attributes": {
-        "issuer-id": 2,
-        "burn-rate": 420,
-        "name": "Horizon Cloud Computing dollars",
-        "description": "Redeemable for Horizon Cloud Computing services",
-        "created-at": "2018-09-22T17:10:21.588-07:00",
-        "updated-at": "2018-09-22T17:10:21.588-07:00",
-        "get-icon-url": "/system/currencies/icons/000/000/003/original/horizon-cloud.png?1534243939"
-      }
-    }  
-  ],
-  "links": {
-    "self": "http://api.mycurrency.com/currencies?user_id=2",
-    "first": "http://api.mycurrency.com/currencies?page=1&per_page=25&user_id=2",
-    "prev": null,
-    "next": null,
-    "last": "http://api.mycurrency.com/currencies?page=1&per_page=25&user_id=2"
-  },
-  "meta": {
-    "pagination": {
-      "per-page": null,
-      "total-pages": "1",
-      "total-count": "2"
+  "data": {
+    "id":"1",
+    "type":"currencies",
+    "attributes": {
+      "issuer-id":2,
+      "burn-rate":550,
+      "name": "Calm dollars",
+      "description": "Redeemable for services at Calm Massage Therapy",
+      "created-at": "2017-08-10T17:03:08.287-07:00",
+      "updated-at": "2017-08-10T17:58:08.738-07:00",
+      "get-icon-url":"/icons/original/missing.png"
     }
-  } 
+  }
 }
 ```
 
-This endpoint retrieves all currencies belonging to the user associated with the ID provided.
+Creates a currency.
 
 ### HTTP Request
 
-`GET https://api.mycurrency.com/currencies?user_id={}`
+`POST https://api.mycurrency.com/users/<USER-ID>/issuer/currencies`
 
 <aside class="notice">
-Authentication: not required
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+burn_rate | integer | yes | The annual rate at which holdings of the currency burn, by basis point (100 = 1%)
+name | string | yes |  The name of the currency
+description | string | no | The description of the currency
 
 ### RESPONSE
 
@@ -478,6 +459,7 @@ name | The name of the currency
 description | The description of the currency
 created-at | The time and date when the currency was created
 updated-at | The time and date when the currency was last updated
+get-icon-url | The URL at which the currency icon picture can be found
 
 
 ### ARGUMENTS
