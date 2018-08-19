@@ -255,6 +255,9 @@
                   <li>
                     <a href="#create-currency" class="toc-h2 toc-link" data-title="Create Currency">Create Currency</a>
                   </li>
+                  <li>
+                    <a href="#update-currency" class="toc-h2 toc-link" data-title="Update Currency">Update Currency</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -517,7 +520,7 @@ Authentication: not required
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Redeemable for services at Calm Massage Therapy"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-10T17:03:08.287-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-10T17:58:08.738-07:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"get-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/001/original/calm_dollars.png?1534619841"</span><span class="w">
+        </span><span class="s2">"get-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/001/original/calm_dollars.jpg?1534619841"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -727,7 +730,7 @@ Authentication: not required
 </tr>
 </tbody></table>
 <h2 id='create-currency'>Create Currency</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.mycurrency.com/users/2/issuer/currencies 
-  -d <span class="s1">'{"currency": { "burn_rate": 550, "name": "Calm dollars", "description": "Redeemable for services at Calm Massage Therapy" } }'</span> 
+  -d <span class="s1">'{"currency": { "burn_rate": 740, "name": "Calm dollars", "description": "Redeemable for services at Calm Massage Therapy" } }'</span> 
   -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span> 
   -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
@@ -739,8 +742,8 @@ Authentication: not required
     </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"issuer-id"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"burn-rate"</span><span class="p">:</span><span class="mi">550</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">740</span><span class="p">,</span><span class="w">
       </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm dollars"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Redeemable for services at Calm Massage Therapy"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-10T17:03:08.287-07:00"</span><span class="p">,</span><span class="w">
@@ -784,6 +787,12 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>no</td>
 <td>The description of the currency</td>
 </tr>
+<tr>
+<td>icon</td>
+<td>filename</td>
+<td>no</td>
+<td>The image file to be uploaded as currency&#39;s icon picture</td>
+</tr>
 </tbody></table>
 <h3 id='response-7'>RESPONSE</h3>
 <table><thead>
@@ -821,6 +830,37 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The URL at which the currency icon picture can be found</td>
 </tr>
 </tbody></table>
+<h2 id='update-currency'>Update Currency</h2><pre class="highlight shell tab-shell"><code>curl -X PUT https://api.mycurrency.com/users/2/issuer/currencies/1 
+  -F <span class="s1">'currency[icon]=@calm_dollars.jpg'</span> 
+  -H <span class="s1">'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNTM0NzEyOTMzLCJleHAiOjE1MzQ3OTkzMzMsImp0aSI6IjJmZDEwYWI0LThiMzMtNDBkZS05Yjk2LTZhODg0MjYyZjZmNiJ9.KNlOx2bWEp2l7-GN0olrH3vC-SVmeilYRylVtunJYWg'</span> 
+  -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: multipart/form-data'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">740</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm dollars"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Redeemable for services at Calm Massage Therapy"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-10T17:03:08.287-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-10T17:58:08.738-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"get-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/001/original/calm_dollars.jpg?1534619841"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Updates a currency.</p>
+<h3 id='http-request-8'>HTTP Request</h3>
+<p><code>PUT https://api.mycurrency.com/users/&lt;USER-ID&gt;/issuer/currencies/&lt;ID&gt;</code></p>
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
 <h3 id='arguments-2'>ARGUMENTS</h3>
 <table><thead>
 <tr>
@@ -831,35 +871,52 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>If set to true, the result will also include cats.</td>
-<td></td>
-<td></td>
+<td>description</td>
+<td>string</td>
+<td>no</td>
+<td>The description of the currency</td>
 </tr>
 <tr>
-<td>available</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-<td></td>
-<td></td>
+<td>icon</td>
+<td>filename</td>
+<td>no</td>
+<td>The image file to be uploaded as currency&#39;s icon picture</td>
 </tr>
 </tbody></table>
 <h3 id='response-8'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>issuer-id</td>
+<td>The ID of the issuer account that issued the currency</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>burn-rate</td>
+<td>The annual rate at which holdings of the currency burn, by basis point (100 = 1%)</td>
+</tr>
+<tr>
+<td>name</td>
+<td>The name of the currency</td>
+</tr>
+<tr>
+<td>description</td>
+<td>The description of the currency</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the currency was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the currency was last updated</td>
+</tr>
+<tr>
+<td>get-icon-url</td>
+<td>The URL at which the currency icon picture can be found</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
