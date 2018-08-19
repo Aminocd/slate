@@ -205,8 +205,9 @@ Parameter | Description
 issuer-id | The ID of the issuer account that issued the currency
 burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
 name | The name of the currency
-created_at | The time and date when the currency was created
-updated_at | The time and date when the currency was last updated
+description | The description of the currency
+created-at | The time and date when the currency was created
+updated-at | The time and date when the currency was last updated
 
 ## List Currencies
 
@@ -220,72 +221,88 @@ curl "https://api.mycurrency.com/currencies"
 ```json
 {
   "data": [
-      {
-        "id": "1",
-        "type": "currencies",
-        "attributes": {
-          "issuer-id": 1,
-          "burn-rate": 740,
-          "name": "Calm dollars",
-          "description": "Redeemable for services at Calm Massage Therapy",
-          "created-at": "2017-08-10T17:03:08.287-07:00",
-          "updated-at": "2017-08-10T17:58:08.738-07:00",
-          "get-icon-url": "/system/currencies/icons/000/000/001/original/calm_dollars.png?1534619841"
-        }
-      },
-      {
-        "id": "2",
-        "type": "currencies",
-        "attributes": {
-          "issuer-id": 2,
-          "burn-rate": 450,
-          "name": "ACME Toon Shop dollars",
-          "description": "Spendable at any ACME Toon Shop",
-          "created-at": "2018-08-12T01:17:31.176-07:00",
-          "updated-at": "2018-08-12T23:49:56.793-07:00",
-          "get-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
-        }
-      },
-      {
-        "id": "3",
-        "type": "currencies",
-        "attributes": {
-          "issuer-id": 2,
-          "burn-rate": 420,
-          "name": "Horizon Cloud Computing dollars",
-          "description": "Redeemable for Horizon Cloud Computing services",
-          "created-at": "2018-09-22T17:10:21.588-07:00",
-          "updated-at": "2018-09-22T17:10:21.588-07:00",
-          "get-icon-url": "/system/currencies/icons/000/000/003/original/horizon-cloud.png?1534243939"
-        }
-      },
-      {
-        "id": "4",
-        "type": "currencies",
-        "attributes": {
-          "issuer-id": 3,
-          "burn-rate": 550,
-          "name": "Tom's Fruitstand bucks",
-          "description": "Redeem Tom's Fruitstand bucks for delicious fruit with",
-          "created-at": "2018-09-22T17:10:21.588-07:00",
-          "updated-at": "2018-09-22T17:10:21.588-07:00",
-          "get-icon-url": "/system/currencies/icons/000/000/004/original/Tom-bucks.png?1534148467"
-        }
-      },
-      {
-        "id": "5",
-        "type": "currencies",
-        "attributes": {
-          "issuer-id": 4,
-          "burn-rate": 500,
-          "name": "Chilli pesos",
-          "description": "Chilli pesos are backed by chillis",
-          "created-at": "2018-09-22T18:57:27.193-07:00",
-          "updated-at": "2018-09-22T18:57:27.193-07:00",
-          "get-icon-url": "/system/currencies/icons/000/000/005/original/chilli-pesos.png?153414511"
-        }
+    {
+      "id": "1",
+      "type": "currencies",
+      "attributes": {
+        "issuer-id": 1,
+        "burn-rate": 740,
+        "name": "Calm dollars",
+        "description": "Redeemable for services at Calm Massage Therapy",
+        "created-at": "2017-08-10T17:03:08.287-07:00",
+        "updated-at": "2017-08-10T17:58:08.738-07:00",
+        "get-icon-url": "/system/currencies/icons/000/000/001/original/calm_dollars.png?1534619841"
       }
+    },
+    {
+      "id": "2",
+      "type": "currencies",
+      "attributes": {
+        "issuer-id": 2,
+        "burn-rate": 450,
+        "name": "ACME Toon Shop dollars",
+        "description": "Spendable at any ACME Toon Shop",
+        "created-at": "2018-08-12T01:17:31.176-07:00",
+        "updated-at": "2018-08-12T23:49:56.793-07:00",
+        "get-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
+      }
+    },
+    {
+      "id": "3",
+      "type": "currencies",
+      "attributes": {
+        "issuer-id": 2,
+        "burn-rate": 420,
+        "name": "Horizon Cloud Computing dollars",
+        "description": "Redeemable for Horizon Cloud Computing services",
+        "created-at": "2018-09-22T17:10:21.588-07:00",
+        "updated-at": "2018-09-22T17:10:21.588-07:00",
+        "get-icon-url": "/system/currencies/icons/000/000/003/original/horizon-cloud.png?1534243939"
+      }
+    },
+    {
+      "id": "4",
+      "type": "currencies",
+      "attributes": {
+        "issuer-id": 3,
+        "burn-rate": 550,
+        "name": "Tom's Fruitstand bucks",
+        "description": "Redeem Tom's Fruitstand bucks for delicious fruit with",
+        "created-at": "2018-09-22T17:10:21.588-07:00",
+        "updated-at": "2018-09-22T17:10:21.588-07:00",
+        "get-icon-url": "/system/currencies/icons/000/000/004/original/Tom-bucks.png?1534148467"
+      }
+    },
+    {
+      "id": "5",
+      "type": "currencies",
+      "attributes": {
+        "issuer-id": 4,
+        "burn-rate": 500,
+        "name": "Chilli pesos",
+        "description": "Chilli pesos are backed by chillis",
+        "created-at": "2018-09-22T18:57:27.193-07:00",
+        "updated-at": "2018-09-22T18:57:27.193-07:00",
+        "get-icon-url": "/system/currencies/icons/000/000/005/original/chilli-pesos.png?153414511"
+      }
+    }
   ]
+
+  "links": {
+    "self": "http://api.mycurrency.com/currencies?",
+    "first": "http://api.mycurrency.com/currencies?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "http://api.mycurrency.com/currencies?page=1&per_page=25"
+  },
+
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "5"
+    }
+  }
 }
 ```
 
@@ -306,8 +323,9 @@ Parameter | Description
 issuer-id | The ID of the issuer account that issued the currency
 burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
 name | The name of the currency
-created_at | The time and date when the currency was created
-updated_at | The time and date when the currency was last updated
+description | The description of the currency
+created-at | The time and date when the currency was created
+updated-at | The time and date when the currency was last updated
 
 
 ### ARGUMENTS
@@ -323,112 +341,4 @@ Parameter | Default | Description
 --------- | ------- | -----------
 include_cats | false | If set to true, the result will also include cats.
 available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
-```
-
-This endpoint deletes a specific kitten.
-
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
 
