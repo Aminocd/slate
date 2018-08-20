@@ -61,6 +61,7 @@ Authentication: not required
 
 Parameter | Description
 --------- | -----------
+id | The ID of the user
 username | The username that the user is identified by
 created_at | The time and date when the user was created
 active | Whether the user is active or not
@@ -108,6 +109,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 
 Parameter | Description
 --------- | -----------
+id | The ID of the user
 username | The username that the user is identified by
 created-at | The time and date when the user was created
 active | Whether the user is active or not
@@ -155,6 +157,7 @@ Authentication: not required
 
 Parameter | Description
 --------- | -----------
+id | The ID of the issuer
 user-id | The ID of the user that owns the issuer account
 created_at | The time and date when the issuer account was created
 updated_at | The time and date when the issuer account was last updated
@@ -202,6 +205,7 @@ Authentication: not required
 
 Parameter | Description
 --------- | -----------
+id | The ID of the currency
 issuer-id | The ID of the issuer account that issued the currency
 burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
 name | The name of the currency
@@ -319,6 +323,7 @@ Authentication: not required
 
 Parameter | Description
 --------- | -----------
+id | The ID of the currency
 issuer-id | The ID of the issuer account that issued the currency
 burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
 name | The name of the currency
@@ -397,6 +402,7 @@ Authentication: not required
 
 Parameter | Description
 --------- | -----------
+id | The ID of the currency
 issuer-id | The ID of the issuer account that issued the currency
 burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
 name | The name of the currency
@@ -457,6 +463,7 @@ icon | filename | no | The image file to be uploaded as currency's icon picture
 
 Parameter | Description
 --------- | -----------
+id | The ID of the new currency
 issuer-id | The ID of the issuer account that issued the currency
 burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
 name | The name of the currency
@@ -515,6 +522,7 @@ icon | filename | no | The image file to be uploaded as currency's icon picture
 
 Parameter | Description
 --------- | -----------
+id | The ID of the updated currency
 issuer-id | The ID of the issuer account that issued the currency
 burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
 name | The name of the currency
@@ -548,7 +556,7 @@ curl -X POST https://api.mycurrency.com/currencies/3/burnrate_change -d '{"burnr
 }
 ```
 
-Updates a currency's burn rate
+Updating a currency's burn rate requires accessing the `burnrate_change` endpoint and creating a burnrate change object. Burnrate change objects create a record of changes to a currency's burn rate which are viewable by the public.
 
 ### HTTP Request
 
@@ -569,10 +577,10 @@ comment | string | no | A comment to explain to currency holders why the burn ra
 
 Parameter | Description
 --------- | -----------
-issuer-id | The ID of the issuer account that issued the currency
-burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
-name | The name of the currency
-description | The description of the currency
+id | The ID of the burnrate_change
+old-burn-rate | The burn rate before the burnrate_change 
+new-burn-rate | The burn rate after the burnrate_change name 
+currency-id | The ID of the currency that the burnrate_change applies to
+comment | A comment to explain to currency holders why the burn rate was changed
 created-at | The time and date when the currency was created
 updated-at | The time and date when the currency was last updated
-get-icon-url | The URL at which the currency icon picture can be found
