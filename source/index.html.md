@@ -470,7 +470,7 @@ get-icon-url | The URL at which the currency icon picture can be found
 ```shell
 curl -X PUT https://api.mycurrency.com/users/2/issuer/currencies/1 
   -F 'currency[icon]=@calm_dollars.jpg' 
-  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNTM0NzEyOTMzLCJleHAiOjE1MzQ3OTkzMzMsImp0aSI6IjJmZDEwYWI0LThiMzMtNDBkZS05Yjk2LTZhODg0MjYyZjZmNiJ9.KNlOx2bWEp2l7-GN0olrH3vC-SVmeilYRylVtunJYWg' 
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' 
   -H 'Accept: application/json' -H 'Content-Type: multipart/form-data'
 ```
 
@@ -510,6 +510,60 @@ Parameter | Type | Required | Description
 --------- | ------- | ------- | -----------
 description | string | no | The description of the currency
 icon | filename | no | The image file to be uploaded as currency's icon picture
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+issuer-id | The ID of the issuer account that issued the currency
+burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
+name | The name of the currency
+description | The description of the currency
+created-at | The time and date when the currency was created
+updated-at | The time and date when the currency was last updated
+get-icon-url | The URL at which the currency icon picture can be found
+
+## Update Currency's Burn Rate
+
+```shell
+curl -X POST https://api.mycurrency.com/currencies/3/burnrate_change -d '{"burnrate_change": { "new_burn_rate": 500, "comment": "testing burnrate_change creation" } }' -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id":"1",
+    "type":"burnrate-changes",
+    "attributes": {
+      "old-burn-rate": 550,
+      "new-burn-rate": 500,
+      "currency-id": 3,
+      "comment": "lowering the burn rate",
+      "created-at":"2018-08-19T17:00:50.093-07:00",
+      "updated-at":"2018-08-19T17:00:50.093-07:00"
+    }
+  }
+}
+```
+
+Updates a currency's burn rate
+
+### HTTP Request
+
+`POST https://api.mycurrency.com/currencies/<CURRENCY-ID>/burnrate_change`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User that issued the currency being updated 
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+new_burn_rate | integer | yes | The value that you want to update the currency's burn rate to
+comment | string | no | A comment to explain to currency holders why the burn rate was changed
 
 ### RESPONSE
 
