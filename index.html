@@ -313,6 +313,10 @@ Authentication: not required
 </tr>
 </thead><tbody>
 <tr>
+<td>id</td>
+<td>The ID of the user</td>
+</tr>
+<tr>
 <td>username</td>
 <td>The username that the user is identified by</td>
 </tr>
@@ -366,6 +370,10 @@ Authentication: the request requires the OAuth access-token associated with the 
 <th>Description</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the user</td>
+</tr>
 <tr>
 <td>username</td>
 <td>The username that the user is identified by</td>
@@ -428,6 +436,10 @@ Authentication: not required
 </tr>
 </thead><tbody>
 <tr>
+<td>id</td>
+<td>The ID of the issuer</td>
+</tr>
+<tr>
 <td>user-id</td>
 <td>The ID of the user that owns the issuer account</td>
 </tr>
@@ -476,6 +488,10 @@ Authentication: not required
 <th>Description</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the currency</td>
+</tr>
 <tr>
 <td>issuer-id</td>
 <td>The ID of the issuer account that issued the currency</td>
@@ -610,6 +626,10 @@ Authentication: not required
 </tr>
 </thead><tbody>
 <tr>
+<td>id</td>
+<td>The ID of the currency</td>
+</tr>
+<tr>
 <td>issuer-id</td>
 <td>The ID of the issuer account that issued the currency</td>
 </tr>
@@ -703,6 +723,10 @@ Authentication: not required
 <th>Description</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the currency</td>
+</tr>
 <tr>
 <td>issuer-id</td>
 <td>The ID of the issuer account that issued the currency</td>
@@ -805,6 +829,10 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 </thead><tbody>
 <tr>
+<td>id</td>
+<td>The ID of the new currency</td>
+</tr>
+<tr>
 <td>issuer-id</td>
 <td>The ID of the issuer account that issued the currency</td>
 </tr>
@@ -894,6 +922,10 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 </thead><tbody>
 <tr>
+<td>id</td>
+<td>The ID of the updated currency</td>
+</tr>
+<tr>
 <td>issuer-id</td>
 <td>The ID of the issuer account that issued the currency</td>
 </tr>
@@ -942,7 +974,7 @@ Authentication: the request requires the OAuth access-token associated with the 
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Updates a currency&#39;s burn rate</p>
+<p>Updating a currency&#39;s burn rate requires accessing the <code>burnrate_change</code> endpoint and creating a burnrate change object. Burnrate change objects create a record of changes to a currency&#39;s burn rate which are viewable by the public.</p>
 <h3 id='http-request-9'>HTTP Request</h3>
 <p><code>POST https://api.mycurrency.com/currencies/&lt;CURRENCY-ID&gt;/burnrate_change</code></p>
 
@@ -979,20 +1011,24 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 </thead><tbody>
 <tr>
-<td>issuer-id</td>
-<td>The ID of the issuer account that issued the currency</td>
+<td>id</td>
+<td>The ID of the burnrate_change</td>
 </tr>
 <tr>
-<td>burn-rate</td>
-<td>The annual rate at which holdings of the currency burn, by basis point (100 = 1%)</td>
+<td>old-burn-rate</td>
+<td>The burn rate before the burnrate_change</td>
 </tr>
 <tr>
-<td>name</td>
-<td>The name of the currency</td>
+<td>new-burn-rate</td>
+<td>The burn rate after the burnrate_change name</td>
 </tr>
 <tr>
-<td>description</td>
-<td>The description of the currency</td>
+<td>currency-id</td>
+<td>The ID of the currency that the burnrate_change applies to</td>
+</tr>
+<tr>
+<td>comment</td>
+<td>A comment to explain to currency holders why the burn rate was changed</td>
 </tr>
 <tr>
 <td>created-at</td>
@@ -1001,10 +1037,6 @@ Authentication: the request requires the OAuth access-token associated with the 
 <tr>
 <td>updated-at</td>
 <td>The time and date when the currency was last updated</td>
-</tr>
-<tr>
-<td>get-icon-url</td>
-<td>The URL at which the currency icon picture can be found</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
