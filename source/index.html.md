@@ -556,7 +556,7 @@ curl -X POST https://api.mycurrency.com/currencies/3/burnrate_change -d '{"burnr
 }
 ```
 
-Updating a currency's burn rate requires accessing the `burnrate_change` endpoint and creating a burnrate change object. Burnrate change objects create a record of changes to a currency's burn rate which are viewable by the public.
+Updating a currency's burn rate requires accessing the `burnrate_change` endpoint and creating a burnrate change record. Burnrate change records create an auditable and publicly accessible log of changes to a currency's burn rate.
 
 ### HTTP Request
 
