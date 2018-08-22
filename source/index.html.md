@@ -598,7 +598,7 @@ get-icon-url | The URL at which the currency icon picture can be found
 ## Get a Burnrate Change
 
 ```shell
-curl "https://api.mycurrency.com/currencies/3/burnrate_changes/7" 
+curl "https://api.mycurrency.com/currencies/1/burnrate_changes/1" 
   -H 'Host: api.mycurrency.com' 
   -H 'Accept: application/json' 
   -H 'Content-Type: application/json'
@@ -648,7 +648,7 @@ updated-at | The time and date when the currency was last updated
 ## List Burnrate Changes
 
 ```shell
-curl "https://api.mycurrency.com/currencies/3/burnrate_changes" 
+curl "https://api.mycurrency.com/currencies/1/burnrate_changes" 
   -H 'Host: api.mycurrency.com' 
   -H 'Accept: application/json' 
   -H 'Content-Type: application/json'
