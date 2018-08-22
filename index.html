@@ -1074,7 +1074,10 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The URL at which the currency icon picture can be found</td>
 </tr>
 </tbody></table>
-<h1 id='burnrate-change'>Burnrate Change</h1><h2 id='get-a-burnrate-change'>Get a Burnrate Change</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/currencies/3/burnrate_changes/7"</span> -H <span class="s1">'Host: api.mycurrency.com'</span> -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
+<h1 id='burnrate-change'>Burnrate Change</h1><h2 id='get-a-burnrate-change'>Get a Burnrate Change</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/currencies/3/burnrate_changes/7"</span> 
+  -H <span class="s1">'Host: api.mycurrency.com'</span> 
+  -H <span class="s1">'Accept: application/json'</span> 
+  -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1137,7 +1140,10 @@ Authentication: not required
 <td>The time and date when the currency was last updated</td>
 </tr>
 </tbody></table>
-<h2 id='list-burnrate-changes'>List Burnrate Changes</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/currencies/3/burnrate_changes"</span> -H <span class="s1">'Host: api.mycurrency.com'</span> -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
+<h2 id='list-burnrate-changes'>List Burnrate Changes</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/currencies/3/burnrate_changes"</span> 
+  -H <span class="s1">'Host: api.mycurrency.com'</span> 
+  -H <span class="s1">'Accept: application/json'</span> 
+  -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1239,7 +1245,11 @@ Authentication: not required
 <td>The time and date when the currency was last updated</td>
 </tr>
 </tbody></table>
-<h2 id='update-currency-39-s-burn-rate'>Update Currency&#39;s Burn Rate</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.mycurrency.com/currencies/1/burnrate_change -d <span class="s1">'{"burnrate_change": { "new_burn_rate": 500, "comment": "lowing the burn rate" } }'</span> -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span> -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
+<h2 id='update-currency-39-s-burn-rate'>Update Currency&#39;s Burn Rate</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.mycurrency.com/currencies/1/burnrate_change 
+  -d <span class="s1">'{"burnrate_change": { "new_burn_rate": 500, "comment": "lowing the burn rate" } }'</span> 
+  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span> 
+  -H <span class="s1">'Accept: application/json'</span> 
+  -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
