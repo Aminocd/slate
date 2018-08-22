@@ -118,6 +118,68 @@ email | The email address associated with the user account
 sub-location-id | The ID of the sub location associated with the user account
 updated-at | The time and date when the user was last updated
 
+## Update User
+
+```shell
+curl -X PUT https://api.mycurrency.com/users/2 
+  -d 'user[sub_location_id]=2' 
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' 
+  -H 'Accept: application/json' 
+  -H 'Content-Type: multipart/form-data'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "2",
+    "type": "users",
+    "attributes": {
+      "username": "RonaldMcDonald",
+      "created-at": "2018-08-08T01:22:54.571-07:00",
+      "active": true,
+      "get-avatar-url": "/system/users/avatars/000/000/002/original/afternoon_portrait.jpg?1534139495"
+      "email": "RonaldMcDonald@mcdonalds.com",
+      "sub-location-id": 2,
+      "updated-at": "2018-08-22T01:28:56.872-07:00"
+    }
+  }
+}
+```
+
+Updates a currency. Upon user creation, a new user is inactive and its username and sub_location_id fields are empty. A valid username and sub_location_id need to be provided in the first update that sets the user's active field to true. After the first update, the sub_location_id, avatar and active fields can be changed, but the username field cannot.
+
+### HTTP Request
+
+`PUT https://api.mycurrency.com/users/<ID>`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+active | boolean | no | Whether the user is active or not
+avatar | filename | no | The image file to be uploaded as user's avatar picture
+username | string | no | The username that the user is identified by 
+sub_location_id | integer | no | The ID of the sub location associated with the user account
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the user
+username | The username that the user is identified by
+created-at | The time and date when the user was created
+active | Whether the user is active or not
+get-avatar-url | The URL at which the user profile picture can be found
+email | The email address associated with the user account
+sub-location-id | The ID of the sub location associated with the user account
+updated-at | The time and date when the user was last updated
+
 # Issuers
 
 ## Get an Issuer
