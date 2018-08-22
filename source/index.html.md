@@ -593,10 +593,12 @@ created-at | The time and date when the currency was created
 updated-at | The time and date when the currency was last updated
 get-icon-url | The URL at which the currency icon picture can be found
 
-## Update Currency's Burn Rate
+#Burnrate Change
+
+## Get a Burnrate Change
 
 ```shell
-curl -X POST https://api.mycurrency.com/currencies/3/burnrate_change -d '{"burnrate_change": { "new_burn_rate": 500, "comment": "testing burnrate_change creation" } }' -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' -H 'Accept: application/json' -H 'Content-Type: application/json'
+curl "https://api.mycurrency.com/currencies/3/burnrate_changes/7" -H 'Host: api.mycurrency.com' -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
 
 > The above command returns JSON structured like this:
@@ -607,9 +609,142 @@ curl -X POST https://api.mycurrency.com/currencies/3/burnrate_change -d '{"burnr
     "id":"1",
     "type":"burnrate-changes",
     "attributes": {
-      "old-burn-rate": 550,
+      "old-burn-rate": 740,
       "new-burn-rate": 500,
-      "currency-id": 3,
+      "currency-id": 1,
+      "comment": "lowering the burn rate",
+      "created-at":"2018-08-19T17:00:50.093-07:00",
+      "updated-at":"2018-08-19T17:00:50.093-07:00"
+    }
+  }
+}
+```
+
+This endpoint retrieves a particular burnrate change by ID.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/currencies/<CURRENCY-ID>/burnrate_changes/<ID>`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the burnrate_change
+old-burn-rate | The burn rate before the burnrate_change 
+new-burn-rate | The burn rate after the burnrate_change name 
+currency-id | The ID of the currency that the burnrate_change applies to
+comment | A comment to explain to currency holders why the burn rate was changed
+created-at | The time and date when the currency was created
+updated-at | The time and date when the currency was last updated
+
+## List Burnrate Changes
+
+```shell
+curl "https://api.mycurrency.com/currencies/3/burnrate_changes" -H 'Host: api.mycurrency.com' -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id":"1",
+      "type":"burnrate-changes",
+      "attributes": {
+        "old-burn-rate": 740,
+        "new-burn-rate": 500,
+        "currency-id": 1,
+        "comment": "lowering the burn rate",
+        "created-at":"2018-08-19T17:00:50.093-07:00",
+        "updated-at":"2018-08-19T17:00:50.093-07:00"
+    },
+    {
+      "id": "2",
+      "type": "burnrate-changes",
+      "attributes": {
+        "old-burn-rate": 500,
+        "new-burn-rate": 580,
+        "currency-id": 1,
+        "comment": "increasing the burn rate",
+        "created-at": "2018-08-20T12:27:48.716-07:00",
+        "updated-at": "2018-08-20T12:27:48.716-07:00"
+      }
+    },
+    {
+      "id": "3",
+      "type": "burnrate-changes",
+      "attributes": {
+        "old-burn-rate": 580,
+        "new-burn-rate": 600,
+        "currency-id": 1,
+        "comment": "a slight increase in burn rate",
+        "created-at": "2018-08-22T09:54:07.685-07:00",
+        "updated-at": "2018-08-22T09:54:07.685-07:00"
+      }
+    }
+  ],
+  "links": {
+    "self": "http://api.mycurrency.com/currencies/1/burnrate_changes?",
+    "first": "http://api.mycurrency.com/currencies/1/burnrate_changes?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "http://api.mycurrency.com/currencies/1/burnrate_changes?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "3"
+    }
+  }
+}
+```
+
+This endpoint retrieves all of the specified currency's burnrate changes.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/currencies/<CURRENCY-ID>/burnrate_changes`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the burnrate_change
+old-burn-rate | The burn rate before the burnrate_change 
+new-burn-rate | The burn rate after the burnrate_change name 
+currency-id | The ID of the currency that the burnrate_change applies to
+comment | A comment to explain to currency holders why the burn rate was changed
+created-at | The time and date when the currency was created
+updated-at | The time and date when the currency was last updated
+
+## Update Currency's Burn Rate
+
+```shell
+curl -X POST https://api.mycurrency.com/currencies/1/burnrate_change -d '{"burnrate_change": { "new_burn_rate": 500, "comment": "lowing the burn rate" } }' -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id":"1",
+    "type":"burnrate-changes",
+    "attributes": {
+      "old-burn-rate": 740,
+      "new-burn-rate": 500,
+      "currency-id": 1,
       "comment": "lowering the burn rate",
       "created-at":"2018-08-19T17:00:50.093-07:00",
       "updated-at":"2018-08-19T17:00:50.093-07:00"
@@ -646,3 +781,4 @@ currency-id | The ID of the currency that the burnrate_change applies to
 comment | A comment to explain to currency holders why the burn rate was changed
 created-at | The time and date when the currency was created
 updated-at | The time and date when the currency was last updated
+
