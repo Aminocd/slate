@@ -230,6 +230,9 @@
                   <li>
                     <a href="#get-a-user-with-authorization" class="toc-h2 toc-link" data-title="Get a User with Authorization">Get a User with Authorization</a>
                   </li>
+                  <li>
+                    <a href="#update-user" class="toc-h2 toc-link" data-title="Update User">Update User</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -403,6 +406,112 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The time and date when the user was last updated</td>
 </tr>
 </tbody></table>
+<h2 id='update-user'>Update User</h2><pre class="highlight shell tab-shell"><code>curl -X PUT https://api.mycurrency.com/users/2 
+  -d <span class="s1">'user[sub_location_id]=2'</span> 
+  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span> 
+  -H <span class="s1">'Accept: application/json'</span> 
+  -H <span class="s1">'Content-Type: multipart/form-data'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"users"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RonaldMcDonald"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-08T01:22:54.571-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"get-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/002/original/afternoon_portrait.jpg?1534139495"</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RonaldMcDonald@mcdonalds.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sub-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-22T01:28:56.872-07:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Updates a currency. Upon user creation, a new user is inactive and its username and sub_location_id fields are empty. A valid username and sub_location_id need to be provided in the first update that sets the user&#39;s active field to true. After the first update, the sub_location_id, avatar and active fields can be changed, but the username field cannot.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>PUT https://api.mycurrency.com/users/&lt;ID&gt;</code></p>
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+<h3 id='arguments'>ARGUMENTS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>active</td>
+<td>boolean</td>
+<td>no</td>
+<td>Whether the user is active or not</td>
+</tr>
+<tr>
+<td>avatar</td>
+<td>filename</td>
+<td>no</td>
+<td>The image file to be uploaded as user&#39;s avatar picture</td>
+</tr>
+<tr>
+<td>username</td>
+<td>string</td>
+<td>no</td>
+<td>The username that the user is identified by</td>
+</tr>
+<tr>
+<td>sub_location_id</td>
+<td>integer</td>
+<td>no</td>
+<td>The ID of the sub location associated with the user account</td>
+</tr>
+</tbody></table>
+<h3 id='response-3'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the user</td>
+</tr>
+<tr>
+<td>username</td>
+<td>The username that the user is identified by</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the user was created</td>
+</tr>
+<tr>
+<td>active</td>
+<td>Whether the user is active or not</td>
+</tr>
+<tr>
+<td>get-avatar-url</td>
+<td>The URL at which the user profile picture can be found</td>
+</tr>
+<tr>
+<td>email</td>
+<td>The email address associated with the user account</td>
+</tr>
+<tr>
+<td>sub-location-id</td>
+<td>The ID of the sub location associated with the user account</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the user was last updated</td>
+</tr>
+</tbody></table>
 <h1 id='issuers'>Issuers</h1><h2 id='get-an-issuer'>Get an Issuer</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/users/2/issuer'</span> 
   -H <span class="s1">'Host: api.mycurrency.com'</span> -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
@@ -422,13 +531,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular issuer and its basic public information by the ID of its associated user.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+<h3 id='http-request-4'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/issuer</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-3'>RESPONSE</h3>
+<h3 id='response-4'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -475,13 +584,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular currency and its basic public information by ID.</p>
-<h3 id='http-request-4'>HTTP Request</h3>
+<h3 id='http-request-5'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/currencies/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-4'>RESPONSE</h3>
+<h3 id='response-5'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -612,13 +721,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all currencies.</p>
-<h3 id='http-request-5'>HTTP Request</h3>
+<h3 id='http-request-6'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/currencies</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-5'>RESPONSE</h3>
+<h3 id='response-6'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -710,13 +819,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all currencies belonging to the user associated with the ID provided.</p>
-<h3 id='http-request-6'>HTTP Request</h3>
+<h3 id='http-request-7'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/currencies?user_id={}</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-6'>RESPONSE</h3>
+<h3 id='response-7'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -781,13 +890,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Creates a currency.</p>
-<h3 id='http-request-7'>HTTP Request</h3>
+<h3 id='http-request-8'>HTTP Request</h3>
 <p><code>POST https://api.mycurrency.com/users/&lt;USER-ID&gt;/issuer/currencies</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='arguments'>ARGUMENTS</h3>
+<h3 id='arguments-2'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -821,7 +930,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The image file to be uploaded as currency&#39;s icon picture</td>
 </tr>
 </tbody></table>
-<h3 id='response-7'>RESPONSE</h3>
+<h3 id='response-8'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -886,13 +995,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Updates a currency.</p>
-<h3 id='http-request-8'>HTTP Request</h3>
+<h3 id='http-request-9'>HTTP Request</h3>
 <p><code>PUT https://api.mycurrency.com/users/&lt;USER-ID&gt;/issuer/currencies/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='arguments-2'>ARGUMENTS</h3>
+<h3 id='arguments-3'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -914,7 +1023,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The image file to be uploaded as currency&#39;s icon picture</td>
 </tr>
 </tbody></table>
-<h3 id='response-8'>RESPONSE</h3>
+<h3 id='response-9'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -975,13 +1084,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Updating a currency&#39;s burn rate requires accessing the <code>burnrate_change</code> endpoint and creating a burnrate change record. Burnrate change records create an auditable and publicly accessible log of changes to a currency&#39;s burn rate.</p>
-<h3 id='http-request-9'>HTTP Request</h3>
+<h3 id='http-request-10'>HTTP Request</h3>
 <p><code>POST https://api.mycurrency.com/currencies/&lt;CURRENCY-ID&gt;/burnrate_change</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User that issued the currency being updated 
 </aside>
-<h3 id='arguments-3'>ARGUMENTS</h3>
+<h3 id='arguments-4'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1003,7 +1112,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>A comment to explain to currency holders why the burn rate was changed</td>
 </tr>
 </tbody></table>
-<h3 id='response-9'>RESPONSE</h3>
+<h3 id='response-10'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
