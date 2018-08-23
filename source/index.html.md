@@ -792,3 +792,155 @@ comment | A comment to explain to currency holders why the burn rate was changed
 created-at | The time and date when the currency was created
 updated-at | The time and date when the currency was last updated
 
+# Stores
+
+## Get a Store
+
+```shell
+curl 'https://api.mycurrency.com/stores/2' 
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "2",
+    "type": "stores",
+    "attributes": {
+      "currency-id": 2,
+      "sub-location-id": 2,
+      "physical": true,
+      "store-name": "Vancouver ACME Toon Shop",
+      "store-description": "All manner of ACME Toon items available",
+      "index": "Vancouver ACME Toon Shop All manner of ACME Toon items available\nBugs Bunny Q-Tips - q-tips that work on the biggest ears, Fictional items, Toon products - 1550\n",
+      "created-at": "2018-08-12T02:11:46.512-07:00",
+      "updated-at": "2018-08-12T02:11:46.512-07:00"
+    }
+  }
+}
+```
+
+This endpoint retrieves a particular store.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/stores/<ID>`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the store
+currency-id | The ID of the currency that the store's products are purchasable with
+sub-location-id | The sub location where the store is located
+physical | Whether the store is a physical location that customers can visit
+store-name | The name of the store
+store-description | The description of the store
+index | Keywords derived from the description of the store and its products that are checked against in searches
+created-at | The time and date when the currency was created
+updated-at | The time and date when the currency was last updated
+
+## List Stores
+
+```shell
+curl "https://api.mycurrency.com/stores"
+  -H 'Host: api.mycurrency.com' 
+  -H 'Accept: application/json' 
+  -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "stores",
+      "attributes": {
+        "currency-id": 1,
+        "sub-location-id": 1,
+        "physical": true,
+        "store-name": "Calm Spa",
+        "store-description": "A full service spa for full relaxation",
+        "index": "Calm Spa A full service spa for full relaxation\nFacial - standard facial, spa services including facials, manicures and pedicures - 5000\n",
+        "created-at": "2018-08-11T12:11:16.475-07:00",
+        "updated-at": "2018-08-12T02:21:49.458-07:00"
+      }
+    },
+    {
+      "id": "2",
+      "type": "stores",
+      "attributes": {
+        "currency-id": 2,
+        "sub-location-id": 2,
+        "physical": true,
+        "store-name": "Vancouver ACME Toon Shop",
+        "store-description": "All manner of ACME Toon items available",
+        "index": "Vancouver ACME Toon Shop All manner of ACME Toon items available\nBugs Bunny Q-Tips - q-tips that work on the biggest ears, Toon products, products usable by toons - 1550\n",
+        "updated-at": "2018-08-13T05:45:12.342-07:00",
+        "updated-at": "2018-08-13T05:45:12.342-07:00",
+      }
+    },
+    {
+      "id": "3",
+      "type": "stores",
+      "attributes": {
+        "currency-id": 2,
+        "sub-location-id": 1,
+        "physical": true,
+        "store-name": "San Francisco ACME Toon Shop",
+        "store-description": "San Francisco's premier shop for toons",
+        "index": "San Francisco ACME Toon Shop San Francisco's premier shop for toons\nBugs Bunny Q-Tips - q-tips that work on the biggest ears, Fictional items, Toon products - 1550\nTeleport hole - can turn any rock face into a tunnel, fictional items, Toon products - 4000\n",
+        "created-at": "2018-08-12T02:11:46.512-07:00",
+        "updated-at": "2018-08-12T02:11:46.512-07:00"
+      }
+    }
+  ],
+  "links": {
+    "self": "http://api.mycurrency.com/stores?",
+    "first": "http://api.mycurrency.com/stores?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "http://api.mycurrency.com/stores?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "3"
+    }
+  }
+}
+```
+
+This endpoint retrieves all stores.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/stores`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the store
+currency-id | The ID of the currency that the store's products are purchasable with
+sub-location-id | The sub location where the store is located
+physical | Whether the store is a physical location that customers can visit
+store-name | The name of the store
+store-description | The description of the store
+index | Keywords derived from the description of the store and its products that are checked against in searches
+created-at | The time and date when the currency was created
+updated-at | The time and date when the currency was last updated
+
