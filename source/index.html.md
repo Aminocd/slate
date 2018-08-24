@@ -1185,7 +1185,7 @@ updated-at | The time and date when the currency was last updated
 ## Search a Sub Location's Stores by Keyword
 
 ```shell
-curl "https://api.mycurrency.com/sub_locations/2/stores?keyword=Bugs%20Bunny"
+curl "https://api.mycurrency.com/sub_locations/1/stores?keyword=Bugs%20Bunny"
   -H 'Host: api.mycurrency.com' 
   -H 'Accept: application/json' 
   -H 'Content-Type: application/json'
@@ -1197,26 +1197,26 @@ curl "https://api.mycurrency.com/sub_locations/2/stores?keyword=Bugs%20Bunny"
 {
   "data": [
     {
-      "id": "2",
+      "id": "3",
       "type": "stores",
       "attributes": {
         "currency-id": 2,
-        "sub-location-id": 2,
+        "sub-location-id": 1,
         "physical": true,
-        "store-name": "Vancouver ACME Toon Shop",
-        "store-description": "All manner of ACME Toon items available",
-        "index": "Vancouver ACME Toon Shop All manner of ACME Toon items available\nBugs Bunny Q-Tips - q-tips that work on the biggest ears, Toon products, products usable by toons - 1550\n",
-        "updated-at": "2018-08-13T05:45:12.342-07:00",
-        "updated-at": "2018-08-13T05:45:12.342-07:00",
+        "store-name": "San Francisco ACME Toon Shop",
+        "store-description": "San Francisco's premier shop for toons",
+        "index": "San Francisco ACME Toon Shop San Francisco's premier shop for toons\nBugs Bunny Q-Tips - q-tips that work on the biggest ears, Fictional items, Toon products - 1550\nTeleport hole - can turn any rock face into a tunnel, fictional items, Toon products - 4000\n",
+        "created-at": "2018-08-12T02:11:46.512-07:00",
+        "updated-at": "2018-08-12T02:11:46.512-07:00"
       }
     }
   ],
   "links": {
-    "self": "http://api.mycurrency.com/sub_locations/2/stores?keyword=Bugs+Bunny",
-    "first": "http://api.mycurrency.com/sub_locations/2/stores?keyword=Bugs+Bunny&page=1&per_page=25",
+    "self": "http://api.mycurrency.com/sub_locations/1/stores?keyword=Bugs+Bunny",
+    "first": "http://api.mycurrency.com/sub_locations/1/stores?keyword=Bugs+Bunny&page=1&per_page=25",
     "prev": null,
     "next": null,
-    "last": "http://api.mycurrency.com/sub_locations/2/stores?keyword=Bugs+Bunny&page=1&per_page=25"
+    "last": "http://api.mycurrency.com/sub_locations/1/stores?keyword=Bugs+Bunny&page=1&per_page=25"
   },
   "meta": {
     "pagination": {
