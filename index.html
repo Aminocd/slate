@@ -295,6 +295,9 @@
                   <li>
                     <a href="#list-a-sub-location-39-s-stores" class="toc-h2 toc-link" data-title="List a Sub Location's Stores">List a Sub Location's Stores</a>
                   </li>
+                  <li>
+                    <a href="#search-a-sub-location-39-s-stores-by-keyword" class="toc-h2 toc-link" data-title="Search a Sub Location's Stores by Keyword">Search a Sub Location's Stores by Keyword</a>
+                  </li>
               </ul>
           </li>
       </ul>
@@ -1677,11 +1680,11 @@ Authentication: not required
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/stores?keyword=spa%20services"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/stores?keyword=spa%20services&amp;page=1&amp;per_page=25"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/stores?keyword=spa+services"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/stores?keyword=spa+services&amp;page=1&amp;per_page=25"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"prev"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/stores?keyword=spa%20services&amp;page=1&amp;per_page=25"</span><span class="w">
+    </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/stores?keyword=spa+services&amp;page=1&amp;per_page=25"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1806,6 +1809,98 @@ Authentication: not required
 Authentication: not required
 </aside>
 <h3 id='response-17'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the store</td>
+</tr>
+<tr>
+<td>currency-id</td>
+<td>The ID of the currency that the store&#39;s products are purchasable with</td>
+</tr>
+<tr>
+<td>sub-location-id</td>
+<td>The sub location where the store is located</td>
+</tr>
+<tr>
+<td>physical</td>
+<td>Whether the store is a physical location that customers can visit</td>
+</tr>
+<tr>
+<td>store-name</td>
+<td>The name of the store</td>
+</tr>
+<tr>
+<td>store-description</td>
+<td>The description of the store</td>
+</tr>
+<tr>
+<td>index</td>
+<td>Keywords derived from the description of the store and its products that are checked against in searches</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the currency was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the currency was last updated</td>
+</tr>
+</tbody></table>
+<h2 id='search-a-sub-location-39-s-stores-by-keyword'>Search a Sub Location&#39;s Stores by Keyword</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/sub_locations/2/stores?keyword=Bugs%20Bunny"</span>
+  -H <span class="s1">'Host: api.mycurrency.com'</span> 
+  -H <span class="s1">'Accept: application/json'</span> 
+  -H <span class="s1">'Content-Type: application/json'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stores"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sub-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver ACME Toon Shop"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All manner of ACME Toon items available"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver ACME Toon Shop All manner of ACME Toon items available</span><span class="se">\n</span><span class="s2">Bugs Bunny Q-Tips - q-tips that work on the biggest ears, Toon products, products usable by toons - 1550</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-13T05:45:12.342-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-13T05:45:12.342-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.mycurrency.com/sub_locations/2/stores?keyword=Bugs+Bunny"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.mycurrency.com/sub_locations/2/stores?keyword=Bugs+Bunny&amp;page=1&amp;per_page=25"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"prev"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.mycurrency.com/sub_locations/2/stores?keyword=Bugs+Bunny&amp;page=1&amp;per_page=25"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"per-page"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total-pages"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total-count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all stores belonging to the sub location associated with the ID provided.</p>
+<h3 id='http-request-18'>HTTP Request</h3>
+<p><code>GET https://api.mycurrency.com/sub_locations/&lt;SUB-LOCATION-ID&gt;/stores?keyword={}</code></p>
+
+<aside class="notice">
+Authentication: not required
+</aside>
+<h3 id='response-18'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
