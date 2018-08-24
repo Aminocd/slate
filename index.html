@@ -277,6 +277,17 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#stores" class="toc-h1 toc-link" data-title="Stores">Stores</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-a-store" class="toc-h2 toc-link" data-title="Get a Store">Get a Store</a>
+                  </li>
+                  <li>
+                    <a href="#list-stores" class="toc-h2 toc-link" data-title="List Stores">List Stores</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='#'>Sign Up for a Developer Key</a> <!--- need to add link here ---></li>
@@ -1321,6 +1332,200 @@ Authentication: the request requires the OAuth access-token associated with the 
 <tr>
 <td>comment</td>
 <td>A comment to explain to currency holders why the burn rate was changed</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the currency was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the currency was last updated</td>
+</tr>
+</tbody></table>
+<h1 id='stores'>Stores</h1><h2 id='get-a-store'>Get a Store</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/stores/2'</span> 
+  -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stores"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sub-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver ACME Toon Shop"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All manner of ACME Toon items available"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver ACME Toon Shop All manner of ACME Toon items available</span><span class="se">\n</span><span class="s2">Bugs Bunny Q-Tips - q-tips that work on the biggest ears, Fictional items, Toon products - 1550</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T02:11:46.512-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T02:11:46.512-07:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a particular store.</p>
+<h3 id='http-request-13'>HTTP Request</h3>
+<p><code>GET https://api.mycurrency.com/stores/&lt;ID&gt;</code></p>
+
+<aside class="notice">
+Authentication: not required
+</aside>
+<h3 id='response-13'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the store</td>
+</tr>
+<tr>
+<td>currency-id</td>
+<td>The ID of the currency that the store&#39;s products are purchasable with</td>
+</tr>
+<tr>
+<td>sub-location-id</td>
+<td>The sub location where the store is located</td>
+</tr>
+<tr>
+<td>physical</td>
+<td>Whether the store is a physical location that customers can visit</td>
+</tr>
+<tr>
+<td>store-name</td>
+<td>The name of the store</td>
+</tr>
+<tr>
+<td>store-description</td>
+<td>The description of the store</td>
+</tr>
+<tr>
+<td>index</td>
+<td>Keywords derived from the description of the store and its products that are checked against in searches</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the currency was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the currency was last updated</td>
+</tr>
+</tbody></table>
+<h2 id='list-stores'>List Stores</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/stores"</span>
+  -H <span class="s1">'Host: api.mycurrency.com'</span> 
+  -H <span class="s1">'Accept: application/json'</span> 
+  -H <span class="s1">'Content-Type: application/json'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stores"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sub-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm Spa"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A full service spa for full relaxation"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm Spa A full service spa for full relaxation</span><span class="se">\n</span><span class="s2">Facial - standard facial, spa services including facials, manicures and pedicures - 5000</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-11T12:11:16.475-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T02:21:49.458-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stores"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sub-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver ACME Toon Shop"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All manner of ACME Toon items available"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver ACME Toon Shop All manner of ACME Toon items available</span><span class="se">\n</span><span class="s2">Bugs Bunny Q-Tips - q-tips that work on the biggest ears, Toon products, products usable by toons - 1550</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-13T05:45:12.342-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-13T05:45:12.342-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stores"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sub-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco ACME Toon Shop"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco's premier shop for toons"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco ACME Toon Shop San Francisco's premier shop for toons</span><span class="se">\n</span><span class="s2">Bugs Bunny Q-Tips - q-tips that work on the biggest ears, Fictional items, Toon products - 1550</span><span class="se">\n</span><span class="s2">Teleport hole - can turn any rock face into a tunnel, fictional items, Toon products - 4000</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T02:11:46.512-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T02:11:46.512-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.mycurrency.com/stores?"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.mycurrency.com/stores?page=1&amp;per_page=25"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"prev"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.mycurrency.com/stores?page=1&amp;per_page=25"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"per-page"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total-pages"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total-count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all stores.</p>
+<h3 id='http-request-14'>HTTP Request</h3>
+<p><code>GET https://api.mycurrency.com/stores</code></p>
+
+<aside class="notice">
+Authentication: not required
+</aside>
+<h3 id='response-14'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the store</td>
+</tr>
+<tr>
+<td>currency-id</td>
+<td>The ID of the currency that the store&#39;s products are purchasable with</td>
+</tr>
+<tr>
+<td>sub-location-id</td>
+<td>The sub location where the store is located</td>
+</tr>
+<tr>
+<td>physical</td>
+<td>Whether the store is a physical location that customers can visit</td>
+</tr>
+<tr>
+<td>store-name</td>
+<td>The name of the store</td>
+</tr>
+<tr>
+<td>store-description</td>
+<td>The description of the store</td>
+</tr>
+<tr>
+<td>index</td>
+<td>Keywords derived from the description of the store and its products that are checked against in searches</td>
 </tr>
 <tr>
 <td>created-at</td>
