@@ -1058,11 +1058,11 @@ curl "https://api.mycurrency.com/stores?keyword=spa%20services"
     }
   ],
   "links": {
-    "self": "https://api.mycurrency.com/stores?keyword=spa%20services",
-    "first": "https://api.mycurrency.com/stores?keyword=spa%20services&page=1&per_page=25",
+    "self": "https://api.mycurrency.com/stores?keyword=spa+services",
+    "first": "https://api.mycurrency.com/stores?keyword=spa+services&page=1&per_page=25",
     "prev": null,
     "next": null,
-    "last": "https://api.mycurrency.com/stores?keyword=spa%20services&page=1&per_page=25"
+    "last": "https://api.mycurrency.com/stores?keyword=spa+services&page=1&per_page=25"
   },
   "meta": {
     "pagination": {
@@ -1163,6 +1163,76 @@ This endpoint retrieves all stores belonging to the sub location associated with
 ### HTTP Request
 
 `GET https://api.mycurrency.com/sub_locations/<SUB-LOCATION-ID>/stores`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the store
+currency-id | The ID of the currency that the store's products are purchasable with
+sub-location-id | The sub location where the store is located
+physical | Whether the store is a physical location that customers can visit
+store-name | The name of the store
+store-description | The description of the store
+index | Keywords derived from the description of the store and its products that are checked against in searches
+created-at | The time and date when the currency was created
+updated-at | The time and date when the currency was last updated
+
+## Search a Sub Location's Stores by Keyword
+
+```shell
+curl "https://api.mycurrency.com/sub_locations/2/stores?keyword=Bugs%20Bunny"
+  -H 'Host: api.mycurrency.com' 
+  -H 'Accept: application/json' 
+  -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "2",
+      "type": "stores",
+      "attributes": {
+        "currency-id": 2,
+        "sub-location-id": 2,
+        "physical": true,
+        "store-name": "Vancouver ACME Toon Shop",
+        "store-description": "All manner of ACME Toon items available",
+        "index": "Vancouver ACME Toon Shop All manner of ACME Toon items available\nBugs Bunny Q-Tips - q-tips that work on the biggest ears, Toon products, products usable by toons - 1550\n",
+        "updated-at": "2018-08-13T05:45:12.342-07:00",
+        "updated-at": "2018-08-13T05:45:12.342-07:00",
+      }
+    }
+  ],
+  "links": {
+    "self": "http://api.mycurrency.com/sub_locations/2/stores?keyword=Bugs+Bunny",
+    "first": "http://api.mycurrency.com/sub_locations/2/stores?keyword=Bugs+Bunny&page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "http://api.mycurrency.com/sub_locations/2/stores?keyword=Bugs+Bunny&page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "1"
+    }
+  }
+}
+```
+
+This endpoint retrieves all stores belonging to the sub location associated with the ID provided.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/sub_locations/<SUB-LOCATION-ID>/stores?keyword={}`
 
 <aside class="notice">
 Authentication: not required
