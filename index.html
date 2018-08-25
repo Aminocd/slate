@@ -300,6 +300,14 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#products" class="toc-h1 toc-link" data-title="Products">Products</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-a-product" class="toc-h2 toc-link" data-title="Get a Product">Get a Product</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='#'>Sign Up for a Developer Key</a> <!--- need to add link here ---></li>
@@ -313,7 +321,7 @@
 <p>Welcome to the MyCurrency API! The MyCurrency API endpoints are hosted at https://api.mycurrency.com</p>
 
 <p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a> &lt;!--- need to add link here --&gt;. Feel free to make pull requests if you have suggestions on how to augment it.</p>
-<h1 id='users'>Users</h1><h2 id='get-a-user'>Get a User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/users/2'</span> 
+<h1 id='users'>Users</h1><h2 id='get-a-user'>Get a User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/users/2'</span> <span class="se">\</span>
   -H <span class="s1">'Host: api.mycurrency.com'</span> -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
@@ -367,8 +375,8 @@ Authentication: not required
 <td>The URL at which the user profile picture can be found</td>
 </tr>
 </tbody></table>
-<h2 id='get-a-user-with-authorization'>Get a User with Authorization</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/users/2"</span>
-  -H <span class="s2">"Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao"</span> 
+<h2 id='get-a-user-with-authorization'>Get a User with Authorization</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/users/2"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao"</span> <span class="se">\</span>
   -H <span class="s1">'Host: api.mycurrency.com'</span> -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
@@ -437,10 +445,10 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The time and date when the user was last updated</td>
 </tr>
 </tbody></table>
-<h2 id='update-user'>Update User</h2><pre class="highlight shell tab-shell"><code>curl -X PUT https://api.mycurrency.com/users/2 
-  -d <span class="s1">'user[sub_location_id]=2'</span> 
-  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span> 
-  -H <span class="s1">'Accept: application/json'</span> 
+<h2 id='update-user'>Update User</h2><pre class="highlight shell tab-shell"><code>curl -X PUT https://api.mycurrency.com/users/2 <span class="se">\</span>
+  -d <span class="s1">'user[sub_location_id]=2'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: multipart/form-data'</span>
 </code></pre>
 <blockquote>
@@ -543,7 +551,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The time and date when the user was last updated</td>
 </tr>
 </tbody></table>
-<h1 id='issuers'>Issuers</h1><h2 id='get-an-issuer'>Get an Issuer</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/users/2/issuer'</span> 
+<h1 id='issuers'>Issuers</h1><h2 id='get-an-issuer'>Get an Issuer</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/users/2/issuer'</span> <span class="se">\</span>
   -H <span class="s1">'Host: api.mycurrency.com'</span> -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
@@ -592,7 +600,7 @@ Authentication: not required
 <td>The time and date when the issuer account was last updated</td>
 </tr>
 </tbody></table>
-<h1 id='currencies'>Currencies</h1><h2 id='get-a-currency'>Get a Currency</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/currencies/2'</span> 
+<h1 id='currencies'>Currencies</h1><h2 id='get-a-currency'>Get a Currency</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/currencies/2'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
@@ -661,7 +669,7 @@ Authentication: not required
 <td>The URL at which the currency icon picture can be found</td>
 </tr>
 </tbody></table>
-<h2 id='list-currencies'>List Currencies</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/currencies"</span>
+<h2 id='list-currencies'>List Currencies</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/currencies"</span> <span class="se">\</span>
   -H <span class="s1">'Host: api.mycurrency.com'</span> -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
@@ -798,9 +806,9 @@ Authentication: not required
 <td>The URL at which the currency icon picture can be found</td>
 </tr>
 </tbody></table>
-<h2 id='list-a-user-39-s-currencies'>List a User&#39;s Currencies</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/currencies?user_id=3"</span> 
-  -H <span class="s1">'Host: api.mycurrency.com'</span> -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json
-</span></code></pre>
+<h2 id='list-a-user-39-s-currencies'>List a User&#39;s Currencies</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/currencies?user_id=3"</span> <span class="se">\</span>
+  -H <span class="s1">'Host: api.mycurrency.com'</span> -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
+</code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
@@ -896,9 +904,9 @@ Authentication: not required
 <td>The URL at which the currency icon picture can be found</td>
 </tr>
 </tbody></table>
-<h2 id='create-currency'>Create Currency</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.mycurrency.com/users/2/issuer/currencies 
-  -d <span class="s1">'{"currency": { "burn_rate": 740, "name": "Calm dollars", "description": "Redeemable for services at Calm Massage Therapy" } }'</span> 
-  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span> 
+<h2 id='create-currency'>Create Currency</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.mycurrency.com/users/2/issuer/currencies <span class="se">\</span>
+  -d <span class="s1">'{"currency": { "burn_rate": 740, "name": "Calm dollars", "description": "Redeemable for services at Calm Massage Therapy" } }'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
@@ -1001,9 +1009,9 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The URL at which the currency icon picture can be found</td>
 </tr>
 </tbody></table>
-<h2 id='update-currency'>Update Currency</h2><pre class="highlight shell tab-shell"><code>curl -X PUT https://api.mycurrency.com/users/2/issuer/currencies/1 
-  -F <span class="s1">'currency[icon]=@calm_dollars.jpg'</span> 
-  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span> 
+<h2 id='update-currency'>Update Currency</h2><pre class="highlight shell tab-shell"><code>curl -X PUT https://api.mycurrency.com/users/2/issuer/currencies/1 <span class="se">\</span>
+  -F <span class="s1">'currency[icon]=@calm_dollars.jpg'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: multipart/form-data'</span>
 </code></pre>
 <blockquote>
@@ -1094,9 +1102,9 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The URL at which the currency icon picture can be found</td>
 </tr>
 </tbody></table>
-<h1 id='burnrate-change'>Burnrate Change</h1><h2 id='get-a-burnrate-change'>Get a Burnrate Change</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/currencies/1/burnrate_changes/1"</span> 
-  -H <span class="s1">'Host: api.mycurrency.com'</span> 
-  -H <span class="s1">'Accept: application/json'</span> 
+<h1 id='burnrate-change'>Burnrate Change</h1><h2 id='get-a-burnrate-change'>Get a Burnrate Change</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/currencies/1/burnrate_changes/1"</span> <span class="se">\</span>
+  -H <span class="s1">'Host: api.mycurrency.com'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
@@ -1160,9 +1168,9 @@ Authentication: not required
 <td>The time and date when the currency was last updated</td>
 </tr>
 </tbody></table>
-<h2 id='list-burnrate-changes'>List Burnrate Changes</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/currencies/1/burnrate_changes"</span> 
-  -H <span class="s1">'Host: api.mycurrency.com'</span> 
-  -H <span class="s1">'Accept: application/json'</span> 
+<h2 id='list-burnrate-changes'>List Burnrate Changes</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/currencies/1/burnrate_changes"</span> <span class="se">\</span>
+  -H <span class="s1">'Host: api.mycurrency.com'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
@@ -1265,10 +1273,10 @@ Authentication: not required
 <td>The time and date when the currency was last updated</td>
 </tr>
 </tbody></table>
-<h2 id='update-currency-39-s-burn-rate'>Update Currency&#39;s Burn Rate</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.mycurrency.com/currencies/1/burnrate_change 
-  -d <span class="s1">'{"burnrate_change": { "new_burn_rate": 500, "comment": "lowing the burn rate" } }'</span> 
-  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span> 
-  -H <span class="s1">'Accept: application/json'</span> 
+<h2 id='update-currency-39-s-burn-rate'>Update Currency&#39;s Burn Rate</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.mycurrency.com/currencies/1/burnrate_change <span class="se">\</span>
+  -d <span class="s1">'{"burnrate_change": { "new_burn_rate": 500, "comment": "lowing the burn rate" } }'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
@@ -1354,7 +1362,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The time and date when the currency was last updated</td>
 </tr>
 </tbody></table>
-<h1 id='stores'>Stores</h1><h2 id='get-a-store'>Get a Store</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/stores/2'</span> 
+<h1 id='stores'>Stores</h1><h2 id='get-a-store'>Get a Store</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/stores/2'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
@@ -1428,9 +1436,9 @@ Authentication: not required
 <td>The time and date when the currency was last updated</td>
 </tr>
 </tbody></table>
-<h2 id='list-stores'>List Stores</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/stores"</span>
-  -H <span class="s1">'Host: api.mycurrency.com'</span> 
-  -H <span class="s1">'Accept: application/json'</span> 
+<h2 id='list-stores'>List Stores</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/stores"</span> <span class="se">\</span>
+  -H <span class="s1">'Host: api.mycurrency.com'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
@@ -1447,7 +1455,7 @@ Authentication: not required
         </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm Spa"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A full service spa for full relaxation"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm Spa A full service spa for full relaxation</span><span class="se">\n</span><span class="s2">Facial - standard facial, spa services including facials, manicures and pedicures - 5000</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm Spa A full service spa for full relaxation</span><span class="se">\n</span><span class="s2">Facial - standard facial, spa services, includes facials, manicures and pedicures - 5000</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-11T12:11:16.475-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T02:21:49.458-07:00"</span><span class="w">
       </span><span class="p">}</span><span class="w">
@@ -1548,9 +1556,9 @@ Authentication: not required
 <td>The time and date when the currency was last updated</td>
 </tr>
 </tbody></table>
-<h2 id='list-a-currency-39-s-stores'>List a Currency&#39;s Stores</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/currencies/2/stores"</span>
-  -H <span class="s1">'Host: api.mycurrency.com'</span> 
-  -H <span class="s1">'Accept: application/json'</span> 
+<h2 id='list-a-currency-39-s-stores'>List a Currency&#39;s Stores</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/currencies/2/stores"</span> <span class="se">\</span>
+  -H <span class="s1">'Host: api.mycurrency.com'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
@@ -1654,9 +1662,9 @@ Authentication: not required
 <td>The time and date when the currency was last updated</td>
 </tr>
 </tbody></table>
-<h2 id='search-stores-by-keywords'>Search Stores by Keywords</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/stores?keyword=spa%20services"</span>
-  -H <span class="s1">'Host: api.mycurrency.com'</span> 
-  -H <span class="s1">'Accept: application/json'</span> 
+<h2 id='search-stores-by-keywords'>Search Stores by Keywords</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/stores?keyword=spa%20services"</span> <span class="se">\</span>
+  -H <span class="s1">'Host: api.mycurrency.com'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
@@ -1673,7 +1681,7 @@ Authentication: not required
         </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm Spa"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A full service spa for full relaxation"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm Spa A full service spa for full relaxation</span><span class="se">\n</span><span class="s2">Facial - standard facial, spa services including facials, manicures and pedicures - 5000</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm Spa A full service spa for full relaxation</span><span class="se">\n</span><span class="s2">Facial - standard facial, spa services, includes facials, manicures and pedicures - 5000</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-11T12:11:16.475-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T02:21:49.458-07:00"</span><span class="w">
       </span><span class="p">}</span><span class="w">
@@ -1746,9 +1754,9 @@ Authentication: not required
 <td>The time and date when the currency was last updated</td>
 </tr>
 </tbody></table>
-<h2 id='list-a-sub-location-39-s-stores'>List a Sub Location&#39;s Stores</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/sub_locations/1/stores"</span>
-  -H <span class="s1">'Host: api.mycurrency.com'</span> 
-  -H <span class="s1">'Accept: application/json'</span> 
+<h2 id='list-a-sub-location-39-s-stores'>List a Sub Location&#39;s Stores</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/sub_locations/1/stores"</span> <span class="se">\</span>
+  -H <span class="s1">'Host: api.mycurrency.com'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
@@ -1765,7 +1773,7 @@ Authentication: not required
         </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm Spa"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A full service spa for full relaxation"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm Spa A full service spa for full relaxation</span><span class="se">\n</span><span class="s2">Facial - standard facial, spa services including facials, manicures and pedicures - 5000</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm Spa A full service spa for full relaxation</span><span class="se">\n</span><span class="s2">Facial - standard facial, spa services, includes facials, manicures and pedicures - 5000</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-11T12:11:16.475-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T02:21:49.458-07:00"</span><span class="w">
       </span><span class="p">}</span><span class="w">
@@ -1852,9 +1860,9 @@ Authentication: not required
 <td>The time and date when the currency was last updated</td>
 </tr>
 </tbody></table>
-<h2 id='search-a-sub-location-39-s-stores-by-keyword'>Search a Sub Location&#39;s Stores by Keyword</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/sub_locations/1/stores?keyword=Bugs%20Bunny"</span>
-  -H <span class="s1">'Host: api.mycurrency.com'</span> 
-  -H <span class="s1">'Accept: application/json'</span> 
+<h2 id='search-a-sub-location-39-s-stores-by-keyword'>Search a Sub Location&#39;s Stores by Keyword</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/sub_locations/1/stores?keyword=Bugs%20Bunny"</span> <span class="se">\</span>
+  -H <span class="s1">'Host: api.mycurrency.com'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
@@ -1942,6 +1950,95 @@ Authentication: not required
 <tr>
 <td>updated-at</td>
 <td>The time and date when the currency was last updated</td>
+</tr>
+</tbody></table>
+<h1 id='products'>Products</h1><h2 id='get-a-product'>Get a Product</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/products/2'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"products"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"sub-category-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store-id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Facial"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"standard facial"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price-cents"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"continued"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"last-activated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-24T05:01:25.879-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-24T05:01:25.879-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-24T05:01:25.879-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"get-image-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/products/images/000/000/001/original/facial.jpg"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a particular product. The product must be active and not discontinued to be viewable by non-authorized user.</p>
+<h3 id='http-request-19'>HTTP Request</h3>
+<p><code>GET https://api.mycurrency.com/products/&lt;ID&gt;</code></p>
+
+<aside class="notice">
+Authentication: not required for active products that have not been discontinued. To view details of products that are inactive or discontinued, the request requires the OAuth access-token associated with the User that the product's store belongs to
+</aside>
+<h3 id='response-19'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the product</td>
+</tr>
+<tr>
+<td>sub-category-id</td>
+<td>The sub category that the product belongs to</td>
+</tr>
+<tr>
+<td>store-id</td>
+<td>The ID of the store where the product is sold</td>
+</tr>
+<tr>
+<td>product-name</td>
+<td>The name of the product</td>
+</tr>
+<tr>
+<td>product-description</td>
+<td>The description of the product</td>
+</tr>
+<tr>
+<td>price-cents</td>
+<td>The price of the product by multiple of 100, and denominated in the currency of the store where the product is sold</td>
+</tr>
+<tr>
+<td>active</td>
+<td>Whether the product is active or not</td>
+</tr>
+<tr>
+<td>continued</td>
+<td>Whether the product is continued or not. Discontinued products cannot be recontinued</td>
+</tr>
+<tr>
+<td>last-activated-at</td>
+<td>The time and date when the product was last activated</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the product was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the product was last updated</td>
+</tr>
+<tr>
+<td>get-image-url</td>
+<td>The URL at which the product image picture can be found</td>
 </tr>
 </tbody></table>
 
