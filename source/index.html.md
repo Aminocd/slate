@@ -26,7 +26,7 @@ This example API documentation page was created with [Slate](https://github.com/
 ## Get a User
 
 ```shell
-curl 'https://api.mycurrency.com/users/2' 
+curl 'https://api.mycurrency.com/users/2' \
   -H 'Host: api.mycurrency.com' -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
 
@@ -70,8 +70,8 @@ get-avatar-url | The URL at which the user profile picture can be found
 ## Get a User with Authorization
 
 ```shell
-curl "https://api.mycurrency.com/users/2"
-  -H "Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao" 
+curl "https://api.mycurrency.com/users/2" \
+  -H "Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao" \
   -H 'Host: api.mycurrency.com' -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
 
@@ -121,10 +121,10 @@ updated-at | The time and date when the user was last updated
 ## Update User
 
 ```shell
-curl -X PUT https://api.mycurrency.com/users/2 
-  -d 'user[sub_location_id]=2' 
-  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' 
-  -H 'Accept: application/json' 
+curl -X PUT https://api.mycurrency.com/users/2 \
+  -d 'user[sub_location_id]=2' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' \
+  -H 'Accept: application/json' \
   -H 'Content-Type: multipart/form-data'
 ```
 
@@ -185,7 +185,7 @@ updated-at | The time and date when the user was last updated
 ## Get an Issuer
 
 ```shell
-curl 'https://api.mycurrency.com/users/2/issuer' 
+curl 'https://api.mycurrency.com/users/2/issuer' \
   -H 'Host: api.mycurrency.com' -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
 
@@ -229,7 +229,7 @@ updated_at | The time and date when the issuer account was last updated
 ## Get a Currency
 
 ```shell
-curl 'https://api.mycurrency.com/currencies/2' 
+curl 'https://api.mycurrency.com/currencies/2' \
   -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
 
@@ -279,7 +279,7 @@ get-icon-url | The URL at which the currency icon picture can be found
 ## List Currencies
 
 ```shell
-curl "https://api.mycurrency.com/currencies"
+curl "https://api.mycurrency.com/currencies" \
   -H 'Host: api.mycurrency.com' -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
 
@@ -397,8 +397,8 @@ get-icon-url | The URL at which the currency icon picture can be found
 ## List a User's Currencies
 
 ```shell
-curl "https://api.mycurrency.com/currencies?user_id=3" 
-  -H 'Host: api.mycurrency.com' -H 'Accept: application/json' -H 'Content-Type: application/json
+curl "https://api.mycurrency.com/currencies?user_id=3" \
+  -H 'Host: api.mycurrency.com' -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
 
 > The above command returns JSON structured like this:
@@ -476,9 +476,9 @@ get-icon-url | The URL at which the currency icon picture can be found
 ## Create Currency
 
 ```shell
-curl -X POST https://api.mycurrency.com/users/2/issuer/currencies 
-  -d '{"currency": { "burn_rate": 740, "name": "Calm dollars", "description": "Redeemable for services at Calm Massage Therapy" } }' 
-  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' 
+curl -X POST https://api.mycurrency.com/users/2/issuer/currencies \
+  -d '{"currency": { "burn_rate": 740, "name": "Calm dollars", "description": "Redeemable for services at Calm Massage Therapy" } }' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' \
   -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
 
@@ -537,9 +537,9 @@ get-icon-url | The URL at which the currency icon picture can be found
 ## Update Currency
 
 ```shell
-curl -X PUT https://api.mycurrency.com/users/2/issuer/currencies/1 
-  -F 'currency[icon]=@calm_dollars.jpg' 
-  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' 
+curl -X PUT https://api.mycurrency.com/users/2/issuer/currencies/1 \
+  -F 'currency[icon]=@calm_dollars.jpg' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' \
   -H 'Accept: application/json' -H 'Content-Type: multipart/form-data'
 ```
 
@@ -598,9 +598,9 @@ get-icon-url | The URL at which the currency icon picture can be found
 ## Get a Burnrate Change
 
 ```shell
-curl "https://api.mycurrency.com/currencies/1/burnrate_changes/1" 
-  -H 'Host: api.mycurrency.com' 
-  -H 'Accept: application/json' 
+curl "https://api.mycurrency.com/currencies/1/burnrate_changes/1" \
+  -H 'Host: api.mycurrency.com' \
+  -H 'Accept: application/json' \
   -H 'Content-Type: application/json'
 ```
 
@@ -648,9 +648,9 @@ updated-at | The time and date when the currency was last updated
 ## List Burnrate Changes
 
 ```shell
-curl "https://api.mycurrency.com/currencies/1/burnrate_changes" 
-  -H 'Host: api.mycurrency.com' 
-  -H 'Accept: application/json' 
+curl "https://api.mycurrency.com/currencies/1/burnrate_changes" \
+  -H 'Host: api.mycurrency.com' \
+  -H 'Accept: application/json' \
   -H 'Content-Type: application/json'
 ```
 
@@ -737,10 +737,10 @@ updated-at | The time and date when the currency was last updated
 ## Update Currency's Burn Rate
 
 ```shell
-curl -X POST https://api.mycurrency.com/currencies/1/burnrate_change 
-  -d '{"burnrate_change": { "new_burn_rate": 500, "comment": "lowing the burn rate" } }' 
-  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' 
-  -H 'Accept: application/json' 
+curl -X POST https://api.mycurrency.com/currencies/1/burnrate_change \
+  -d '{"burnrate_change": { "new_burn_rate": 500, "comment": "lowing the burn rate" } }' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' \
+  -H 'Accept: application/json' \
   -H 'Content-Type: application/json'
 ```
 
@@ -797,7 +797,7 @@ updated-at | The time and date when the currency was last updated
 ## Get a Store
 
 ```shell
-curl 'https://api.mycurrency.com/stores/2' 
+curl 'https://api.mycurrency.com/stores/2' \
   -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
 
@@ -849,9 +849,9 @@ updated-at | The time and date when the currency was last updated
 ## List Stores
 
 ```shell
-curl "https://api.mycurrency.com/stores"
-  -H 'Host: api.mycurrency.com' 
-  -H 'Accept: application/json' 
+curl "https://api.mycurrency.com/stores" \
+  -H 'Host: api.mycurrency.com' \
+  -H 'Accept: application/json' \
   -H 'Content-Type: application/json'
 ```
 
@@ -869,7 +869,7 @@ curl "https://api.mycurrency.com/stores"
         "physical": true,
         "store-name": "Calm Spa",
         "store-description": "A full service spa for full relaxation",
-        "index": "Calm Spa A full service spa for full relaxation\nFacial - standard facial, spa services including facials, manicures and pedicures - 5000\n",
+        "index": "Calm Spa A full service spa for full relaxation\nFacial - standard facial, spa services, includes facials, manicures and pedicures - 5000\n",
         "created-at": "2018-08-11T12:11:16.475-07:00",
         "updated-at": "2018-08-12T02:21:49.458-07:00"
       }
@@ -947,9 +947,9 @@ updated-at | The time and date when the currency was last updated
 ## List a Currency's Stores
 
 ```shell
-curl "https://api.mycurrency.com/currencies/2/stores"
-  -H 'Host: api.mycurrency.com' 
-  -H 'Accept: application/json' 
+curl "https://api.mycurrency.com/currencies/2/stores" \
+  -H 'Host: api.mycurrency.com' \
+  -H 'Accept: application/json' \
   -H 'Content-Type: application/json'
 ```
 
@@ -1031,9 +1031,9 @@ updated-at | The time and date when the currency was last updated
 ## Search Stores by Keywords
 
 ```shell
-curl "https://api.mycurrency.com/stores?keyword=spa%20services"
-  -H 'Host: api.mycurrency.com' 
-  -H 'Accept: application/json' 
+curl "https://api.mycurrency.com/stores?keyword=spa%20services" \
+  -H 'Host: api.mycurrency.com' \
+  -H 'Accept: application/json' \
   -H 'Content-Type: application/json'
 ```
 
@@ -1051,7 +1051,7 @@ curl "https://api.mycurrency.com/stores?keyword=spa%20services"
         "physical": true,
         "store-name": "Calm Spa",
         "store-description": "A full service spa for full relaxation",
-        "index": "Calm Spa A full service spa for full relaxation\nFacial - standard facial, spa services including facials, manicures and pedicures - 5000\n",
+        "index": "Calm Spa A full service spa for full relaxation\nFacial - standard facial, spa services, includes facials, manicures and pedicures - 5000\n",
         "created-at": "2018-08-11T12:11:16.475-07:00",
         "updated-at": "2018-08-12T02:21:49.458-07:00"
       }
@@ -1101,9 +1101,9 @@ updated-at | The time and date when the currency was last updated
 ## List a Sub Location's Stores
 
 ```shell
-curl "https://api.mycurrency.com/sub_locations/1/stores"
-  -H 'Host: api.mycurrency.com' 
-  -H 'Accept: application/json' 
+curl "https://api.mycurrency.com/sub_locations/1/stores" \
+  -H 'Host: api.mycurrency.com' \
+  -H 'Accept: application/json' \
   -H 'Content-Type: application/json'
 ```
 
@@ -1121,7 +1121,7 @@ curl "https://api.mycurrency.com/sub_locations/1/stores"
         "physical": true,
         "store-name": "Calm Spa",
         "store-description": "A full service spa for full relaxation",
-        "index": "Calm Spa A full service spa for full relaxation\nFacial - standard facial, spa services including facials, manicures and pedicures - 5000\n",
+        "index": "Calm Spa A full service spa for full relaxation\nFacial - standard facial, spa services, includes facials, manicures and pedicures - 5000\n",
         "created-at": "2018-08-11T12:11:16.475-07:00",
         "updated-at": "2018-08-12T02:21:49.458-07:00"
       }
@@ -1185,9 +1185,9 @@ updated-at | The time and date when the currency was last updated
 ## Search a Sub Location's Stores by Keyword
 
 ```shell
-curl "https://api.mycurrency.com/sub_locations/1/stores?keyword=Bugs%20Bunny"
-  -H 'Host: api.mycurrency.com' 
-  -H 'Accept: application/json' 
+curl "https://api.mycurrency.com/sub_locations/1/stores?keyword=Bugs%20Bunny" \
+  -H 'Host: api.mycurrency.com' \
+  -H 'Accept: application/json' \
   -H 'Content-Type: application/json'
 ```
 
@@ -1251,4 +1251,64 @@ store-description | The description of the store
 index | Keywords derived from the description of the store and its products that are checked against in searches
 created-at | The time and date when the currency was created
 updated-at | The time and date when the currency was last updated
+
+# Products
+
+## Get a Product
+
+```shell
+curl 'https://api.mycurrency.com/products/2' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "1",
+    "type": "products",
+    "attributes": {
+      "sub-category-id": 2,
+      "store-id":1,
+      "product-name": "Facial",
+      "product-description": "standard facial",
+      "price-cents": 5000,
+      "active": true,
+      "continued": true,
+      "last-activated-at": "2018-08-24T05:01:25.879-07:00",
+      "created-at": "2018-08-24T05:01:25.879-07:00",
+      "updated-at": "2018-08-24T05:01:25.879-07:00",
+      "get-image-url": "/system/products/images/000/000/001/original/facial.jpg"
+    }
+  }
+}
+```
+
+This endpoint retrieves a particular product. The product must be active and not discontinued to be viewable by non-authorized user.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/products/<ID>`
+
+<aside class="notice">
+Authentication: not required for active products that have not been discontinued. To view details of products that are inactive or discontinued, the request requires the OAuth access-token associated with the User that the product's store belongs to
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the product
+sub-category-id | The sub category that the product belongs to
+store-id | The ID of the store where the product is sold
+product-name | The name of the product
+product-description | The description of the product
+price-cents | The price of the product by multiple of 100, and denominated in the currency of the store where the product is sold
+active | Whether the product is active or not
+continued | Whether the product is continued or not. Discontinued products cannot be recontinued
+last-activated-at | The time and date when the product was last activated
+created-at | The time and date when the product was created
+updated-at | The time and date when the product was last updated
+get-image-url | The URL at which the product image picture can be found
 
