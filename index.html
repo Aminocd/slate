@@ -298,6 +298,12 @@
                   <li>
                     <a href="#search-a-sub-location-39-s-stores-by-keyword" class="toc-h2 toc-link" data-title="Search a Sub Location's Stores by Keyword">Search a Sub Location's Stores by Keyword</a>
                   </li>
+                  <li>
+                    <a href="#create-store" class="toc-h2 toc-link" data-title="Create Store">Create Store</a>
+                  </li>
+                  <li>
+                    <a href="#update-store" class="toc-h2 toc-link" data-title="Update Store">Update Store</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -1958,6 +1964,233 @@ Authentication: not required
 <td>The time and date when the currency was last updated</td>
 </tr>
 </tbody></table>
+<h2 id='create-store'>Create Store</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.mycurrency.com/users/4/issuer/currencies/5/stores <span class="se">\</span>
+  -d <span class="s1">'{"store": { "store_name": "Freds Fishing Supplies", "store_description": "Fishing supply shop", "sub_location_id": "2", "physical": "true"} }'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span> 
+  -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stores"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sub-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fishing supply shop"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies Fishing supply shop"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-26T16:09:40.080-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-26T16:09:40.080-07:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Creates a store.</p>
+<h3 id='http-request-19'>HTTP Request</h3>
+<p><code>POST https://api.mycurrency.com/users/&lt;USER-ID&gt;/issuer/currencies/&lt;CURRENCY-ID&gt;/stores</code></p>
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the USER-ID 
+</aside>
+<h3 id='arguments-5'>ARGUMENTS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>currency_id</td>
+<td>integer</td>
+<td>yes</td>
+<td>The ID of the currency that the store&#39;s products are purchasable with</td>
+</tr>
+<tr>
+<td>sub_location_id</td>
+<td>integer</td>
+<td>yes</td>
+<td>The sub location where the store is located</td>
+</tr>
+<tr>
+<td>physical</td>
+<td>boolean</td>
+<td>yes</td>
+<td>Whether the store is a physical location that customers can visit</td>
+</tr>
+<tr>
+<td>store-name</td>
+<td>string</td>
+<td>yes</td>
+<td>The name of the store</td>
+</tr>
+<tr>
+<td>store-description</td>
+<td>string</td>
+<td>no</td>
+<td>The description of the store</td>
+</tr>
+</tbody></table>
+<h3 id='response-19'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the store</td>
+</tr>
+<tr>
+<td>currency-id</td>
+<td>The ID of the currency that the store&#39;s products are purchasable with, provided in URL path</td>
+</tr>
+<tr>
+<td>sub-location-id</td>
+<td>The sub location where the store is located</td>
+</tr>
+<tr>
+<td>physical</td>
+<td>Whether the store is a physical location that customers can visit</td>
+</tr>
+<tr>
+<td>store-name</td>
+<td>The name of the store</td>
+</tr>
+<tr>
+<td>store-description</td>
+<td>The description of the store</td>
+</tr>
+<tr>
+<td>index</td>
+<td>Keywords derived from the description of the store and its products that are checked against in searches</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the currency was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the currency was last updated</td>
+</tr>
+</tbody></table>
+<h2 id='update-store'>Update Store</h2><pre class="highlight shell tab-shell"><code>curl -X PUT https://api.mycurrency.com/users/4/issuer/currencies/5/stores/3 <span class="se">\</span>
+  -d <span class="s1">'store[sub_location_id]=1&amp;store[physical]=false&amp;store[store_description]="The finest Fishing shop in San Francisco"'</span> <span class="se">\ </span>  
+  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: multipart/form-data'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stores"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sub-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The finest fishing shop in San Francisco"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies The finest fishing shop in San Francisco"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-26T16:09:40.080-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-26T16:09:40.080-07:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Updates a store.</p>
+<h3 id='http-request-20'>HTTP Request</h3>
+<p><code>PUT https://api.mycurrency.com/users/&lt;USER-ID&gt;/issuer/currencies/&lt;CURRENCY-ID&gt;/stores/&lt;ID&gt;</code></p>
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+<h3 id='arguments-6'>ARGUMENTS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>currency_id</td>
+<td>integer</td>
+<td>yes</td>
+<td>The ID of the currency that the store&#39;s products are purchasable with</td>
+</tr>
+<tr>
+<td>sub_location_id</td>
+<td>integer</td>
+<td>yes</td>
+<td>The sub location where the store is located</td>
+</tr>
+<tr>
+<td>physical</td>
+<td>boolean</td>
+<td>yes</td>
+<td>Whether the store is a physical location that customers can visit</td>
+</tr>
+<tr>
+<td>store-description</td>
+<td>string</td>
+<td>no</td>
+<td>The description of the store</td>
+</tr>
+</tbody></table>
+<h3 id='response-20'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the store</td>
+</tr>
+<tr>
+<td>currency-id</td>
+<td>The ID of the currency that the store&#39;s products are purchasable with, provided in URL path</td>
+</tr>
+<tr>
+<td>sub-location-id</td>
+<td>The sub location where the store is located</td>
+</tr>
+<tr>
+<td>physical</td>
+<td>Whether the store is a physical location that customers can visit</td>
+</tr>
+<tr>
+<td>store-name</td>
+<td>The name of the store</td>
+</tr>
+<tr>
+<td>store-description</td>
+<td>The description of the store</td>
+</tr>
+<tr>
+<td>index</td>
+<td>Keywords derived from the description of the store and its products that are checked against in searches</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the currency was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the currency was last updated</td>
+</tr>
+</tbody></table>
 <h1 id='products'>Products</h1><h2 id='get-a-product'>Get a Product</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/products/1'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
@@ -1985,13 +2218,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular product. The product must be active and not discontinued to be viewable by a non-authorized user.</p>
-<h3 id='http-request-19'>HTTP Request</h3>
+<h3 id='http-request-21'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/products/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: not required for active products that have not been discontinued. To view details of products that are inactive or discontinued, the request requires the OAuth access-token associated with the User that the product's store belongs to
 </aside>
-<h3 id='response-19'>RESPONSE</h3>
+<h3 id='response-21'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2141,13 +2374,13 @@ Authentication: not required for active products that have not been discontinued
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all products that are active and not discontinued.</p>
-<h3 id='http-request-20'>HTTP Request</h3>
+<h3 id='http-request-22'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/products</code></p>
 
 <aside class="notice">
 Authentication: not required 
 </aside>
-<h3 id='response-20'>RESPONSE</h3>
+<h3 id='response-22'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2263,13 +2496,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all products belonging to a particular currency. Only products that are active and not discontinued are shown to non-authorized users while authorized users see all of the store&#39;s products.</p>
-<h3 id='http-request-21'>HTTP Request</h3>
+<h3 id='http-request-23'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/stores/&lt;STORE-ID&gt;/products</code></p>
 
 <aside class="notice">
 Authentication: not required to see the products of a store that are active and that have not been discontinued. To view details of a store's products that are inactive and/or discontinued, the request requires the OAuth access-token associated with the User that the specified store belongs to
 </aside>
-<h3 id='response-21'>RESPONSE</h3>
+<h3 id='response-23'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
