@@ -306,6 +306,9 @@
                   <li>
                     <a href="#get-a-product" class="toc-h2 toc-link" data-title="Get a Product">Get a Product</a>
                   </li>
+                  <li>
+                    <a href="#list-products" class="toc-h2 toc-link" data-title="List Products">List Products</a>
+                  </li>
               </ul>
           </li>
       </ul>
@@ -1483,7 +1486,7 @@ Authentication: not required
         </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco ACME Toon Shop"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco's premier shop for toons"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco ACME Toon Shop San Francisco's premier shop for toons</span><span class="se">\n</span><span class="s2">Bugs Bunny Q-Tips - q-tips that work on the biggest ears, Fictional items, Toon products - 1550</span><span class="se">\n</span><span class="s2">Teleport hole - can turn any rock face into a tunnel, fictional items, Toon products - 4000</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco ACME Toon Shop San Francisco's premier shop for toons</span><span class="se">\n</span><span class="s2">Bugs Bunny Q-Tips - q-tips that work on the biggest ears, Toon products, products usable by toons - 1550</span><span class="se">\n</span><span class="s2">Teleport hole - can turn any rock face into a tunnel, Toon products, products usable by toons - 4000</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T02:11:46.512-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T02:11:46.512-07:00"</span><span class="w">
       </span><span class="p">}</span><span class="w">
@@ -1952,7 +1955,7 @@ Authentication: not required
 <td>The time and date when the currency was last updated</td>
 </tr>
 </tbody></table>
-<h1 id='products'>Products</h1><h2 id='get-a-product'>Get a Product</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/products/2'</span> <span class="se">\</span>
+<h1 id='products'>Products</h1><h2 id='get-a-product'>Get a Product</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/products/1'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
@@ -1978,7 +1981,7 @@ Authentication: not required
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves a particular product. The product must be active and not discontinued to be viewable by non-authorized user.</p>
+<p>This endpoint retrieves a particular product. The product must be active and not discontinued to be viewable by a non-authorized user.</p>
 <h3 id='http-request-19'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/products/&lt;ID&gt;</code></p>
 
@@ -1986,6 +1989,162 @@ Authentication: not required
 Authentication: not required for active products that have not been discontinued. To view details of products that are inactive or discontinued, the request requires the OAuth access-token associated with the User that the product's store belongs to
 </aside>
 <h3 id='response-19'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the product</td>
+</tr>
+<tr>
+<td>sub-category-id</td>
+<td>The sub category that the product belongs to</td>
+</tr>
+<tr>
+<td>store-id</td>
+<td>The ID of the store where the product is sold</td>
+</tr>
+<tr>
+<td>product-name</td>
+<td>The name of the product</td>
+</tr>
+<tr>
+<td>product-description</td>
+<td>The description of the product</td>
+</tr>
+<tr>
+<td>price-cents</td>
+<td>The price of the product by multiple of 100, and denominated in the currency of the store where the product is sold</td>
+</tr>
+<tr>
+<td>active</td>
+<td>Whether the product is active or not</td>
+</tr>
+<tr>
+<td>continued</td>
+<td>Whether the product is continued or not. Discontinued products cannot be recontinued</td>
+</tr>
+<tr>
+<td>last-activated-at</td>
+<td>The time and date when the product was last activated</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the product was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the product was last updated</td>
+</tr>
+<tr>
+<td>get-image-url</td>
+<td>The URL at which the product image picture can be found</td>
+</tr>
+</tbody></table>
+<h2 id='list-products'>List Products</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/products"</span> <span class="se">\</span>
+  -H <span class="s1">'Host: api.mycurrency.com'</span> -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"products"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"sub-category-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Facial"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"standard facial"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price-cents"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"continued"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last-activated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T02:17:48.614-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T02:17:48.614-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T18:02:24.284-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"get-image-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/products/images/000/000/001/original/facial.jpg"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"products"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"sub-category-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bugs Bunny Q-Tips"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"q-tips that work on the biggest ears"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price-cents"</span><span class="p">:</span><span class="w"> </span><span class="mi">1500</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"continued"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last-activated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-24T05:01:25.879-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-24T05:01:25.879-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-24T05:01:25.879-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"get-image-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/products/images/000/000/002/original/bugs_q_tips.jpg"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"products"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"sub-category-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bugs Bunny Q-Tips"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"q-tips that work on the biggest ears"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price-cents"</span><span class="p">:</span><span class="w"> </span><span class="mi">1500</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"continued"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last-activated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-25T01:34:30.413-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-25T01:34:30.413-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-25T01:34:30.413-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"get-image-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/products/images/000/000/003/original/bugs_q_tips.jpg"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"products"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"sub-category-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Teleport hole"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"can turn any rock face into a tunnel"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price-cents"</span><span class="p">:</span><span class="w"> </span><span class="mi">4000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"continued"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last-activated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-25T02:14:35.984-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-25T01:34:30.413-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-25T02:14:35.984-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"get-image-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/products/images/000/000/004/original/teleport_hole.jpg"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.mycurrency.com/products?"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.mycurrency.com/products?page=1&amp;per_page=25"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"prev"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.mycurrency.com/products?page=1&amp;per_page=25"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"per-page"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total-pages"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total-count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all products that are active and not discontinued.</p>
+<h3 id='http-request-20'>HTTP Request</h3>
+<p><code>GET https://api.mycurrency.com/products</code></p>
+
+<aside class="notice">
+Authentication: not required 
+</aside>
+<h3 id='response-20'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
