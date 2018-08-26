@@ -1436,3 +1436,94 @@ last-activated-at | The time and date when the product was last activated
 created-at | The time and date when the product was created
 updated-at | The time and date when the product was last updated
 get-image-url | The URL at which the product image picture can be found
+
+## List a Store's Products
+
+```shell
+curl "https://api.mycurrency.com/stores/3/products" \
+  -H 'Host: api.mycurrency.com' -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "3",
+      "type": "products",
+      "attributes": {
+        "sub-category-id": 6,
+        "store-id":3,
+        "product-name": "Bugs Bunny Q-Tips",
+        "product-description": "q-tips that work on the biggest ears",
+        "price-cents": 1500,
+        "active": true,
+        "continued": true,
+        "last-activated-at": "2018-08-25T01:34:30.413-07:00",
+        "created-at": "2018-08-25T01:34:30.413-07:00",
+        "updated-at": "2018-08-25T01:34:30.413-07:00",
+        "get-image-url": "/system/products/images/000/000/003/original/bugs_q_tips.jpg"
+      }
+    }
+    {
+      "id": "4",
+      "type": "products",
+      "attributes": {
+        "sub-category-id": 6,
+        "store-id":3,
+        "product-name": "Teleport hole",
+        "product-description": "can turn any rock face into a tunnel",
+        "price-cents": 4000,
+        "active": true,
+        "continued": true,
+        "last-activated-at": "2018-08-25T02:14:35.984-07:00",
+        "created-at": "2018-08-25T01:34:30.413-07:00",
+        "updated-at": "2018-08-25T02:14:35.984-07:00",
+        "get-image-url": "/system/products/images/000/000/004/original/teleport_hole.jpg"
+      }
+    }
+  ],
+  "links": {
+    "self": "http://api.mycurrency.com/stores/3/products?",
+    "first": "http://api.mycurrency.com/stores/3/products?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "http://api.mycurrency.com/stores/3/products?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "2"
+    }
+  }
+}
+```
+
+This endpoint retrieves all products belonging to a particular currency. Only products that are active and not discontinued are shown to non-authorized users while authorized users see all of the store's products.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/stores/<STORE-ID>/products`
+
+<aside class="notice">
+Authentication: not required to see the products of a store that are active and that have not been discontinued. To view details of a store's products that are inactive and/or discontinued, the request requires the OAuth access-token associated with the User that the specified store belongs to
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the product
+sub-category-id | The sub category that the product belongs to
+store-id | The ID of the store where the product is sold
+product-name | The name of the product
+product-description | The description of the product
+price-cents | The price of the product by multiple of 100, and denominated in the currency of the store where the product is sold
+active | Whether the product is active or not
+continued | Whether the product is continued or not. Discontinued products cannot be recontinued
+last-activated-at | The time and date when the product was last activated
+created-at | The time and date when the product was created
+updated-at | The time and date when the product was last updated
+get-image-url | The URL at which the product image picture can be found
