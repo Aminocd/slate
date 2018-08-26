@@ -1252,6 +1252,134 @@ index | Keywords derived from the description of the store and its products that
 created-at | The time and date when the currency was created
 updated-at | The time and date when the currency was last updated
 
+## Create Store
+
+```shell
+curl -X POST https://api.mycurrency.com/users/4/issuer/currencies/5/stores \
+  -d '{"store": { "store_name": "Freds Fishing Supplies", "store_description": "Fishing supply shop", "sub_location_id": "2", "physical": "true"} }' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' 
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "3",
+    "type": "stores",
+    "attributes": {
+      "currency-id": 5,
+      "sub-location-id": 2,
+      "physical": true,
+      "store-name": "Freds Fishing Supplies",
+      "store-description": "Fishing supply shop",
+      "index": "Freds Fishing Supplies Fishing supply shop",
+      "created-at": "2018-08-26T16:09:40.080-07:00",
+      "updated-at": "2018-08-26T16:09:40.080-07:00"
+    }
+  }
+}
+```
+
+Creates a store.
+
+### HTTP Request
+
+`POST https://api.mycurrency.com/users/<USER-ID>/issuer/currencies/<CURRENCY-ID>/stores`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the USER-ID 
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+currency_id | integer | yes | The ID of the currency that the store's products are purchasable with
+sub_location_id | integer | yes | The sub location where the store is located
+physical | boolean | yes | Whether the store is a physical location that customers can visit
+store-name | string | yes | The name of the store
+store-description | string | no | The description of the store
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the store
+currency-id | The ID of the currency that the store's products are purchasable with, provided in URL path
+sub-location-id | The sub location where the store is located
+physical | Whether the store is a physical location that customers can visit
+store-name | The name of the store
+store-description | The description of the store
+index | Keywords derived from the description of the store and its products that are checked against in searches
+created-at | The time and date when the currency was created
+updated-at | The time and date when the currency was last updated
+
+## Update Store
+
+```shell
+curl -X PUT https://api.mycurrency.com/users/4/issuer/currencies/5/stores/3 \
+  -d 'store[sub_location_id]=1&store[physical]=false&store[store_description]="The finest Fishing shop in San Francisco"' \   
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: multipart/form-data'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "3",
+    "type": "stores",
+    "attributes": {
+      "currency-id": 5,
+      "sub-location-id": 2,
+      "physical": true,
+      "store-name": "Freds Fishing Supplies",
+      "store-description": "The finest fishing shop in San Francisco",
+      "index": "Freds Fishing Supplies The finest fishing shop in San Francisco",
+      "created-at": "2018-08-26T16:09:40.080-07:00",
+      "updated-at": "2018-08-26T16:09:40.080-07:00"
+    }
+  }
+}
+```
+
+Updates a store.
+
+### HTTP Request
+
+`PUT https://api.mycurrency.com/users/<USER-ID>/issuer/currencies/<CURRENCY-ID>/stores/<ID>`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+currency_id | integer | yes | The ID of the currency that the store's products are purchasable with
+sub_location_id | integer | yes | The sub location where the store is located
+physical | boolean | yes | Whether the store is a physical location that customers can visit
+store-description | string | no | The description of the store
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the store
+currency-id | The ID of the currency that the store's products are purchasable with, provided in URL path
+sub-location-id | The sub location where the store is located
+physical | Whether the store is a physical location that customers can visit
+store-name | The name of the store
+store-description | The description of the store
+index | Keywords derived from the description of the store and its products that are checked against in searches
+created-at | The time and date when the currency was created
+updated-at | The time and date when the currency was last updated
+
 # Products
 
 ## Get a Product
