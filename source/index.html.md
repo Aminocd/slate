@@ -1354,7 +1354,7 @@ Updates a store.
 `PUT https://api.mycurrency.com/users/<USER-ID>/issuer/currencies/<CURRENCY-ID>/stores/<ID>`
 
 <aside class="notice">
-Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+Authentication: the request requires the OAuth access-token associated with the User referenced by the USER-ID 
 </aside>
 
 ### ARGUMENTS
