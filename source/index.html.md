@@ -1787,13 +1787,16 @@ image | filename | no | The image file to be uploaded as product's image picture
 
 Parameter | Description
 --------- | -----------
-id | The ID of the store
-currency-id | The ID of the currency that the store's products are purchasable with, provided in URL path
-sub-location-id | The sub location where the store is located
-physical | Whether the store is a physical location that customers can visit
-store-name | The name of the store
-store-description | The description of the store
-index | Keywords derived from the description of the store and its products that are checked against in searches
-created-at | The time and date when the currency was created
-updated-at | The time and date when the currency was last updated
+id | The ID of the product
+sub-category-id | The sub category that the product belongs to
+store-id | The ID of the store where the product is sold
+product-name | The name of the product
+product-description | The description of the product
+price-cents | The price of the product by multiple of 100, and denominated in the currency of the store where the product is sold
+active | Whether the product is active or not
+continued | Whether the product is continued or not. Discontinued products cannot be recontinued
+last-activated-at | The time and date when the product was last activated
+created-at | The time and date when the product was created
+updated-at | The time and date when the product was last updated
+get-image-url | The URL at which the product image picture can be found
 
