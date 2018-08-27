@@ -1706,12 +1706,12 @@ Authentication: the request requires the OAuth access-token associated with the 
 
 Parameter | Type | Required | Description
 --------- | ------- | ------- | -----------
-sub_category_id | The sub category that the product belongs to
-store_id | The ID of the store where the product is sold, provided in URL path
-product_name | The name of the product
-product_description | The description of the product
-price_cents | The price of the product by multiple of 100, and denominated in the currency of the store where the product is sold
-active | Whether the product is active or not
+sub_category_id | integer | yes | The sub category that the product belongs to
+store_id | integer | yes | The ID of the store where the product is sold, provided in URL path
+product_name | string | yes | The name of the product
+product_description | string | no | The description of the product
+price_cents | integer | yes | The price of the product by multiple of 100, and denominated in the currency of the store where the product is sold
+active | boolean | yes | Whether the product is active or not
 image | filename | no | The image file to be uploaded as product's image picture
 
 ### RESPONSE
