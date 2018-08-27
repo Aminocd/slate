@@ -2754,16 +2754,16 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 </thead><tbody>
 <tr>
-<td>store_id</td>
-<td>integer</td>
-<td>yes</td>
-<td>The ID of the store that the product is sold, provided in URL path</td>
-</tr>
-<tr>
 <td>sub_category_id</td>
 <td>integer</td>
 <td>yes</td>
 <td>The sub category that the product belongs to</td>
+</tr>
+<tr>
+<td>store_id</td>
+<td>integer</td>
+<td>yes</td>
+<td>The ID of the store where the product is sold, provided in URL path</td>
 </tr>
 <tr>
 <td>product_description</td>
@@ -2771,10 +2771,25 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>no</td>
 <td>The description of the product</td>
 </tr>
+<tr>
+<td>price_cents</td>
+<td>integer</td>
+<td>yes</td>
+<td>The price of the product by multiple of 100, and denominated in the currency of the store where the product is sold</td>
+</tr>
+<tr>
+<td>active</td>
+<td>boolean</td>
+<td>yes</td>
+<td>Whether the product is active or not</td>
+</tr>
+<tr>
+<td>image</td>
+<td>filename</td>
+<td>no</td>
+<td>The image file to be uploaded as product&#39;s image picture</td>
+</tr>
 </tbody></table>
-
-<p>active
-store-description | string | no | The description of the store</p>
 <h3 id='response-25'>RESPONSE</h3>
 <table><thead>
 <tr>
