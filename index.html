@@ -318,6 +318,9 @@
                   <li>
                     <a href="#list-a-store-39-s-products" class="toc-h2 toc-link" data-title="List a Store's Products">List a Store's Products</a>
                   </li>
+                  <li>
+                    <a href="#create-product" class="toc-h2 toc-link" data-title="Create Product">Create Product</a>
+                  </li>
               </ul>
           </li>
       </ul>
@@ -2009,7 +2012,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>currency_id</td>
 <td>integer</td>
 <td>yes</td>
-<td>The ID of the currency that the store&#39;s products are purchasable with</td>
+<td>The ID of the currency that the store&#39;s products are purchasable with, provided in URL path</td>
 </tr>
 <tr>
 <td>sub_location_id</td>
@@ -2049,7 +2052,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 <tr>
 <td>currency-id</td>
-<td>The ID of the currency that the store&#39;s products are purchasable with, provided in URL path</td>
+<td>The ID of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
 <td>sub-location-id</td>
@@ -2123,30 +2126,33 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 </thead><tbody>
 <tr>
-<td>currency_id</td>
+<td>store_id</td>
 <td>integer</td>
 <td>yes</td>
-<td>The ID of the currency that the store&#39;s products are purchasable with</td>
+<td>The ID of the store that the product is sold, provided in URL path</td>
 </tr>
 <tr>
-<td>sub_location_id</td>
+<td>sub_category_id</td>
 <td>integer</td>
 <td>yes</td>
-<td>The sub location where the store is located</td>
+<td>The sub category that the product belongs to</td>
 </tr>
 <tr>
-<td>physical</td>
-<td>boolean</td>
+<td>product_name</td>
+<td>string</td>
 <td>yes</td>
-<td>Whether the store is a physical location that customers can visit</td>
+<td>The name of the product</td>
 </tr>
 <tr>
-<td>store-description</td>
+<td>product_description</td>
 <td>string</td>
 <td>no</td>
-<td>The description of the store</td>
+<td>The description of the product</td>
 </tr>
 </tbody></table>
+
+<p>active
+store-description | string | no | The description of the store</p>
 <h3 id='response-20'>RESPONSE</h3>
 <table><thead>
 <tr>
@@ -2503,6 +2509,150 @@ Authentication: not required
 Authentication: not required to see the products of a store that are active and that have not been discontinued. To view details of a store's products that are inactive and/or discontinued, the request requires the OAuth access-token associated with the User that the specified store belongs to
 </aside>
 <h3 id='response-23'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the product</td>
+</tr>
+<tr>
+<td>sub-category-id</td>
+<td>The sub category that the product belongs to</td>
+</tr>
+<tr>
+<td>store-id</td>
+<td>The ID of the store where the product is sold</td>
+</tr>
+<tr>
+<td>product-name</td>
+<td>The name of the product</td>
+</tr>
+<tr>
+<td>product-description</td>
+<td>The description of the product</td>
+</tr>
+<tr>
+<td>price-cents</td>
+<td>The price of the product by multiple of 100, and denominated in the currency of the store where the product is sold</td>
+</tr>
+<tr>
+<td>active</td>
+<td>Whether the product is active or not</td>
+</tr>
+<tr>
+<td>continued</td>
+<td>Whether the product is continued or not. Discontinued products cannot be recontinued</td>
+</tr>
+<tr>
+<td>last-activated-at</td>
+<td>The time and date when the product was last activated</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the product was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the product was last updated</td>
+</tr>
+<tr>
+<td>get-image-url</td>
+<td>The URL at which the product image picture can be found</td>
+</tr>
+</tbody></table>
+<h2 id='create-product'>Create Product</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.mycurrency.com/users/4/issuer/currencies/5/stores/3/products <span class="se">\</span>
+  -d <span class="s1">'{"product": { "sub_category_id": "4", "product_name": "fishing bait", "product_description": "natural fishing bait made of worms", "active": "true", "price_cents": "1000"} }'</span> 
+  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span> 
+  -H <span class="s1">'Accept: application/json'</span> 
+  -H <span class="s1">'Content-Type: application/json'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"products"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"sub-category-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing bait"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"natural fishing bait made of worms"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price-cents"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"continued"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"last-activated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-26T17:15:53.011-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-26T17:15:53.011-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-26T17:15:53.011-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"get-image-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/images/original/missing.png"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Creates a product.</p>
+<h3 id='http-request-24'>HTTP Request</h3>
+<p><code>POST https://api.mycurrency.com/users/&lt;USER-ID&gt;/issuer/currencies/&lt;CURRENCY-ID&gt;/stores/&lt;STORE-ID&gt;/products</code></p>
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the USER-ID 
+</aside>
+<h3 id='arguments-7'>ARGUMENTS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sub_category_id</td>
+<td>The sub category that the product belongs to</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>store_id</td>
+<td>The ID of the store where the product is sold, provided in URL path</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>product_name</td>
+<td>The name of the product</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>product_description</td>
+<td>The description of the product</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>price_cents</td>
+<td>The price of the product by multiple of 100, and denominated in the currency of the store where the product is sold</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>active</td>
+<td>Whether the product is active or not</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>image</td>
+<td>filename</td>
+<td>no</td>
+<td>The image file to be uploaded as product&#39;s image picture</td>
+</tr>
+</tbody></table>
+<h3 id='response-24'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
