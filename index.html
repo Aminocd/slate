@@ -2799,39 +2799,51 @@ Authentication: the request requires the OAuth access-token associated with the 
 </thead><tbody>
 <tr>
 <td>id</td>
-<td>The ID of the store</td>
+<td>The ID of the product</td>
 </tr>
 <tr>
-<td>currency-id</td>
-<td>The ID of the currency that the store&#39;s products are purchasable with, provided in URL path</td>
+<td>sub-category-id</td>
+<td>The sub category that the product belongs to</td>
 </tr>
 <tr>
-<td>sub-location-id</td>
-<td>The sub location where the store is located</td>
+<td>store-id</td>
+<td>The ID of the store where the product is sold</td>
 </tr>
 <tr>
-<td>physical</td>
-<td>Whether the store is a physical location that customers can visit</td>
+<td>product-name</td>
+<td>The name of the product</td>
 </tr>
 <tr>
-<td>store-name</td>
-<td>The name of the store</td>
+<td>product-description</td>
+<td>The description of the product</td>
 </tr>
 <tr>
-<td>store-description</td>
-<td>The description of the store</td>
+<td>price-cents</td>
+<td>The price of the product by multiple of 100, and denominated in the currency of the store where the product is sold</td>
 </tr>
 <tr>
-<td>index</td>
-<td>Keywords derived from the description of the store and its products that are checked against in searches</td>
+<td>active</td>
+<td>Whether the product is active or not</td>
+</tr>
+<tr>
+<td>continued</td>
+<td>Whether the product is continued or not. Discontinued products cannot be recontinued</td>
+</tr>
+<tr>
+<td>last-activated-at</td>
+<td>The time and date when the product was last activated</td>
 </tr>
 <tr>
 <td>created-at</td>
-<td>The time and date when the currency was created</td>
+<td>The time and date when the product was created</td>
 </tr>
 <tr>
 <td>updated-at</td>
-<td>The time and date when the currency was last updated</td>
+<td>The time and date when the product was last updated</td>
+</tr>
+<tr>
+<td>get-image-url</td>
+<td>The URL at which the product image picture can be found</td>
 </tr>
 </tbody></table>
 
