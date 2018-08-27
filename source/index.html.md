@@ -1731,3 +1731,68 @@ created-at | The time and date when the product was created
 updated-at | The time and date when the product was last updated
 get-image-url | The URL at which the product image picture can be found
 
+## Update Product
+
+```shell
+curl -X PUT https://api.mycurrency.com/users/4/issuer/currencies/5/stores/3/products/5 \
+  -F 'product[image]=@fish_bait.jpg' \
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNTM1MzQyNzY4LCJleHAiOjE1MzU0MjkxNjgsImp0aSI6IjcxMTU1YWEwLTBjYWItNDJmNi1hY2FjLWNjYTA0MDM5ZGUzMSJ9.vUfErKhiJ4fB5QueiWAUoxQLE8gsqyzNIBFibzcztT8' \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: multipart/form-data'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "5",
+    "type": "products",
+    "attributes": {
+      "sub-category-id": 4,
+      "store-id": 3,
+      "product-name": "fishing bait",
+      "product-description": "natural fishing bait made of worms",
+      "price-cents": 1000,
+      "active": true,
+      "continued": true,
+      "last-activated-at": "2018-08-26T17:15:53.011-07:00",
+      "created-at": "2018-08-26T17:15:53.011-07:00",
+      "updated-at": "2018-08-26T21:07:27.184-07:00",
+      "get-image-url": "/system/products/images/000/000/005/original/fish_bait.jpg?1535342847"}}}
+```
+
+Updates a product.
+
+### HTTP Request
+
+`PUT https://api.mycurrency.com/users/<USER-ID>/issuer/currencies/<CURRENCY-ID>/stores/<STORE-ID>/products/<ID>`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the USER-ID 
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+store_id | integer | yes | The ID of the store that the product is sold, provided in URL path
+sub_category_id | integer | yes | The sub category that the product belongs to 
+product_description | string | no | The description of the product
+active
+store-description | string | no | The description of the store
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the store
+currency-id | The ID of the currency that the store's products are purchasable with, provided in URL path
+sub-location-id | The sub location where the store is located
+physical | Whether the store is a physical location that customers can visit
+store-name | The name of the store
+store-description | The description of the store
+index | Keywords derived from the description of the store and its products that are checked against in searches
+created-at | The time and date when the currency was created
+updated-at | The time and date when the currency was last updated
+
