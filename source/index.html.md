@@ -1776,11 +1776,12 @@ Authentication: the request requires the OAuth access-token associated with the 
 
 Parameter | Type | Required | Description
 --------- | ------- | ------- | -----------
-store_id | integer | yes | The ID of the store that the product is sold, provided in URL path
-sub_category_id | integer | yes | The sub category that the product belongs to 
+sub_category_id | integer | yes | The sub category that the product belongs to
+store_id | integer | yes | The ID of the store where the product is sold, provided in URL path
 product_description | string | no | The description of the product
-active
-store-description | string | no | The description of the store
+price_cents | integer | yes | The price of the product by multiple of 100, and denominated in the currency of the store where the product is sold
+active | boolean | yes | Whether the product is active or not
+image | filename | no | The image file to be uploaded as product's image picture
 
 ### RESPONSE
 
