@@ -1296,7 +1296,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 
 Parameter | Type | Required | Description
 --------- | ------- | ------- | -----------
-currency_id | integer | yes | The ID of the currency that the store's products are purchasable with
+currency_id | integer | yes | The ID of the currency that the store's products are purchasable with, provided in URL path
 sub_location_id | integer | yes | The sub location where the store is located
 physical | boolean | yes | Whether the store is a physical location that customers can visit
 store-name | string | yes | The name of the store
@@ -1307,7 +1307,7 @@ store-description | string | no | The description of the store
 Parameter | Description
 --------- | -----------
 id | The ID of the store
-currency-id | The ID of the currency that the store's products are purchasable with, provided in URL path
+currency-id | The ID of the currency that the store's products are purchasable with
 sub-location-id | The sub location where the store is located
 physical | Whether the store is a physical location that customers can visit
 store-name | The name of the store
@@ -1361,9 +1361,11 @@ Authentication: the request requires the OAuth access-token associated with the 
 
 Parameter | Type | Required | Description
 --------- | ------- | ------- | -----------
-currency_id | integer | yes | The ID of the currency that the store's products are purchasable with
-sub_location_id | integer | yes | The sub location where the store is located
-physical | boolean | yes | Whether the store is a physical location that customers can visit
+store_id | integer | yes | The ID of the store that the product is sold, provided in URL path
+sub_category_id | integer | yes | The sub category that the product belongs to 
+product_name | string | yes | The name of the product
+product_description | string | no | The description of the product
+active
 store-description | string | no | The description of the store
 
 ### RESPONSE
@@ -1655,3 +1657,77 @@ last-activated-at | The time and date when the product was last activated
 created-at | The time and date when the product was created
 updated-at | The time and date when the product was last updated
 get-image-url | The URL at which the product image picture can be found
+
+## Create Product
+
+```shell
+curl -X POST https://api.mycurrency.com/users/4/issuer/currencies/5/stores/3/products \
+  -d '{"product": { "sub_category_id": "4", "product_name": "fishing bait", "product_description": "natural fishing bait made of worms", "active": "true", "price_cents": "1000"} }' 
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' 
+  -H 'Accept: application/json' 
+  -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id":"5",
+    "type":"products",
+    "attributes": {
+      "sub-category-id": 4,
+      "store-id": 3,
+      "product-name": "fishing bait",
+      "product-description": "natural fishing bait made of worms",
+      "price-cents": 1000,
+      "active": true,
+      "continued": true,
+      "last-activated-at": "2018-08-26T17:15:53.011-07:00",
+      "created-at": "2018-08-26T17:15:53.011-07:00",
+      "updated-at": "2018-08-26T17:15:53.011-07:00",
+      "get-image-url": "/images/original/missing.png"
+    }
+  }
+}
+```
+
+Creates a product.
+
+### HTTP Request
+
+`POST https://api.mycurrency.com/users/<USER-ID>/issuer/currencies/<CURRENCY-ID>/stores/<STORE-ID>/products`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the USER-ID 
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+sub_category_id | The sub category that the product belongs to
+store_id | The ID of the store where the product is sold, provided in URL path
+product_name | The name of the product
+product_description | The description of the product
+price_cents | The price of the product by multiple of 100, and denominated in the currency of the store where the product is sold
+active | Whether the product is active or not
+image | filename | no | The image file to be uploaded as product's image picture
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the product
+sub-category-id | The sub category that the product belongs to
+store-id | The ID of the store where the product is sold
+product-name | The name of the product
+product-description | The description of the product
+price-cents | The price of the product by multiple of 100, and denominated in the currency of the store where the product is sold
+active | Whether the product is active or not
+continued | Whether the product is continued or not. Discontinued products cannot be recontinued
+last-activated-at | The time and date when the product was last activated
+created-at | The time and date when the product was created
+updated-at | The time and date when the product was last updated
+get-image-url | The URL at which the product image picture can be found
+
