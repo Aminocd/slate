@@ -1759,7 +1759,10 @@ curl -X PUT https://api.mycurrency.com/users/4/issuer/currencies/5/stores/3/prod
       "last-activated-at": "2018-08-26T17:15:53.011-07:00",
       "created-at": "2018-08-26T17:15:53.011-07:00",
       "updated-at": "2018-08-26T21:07:27.184-07:00",
-      "get-image-url": "/system/products/images/000/000/005/original/fish_bait.jpg?1535342847"}}}
+      "get-image-url": "/system/products/images/000/000/005/original/fish_bait.jpg?1535342847"
+    }
+  }
+}
 ```
 
 Updates a product.
