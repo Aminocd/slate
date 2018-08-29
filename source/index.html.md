@@ -1803,3 +1803,53 @@ created-at | The time and date when the product was created
 updated-at | The time and date when the product was last updated
 get-image-url | The URL at which the product image picture can be found
 
+# Store Reviews
+
+## Get a Store Review
+
+```shell
+curl 'https://api.mycurrency.com/stores/1/store_reviews/1' \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "1", 
+    "type": "store-reviews",
+    "attributes": {
+      "store-id": 1,
+      "user-id": 4,
+      "comment": "Schrauder Export Consulting is one of the best business strategy consultancy's I've had the pleasure to use. They have a deep understanding of how to navigate the legal and commercial landscape to achieve international sales",
+      "score": 9,
+      "created-at": "2018-08-29T00:51:11.631-07:00",
+      "updated-at": "2018-08-29T00:51:11.631-07:00"
+    }
+  }
+}
+```
+
+This endpoint retrieves a particular store review.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/stores/<STORE-ID>/store_reviews/<ID>`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the store review
+store-id | The ID of the store that the store review relates to
+comment | The written content of the review
+score | A score between 0 and 10 (inclusive) by the store reviewer 
+created-at | The time and date when the store review was created
+updated-at | The time and date when the store review was updated
+
