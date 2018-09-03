@@ -2366,11 +2366,11 @@ Authentication: not required
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/users/3/issuer/received_store_reviews?"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/users/3/issuer/received_store_reviews?page=1&amp;per_page=25"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/issuers/3/received_store_reviews?"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/issuers/3/received_store_reviews?page=1&amp;per_page=25"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"prev"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/users/3/issuer/received_store_reviews?page=1&amp;per_page=25"</span><span class="w">
+    </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/issuers/3/received_store_reviews?page=1&amp;per_page=25"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -2381,9 +2381,9 @@ Authentication: not required
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all store reviews received by stores belonging to currencies created by the issuer account of a particular user.</p>
+<p>This endpoint retrieves all store reviews received by stores belonging to currencies associated with a particular issuer.</p>
 <h3 id='http-request-23'>HTTP Request</h3>
-<p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/issuer/received_store_reviews</code></p>
+<p><code>GET https://api.mycurrency.com/issuers/&lt;ISSUER-ID&gt;/received_store_reviews</code></p>
 
 <aside class="notice">
 Authentication: not required
