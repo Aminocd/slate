@@ -1559,7 +1559,7 @@ created-at | The time and date when the store review was created
 ## List Currency's Received Store Reviews
 
 ```shell
-curl "https://api.mycurrency.com/currencies/2/received_store_reviews" \
+curl "https://api.mycurrency.com/currencies/3/received_store_reviews" \
   -H 'Host: api.mycurrency.com' -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
 
@@ -1589,41 +1589,30 @@ curl "https://api.mycurrency.com/currencies/2/received_store_reviews" \
         "score": 9,
         "created-at": "2018-08-29T22:11:23.788-07:00"
       }
-    },
-    {
-      "id": "3",
-      "type": "store-reviews",
-      "attributes": {
-        "store-id": 1,
-        "user-id": 4,
-        "comment": "I've been using McRyan's Grocers for about two years and am very happy with their growing selection of fresh fruits and vegetables",
-        "score": 9,
-        "created-at": "2018-08-29T22:15:34.052-07:00"
-      }
     }
   ],
   "links": {
-    "self": "https://api.mycurrency.com/users/3/issuer/received_store_reviews?",
-    "first": "https://api.mycurrency.com/users/3/issuer/received_store_reviews?page=1&per_page=25",
+    "self": "https://api.mycurrency.com/currencies/3/received_store_reviews?",
+    "first": "https://api.mycurrency.com/currencies/3/received_store_reviews?page=1&per_page=25",
     "prev": null,
     "next": null,
-    "last": "https://api.mycurrency.com/users/3/issuer/received_store_reviews?page=1&per_page=25"
+    "last": "https://api.mycurrency.com/currencies/3/received_store_reviews?page=1&per_page=25"
   },
   "meta": {
     "pagination": {
       "per-page": null,
       "total-pages": "1",
-      "total-count": "3"
+      "total-count": "2"
     }
   }
 }
 ```
 
-This endpoint retrieves all store reviews received by stores belonging to currencies created by the issuer account of a particular user.
+This endpoint retrieves all store reviews received by stores belonging to the currency specified by the CURRENCY-ID.
 
 ### HTTP Request
 
-`GET https://api.mycurrency.com/users/<USER-ID>/issuer/received_store_reviews`
+`GET https://api.mycurrency.com/currencies/<CURRENCY-ID>/received_store_reviews`
 
 <aside class="notice">
 Authentication: not required
@@ -1638,9 +1627,6 @@ store-id | The ID of the store that the store review relates to
 comment | The written content of the review
 score | A score between 0 and 10 (inclusive) by the store reviewer 
 created-at | The time and date when the store review was created
-
-
-
 
 # Products
 
