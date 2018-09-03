@@ -182,7 +182,49 @@ updated-at | The time and date when the user was last updated
 
 # Issuers
 
-## Get an Issuer
+## Get an Issuer 
+
+```shell
+curl 'https://api.mycurrency.com/issuers/2' \
+  -H 'Host: api.mycurrency.com' -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "2",
+    "type": "issuers",
+    "attributes": {
+      "user-id": 2
+      "created-at": "2018-08-08T01:22:54.571-07:00",
+      "updated-at": "2018-08-08T01:22:54.571-07:00",
+    }
+  }
+}
+```
+
+This endpoint retrieves a particular issuer and its basic public information by its ID.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/issuers/<ID>`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the issuer
+user-id | The ID of the user that owns the issuer account
+created_at | The time and date when the issuer account was created
+updated_at | The time and date when the issuer account was last updated
+
+## Get a User's Issuer Account
 
 ```shell
 curl 'https://api.mycurrency.com/users/2/issuer' \
@@ -1431,10 +1473,10 @@ comment | The written content of the review
 score | A score between 0 and 10 (inclusive) by the store reviewer 
 created-at | The time and date when the store review was created
 
-## List Issuer's Store Received Store Reviews
+## List Issuer's Received Store Reviews
 
 ```shell
-curl "https://api.mycurrency.com/users/3/issuer/received_store_reviews" \
+curl "https://api.mycurrency.com/issuers/3/received_store_reviews" \
   -H 'Host: api.mycurrency.com' -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
 
@@ -1513,6 +1555,91 @@ store-id | The ID of the store that the store review relates to
 comment | The written content of the review
 score | A score between 0 and 10 (inclusive) by the store reviewer 
 created-at | The time and date when the store review was created
+
+## List Currency's Received Store Reviews
+
+```shell
+curl "https://api.mycurrency.com/currencies/2/received_store_reviews" \
+  -H 'Host: api.mycurrency.com' -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "store-reviews",
+      "attributes": {
+        "store-id": 1,
+        "user-id": 4,
+        "comment": "Schrauder Export Consulting is one of the best business strategy consultancies I've had the pleasure to use. They have a deep understanding of how to navigate the legal and commercial landscape to achieve international sales",
+        "score": 10,
+        "created-at": "2018-08-29T00:51:11.631-07:00"
+      }
+    },
+    {
+      "id": "2",
+      "type": "store-reviews",
+      "attributes": {
+        "store-id": 1,
+        "user-id": 4,
+        "comment": "Schrauder Japan knows the ins and outs of the Japanese import market. Their professionalism was impressive.",
+        "score": 9,
+        "created-at": "2018-08-29T22:11:23.788-07:00"
+      }
+    },
+    {
+      "id": "3",
+      "type": "store-reviews",
+      "attributes": {
+        "store-id": 1,
+        "user-id": 4,
+        "comment": "I've been using McRyan's Grocers for about two years and am very happy with their growing selection of fresh fruits and vegetables",
+        "score": 9,
+        "created-at": "2018-08-29T22:15:34.052-07:00"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/users/3/issuer/received_store_reviews?",
+    "first": "https://api.mycurrency.com/users/3/issuer/received_store_reviews?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/users/3/issuer/received_store_reviews?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "3"
+    }
+  }
+}
+```
+
+This endpoint retrieves all store reviews received by stores belonging to currencies created by the issuer account of a particular user.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/issuer/received_store_reviews`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the store review
+store-id | The ID of the store that the store review relates to
+comment | The written content of the review
+score | A score between 0 and 10 (inclusive) by the store reviewer 
+created-at | The time and date when the store review was created
+
+
 
 
 # Products
