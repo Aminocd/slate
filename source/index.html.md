@@ -1520,11 +1520,11 @@ curl "https://api.mycurrency.com/issuers/3/received_store_reviews" \
     }
   ],
   "links": {
-    "self": "https://api.mycurrency.com/users/3/issuer/received_store_reviews?",
-    "first": "https://api.mycurrency.com/users/3/issuer/received_store_reviews?page=1&per_page=25",
+    "self": "https://api.mycurrency.com/issuers/3/received_store_reviews?",
+    "first": "https://api.mycurrency.com/issuers/3/received_store_reviews?page=1&per_page=25",
     "prev": null,
     "next": null,
-    "last": "https://api.mycurrency.com/users/3/issuer/received_store_reviews?page=1&per_page=25"
+    "last": "https://api.mycurrency.com/issuers/3/received_store_reviews?page=1&per_page=25"
   },
   "meta": {
     "pagination": {
@@ -1536,11 +1536,11 @@ curl "https://api.mycurrency.com/issuers/3/received_store_reviews" \
 }
 ```
 
-This endpoint retrieves all store reviews received by stores belonging to currencies created by the issuer account of a particular user.
+This endpoint retrieves all store reviews received by stores belonging to currencies associated with a particular issuer.
 
 ### HTTP Request
 
-`GET https://api.mycurrency.com/users/<USER-ID>/issuer/received_store_reviews`
+`GET https://api.mycurrency.com/issuers/<ISSUER-ID>/received_store_reviews`
 
 <aside class="notice">
 Authentication: not required
