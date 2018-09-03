@@ -307,6 +307,17 @@
               </ul>
           </li>
           <li>
+            <a href="#store-reviews" class="toc-h1 toc-link" data-title="Store Reviews">Store Reviews</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-a-store-review" class="toc-h2 toc-link" data-title="Get a Store Review">Get a Store Review</a>
+                  </li>
+                  <li>
+                    <a href="#list-issuer-39-s-store-received-store-reviews" class="toc-h2 toc-link" data-title="List Issuer's Store Received Store Reviews">List Issuer's Store Received Store Reviews</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#products" class="toc-h1 toc-link" data-title="Products">Products</a>
               <ul class="toc-list-h2">
                   <li>
@@ -323,14 +334,6 @@
                   </li>
                   <li>
                     <a href="#update-product" class="toc-h2 toc-link" data-title="Update Product">Update Product</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#store-reviews" class="toc-h1 toc-link" data-title="Store Reviews">Store Reviews</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#get-a-store-review" class="toc-h2 toc-link" data-title="Get a Store Review">Get a Store Review</a>
                   </li>
               </ul>
           </li>
@@ -2208,6 +2211,156 @@ store-description | string | no | The description of the store</p>
 <td>The time and date when the currency was last updated</td>
 </tr>
 </tbody></table>
+<h1 id='store-reviews'>Store Reviews</h1><h2 id='get-a-store-review'>Get a Store Review</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/stores/1/store_reviews/1'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"store-reviews"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Schrauder Export Consulting is one of the best business strategy consultancy's I've had the pleasure to use. They have a deep understanding of how to navigate the legal and commercial landscape to achieve international sales"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-29T00:51:11.631-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-29T00:51:11.631-07:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a particular store review.</p>
+<h3 id='http-request-21'>HTTP Request</h3>
+<p><code>GET https://api.mycurrency.com/stores/&lt;STORE-ID&gt;/store_reviews/&lt;ID&gt;</code></p>
+
+<aside class="notice">
+Authentication: not required
+</aside>
+<h3 id='response-21'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the store review</td>
+</tr>
+<tr>
+<td>store-id</td>
+<td>The ID of the store that the store review relates to</td>
+</tr>
+<tr>
+<td>comment</td>
+<td>The written content of the review</td>
+</tr>
+<tr>
+<td>score</td>
+<td>A score between 0 and 10 (inclusive) by the store reviewer</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the store review was created</td>
+</tr>
+</tbody></table>
+<h2 id='list-issuer-39-s-store-received-store-reviews'>List Issuer&#39;s Store Received Store Reviews</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/users/3/issuer/received_store_reviews"</span> <span class="se">\</span>
+  -H <span class="s1">'Host: api.mycurrency.com'</span> -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"store-reviews"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Schrauder Export Consulting is one of the best business strategy consultancies I've had the pleasure to use. They have a deep understanding of how to navigate the legal and commercial landscape to achieve international sales"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-29T00:51:11.631-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"store-reviews"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Schrauder Japan knows the ins and outs of the Japanese import market. Their professionalism was impressive."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-29T22:11:23.788-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"store-reviews"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I've been using McRyan's Grocers for about two years and am very happy with their growing selection of fresh fruits and vegetables"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-29T22:15:34.052-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/users/3/issuer/received_store_reviews?"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/users/3/issuer/received_store_reviews?page=1&amp;per_page=25"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"prev"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/users/3/issuer/received_store_reviews?page=1&amp;per_page=25"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"per-page"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total-pages"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total-count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all store reviews received by stores belonging to currencies created by the issuer account of a particular user.</p>
+<h3 id='http-request-22'>HTTP Request</h3>
+<p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/issuer/received_store_reviews</code></p>
+
+<aside class="notice">
+Authentication: not required
+</aside>
+<h3 id='response-22'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the store review</td>
+</tr>
+<tr>
+<td>store-id</td>
+<td>The ID of the store that the store review relates to</td>
+</tr>
+<tr>
+<td>comment</td>
+<td>The written content of the review</td>
+</tr>
+<tr>
+<td>score</td>
+<td>A score between 0 and 10 (inclusive) by the store reviewer</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the store review was created</td>
+</tr>
+</tbody></table>
 <h1 id='products'>Products</h1><h2 id='get-a-product'>Get a Product</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/products/1'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
@@ -2235,13 +2388,13 @@ store-description | string | no | The description of the store</p>
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular product. The product must be active and not discontinued to be viewable by a non-authorized user.</p>
-<h3 id='http-request-21'>HTTP Request</h3>
+<h3 id='http-request-23'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/products/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: not required for active products that have not been discontinued. To view details of products that are inactive or discontinued, the request requires the OAuth access-token associated with the User that the product's store belongs to
 </aside>
-<h3 id='response-21'>RESPONSE</h3>
+<h3 id='response-23'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2391,13 +2544,13 @@ Authentication: not required for active products that have not been discontinued
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all products that are active and not discontinued.</p>
-<h3 id='http-request-22'>HTTP Request</h3>
+<h3 id='http-request-24'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/products</code></p>
 
 <aside class="notice">
 Authentication: not required 
 </aside>
-<h3 id='response-22'>RESPONSE</h3>
+<h3 id='response-24'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2513,13 +2666,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all products belonging to a particular currency. Only products that are active and not discontinued are shown to non-authorized users while authorized users see all of the store&#39;s products.</p>
-<h3 id='http-request-23'>HTTP Request</h3>
+<h3 id='http-request-25'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/stores/&lt;STORE-ID&gt;/products</code></p>
 
 <aside class="notice">
 Authentication: not required to see the products of a store that are active and that have not been discontinued. To view details of a store's products that are inactive and/or discontinued, the request requires the OAuth access-token associated with the User that the specified store belongs to
 </aside>
-<h3 id='response-23'>RESPONSE</h3>
+<h3 id='response-25'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2605,7 +2758,7 @@ Authentication: not required to see the products of a store that are active and 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Creates a product.</p>
-<h3 id='http-request-24'>HTTP Request</h3>
+<h3 id='http-request-26'>HTTP Request</h3>
 <p><code>POST https://api.mycurrency.com/users/&lt;USER-ID&gt;/issuer/currencies/&lt;CURRENCY-ID&gt;/stores/&lt;STORE-ID&gt;/products</code></p>
 
 <aside class="notice">
@@ -2663,7 +2816,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The image file to be uploaded as product&#39;s image picture</td>
 </tr>
 </tbody></table>
-<h3 id='response-24'>RESPONSE</h3>
+<h3 id='response-26'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2749,7 +2902,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Updates a product.</p>
-<h3 id='http-request-25'>HTTP Request</h3>
+<h3 id='http-request-27'>HTTP Request</h3>
 <p><code>PUT https://api.mycurrency.com/users/&lt;USER-ID&gt;/issuer/currencies/&lt;CURRENCY-ID&gt;/stores/&lt;STORE-ID&gt;/products/&lt;ID&gt;</code></p>
 
 <aside class="notice">
@@ -2801,7 +2954,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The image file to be uploaded as product&#39;s image picture</td>
 </tr>
 </tbody></table>
-<h3 id='response-25'>RESPONSE</h3>
+<h3 id='response-27'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2855,67 +3008,6 @@ Authentication: the request requires the OAuth access-token associated with the 
 <tr>
 <td>get-image-url</td>
 <td>The URL at which the product image picture can be found</td>
-</tr>
-</tbody></table>
-<h1 id='store-reviews'>Store Reviews</h1><h2 id='get-a-store-review'>Get a Store Review</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/stores/1/store_reviews/1'</span> <span class="se">\</span>
-  -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> 
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"store-reviews"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Schrauder Export Consulting is one of the best business strategy consultancy's I've had the pleasure to use. They have a deep understanding of how to navigate the legal and commercial landscape to achieve international sales"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-29T00:51:11.631-07:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-29T00:51:11.631-07:00"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a particular store review.</p>
-<h3 id='http-request-26'>HTTP Request</h3>
-<p><code>GET https://api.mycurrency.com/stores/&lt;STORE-ID&gt;/store_reviews/&lt;ID&gt;</code></p>
-
-<aside class="notice">
-Authentication: not required
-</aside>
-<h3 id='response-26'>RESPONSE</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>id</td>
-<td>The ID of the store review</td>
-</tr>
-<tr>
-<td>store-id</td>
-<td>The ID of the store that the store review relates to</td>
-</tr>
-<tr>
-<td>comment</td>
-<td>The written content of the review</td>
-</tr>
-<tr>
-<td>score</td>
-<td>A score between 0 and 10 (inclusive) by the store reviewer</td>
-</tr>
-<tr>
-<td>created-at</td>
-<td>The time and date when the store review was created</td>
-</tr>
-<tr>
-<td>updated-at</td>
-<td>The time and date when the store review was updated</td>
 </tr>
 </tbody></table>
 
