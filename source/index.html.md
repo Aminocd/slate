@@ -1500,7 +1500,7 @@ curl "https://api.mycurrency.com/issuers/3/received_store_reviews" \
       "id": "2",
       "type": "store-reviews",
       "attributes": {
-        "store-id": 1,
+        "store-id": 2,
         "user-id": 4,
         "comment": "Schrauder Japan knows the ins and outs of the Japanese import market. Their professionalism was impressive.",
         "score": 9,
@@ -1511,7 +1511,7 @@ curl "https://api.mycurrency.com/issuers/3/received_store_reviews" \
       "id": "3",
       "type": "store-reviews",
       "attributes": {
-        "store-id": 1,
+        "store-id": 5,
         "user-id": 4,
         "comment": "I've been using McRyan's Grocers for about two years and am very happy with their growing selection of fresh fruits and vegetables",
         "score": 9,
@@ -1583,7 +1583,7 @@ curl "https://api.mycurrency.com/currencies/3/received_store_reviews" \
       "id": "2",
       "type": "store-reviews",
       "attributes": {
-        "store-id": 1,
+        "store-id": 2,
         "user-id": 4,
         "comment": "Schrauder Japan knows the ins and outs of the Japanese import market. Their professionalism was impressive.",
         "score": 9,
@@ -1613,6 +1613,67 @@ This endpoint retrieves all store reviews received by stores belonging to the cu
 ### HTTP Request
 
 `GET https://api.mycurrency.com/currencies/<CURRENCY-ID>/received_store_reviews`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the store review
+store-id | The ID of the store that the store review relates to
+comment | The written content of the review
+score | A score between 0 and 10 (inclusive) by the store reviewer 
+created-at | The time and date when the store review was created
+
+## List Store's Received Store Reviews
+
+```shell
+curl "https://api.mycurrency.com/stores/5/received_store_reviews" \
+  -H 'Host: api.mycurrency.com' -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "3",
+      "type": "store-reviews",
+      "attributes": {
+        "store-id": 5,
+        "user-id": 4,
+        "comment": "I've been using McRyan's Grocers for about two years and am very happy with their growing selection of fresh fruits and vegetables",
+        "score": 9,
+        "created-at": "2018-08-29T22:15:34.052-07:00"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/stores/5/received_store_reviews?",
+    "first": "https://api.mycurrency.com/stores/5/received_store_reviews?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/currencies/3/received_store_reviews?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "1"
+    }
+  }
+}
+```
+
+This endpoint retrieves all store reviews received by stores belonging to the store specified by the STORE-ID.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/stores/<STORE-ID>/received_store_reviews`
 
 <aside class="notice">
 Authentication: not required
