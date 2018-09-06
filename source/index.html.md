@@ -1717,7 +1717,7 @@ Creates a store review.
 
 ### HTTP Request
 
-`POST https://api.mycurrency.com/users/store_reviews`
+`POST https://api.mycurrency.com/users/<USER-ID>store_reviews`
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the USER-ID 
