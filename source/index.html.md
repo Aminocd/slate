@@ -1657,7 +1657,7 @@ curl "https://api.mycurrency.com/stores/5/received_store_reviews" \
     "first": "https://api.mycurrency.com/stores/5/received_store_reviews?page=1&per_page=25",
     "prev": null,
     "next": null,
-    "last": "https://api.mycurrency.com/currencies/3/received_store_reviews?page=1&per_page=25"
+    "last": "https://api.mycurrency.com/stores/5/received_store_reviews?page=1&per_page=25"
   },
   "meta": {
     "pagination": {
@@ -1678,6 +1678,59 @@ This endpoint retrieves all store reviews received by stores belonging to the st
 <aside class="notice">
 Authentication: not required
 </aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the store review
+store-id | The ID of the store that the store review relates to
+comment | The written content of the review
+score | A score between 0 and 10 (inclusive) by the store reviewer 
+created-at | The time and date when the store review was created
+
+## Create Store Review
+
+```shell
+curl -X POST https://api.mycurrency.com/users/4/store_reviews -d '{"store_review": { "store_id": "1", "score": "9", "comment": "Lucy'\''s Tom Yum Soup is as good as anything I had in Thailand"} }' -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "4",
+    "type": "store-reviews",
+    "attributes": {
+      "store-id": 1,
+      "user-id": 4,
+      "comment": "Lucy's Tom Yum Soup is as good as anything I had in Thailand",
+      "score": 9,
+      "created-at": "2018-08-29T22:45:12.219-07:00"
+    }
+  }
+}
+```
+
+Creates a store review.
+
+### HTTP Request
+
+`POST https://api.mycurrency.com/users/store_reviews`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the USER-ID 
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+store_id | integer | yes | The ID of the store that the store review is written for
+user_id | integer | yes | The ID of the user that the store review is written by, provided in URL path
+comment | string | no | The written content of the review
+score | integer | yes | A score between 0 and 10 (inclusive)
 
 ### RESPONSE
 
