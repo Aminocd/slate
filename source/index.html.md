@@ -1692,7 +1692,10 @@ created-at | The time and date when the store review was created
 ## Create Store Review
 
 ```shell
-curl -X POST https://api.mycurrency.com/users/4/store_reviews -d '{"store_review": { "store_id": "1", "score": "9", "comment": "Lucy'\''s Tom Yum Soup is as good as anything I had in Thailand"} }' -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' -H 'Accept: application/json' -H 'Content-Type: application/json'
+curl -X POST https://api.mycurrency.com/users/4/store_reviews 
+  -d '{"store_review": { "store_id": "1", "score": "9", "comment": "Lucy'\''s Tom Yum Soup is as good as anything I had in Thailand"} }' 
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' 
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
 
 > The above command returns JSON structured like this:
