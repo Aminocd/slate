@@ -361,6 +361,9 @@
                   <li>
                     <a href="#list-currency-39-s-product-cancellations" class="toc-h2 toc-link" data-title="List Currency's Product Cancellations">List Currency's Product Cancellations</a>
                   </li>
+                  <li>
+                    <a href="#list-store-39-s-product-cancellations" class="toc-h2 toc-link" data-title="List Store's Product Cancellations">List Store's Product Cancellations</a>
+                  </li>
               </ul>
           </li>
       </ul>
@@ -3392,7 +3395,7 @@ Authentication: not required
 </tr>
 <tr>
 <td>with-advance-notice</td>
-<td>Whether there was advance notice of the product&#39;s cancellation given to those holding the currency that the product was associated with in order to give them the opportunity to purchase the product before its cancellation</td>
+<td>Whether there was advance notice of the product&#39;s cancellation given to those holding the currency that was redeemable in the product, in order to give them the opportunity to spend their currency on the product before its cancellation</td>
 </tr>
 <tr>
 <td>created-at</td>
@@ -3519,7 +3522,7 @@ Authentication: not required
 </tr>
 <tr>
 <td>with-advance-notice</td>
-<td>Whether there was advance notice of the product&#39;s cancellation given to those holding the currency that the product was associated with in order to give them the opportunity to purchase the product before its cancellation</td>
+<td>Whether there was advance notice of the product&#39;s cancellation given to those holding the currency that was redeemable in the product, in order to give them the opportunity to spend their currency on the product before its cancellation</td>
 </tr>
 <tr>
 <td>created-at</td>
@@ -3633,7 +3636,108 @@ Authentication: not required
 </tr>
 <tr>
 <td>with-advance-notice</td>
-<td>Whether there was advance notice of the product&#39;s cancellation given to those holding the currency that the product was associated with in order to give them the opportunity to purchase the product before its cancellation</td>
+<td>Whether there was advance notice of the product&#39;s cancellation given to those holding the currency that was redeemable in the product, in order to give them the opportunity to spend their currency on the product before its cancellation</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the product cancellation was cancelled</td>
+</tr>
+</tbody></table>
+<h2 id='list-store-39-s-product-cancellations'>List Store&#39;s Product Cancellations</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/stores/3/product_cancellations'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"product-cancellations"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-discontinual-id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing bait"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cancellation-message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelling fishing bait due to health code regulations"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"with-advance-notice"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-06T00:07:27.093-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/currencies/5/product_cancellations?"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/currencies/5/product_cancellations?page=1&amp;per_page=25"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"prev"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/currencies/5/product_cancellations?page=1&amp;per_page=25"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"per-page"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total-pages"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total-count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all product cancellations associated with the store referenced by STORE-ID</p>
+<h3 id='http-request-35'>HTTP Request</h3>
+<p><code>GET https://api.mycurrency.com/stores/&lt;STORE-ID&gt;/product_cancellations</code></p>
+
+<aside class="notice">
+Authentication: not required
+</aside>
+<h3 id='arguments-12'>ARGUMENTS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>without_advance_notice</td>
+<td>boolean</td>
+<td>no</td>
+<td>If set to true, only returns the product cancellations in the set that have the :with_advance_notice field set to false</td>
+</tr>
+</tbody></table>
+<h3 id='response-35'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the product cancellation</td>
+</tr>
+<tr>
+<td>store-id</td>
+<td>The ID of the store where the cancelled product was sold</td>
+</tr>
+<tr>
+<td>product-id</td>
+<td>The ID of the product that was cancelled</td>
+</tr>
+<tr>
+<td>product-discontinual-id</td>
+<td>The ID of the product_discontinual that created the product_cancellation</td>
+</tr>
+<tr>
+<td>product-name</td>
+<td>The name of the cancelled product</td>
+</tr>
+<tr>
+<td>cancellation-message</td>
+<td>The message explaining why the product was cancelled</td>
+</tr>
+<tr>
+<td>with-advance-notice</td>
+<td>Whether there was advance notice of the product&#39;s cancellation given to those holding the currency that was redeemable in the product, in order to give them the opportunity to spend their currency on the product before its cancellation</td>
 </tr>
 <tr>
 <td>created-at</td>
