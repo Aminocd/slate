@@ -2216,7 +2216,7 @@ product-id | The ID of the product that was cancelled
 product-discontinual-id | The ID of the product_discontinual that created the product_cancellation
 product-name | The name of the cancelled product
 cancellation-message | The message explaining why the product was cancelled
-with-advance-notice | Whether there was advance notice of the product's cancellation given to those holding the currency that the product was associated with in order to give them the opportunity to purchase the product before its cancellation
+with-advance-notice | Whether there was advance notice of the product's cancellation given to those holding the currency that was redeemable in the product, in order to give them the opportunity to spend their currency on the product before its cancellation
 created-at | The time and date when the product was cancelled
 
 ## List Issuer's Product Cancellations
@@ -2314,7 +2314,7 @@ product-id | The ID of the product that was cancelled
 product-discontinual-id | The ID of the product_discontinual that created the product_cancellation
 product-name | The name of the cancelled product
 cancellation-message | The message explaining why the product was cancelled
-with-advance-notice | Whether there was advance notice of the product's cancellation given to those holding the currency that the product was associated with in order to give them the opportunity to purchase the product before its cancellation
+with-advance-notice | Whether there was advance notice of the product's cancellation given to those holding the currency that was redeemable in the product, in order to give them the opportunity to spend their currency on the product before its cancellation
 created-at | The time and date when the product cancellation was cancelled
 
 ## List Currency's Product Cancellations
@@ -2399,6 +2399,78 @@ product-id | The ID of the product that was cancelled
 product-discontinual-id | The ID of the product_discontinual that created the product_cancellation
 product-name | The name of the cancelled product
 cancellation-message | The message explaining why the product was cancelled
-with-advance-notice | Whether there was advance notice of the product's cancellation given to those holding the currency that the product was associated with in order to give them the opportunity to purchase the product before its cancellation
+with-advance-notice | Whether there was advance notice of the product's cancellation given to those holding the currency that was redeemable in the product, in order to give them the opportunity to spend their currency on the product before its cancellation
+created-at | The time and date when the product cancellation was cancelled
+
+## List Store's Product Cancellations
+
+```shell
+curl 'https://api.mycurrency.com/stores/3/product_cancellations' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "product-cancellations",
+      "attributes": {
+        "store-id": 3,
+        "product-id": 5,
+        "product-discontinual-id": null,
+        "product-name": "fishing bait",
+        "cancellation-message": "cancelling fishing bait due to health code regulations",
+        "with-advance-notice": false,
+        "created-at": "2018-09-06T00:07:27.093-07:00"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/currencies/5/product_cancellations?",
+    "first": "https://api.mycurrency.com/currencies/5/product_cancellations?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/currencies/5/product_cancellations?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "1"
+    }
+  }
+}
+```
+
+This endpoint retrieves all product cancellations associated with the store referenced by STORE-ID
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/stores/<STORE-ID>/product_cancellations`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+without_advance_notice | boolean | no | If set to true, only returns the product cancellations in the set that have the :with_advance_notice field set to false
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the product cancellation
+store-id | The ID of the store where the cancelled product was sold
+product-id | The ID of the product that was cancelled
+product-discontinual-id | The ID of the product_discontinual that created the product_cancellation
+product-name | The name of the cancelled product
+cancellation-message | The message explaining why the product was cancelled
+with-advance-notice | Whether there was advance notice of the product's cancellation given to those holding the currency that was redeemable in the product, in order to give them the opportunity to spend their currency on the product before its cancellation
 created-at | The time and date when the product cancellation was cancelled
 
