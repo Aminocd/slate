@@ -2514,3 +2514,26 @@ Creates a product cancellation.
 Authentication: the request requires the OAuth access-token associated with the User referenced by the USER-ID 
 </aside>
 
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+user_id | integer | yes | The ID of the user which offered the product that was canceled, provided in URL path
+currency_id | integer | yes | The ID of the currency which was redeemable in the product that was canceled, provided in URL path
+store_id | integer | yes | The ID of the store where the product being cancelled is sold, provided in URL path
+product_id | integer | yes | The ID of the product that is being cancelled, provided in URL path
+cancellation-message | string | no | The message explaining why the product is being cancelled
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the product cancellation
+store-id | The ID of the store where the cancelled product was sold
+product-id | The ID of the product that was cancelled
+product-discontinual-id | The ID of the product_discontinual that created the product_cancellation
+product-name | The name of the cancelled product
+cancellation-message | The message explaining why the product was cancelled
+with-advance-notice | Set to false, indicating there was no advance notice of the product's cancellation given to those holding the currency that was redeemable in the product. To provide advance notice, a product_discontinual must be created instead of a product_cancellation
+created-at | The time and date when the product cancellation was cancelled
+
