@@ -364,6 +364,9 @@
                   <li>
                     <a href="#list-store-39-s-product-cancellations" class="toc-h2 toc-link" data-title="List Store's Product Cancellations">List Store's Product Cancellations</a>
                   </li>
+                  <li>
+                    <a href="#create-product-cancellation" class="toc-h2 toc-link" data-title="Create Product Cancellation">Create Product Cancellation</a>
+                  </li>
               </ul>
           </li>
       </ul>
@@ -3744,6 +3747,38 @@ Authentication: not required
 <td>The time and date when the product cancellation was cancelled</td>
 </tr>
 </tbody></table>
+<h2 id='create-product-cancellation'>Create Product Cancellation</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.mycurrency.com/users/4/issuer/currencies/5/stores/3/products/5/product_cancellation <span class="se">\</span>
+  -d <span class="s1">'{"product_cancellation": { "cancellation_message": "cancelling fishing bait due to health code regulations"} }'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"product-cancellations"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product-discontinual-id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing bait"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"cancellation-message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelling fishing bait due to health code regulations"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"with-advance-notice"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-06T00:07:27.093-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="s2">"2018-09-06T00:07:27.093-07:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Creates a product cancellation.</p>
+<h3 id='http-request-36'>HTTP Request</h3>
+<p><code>POST https://api.mycurrency.com/users/&lt;USER-ID&gt;/issuer/currencies/&lt;CURRENCY-ID&gt;/stores/&lt;STORE-ID&gt;/products/&lt;PRODUCT-ID&gt;/product_cancellation</code></p>
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the USER-ID 
+</aside>
 
       </div>
       <div class="dark-box">
