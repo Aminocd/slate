@@ -2251,8 +2251,8 @@ curl 'https://api.mycurrency.com/users/4/issuer/product_cancellations' \
         "store-id": 4,
         "product-id": 9,
         "product-discontinual-id": null,
-        "product-name": "turquoise gem",
-        "cancellation-message": "cancelling because supplier has stopped exporting these",
+        "product-name": "chameleon tent",
+        "cancellation-message": "the Defense Ministry classified the synthetic skin used to provide tent's chameleon effect",
         "with-advance-notice": false,
         "created-at": "2018-09-07T14:04:44.141-07:00"
       }
@@ -2293,6 +2293,91 @@ This endpoint retrieves all product cancellations associated with the stores of 
 ### HTTP Request
 
 `GET https://api.mycurrency.com/users/<USER-ID>/issuer/product_cancellations`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+without_advance_notice | boolean | no | If set to true, only returns the product cancellations in the set that have the :with_advance_notice field set to false
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the product cancellation
+store-id | The ID of the store where the cancelled product was sold
+product-id | The ID of the product that was cancelled
+product-discontinual-id | The ID of the product_discontinual that created the product_cancellation
+product-name | The name of the cancelled product
+cancellation-message | The message explaining why the product was cancelled
+with-advance-notice | Whether there was advance notice of the product's cancellation given to those holding the currency that the product was associated with in order to give them the opportunity to purchase the product before its cancellation
+created-at | The time and date when the product cancellation was cancelled
+
+## List Currency's Product Cancellations
+
+```shell
+curl 'https://api.mycurrency.com/currencies/5/product_cancellations' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "product-cancellations",
+      "attributes": {
+        "store-id": 3,
+        "product-id": 5,
+        "product-discontinual-id": null,
+        "product-name": "fishing bait",
+        "cancellation-message": "cancelling fishing bait due to health code regulations",
+        "with-advance-notice": false,
+        "created-at": "2018-09-06T00:07:27.093-07:00"
+      }
+    },
+    {
+      "id": "4",
+      "type": "product-cancellations",
+      "attributes": {
+        "store-id": 4,
+        "product-id": 9,
+        "product-discontinual-id": null,
+        "product-name": "chameleon tent",
+        "cancellation-message": "the Defense Ministry classified the synthetic skin used to provide tent's chameleon effect",
+        "with-advance-notice": false,
+        "created-at": "2018-09-07T14:04:44.141-07:00"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/currencies/5/product_cancellations?",
+    "first": "https://api.mycurrency.com/currencies/5/product_cancellations?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/currencies/5/product_cancellations?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "2"
+    }
+  }
+}
+```
+
+This endpoint retrieves all product cancellations associated with the stores belonging to the currency referenced by CURRENCY-ID
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/currencies/<CURRENCY-ID>/product_cancellations`
 
 <aside class="notice">
 Authentication: not required
