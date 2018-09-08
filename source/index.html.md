@@ -1270,7 +1270,7 @@ curl "https://api.mycurrency.com/sub_locations/1/stores?keyword=Bugs%20Bunny" \
 }
 ```
 
-This endpoint retrieves all stores belonging to the sub location associated with the ID provided.
+This endpoint retrieves all stores that belong to the sub location associated with the ID provided and contain text that matches the search keyword provided.
 
 ### HTTP Request
 

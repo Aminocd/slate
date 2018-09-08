@@ -3779,6 +3779,86 @@ Authentication: not required
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the USER-ID 
 </aside>
+<h3 id='arguments-13'>ARGUMENTS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>integer</td>
+<td>yes</td>
+<td>The ID of the user which offered the product that was canceled, provided in URL path</td>
+</tr>
+<tr>
+<td>currency_id</td>
+<td>integer</td>
+<td>yes</td>
+<td>The ID of the currency which was redeemable in the product that was canceled, provided in URL path</td>
+</tr>
+<tr>
+<td>store_id</td>
+<td>integer</td>
+<td>yes</td>
+<td>The ID of the store where the product being cancelled is sold, provided in URL path</td>
+</tr>
+<tr>
+<td>product_id</td>
+<td>integer</td>
+<td>yes</td>
+<td>The ID of the product that is being cancelled, provided in URL path</td>
+</tr>
+<tr>
+<td>cancellation-message</td>
+<td>string</td>
+<td>no</td>
+<td>The message explaining why the product is being cancelled</td>
+</tr>
+</tbody></table>
+<h3 id='response-36'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the product cancellation</td>
+</tr>
+<tr>
+<td>store-id</td>
+<td>The ID of the store where the cancelled product was sold</td>
+</tr>
+<tr>
+<td>product-id</td>
+<td>The ID of the product that was cancelled</td>
+</tr>
+<tr>
+<td>product-discontinual-id</td>
+<td>The ID of the product_discontinual that created the product_cancellation</td>
+</tr>
+<tr>
+<td>product-name</td>
+<td>The name of the cancelled product</td>
+</tr>
+<tr>
+<td>cancellation-message</td>
+<td>The message explaining why the product was cancelled</td>
+</tr>
+<tr>
+<td>with-advance-notice</td>
+<td>Set to false, indicating there was no advance notice of the product&#39;s cancellation given to those holding the currency that was redeemable in the product. To provide advance notice, a product_discontinual must be created instead of a product_cancellation</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the product cancellation was cancelled</td>
+</tr>
+</tbody></table>
 
       </div>
       <div class="dark-box">
