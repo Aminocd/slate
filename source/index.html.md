@@ -2166,3 +2166,154 @@ created-at | The time and date when the product was created
 updated-at | The time and date when the product was last updated
 get-image-url | The URL at which the product image picture can be found
 
+# Product Cancellations
+
+## Get a Product Cancellation
+
+```shell
+curl 'https://api.mycurrency.com/products/5/product_cancellation' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "1",
+    "type": "product-cancellations",
+    "attributes": {
+      "store-id": 3,
+      "product-id": 5,
+      "product-discontinual-id": null,
+      "product-name": "fishing bait",
+      "cancellation-message": "cancelling fishing bait due to health code regulations",
+      "with-advance-notice": false,
+      "created-at": "2018-09-06T00:07:27.093-07:00",
+      "updated-at":"2018-09-06T00:07:27.093-07:00"
+    }
+  }
+}
+```
+
+This endpoint retrieves a particular product cancellation. 
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/products/<PRODUCT-ID>/product_cancellation`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the product cancellation
+store-id | The ID of the store where the cancelled product was sold
+product-id | The ID of the product that was cancelled
+product-discontinual-id | The ID of the product_discontinual that created the product_cancellation
+product-name | The name of the cancelled product
+cancellation-message | The message explaining why the product was cancelled
+with-advance-notice | Whether there was advance notice of the product's cancellation given to those holding the currency that the product was associated with in order to give them the opportunity to purchase the product before its cancellation
+created-at | The time and date when the product was cancelled
+
+## List Issuer's Product Cancellations
+
+```shell
+curl 'https://api.mycurrency.com/users/4/issuer/product_cancellations' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "product-cancellations",
+      "attributes": {
+        "store-id": 3,
+        "product-id": 5,
+        "product-discontinual-id": null,
+        "product-name": "fishing bait",
+        "cancellation-message": "cancelling fishing bait due to health code regulations",
+        "with-advance-notice": false,
+        "created-at": "2018-09-06T00:07:27.093-07:00"
+      }
+    },
+    {
+      "id": "4",
+      "type": "product-cancellations",
+      "attributes": {
+        "store-id": 4,
+        "product-id": 9,
+        "product-discontinual-id": null,
+        "product-name": "turquoise gem",
+        "cancellation-message": "cancelling because supplier has stopped exporting these",
+        "with-advance-notice": false,
+        "created-at": "2018-09-07T14:04:44.141-07:00"
+      }
+    },
+    {
+      "id": "5",
+      "type": "product-cancellations",
+      "attributes": {
+        "store-id": 6,
+        "product-id": 12,
+        "product-discontinual-id": null,
+        "product-name": "Hawaiian pizza",
+        "cancellation-message": "change of menu",
+        "with-advance-notice": false,
+        "created-at": "2018-09-08T11:18:31.411-07:00"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/users/4/issuer/product_cancellations?",
+    "first": "https://api.mycurrency.com/users/4/issuer/product_cancellations?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/users/4/issuer/product_cancellations?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "3"
+    }
+  }
+}
+```
+
+This endpoint retrieves all product cancellations associated with the stores of a particular issuer, by the USER-ID of the issuer's associated user account
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/issuer/product_cancellations`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+without_advance_notice | boolean | no | If set to true, only returns the product cancellations in the set that have the :with_advance_notice field set to false
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the product cancellation
+store-id | The ID of the store where the cancelled product was sold
+product-id | The ID of the product that was cancelled
+product-discontinual-id | The ID of the product_discontinual that created the product_cancellation
+product-name | The name of the cancelled product
+cancellation-message | The message explaining why the product was cancelled
+with-advance-notice | Whether there was advance notice of the product's cancellation given to those holding the currency that the product was associated with in order to give them the opportunity to purchase the product before its cancellation
+created-at | The time and date when the product cancellation was cancelled
+
