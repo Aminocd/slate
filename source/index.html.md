@@ -2474,3 +2474,43 @@ cancellation-message | The message explaining why the product was cancelled
 with-advance-notice | Whether there was advance notice of the product's cancellation given to those holding the currency that was redeemable in the product, in order to give them the opportunity to spend their currency on the product before its cancellation
 created-at | The time and date when the product cancellation was cancelled
 
+## Create Product Cancellation
+
+```shell
+curl -X POST https://api.mycurrency.com/users/4/issuer/currencies/5/stores/3/products/5/product_cancellation \
+  -d '{"product_cancellation": { "cancellation_message": "cancelling fishing bait due to health code regulations"} }' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "1",
+    "type": "product-cancellations",
+    "attributes": {
+      "store-id": 3,
+      "product-id": 5,
+      "product-discontinual-id": null,
+      "product-name": "fishing bait",
+      "cancellation-message": "cancelling fishing bait due to health code regulations",
+      "with-advance-notice": false,
+      "created-at": "2018-09-06T00:07:27.093-07:00",
+      "updated-at":"2018-09-06T00:07:27.093-07:00"
+    }
+  }
+}
+```
+
+Creates a product cancellation.
+
+### HTTP Request
+
+`POST https://api.mycurrency.com/users/<USER-ID>/issuer/currencies/<CURRENCY-ID>/stores/<STORE-ID>/products/<PRODUCT-ID>/product_cancellation`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the USER-ID 
+</aside>
+
