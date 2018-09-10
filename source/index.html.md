@@ -2518,8 +2518,8 @@ Authentication: the request requires the OAuth access-token associated with the 
 
 Parameter | Type | Required | Description
 --------- | ------- | ------- | -----------
-user_id | integer | yes | The ID of the user which offered the product that was canceled, provided in URL path
-currency_id | integer | yes | The ID of the currency which was redeemable in the product that was canceled, provided in URL path
+user_id | integer | yes | The ID of the user which offered the product that was cancelled, provided in URL path
+currency_id | integer | yes | The ID of the currency which was redeemable in the product that was cancelled, provided in URL path
 store_id | integer | yes | The ID of the store where the product being cancelled is sold, provided in URL path
 product_id | integer | yes | The ID of the product that is being cancelled, provided in URL path
 cancellation-message | string | no | The message explaining why the product is being cancelled
@@ -2537,3 +2537,200 @@ cancellation-message | The message explaining why the product was cancelled
 with-advance-notice | Set to false, indicating there was no advance notice of the product's cancellation given to those holding the currency that was redeemable in the product. To provide advance notice, a product_discontinual must be created instead of a product_cancellation
 created-at | The time and date when the product cancellation was cancelled
 
+# Product Discontinuals
+
+## Get a Product Discontinual
+
+```shell
+curl 'https://api.mycurrency.com/products/4/product_discontinual' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "1",
+    "type": "product-discontinuals",
+    "attributes": {
+      "store-id": 2,
+      "product-id": 4,
+      "product-name": "skin exfoliation",
+      "discontinual-message": "will be replacing this with coconut milk exfoliant",
+      "executed": true,
+      "created-at": "2018-09-07T14:23:25.000-07:00"
+    }
+  }
+}
+```
+
+This endpoint retrieves a particular product discontinual. 
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/products/<PRODUCT-ID>/product_discontinual`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the product discontinual
+store-id | The ID of the store where the product being cancelled is sold
+product-id | The ID of the product that will be cancelled
+product-name | The name of the product that will be cancelled
+discontinual-message | The message explaining why the product will be cancelled
+executed | Whether the product discontinual has been executed in order to create a product cancellation. Product discontinuals are executed 30 days after being created, giving holders of the currency that the product is redeemable in time to trade in their currency for that product before it is cancelled
+created-at | The time and date when the product discontinual was cancelled
+
+## List Store's Product Discontinuals
+
+```shell
+curl 'https://api.mycurrency.com/stores/2/product_discontinuals' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "2",
+      "type": "product-discontinuals",
+      "attributes": {
+        "store-id": 2,
+        "product-id": 6,
+        "product-name": "banana leaf wrap treatment",
+        "discontinual-message": "is superseded by the new dragonfruit skin wrap treatment",
+        "executed": false,
+        "created-at": "2018-09-10T15:31:50.306-07:00"
+      }
+    },
+    {
+      "id": "3",
+      "type": "product-discontinuals",
+      "attributes": {
+        "store-id": 2,
+        "product-id": 7,
+        "product-name": "glacier cryotherapy",
+        "discontinual-message": "this has been replaced by the mountain hot springs treatment",
+        "executed": false,
+        "created-at": "2018-09-10T15:33:11.074-07:00"
+      }
+    },
+    {
+      "id": "4",
+      "type": "product-discontinuals",
+      "attributes": {
+        "store-id": 2,
+        "product-id": 8,
+        "product-name": "drum massage",
+        "discontinual-message": "replaced by the ashiatsu back walking treatment",
+        "executed": false,
+        "created-at": "2018-09-10T15:34:33.801-07:00"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/stores/2/product_discontinuals?",
+    "first": "https://api.mycurrency.com/stores/2/product_discontinuals?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/stores/2/product_discontinuals?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "3"
+    }
+  }
+}
+```
+
+This endpoint retrieves all product discontinuals associated with the store specified by the STORE-ID
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/stores/<STORE-ID>/product_discontinuals`
+
+<aside class="notice">
+Authentication: not required for product discontinuals that have not been executed. To view details of all product discontinuals, including those that have already been executed, the request requires the OAuth access-token associated with the User that the product's store belongs to
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the product discontinual
+store-id | The ID of the store where the product being cancelled is sold
+product-id | The ID of the product that will be cancelled
+product-name | The name of the product that will be cancelled
+discontinual-message | The message explaining why the product will be cancelled
+executed | Whether the product discontinual has been executed in order to create a product cancellation. Product discontinuals are executed 30 days after being created, giving holders of the currency that the product is redeemable in time to trade in their currency for that product before it is cancelled
+created-at | The time and date when the product discontinual was cancelled
+
+## Create Product Discontinual
+
+```shell
+curl -X POST https://api.mycurrency.com/users/4/issuer/currencies/4/stores/2/products/8/product_discontinual \
+  -d '{"product_discontinual": { "discontinual_message": "replaced by the ashiatsu back walking treatment"} }' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "4",
+    "type": "product-discontinuals",
+    "attributes": {
+      "store-id": 2,
+      "product-id": 8,
+      "product-name": "drum massage",
+      "discontinual-message": "replaced by the ashiatsu back walking treatment",
+      "executed": false,
+      "created-at": "2018-09-10T15:34:33.801-07:00"
+    }
+  }
+}
+```
+
+Creates a product discontinual.
+
+### HTTP Request
+
+`POST https://api.mycurrency.com/users/<USER-ID>/issuer/currencies/<CURRENCY-ID>/stores/<STORE-ID>/products/<PRODUCT-ID>/product_discontinual`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the USER-ID 
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+user_id | integer | yes | The ID of the user which offered the product that is being cancelled, provided in URL path
+currency_id | integer | yes | The ID of the currency which was redeemable in the product that is being cancelled, provided in URL path
+store_id | integer | yes | The ID of the store where the product being cancelled is sold, provided in URL path
+product_id | integer | yes | The ID of the product that is being cancelled, provided in URL path
+discontinual-message | string | no | The message explaining why the product will be cancelled
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the product discontinual
+store-id | The ID of the store where the product being cancelled is sold
+product-id | The ID of the product that will be cancelled
+product-name | The name of the product that will be cancelled
+discontinual-message | The message explaining why the product will be cancelled
+executed | Whether the product discontinual has been executed in order to create a product cancellation. Product discontinuals are executed 30 days after being created, giving holders of the currency that the product is redeemable in time to trade in their currency for that product before it is cancelled
+created-at | The time and date when the product discontinual was cancelled
