@@ -384,7 +384,7 @@
               </ul>
           </li>
           <li>
-            <a href="#currency-holdings" class="toc-h1 toc-link" data-title="Currency Holdings">Currency Holdings</a>
+            <a href="#public-currency-holdings" class="toc-h1 toc-link" data-title="Public Currency Holdings">Public Currency Holdings</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#get-a-public-currency-holding" class="toc-h2 toc-link" data-title="Get a Public Currency Holding">Get a Public Currency Holding</a>
@@ -397,9 +397,6 @@
                   </li>
                   <li>
                     <a href="#get-a-public-currency-holding-with-authorization" class="toc-h2 toc-link" data-title="Get a Public Currency Holding with Authorization">Get a Public Currency Holding with Authorization</a>
-                  </li>
-                  <li>
-                    <a href="#get-a-public-currency-holding-with-authorization-2" class="toc-h2 toc-link" data-title="Get a Public Currency Holding with Authorization">Get a Public Currency Holding with Authorization</a>
                   </li>
                   <li>
                     <a href="#list-user-39-s-public-self-issued-currency-holdings-with-authorization" class="toc-h2 toc-link" data-title="List User's Public Self-Issued Currency Holdings with Authorization">List User's Public Self-Issued Currency Holdings with Authorization</a>
@@ -4173,7 +4170,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The time and date when the product discontinual was cancelled</td>
 </tr>
 </tbody></table>
-<h1 id='currency-holdings'>Currency Holdings</h1><h2 id='get-a-public-currency-holding'>Get a Public Currency Holding</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/users/3/public_currency_holdings/3'</span> <span class="se">\</span>
+<h1 id='public-currency-holdings'>Public Currency Holdings</h1><h2 id='get-a-public-currency-holding'>Get a Public Currency Holding</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/users/3/public_currency_holdings/3'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
@@ -4499,91 +4496,6 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The time and date when the public currency holding was last updated</td>
 </tr>
 </tbody></table>
-<h2 id='get-a-public-currency-holding-with-authorization-2'>Get a Public Currency Holding with Authorization</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/users/3/authorized_public_currency_holdings/3'</span> 
-  -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span> 
-  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"public-currency-holdings"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"owning-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000000</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"transfer-out"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"transfer-in"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000000</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"micro-currency-order-out"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"issuance-in"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"burn-amount-out"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-16T13:26:52.023-07:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-16T13:26:52.059-07:00"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves the full details of a particular publicly viewable currency holding. </p>
-<h3 id='http-request-44'>HTTP Request</h3>
-<p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_public_currency_holdings/&lt;ID&gt;</code></p>
-
-<aside class="notice">
-Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
-</aside>
-<h3 id='response-44'>RESPONSE</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>id</td>
-<td>The ID of the public currency holding</td>
-</tr>
-<tr>
-<td>owning-user-id</td>
-<td>The ID of the user that the public currency holding belongs to</td>
-</tr>
-<tr>
-<td>currency-id</td>
-<td>The ID of the currency that the public currency holding holds</td>
-</tr>
-<tr>
-<td>amount-atomic</td>
-<td>The amount of currency held in the public currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
-</tr>
-<tr>
-<td>transfer-out</td>
-<td>The total amount that has been debited from the public currency holding as a result of outgoing transfers</td>
-</tr>
-<tr>
-<td>transfer-in</td>
-<td>The total amount that has been credited to the public currency holding as a result of incoming transfers</td>
-</tr>
-<tr>
-<td>micro-currency-order-out</td>
-<td>The total amount that has been debited from the public currency holding as a result of micro_currency_orders</td>
-</tr>
-<tr>
-<td>issuance-in</td>
-<td>The total amount that has been credited to the public currency holding as a result of incoming issuances</td>
-</tr>
-<tr>
-<td>burn-amount-out</td>
-<td>The total amount that has been debited from the public currency holding as a result of the daily burnrate of the currency</td>
-</tr>
-<tr>
-<td>created-at</td>
-<td>The time and date when the public currency holding was created</td>
-</tr>
-<tr>
-<td>updated-at</td>
-<td>The time and date when the public currency holding was last updated</td>
-</tr>
-</tbody></table>
 <h2 id='list-user-39-s-public-self-issued-currency-holdings-with-authorization'>List User&#39;s Public Self-Issued Currency Holdings with Authorization</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/users/3/authorized_self_issued_public_currency_holdings'</span> 
   -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span> 
   -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span>
@@ -4643,13 +4555,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the full details of all of a user&#39;s publicly viewable holdings of currencies that the user is also the issuer of.</p>
-<h3 id='http-request-45'>HTTP Request</h3>
+<h3 id='http-request-44'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_self_issued_public_currency_holdings</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-45'>RESPONSE</h3>
+<h3 id='response-44'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4760,13 +4672,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the full details of all of a user&#39;s publicly viewable holdings of currencies that the user is not the issuer of.</p>
-<h3 id='http-request-46'>HTTP Request</h3>
+<h3 id='http-request-45'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_externally_issued_public_currency_holdings</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-46'>RESPONSE</h3>
+<h3 id='response-45'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
