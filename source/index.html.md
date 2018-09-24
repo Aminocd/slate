@@ -2734,3 +2734,487 @@ product-name | The name of the product that will be cancelled
 discontinual-message | The message explaining why the product will be cancelled
 executed | Whether the product discontinual has been executed in order to create a product cancellation. Product discontinuals are executed 30 days after being created, giving holders of the currency that the product is redeemable in time to trade in their currency for that product before it is cancelled
 created-at | The time and date when the product discontinual was cancelled
+
+# Currency Holdings
+
+## Get a Public Currency Holding
+
+```shell
+curl 'https://api.mycurrency.com/users/3/public_currency_holdings/3' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "3",
+    "type": "public-currency-holdings",
+    "attributes": {
+      "owning-user-id": 3,
+      "currency-id": 2,
+      "amount-atomic": 50000000000
+    }
+  }
+}
+```
+
+This endpoint retrieves a particular publicly viewable currency holding. 
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/public_currency_holdings/<ID>`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the public currency holding
+owning-user-id | The ID of the user that the public currency holding belongs to
+currency-id | The ID of the currency that the public currency holding holds
+amount-atomic | The amount of currency held in the public currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
+
+## List User's Public Self-Issued Currency Holdings 
+
+```shell
+curl 'https://api.mycurrency.com/users/3/self_issued_public_currency_holdings' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "3",
+      "type": "public-currency-holdings",
+      "attributes": {
+        "owning-user-id": 3,
+        "currency-id": 2,
+        "amount-atomic": 50000000000
+      }
+    },
+    {
+      "id": "8",
+      "type": "public-currency-holdings",
+      "attributes": {
+        "owning-user-id": 3,
+        "currency-id": 6,
+        "amount-atomic": 100000000000
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/users/3/self_issued_public_currency_holdings?",
+    "first": "https://api.mycurrency.com/users/3/self_issued_public_currency_holdings?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/users/3/self_issued_public_currency_holdings?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+    "per-page": null,
+    "total-pages": "1",
+    "total-count": "2"
+    }
+  }
+}
+```
+
+This endpoint retrieves all of a user's publicly viewable holdings of currencies that the user is also the issuer of.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/self_issued_public_currency_holdings`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+user_id | integer | yes | The ID of the user which offered the product that is being cancelled, provided in URL path
+min_amount | integer | no | The set of currency holdings returned will only include those with balances exceeding min_amount. The default min_amount is zero resulting in currency holdings with a zero balance not being returned.
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the public currency holding
+owning-user-id | The ID of the user that the public currency holding belongs to
+currency-id | The ID of the currency that the public currency holding holds
+amount-atomic | The amount of currency held in the public currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
+
+## List User's Public Externally Issued Currency Holdings 
+
+```shell
+curl 'https://api.mycurrency.com/users/4/externally_issued_public_currency_holdings' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "2",
+      "type": "public-currency-holdings",
+      "attributes": {
+        "owning-user-id": 4,
+        "currency-id": 2,
+        "amount-atomic": 120000000000
+      }
+    },
+    {
+      "id": "4",
+      "type": "public-currency-holdings",
+      "attributes": {
+        "owning-user-id": 4,
+        "currency-id": 3,
+        "amount-atomic": 80000000000
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/users/4/externally_issued_public_currency_holdings?",
+    "first": "https://api.mycurrency.com/users/4/externally_issued_public_currency_holdings?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/users/4/externally_issued_public_currency_holdings?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+    "per-page": null,
+    "total-pages": "1",
+    "total-count": "2"
+    }
+  }
+}
+```
+
+This endpoint retrieves all of a user's publicly viewable holdings of currencies that the user is not the issuer of.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/self_issued_public_currency_holdings`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+user_id | integer | yes | The ID of the user which offered the product that is being cancelled, provided in URL path
+min_amount | integer | no | The set of currency holdings returned will only include those with balances exceeding min_amount. The default min_amount is zero resulting in currency holdings with a zero balance not being returned.
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the public currency holding
+owning-user-id | The ID of the user that the public currency holding belongs to
+currency-id | The ID of the currency that the public currency holding holds
+amount-atomic | The amount of currency held in the public currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
+
+## Get a Public Currency Holding with Authorization
+
+```shell
+curl 'https://api.mycurrency.com/users/3/authorized_public_currency_holdings/3' 
+  -H 'Accept: application/json' -H 'Content-Type: application/json' 
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "3",
+    "type": "public-currency-holdings",
+    "attributes": {
+      "owning-user-id": 3,
+      "currency-id": 2,
+      "amount-atomic": 50000000000,
+      "transfer-out": 0,
+      "transfer-in": 50000000000,
+      "micro-currency-order-out": 0,
+      "issuance-in": 0,
+      "burn-amount-out": 0,
+      "created-at": "2018-09-16T13:26:52.023-07:00",
+      "updated-at": "2018-09-16T13:26:52.059-07:00"
+    }
+  }
+}
+```
+
+This endpoint retrieves the full details of a particular publicly viewable currency holding. 
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/authorized_public_currency_holdings/<ID>`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the public currency holding
+owning-user-id | The ID of the user that the public currency holding belongs to
+currency-id | The ID of the currency that the public currency holding holds
+amount-atomic | The amount of currency held in the public currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
+transfer-out | The total amount that has been debited from the public currency holding as a result of outgoing transfers
+transfer-in | The total amount that has been credited to the public currency holding as a result of incoming transfers
+micro-currency-order-out | The total amount that has been debited from the public currency holding as a result of micro_currency_orders 
+issuance-in | The total amount that has been credited to the public currency holding as a result of incoming issuances
+burn-amount-out | The total amount that has been debited from the public currency holding as a result of the daily burnrate of the currency 
+created-at | The time and date when the public currency holding was created
+updated-at | The time and date when the public currency holding was last updated
+
+## Get a Public Currency Holding with Authorization
+
+```shell
+curl 'https://api.mycurrency.com/users/3/authorized_public_currency_holdings/3' 
+  -H 'Accept: application/json' -H 'Content-Type: application/json' 
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "3",
+    "type": "public-currency-holdings",
+    "attributes": {
+      "owning-user-id": 3,
+      "currency-id": 2,
+      "amount-atomic": 50000000000,
+      "transfer-out": 0,
+      "transfer-in": 50000000000,
+      "micro-currency-order-out": 0,
+      "issuance-in": 0,
+      "burn-amount-out": 0,
+      "created-at": "2018-09-16T13:26:52.023-07:00",
+      "updated-at": "2018-09-16T13:26:52.059-07:00"
+    }
+  }
+}
+```
+
+This endpoint retrieves the full details of a particular publicly viewable currency holding. 
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/authorized_public_currency_holdings/<ID>`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the public currency holding
+owning-user-id | The ID of the user that the public currency holding belongs to
+currency-id | The ID of the currency that the public currency holding holds
+amount-atomic | The amount of currency held in the public currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
+transfer-out | The total amount that has been debited from the public currency holding as a result of outgoing transfers
+transfer-in | The total amount that has been credited to the public currency holding as a result of incoming transfers
+micro-currency-order-out | The total amount that has been debited from the public currency holding as a result of micro_currency_orders 
+issuance-in | The total amount that has been credited to the public currency holding as a result of incoming issuances
+burn-amount-out | The total amount that has been debited from the public currency holding as a result of the daily burnrate of the currency 
+created-at | The time and date when the public currency holding was created
+updated-at | The time and date when the public currency holding was last updated
+
+## List User's Public Self-Issued Currency Holdings with Authorization
+
+```shell
+curl 'https://api.mycurrency.com/users/3/authorized_self_issued_public_currency_holdings' 
+  -H 'Accept: application/json' -H 'Content-Type: application/json' 
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "3",
+      "type": "public-currency-holdings",
+      "attributes": {
+        "owning-user-id": 3,
+        "currency-id": 2,
+        "amount-atomic": 50000000000,
+        "transfer-out": 0,
+        "transfer-in": 50000000000,
+        "micro-currency-order-out": 0,
+        "issuance-in": 0,
+        "burn-amount-out": 0,
+        "created-at": "2018-09-16T13:26:52.023-07:00",
+        "updated-at": "2018-09-16T13:26:52.059-07:00"
+      }
+    },
+    {
+      "id": "8",
+      "type": "public-currency-holdings",
+      "attributes": {
+        "owning-user-id": 3,
+        "currency-id": 6,
+        "amount-atomic": 100000000000,
+        "transfer-out": 50000000000,
+        "transfer-in": 150000000000,
+        "micro-currency-order-out": 0,
+        "issuance-in": 0,
+        "burn-amount-out": 0,
+        "created-at": "2018-09-17T11:51:21.014-07:00",
+        "updated-at": "2018-09-17T11:51:21.014-07:00",
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/users/3/authorized_self_issued_public_currency_holdings?",
+    "first": "https://api.mycurrency.com/users/3/authorized_self_issued_public_currency_holdings?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/users/3/authorized_self_issued_public_currency_holdings?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "2"
+    }
+  }
+}
+```
+
+This endpoint retrieves the full details of all of a user's publicly viewable holdings of currencies that the user is also the issuer of.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/authorized_self_issued_public_currency_holdings`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the public currency holding
+owning-user-id | The ID of the user that the public currency holding belongs to
+currency-id | The ID of the currency that the public currency holding holds
+amount-atomic | The amount of currency held in the public currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
+transfer-out | The total amount that has been debited from the public currency holding as a result of outgoing transfers
+transfer-in | The total amount that has been credited to the public currency holding as a result of incoming transfers
+micro-currency-order-out | The total amount that has been debited from the public currency holding as a result of micro_currency_orders 
+issuance-in | The total amount that has been credited to the public currency holding as a result of incoming issuances
+burn-amount-out | The total amount that has been debited from the public currency holding as a result of the daily burnrate of the currency 
+created-at | The time and date when the public currency holding was created
+updated-at | The time and date when the public currency holding was last updated
+
+## List User's Public Externally Issued Currency Holdings with Authorization
+
+```shell
+curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_public_currency_holdings' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "2",
+      "type": "public-currency-holdings",
+      "attributes": {
+        "owning-user-id": 4,
+        "currency-id": 2,
+        "amount-atomic": 120000000000,
+        "transfer-out": 80000000000,
+        "transfer-in": 200000000000,
+        "micro-currency-order-out": 0,
+        "issuance-in": 0,
+        "burn-amount-out": 0,
+        "created-at": "2018-09-13T01:15:41.041-07:00",
+        "updated-at": "2018-09-13T01:15:41.041-07:00",
+      }
+    },
+    {
+      "id": "4",
+      "type": "public-currency-holdings",
+      "attributes": {
+        "owning-user-id": 4,
+        "currency-id": 3,
+        "amount-atomic": 80000000000
+        "transfer-out": 80000000000,
+        "transfer-in": 200000000000,
+        "micro-currency-order-out": 0,
+        "issuance-in": 0,
+        "burn-amount-out": 0,
+        "created-at": "2018-09-13T01:15:41.041-07:00",
+        "updated-at": "2018-09-13T01:15:41.041-07:00",
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/users/4/authorized_externally_issued_public_currency_holdings?",
+    "first": "https://api.mycurrency.com/users/4/authorized_externally_issued_public_currency_holdings?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/users/4/authorized_externally_issued_public_currency_holdings?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+    "per-page": null,
+    "total-pages": "1",
+    "total-count": "2"
+    }
+  }
+}
+```
+
+This endpoint retrieves the full details of all of a user's publicly viewable holdings of currencies that the user is not the issuer of.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/authorized_externally_issued_public_currency_holdings`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the public currency holding
+owning-user-id | The ID of the user that the public currency holding belongs to
+currency-id | The ID of the currency that the public currency holding holds
+amount-atomic | The amount of currency held in the public currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
+transfer-out | The total amount that has been debited from the public currency holding as a result of outgoing transfers
+transfer-in | The total amount that has been credited to the public currency holding as a result of incoming transfers
+micro-currency-order-out | The total amount that has been debited from the public currency holding as a result of micro_currency_orders 
+issuance-in | The total amount that has been credited to the public currency holding as a result of incoming issuances
+burn-amount-out | The total amount that has been debited from the public currency holding as a result of the daily burnrate of the currency 
+created-at | The time and date when the public currency holding was created
+updated-at | The time and date when the public currency holding was last updated
