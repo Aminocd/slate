@@ -2737,7 +2737,7 @@ created-at | The time and date when the product discontinual was cancelled
 
 # Public Currency Holdings
 
-Public currency holdings are viewable by the public. Some of their details are only viewable to the user that owns them.
+Public currency holdings are viewable by the public. Authorized endpoints are only accessible to the user that owns the publi currency holding and provides the full details of the holding. The public endpoints provide basic information about the public currency holding.
 
 ## Get a Public Currency Holding
 
@@ -3166,7 +3166,7 @@ updated-at | The time and date when the public currency holding was last updated
 
 # Private Currency Holdings
 
-Private currency holdings can only be viewed by the user that owns
+Private currency holding endpoints can only be accessed by the user that owns the holding.
 
 ## Get a Private Currency Holding with Authorization
 
@@ -3408,3 +3408,135 @@ burn-amount-out | The total amount that has been debited from the public currenc
 created-at | The time and date when the public currency holding was created
 updated-at | The time and date when the public currency holding was last updated
 
+# Transactions
+
+Transactions are all user actions that change the balance of currency holding: issuances, transfers, and micro_currency_orders. When listing the transactions associated with a particular public or private currency holding, the burnrate periods of that currency holding are also shown, to enable calculation of the amount of currency burned over time.
+
+## List Public Currency Holding's Transactions
+
+A public currency holding's transactions are sorted from oldest to most recent created_at date
+
+curl 'https://api.mycurrency.com/users/4/authorized_public_currency_holdings/4/pu_h_transactions' -H 'Accept: application/json' -H 'Content-Type: application/json' -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "18",
+      "type": "burnrate-periods",
+      "attributes": {
+        "day-counter": 16,
+        "final-day-counter": null,
+        "burn-rate": 580,
+        "daily-burn-rate": "0.000163686",
+        "start-amount-atomic": 0,
+        "last-amount-atomic": 79790738929
+        "created-at": "2018-09-16T13:40:22.420-07:00",
+        "updated-at": "2018-10-02T19:44:06.603-07:00",
+      }
+    },
+    {
+      "id": "4",
+      "type": "transfers",
+      "attributes": {
+        "amount-atomic": 80000000000,
+        "receiver-day-counter": 0,
+        "sending-user-id": 4,
+        "sender-username": "ScipioAfricanus",
+        "receiver-before-amount-atomic": 0,
+        "receiver-after-amount-atomic": 80000000000,
+        "created-at": "2018-09-16T13:40:22.461-07:00",
+        "updated-at": "2018-09-16T13:40:22.461-07:00",
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/users/4/authorized_public_currency_holdings/4/pu_h_transactions?",
+    "first": "https://api.mycurrency.com/users/4/authorized_public_currency_holdings/4/pu_h_transactions?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/users/4/authorized_public_currency_holdings/4/pu_h_transactions?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "2"
+    }
+  }
+}
+```
+
+This endpoint retrieves all issuances, transfers, micro_currency_orders and burnrate_periods associated with a public currency holding.
+
+### HTTP Request
+
+`https://api.mycurrency.com/users/<USER-ID>/authorized_public_currency_holdings/<PUBLIC-CURRENCY-HOLDING-ID>/pu_h_transactions`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### RESPONSE
+
+Transfers:
+
+Parameter | Description
+--------- | -----------
+id | The ID of the transfer
+amount-atomic | The amount of currency transferred, in atomic units (each whole unit is composed of 10^10 atomic units)
+sender-day-counter | The day counter of the sending currency holding when it was debited by the transfer, only shown if the owner of the public currency holding is the sending user
+receiver-day-counter | The day counter of the receiving currency holding when it was credited by the transfer, only shown if the owner of the public or private currency holding is the receiving user
+sending-user-id | The ID of the transfer sender, only shown if the owner of the public currency holding is the transfer receiver 
+sender-username | The username of the transfer sender, only shown if the owner of the public currency holding is the transfer receiver
+receiving-user-id | The ID of the transfer receiver, only shown if owner of the public currency holding is the transfer sender
+receiving-username | The username of the transfer sender, only shown if the owner of the public currency holding is the transfer sender 
+sender-before-amount-atomic | The balance, in atomic units, of the sending currency holding before it was debited by the transfer, only shown if the owner of the public currency holding is the transfer sender
+sender-after-amount-atomic | The balance, in atomic units, of the sending currency holding after it was debited by the transfer, only shown if the owner of the public currency holding is the transfer sender
+receiver-before-amount-atomic | The balance, in atomic units, of the receiving currency holding before it was credited by the transfer, only shown if the owner of the public currency holding is the transfer receiver
+receiver-after-amount-atomic | The balance, in atomic units, of the receiving currency holding after it was credited by the transfer, only shown if the owner of the public currency holding is the transfer receiver
+created-at | The time and date when the transfer was created
+updated-at | The time and date when the transfer was last updated
+
+Issuances: 
+
+Parameter | Description
+--------- | -----------
+id | The ID of the issuance
+amount-atomic | The amount of currency issued, in atomic units (each whole unit is composed of 10^10 atomic units)
+issueing-user-id | The ID of the issueing user
+issueing-username | The username of the issueing user
+before-amount-atomic | The balance, in atomic units, of the public currency holding before it was credited by the issuance
+after-amount-atomic | The balance, in atomic units, of the public currency holding after it was credited by the issuance
+day-counter | The day counter of the public currency holding when it was credited by the issuance
+created-at | The time and date when the transfer was created
+updated-at | The time and date when the transfer was last updated
+
+Micro Currency Orders: 
+
+Parameter | Description
+--------- | -----------
+id | The ID of the micro currency order
+amount-atomic | The amount of currency spent, in atomic units (each whole unit is composed of 10^10 atomic units)
+store-id | The ID of the store that the micro currency order was spent at
+store-name | The name of the store that the micro currency order was spent at
+before-amount-atomic | The balance, in atomic units, of the public currency holding before it was debited by the micro currency order
+after-amount-atomic | The balance, in atomic units, of the public currency holding after it was debited by the micro currency order
+day-counter | The day counter of the public currency holding when it was debited by the micro currency order
+created-at | The time and date when the micro currency order was created
+updated-at | The time and date when the micro currency order was last updated
+
+Burnrate Periods:
+
+Parameter | Description
+--------- | -----------
+id | The ID of the burnrate period
+day-counter | The number of daily burns that have been applied to the public currency holding since the burnrate period was started
+final-day-counter | The number of daily burns that were applied to the public currency holding over the lifetime of a burnrate period. Only set once a burnrate period is succeeded by a new burnrate period.
+burn-rate | The burn rate of public currency holding within the burnrate period
+start-amount-atomic | The balance, in atomic units, of the public currency holding when the burnrate period began
+last-amount-atomic | The last balance, in atomic units, of the public currency holding during the burnrate period. The value stops being updated when the burnrate period is succeeded by a new burnrate period.
+created-at | The time and date when the micro currency order was created
+updated-at | The time and date when the micro currency order was last updated
