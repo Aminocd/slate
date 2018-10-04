@@ -5081,12 +5081,11 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 </tbody></table>
 <h1 id='transactions'>Transactions</h1>
-<p>Transactions are all user actions that change the balance of currency holding: issuances, transfers, and micro_currency_orders. When listing the transactions associated with a particular public or private currency holding, the burnrate periods of that currency holding are also shown, to enable calculation of the amount of currency burned over time.</p>
+<p>Transactions are all user actions that change the balance of currency holding: issuances, transfers, and micro currency orders. When listing the transactions associated with a particular public or private currency holding, the burnrate periods of that currency holding are also shown, to enable calculation of the amount of currency burned over time.</p>
 <h2 id='list-public-currency-holding-39-s-transactions'>List Public Currency Holding&#39;s Transactions</h2>
 <p>A public currency holding&#39;s transactions are sorted from oldest to most recent created_at date</p>
-
-<p>curl &#39;https://api.mycurrency.com/users/4/authorized_public_currency_holdings/4/pu_h_transactions&#39; -H &#39;Accept: application/json&#39; -H &#39;Content-Type: application/json&#39; -H &#39;Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao&#39;</p>
-
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/users/4/authorized_public_currency_holdings/4/pu_h_transactions'</span> -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span>
+</code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
@@ -5137,16 +5136,14 @@ Authentication: the request requires the OAuth access-token associated with the 
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all issuances, transfers, micro_currency_orders and burnrate_periods associated with a public currency holding.</p>
+<p>This endpoint retrieves all issuances, transfers, micro currency orders and burnrate periods associated with a public currency holding.</p>
 <h3 id='http-request-49'>HTTP Request</h3>
 <p><code>https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_public_currency_holdings/&lt;PUBLIC-CURRENCY-HOLDING-ID&gt;/pu_h_transactions</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-49'>RESPONSE</h3>
-<p>Transfers:</p>
-
+<h3 id='response-49'>RESPONSE</h3><h3 id='transfers'>Transfers:</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5210,9 +5207,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The time and date when the transfer was last updated</td>
 </tr>
 </tbody></table>
-
-<p>Issuances: </p>
-
+<h3 id='issuances'>Issuances:</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5256,9 +5251,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The time and date when the transfer was last updated</td>
 </tr>
 </tbody></table>
-
-<p>Micro Currency Orders: </p>
-
+<h3 id='micro-currency-orders'>Micro Currency Orders:</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5302,9 +5295,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The time and date when the micro currency order was last updated</td>
 </tr>
 </tbody></table>
-
-<p>Burnrate Periods:</p>
-
+<h3 id='burnrate-periods'>Burnrate Periods:</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
