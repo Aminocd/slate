@@ -3410,13 +3410,15 @@ updated-at | The time and date when the public currency holding was last updated
 
 # Transactions
 
-Transactions are all user actions that change the balance of currency holding: issuances, transfers, and micro_currency_orders. When listing the transactions associated with a particular public or private currency holding, the burnrate periods of that currency holding are also shown, to enable calculation of the amount of currency burned over time.
+Transactions are all user actions that change the balance of currency holding: issuances, transfers, and micro currency orders. When listing the transactions associated with a particular public or private currency holding, the burnrate periods of that currency holding are also shown, to enable calculation of the amount of currency burned over time.
 
 ## List Public Currency Holding's Transactions
 
 A public currency holding's transactions are sorted from oldest to most recent created_at date
 
+```shell
 curl 'https://api.mycurrency.com/users/4/authorized_public_currency_holdings/4/pu_h_transactions' -H 'Accept: application/json' -H 'Content-Type: application/json' -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
 
 > The above command returns JSON structured like this:
 
@@ -3469,7 +3471,7 @@ curl 'https://api.mycurrency.com/users/4/authorized_public_currency_holdings/4/p
 }
 ```
 
-This endpoint retrieves all issuances, transfers, micro_currency_orders and burnrate_periods associated with a public currency holding.
+This endpoint retrieves all issuances, transfers, micro currency orders and burnrate periods associated with a public currency holding.
 
 ### HTTP Request
 
@@ -3481,7 +3483,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 
 ### RESPONSE
 
-Transfers:
+### Transfers:
 
 Parameter | Description
 --------- | -----------
@@ -3500,7 +3502,7 @@ receiver-after-amount-atomic | The balance, in atomic units, of the receiving cu
 created-at | The time and date when the transfer was created
 updated-at | The time and date when the transfer was last updated
 
-Issuances: 
+### Issuances: 
 
 Parameter | Description
 --------- | -----------
@@ -3514,7 +3516,7 @@ day-counter | The day counter of the public currency holding when it was credite
 created-at | The time and date when the transfer was created
 updated-at | The time and date when the transfer was last updated
 
-Micro Currency Orders: 
+### Micro Currency Orders: 
 
 Parameter | Description
 --------- | -----------
@@ -3528,7 +3530,7 @@ day-counter | The day counter of the public currency holding when it was debited
 created-at | The time and date when the micro currency order was created
 updated-at | The time and date when the micro currency order was last updated
 
-Burnrate Periods:
+### Burnrate Periods:
 
 Parameter | Description
 --------- | -----------
