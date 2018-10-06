@@ -5651,7 +5651,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 </tbody></table>
 <h2 id='list-user-39-s-recent-transactions'>List User&#39;s Recent Transactions</h2>
-<p>This endpoint retrieves the 100 most recently created incoming issuances, transfers, and outgoing micro currency orders associated with a user, sorted by created_at date, starting from the most recent</p>
+<p>This endpoint retrieves the 100 most recently created issuances, transfers, and outgoing micro currency orders associated with a user, sorted by created_at date, starting from the most recent</p>
 <pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/users/3/recent_transactions?per_page=10'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span>
@@ -5867,8 +5867,8 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The ID of the transfer receiver, only shown if the owner of the currency holding that the transfer debited from is the logged-in user</td>
 </tr>
 <tr>
-<td>receiving-username</td>
-<td>The username of the transfer sender, only shown if the owner of the currency holding that the transfer debited from is the logged-in user</td>
+<td>receiver-username</td>
+<td>The username of the transfer receiver, only shown if the owner of the currency holding that the transfer debited from is the logged-in user</td>
 </tr>
 <tr>
 <td>sender-day-counter</td>
@@ -5896,11 +5896,11 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 <tr>
 <td>sending-user-id</td>
-<td>The ID of the transfer sender, only shown if the owner of the currency holding that the transfer debited from is the logged-in user</td>
+<td>The ID of the transfer sender, only shown if the owner of the currency holding that the transfer credited to is the logged-in user</td>
 </tr>
 <tr>
 <td>sender-username</td>
-<td>The username of the transfer sender, only shown if the owner of the currency holding that the transfer debited from is the logged-in user</td>
+<td>The username of the transfer sender, only shown if the owner of the currency holding that the transfer credited to is the logged-in user</td>
 </tr>
 <tr>
 <td>sender-before-amount-atomic</td>
@@ -5924,7 +5924,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 <tr>
 <td>transferred-currency-name</td>
-<td>The currency_name of the transferred currency</td>
+<td>The name of the transferred currency</td>
 </tr>
 <tr>
 <td>created-at</td>
@@ -5947,8 +5947,36 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The ID of the issuance</td>
 </tr>
 <tr>
+<td>day-counter</td>
+<td>The day counter of the currency holding when it was credited by the issuance</td>
+</tr>
+<tr>
 <td>amount-atomic</td>
 <td>The amount of currency issued, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
+<td>receiving-user-id</td>
+<td>The ID of the issuance receiver, only shown if the issuer is the logged-in user</td>
+</tr>
+<tr>
+<td>receiver-username</td>
+<td>The username of the issuance sender, only shown if the issuer is the logged-in user</td>
+</tr>
+<tr>
+<td>issuance-receiver-currency-holding-id</td>
+<td>The ID of the public or private currency holding that the issuance credited to, only shown if the issuance receiver is the logged-in user</td>
+</tr>
+<tr>
+<td>issuance-receiver-currency-holding-type</td>
+<td>Whether the currency holding that the issuance credited to is a &quot;PublicCurrencyHolding&quot; or a &quot;PrivateCurrencyHolding&quot;, only shown if the issuance receiver is the logged-in user</td>
+</tr>
+<tr>
+<td>issued-currency-id</td>
+<td>The ID of the issued currency</td>
+</tr>
+<tr>
+<td>issued-currency-name</td>
+<td>The name of the issued currency</td>
 </tr>
 <tr>
 <td>issueing-user-id</td>
@@ -5960,15 +5988,11 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 <tr>
 <td>before-amount-atomic</td>
-<td>The balance, in atomic units, of the private currency holding before it was credited by the issuance</td>
+<td>The balance, in atomic units, of the currency holding before it was credited by the issuance, only shown if the issuance receiver is the logged-in user</td>
 </tr>
 <tr>
 <td>after-amount-atomic</td>
-<td>The balance, in atomic units, of the private currency holding after it was credited by the issuance</td>
-</tr>
-<tr>
-<td>day-counter</td>
-<td>The day counter of the private currency holding when it was credited by the issuance</td>
+<td>The balance, in atomic units, of the currency holding after it was credited by the issuance, only shown if the issuance receiver is the logged-in user</td>
 </tr>
 <tr>
 <td>created-at</td>
@@ -5991,6 +6015,10 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The ID of the micro currency order</td>
 </tr>
 <tr>
+<td>day-counter</td>
+<td>The day counter of the currency holding when it was debited by the micro currency order</td>
+</tr>
+<tr>
 <td>amount-atomic</td>
 <td>The amount of currency spent, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
 </tr>
@@ -6003,56 +6031,28 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The name of the store that the micro currency order was spent at</td>
 </tr>
 <tr>
+<td>source-currency-holding-id</td>
+<td>The ID of the public or private currency holding that the micro currency order spent from</td>
+</tr>
+<tr>
+<td>source-currency-holding-type</td>
+<td>Whether the currency holding that the micro currency order spent from is a &quot;PublicCurrencyHolding&quot; or a &quot;PrivateCurrencyHolding&quot;</td>
+</tr>
+<tr>
+<td>spent-currency-id</td>
+<td>The ID of the issued currency</td>
+</tr>
+<tr>
+<td>spent-currency-name</td>
+<td>The name of the issued currency</td>
+</tr>
+<tr>
 <td>before-amount-atomic</td>
-<td>The balance, in atomic units, of the private currency holding before it was debited by the micro currency order</td>
+<td>The balance, in atomic units, of the currency holding before it was debited by the micro currency order</td>
 </tr>
 <tr>
 <td>after-amount-atomic</td>
-<td>The balance, in atomic units, of the private currency holding after it was debited by the micro currency order</td>
-</tr>
-<tr>
-<td>day-counter</td>
-<td>The day counter of the private currency holding when it was debited by the micro currency order</td>
-</tr>
-<tr>
-<td>created-at</td>
-<td>The time and date when the micro currency order was created</td>
-</tr>
-<tr>
-<td>updated-at</td>
-<td>The time and date when the micro currency order was last updated</td>
-</tr>
-</tbody></table>
-<h3 id='burnrate-periods-3'>Burnrate Periods:</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>id</td>
-<td>The ID of the burnrate period</td>
-</tr>
-<tr>
-<td>day-counter</td>
-<td>The number of daily burns that have been applied to the private currency holding since the burnrate period was started</td>
-</tr>
-<tr>
-<td>final-day-counter</td>
-<td>The number of daily burns that were applied to the private currency holding over the lifetime of a burnrate period. Only set once a burnrate period is succeeded by a new burnrate period.</td>
-</tr>
-<tr>
-<td>burn-rate</td>
-<td>The burn rate of private currency holding within the burnrate period</td>
-</tr>
-<tr>
-<td>start-amount-atomic</td>
-<td>The balance, in atomic units, of the private currency holding when the burnrate period began</td>
-</tr>
-<tr>
-<td>last-amount-atomic</td>
-<td>The last balance, in atomic units, of the private currency holding during the burnrate period. The value stops being updated when the burnrate period is succeeded by a new burnrate period.</td>
+<td>The balance, in atomic units, of the currency holding after it was debited by the micro currency order</td>
 </tr>
 <tr>
 <td>created-at</td>
