@@ -3732,7 +3732,7 @@ updated-at | The time and date when the micro currency order was last updated
 
 ## List User's Recent Transactions
 
-This endpoint retrieves the 100 most recently created incoming issuances, transfers, and outgoing micro currency orders associated with a user, sorted by created_at date, starting from the most recent
+This endpoint retrieves the 100 most recently created issuances, transfers, and outgoing micro currency orders associated with a user, sorted by created_at date, starting from the most recent
 
 ```shell
 curl 'https://api.mycurrency.com/users/3/recent_transactions?per_page=10' \
@@ -3944,21 +3944,21 @@ Parameter | Description
 id | The ID of the transfer
 amount-atomic | The amount of currency transferred, in atomic units (each whole unit is composed of 10^10 atomic units)
 receiving-user-id | The ID of the transfer receiver, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
-receiving-username | The username of the transfer sender, only shown if the owner of the currency holding that the transfer debited from is the logged-in user 
+receiver-username | The username of the transfer receiver, only shown if the owner of the currency holding that the transfer debited from is the logged-in user 
 sender-day-counter | The day counter of the sending currency holding when it was debited by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
 receiver-day-counter | The day counter of the receiving currency holding when it was credited by the transfer, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
 transfer-sender-currency-holding-type | Whether the currency holding that the transfer debited from is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding", only shown if the owner of the currency holding that the transfer debited from is the logged-in user
 transfer-sender-currency-holding-id | The ID of the public or private currency holding that the transfer debited from, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
 transfer-receiver-currency-holding-type | Whether the currency holding that the transfer credited to is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding", only shown if the owner of the currency holding that the transfer credited to is the logged-in user
 transfer-receiver-currency-holding-id | The ID of the public or private currency holding that the transfer credited to, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
-sending-user-id | The ID of the transfer sender, only shown if the owner of the currency holding that the transfer debited from is the logged-in user 
-sender-username | The username of the transfer sender, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
+sending-user-id | The ID of the transfer sender, only shown if the owner of the currency holding that the transfer credited to is the logged-in user 
+sender-username | The username of the transfer sender, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
 sender-before-amount-atomic | The balance, in atomic units, of the sending currency holding before it was debited from by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
 sender-after-amount-atomic | The balance, in atomic units, of the sending currency holding after it was debited from by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
 receiver-before-amount-atomic | The balance, in atomic units, of the receiving currency holding before it was credited to by the transfer, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
 receiver-after-amount-atomic | The balance, in atomic units, of the receiving currency holding after it was credited to by the transfer, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
 transferred-currency-id | The ID of the transferred currency
-transferred-currency-name | The currency_name of the transferred currency
+transferred-currency-name | The name of the transferred currency
 created-at | The time and date when the transfer was created
 updated-at | The time and date when the transfer was last updated
 
@@ -3967,12 +3967,18 @@ updated-at | The time and date when the transfer was last updated
 Parameter | Description
 --------- | -----------
 id | The ID of the issuance
+day-counter | The day counter of the currency holding when it was credited by the issuance
 amount-atomic | The amount of currency issued, in atomic units (each whole unit is composed of 10^10 atomic units)
+receiving-user-id | The ID of the issuance receiver, only shown if the issuer is the logged-in user
+receiver-username | The username of the issuance sender, only shown if the issuer is the logged-in user 
+issuance-receiver-currency-holding-id | The ID of the public or private currency holding that the issuance credited to, only shown if the issuance receiver is the logged-in user
+issuance-receiver-currency-holding-type | Whether the currency holding that the issuance credited to is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding", only shown if the issuance receiver is the logged-in user
+issued-currency-id | The ID of the issued currency
+issued-currency-name | The name of the issued currency
 issueing-user-id | The ID of the issueing user
 issueing-username | The username of the issueing user
-before-amount-atomic | The balance, in atomic units, of the private currency holding before it was credited by the issuance
-after-amount-atomic | The balance, in atomic units, of the private currency holding after it was credited by the issuance
-day-counter | The day counter of the private currency holding when it was credited by the issuance
+before-amount-atomic | The balance, in atomic units, of the currency holding before it was credited by the issuance, only shown if the issuance receiver is the logged-in user
+after-amount-atomic | The balance, in atomic units, of the currency holding after it was credited by the issuance, only shown if the issuance receiver is the logged-in user
 created-at | The time and date when the transfer was created
 updated-at | The time and date when the transfer was last updated
 
@@ -3981,24 +3987,15 @@ updated-at | The time and date when the transfer was last updated
 Parameter | Description
 --------- | -----------
 id | The ID of the micro currency order
+day-counter | The day counter of the currency holding when it was debited by the micro currency order
 amount-atomic | The amount of currency spent, in atomic units (each whole unit is composed of 10^10 atomic units)
 store-id | The ID of the store that the micro currency order was spent at
 store-name | The name of the store that the micro currency order was spent at
-before-amount-atomic | The balance, in atomic units, of the private currency holding before it was debited by the micro currency order
-after-amount-atomic | The balance, in atomic units, of the private currency holding after it was debited by the micro currency order
-day-counter | The day counter of the private currency holding when it was debited by the micro currency order
-created-at | The time and date when the micro currency order was created
-updated-at | The time and date when the micro currency order was last updated
-
-### Burnrate Periods:
-
-Parameter | Description
---------- | -----------
-id | The ID of the burnrate period
-day-counter | The number of daily burns that have been applied to the private currency holding since the burnrate period was started
-final-day-counter | The number of daily burns that were applied to the private currency holding over the lifetime of a burnrate period. Only set once a burnrate period is succeeded by a new burnrate period.
-burn-rate | The burn rate of private currency holding within the burnrate period
-start-amount-atomic | The balance, in atomic units, of the private currency holding when the burnrate period began
-last-amount-atomic | The last balance, in atomic units, of the private currency holding during the burnrate period. The value stops being updated when the burnrate period is succeeded by a new burnrate period.
+source-currency-holding-id | The ID of the public or private currency holding that the micro currency order spent from
+source-currency-holding-type | Whether the currency holding that the micro currency order spent from is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding"
+spent-currency-id | The ID of the issued currency
+spent-currency-name | The name of the issued currency
+before-amount-atomic | The balance, in atomic units, of the currency holding before it was debited by the micro currency order
+after-amount-atomic | The balance, in atomic units, of the currency holding after it was debited by the micro currency order
 created-at | The time and date when the micro currency order was created
 updated-at | The time and date when the micro currency order was last updated
