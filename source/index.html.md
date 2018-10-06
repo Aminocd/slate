@@ -3414,10 +3414,12 @@ Transactions are all user actions that change the balance of currency holding: i
 
 ## List Public Currency Holding's Transactions
 
-A public currency holding's transactions are sorted from oldest to most recent created_at date
+This endpoint retrieves all issuances, transfers, micro currency orders and burnrate periods associated with a public currency holding, sorted by created_at date, from the oldest to the most recent
 
 ```shell
-curl 'https://api.mycurrency.com/users/4/authorized_public_currency_holdings/4/pu_h_transactions' -H 'Accept: application/json' -H 'Content-Type: application/json' -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+curl 'https://api.mycurrency.com/users/4/authorized_public_currency_holdings/4/pu_h_transactions' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
 ```
 
 > The above command returns JSON structured like this:
@@ -3470,8 +3472,6 @@ curl 'https://api.mycurrency.com/users/4/authorized_public_currency_holdings/4/p
   }
 }
 ```
-
-This endpoint retrieves all issuances, transfers, micro currency orders and burnrate periods associated with a public currency holding.
 
 ### HTTP Request
 
@@ -3540,5 +3540,459 @@ final-day-counter | The number of daily burns that were applied to the public cu
 burn-rate | The burn rate of public currency holding within the burnrate period
 start-amount-atomic | The balance, in atomic units, of the public currency holding when the burnrate period began
 last-amount-atomic | The last balance, in atomic units, of the public currency holding during the burnrate period. The value stops being updated when the burnrate period is succeeded by a new burnrate period.
+created-at | The time and date when the micro currency order was created
+updated-at | The time and date when the micro currency order was last updated
+
+## List Private Currency Holding's Transactions
+
+This endpoint retrieves all issuances, transfers, micro currency orders and burnrate periods associated with a private currency holding, sorted by created_at date, from the oldest to the most recent
+
+```shell
+curl 'https://api.mycurrency.com/users/3/authorized_private_currency_holdings/9/pr_h_transactions' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "20",
+      "type": "burnrate-periods",
+      "attributes": {
+        "day-counter": 0,
+        "final-day-counter": null,
+        "burn-rate": 700,
+        "daily-burn-rate": "0.000198805",
+        "start-amount-atomic": 0,
+        "last-amount-atomic": 210000000000,
+        "created-at": "2018-10-03T00:19:35.155-07:00",
+        "updated-at": "2018-10-03T01:58:03.334-07:00"
+      }
+    },
+    {
+      "id": "6",
+      "type": "transfers",
+      "attributes": {
+        "amount-atomic": 10000000000,
+        "receiver-day-counter": 0,
+        "sending-user-id": 4,
+        "sender-username": "ScipioAfricanus",
+        "receiver-before-amount-atomic": 0,
+        "receiver-after-amount-atomic": 10000000000,
+        "created-at": "2018-10-03T00:19:35.177-07:00",
+        "updated-at": "2018-10-03T00:19:35.177-07:00"
+      }
+    },
+    {
+      "id": "7",
+      "type": "transfers",
+      "attributes": {
+        "amount-atomic": 500000000000,
+        "receiver-day-counter": 0,
+        "sending-user-id": 4,
+        "sender-username": "ScipioAfricanus",
+        "receiver-before-amount-atomic": 10000000000,
+        "receiver-after-amount-atomic": 510000000000,
+        "created-at": "2018-10-03T00:20:58.124-07:00",
+        "updated-at": "2018-10-03T00:20:58.124-07:00"
+      }
+    },
+    {
+      "id": "1",
+      "type": "micro-currency-orders",
+      "attributes": {
+        "amount-atomic": 100000000000,
+        "store-id": 3,
+        "store-name": "Freds Fishing Supplies",
+        "before-amount-atomic": 510000000000,
+        "after-amount-atomic": 410000000000,
+        "day-counter": 0,
+        "created-at": "2018-10-03T00:39:37.860-07:00",
+        "updated-at": "2018-10-03T00:39:37.860-07:00"
+      }
+    },
+    {
+      "id": "2",
+      "type": "micro-currency-orders",
+      "attributes": {
+        "amount-atomic": 100000000000,
+        "store-id": 3,
+        "store-name": "Freds Fishing Supplies",
+        "before-amount-atomic": 410000000000,
+        "after-amount-atomic": 310000000000,
+        "day-counter": 0,
+        "created-at": "2018-10-03T00:43:31.756-07:00",
+        "updated-at": "2018-10-03T00:43:31.756-07:00"
+      }
+    },
+    {
+      "id": "3",
+      "type": "micro-currency-orders",
+      "attributes": {
+        "amount-atomic": 100000000000,
+        "store-id": 3,
+        "store-name": "Freds Fishing Supplies",
+        "before-amount-atomic": 310000000000,
+        "after-amount-atomic": 210000000000,
+        "day-counter": 0,
+        "created-at": "2018-10-03T01:58:03.223-07:00",
+        "updated-at": "2018-10-03T01:58:03.223-07:00"
+      }
+    }
+  ],
+    "links": {
+      "self": "https://api.mycurrency.com/users/3/authorized_private_currency_holdings/9/pr_h_transactions?",
+      "first": "https://api.mycurrency.com/users/3/authorized_private_currency_holdings/9/pr_h_transactions?page=1&per_page=25",
+      "prev": null,
+      "next": null,
+      "last": "https://api.mycurrency.com/users/3/authorized_private_currency_holdings/9/pr_h_transactions?page=1&per_page=25"
+  },
+    "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "6"
+    }
+  }
+}
+```
+
+### HTTP Request
+
+`https://api.mycurrency.com/users/<USER-ID>/authorized_public_currency_holdings/<PRIVATE-CURRENCY-HOLDING-ID>/pr_h_transactions`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### RESPONSE
+
+### Transfers:
+
+Parameter | Description
+--------- | -----------
+id | The ID of the transfer
+amount-atomic | The amount of currency transferred, in atomic units (each whole unit is composed of 10^10 atomic units)
+sender-day-counter | The day counter of the sending currency holding when it was debited by the transfer, only shown if the owner of the private currency holding is the sending user
+receiver-day-counter | The day counter of the receiving currency holding when it was credited by the transfer, only shown if the owner of the public or private currency holding is the receiving user
+sending-user-id | The ID of the transfer sender, only shown if the owner of the private currency holding is the transfer receiver 
+sender-username | The username of the transfer sender, only shown if the owner of the private currency holding is the transfer receiver
+receiving-user-id | The ID of the transfer receiver, only shown if owner of the private currency holding is the transfer sender
+receiving-username | The username of the transfer sender, only shown if the owner of the private currency holding is the transfer sender 
+sender-before-amount-atomic | The balance, in atomic units, of the sending currency holding before it was debited by the transfer, only shown if the logged-in user that owns the private currency holding is the transfer sender
+sender-after-amount-atomic | The balance, in atomic units, of the sending currency holding after it was debited by the transfer, only shown if the logged-in user that owns the private currency holding is the transfer sender
+receiver-before-amount-atomic | The balance, in atomic units, of the receiving currency holding before it was credited by the transfer, only shown if the logged-in user that owns the private currency holding is the transfer receiver
+receiver-after-amount-atomic | The balance, in atomic units, of the receiving currency holding after it was credited by the transfer, only shown if the logged-in user that owns the private currency holding is the transfer receiver
+created-at | The time and date when the transfer was created
+updated-at | The time and date when the transfer was last updated
+
+### Issuances: 
+
+Parameter | Description
+--------- | -----------
+id | The ID of the issuance
+amount-atomic | The amount of currency issued, in atomic units (each whole unit is composed of 10^10 atomic units)
+issueing-user-id | The ID of the issueing user
+issueing-username | The username of the issueing user
+before-amount-atomic | The balance, in atomic units, of the private currency holding before it was credited by the issuance
+after-amount-atomic | The balance, in atomic units, of the private currency holding after it was credited by the issuance
+day-counter | The day counter of the private currency holding when it was credited by the issuance
+created-at | The time and date when the transfer was created
+updated-at | The time and date when the transfer was last updated
+
+### Micro Currency Orders: 
+
+Parameter | Description
+--------- | -----------
+id | The ID of the micro currency order
+amount-atomic | The amount of currency spent, in atomic units (each whole unit is composed of 10^10 atomic units)
+store-id | The ID of the store that the micro currency order was spent at
+store-name | The name of the store that the micro currency order was spent at
+before-amount-atomic | The balance, in atomic units, of the private currency holding before it was debited by the micro currency order
+after-amount-atomic | The balance, in atomic units, of the private currency holding after it was debited by the micro currency order
+day-counter | The day counter of the private currency holding when it was debited by the micro currency order
+created-at | The time and date when the micro currency order was created
+updated-at | The time and date when the micro currency order was last updated
+
+### Burnrate Periods:
+
+Parameter | Description
+--------- | -----------
+id | The ID of the burnrate period
+day-counter | The number of daily burns that have been applied to the private currency holding since the burnrate period was started
+final-day-counter | The number of daily burns that were applied to the private currency holding over the lifetime of a burnrate period. Only set once a burnrate period is succeeded by a new burnrate period.
+burn-rate | The burn rate of private currency holding within the burnrate period
+start-amount-atomic | The balance, in atomic units, of the private currency holding when the burnrate period began
+last-amount-atomic | The last balance, in atomic units, of the private currency holding during the burnrate period. The value stops being updated when the burnrate period is succeeded by a new burnrate period.
+created-at | The time and date when the micro currency order was created
+updated-at | The time and date when the micro currency order was last updated
+
+## List User's Recent Transactions
+
+This endpoint retrieves the 100 most recently created incoming issuances, transfers, and outgoing micro currency orders associated with a user, sorted by created_at date, starting from the most recent
+
+```shell
+curl 'https://api.mycurrency.com/users/3/recent_transactions?per_page=10' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "3",
+      "type": "micro-currency-orders",
+      "attributes": {
+        "day-counter": 0,
+        "amount-atomic": 100000000000,
+        "store-id": 3,
+        "store-name": "Freds Fishing Supplies",
+        "source-currency-holding-id": 9,
+        "source-currency-holding-type": "PrivateCurrencyHolding",
+        "spent-currency-id": 5,
+        "spent-currency-name": "Freds Fishing Supplies dollars",
+        "before-amount-atomic": 310000000000,
+        "after-amount-atomic": 210000000000,
+        "created-at": "2018-10-03T01:58:03.223-07:00",
+        "updated-at": "2018-10-03T01:58:03.223-07:00"
+      }
+    },
+    {
+      "id": "2",
+      "type": "micro-currency-orders",
+      "attributes": {
+        "day-counter": 0,
+        "amount-atomic": 100000000000,
+        "store-id": 3,
+        "store-name": "Freds Fishing Supplies",
+        "source-currency-holding-id": 9,
+        "source-currency-holding-type": "PrivateCurrencyHolding",
+        "spent-currency-id": 5,
+        "spent-currency-name": "Freds Fishing Supplies dollars",
+        "before-amount-atomic": 410000000000,
+        "after-amount-atomic": 310000000000,
+        "created-at": "2018-10-03T00:43:31.756-07:00",
+        "updated-at": "2018-10-03T00:43:31.756-07:00"
+      }
+    },
+    {
+      "id": "1",
+      "type": "micro-currency-orders",
+      "attributes": {
+        "day-counter": 0,
+        "amount-atomic": 100000000000,
+        "store-id": 3,
+        "store-name": "Freds Fishing Supplies",
+        "source-currency-holding-id": 9,
+        "source-currency-holding-type": "PrivateCurrencyHolding",
+        "spent-currency-id": 5,
+        "spent-currency-name": "Freds Fishing Supplies dollars",
+        "before-amount-atomic": 510000000000,
+        "after-amount-atomic": 410000000000,
+        "created-at": "2018-10-03T00:39:37.860-07:00",
+        "updated-at": "2018-10-03T00:39:37.860-07:00"
+      }
+    },
+    {
+      "id": "7",
+      "type": "transfers",
+      "attributes": {
+        "amount-atomic": 500000000000,
+        "receiver-day-counter": 0,
+        "transfer-receiver-currency-holding-type": "PrivateCurrencyHolding",
+        "transfer-receiver-currency-holding-id": 9,
+        "sending-user-id": 4,
+        "sender-username": "ScipioAfricanus",
+        "receiver-before-amount-atomic": 10000000000,
+        "receiver-after-amount-atomic": 510000000000,
+        "transferred-currency-id": 5,
+        "transferred-currency-name": "Freds Fishing Supplies dollars",
+        "created-at": "2018-10-03T00:20:58.124-07:00",
+        "updated-at": "2018-10-03T00:20:58.124-07:00"
+      }
+    },
+    {
+      "id": "6",
+      "type": "transfers",
+      "attributes": {
+        "amount-atomic": 10000000000,
+        "receiver-day-counter": 0,
+        "transfer-receiver-currency-holding-type": "PrivateCurrencyHolding",
+        "transfer-receiver-currency-holding-id": 9,
+        "sending-user-id": 4,
+        "sender-username": "ScipioAfricanus",
+        "receiver-before-amount-atomic": 0,
+        "receiver-after-amount-atomic": 10000000000,
+        "transferred-currency-id": 5,
+        "transferred-currency-name": "Freds Fishing Supplies dollars",
+        "created-at": "2018-10-03T00:19:35.177-07:00",
+        "updated-at": "2018-10-03T00:19:35.177-07:00"
+      }
+    },
+    {
+      "id": "8",
+      "type": "issuances",
+      "attributes": {
+        "amount-atomic": 100000000000,
+        "receiving-user-id": 4,
+        "receiver-username": "ScipioAfricanus",
+        "issued-currency-id": 3,
+        "issued-currency-name": "macaroon dollars",
+        "created-at": "2018-10-02T15:58:40.136-07:00",
+        "updated-at": "2018-10-02T15:58:40.136-07:00"
+      }
+    },
+    {
+      "id": "5",
+      "type": "transfers",
+      "attributes": {
+        "amount-atomic": 10000000000,
+        "receiver-day-counter": 0,
+        "transfer-receiver-currency-holding-type": "PrivateCurrencyHolding",
+        "transfer-receiver-currency-holding-id": 8,
+        "sending-user-id": 4,
+        "sender-username": "ScipioAfricanus",
+        "receiver-before-amount-atomic": 0,
+        "receiver-after-amount-atomic": 10000000000,
+        "transferred-currency-id": 4,
+        "transferred-currency-name": "Pool coins",
+        "created-at": "2018-10-02T04:33:05.301-07:00",
+        "updated-at": "2018-10-02T04:33:05.301-07:00"
+      }
+    },
+    {
+      "id": "3",
+      "type": "transfers",
+      "attributes": {
+        "amount-atomic": 50000000000,
+        "receiving-user-id": 3,
+        "receiver-username": "Hannibal",
+        "sender-day-counter": 0,
+        "receiver-day-counter": 0,
+        "transfer-sender-currency-holding-type": "PrivateCurrencyHolding",
+        "transfer-receiver-currency-holding-type": "PublicCurrencyHolding",
+        "transfer-sender-currency-holding-id": 2,
+        "transfer-receiver-currency-holding-id": 3,
+        "sending-user-id": 3,
+        "sender-username": "Hannibal",
+        "sender-before-amount-atomic": 10000000000000,
+        "sender-after-amount-atomic": 9950000000000,
+        "receiver-before-amount-atomic": 0,
+        "receiver-after-amount-atomic": 50000000000,
+        "transferred-currency-id": 2,
+        "transferred-currency-name": "ACME bucks",
+        "created-at": "2018-09-16T13:26:52.053-07:00",
+        "updated-at": "2018-09-16T13:26:52.053-07:00"
+      }
+    },
+    {
+      "id": "2",
+      "type": "transfers",
+      "attributes": {
+        "amount-atomic": 10000000000,
+        "receiver-day-counter": 0,
+        "transfer-receiver-currency-holding-type": "PrivateCurrencyHolding",
+        "transfer-receiver-currency-holding-id": 3,
+        "sending-user-id": 4,
+        "sender-username": "ScipioAfricanus",
+        "receiver-before-amount-atomic": 10010000000000,
+        "receiver-after-amount-atomic": 10020000000000,
+        "transferred-currency-id": 3,
+        "transferred-currency-name": "macaroon dollars",
+        "created-at": "2018-09-16T13:08:27.204-07:00",
+        "updated-at": "2018-09-16T13:08:27.204-07:00"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/users/3/recent_transactions?per_page=10",
+    "first": "https://api.mycurrency.com/users/3/recent_transactions?page=1&per_page=10",
+    "prev": null,
+    "next": "https://api.mycurrency.com/users/3/recent_transactions?page=2&per_page=10",
+    "last": "https://api.mycurrency.com/users/3/recent_transactions?page=2&per_page=10"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": "10",
+      "total-pages": "2",
+      "total-count": "15"
+    }
+  }
+}
+```
+
+### HTTP Request
+
+`https://api.mycurrency.com/users/<USER-ID>/recent_transactions
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### RESPONSE
+
+### Transfers:
+
+Parameter | Description
+--------- | -----------
+id | The ID of the transfer
+amount-atomic | The amount of currency transferred, in atomic units (each whole unit is composed of 10^10 atomic units)
+receiving-user-id | The ID of the transfer receiver, only shown if the currency holding that the transfer debited from is the logged-in user
+receiving-username | The username of the transfer sender, only shown if the currency holding that the transfer debited from is the logged-in user 
+sender-day-counter | The day counter of the sending currency holding when it was debited by the transfer, only shown if the owner of the private currency holding is the sending user
+receiver-day-counter | The day counter of the receiving currency holding when it was credited by the transfer, only shown if the owner of the public or private currency holding is the receiving user
+sending-user-id | The ID of the transfer sender, only shown if the owner of the private currency holding is the transfer receiver 
+sender-username | The username of the transfer sender, only shown if the owner of the private currency holding is the transfer receiver
+sender-before-amount-atomic | The balance, in atomic units, of the sending currency holding before it was debited by the transfer, only shown if the owner of the private currency holding is the transfer sender
+sender-after-amount-atomic | The balance, in atomic units, of the sending currency holding after it was debited by the transfer, only shown if the owner of the private currency holding is the transfer sender
+receiver-before-amount-atomic | The balance, in atomic units, of the receiving currency holding before it was credited by the transfer, only shown if the owner of the private currency holding is the transfer receiver
+receiver-after-amount-atomic | The balance, in atomic units, of the receiving currency holding after it was credited by the transfer, only shown if the owner of the private currency holding is the transfer receiver
+created-at | The time and date when the transfer was created
+updated-at | The time and date when the transfer was last updated
+
+### Issuances: 
+
+Parameter | Description
+--------- | -----------
+id | The ID of the issuance
+amount-atomic | The amount of currency issued, in atomic units (each whole unit is composed of 10^10 atomic units)
+issueing-user-id | The ID of the issueing user
+issueing-username | The username of the issueing user
+before-amount-atomic | The balance, in atomic units, of the private currency holding before it was credited by the issuance
+after-amount-atomic | The balance, in atomic units, of the private currency holding after it was credited by the issuance
+day-counter | The day counter of the private currency holding when it was credited by the issuance
+created-at | The time and date when the transfer was created
+updated-at | The time and date when the transfer was last updated
+
+### Micro Currency Orders: 
+
+Parameter | Description
+--------- | -----------
+id | The ID of the micro currency order
+amount-atomic | The amount of currency spent, in atomic units (each whole unit is composed of 10^10 atomic units)
+store-id | The ID of the store that the micro currency order was spent at
+store-name | The name of the store that the micro currency order was spent at
+before-amount-atomic | The balance, in atomic units, of the private currency holding before it was debited by the micro currency order
+after-amount-atomic | The balance, in atomic units, of the private currency holding after it was debited by the micro currency order
+day-counter | The day counter of the private currency holding when it was debited by the micro currency order
+created-at | The time and date when the micro currency order was created
+updated-at | The time and date when the micro currency order was last updated
+
+### Burnrate Periods:
+
+Parameter | Description
+--------- | -----------
+id | The ID of the burnrate period
+day-counter | The number of daily burns that have been applied to the private currency holding since the burnrate period was started
+final-day-counter | The number of daily burns that were applied to the private currency holding over the lifetime of a burnrate period. Only set once a burnrate period is succeeded by a new burnrate period.
+burn-rate | The burn rate of private currency holding within the burnrate period
+start-amount-atomic | The balance, in atomic units, of the private currency holding when the burnrate period began
+last-amount-atomic | The last balance, in atomic units, of the private currency holding during the burnrate period. The value stops being updated when the burnrate period is succeeded by a new burnrate period.
 created-at | The time and date when the micro currency order was created
 updated-at | The time and date when the micro currency order was last updated
