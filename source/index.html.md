@@ -3540,8 +3540,8 @@ final-day-counter | The number of daily burns that were applied to the public cu
 burn-rate | The burn rate of public currency holding within the burnrate period
 start-amount-atomic | The balance, in atomic units, of the public currency holding when the burnrate period began
 last-amount-atomic | The last balance, in atomic units, of the public currency holding during the burnrate period. The value stops being updated when the burnrate period is succeeded by a new burnrate period.
-created-at | The time and date when the micro currency order was created
-updated-at | The time and date when the micro currency order was last updated
+created-at | The time and date when the burnrate period was created
+updated-at | The time and date when the burnrate period was last updated
 
 ## List Private Currency Holding's Transactions
 
@@ -3727,8 +3727,8 @@ final-day-counter | The number of daily burns that were applied to the private c
 burn-rate | The burn rate of private currency holding within the burnrate period
 start-amount-atomic | The balance, in atomic units, of the private currency holding when the burnrate period began
 last-amount-atomic | The last balance, in atomic units, of the private currency holding during the burnrate period. The value stops being updated when the burnrate period is succeeded by a new burnrate period.
-created-at | The time and date when the micro currency order was created
-updated-at | The time and date when the micro currency order was last updated
+created-at | The time and date when the burnrate period was created
+updated-at | The time and date when the burnrate period was last updated
 
 ## List User's Recent Transactions
 
