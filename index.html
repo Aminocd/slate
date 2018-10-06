@@ -426,6 +426,12 @@
                   <li>
                     <a href="#list-public-currency-holding-39-s-transactions" class="toc-h2 toc-link" data-title="List Public Currency Holding's Transactions">List Public Currency Holding's Transactions</a>
                   </li>
+                  <li>
+                    <a href="#list-private-currency-holding-39-s-transactions" class="toc-h2 toc-link" data-title="List Private Currency Holding's Transactions">List Private Currency Holding's Transactions</a>
+                  </li>
+                  <li>
+                    <a href="#list-user-39-s-recent-transactions" class="toc-h2 toc-link" data-title="List User's Recent Transactions">List User's Recent Transactions</a>
+                  </li>
               </ul>
           </li>
       </ul>
@@ -5083,8 +5089,10 @@ Authentication: the request requires the OAuth access-token associated with the 
 <h1 id='transactions'>Transactions</h1>
 <p>Transactions are all user actions that change the balance of currency holding: issuances, transfers, and micro currency orders. When listing the transactions associated with a particular public or private currency holding, the burnrate periods of that currency holding are also shown, to enable calculation of the amount of currency burned over time.</p>
 <h2 id='list-public-currency-holding-39-s-transactions'>List Public Currency Holding&#39;s Transactions</h2>
-<p>A public currency holding&#39;s transactions are sorted from oldest to most recent created_at date</p>
-<pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/users/4/authorized_public_currency_holdings/4/pu_h_transactions'</span> -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span>
+<p>This endpoint retrieves all issuances, transfers, micro currency orders and burnrate periods associated with a public currency holding, sorted by created_at date, from the oldest to the most recent</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/users/4/authorized_public_currency_holdings/4/pu_h_transactions'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -5135,9 +5143,7 @@ Authentication: the request requires the OAuth access-token associated with the 
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all issuances, transfers, micro currency orders and burnrate periods associated with a public currency holding.</p>
-<h3 id='http-request-49'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-49'>HTTP Request</h3>
 <p><code>https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_public_currency_holdings/&lt;PUBLIC-CURRENCY-HOLDING-ID&gt;/pu_h_transactions</code></p>
 
 <aside class="notice">
@@ -5325,6 +5331,704 @@ Authentication: the request requires the OAuth access-token associated with the 
 <tr>
 <td>last-amount-atomic</td>
 <td>The last balance, in atomic units, of the public currency holding during the burnrate period. The value stops being updated when the burnrate period is succeeded by a new burnrate period.</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the micro currency order was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the micro currency order was last updated</td>
+</tr>
+</tbody></table>
+<h2 id='list-private-currency-holding-39-s-transactions'>List Private Currency Holding&#39;s Transactions</h2>
+<p>This endpoint retrieves all issuances, transfers, micro currency orders and burnrate periods associated with a private currency holding, sorted by created_at date, from the oldest to the most recent</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/users/3/authorized_private_currency_holdings/9/pr_h_transactions'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"burnrate-periods"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"final-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">700</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000198805"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"start-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">210000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:19:35.155-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T01:58:03.334-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfers"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sending-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:19:35.177-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:19:35.177-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfers"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">500000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sending-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">510000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:20:58.124-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:20:58.124-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"micro-currency-orders"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">510000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">410000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:39:37.860-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:39:37.860-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"micro-currency-orders"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">410000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">310000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:43:31.756-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:43:31.756-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"micro-currency-orders"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">310000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">210000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T01:58:03.223-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T01:58:03.223-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/users/3/authorized_private_currency_holdings/9/pr_h_transactions?"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/users/3/authorized_private_currency_holdings/9/pr_h_transactions?page=1&amp;per_page=25"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"prev"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/users/3/authorized_private_currency_holdings/9/pr_h_transactions?page=1&amp;per_page=25"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"per-page"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total-pages"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total-count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-50'>HTTP Request</h3>
+<p><code>https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_public_currency_holdings/&lt;PRIVATE-CURRENCY-HOLDING-ID&gt;/pr_h_transactions</code></p>
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+<h3 id='response-50'>RESPONSE</h3><h3 id='transfers-2'>Transfers:</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the transfer</td>
+</tr>
+<tr>
+<td>amount-atomic</td>
+<td>The amount of currency transferred, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
+<td>sender-day-counter</td>
+<td>The day counter of the sending currency holding when it was debited by the transfer, only shown if the owner of the private currency holding is the sending user</td>
+</tr>
+<tr>
+<td>receiver-day-counter</td>
+<td>The day counter of the receiving currency holding when it was credited by the transfer, only shown if the owner of the public or private currency holding is the receiving user</td>
+</tr>
+<tr>
+<td>sending-user-id</td>
+<td>The ID of the transfer sender, only shown if the owner of the private currency holding is the transfer receiver</td>
+</tr>
+<tr>
+<td>sender-username</td>
+<td>The username of the transfer sender, only shown if the owner of the private currency holding is the transfer receiver</td>
+</tr>
+<tr>
+<td>receiving-user-id</td>
+<td>The ID of the transfer receiver, only shown if owner of the private currency holding is the transfer sender</td>
+</tr>
+<tr>
+<td>receiving-username</td>
+<td>The username of the transfer sender, only shown if the owner of the private currency holding is the transfer sender</td>
+</tr>
+<tr>
+<td>sender-before-amount-atomic</td>
+<td>The balance, in atomic units, of the sending currency holding before it was debited by the transfer, only shown if the logged-in user that owns the private currency holding is the transfer sender</td>
+</tr>
+<tr>
+<td>sender-after-amount-atomic</td>
+<td>The balance, in atomic units, of the sending currency holding after it was debited by the transfer, only shown if the logged-in user that owns the private currency holding is the transfer sender</td>
+</tr>
+<tr>
+<td>receiver-before-amount-atomic</td>
+<td>The balance, in atomic units, of the receiving currency holding before it was credited by the transfer, only shown if the logged-in user that owns the private currency holding is the transfer receiver</td>
+</tr>
+<tr>
+<td>receiver-after-amount-atomic</td>
+<td>The balance, in atomic units, of the receiving currency holding after it was credited by the transfer, only shown if the logged-in user that owns the private currency holding is the transfer receiver</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the transfer was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the transfer was last updated</td>
+</tr>
+</tbody></table>
+<h3 id='issuances-2'>Issuances:</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the issuance</td>
+</tr>
+<tr>
+<td>amount-atomic</td>
+<td>The amount of currency issued, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
+<td>issueing-user-id</td>
+<td>The ID of the issueing user</td>
+</tr>
+<tr>
+<td>issueing-username</td>
+<td>The username of the issueing user</td>
+</tr>
+<tr>
+<td>before-amount-atomic</td>
+<td>The balance, in atomic units, of the private currency holding before it was credited by the issuance</td>
+</tr>
+<tr>
+<td>after-amount-atomic</td>
+<td>The balance, in atomic units, of the private currency holding after it was credited by the issuance</td>
+</tr>
+<tr>
+<td>day-counter</td>
+<td>The day counter of the private currency holding when it was credited by the issuance</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the transfer was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the transfer was last updated</td>
+</tr>
+</tbody></table>
+<h3 id='micro-currency-orders-2'>Micro Currency Orders:</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the micro currency order</td>
+</tr>
+<tr>
+<td>amount-atomic</td>
+<td>The amount of currency spent, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
+<td>store-id</td>
+<td>The ID of the store that the micro currency order was spent at</td>
+</tr>
+<tr>
+<td>store-name</td>
+<td>The name of the store that the micro currency order was spent at</td>
+</tr>
+<tr>
+<td>before-amount-atomic</td>
+<td>The balance, in atomic units, of the private currency holding before it was debited by the micro currency order</td>
+</tr>
+<tr>
+<td>after-amount-atomic</td>
+<td>The balance, in atomic units, of the private currency holding after it was debited by the micro currency order</td>
+</tr>
+<tr>
+<td>day-counter</td>
+<td>The day counter of the private currency holding when it was debited by the micro currency order</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the micro currency order was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the micro currency order was last updated</td>
+</tr>
+</tbody></table>
+<h3 id='burnrate-periods-2'>Burnrate Periods:</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the burnrate period</td>
+</tr>
+<tr>
+<td>day-counter</td>
+<td>The number of daily burns that have been applied to the private currency holding since the burnrate period was started</td>
+</tr>
+<tr>
+<td>final-day-counter</td>
+<td>The number of daily burns that were applied to the private currency holding over the lifetime of a burnrate period. Only set once a burnrate period is succeeded by a new burnrate period.</td>
+</tr>
+<tr>
+<td>burn-rate</td>
+<td>The burn rate of private currency holding within the burnrate period</td>
+</tr>
+<tr>
+<td>start-amount-atomic</td>
+<td>The balance, in atomic units, of the private currency holding when the burnrate period began</td>
+</tr>
+<tr>
+<td>last-amount-atomic</td>
+<td>The last balance, in atomic units, of the private currency holding during the burnrate period. The value stops being updated when the burnrate period is succeeded by a new burnrate period.</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the micro currency order was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the micro currency order was last updated</td>
+</tr>
+</tbody></table>
+<h2 id='list-user-39-s-recent-transactions'>List User&#39;s Recent Transactions</h2>
+<p>This endpoint retrieves the 100 most recently created incoming issuances, transfers, and outgoing micro currency orders associated with a user, sorted by created_at date, starting from the most recent</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/users/3/recent_transactions?per_page=10'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"micro-currency-orders"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"source-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"source-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"spent-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"spent-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">310000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">210000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T01:58:03.223-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T01:58:03.223-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"micro-currency-orders"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"source-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"source-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"spent-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"spent-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">410000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">310000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:43:31.756-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:43:31.756-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"micro-currency-orders"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"source-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"source-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"spent-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"spent-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">510000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">410000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:39:37.860-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:39:37.860-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfers"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">500000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sending-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">510000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:20:58.124-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:20:58.124-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfers"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sending-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:19:35.177-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:19:35.177-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"issuances"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"macaroon dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-02T15:58:40.136-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-02T15:58:40.136-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfers"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sending-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pool coins"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-02T04:33:05.301-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-02T04:33:05.301-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfers"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-sender-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PublicCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-sender-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sending-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">9950000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME bucks"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-16T13:26:52.053-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-16T13:26:52.053-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfers"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sending-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10010000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10020000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"macaroon dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-16T13:08:27.204-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-16T13:08:27.204-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/users/3/recent_transactions?per_page=10"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/users/3/recent_transactions?page=1&amp;per_page=10"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"prev"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/users/3/recent_transactions?page=2&amp;per_page=10"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/users/3/recent_transactions?page=2&amp;per_page=10"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"per-page"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total-pages"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total-count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-51'>HTTP Request</h3>
+<p>`https://api.mycurrency.com/users/<USER-ID>/recent_transactions</p>
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+<h3 id='response-51'>RESPONSE</h3><h3 id='transfers-3'>Transfers:</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the transfer</td>
+</tr>
+<tr>
+<td>amount-atomic</td>
+<td>The amount of currency transferred, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
+<td>receiving-user-id</td>
+<td>The ID of the transfer receiver, only shown if the currency holding that the transfer debited from is the logged-in user</td>
+</tr>
+<tr>
+<td>receiving-username</td>
+<td>The username of the transfer sender, only shown if the currency holding that the transfer debited from is the logged-in user</td>
+</tr>
+<tr>
+<td>sender-day-counter</td>
+<td>The day counter of the sending currency holding when it was debited by the transfer, only shown if the owner of the private currency holding is the sending user</td>
+</tr>
+<tr>
+<td>receiver-day-counter</td>
+<td>The day counter of the receiving currency holding when it was credited by the transfer, only shown if the owner of the public or private currency holding is the receiving user</td>
+</tr>
+<tr>
+<td>sending-user-id</td>
+<td>The ID of the transfer sender, only shown if the owner of the private currency holding is the transfer receiver</td>
+</tr>
+<tr>
+<td>sender-username</td>
+<td>The username of the transfer sender, only shown if the owner of the private currency holding is the transfer receiver</td>
+</tr>
+<tr>
+<td>sender-before-amount-atomic</td>
+<td>The balance, in atomic units, of the sending currency holding before it was debited by the transfer, only shown if the owner of the private currency holding is the transfer sender</td>
+</tr>
+<tr>
+<td>sender-after-amount-atomic</td>
+<td>The balance, in atomic units, of the sending currency holding after it was debited by the transfer, only shown if the owner of the private currency holding is the transfer sender</td>
+</tr>
+<tr>
+<td>receiver-before-amount-atomic</td>
+<td>The balance, in atomic units, of the receiving currency holding before it was credited by the transfer, only shown if the owner of the private currency holding is the transfer receiver</td>
+</tr>
+<tr>
+<td>receiver-after-amount-atomic</td>
+<td>The balance, in atomic units, of the receiving currency holding after it was credited by the transfer, only shown if the owner of the private currency holding is the transfer receiver</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the transfer was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the transfer was last updated</td>
+</tr>
+</tbody></table>
+<h3 id='issuances-3'>Issuances:</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the issuance</td>
+</tr>
+<tr>
+<td>amount-atomic</td>
+<td>The amount of currency issued, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
+<td>issueing-user-id</td>
+<td>The ID of the issueing user</td>
+</tr>
+<tr>
+<td>issueing-username</td>
+<td>The username of the issueing user</td>
+</tr>
+<tr>
+<td>before-amount-atomic</td>
+<td>The balance, in atomic units, of the private currency holding before it was credited by the issuance</td>
+</tr>
+<tr>
+<td>after-amount-atomic</td>
+<td>The balance, in atomic units, of the private currency holding after it was credited by the issuance</td>
+</tr>
+<tr>
+<td>day-counter</td>
+<td>The day counter of the private currency holding when it was credited by the issuance</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the transfer was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the transfer was last updated</td>
+</tr>
+</tbody></table>
+<h3 id='micro-currency-orders-3'>Micro Currency Orders:</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the micro currency order</td>
+</tr>
+<tr>
+<td>amount-atomic</td>
+<td>The amount of currency spent, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
+<td>store-id</td>
+<td>The ID of the store that the micro currency order was spent at</td>
+</tr>
+<tr>
+<td>store-name</td>
+<td>The name of the store that the micro currency order was spent at</td>
+</tr>
+<tr>
+<td>before-amount-atomic</td>
+<td>The balance, in atomic units, of the private currency holding before it was debited by the micro currency order</td>
+</tr>
+<tr>
+<td>after-amount-atomic</td>
+<td>The balance, in atomic units, of the private currency holding after it was debited by the micro currency order</td>
+</tr>
+<tr>
+<td>day-counter</td>
+<td>The day counter of the private currency holding when it was debited by the micro currency order</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the micro currency order was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the micro currency order was last updated</td>
+</tr>
+</tbody></table>
+<h3 id='burnrate-periods-3'>Burnrate Periods:</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the burnrate period</td>
+</tr>
+<tr>
+<td>day-counter</td>
+<td>The number of daily burns that have been applied to the private currency holding since the burnrate period was started</td>
+</tr>
+<tr>
+<td>final-day-counter</td>
+<td>The number of daily burns that were applied to the private currency holding over the lifetime of a burnrate period. Only set once a burnrate period is succeeded by a new burnrate period.</td>
+</tr>
+<tr>
+<td>burn-rate</td>
+<td>The burn rate of private currency holding within the burnrate period</td>
+</tr>
+<tr>
+<td>start-amount-atomic</td>
+<td>The balance, in atomic units, of the private currency holding when the burnrate period began</td>
+</tr>
+<tr>
+<td>last-amount-atomic</td>
+<td>The last balance, in atomic units, of the private currency holding during the burnrate period. The value stops being updated when the burnrate period is succeeded by a new burnrate period.</td>
 </tr>
 <tr>
 <td>created-at</td>
