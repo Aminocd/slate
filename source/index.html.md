@@ -3929,7 +3929,7 @@ curl 'https://api.mycurrency.com/users/3/recent_transactions?per_page=10' \
 
 ### HTTP Request
 
-`https://api.mycurrency.com/users/<USER-ID>/recent_transactions
+`https://api.mycurrency.com/users/<USER-ID>/recent_transactions`
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
@@ -3943,16 +3943,22 @@ Parameter | Description
 --------- | -----------
 id | The ID of the transfer
 amount-atomic | The amount of currency transferred, in atomic units (each whole unit is composed of 10^10 atomic units)
-receiving-user-id | The ID of the transfer receiver, only shown if the currency holding that the transfer debited from is the logged-in user
-receiving-username | The username of the transfer sender, only shown if the currency holding that the transfer debited from is the logged-in user 
-sender-day-counter | The day counter of the sending currency holding when it was debited by the transfer, only shown if the owner of the private currency holding is the sending user
-receiver-day-counter | The day counter of the receiving currency holding when it was credited by the transfer, only shown if the owner of the public or private currency holding is the receiving user
-sending-user-id | The ID of the transfer sender, only shown if the owner of the private currency holding is the transfer receiver 
-sender-username | The username of the transfer sender, only shown if the owner of the private currency holding is the transfer receiver
-sender-before-amount-atomic | The balance, in atomic units, of the sending currency holding before it was debited by the transfer, only shown if the owner of the private currency holding is the transfer sender
-sender-after-amount-atomic | The balance, in atomic units, of the sending currency holding after it was debited by the transfer, only shown if the owner of the private currency holding is the transfer sender
-receiver-before-amount-atomic | The balance, in atomic units, of the receiving currency holding before it was credited by the transfer, only shown if the owner of the private currency holding is the transfer receiver
-receiver-after-amount-atomic | The balance, in atomic units, of the receiving currency holding after it was credited by the transfer, only shown if the owner of the private currency holding is the transfer receiver
+receiving-user-id | The ID of the transfer receiver, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
+receiving-username | The username of the transfer sender, only shown if the owner of the currency holding that the transfer debited from is the logged-in user 
+sender-day-counter | The day counter of the sending currency holding when it was debited by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
+receiver-day-counter | The day counter of the receiving currency holding when it was credited by the transfer, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
+transfer-sender-currency-holding-type | Whether the currency holding that the transfer debited from is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding", only shown if the owner of the currency holding that the transfer debited from is the logged-in user
+transfer-sender-currency-holding-id | The ID of the public or private currency holding that the transfer debited from, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
+transfer-receiver-currency-holding-type | Whether the currency holding that the transfer credited to is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding", only shown if the owner of the currency holding that the transfer credited to is the logged-in user
+transfer-receiver-currency-holding-id | The ID of the public or private currency holding that the transfer credited to, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
+sending-user-id | The ID of the transfer sender, only shown if the owner of the currency holding that the transfer debited from is the logged-in user 
+sender-username | The username of the transfer sender, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
+sender-before-amount-atomic | The balance, in atomic units, of the sending currency holding before it was debited from by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
+sender-after-amount-atomic | The balance, in atomic units, of the sending currency holding after it was debited from by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
+receiver-before-amount-atomic | The balance, in atomic units, of the receiving currency holding before it was credited to by the transfer, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
+receiver-after-amount-atomic | The balance, in atomic units, of the receiving currency holding after it was credited to by the transfer, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
+transferred-currency-id | The ID of the transferred currency
+transferred-currency-name | The currency_name of the transferred currency
 created-at | The time and date when the transfer was created
 updated-at | The time and date when the transfer was last updated
 
