@@ -3410,7 +3410,7 @@ updated-at | The time and date when the public currency holding was last updated
 
 # Transactions
 
-Transactions are all user actions that change the balance of currency holding: issuances, transfers, and micro currency orders. When listing the transactions associated with a particular public or private currency holding, the burnrate periods of that currency holding are also shown, to enable calculation of the amount of currency burned over time.
+Transactions are all user actions that change the balance of currency holdings: issuances, transfers, and micro currency orders. When listing the transactions associated with a particular public or private currency holding, the burnrate periods of that currency holding are also shown, to enable calculation of the amount of currency burned over time.
 
 ## List Public Currency Holding's Transactions
 
@@ -4039,7 +4039,7 @@ curl 'https://api.mycurrency.com/issuances/1' -H 'Accept: application/json' -H '
 }
 ```
 
-This endpoint retrieves a particular issuance. The logged in user must be active and be either the issuer or receiver of the currency to view it.
+This endpoint retrieves a particular issuance. The logged in user must be active and be either the issuer or the receiver of the issuance to view it.
 
 ### HTTP Request
 
@@ -4059,8 +4059,148 @@ amount-atomic | The amount of currency issued, in atomic units (each whole unit 
 is-genesis-issuance | Whether the issuance was created as part of the creation of a new currency. When a new currency is created, 1000 units of the currency are issued to the currency issuer without the 5 percent issuance_fee being paid to the site administration
 issuance-receiver-currency-holding-type | Whether the currency holding that the issuance credited to is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding". All issuances are made to the private currency holding of the receiver
 issuance-receiver-currency-holding-id | The ID of the public or private currency holding that the issuance credited to, only shown if the issuance receiver is the logged-in user
-day-counter | The day counter of the currency holding when it was credited by the issuance
-burnrate-period-id | The ID of the burnrate period of the receiving currency holding when it received the issuance
+day-counter | The day counter of the currency holding when it was credited by the issuance, only shown if the issuance receiver is the logged-in user
+burnrate-period-id | The ID of the burnrate period of the receiving currency holding when it received the issuance, only shown if the issuance receiver is the logged-in user
+before-amount-atomic | The balance, in atomic units, of the currency holding before it was credited by the issuance, only shown if the issuance receiver is the logged-in user
+after-amount-atomic | The balance, in atomic units, of the currency holding after it was credited by the issuance, only shown if the issuance receiver is the logged-in user
+issueing-user-id | The ID of the issueing user, only shown if the issuance receiver is the logged-in user 
+issuer-username | The username of the issueing user, only shown if the issuance receiver is the logged-in user
+receiving-user-id | The ID of the issuance receiver, only shown if the issuer is the logged-in user
+receiver-username | The username of the issuance sender, only shown if the issuer is the logged-in user 
+issued-currency-id | The ID of the issued currency
+issued-currency-name | The name of the issued currency
+created-at | The time and date when the transfer was created
+updated-at | The time and date when the transfer was last updated
+
+## List Issuances
+
+```shell
+curl 'https://api.mycurrency.com/issuances?receiving_user_id=3' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "issuances",
+      "attributes": {
+        "proposed-issuance-id": null,
+        "amount-atomic": 10000000000000,
+        "is-genesis-issuance": true,
+        "issuance-receiver-currency-holding-type": "PrivateCurrencyHolding",
+        "issuance-receiver-currency-holding-id": 1,
+        "day-counter": 0,
+        "burnrate-period-id": 1,
+        "before-amount-atomic": 0,
+        "after-amount-atomic": 10000000000000,
+        "issueing-user-id": 3,
+        "issuer-username": "Hannibal",
+        "receiving-user-id": 3,
+        "receiver-username": "Hannibal",
+        "issued-currency-id": 1,
+        "issued-currency-name": "Calm dollars",
+        "created-at": "2018-08-12T01:17:31.260-07:00",
+        "updated-at": "2018-08-12T01:17:31.260-07:00"
+      }
+    },
+    {
+      "id": "2",
+      "type": "issuances",
+      "attributes": {
+        "proposed-issuance-id": null,
+        "amount-atomic": 10000000000000,
+        "is-genesis-issuance": true,
+        "issuance-receiver-currency-holding-type": "PrivateCurrencyHolding",
+        "issuance-receiver-currency-holding-id": 2,
+        "day-counter": 0,
+        "burnrate-period-id": 2,
+        "before-amount-atomic": 0,
+        "after-amount-atomic": 10000000000000,
+        "issueing-user-id": 3,
+        "issuer-username": "Hannibal",
+        "receiving-user-id": 3,
+        "receiver-username": "Hannibal",
+        "issued-currency-id": 2,
+        "issued-currency-name": "ACME bucks",
+        "created-at": "2018-08-19T14:11:16.951-07:00",
+        "updated-at": "2018-08-19T14:11:16.951-07:00"
+      }
+    },
+    {
+      "id": "3",
+      "type": "issuances",
+      "attributes": {
+        "proposed-issuance-id": null,
+        "amount-atomic": 10000000000000,
+        "is-genesis-issuance": true,
+        "issuance-receiver-currency-holding-type": "PrivateCurrencyHolding",
+        "issuance-receiver-currency-holding-id": 3,
+        "day-counter": 0,
+        "burnrate-period-id": 3,
+        "before-amount-atomic": 0,
+        "after-amount-atomic": 10000000000000,
+        "issueing-user-id": 3,
+        "issuer-username": "Hannibal",
+        "receiving-user-id": 3,
+        "receiver-username": "Hannibal",
+        "issued-currency-id": 3,
+        "issued-currency-name": "macaroon dollars",
+        "created-at": "2018-08-19T14:24:09.642-07:00",
+        "updated-at": "2018-08-19T14:24:09.642-07:00"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/issuances?receiving_user_id=3",
+    "first": "https://api.mycurrency.com/issuances?page=1&per_page=25&receiving_user_id=3",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/issuances?page=1&per_page=25&receiving_user_id=3"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "3"
+    }
+  }
+}
+```
+
+This endpoint retrieves all received or created issuances of a user. The logged in user must be active to view the issuances. 
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/issuances?receiving_user_id=<USER-ID>`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the USER-ID 
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+receiving_user_id | integer | required if :issueing_user_id not provided | The ID of the issuance receiver
+issueing_user_id | integer |  required if :receiving_user_id not provided| The ID of the issuance creator
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the issuance
+proposed-issuance-id | The ID of the proposed issuance that initiated the creation of the issuance, null if the issuance has no associated proposed_issuance
+amount-atomic | The amount of currency issued, in atomic units (each whole unit is composed of 10^10 atomic units)
+is-genesis-issuance | Whether the issuance was created as part of the creation of a new currency. When a new currency is created, 1000 units of the currency are issued to the currency issuer without the 5 percent issuance_fee being paid to the site administration
+issuance-receiver-currency-holding-type | Whether the currency holding that the issuance credited to is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding". All issuances are made to the private currency holding of the receiver
+issuance-receiver-currency-holding-id | The ID of the public or private currency holding that the issuance credited to, only shown if the issuance receiver is the logged-in user
+day-counter | The day counter of the currency holding when it was credited by the issuance, only shown if the issuance receiver is the logged-in user
+burnrate-period-id | The ID of the burnrate period of the receiving currency holding when it received the issuance, only shown if the issuance receiver is the logged-in user
 before-amount-atomic | The balance, in atomic units, of the currency holding before it was credited by the issuance, only shown if the issuance receiver is the logged-in user
 after-amount-atomic | The balance, in atomic units, of the currency holding after it was credited by the issuance, only shown if the issuance receiver is the logged-in user
 issueing-user-id | The ID of the issueing user, only shown if the issuance receiver is the logged-in user 
