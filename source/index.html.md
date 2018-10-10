@@ -4302,7 +4302,7 @@ This endpoint retrieves all received or created issuances of a user associated w
 
 ### HTTP Request
 
-`GET https://api.mycurrency.com/currencies/<CURRENCY-ID>/issuances?receiving_user_id=<USER-ID>`
+`GET https://api.mycurrency.com/currencies/<CURRENCY-ID>/issuances?issueing_user_id=<USER-ID>`
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the USER-ID 
@@ -4408,5 +4408,75 @@ receiving-user-id | The ID of the issuance receiver, only shown if the issuer is
 receiver-username | The username of the issuance sender, only shown if the issuer is the logged-in user 
 issued-currency-id | The ID of the issued currency
 issued-currency-name | The name of the issued currency
+created-at | The time and date when the transfer was created
+updated-at | The time and date when the transfer was last updated
+
+# Transfers
+
+## Get a Transfer
+
+```shell
+curl 'https://api.mycurrency.com/transfers/7' -H 'Accept: application/json' -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "7",
+    "type": "transfers",
+    "attributes": {
+      "amount-atomic": 500000000000,
+      "receiving-user-id": 3,
+      "receiver-username": "Hannibal",
+      "sender-day-counter": 36,
+      "transfer-sender-currency-holding-type": "PrivateCurrencyHolding",
+      "transfer-receiver-currency-holding-type": "PrivateCurrencyHolding",
+      "transfer-sender-currency-holding-id": 5,
+      "sender-before-amount-atomic": 9918678637475,
+      "sender-after-amount-atomic": 9418678637475,
+      "transferred-currency-id": 5,
+      "transferred-currency-name": "Freds Fishing Supplies dollars",
+      "created-at": "2018-10-03T00:20:58.124-07:00",
+      "updated-at": "2018-10-03T00:20:58.124-07:00"
+    }
+  }
+}
+```
+
+This endpoint retrieves a particular transfer. The logged in user must be active and be either the transferrer or the receiver of the transfer to view it.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/transfers/<ID>`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the transfer
+amount-atomic | The amount of currency transferred, in atomic units (each whole unit is composed of 10^10 atomic units)
+receiving-user-id | The ID of the transfer receiver, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
+receiver-username | The username of the transfer receiver, only shown if the owner of the currency holding that the transfer debited from is the logged-in user 
+sender-day-counter | The day counter of the sending currency holding when it was debited by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
+receiver-day-counter | The day counter of the receiving currency holding when it was credited by the transfer, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
+transfer-sender-currency-holding-type | Whether the currency holding that the transfer debited from is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding", only shown if the owner of the currency holding that the transfer debited from is the logged-in user
+transfer-sender-currency-holding-id | The ID of the public or private currency holding that the transfer debited from, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
+transfer-receiver-currency-holding-type | Whether the currency holding that the transfer credited to is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding", only shown if the owner of the currency holding that the transfer credited to is the logged-in user
+transfer-receiver-currency-holding-id | The ID of the public or private currency holding that the transfer credited to, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
+sending-user-id | The ID of the transfer sender, only shown if the owner of the currency holding that the transfer credited to is the logged-in user 
+sender-username | The username of the transfer sender, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
+sender-before-amount-atomic | The balance, in atomic units, of the sending currency holding before it was debited from by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
+sender-after-amount-atomic | The balance, in atomic units, of the sending currency holding after it was debited from by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
+receiver-before-amount-atomic | The balance, in atomic units, of the receiving currency holding before it was credited to by the transfer, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
+receiver-after-amount-atomic | The balance, in atomic units, of the receiving currency holding after it was credited to by the transfer, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
+transferred-currency-id | The ID of the transferred currency
+transferred-currency-name | The name of the transferred currency
 created-at | The time and date when the transfer was created
 updated-at | The time and date when the transfer was last updated
