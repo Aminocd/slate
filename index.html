@@ -441,7 +441,10 @@
                     <a href="#get-an-issuance" class="toc-h2 toc-link" data-title="Get an Issuance">Get an Issuance</a>
                   </li>
                   <li>
-                    <a href="#list-issuances" class="toc-h2 toc-link" data-title="List Issuances">List Issuances</a>
+                    <a href="#list-user-39-s-issuances" class="toc-h2 toc-link" data-title="List User's Issuances">List User's Issuances</a>
+                  </li>
+                  <li>
+                    <a href="#list-user-39-s-issuances-of-particular-currency" class="toc-h2 toc-link" data-title="List User's Issuances of Particular Currency">List User's Issuances of Particular Currency</a>
                   </li>
               </ul>
           </li>
@@ -6193,7 +6196,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The time and date when the transfer was last updated</td>
 </tr>
 </tbody></table>
-<h2 id='list-issuances'>List Issuances</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/issuances?receiving_user_id=3'</span> <span class="se">\</span>
+<h2 id='list-user-39-s-issuances'>List User&#39;s Issuances</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/issuances?receiving_user_id=3'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span>
 </code></pre>
@@ -6308,16 +6311,212 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>receiving_user_id</td>
 <td>integer</td>
 <td>required if :issueing_user_id not provided</td>
-<td>The ID of the issuance receiver</td>
+<td>The ID of the issuance receiver. If provided, the incoming issuances of the specified user are returned.</td>
 </tr>
 <tr>
 <td>issueing_user_id</td>
 <td>integer</td>
 <td>required if :receiving_user_id not provided</td>
-<td>The ID of the issuance creator</td>
+<td>The ID of the issuance creator. If provided, the outgoing issuances of the specified user are returned.</td>
 </tr>
 </tbody></table>
 <h3 id='response-53'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the issuance</td>
+</tr>
+<tr>
+<td>proposed-issuance-id</td>
+<td>The ID of the proposed issuance that initiated the creation of the issuance, null if the issuance has no associated proposed_issuance</td>
+</tr>
+<tr>
+<td>amount-atomic</td>
+<td>The amount of currency issued, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
+<td>is-genesis-issuance</td>
+<td>Whether the issuance was created as part of the creation of a new currency. When a new currency is created, 1000 units of the currency are issued to the currency issuer without the 5 percent issuance_fee being paid to the site administration</td>
+</tr>
+<tr>
+<td>issuance-receiver-currency-holding-type</td>
+<td>Whether the currency holding that the issuance credited to is a &quot;PublicCurrencyHolding&quot; or a &quot;PrivateCurrencyHolding&quot;. All issuances are made to the private currency holding of the receiver</td>
+</tr>
+<tr>
+<td>issuance-receiver-currency-holding-id</td>
+<td>The ID of the public or private currency holding that the issuance credited to, only shown if the issuance receiver is the logged-in user</td>
+</tr>
+<tr>
+<td>day-counter</td>
+<td>The day counter of the currency holding when it was credited by the issuance, only shown if the issuance receiver is the logged-in user</td>
+</tr>
+<tr>
+<td>burnrate-period-id</td>
+<td>The ID of the burnrate period of the receiving currency holding when it received the issuance, only shown if the issuance receiver is the logged-in user</td>
+</tr>
+<tr>
+<td>before-amount-atomic</td>
+<td>The balance, in atomic units, of the currency holding before it was credited by the issuance, only shown if the issuance receiver is the logged-in user</td>
+</tr>
+<tr>
+<td>after-amount-atomic</td>
+<td>The balance, in atomic units, of the currency holding after it was credited by the issuance, only shown if the issuance receiver is the logged-in user</td>
+</tr>
+<tr>
+<td>issueing-user-id</td>
+<td>The ID of the issueing user, only shown if the issuance receiver is the logged-in user</td>
+</tr>
+<tr>
+<td>issuer-username</td>
+<td>The username of the issueing user, only shown if the issuance receiver is the logged-in user</td>
+</tr>
+<tr>
+<td>receiving-user-id</td>
+<td>The ID of the issuance receiver, only shown if the issuer is the logged-in user</td>
+</tr>
+<tr>
+<td>receiver-username</td>
+<td>The username of the issuance sender, only shown if the issuer is the logged-in user</td>
+</tr>
+<tr>
+<td>issued-currency-id</td>
+<td>The ID of the issued currency</td>
+</tr>
+<tr>
+<td>issued-currency-name</td>
+<td>The name of the issued currency</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the transfer was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the transfer was last updated</td>
+</tr>
+</tbody></table>
+<h2 id='list-user-39-s-issuances-of-particular-currency'>List User&#39;s Issuances of Particular Currency</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/currencies/3/issuances?issueing_user_id=3'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"issuances"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"proposed-issuance-id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"is-genesis-issuance"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issuance-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issuance-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"burnrate-period-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issueing-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issuer-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issued-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issued-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"macaroon dollars"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-19T14:24:09.642-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-19T14:24:09.642-07:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"issuances"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"proposed-issuance-id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"is-genesis-issuance"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issuance-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issued-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issued-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"macaroon dollars"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-15T20:37:38.324-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-15T20:37:38.324-07:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"issuances"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"proposed-issuance-id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"is-genesis-issuance"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issuance-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issued-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issued-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"macaroon dollars"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-02T15:58:40.136-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-02T15:58:40.136-07:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.mycurrency.com/currencies/3/issuances?issueing_user_id=3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.mycurrency.com/currencies/3/issuances?issueing_user_id=3&amp;page=1&amp;per_page=25"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"prev"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.mycurrency.com/currencies/3/issuances?issueing_user_id=3&amp;page=1&amp;per_page=25"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"per-page"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total-pages"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total-count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all received or created issuances of a user associated with the currency specified by CURRENCY-ID. The logged in user must be active to view the issuances. </p>
+<h3 id='http-request-54'>HTTP Request</h3>
+<p><code>GET https://api.mycurrency.com/&lt;CURRENCY-ID&gt;/issuances?receiving_user_id=&lt;USER-ID&gt;</code></p>
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the USER-ID 
+</aside>
+<h3 id='arguments-18'>ARGUMENTS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>currency_id</td>
+<td>integer</td>
+<td>yes</td>
+<td>Issuances of the specified currency are returned</td>
+</tr>
+<tr>
+<td>receiving_user_id</td>
+<td>integer</td>
+<td>required if :issueing_user_id not provided</td>
+<td>The ID of the issuance receiver. If provided, the incoming issuances of the specified user are returned.</td>
+</tr>
+<tr>
+<td>issueing_user_id</td>
+<td>integer</td>
+<td>required if :receiving_user_id not provided</td>
+<td>The ID of the issuance creator. If provided, the outgoing issuances of the specified user are returned.</td>
+</tr>
+</tbody></table>
+<h3 id='response-54'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
