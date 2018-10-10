@@ -2737,7 +2737,7 @@ created-at | The time and date when the product discontinual was cancelled
 
 # Public Currency Holdings
 
-Public currency holdings are viewable by the public. Authorized endpoints are only accessible to the user that owns the publi currency holding and provides the full details of the holding. The public endpoints provide basic information about the public currency holding.
+Unlike private currency holdings, the basic information of public currency holdings, like account balance, is publicly accessible. Authorized endpoints are only accessible to the user that owns the public currency holding and provides the full details of the holding. The publicly accessible endpoints provide basic information about the public currency holding.
 
 ## Get a Public Currency Holding
 
@@ -4302,7 +4302,7 @@ This endpoint retrieves all received or created issuances of a user associated w
 
 ### HTTP Request
 
-`GET https://api.mycurrency.com/<CURRENCY-ID>/issuances?receiving_user_id=<USER-ID>`
+`GET https://api.mycurrency.com/currencies/<CURRENCY-ID>/issuances?receiving_user_id=<USER-ID>`
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the USER-ID 
@@ -4312,9 +4312,81 @@ Authentication: the request requires the OAuth access-token associated with the 
 
 Parameter | Type | Required | Description
 --------- | ------- | ------- | -----------
-currency_id | integer | yes | Issuances of the specified currency are returned
+currency_id | integer | yes | Issuances of the specified currency are returned, provided in URL path
 receiving_user_id | integer | required if :issueing_user_id not provided | The ID of the issuance receiver. If provided, the incoming issuances of the specified user are returned.
 issueing_user_id | integer |  required if :receiving_user_id not provided| The ID of the issuance creator. If provided, the outgoing issuances of the specified user are returned.
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the issuance
+proposed-issuance-id | The ID of the proposed issuance that initiated the creation of the issuance, null if the issuance has no associated proposed_issuance
+amount-atomic | The amount of currency issued, in atomic units (each whole unit is composed of 10^10 atomic units)
+is-genesis-issuance | Whether the issuance was created as part of the creation of a new currency. When a new currency is created, 1000 units of the currency are issued to the currency issuer without the 5 percent issuance_fee being paid to the site administration
+issuance-receiver-currency-holding-type | Whether the currency holding that the issuance credited to is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding". All issuances are made to the private currency holding of the receiver
+issuance-receiver-currency-holding-id | The ID of the public or private currency holding that the issuance credited to, only shown if the issuance receiver is the logged-in user
+day-counter | The day counter of the currency holding when it was credited by the issuance, only shown if the issuance receiver is the logged-in user
+burnrate-period-id | The ID of the burnrate period of the receiving currency holding when it received the issuance, only shown if the issuance receiver is the logged-in user
+before-amount-atomic | The balance, in atomic units, of the currency holding before it was credited by the issuance, only shown if the issuance receiver is the logged-in user
+after-amount-atomic | The balance, in atomic units, of the currency holding after it was credited by the issuance, only shown if the issuance receiver is the logged-in user
+issueing-user-id | The ID of the issueing user, only shown if the issuance receiver is the logged-in user 
+issuer-username | The username of the issueing user, only shown if the issuance receiver is the logged-in user
+receiving-user-id | The ID of the issuance receiver, only shown if the issuer is the logged-in user
+receiver-username | The username of the issuance sender, only shown if the issuer is the logged-in user 
+issued-currency-id | The ID of the issued currency
+issued-currency-name | The name of the issued currency
+created-at | The time and date when the transfer was created
+updated-at | The time and date when the transfer was last updated
+
+## Create Issuance
+
+```shell
+curl -X POST https://api.mycurrency.com/users/3/issuer/currencies/3/issuances \
+  -d '{"issuance": { "amount_atomic": "100000000000", "receiving_user_id": "4"} }' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "9",
+    "type": "issuances",
+    "attributes": {
+      "proposed-issuance-id": null,
+      "amount-atomic": 100000000000,
+      "is-genesis-issuance": false,
+      "issuance-receiver-currency-holding-type": "PrivateCurrencyHolding",
+      "issued-currency-id": 3,
+      "issued-currency-name": "macaroon dollars",
+      "created-at": "2018-10-09T19:59:38.499-07:00",
+      "updated-at": "2018-10-09T19:59:38.499-07:00"
+    }
+  }
+}
+```
+
+Creates a currency.
+
+### HTTP Request
+
+`https://api.mycurrency.com/users/<USER-ID>/issuer/currencies/<CURRENCY-ID>/issuances`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+user_id | integer | yes | The ID of the user creating the issuance, provided in URL path
+currency_id | integer | yes | The ID of the currency being issued, provided in URL path
+amount_atomic | integer | yes | The amount of currency issued, in atomic units (each whole unit is composed of 10^10 atomic units)
+receiving_user_id | integer | yes |  The ID of the user that to receive the issuance
 
 ### RESPONSE
 
