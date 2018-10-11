@@ -457,6 +457,9 @@
                   <li>
                     <a href="#get-a-transfer" class="toc-h2 toc-link" data-title="Get a Transfer">Get a Transfer</a>
                   </li>
+                  <li>
+                    <a href="#create-transfer" class="toc-h2 toc-link" data-title="Create Transfer">Create Transfer</a>
+                  </li>
               </ul>
           </li>
       </ul>
@@ -6617,22 +6620,24 @@ Authentication: the request requires the OAuth access-token associated with the 
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"issuances"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"proposed-issuance-id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000</span><span class="p">,</span><span class="w">
       </span><span class="s2">"is-genesis-issuance"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
       </span><span class="s2">"issuance-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"issued-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
       </span><span class="s2">"issued-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"macaroon dollars"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-09T19:59:38.499-07:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-09T19:59:38.499-07:00"</span><span class="w">
+      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-10T04:33:15.801-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-10T04:33:15.801-07:00"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Creates a currency.</p>
+<p>Creates an issuance.</p>
 <h3 id='http-request-55'>HTTP Request</h3>
 <p><code>https://api.mycurrency.com/users/&lt;USER-ID&gt;/issuer/currencies/&lt;CURRENCY-ID&gt;/issuances</code></p>
 
@@ -6753,7 +6758,8 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The time and date when the transfer was last updated</td>
 </tr>
 </tbody></table>
-<h1 id='transfers-4'>Transfers</h1><h2 id='get-a-transfer'>Get a Transfer</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/transfers/7'</span> -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+<h1 id='transfers-4'>Transfers</h1><h2 id='get-a-transfer'>Get a Transfer</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/transfers/7'</span> -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span>
 </code></pre>
 <blockquote>
@@ -6789,6 +6795,177 @@ Authentication: the request requires the OAuth access-token associated with the 
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
 <h3 id='response-56'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the transfer</td>
+</tr>
+<tr>
+<td>amount-atomic</td>
+<td>The amount of currency transferred, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
+<td>receiving-user-id</td>
+<td>The ID of the transfer receiver, only shown if the owner of the currency holding that the transfer debited from is the logged-in user</td>
+</tr>
+<tr>
+<td>receiver-username</td>
+<td>The username of the transfer receiver, only shown if the owner of the currency holding that the transfer debited from is the logged-in user</td>
+</tr>
+<tr>
+<td>sender-day-counter</td>
+<td>The day counter of the sending currency holding when it was debited by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user</td>
+</tr>
+<tr>
+<td>receiver-day-counter</td>
+<td>The day counter of the receiving currency holding when it was credited by the transfer, only shown if the owner of the currency holding that the transfer credited to is the logged-in user</td>
+</tr>
+<tr>
+<td>transfer-sender-currency-holding-type</td>
+<td>Whether the currency holding that the transfer debited from is a &quot;PublicCurrencyHolding&quot; or a &quot;PrivateCurrencyHolding&quot;, only shown if the owner of the currency holding that the transfer debited from is the logged-in user</td>
+</tr>
+<tr>
+<td>transfer-sender-currency-holding-id</td>
+<td>The ID of the public or private currency holding that the transfer debited from, only shown if the owner of the currency holding that the transfer debited from is the logged-in user</td>
+</tr>
+<tr>
+<td>transfer-receiver-currency-holding-type</td>
+<td>Whether the currency holding that the transfer credited to is a &quot;PublicCurrencyHolding&quot; or a &quot;PrivateCurrencyHolding&quot;, only shown if the owner of the currency holding that the transfer credited to is the logged-in user</td>
+</tr>
+<tr>
+<td>transfer-receiver-currency-holding-id</td>
+<td>The ID of the public or private currency holding that the transfer credited to, only shown if the owner of the currency holding that the transfer credited to is the logged-in user</td>
+</tr>
+<tr>
+<td>sending-user-id</td>
+<td>The ID of the transfer sender, only shown if the owner of the currency holding that the transfer credited to is the logged-in user</td>
+</tr>
+<tr>
+<td>sender-username</td>
+<td>The username of the transfer sender, only shown if the owner of the currency holding that the transfer credited to is the logged-in user</td>
+</tr>
+<tr>
+<td>sender-before-amount-atomic</td>
+<td>The balance, in atomic units, of the sending currency holding before it was debited from by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user</td>
+</tr>
+<tr>
+<td>sender-after-amount-atomic</td>
+<td>The balance, in atomic units, of the sending currency holding after it was debited from by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user</td>
+</tr>
+<tr>
+<td>receiver-before-amount-atomic</td>
+<td>The balance, in atomic units, of the receiving currency holding before it was credited to by the transfer, only shown if the owner of the currency holding that the transfer credited to is the logged-in user</td>
+</tr>
+<tr>
+<td>receiver-after-amount-atomic</td>
+<td>The balance, in atomic units, of the receiving currency holding after it was credited to by the transfer, only shown if the owner of the currency holding that the transfer credited to is the logged-in user</td>
+</tr>
+<tr>
+<td>transferred-currency-id</td>
+<td>The ID of the transferred currency</td>
+</tr>
+<tr>
+<td>transferred-currency-name</td>
+<td>The name of the transferred currency</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the transfer was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the transfer was last updated</td>
+</tr>
+</tbody></table>
+<h2 id='create-transfer'>Create Transfer</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.mycurrency.com/users/4/transfers <span class="se">\</span>
+  -d <span class="s1">'{"transfer": { "amount_atomic": "10000000000", "receiving_user_id": "3", "transfer_sender_currency_holding_id": "5", "transfer_sender_currency_holding_type": "PrivateCurrencyHolding"} }'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfers"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sender-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"transfer-sender-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"transfer-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"transfer-sender-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">   
+      </span><span class="s2">"sender-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">9395579089463</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sender-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">9385579089463</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"transferred-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"transferred-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies dollars"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-10T16:57:37.062-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-10T16:57:37.062-07:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Creates a transfer.</p>
+<h3 id='http-request-57'>HTTP Request</h3>
+<p><code>https://api.mycurrency.com/users/&lt;USER-ID&gt;/transfers</code></p>
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+<h3 id='arguments-20'>ARGUMENTS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>integer</td>
+<td>yes</td>
+<td>The ID of the user creating the transfer, provided in URL path</td>
+</tr>
+<tr>
+<td>amount_atomic</td>
+<td>integer</td>
+<td>yes</td>
+<td>The amount of currency transferred, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
+<td>receiving_user_id</td>
+<td>integer</td>
+<td>yes</td>
+<td>The ID of the user that to receive the transfer</td>
+</tr>
+<tr>
+<td>transfer_sender_currency_holding_id</td>
+<td>integer</td>
+<td>yes</td>
+<td>The ID of the currency holding from which the transfer is debiting from</td>
+</tr>
+<tr>
+<td>transfer_sender_currency_holding_type</td>
+<td>string</td>
+<td>no</td>
+<td>Whether the currency holding that the transfer is debiting from is a &quot;PublicCurrencyHolding&quot; or a &quot;PrivateCurrencyHolding&quot;. If no value is provided, it will default to &quot;PrivateCurrencyHolding&quot;</td>
+</tr>
+<tr>
+<td>transfer_sender_currency_holding_type</td>
+<td>string</td>
+<td>no</td>
+<td>Whether the currency holding that the transfer is crediting to is a &quot;PublicCurrencyHolding&quot; or a &quot;PrivateCurrencyHolding&quot;. If no value is provided, it will default to &quot;PrivateCurrencyHolding&quot;. You cannot set this parameter to &quot;PublicCurrencyHolding&quot; unless the transfer is a self send of a currency from a user&#39;s private holding to public holding.</td>
+</tr>
+</tbody></table>
+<h3 id='response-57'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
