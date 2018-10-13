@@ -462,6 +462,14 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#offers" class="toc-h1 toc-link" data-title="Offers">Offers</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-an-offer" class="toc-h2 toc-link" data-title="Get an Offer">Get an Offer</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='#'>Sign Up for a Developer Key</a> <!--- need to add link here ---></li>
@@ -7051,6 +7059,241 @@ Authentication: the request requires the OAuth access-token associated with the 
 <tr>
 <td>updated-at</td>
 <td>The time and date when the transfer was last updated</td>
+</tr>
+</tbody></table>
+<h1 id='offers'>Offers</h1><h2 id='get-an-offer'>Get an Offer</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/users/3/offers/4'</span> -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"offers"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"offer-receiver-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"offer-receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"offer-sender-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"offer-sender-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"previous-offer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"offer-type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"self-cancellation"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-11T20:18:34.813-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-11T20:18:47.253-07:00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"relationships"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"proposed-transfers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed-transfers"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"proposed-issuances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed-issuances"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"included"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed-transfers"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"offer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"source-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"source-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"source-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pool coins"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-sender-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-sender-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-11T20:18:34.829-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-11T20:18:47.255-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed-issuances"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"offer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"source-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"source-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"macaroon dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-issuer-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">60000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-11T20:18:34.829-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-11T20:18:47.256-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a particular offer. The logged in user must be active and be either the sender or receiver of the offer to view it.</p>
+<h3 id='http-request-58'>HTTP Request</h3>
+<p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/offers/&lt;ID&gt;</code></p>
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+<h3 id='response-58'>RESPONSE</h3><h3 id='offer'>Offer</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the offer</td>
+</tr>
+<tr>
+<td>offer-receiver-id</td>
+<td>The ID of the user that made the offer</td>
+</tr>
+<tr>
+<td>offer-receiver-username</td>
+<td>The username of the user that made the offer</td>
+</tr>
+<tr>
+<td>offer-sender-id</td>
+<td>The ID of the user that received the offer</td>
+</tr>
+<tr>
+<td>offer-sender-username</td>
+<td>The username of the user that received the offer</td>
+</tr>
+<tr>
+<td>previous-offer-id</td>
+<td>The ID of the offer that is being counter-offered. If the first offer of an offer-chain, the value will be 0</td>
+</tr>
+<tr>
+<td>offer-type</td>
+<td>0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, and 3 is an offer acceptance</td>
+</tr>
+<tr>
+<td>active</td>
+<td>Whether the offer is still active and can be countered or accepted/rejected</td>
+</tr>
+<tr>
+<td>self-cancellation</td>
+<td>Whether the offer sender has cancelled the offer by disactivating their user account</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the offer was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the offer was last updated</td>
+</tr>
+</tbody></table>
+<h3 id='proposed-transfers'>Proposed Transfers</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the proposed transfer</td>
+</tr>
+<tr>
+<td>offer-id</td>
+<td>The ID of the offer that the proposed transfer is associated with</td>
+</tr>
+<tr>
+<td>source-currency-holding-id</td>
+<td>The ID of the public currency holding from which the proposed transfer would be sent</td>
+</tr>
+<tr>
+<td>source-currency-id</td>
+<td>The ID of the currency that is proposed to be transferred</td>
+</tr>
+<tr>
+<td>source-currency-name</td>
+<td>The name of the currency that is proposed to be transferred</td>
+</tr>
+<tr>
+<td>currency-sender-id</td>
+<td>The ID of the user that would send the proposed transfer</td>
+</tr>
+<tr>
+<td>currency-sender-username</td>
+<td>The username of the user that would send the proposed transfer</td>
+</tr>
+<tr>
+<td>amount-atomic</td>
+<td>The amount of currency that is proposed to be transferred, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
+<td>active</td>
+<td>Whether the proposed transfer is still valid or not</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the proposed transfer was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the proposed transfer was last updated</td>
+</tr>
+</tbody></table>
+<h3 id='proposed-issuances'>Proposed Issuances</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the proposed issuance</td>
+</tr>
+<tr>
+<td>offer-id</td>
+<td>The ID of the offer that the proposed issuance is associated with</td>
+</tr>
+<tr>
+<td>source-currency-id</td>
+<td>The ID of the currency that is proposed to be issued</td>
+</tr>
+<tr>
+<td>source-currency-name</td>
+<td>The name of the currency that is proposed to be issued</td>
+</tr>
+<tr>
+<td>currency-issuer-id</td>
+<td>The ID of the user that would issue the proposed issuance</td>
+</tr>
+<tr>
+<td>currency-issuer-username</td>
+<td>The username of the user that would issue the proposed issuance</td>
+</tr>
+<tr>
+<td>amount-atomic</td>
+<td>The amount of currency that is proposed to be issued, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
+<td>active</td>
+<td>Whether the proposed issuance is still valid or not</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the proposed issuance was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the proposed issuance was last updated</td>
 </tr>
 </tbody></table>
 
