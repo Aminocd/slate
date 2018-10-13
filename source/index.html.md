@@ -4908,10 +4908,11 @@ Authentication: the request requires the OAuth access-token associated with the 
 
 Parameter | Type | Required | Description
 --------- | ------- | ------- | -----------
+user_id | integer | yes | The ID of the user creating the offer, provided in URL path
 index_type | string | yes | one of five index_types determining which type of list of offers is returned
-offer_id | integer | no | required if the :index_type value is "offer_chain"
+offer_id | integer | required if the :index_type value is "offer_chain" | the ID of the offer at the head of the chain of offers returned
 
-### INDEX_TYPES
+### INDEX TYPES
 
 Value | Description
 --------- | -----------
@@ -4920,6 +4921,181 @@ received_active_offers | returns only active received offers/counter-offers asso
 offer_chain_ending | returns all offers that ended offer chains (offer rejections, acceptances or offers that were self_cancelled) associated with user
 head_offers | returns all offers that are the last in their offer chain associated with user
 offer_chain | returns the chain of offers associated with head offer (the last offer in an offer chain) referenced by :offer_id associated with user
+
+### RESPONSE
+
+### Offer
+
+Parameter | Description
+--------- | -----------
+id | The ID of the offer
+offer-receiver-id | The ID of the user that made the offer
+offer-receiver-username | The username of the user that made the offer
+offer-sender-id | The ID of the user that received the offer
+offer-sender-username | The username of the user that received the offer
+previous-offer-id | The ID of the offer that is being counter-offered. If the first offer of an offer-chain, the value will be 0
+offer-type | 0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, and 3 is an offer acceptance
+active | Whether the offer is still active and can be countered or accepted/rejected
+self-cancellation | Whether the offer sender has cancelled the offer by disactivating their user account
+created-at | The time and date when the offer was created
+updated-at | The time and date when the offer was last updated
+
+### Proposed Transfers
+
+Parameter | Description
+--------- | -----------
+id | The ID of the proposed transfer
+offer-id | The ID of the offer that the proposed transfer is associated with
+source-currency-holding-id | The ID of the public currency holding from which the proposed transfer would be sent
+source-currency-id | The ID of the currency that is proposed to be transferred
+source-currency-name | The name of the currency that is proposed to be transferred
+currency-sender-id | The ID of the user that would send the proposed transfer
+currency-sender-username | The username of the user that would send the proposed transfer
+amount-atomic | The amount of currency that is proposed to be transferred, in atomic units (each whole unit is composed of 10^10 atomic units)
+active | Whether the proposed transfer is still valid or not
+created-at | The time and date when the proposed transfer was created
+updated-at | The time and date when the proposed transfer was last updated
+
+### Proposed Issuances
+
+Parameter | Description
+--------- | -----------
+id | The ID of the proposed issuance
+offer-id | The ID of the offer that the proposed issuance is associated with
+source-currency-id | The ID of the currency that is proposed to be issued
+source-currency-name | The name of the currency that is proposed to be issued
+currency-issuer-id | The ID of the user that would issue the proposed issuance
+currency-issuer-username | The username of the user that would issue the proposed issuance
+amount-atomic | The amount of currency that is proposed to be issued, in atomic units (each whole unit is composed of 10^10 atomic units)
+active | Whether the proposed issuance is still valid or not
+created-at | The time and date when the proposed issuance was created
+updated-at | The time and date when the proposed issuance was last updated
+
+## Create Offer
+
+```shell
+curl https://api.mycurrency.com/users/3/offers -d '{ "offer": {"offer_sender_id": "3", "offer_receiver_id": "4", "offer_type": "0", "proposed_transfers_attributes": [{"source_currency_holding_id": "5", "amount_atomic": "50000000000"}], "proposed_issuances_attributes": [{"source_currency_id": "3", "amount_atomic": "50000000000"}] }}' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "10",
+    "type": "offers",
+    "attributes": {
+      "offer-receiver-id": 4,
+      "offer-receiver-username": "ScipioAfricanus",
+      "offer-sender-id": 3,
+      "offer-sender-username": "user_amin",
+      "previous-offer-id": 0,
+      "offer-type": 0,
+      "active": true,
+      "self-cancellation": false,
+      "created-at": "2018-10-13T03:29:56.858-07:00",
+      "updated-at": "2018-10-13T03:29:56.858-07:00"
+    },
+    "relationships": {
+      "proposed-transfers": {
+        "data": [
+          {
+            "id": "7",
+            "type":"proposed-transfers"
+          }
+        ]
+      },
+      "proposed-issuances": {
+        "data": [
+          {
+            "id": "7",
+            "type": "proposed-issuances"
+          }
+        ]
+      }
+    }
+  },
+  "included": [
+    {
+      "id": "7",
+      "type": "proposed-transfers",
+      "attributes": {
+        "offer-id": 10,
+        "source-currency-holding-id": 5,
+        "source-currency-id": 4,
+        "source-currency-name": "Pool coins",
+        "currency-sender-id": 4,
+        "currency-sender-username": "ScipioAfricanus",
+        "amount-atomic": 50000000000, 
+        "active": true,
+        "created-at": "2018-10-13T03:29:56.886-07:00",
+        "updated-at": "2018-10-13T03:29:56.886-07:00"
+      }
+    },
+    {
+      "id": "7",
+      "type":
+      "proposed-issuances",
+      "attributes": {
+        "offer-id": 10,
+        "source-currency-id": 3,
+        "source-currency-name": "macaroon dollars",
+        "currency-issuer-id": 3,
+        "currency-issuer-username": "user_amin",
+        "amount-atomic": 50000000000,
+        "active": true, 
+        "created-at": "2018-10-13T03:29:56.887-07:00",
+        "updated-at": "2018-10-13T03:29:56.887-07:00"
+      }
+    }
+  ]
+}
+```
+
+Creates an offer. 
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/offers`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### OFFER ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+user_id | integer | yes | The ID of the user creating the offer, provided in URL path
+offer_sender_id | integer | required if offer starts an offer chain | The ID of the user sending the offer
+offer_receiver_id | integer | required if offer starts an offer chain | The ID of the user receiving the offer
+previous_offer_id | integer | required if offer is not starting an offer chain | The ID of the previous offer in the offer chain
+offer_type | integer | yes | One of four offer types: first offer, counter-offer, offer rejection and offer acceptance 
+
+### OFFER TYPES
+
+Value | Description
+--------- | -----------
+0 | An offer that starts a new offer chain
+1 | A counter offer
+2 | An offer rejection
+3 | An offer acceptance
+
+### PROPOSED TRANSFER ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+source_currency_holding_id | integer | yes | The ID of the public currency holding from which the proposed transfer would be sent 
+amount_atomic | integer | yes | The amount of currency that is proposed to be transferred, in atomic units (each whole unit is composed of 10^10 atomic units)
+
+### PROPOSED ISSUANCE ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+source_currency_id | integer| yes | The ID of the currency that is proposed to be issued
+amount-atomic | integer | yes | The amount of currency that is proposed to be issued, in atomic units (each whole unit is composed of 10^10 atomic units)
 
 ### RESPONSE
 
