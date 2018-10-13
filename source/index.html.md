@@ -4564,3 +4564,145 @@ transferred-currency-id | The ID of the transferred currency
 transferred-currency-name | The name of the transferred currency
 created-at | The time and date when the transfer was created
 updated-at | The time and date when the transfer was last updated
+
+# Offers
+
+## Get an Offer
+
+```shell
+curl 'https://api.mycurrency.com/users/3/offers/4' -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "4",
+    "type": "offers",
+    "attributes": {
+      "offer-receiver-id": 3,
+      "offer-receiver-username": "Hannibal",
+      "offer-sender-id": 4,
+      "offer-sender-username": "ScipioAfricanus",
+      "previous-offer-id": 4,
+      "offer-type": 1,
+      "active": false,
+      "self-cancellation": false,
+      "created-at": "2018-10-11T20:18:34.813-07:00",
+      "updated-at": "2018-10-11T20:18:47.253-07:00"
+    },
+    "relationships": {
+      "proposed-transfers": {
+        "data": [
+          {
+            "id": "3",
+            "type": "proposed-transfers"
+          }
+        ]
+      },
+      "proposed-issuances": {
+        "data": [
+          {
+            "id": "3",
+            "type": "proposed-issuances"
+          }
+        ]
+      }
+    }
+  },
+  "included": [
+    {
+      "id": "3",
+      "type": "proposed-transfers",
+      "attributes": {
+        "offer-id": 5,
+        "source-currency-holding-id": 5,
+        "source-currency-id": 4,
+        "source-currency-name": "Pool coins",
+        "currency-sender-id": 4,
+        "currency-sender-username": "ScipioAfricanus",
+        "amount-atomic": 50000000000,
+        "active": false,
+        "created-at": "2018-10-11T20:18:34.829-07:00",
+        "updated-at": "2018-10-11T20:18:47.255-07:00"
+      }
+    },
+    {
+      "id": "3",
+      "type": "proposed-issuances",
+      "attributes": {
+        "offer-id": 5,
+        "source-currency-id": 3,
+        "source-currency-name": "macaroon dollars",
+        "currency-issuer-id": 3,
+        "currency-issuer-username": "Hannibal",
+        "amount-atomic": 60000000000,
+        "active": false,
+        "created-at": "2018-10-11T20:18:34.829-07:00",
+        "updated-at": "2018-10-11T20:18:47.256-07:00"
+      }
+    }
+  ]
+}
+```
+
+This endpoint retrieves a particular offer. The logged in user must be active and be either the sender or receiver of the offer to view it.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/offers/<ID>`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### RESPONSE
+
+### Offer
+
+Parameter | Description
+--------- | -----------
+id | The ID of the offer
+offer-receiver-id | The ID of the user that made the offer
+offer-receiver-username | The username of the user that made the offer
+offer-sender-id | The ID of the user that received the offer
+offer-sender-username | The username of the user that received the offer
+previous-offer-id | The ID of the offer that is being counter-offered. If the first offer of an offer-chain, the value will be 0
+offer-type | 0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, and 3 is an offer acceptance
+active | Whether the offer is still active and can be countered or accepted/rejected
+self-cancellation | Whether the offer sender has cancelled the offer by disactivating their user account
+created-at | The time and date when the offer was created
+updated-at | The time and date when the offer was last updated
+
+### Proposed Transfers
+
+Parameter | Description
+--------- | -----------
+id | The ID of the proposed transfer
+offer-id | The ID of the offer that the proposed transfer is associated with
+source-currency-holding-id | The ID of the public currency holding from which the proposed transfer would be sent
+source-currency-id | The ID of the currency that is proposed to be transferred
+source-currency-name | The name of the currency that is proposed to be transferred
+currency-sender-id | The ID of the user that would send the proposed transfer
+currency-sender-username | The username of the user that would send the proposed transfer
+amount-atomic | The amount of currency that is proposed to be transferred, in atomic units (each whole unit is composed of 10^10 atomic units)
+active | Whether the proposed transfer is still valid or not
+created-at | The time and date when the proposed transfer was created
+updated-at | The time and date when the proposed transfer was last updated
+
+### Proposed Issuances
+
+Parameter | Description
+--------- | -----------
+id | The ID of the proposed issuance
+offer-id | The ID of the offer that the proposed issuance is associated with
+source-currency-id | The ID of the currency that is proposed to be issued
+source-currency-name | The name of the currency that is proposed to be issued
+currency-issuer-id | The ID of the user that would issue the proposed issuance
+currency-issuer-username | The username of the user that would issue the proposed issuance
+amount-atomic | The amount of currency that is proposed to be issued, in atomic units (each whole unit is composed of 10^10 atomic units)
+active | Whether the proposed issuance is still valid or not
+created-at | The time and date when the proposed issuance was created
+updated-at | The time and date when the proposed issuance was last updated
