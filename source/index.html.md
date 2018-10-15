@@ -5266,7 +5266,7 @@ created-at | The time and date when the listing was created
 updated-at | The time and date when the listing was last updated
 currency-holding-id | The ID of the public or private currency holding that the currency being offered is held in
 currency-holding-type | Whether the currency holding that the offered currency is held in is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding"
-active | Whether the listing is active or not. Inactive listings can only be inactivated if the listing has not been cancelled.
+active | Whether the listing is active or not. Inactive listings can only be activated if the listing has not been cancelled.
 canceled | Whether the listing has been canceled or not. Cancelled listings cannot be uncancelled or reactivated.
 
 ## List All Listings
@@ -5888,7 +5888,7 @@ created-at | The time and date when the listing was created
 updated-at | The time and date when the listing was last updated
 currency-holding-id | The ID of the public or private currency holding that the currency being offered is held in
 currency-holding-type | Whether the currency holding that the offered currency is held in is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding"
-active | Whether the listing is active or not. Inactive listings can only be inactivated if the listing has not been cancelled.
+active | Whether the listing is active or not. Inactive listings can only be activated if the listing has not been cancelled.
 canceled | Whether the listing has been canceled or not. Cancelled listings cannot be uncancelled or reactivated.
 
 ## Create Listing
@@ -5940,12 +5940,12 @@ Authentication: the request requires the OAuth access-token associated with the 
 Parameter | Type | Required | Description
 --------- | ------- | ------- | -----------
 user_id | integer | yes | The ID of the user creating the listing, provided in URL path
-amount_atomic | integer | required if :offer_currency set to true | The amount of currency that is being offered, in atomic units (each whole unit is composed of 10^10 atomic units)
+amount_atomic | integer | required if :offer_currency is set to true | The amount of currency that is being offered, in atomic units (each whole unit is composed of 10^10 atomic units)
 cl-link | string | yes | The link to the Craigslist post containing the description of the listing
 cl-title | string | yes | The title of the Craiglist post containing the description of the listing. Must match the cl-title value
-offer-currency | Whether the listing is offering currency. If true, the user must have an adequate amount of currency in the source currency holding they designate to cover the amount offered
-currency-holding-id | The ID of the public or private currency holding that the currency being offered is held in
-currency-holding-type | Whether the currency holding that the offered currency is held in is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding"
+offer-currency | boolean | yes | Whether the listing is offering currency. If true, the user must have an adequate amount of currency in the source currency holding they designate to cover the amount offered
+currency-holding-id | integer | required if :offer_currency is set to true | The ID of the public or private currency holding that the currency being offered is held in
+currency-holding-type | string | required if :offer_currency is set to true | Whether the currency holding that the offered currency is held in is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding"
 
 ### RESPONSE
 
@@ -5964,5 +5964,76 @@ created-at | The time and date when the listing was created
 updated-at | The time and date when the listing was last updated
 currency-holding-id | The ID of the public or private currency holding that the currency being offered is held in
 currency-holding-type | Whether the currency holding that the offered currency is held in is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding"
-active | Whether the listing is active or not. Inactive listings can only be inactivated if the listing has not been cancelled.
+active | Whether the listing is active or not. Inactive listings can only be activated if the listing has not been cancelled.
+canceled | Whether the listing has been canceled or not. Cancelled listings cannot be uncancelled or reactivated.
+
+## Update Listing
+
+```shell
+curl -X PUT https://api.mycurrency.com/users/4/authorized_listings/4 \
+  -d '{"listing": {"active": "false"}}' -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "4",
+    "type": "authorized-listings",
+    "attributes": {
+      "user-id": 4,
+      "username": "ScipioAfricanus",
+      "currency-id": 5,
+      "currency-name": "Freds Fishing Supplies dollars",
+      "amount-atomic": 50000000000,
+      "cl-link": "https://vancouver.craigslist.ca/van/clt/6722959714.html",
+      "cl-title": "Offering - 5 Freds Fishing Supplies dollars",
+      "offer-currency": true,
+      "created-at": "2018-10-14T02:56:57.624-07:00",
+      "updated-at": "2018-10-14T17:48:29.981-07:00",
+      "currency-holding-id": 5,
+      "currency-holding-type": "PrivateCurrencyHolding",
+      "active": false,
+      "canceled": false
+    }
+  }
+}
+```
+
+This endpoint updates a listing. The cl-link provided in the parameters must exist, and the cl-title value must match the title of the Craigslist post found at the URL specified by the cl-link, for the listing's :active value to be changed from false to true. Listing activation also requires that listings with an :offer_currency value of true have at least as much available currency in the source currency holding they specify as the amount of currency specified by the :amount_atomic field.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/authorized_listings/<ID>`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+user_id | integer | yes | The ID of the user updating the listing, provided in URL path
+active | boolean | yes | Whether the listing is active or not. Inactive listings can only be activated if the listing has not been cancelled.
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the listing
+user-id | The ID of the user account that created the listing
+username | The username of the user account that created the listing
+currency-id | The ID of the currency that the listing is offering
+currency-name | The name of the currency that the listing is offering
+amount-atomic | The amount of currency being offered, in atomic units (each whole unit is composed of 10^10 atomic units)
+cl-link | The link to the Craigslist post containing the description of the listing
+cl-title | The title of the Craiglist post containing the description of the listing. Must match the cl-title value
+offer-currency | Whether the listing is offering currency. If true, the user must have an adequate amount of currency in the source currency holding they designate to cover the amount offered
+created-at | The time and date when the listing was created
+updated-at | The time and date when the listing was last updated
+currency-holding-id | The ID of the public or private currency holding that the currency being offered is held in
+currency-holding-type | Whether the currency holding that the offered currency is held in is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding"
+active | Whether the listing is active or not. Inactive listings can only be activated if the listing has not been cancelled.
 canceled | Whether the listing has been canceled or not. Cancelled listings cannot be uncancelled or reactivated.
