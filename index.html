@@ -486,7 +486,7 @@
                     <a href="#get-a-listing-with-authorization" class="toc-h2 toc-link" data-title="Get a Listing with Authorization">Get a Listing with Authorization</a>
                   </li>
                   <li>
-                    <a href="#list-listings" class="toc-h2 toc-link" data-title="List Listings">List Listings</a>
+                    <a href="#list-all-listings" class="toc-h2 toc-link" data-title="List All Listings">List All Listings</a>
                   </li>
                   <li>
                     <a href="#list-user-39-s-listings" class="toc-h2 toc-link" data-title="List User's Listings">List User's Listings</a>
@@ -499,6 +499,9 @@
                   </li>
                   <li>
                     <a href="#list-user-39-s-listings-with-authorization" class="toc-h2 toc-link" data-title="List User's Listings with Authorization">List User's Listings with Authorization</a>
+                  </li>
+                  <li>
+                    <a href="#create-listing" class="toc-h2 toc-link" data-title="Create Listing">Create Listing</a>
                   </li>
               </ul>
           </li>
@@ -8259,7 +8262,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>Whether the listing has been canceled or not. Cancelled listings cannot be uncancelled or reactivated.</td>
 </tr>
 </tbody></table>
-<h2 id='list-listings'>List Listings</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/listings"</span> -H <span class="s1">'Host: api.mycurrency.com'</span> <span class="se">\</span>
+<h2 id='list-all-listings'>List All Listings</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/listings"</span> -H <span class="s1">'Host: api.mycurrency.com'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
@@ -8966,6 +8969,162 @@ Authentication: not required
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
 <h3 id='response-67'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the listing</td>
+</tr>
+<tr>
+<td>user-id</td>
+<td>The ID of the user account that created the listing</td>
+</tr>
+<tr>
+<td>username</td>
+<td>The username of the user account that created the listing</td>
+</tr>
+<tr>
+<td>currency-id</td>
+<td>The ID of the currency that the listing is offering</td>
+</tr>
+<tr>
+<td>currency-name</td>
+<td>The name of the currency that the listing is offering</td>
+</tr>
+<tr>
+<td>amount-atomic</td>
+<td>The amount of currency being offered, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
+<td>cl-link</td>
+<td>The link to the Craigslist post containing the description of the listing</td>
+</tr>
+<tr>
+<td>cl-title</td>
+<td>The title of the Craiglist post containing the description of the listing. Must match the cl-title value</td>
+</tr>
+<tr>
+<td>offer-currency</td>
+<td>Whether the listing is offering currency. If true, the user must have an adequate amount of currency in the source currency holding they designate to cover the amount offered</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the listing was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the listing was last updated</td>
+</tr>
+<tr>
+<td>currency-holding-id</td>
+<td>The ID of the public or private currency holding that the currency being offered is held in</td>
+</tr>
+<tr>
+<td>currency-holding-type</td>
+<td>Whether the currency holding that the offered currency is held in is a &quot;PublicCurrencyHolding&quot; or a &quot;PrivateCurrencyHolding&quot;</td>
+</tr>
+<tr>
+<td>active</td>
+<td>Whether the listing is active or not. Inactive listings can only be inactivated if the listing has not been cancelled.</td>
+</tr>
+<tr>
+<td>canceled</td>
+<td>Whether the listing has been canceled or not. Cancelled listings cannot be uncancelled or reactivated.</td>
+</tr>
+</tbody></table>
+<h2 id='create-listing'>Create Listing</h2><pre class="highlight shell tab-shell"><code>curl https://api.mycurrency.com/users/4/authorized_listings <span class="se">\</span>
+  -d <span class="s1">'{ "listing": {"amount_atomic": "50000000000", "cl_link": "https://vancouver.craigslist.ca/van/clt/6722959469.html", "cl_title": "Selling", "offer_currency": "true", "currency_holding_type": "PrivateCurrencyHolding", "currency_holding_id": "4"} }'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"authorized-listings"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"cl-link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://vancouver.craigslist.ca/van/clt/6722959469.html"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"cl-title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Selling - 5 Pool coins"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"offer-currency"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-14T02:56:42.738-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-14T02:56:42.738-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"canceled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint creates a listing. The cl-link provided in the parameters must exist, and the cl-title value must match the title of the Craigslist post found at the URL specified by the cl-link for the listing to be created. Successful listing creation also requires that listings with an :offer_currency value of true have at least as much available currency in the source currency holding they specify as the amount of currency specified by the :amount_atomic parameter they set.</p>
+<h3 id='http-request-68'>HTTP Request</h3>
+<p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_listings</code></p>
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+<h3 id='arguments-22'>ARGUMENTS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>integer</td>
+<td>yes</td>
+<td>The ID of the user creating the listing, provided in URL path</td>
+</tr>
+<tr>
+<td>amount_atomic</td>
+<td>integer</td>
+<td>required if :offer_currency set to true</td>
+<td>The amount of currency that is being offered, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
+<td>cl-link</td>
+<td>string</td>
+<td>yes</td>
+<td>The link to the Craigslist post containing the description of the listing</td>
+</tr>
+<tr>
+<td>cl-title</td>
+<td>string</td>
+<td>yes</td>
+<td>The title of the Craiglist post containing the description of the listing. Must match the cl-title value</td>
+</tr>
+<tr>
+<td>offer-currency</td>
+<td>Whether the listing is offering currency. If true, the user must have an adequate amount of currency in the source currency holding they designate to cover the amount offered</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>currency-holding-id</td>
+<td>The ID of the public or private currency holding that the currency being offered is held in</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>currency-holding-type</td>
+<td>Whether the currency holding that the offered currency is held in is a &quot;PublicCurrencyHolding&quot; or a &quot;PrivateCurrencyHolding&quot;</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='response-68'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
