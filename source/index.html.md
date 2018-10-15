@@ -4990,7 +4990,7 @@ curl https://api.mycurrency.com/users/3/offers -d '{ "offer": {"offer_sender_id"
       "offer-receiver-id": 4,
       "offer-receiver-username": "ScipioAfricanus",
       "offer-sender-id": 3,
-      "offer-sender-username": "user_amin",
+      "offer-sender-username": "Hannibal",
       "previous-offer-id": 0,
       "offer-type": 0,
       "active": true,
@@ -5043,7 +5043,7 @@ curl https://api.mycurrency.com/users/3/offers -d '{ "offer": {"offer_sender_id"
         "source-currency-id": 3,
         "source-currency-name": "macaroon dollars",
         "currency-issuer-id": 3,
-        "currency-issuer-username": "user_amin",
+        "currency-issuer-username": "Hannibal",
         "amount-atomic": 50000000000,
         "active": true, 
         "created-at": "2018-10-13T03:29:56.887-07:00",
@@ -5145,4 +5145,713 @@ amount-atomic | The amount of currency that is proposed to be issued, in atomic 
 active | Whether the proposed issuance is still valid or not
 created-at | The time and date when the proposed issuance was created
 updated-at | The time and date when the proposed issuance was last updated
+
+# Listing
+
+## Get a Listing
+
+```shell
+curl 'https://api.mycurrency.com/listings/2' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "2",
+    "type": "listings",
+    "attributes": {
+      "user-id": 4,
+      "username": "ScipioAfricanus",
+      "currency-id": 4,
+      "currency-name": "Pool coins",
+      "amount-atomic": 50000000000,
+      "cl-link": "https://vancouver.craigslist.ca/van/clt/6722934016.html",
+      "cl-title": "For sale - 5 Pool coins",
+      "offer-currency": true,
+      "created-at": "2018-10-13T22:37:59.492-07:00",
+      "updated-at": "2018-10-13T22:37:59.492-07:00"
+    }
+  }
+}
+```
+
+This endpoint retrieves a particular listing and its basic public information by ID.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/listings/<ID>`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the listing
+user-id | The ID of the user account that created the listing
+username | The username of the user account that created the listing
+currency-id | The ID of the currency that the listing is offering
+currency-name | The name of the currency that the listing is offering
+amount-atomic | The amount of currency being offered, in atomic units (each whole unit is composed of 10^10 atomic units)
+cl-link | The link to the Craigslist post containing the description of the listing
+cl-title | The title of the Craiglist post containing the description of the listing. Must match the cl-title value
+offer-currency | Whether the listing is offering currency. If true, the user must have an adequate amount of currency in the source currency holding they designate to cover the amount offered
+created-at | The time and date when the listing was created
+updated-at | The time and date when the listing was last updated
+
+## Get a Listing with Authorization
+
+```shell
+curl 'https://api.mycurrency.com/users/3/authorized_listings/5' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "5",
+    "type": "listings",
+    "attributes": {
+      "user-id": 3,
+      "username": "Hannibal",
+      "currency-id": 3,
+      "currency-name": "macaroon dollars",
+      "amount-atomic": 50000000000,
+      "cl-link": "https://vancouver.craigslist.ca/van/clt/6722960191.html",
+      "cl-title": "Looking for trade, offering - 5 macaroon dollars",
+      "offer-currency": true,
+      "created-at": "2018-10-14T03:07:51.191-07:00",
+      "updated-at": "2018-10-14T03:07:51.191-07:00",
+      "currency-holding-id": 3,
+      "currency-holding-type": "PrivateCurrencyHolding",
+      "active": true,
+      "canceled": false
+    }
+  }
+}
+```
+
+This endpoint retrieves the full details of a particular listing. 
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/authorized_listings/<ID>`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the listing
+user-id | The ID of the user account that created the listing
+username | The username of the user account that created the listing
+currency-id | The ID of the currency that the listing is offering
+currency-name | The name of the currency that the listing is offering
+amount-atomic | The amount of currency being offered, in atomic units (each whole unit is composed of 10^10 atomic units)
+cl-link | The link to the Craigslist post containing the description of the listing
+cl-title | The title of the Craiglist post containing the description of the listing. Must match the cl-title value
+offer-currency | Whether the listing is offering currency. If true, the user must have an adequate amount of currency in the source currency holding they designate to cover the amount offered
+created-at | The time and date when the listing was created
+updated-at | The time and date when the listing was last updated
+currency-holding-id | The ID of the public or private currency holding that the currency being offered is held in
+currency-holding-type | Whether the currency holding that the offered currency is held in is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding"
+active | Whether the listing is active or not. Inactive listings can only be inactivated if the listing has not been cancelled.
+canceled | Whether the listing has been canceled or not. Cancelled listings cannot be uncancelled or reactivated.
+
+## List Listings
+
+```shell
+curl "https://api.mycurrency.com/listings" -H 'Host: api.mycurrency.com' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "2",
+      "type": "listings",
+      "attributes": {
+        "user-id": 4,
+        "username": "ScipioAfricanus",
+        "currency-id": 4,
+        "currency-name": "Pool coins",
+        "amount-atomic": 50000000000,
+        "cl-link": "https://vancouver.craigslist.ca/van/clt/6722934016.html",
+        "cl-title": "For sale - 5 Pool coins",
+        "offer-currency": true,
+        "created-at": "2018-10-13T22:37:59.492-07:00",
+        "updated-at": "2018-10-13T22:37:59.492-07:00"
+      }
+    },
+    {
+      "id": "3",
+      "type": "listings",
+      "attributes": {
+        "user-id": 4,
+        "username": "ScipioAfricanus",
+        "currency-id": 4,
+        "currency-name": "Pool coins",
+        "amount-atomic": 50000000000,
+        "cl-link": "https://vancouver.craigslist.ca/van/clt/6722959469.html",
+        "cl-title": "Selling - 5 Pool coins",
+        "offer-currency": true,
+        "created-at": "2018-10-14T02:56:42.738-07:00",
+        "updated-at": "2018-10-14T02:56:42.738-07:00"
+      }
+    },
+    {
+      "id": "4",
+      "type": "listings",
+      "attributes": {
+        "user-id": 4,
+        "username": "ScipioAfricanus",
+        "currency-id": 5,
+        "currency-name": "Freds Fishing Supplies dollars",
+        "amount-atomic": 50000000000,
+        "cl-link": "https://vancouver.craigslist.ca/van/clt/6722959714.html",
+        "cl-title": "Offering - 5 Freds Fishing Supplies dollars",
+        "offer-currency": true,
+        "created-at": "2018-10-14T02:56:57.624-07:00",
+        "updated-at": "2018-10-14T02:56:57.624-07:00"
+      }
+    },
+    {
+      "id": "5",
+      "type": "listings",
+      "attributes": {
+        "user-id": 3,
+        "username": "Hannibal",
+        "currency-id": 3,
+        "currency-name": "macaroon dollars",
+        "amount-atomic": 50000000000,
+        "cl-link": "https://vancouver.craigslist.ca/van/clt/6722960191.html",
+        "cl-title": "Looking for trade, offering - 5 macaroon dollars",
+        "offer-currency": true,
+        "created-at": "2018-10-14T03:07:51.191-07:00",
+        "updated-at": "2018-10-14T03:07:51.191-07:00"
+      }
+    },
+    {
+      "id": "6",
+      "type": "listings",
+      "attributes": {
+        "user-id": 3,
+        "username": "Hannibal",
+        "currency-id": 4,
+        "currency-name": "Pool coins",
+        "amount-atomic": 50000000000,
+        "cl-link": "https://vancouver.craigslist.ca/van/clt/6722960432.html",
+        "cl-title": "Trading - 5 Pool coins",
+        "offer-currency": true,
+        "created-at": "2018-10-14T03:13:29.210-07:00",
+        "updated-at": "2018-10-14T03:13:29.210-07:00"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/listings?",
+    "first": "https://api.mycurrency.com/listings?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/listings?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "5"
+    }
+  }
+}
+```
+
+This endpoint retrieves all active listings and their basic public information.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/listings`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the listing
+user-id | The ID of the user account that created the listing
+username | The username of the user account that created the listing
+currency-id | The ID of the currency that the listing is offering
+currency-name | The name of the currency that the listing is offering
+amount-atomic | The amount of currency being offered, in atomic units (each whole unit is composed of 10^10 atomic units)
+cl-link | The link to the Craigslist post containing the description of the listing
+cl-title | The title of the Craiglist post containing the description of the listing. Must match the cl-title value
+offer-currency | Whether the listing is offering currency. If true, the user must have an adequate amount of currency in the source currency holding they designate to cover the amount offered
+created-at | The time and date when the listing was created
+updated-at | The time and date when the listing was last updated
+
+## List User's Listings
+
+```shell
+curl "https://api.mycurrency.com/users/4/listings" -H 'Host: api.mycurrency.com' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "2",
+      "type": "listings",
+      "attributes": {
+        "user-id": 4,
+        "username": "ScipioAfricanus",
+        "currency-id": 4,
+        "currency-name": "Pool coins",
+        "amount-atomic": 50000000000,
+        "cl-link": "https://vancouver.craigslist.ca/van/clt/6722934016.html",
+        "cl-title": "For sale - 5 Pool coins",
+        "offer-currency": true,
+        "created-at": "2018-10-13T22:37:59.492-07:00",
+        "updated-at": "2018-10-13T22:37:59.492-07:00"
+      }
+    },
+    {
+      "id": "3",
+      "type": "listings",
+      "attributes": {
+        "user-id": 4,
+        "username": "ScipioAfricanus",
+        "currency-id": 4,
+        "currency-name": "Pool coins",
+        "amount-atomic": 50000000000,
+        "cl-link": "https://vancouver.craigslist.ca/van/clt/6722959469.html",
+        "cl-title": "Selling - 5 Pool coins",
+        "offer-currency": true,
+        "created-at": "2018-10-14T02:56:42.738-07:00",
+        "updated-at": "2018-10-14T02:56:42.738-07:00"
+      }
+    },
+    {
+      "id": "4",
+      "type": "listings",
+      "attributes": {
+        "user-id": 4,
+        "username": "ScipioAfricanus",
+        "currency-id": 5,
+        "currency-name": "Freds Fishing Supplies dollars",
+        "amount-atomic": 50000000000,
+        "cl-link": "https://vancouver.craigslist.ca/van/clt/6722959714.html",
+        "cl-title": "Offering - 5 Freds Fishing Supplies dollars",
+        "offer-currency": true,
+        "created-at": "2018-10-14T02:56:57.624-07:00",
+        "updated-at": "2018-10-14T02:56:57.624-07:00"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/users/4/listings?",
+    "first": "https://api.mycurrency.com/users/4/listings?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/users/4/listings?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "3"
+    }
+  }
+}
+```
+
+This endpoint retrieves all active listings created by the specified user and outputs their basic public information.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/listings`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+## List Currency's Listings
+
+```shell
+curl "https://api.mycurrency.com/currencies/4/listings" -H 'Host: api.mycurrency.com' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "2",
+      "type": "listings",
+      "attributes": {
+        "user-id": 4,
+        "username": "ScipioAfricanus",
+        "currency-id": 4,
+        "currency-name": "Pool coins",
+        "amount-atomic": 50000000000,
+        "cl-link": "https://vancouver.craigslist.ca/van/clt/6722934016.html",
+        "cl-title": "For sale - 5 Pool coins",
+        "offer-currency": true,
+        "created-at": "2018-10-13T22:37:59.492-07:00",
+        "updated-at": "2018-10-13T22:37:59.492-07:00"
+      }
+    },
+    {
+      "id": "3",
+      "type": "listings",
+      "attributes": {
+        "user-id": 4,
+        "username": "ScipioAfricanus",
+        "currency-id": 4,
+        "currency-name": "Pool coins",
+        "amount-atomic": 50000000000,
+        "cl-link": "https://vancouver.craigslist.ca/van/clt/6722959469.html",
+        "cl-title": "Selling - 5 Pool coins",
+        "offer-currency": true,
+        "created-at": "2018-10-14T02:56:42.738-07:00",
+        "updated-at": "2018-10-14T02:56:42.738-07:00"
+      }
+    },
+    {
+      "id": "6",
+      "type": "listings",
+      "attributes": {
+        "user-id": 3,
+        "username": "Hannibal",
+        "currency-id": 4,
+        "currency-name": "Pool coins",
+        "amount-atomic": 50000000000,
+        "cl-link": "https://vancouver.craigslist.ca/van/clt/6722960432.html",
+        "cl-title": "Trading - 5 Pool coins",
+        "offer-currency": true,
+        "created-at": "2018-10-14T03:13:29.210-07:00",
+        "updated-at": "2018-10-14T03:13:29.210-07:00"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/currencies/4/listings?",
+    "first": "https://api.mycurrency.com/currencies/4/listings?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/currencies/4/listings?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "3"
+    }
+  }
+}
+```
+
+This endpoint retrieves all active listings where the specified currency is being offered and outputs their basic public information.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/currencies/<CURRENCY-ID>/listings`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the listing
+user-id | The ID of the user account that created the listing
+username | The username of the user account that created the listing
+currency-id | The ID of the currency that the listing is offering
+currency-name | The name of the currency that the listing is offering
+amount-atomic | The amount of currency being offered, in atomic units (each whole unit is composed of 10^10 atomic units)
+cl-link | The link to the Craigslist post containing the description of the listing
+cl-title | The title of the Craiglist post containing the description of the listing. Must match the cl-title value
+offer-currency | Whether the listing is offering currency. If true, the user must have an adequate amount of currency in the source currency holding they designate to cover the amount offered
+created-at | The time and date when the listing was created
+updated-at | The time and date when the listing was last updated
+
+## List Sub Location's Listings
+
+```shell
+curl "https://api.mycurrency.com/sub_locations/1/listings" -H 'Host: api.mycurrency.com' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "2",
+      "type": "listings",
+      "attributes": {
+        "user-id": 4,
+        "username": "ScipioAfricanus",
+        "currency-id": 4,
+        "currency-name": "Pool coins",
+        "amount-atomic": 50000000000,
+        "cl-link": "https://vancouver.craigslist.ca/van/clt/6722934016.html",
+        "cl-title": "For sale - 5 Pool coins",
+        "offer-currency": true,
+        "created-at": "2018-10-13T22:37:59.492-07:00",
+        "updated-at": "2018-10-13T22:37:59.492-07:00"
+      }
+    },
+    {
+      "id": "3",
+      "type": "listings",
+      "attributes": {
+        "user-id": 4,
+        "username": "ScipioAfricanus",
+        "currency-id": 4,
+        "currency-name": "Pool coins",
+        "amount-atomic": 50000000000,
+        "cl-link": "https://vancouver.craigslist.ca/van/clt/6722959469.html",
+        "cl-title": "Selling - 5 Pool coins",
+        "offer-currency": true,
+        "created-at": "2018-10-14T02:56:42.738-07:00",
+        "updated-at": "2018-10-14T02:56:42.738-07:00"
+      }
+    },
+    {
+      "id": "4",
+      "type": "listings",
+      "attributes": {
+        "user-id": 4,
+        "username": "ScipioAfricanus",
+        "currency-id": 5,
+        "currency-name": "Freds Fishing Supplies dollars",
+        "amount-atomic": 50000000000,
+        "cl-link": "https://vancouver.craigslist.ca/van/clt/6722959714.html",
+        "cl-title": "Offering - 5 Freds Fishing Supplies dollars",
+        "offer-currency": true,
+        "created-at": "2018-10-14T02:56:57.624-07:00",
+        "updated-at": "2018-10-14T02:56:57.624-07:00"
+      }
+    },
+    {
+      "id": "5",
+      "type": "listings",
+      "attributes": {
+        "user-id": 3,
+        "username": "user_amin",
+        "currency-id": 3,
+        "currency-name": "macaroon dollars",
+        "amount-atomic": 50000000000,
+        "cl-link": "https://vancouver.craigslist.ca/van/clt/6722960191.html",
+        "cl-title": "Looking for trade, offering - 5 macaroon dollars",
+        "offer-currency": true,
+        "created-at": "2018-10-14T03:07:51.191-07:00",
+        "updated-at": "2018-10-14T03:07:51.191-07:00"
+      }
+    },
+    {
+      "id": "6",
+      "type": "listings",
+      "attributes": {
+        "user-id": 3,
+        "username": "user_amin",
+        "currency-id": 4,
+        "currency-name": "Pool coins",
+        "amount-atomic": 50000000000,
+        "cl-link": "https://vancouver.craigslist.ca/van/clt/6722960432.html",
+        "cl-title": "Trading - 5 Pool coins",
+        "offer-currency": true,
+        "created-at": "2018-10-14T03:13:29.210-07:00",
+        "updated-at": "2018-10-14T03:13:29.210-07:00"
+      }
+    }
+  ],
+  "links": {
+    "self": "http://api.mycurrency.com/sub_locations/1/listings?",
+    "first": "http://api.mycurrency.com/sub_locations/1/listings?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "http://api.mycurrency.com/sub_locations/1/listings?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "5"
+    }
+  }
+}
+```
+
+This endpoint retrieves all active listings being offered in the Craigslist region associated with the specified sub location and outputs their basic public information.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/sub_locations/<SUB-LOCATION-ID>/listings`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the listing
+user-id | The ID of the user account that created the listing
+username | The username of the user account that created the listing
+currency-id | The ID of the currency that the listing is offering
+currency-name | The name of the currency that the listing is offering
+amount-atomic | The amount of currency being offered, in atomic units (each whole unit is composed of 10^10 atomic units)
+cl-link | The link to the Craigslist post containing the description of the listing
+cl-title | The title of the Craiglist post containing the description of the listing. Must match the cl-title value
+offer-currency | Whether the listing is offering currency. If true, the user must have an adequate amount of currency in the source currency holding they designate to cover the amount offered
+created-at | The time and date when the listing was created
+updated-at | The time and date when the listing was last updated
+
+## List User's Listings with Authorization
+
+```shell
+curl https://api.mycurrency.com/users/4/authorized_listings \
+  -d '{ "listing": {"amount_atomic": "50000000000", "cl_link": "https://vancouver.craigslist.ca/van/clt/6722959469.html", "cl_title": "Selling", "offer_currency": "true", "currency_holding_type": "PrivateCurrencyHolding", "currency_holding_id": "4"} }' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' 
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "listings",
+      "attributes": {
+        "user-id": 4,
+        "username": "ScipioAfricanus",
+        "currency-id": 4,
+        "currency-name": "Pool coins",
+        "amount-atomic": 50000000000,
+        "cl-link": "https://vancouver.craigslist.ca/van/clt/6722658767.html",
+        "cl-title": "For sale - 5 Pool coins",
+        "offer-currency": true,
+        "created-at": "2018-10-12T22:35:43.000-07:00",
+        "updated-at": "2018-10-12T22:35:43.000-07:00",
+        "currency-holding-id": 5,
+        "currency-holding-type": "PublicCurrencyHolding",
+        "active": false,
+        "canceled": true
+      }
+    },
+    {
+      "id": "2",
+      "type": "listings",
+      "attributes": {
+        "user-id": 4,
+        "username": "ScipioAfricanus",
+        "currency-id": 4,
+        "currency-name": "Pool coins",
+        "amount-atomic": 50000000000,
+        "cl-link": "https://vancouver.craigslist.ca/van/clt/6722934016.html",
+        "cl-title": "For sale - 5 Pool coins",
+        "offer-currency": true,
+        "created-at": "2018-10-13T22:37:59.492-07:00",
+        "updated-at": "2018-10-13T22:37:59.492-07:00",
+        "currency-holding-id": 5,
+        "currency-holding-type": "PublicCurrencyHolding",
+        "active": true,
+        "canceled": false
+      }
+    },
+    {
+      "id": "3",
+      "type": "listings",
+      "attributes": {
+        "user-id": 4,
+        "username": "ScipioAfricanus",
+        "currency-id": 4,
+        "currency-name": "Pool coins",
+        "amount-atomic": 50000000000,
+        "cl-link": "https://vancouver.craigslist.ca/van/clt/6722959469.html",
+        "cl-title": "Selling - 5 Pool coins",
+        "offer-currency": true,
+        "created-at": "2018-10-14T02:56:42.738-07:00",
+        "updated-at": "2018-10-14T02:56:42.738-07:00",
+        "currency-holding-id": 4,
+        "currency-holding-type": "PrivateCurrencyHolding",
+        "active": true,
+        "canceled": false
+      }
+    },
+    {
+      "id": "4",
+      "type": "listings",
+      "attributes": {
+        "user-id": 4,
+        "username": "ScipioAfricanus",
+        "currency-id": 5,
+        "currency-name": "Freds Fishing Supplies dollars",
+        "amount-atomic": 50000000000,
+        "cl-link": "https://vancouver.craigslist.ca/van/clt/6722959714.html",
+        "cl-title": "Offering - 5 Freds Fishing Supplies dollars",
+        "offer-currency": true,
+        "created-at": "2018-10-14T02:56:57.624-07:00",
+        "updated-at": "2018-10-14T02:56:57.624-07:00",
+        "currency-holding-id": 5,
+        "currency-holding-type": "PrivateCurrencyHolding",
+        "active": true,
+        "canceled": false
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/users/4/authorized_listings?",
+    "first": "https://api.mycurrency.com/users/4/authorized_listings?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/users/4/authorized_listings?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "4"
+    }
+  }
+}
+```
+
+This endpoint retrieves all active listings created by the logged in user and outputs their full details.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/authorized_listings`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
 
