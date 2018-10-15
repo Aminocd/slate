@@ -8503,6 +8503,58 @@ Authentication: not required
 <aside class="notice">
 Authentication: not required
 </aside>
+<h3 id='response-64'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the listing</td>
+</tr>
+<tr>
+<td>user-id</td>
+<td>The ID of the user account that created the listing</td>
+</tr>
+<tr>
+<td>username</td>
+<td>The username of the user account that created the listing</td>
+</tr>
+<tr>
+<td>currency-id</td>
+<td>The ID of the currency that the listing is offering</td>
+</tr>
+<tr>
+<td>currency-name</td>
+<td>The name of the currency that the listing is offering</td>
+</tr>
+<tr>
+<td>amount-atomic</td>
+<td>The amount of currency being offered, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
+<td>cl-link</td>
+<td>The link to the Craigslist post containing the description of the listing</td>
+</tr>
+<tr>
+<td>cl-title</td>
+<td>The title of the Craiglist post containing the description of the listing. Must match the cl-title value</td>
+</tr>
+<tr>
+<td>offer-currency</td>
+<td>Whether the listing is offering currency. If true, the user must have an adequate amount of currency in the source currency holding they designate to cover the amount offered</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the listing was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the listing was last updated</td>
+</tr>
+</tbody></table>
 <h2 id='list-currency-39-s-listings'>List Currency&#39;s Listings</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/currencies/4/listings"</span> -H <span class="s1">'Host: api.mycurrency.com'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
@@ -8583,7 +8635,7 @@ Authentication: not required
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-64'>RESPONSE</h3>
+<h3 id='response-65'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8747,7 +8799,7 @@ Authentication: not required
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-65'>RESPONSE</h3>
+<h3 id='response-66'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8913,6 +8965,74 @@ Authentication: not required
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
+<h3 id='response-67'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the listing</td>
+</tr>
+<tr>
+<td>user-id</td>
+<td>The ID of the user account that created the listing</td>
+</tr>
+<tr>
+<td>username</td>
+<td>The username of the user account that created the listing</td>
+</tr>
+<tr>
+<td>currency-id</td>
+<td>The ID of the currency that the listing is offering</td>
+</tr>
+<tr>
+<td>currency-name</td>
+<td>The name of the currency that the listing is offering</td>
+</tr>
+<tr>
+<td>amount-atomic</td>
+<td>The amount of currency being offered, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
+<td>cl-link</td>
+<td>The link to the Craigslist post containing the description of the listing</td>
+</tr>
+<tr>
+<td>cl-title</td>
+<td>The title of the Craiglist post containing the description of the listing. Must match the cl-title value</td>
+</tr>
+<tr>
+<td>offer-currency</td>
+<td>Whether the listing is offering currency. If true, the user must have an adequate amount of currency in the source currency holding they designate to cover the amount offered</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the listing was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the listing was last updated</td>
+</tr>
+<tr>
+<td>currency-holding-id</td>
+<td>The ID of the public or private currency holding that the currency being offered is held in</td>
+</tr>
+<tr>
+<td>currency-holding-type</td>
+<td>Whether the currency holding that the offered currency is held in is a &quot;PublicCurrencyHolding&quot; or a &quot;PrivateCurrencyHolding&quot;</td>
+</tr>
+<tr>
+<td>active</td>
+<td>Whether the listing is active or not. Inactive listings can only be inactivated if the listing has not been cancelled.</td>
+</tr>
+<tr>
+<td>canceled</td>
+<td>Whether the listing has been canceled or not. Cancelled listings cannot be uncancelled or reactivated.</td>
+</tr>
+</tbody></table>
 
       </div>
       <div class="dark-box">
