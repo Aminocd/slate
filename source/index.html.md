@@ -7092,3 +7092,298 @@ longitude | The longitude of the sub location
 latitude | The latitude of the sub location
 time-zone | The time zone of the sub location
 mid-location-id | The ID of the parent mid location
+
+# Orders
+
+## Get an Order
+
+```shell
+curl 'https://api.mycurrency.com/order_sets/1' -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "1",
+    "type": "micro-currency-orders",
+    "attributes": {
+      "store-id": 3,
+      "store-name": "Freds Fishing Supplies",
+      "order-set-id": 1,
+      "source-currency-holding-id": 9,
+      "source-currency-holding-type": "PrivateCurrencyHolding",
+      "spent-currency-id": 5,
+      "spent-currency-name": "Freds Fishing Supplies dollars",
+      "before-amount-atomic": 510000000000,
+      "after-amount-atomic": 410000000000,
+      "burnrate-period-id": 20,
+      "day-counter": 0,
+      "amount-atomic": 100000000000,
+      "product-id": 5,
+      "product-name": "fishing bait",
+      "product-quantity": 1,
+      "created-at": "2018-10-03T00:39:37.860-07:00",
+      "updated-at": "2018-10-03T00:39:37.860-07:00"
+    }
+  }
+}
+```
+
+This endpoint retrieves a particular order. The logged in user must be active and be either the ordering user or the owner of the store that received the order to view it.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/order_sets/ID`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the micro currency order
+store-id | The ID of the store that the micro currency order was spent at
+store-name | The name of the store that the micro currency order was spent at
+order-set-id | The ID of the order set that the micro currency order is associated with
+ordering-user-id | The ID of the user that made the order, only shown if the logged in user is the owner of the store that received the order
+ordering-user-id | The username of the user that made the order, only shown if the logged in user is the owner of the store that received the order
+source-currency-holding-id | The ID of the public or private currency holding that the micro currency order spent from, only shown if the logged in user made the order
+source-currency-holding-type | Whether the currency holding that the micro currency order spent from is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding", only shown if the logged in user made the order
+before-amount-atomic | The balance, in atomic units, of the currency holding before it was debited by the micro currency order, only shown if the logged in user made the order
+after-amount-atomic | The balance, in atomic units, of the currency holding after it was debited by the micro currency order, only shown if the logged in user made the order
+day-counter | The day counter of the currency holding when it was debited by the micro currency order, only shown if the logged in user made the order
+amount-atomic | The amount of currency spent, in atomic units (each whole unit is composed of 10^10 atomic units)
+product-id | The ID of the product that was ordered
+product-name | The name of the product that was ordered
+product-quantity | The quantity of the product that was ordered
+created-at | The time and date when the micro currency order was created
+updated-at | The time and date when the micro currency order was last updated
+
+## List Orders
+
+```shell
+curl 'https://api.mycurrency.com/order_sets?ordering_user_id=3' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "micro-currency-orders",
+      "attributes": {
+        "store-id": 3,
+        "store-name": "Freds Fishing Supplies",
+        "order-set-id": 1,
+        "source-currency-holding-id": 9,
+        "source-currency-holding-type": "PrivateCurrencyHolding",
+        "spent-currency-id": 5,
+        "spent-currency-name": "Freds Fishing Supplies dollars",
+        "before-amount-atomic": 510000000000,
+        "after-amount-atomic": 410000000000,
+        "burnrate-period-id": 20,
+        "day-counter": 0,
+        "amount-atomic": 100000000000,
+        "product-id": 5,
+        "product-name": "fishing bait",
+        "product-quantity": 1,
+        "created-at": "2018-10-03T00:39:37.860-07:00",
+        "updated-at": "2018-10-03T00:39:37.860-07:00"
+      }
+    },
+    {
+      "id": "2",
+      "type": "micro-currency-orders",
+      "attributes": {
+        "store-id": 3,
+        "store-name": "Freds Fishing Supplies",
+        "order-set-id": 2,
+        "source-currency-holding-id": 9,
+        "source-currency-holding-type": "PrivateCurrencyHolding",
+        "spent-currency-id": 5,
+        "spent-currency-name": "Freds Fishing Supplies dollars",
+        "before-amount-atomic": 410000000000,
+        "after-amount-atomic": 310000000000,
+        "burnrate-period-id": 20,
+        "day-counter": 0,
+        "amount-atomic": 100000000000,
+        "product-id": 5,
+        "product-name": "fishing bait",
+        "product-quantity": 1,
+        "created-at": "2018-10-03T00:43:31.756-07:00",
+        "updated-at": "2018-10-03T00:43:31.756-07:00"
+      }
+    },
+    {
+      "id": "3",
+      "type": "micro-currency-orders",
+      "attributes": {
+        "store-id": 3,
+        "store-name": "Freds Fishing Supplies",
+        "order-set-id": 3,
+        "source-currency-holding-id": 9,
+        "source-currency-holding-type": "PrivateCurrencyHolding",
+        "spent-currency-id": 5,
+        "spent-currency-name": "Freds Fishing Supplies dollars",
+        "before-amount-atomic": 310000000000,
+        "after-amount-atomic": 210000000000,
+        "burnrate-period-id": 20,
+        "day-counter": 0,
+        "amount-atomic": 100000000000,
+        "product-id": 5,
+        "product-name": "fishing bait",
+        "product-quantity": 1,
+        "created-at": "2018-10-03T01:58:03.223-07:00",
+        "updated-at": "2018-10-03T01:58:03.223-07:00"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/order_sets?ordering_user_id=3",
+    "first": "https://api.mycurrency.com/order_sets?ordering_user_id=3&page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/order_sets?ordering_user_id=3&page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "3"
+    }
+  }
+}
+```
+
+This endpoint retrieves a user's orders. 
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/offers?index_type={}`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+user_id | integer | yes | The ID of the user creating the order, provided in URL path
+ordering_user_id | integer | required if :selling_user_id not provided | The ID of the user that made the orders. If provided, the orders created by the specified user are returned.
+selling_user_id | integer | required if :ordering_user_id not provided | The ID of the user that owns the stores that received the order. If provided, the orders received by the specified user are returned.
+store_id | integer | no | The orders received by the store specified by the store_id are returned if store_id is provided. This parameter needs to provided along with a :selling_user_id that ID of the user that owns the store.
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the micro currency order
+store-id | The ID of the store that the micro currency order was spent at
+store-name | The name of the store that the micro currency order was spent at
+order-set-id | The ID of the order set that the micro currency order is associated with
+ordering-user-id | The ID of the user that made the order, only shown if the logged in user is the owner of the store that received the order
+ordering-user-id | The username of the user that made the order, only shown if the logged in user is the owner of the store that received the order
+source-currency-holding-id | The ID of the public or private currency holding that the micro currency order spent from, only shown if the logged in user made the order
+source-currency-holding-type | Whether the currency holding that the micro currency order spent from is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding", only shown if the logged in user made the order
+before-amount-atomic | The balance, in atomic units, of the currency holding before it was debited by the micro currency order, only shown if the logged in user made the order
+after-amount-atomic | The balance, in atomic units, of the currency holding after it was debited by the micro currency order, only shown if the logged in user made the order
+day-counter | The day counter of the currency holding when it was debited by the micro currency order, only shown if the logged in user made the order
+amount-atomic | The amount of currency spent, in atomic units (each whole unit is composed of 10^10 atomic units)
+product-id | The ID of the product that was ordered
+product-name | The name of the product that was ordered
+product-quantity | The quantity of the product that was ordered
+created-at | The time and date when the micro currency order was created
+updated-at | The time and date when the micro currency order was last updated
+
+## Create Order
+
+```shell
+curl -X POST https://api.mycurrency.com/users/3/order_sets \
+  -d '{"order_set": { "micro_currency_orders_attributes": [{"product_id": "5", "micro_currency_seller_id": "3", "micro_order_source_currency_holding_id": "9", "micro_order_source_currency_holding_type": "PrivateCurrencyHolding", "amount_atomic": "100000000000", "product_quantity": "1"}]}}' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "1",
+    "type": "micro-currency-orders",
+    "attributes": {
+      "store-id": 3,
+      "store-name": "Freds Fishing Supplies",
+      "order-set-id": 1,
+      "source-currency-holding-id": 9,
+      "source-currency-holding-type": "PrivateCurrencyHolding",
+      "spent-currency-id": 5,
+      "spent-currency-name": "Freds Fishing Supplies dollars",
+      "before-amount-atomic": 510000000000,
+      "after-amount-atomic": 410000000000,
+      "burnrate-period-id": 20,
+      "day-counter": 0,
+      "amount-atomic": 100000000000,
+      "product-id": 5,
+      "product-name": "fishing bait",
+      "product-quantity": 1,
+      "created-at": "2018-10-03T00:39:37.860-07:00",
+      "updated-at": "2018-10-03T00:39:37.860-07:00"
+    }
+  }
+}
+```
+
+Creates an Order.
+
+### HTTP Request
+
+`https://api.mycurrency.com/users/<USER-ID>/order_sets`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+user_id | integer | yes | The ID of the user creating the order, provided in URL path
+product_id | integer | yes | The ID of the product being ordered
+micro_currency_seller_id | integer | yes | The ID of the store from which the product is being ordered
+micro_order_currency_holding_id | integer | yes | The ID of the public or private currency holding that is being spent from
+micro_order_currency_holding_type | string | yes | Whether the currency holding that is being spent from is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding"
+amount-atomic | integer | yes | The amount of currency spent, in atomic units (each whole unit is composed of 10^10 atomic units)
+product-quantity | integer | yes | The quantity of the product that is being ordered
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the micro currency order
+store-id | The ID of the store that the micro currency order was spent at
+store-name | The name of the store that the micro currency order was spent at
+order-set-id | The ID of the order set that the micro currency order is associated with
+ordering-user-id | The ID of the user that made the order, only shown if the logged in user is the owner of the store that received the order
+ordering-user-id | The username of the user that made the order, only shown if the logged in user is the owner of the store that received the order
+source-currency-holding-id | The ID of the public or private currency holding that the micro currency order spent from, only shown if the logged in user made the order
+source-currency-holding-type | Whether the currency holding that the micro currency order spent from is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding", only shown if the logged in user made the order
+before-amount-atomic | The balance, in atomic units, of the currency holding before it was debited by the micro currency order, only shown if the logged in user made the order
+after-amount-atomic | The balance, in atomic units, of the currency holding after it was debited by the micro currency order, only shown if the logged in user made the order
+day-counter | The day counter of the currency holding when it was debited by the micro currency order, only shown if the logged in user made the order
+amount-atomic | The amount of currency spent, in atomic units (each whole unit is composed of 10^10 atomic units)
+product-id | The ID of the product that was ordered
+product-name | The name of the product that was ordered
+product-quantity | The quantity of the product that was ordered
+created-at | The time and date when the micro currency order was created
+updated-at | The time and date when the micro currency order was last updated
