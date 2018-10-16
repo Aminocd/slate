@@ -6037,3 +6037,560 @@ currency-holding-id | The ID of the public or private currency holding that the 
 currency-holding-type | Whether the currency holding that the offered currency is held in is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding"
 active | Whether the listing is active or not. Inactive listings can only be activated if the listing has not been cancelled.
 canceled | Whether the listing has been canceled or not. Cancelled listings cannot be uncancelled or reactivated.
+
+# Categories
+
+## Super Categories
+
+## Get a Super Category
+
+```shell
+curl 'https://api.mycurrency.com/super_categories/1' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "1",
+    "type": "super-categories",
+    "attributes": {
+      "name": "Arts/Craft",
+      "description": "handicrafts, art and furniture"
+    }
+  }
+}
+```
+
+This endpoint retrieves a particular super category.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/super_categories/<ID>`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the super category
+name | The name of the super category
+description | The description of the super category
+
+## List Super Categories
+
+```shell
+curl 'https://api.mycurrency.com/super_categories' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "super-categories",
+      "attributes": {
+        "name": "Arts/Craft",
+        "description": "handicrafts, art and furniture"
+      }
+    },
+    {
+      "id": "2",
+      "type": "super-categories",
+      "attributes": {
+        "name": "Therapeutic Services",
+        "description": "all types of therapeutic services including spa treatments and massage"
+      }
+    },
+    {
+      "id": "3",
+      "type": "super-categories",
+      "attributes": {
+        "name": "sporting",
+        "description": "outdoor and sporting goods"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/super_categories?",
+    "first": "https://api.mycurrency.com/super_categories?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/super_categories?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "3"
+    }
+  }
+}
+```
+
+This endpoint retrieves all super categories.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/super_categories`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the super category
+name | The name of the super category
+description | The description of the super category
+
+## Mid Categories
+
+## Get a Mid Category
+
+```shell
+curl 'https://api.mycurrency.com/mid_categories/1' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "1",
+    "type": "mid-categories",
+    "attributes": {
+      "name": "furniture",
+      "description": "furniture of all kinds",
+      "super-category-id": 1
+    }
+  }
+}
+```
+
+This endpoint retrieves a particular mid category.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/mid_categories/<ID>`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the mid category
+name | The name of the mid category
+description | The description of the mid category
+super-category-id | The ID of the parent super category
+
+## List Mid Categories
+
+```shell
+curl 'https://api.mycurrency.com/mid_categories' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "mid-categories",
+      "attributes": {
+        "name": "furniture",
+        "description": "furniture of all kinds",
+        "super-category-id": 1
+      }
+    },
+    {
+      "id": "2",
+      "type": "mid-categories",
+      "attributes": {
+        "name": "spa services",
+        "description": "various types of spa services",
+        "super-category-id": 2
+      }
+    },
+    {
+      "id": "3",
+      "type": "mid-categories",
+      "attributes": {
+        "name": "outdoor supplies",
+        "description": "camping, hunting and fishing goods",
+        "super-category-id": 3
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/mid_categories?",
+    "first": "https://api.mycurrency.com/mid_categories?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/mid_categories?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "3"
+    }
+  }
+}
+```
+
+This endpoint retrieves all mid categories.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/mid_categories`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the mid category
+name | The name of the mid category
+description | The description of the mid category
+super-category-id | The ID of the parent super category
+
+## List Super Category's Mid Categories
+
+```shell
+curl 'https://api.mycurrency.com/super_categories/1/mid_categories' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "mid-categories",
+      "attributes": {
+        "name": "furniture",
+        "description": "furniture of all kinds",
+        "super-category-id": 1
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/super_categories/1/mid_categories?",
+    "first": "https://api.mycurrency.com/super_categories/1/mid_categories?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/super_categories/1/mid_categories?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "1"
+    }
+  }
+}
+```
+
+This endpoint retrieves all child mid categories of the specified super category.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/super_categories/<SUPER-CATEGORY-ID>/mid_categories`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the mid category
+name | The name of the mid category
+description | The description of the mid category
+super-category-id | The ID of the parent super category
+
+## Sub Categories
+
+## Get a Sub Category
+
+```shell
+curl 'https://api.mycurrency.com/sub_categories/1' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "1",
+    "type": "sub-categories",
+    "attributes": {
+      "name": "couch",
+      "description": "couches of all kinds",
+      "mid-category-id": 1
+    }
+  }
+}
+```
+
+This endpoint retrieves a particular sub category.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/sub_categories/<ID>`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the sub category
+name | The name of the name category
+description | The description of the sub category
+mid-category-id | The ID of the parent mid category
+
+## List Sub Categories
+
+```shell
+curl 'https://api.mycurrency.com/sub_categories' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "sub-categories",
+      "attributes": {
+        "name": "couch",
+        "description": "couches of all kinds",
+        "mid-category-id": 1
+      }
+    },
+    {
+      "id": "2",
+      "type": "sub-categories",
+      "attributes": {
+        "name": "massage",
+        "description": "therapeutic massages",
+        "mid-category-id": 2
+      }
+    },
+    {
+      "id": "3",
+      "type": "sub-categories",
+      "attributes": {
+        "name": "skin treatment",
+        "description": "all manner of spa skin treatments",
+        "mid-category-id": 2
+      }
+    },
+    {
+      "id": "4",
+      "type": "sub-categories",
+      "attributes": {
+        "name": "fishing supplies",
+        "description": "fishing supplies including bait and tackle",
+        "mid-category-id": 3
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/sub_categories?",
+    "first": "https://api.mycurrency.com/sub_categories?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/sub_categories?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "4"
+    }
+  }
+}
+```
+
+This endpoint retrieves all sub categories.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/sub_categories`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the sub category
+name | The name of the name category
+description | The description of the sub category
+mid-category-id | The ID of the parent mid category
+
+## List Mid Category's Sub Categories
+
+```shell
+curl 'https://api.mycurrency.com/super_categories/2/mid_categories/2/sub_categories' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "2",
+      "type": "sub-categories",
+      "attributes": {
+        "name": "massage",
+        "description": "therapeutic massages",
+        "mid-category-id": 2
+      }
+    },
+    {
+      "id": "3",
+      "type": "sub-categories",
+      "attributes": {
+        "name": "skin treatment",
+        "description": "all manner of spa skin treatments",
+        "mid-category-id": 2
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/super_categories/2/mid_categories/2/sub_categories?",
+    "first": "https://api.mycurrency.com/super_categories/2/mid_categories/2/sub_categories?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/super_categories/2/mid_categories/2/sub_categories?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "2"
+    }
+  }
+}
+```
+
+This endpoint retrieves all child sub categories of the specified mid category.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/super_categories/<SUPER-CATEGORY-ID>/mid_categories/<MID_CATEGORY-ID>/sub_categories`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the sub category
+name | The name of the name category
+description | The description of the sub category
+mid-category-id | The ID of the parent mid category
+
+## List Super Category's Sub Categories
+
+```shell
+curl 'https://api.mycurrency.com/super_categories/2/sub_categories' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "2",
+      "type": "sub-categories",
+      "attributes": {
+        "name": "massage",
+        "description": "therapeutic massages",
+        "mid-category-id": 2
+      }
+    },
+    {
+      "id": "3",
+      "type": "sub-categories",
+      "attributes": {
+        "name": "skin treatment",
+        "description": "all manner of spa skin treatments",
+        "mid-category-id": 2
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/super_categories/2/sub_categories?",
+    "first": "https://api.mycurrency.com/super_categories/2/sub_categories?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/super_categories/2/sub_categories?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "2"
+    }
+  }
+}
+```
+
+This endpoint retrieves all child sub categories of the specified super category.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/super_categories/<SUPER-CATEGORY-ID>/sub_categories`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the sub category
+name | The name of the name category
+description | The description of the sub category
+mid-category-id | The ID of the parent mid category

@@ -503,6 +503,9 @@
                   <li>
                     <a href="#create-listing" class="toc-h2 toc-link" data-title="Create Listing">Create Listing</a>
                   </li>
+                  <li>
+                    <a href="#update-listing" class="toc-h2 toc-link" data-title="Update Listing">Update Listing</a>
+                  </li>
               </ul>
           </li>
       </ul>
@@ -8255,7 +8258,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 <tr>
 <td>active</td>
-<td>Whether the listing is active or not. Inactive listings can only be inactivated if the listing has not been cancelled.</td>
+<td>Whether the listing is active or not. Inactive listings can only be activated if the listing has not been cancelled.</td>
 </tr>
 <tr>
 <td>canceled</td>
@@ -9029,7 +9032,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 <tr>
 <td>active</td>
-<td>Whether the listing is active or not. Inactive listings can only be inactivated if the listing has not been cancelled.</td>
+<td>Whether the listing is active or not. Inactive listings can only be activated if the listing has not been cancelled.</td>
 </tr>
 <tr>
 <td>canceled</td>
@@ -9090,7 +9093,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <tr>
 <td>amount_atomic</td>
 <td>integer</td>
-<td>required if :offer_currency set to true</td>
+<td>required if :offer_currency is set to true</td>
 <td>The amount of currency that is being offered, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
 </tr>
 <tr>
@@ -9107,21 +9110,21 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 <tr>
 <td>offer-currency</td>
+<td>boolean</td>
+<td>yes</td>
 <td>Whether the listing is offering currency. If true, the user must have an adequate amount of currency in the source currency holding they designate to cover the amount offered</td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td>currency-holding-id</td>
+<td>integer</td>
+<td>required if :offer_currency is set to true</td>
 <td>The ID of the public or private currency holding that the currency being offered is held in</td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td>currency-holding-type</td>
+<td>string</td>
+<td>required if :offer_currency is set to true</td>
 <td>Whether the currency holding that the offered currency is held in is a &quot;PublicCurrencyHolding&quot; or a &quot;PrivateCurrencyHolding&quot;</td>
-<td></td>
-<td></td>
 </tr>
 </tbody></table>
 <h3 id='response-68'>RESPONSE</h3>
@@ -9185,7 +9188,133 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 <tr>
 <td>active</td>
-<td>Whether the listing is active or not. Inactive listings can only be inactivated if the listing has not been cancelled.</td>
+<td>Whether the listing is active or not. Inactive listings can only be activated if the listing has not been cancelled.</td>
+</tr>
+<tr>
+<td>canceled</td>
+<td>Whether the listing has been canceled or not. Cancelled listings cannot be uncancelled or reactivated.</td>
+</tr>
+</tbody></table>
+<h2 id='update-listing'>Update Listing</h2><pre class="highlight shell tab-shell"><code>curl -X PUT https://api.mycurrency.com/users/4/authorized_listings/4 <span class="se">\</span>
+  -d <span class="s1">'{"listing": {"active": "false"}}'</span> -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span> -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"authorized-listings"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies dollars"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"cl-link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://vancouver.craigslist.ca/van/clt/6722959714.html"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"cl-title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Offering - 5 Freds Fishing Supplies dollars"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"offer-currency"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-14T02:56:57.624-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-14T17:48:29.981-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"canceled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint updates a listing. The cl-link provided in the parameters must exist, and the cl-title value must match the title of the Craigslist post found at the URL specified by the cl-link, for the listing&#39;s :active value to be changed from false to true. Listing activation also requires that listings with an :offer_currency value of true have at least as much available currency in the source currency holding they specify as the amount of currency specified by the :amount_atomic field.</p>
+<h3 id='http-request-69'>HTTP Request</h3>
+<p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_listings/&lt;ID&gt;</code></p>
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+<h3 id='arguments-23'>ARGUMENTS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>integer</td>
+<td>yes</td>
+<td>The ID of the user updating the listing, provided in URL path</td>
+</tr>
+<tr>
+<td>active</td>
+<td>boolean</td>
+<td>yes</td>
+<td>Whether the listing is active or not. Inactive listings can only be activated if the listing has not been cancelled.</td>
+</tr>
+</tbody></table>
+<h3 id='response-69'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the listing</td>
+</tr>
+<tr>
+<td>user-id</td>
+<td>The ID of the user account that created the listing</td>
+</tr>
+<tr>
+<td>username</td>
+<td>The username of the user account that created the listing</td>
+</tr>
+<tr>
+<td>currency-id</td>
+<td>The ID of the currency that the listing is offering</td>
+</tr>
+<tr>
+<td>currency-name</td>
+<td>The name of the currency that the listing is offering</td>
+</tr>
+<tr>
+<td>amount-atomic</td>
+<td>The amount of currency being offered, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
+<td>cl-link</td>
+<td>The link to the Craigslist post containing the description of the listing</td>
+</tr>
+<tr>
+<td>cl-title</td>
+<td>The title of the Craiglist post containing the description of the listing. Must match the cl-title value</td>
+</tr>
+<tr>
+<td>offer-currency</td>
+<td>Whether the listing is offering currency. If true, the user must have an adequate amount of currency in the source currency holding they designate to cover the amount offered</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the listing was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the listing was last updated</td>
+</tr>
+<tr>
+<td>currency-holding-id</td>
+<td>The ID of the public or private currency holding that the currency being offered is held in</td>
+</tr>
+<tr>
+<td>currency-holding-type</td>
+<td>Whether the currency holding that the offered currency is held in is a &quot;PublicCurrencyHolding&quot; or a &quot;PrivateCurrencyHolding&quot;</td>
+</tr>
+<tr>
+<td>active</td>
+<td>Whether the listing is active or not. Inactive listings can only be activated if the listing has not been cancelled.</td>
 </tr>
 <tr>
 <td>canceled</td>
