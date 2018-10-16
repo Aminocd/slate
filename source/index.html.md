@@ -6513,7 +6513,7 @@ This endpoint retrieves all child sub categories of the specified mid category.
 
 ### HTTP Request
 
-`GET https://api.mycurrency.com/super_categories/<SUPER-CATEGORY-ID>/mid_categories/<MID_CATEGORY-ID>/sub_categories`
+`GET https://api.mycurrency.com/super_categories/<SUPER-CATEGORY-ID>/mid_categories/<MID-CATEGORY-ID>/sub_categories`
 
 <aside class="notice">
 Authentication: not required
@@ -6594,3 +6594,514 @@ id | The ID of the sub category
 name | The name of the name category
 description | The description of the sub category
 mid-category-id | The ID of the parent mid category
+
+# Locations
+
+## Super Locations
+
+## Get a Super Location
+
+```shell
+curl 'https://api.mycurrency.com/super_locations/1' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "1",
+    "type": "super-locations",
+    "attributes": {
+      "name": "US"
+    }
+  }
+}
+```
+
+This endpoint retrieves a particular super location.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/super_locations/<ID>`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the super location
+name | The name of the super location
+
+## List Super Locations
+
+```shell
+curl 'https://api.mycurrency.com/super_locations' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "super-locations",
+      "attributes": {
+        "name": "US"
+      }
+    },
+    {
+      "id": "2",
+      "type": "super-locations",
+      "attributes": {
+        "name": "Canada"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/super_locations?",
+    "first": "https://api.mycurrency.com/super_locations?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/super_locations?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "2"
+    }
+  }
+}
+```
+
+This endpoint retrieves all super categories.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/super_categories`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the super category
+name | The name of the super category
+description | The description of the super category
+
+## Mid Locations
+
+## Get a Mid Location
+
+```shell
+curl 'https://api.mycurrency.com/mid_locations/1' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "1",
+    "type": "mid-locations",
+    "attributes": {
+      "name": "California",
+      "super-location-id": 1
+    }
+  }
+}
+```
+
+This endpoint retrieves a particular mid location.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/mid_locations/<ID>`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the mid location
+name | The name of the mid location
+super-location-id | The ID of the parent super location
+
+## List Mid Locations
+
+```shell
+curl 'https://api.mycurrency.com/mid_locations' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "California",
+        "super-location-id": 1
+      }
+    },
+    {
+      "id": "2",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "British Columbia",
+        "super-location-id": 2
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/mid_locations?",
+    "first": "https://api.mycurrency.com/mid_locations?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/mid_locations?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "2"
+    }
+  }
+}
+```
+
+This endpoint retrieves all mid categories.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/mid_categories`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the mid location
+name | The name of the mid location
+super-location-id | The ID of the parent super location
+
+## List Super Location's Mid Locations
+
+```shell
+curl 'https://api.mycurrency.com/super_locations/1/mid_locations' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "California",
+        "super-location-id": 1
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/super_locations/1/mid_locations?",
+    "first": "https://api.mycurrency.com/super_locations/1/mid_locations?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/super_locations/1/mid_locations?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "1"
+    }
+  }
+}
+```
+
+This endpoint retrieves all child mid locations of the specified super location.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/super_locations/<SUPER-LOCATION-ID>/mid_locations`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the mid location
+name | The name of the mid location
+super-location-id | The ID of the parent super location
+
+## Sub Categories
+
+## Get a Sub Category
+
+```shell
+curl 'https://api.mycurrency.com/sub_locations/1' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "1",
+    "type": "sub-locations",
+    "attributes": {
+      "name": "Vancouver",
+      "longitude": -123.116226,
+      "latitude": 49.246292,
+      "time-zone": "America/Vancouver",
+      "mid-location-id": 2
+    }
+  }
+}
+```
+
+This endpoint retrieves a particular sub location.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/sub_locations/<ID>`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the sub location
+name | The name of the sub location
+longitude | The longitude of the sub location
+latitude | The latitude of the sub location
+time-zone | The time zone of the sub location
+mid-location-id | The ID of the parent mid location
+
+## List Sub Locations
+
+```shell
+curl 'https://api.mycurrency.com/sub_locations' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "Vancouver",
+        "longitude": -123.116226,
+        "latitude": 49.246292,
+        "time-zone": "America/Vancouver",
+        "mid-location-id": 2
+      }
+    },
+    {
+      "id": "2",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "San Francisco",
+        "longitude": -122.431297,
+        "latitude": 37.773972,
+        "time-zone": "America/Los_Angeles",
+        "mid-location-id": 1
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/sub_locations?",
+    "first": "https://api.mycurrency.com/sub_locations?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/sub_locations?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "2"
+    }
+  }
+}
+```
+
+This endpoint retrieves all sub locations.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/sub_locations`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the sub location
+name | The name of the sub location
+longitude | The longitude of the sub location
+latitude | The latitude of the sub location
+time-zone | The time zone of the sub location
+mid-location-id | The ID of the parent mid location
+
+## List Mid Location's Sub Locations
+
+```shell
+curl 'https://api.mycurrency.com/super_locations/2/mid_locations/2/sub_locations' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "Vancouver",
+        "longitude": -123.116226,
+        "latitude": 49.246292,
+        "time-zone": "America/Vancouver",
+        "mid-location-id": 2
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/super_locations/2/mid_locations/2/sub_locations?",
+    "first": "https://api.mycurrency.com/super_locations/2/mid_locations/2/sub_locations?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/super_locations/2/mid_locations/2/sub_locations?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "1"
+    }
+  }
+}
+```
+
+This endpoint retrieves all child sub locations of the specified mid location.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/super_locations/<SUPER-LOCATION-ID>/mid_locations/<MID-LOCATION-ID>/sub_locations`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the sub location
+name | The name of the sub location
+longitude | The longitude of the sub location
+latitude | The latitude of the sub location
+time-zone | The time zone of the sub location
+mid-location-id | The ID of the parent mid location
+
+## List Super Location's Sub Locations
+
+```shell
+curl 'https://api.mycurrency.com/super_locations/2/sub_locations' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "Vancouver",
+        "longitude": -123.116226,
+        "latitude": 49.246292,
+        "time-zone": "America/Vancouver",
+        "mid-location-id": 2
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/super_locations/2/sub_locations?",
+    "first": "https://api.mycurrency.com/super_locations/2/sub_locations?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/super_locations/2/sub_locations?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "1"
+    }
+  }
+}
+```
+
+This endpoint retrieves all child sub locations of the specified super location.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/super_locations/<SUPER-LOCATION-ID>/sub_locations`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the sub location
+name | The name of the sub location
+longitude | The longitude of the sub location
+latitude | The latitude of the sub location
+time-zone | The time zone of the sub location
+mid-location-id | The ID of the parent mid location
