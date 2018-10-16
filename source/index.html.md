@@ -4388,7 +4388,7 @@ Parameter | Type | Required | Description
 user_id | integer | yes | The ID of the user creating the issuance, provided in URL path
 currency_id | integer | yes | The ID of the currency being issued, provided in URL path
 amount_atomic | integer | yes | The amount of currency issued, in atomic units (each whole unit is composed of 10^10 atomic units)
-receiving_user_id | integer | yes |  The ID of the user that to receive the issuance
+receiving_user_id | integer | yes |  The ID of the user that is to receive the issuance
 
 ### RESPONSE
 
@@ -4535,7 +4535,7 @@ Parameter | Type | Required | Description
 --------- | ------- | ------- | -----------
 user_id | integer | yes | The ID of the user creating the transfer, provided in URL path
 amount_atomic | integer | yes | The amount of currency transferred, in atomic units (each whole unit is composed of 10^10 atomic units)
-receiving_user_id | integer | yes |  The ID of the user that to receive the transfer
+receiving_user_id | integer | yes |  The ID of the user that is to receive the transfer
 transfer_sender_currency_holding_id | integer | yes | The ID of the currency holding from which the transfer is debiting from
 transfer_sender_currency_holding_type | string | no | Whether the currency holding that the transfer is debiting from is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding". If no value is provided, it will default to "PrivateCurrencyHolding"
 transfer_sender_currency_holding_type | string | no | Whether the currency holding that the transfer is crediting to is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding". If no value is provided, it will default to "PrivateCurrencyHolding". You cannot set this parameter to "PublicCurrencyHolding" unless the transfer is a self send of a currency from a user's private holding to public holding.
