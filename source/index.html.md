@@ -6040,8 +6040,6 @@ canceled | Whether the listing has been canceled or not. Cancelled listings cann
 
 # Categories
 
-## Super Categories
-
 ## Get a Super Category
 
 ```shell
@@ -6153,8 +6151,6 @@ Parameter | Description
 id | The ID of the super category
 name | The name of the super category
 description | The description of the super category
-
-## Mid Categories
 
 ## Get a Mid Category
 
@@ -6331,8 +6327,6 @@ id | The ID of the mid category
 name | The name of the mid category
 description | The description of the mid category
 super-category-id | The ID of the parent super category
-
-## Sub Categories
 
 ## Get a Sub Category
 
@@ -6597,8 +6591,6 @@ mid-category-id | The ID of the parent mid category
 
 # Locations
 
-## Super Locations
-
 ## Get a Super Location
 
 ```shell
@@ -6697,8 +6689,6 @@ Parameter | Description
 --------- | -----------
 id | The ID of the super location
 name | The name of the super location
-
-## Mid Locations
 
 ## Get a Mid Location
 
@@ -6859,8 +6849,6 @@ Parameter | Description
 id | The ID of the mid location
 name | The name of the mid location
 super-location-id | The ID of the parent super location
-
-# Sub Locations
 
 ## Get a Sub Location
 
