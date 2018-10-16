@@ -572,6 +572,20 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#orders" class="toc-h1 toc-link" data-title="Orders">Orders</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-an-order" class="toc-h2 toc-link" data-title="Get an Order">Get an Order</a>
+                  </li>
+                  <li>
+                    <a href="#list-orders" class="toc-h2 toc-link" data-title="List Orders">List Orders</a>
+                  </li>
+                  <li>
+                    <a href="#create-order" class="toc-h2 toc-link" data-title="Create Order">Create Order</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='#'>Sign Up for a Developer Key</a> <!--- need to add link here ---></li>
@@ -10557,6 +10571,502 @@ Authentication: not required
 <tr>
 <td>mid-location-id</td>
 <td>The ID of the parent mid location</td>
+</tr>
+</tbody></table>
+<h1 id='orders'>Orders</h1><h2 id='get-an-order'>Get an Order</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/order_sets/1'</span> -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"micro-currency-orders"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order-set-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"source-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"source-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"spent-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"spent-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies dollars"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">510000000000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">410000000000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"burnrate-period-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing bait"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product-quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:39:37.860-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:39:37.860-07:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a particular order. The logged in user must be active and be either the ordering user or the owner of the store that received the order to view it.</p>
+<h3 id='http-request-88'>HTTP Request</h3>
+<p><code>GET https://api.mycurrency.com/order_sets/ID</code></p>
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+<h3 id='response-88'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the micro currency order</td>
+</tr>
+<tr>
+<td>store-id</td>
+<td>The ID of the store that the micro currency order was spent at</td>
+</tr>
+<tr>
+<td>store-name</td>
+<td>The name of the store that the micro currency order was spent at</td>
+</tr>
+<tr>
+<td>order-set-id</td>
+<td>The ID of the order set that the micro currency order is associated with</td>
+</tr>
+<tr>
+<td>ordering-user-id</td>
+<td>The ID of the user that made the order, only shown if the logged in user is the owner of the store that received the order</td>
+</tr>
+<tr>
+<td>ordering-user-id</td>
+<td>The username of the user that made the order, only shown if the logged in user is the owner of the store that received the order</td>
+</tr>
+<tr>
+<td>source-currency-holding-id</td>
+<td>The ID of the public or private currency holding that the micro currency order spent from, only shown if the logged in user made the order</td>
+</tr>
+<tr>
+<td>source-currency-holding-type</td>
+<td>Whether the currency holding that the micro currency order spent from is a &quot;PublicCurrencyHolding&quot; or a &quot;PrivateCurrencyHolding&quot;, only shown if the logged in user made the order</td>
+</tr>
+<tr>
+<td>before-amount-atomic</td>
+<td>The balance, in atomic units, of the currency holding before it was debited by the micro currency order, only shown if the logged in user made the order</td>
+</tr>
+<tr>
+<td>after-amount-atomic</td>
+<td>The balance, in atomic units, of the currency holding after it was debited by the micro currency order, only shown if the logged in user made the order</td>
+</tr>
+<tr>
+<td>day-counter</td>
+<td>The day counter of the currency holding when it was debited by the micro currency order, only shown if the logged in user made the order</td>
+</tr>
+<tr>
+<td>amount-atomic</td>
+<td>The amount of currency spent, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
+<td>product-id</td>
+<td>The ID of the product that was ordered</td>
+</tr>
+<tr>
+<td>product-name</td>
+<td>The name of the product that was ordered</td>
+</tr>
+<tr>
+<td>product-quantity</td>
+<td>The quantity of the product that was ordered</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the micro currency order was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the micro currency order was last updated</td>
+</tr>
+</tbody></table>
+<h2 id='list-orders'>List Orders</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/order_sets?ordering_user_id=3'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"micro-currency-orders"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"order-set-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"source-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"source-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"spent-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"spent-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">510000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">410000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"burnrate-period-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing bait"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:39:37.860-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:39:37.860-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"micro-currency-orders"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"order-set-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"source-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"source-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"spent-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"spent-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">410000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">310000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"burnrate-period-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing bait"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:43:31.756-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:43:31.756-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"micro-currency-orders"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"order-set-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"source-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"source-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"spent-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"spent-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">310000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">210000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"burnrate-period-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing bait"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T01:58:03.223-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T01:58:03.223-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/order_sets?ordering_user_id=3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/order_sets?ordering_user_id=3&amp;page=1&amp;per_page=25"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"prev"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/order_sets?ordering_user_id=3&amp;page=1&amp;per_page=25"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"per-page"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total-pages"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total-count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a user&#39;s orders. </p>
+<h3 id='http-request-89'>HTTP Request</h3>
+<p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/offers?index_type={}</code></p>
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+<h3 id='arguments-24'>ARGUMENTS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>integer</td>
+<td>yes</td>
+<td>The ID of the user creating the order, provided in URL path</td>
+</tr>
+<tr>
+<td>ordering_user_id</td>
+<td>integer</td>
+<td>required if :selling_user_id not provided</td>
+<td>The ID of the user that made the orders. If provided, the orders created by the specified user are returned.</td>
+</tr>
+<tr>
+<td>selling_user_id</td>
+<td>integer</td>
+<td>required if :ordering_user_id not provided</td>
+<td>The ID of the user that owns the stores that received the order. If provided, the orders received by the specified user are returned.</td>
+</tr>
+<tr>
+<td>store_id</td>
+<td>integer</td>
+<td>no</td>
+<td>The orders received by the store specified by the store_id are returned if store_id is provided. This parameter needs to provided along with a :selling_user_id that ID of the user that owns the store.</td>
+</tr>
+</tbody></table>
+<h3 id='response-89'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the micro currency order</td>
+</tr>
+<tr>
+<td>store-id</td>
+<td>The ID of the store that the micro currency order was spent at</td>
+</tr>
+<tr>
+<td>store-name</td>
+<td>The name of the store that the micro currency order was spent at</td>
+</tr>
+<tr>
+<td>order-set-id</td>
+<td>The ID of the order set that the micro currency order is associated with</td>
+</tr>
+<tr>
+<td>ordering-user-id</td>
+<td>The ID of the user that made the order, only shown if the logged in user is the owner of the store that received the order</td>
+</tr>
+<tr>
+<td>ordering-user-id</td>
+<td>The username of the user that made the order, only shown if the logged in user is the owner of the store that received the order</td>
+</tr>
+<tr>
+<td>source-currency-holding-id</td>
+<td>The ID of the public or private currency holding that the micro currency order spent from, only shown if the logged in user made the order</td>
+</tr>
+<tr>
+<td>source-currency-holding-type</td>
+<td>Whether the currency holding that the micro currency order spent from is a &quot;PublicCurrencyHolding&quot; or a &quot;PrivateCurrencyHolding&quot;, only shown if the logged in user made the order</td>
+</tr>
+<tr>
+<td>before-amount-atomic</td>
+<td>The balance, in atomic units, of the currency holding before it was debited by the micro currency order, only shown if the logged in user made the order</td>
+</tr>
+<tr>
+<td>after-amount-atomic</td>
+<td>The balance, in atomic units, of the currency holding after it was debited by the micro currency order, only shown if the logged in user made the order</td>
+</tr>
+<tr>
+<td>day-counter</td>
+<td>The day counter of the currency holding when it was debited by the micro currency order, only shown if the logged in user made the order</td>
+</tr>
+<tr>
+<td>amount-atomic</td>
+<td>The amount of currency spent, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
+<td>product-id</td>
+<td>The ID of the product that was ordered</td>
+</tr>
+<tr>
+<td>product-name</td>
+<td>The name of the product that was ordered</td>
+</tr>
+<tr>
+<td>product-quantity</td>
+<td>The quantity of the product that was ordered</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the micro currency order was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the micro currency order was last updated</td>
+</tr>
+</tbody></table>
+<h2 id='create-order'>Create Order</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.mycurrency.com/users/3/order_sets <span class="se">\</span>
+  -d <span class="s1">'{"order_set": { "micro_currency_orders_attributes": [{"product_id": "5", "micro_currency_seller_id": "3", "micro_order_source_currency_holding_id": "9", "micro_order_source_currency_holding_type": "PrivateCurrencyHolding", "amount_atomic": "100000000000", "product_quantity": "1"}]}}'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"micro-currency-orders"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order-set-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"source-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"source-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"spent-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"spent-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies dollars"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">510000000000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">410000000000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"burnrate-period-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing bait"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product-quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:39:37.860-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:39:37.860-07:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Creates an Order.</p>
+<h3 id='http-request-90'>HTTP Request</h3>
+<p><code>https://api.mycurrency.com/users/&lt;USER-ID&gt;/order_sets</code></p>
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+<h3 id='arguments-25'>ARGUMENTS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>integer</td>
+<td>yes</td>
+<td>The ID of the user creating the order, provided in URL path</td>
+</tr>
+<tr>
+<td>product_id</td>
+<td>integer</td>
+<td>yes</td>
+<td>The ID of the product being ordered</td>
+</tr>
+<tr>
+<td>micro_currency_seller_id</td>
+<td>integer</td>
+<td>yes</td>
+<td>The ID of the store from which the product is being ordered</td>
+</tr>
+<tr>
+<td>micro_order_currency_holding_id</td>
+<td>integer</td>
+<td>yes</td>
+<td>The ID of the public or private currency holding that is being spent from</td>
+</tr>
+<tr>
+<td>micro_order_currency_holding_type</td>
+<td>string</td>
+<td>yes</td>
+<td>Whether the currency holding that is being spent from is a &quot;PublicCurrencyHolding&quot; or a &quot;PrivateCurrencyHolding&quot;</td>
+</tr>
+<tr>
+<td>amount-atomic</td>
+<td>integer</td>
+<td>yes</td>
+<td>The amount of currency spent, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
+<td>product-quantity</td>
+<td>integer</td>
+<td>yes</td>
+<td>The quantity of the product that is being ordered</td>
+</tr>
+</tbody></table>
+<h3 id='response-90'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the micro currency order</td>
+</tr>
+<tr>
+<td>store-id</td>
+<td>The ID of the store that the micro currency order was spent at</td>
+</tr>
+<tr>
+<td>store-name</td>
+<td>The name of the store that the micro currency order was spent at</td>
+</tr>
+<tr>
+<td>order-set-id</td>
+<td>The ID of the order set that the micro currency order is associated with</td>
+</tr>
+<tr>
+<td>ordering-user-id</td>
+<td>The ID of the user that made the order, only shown if the logged in user is the owner of the store that received the order</td>
+</tr>
+<tr>
+<td>ordering-user-id</td>
+<td>The username of the user that made the order, only shown if the logged in user is the owner of the store that received the order</td>
+</tr>
+<tr>
+<td>source-currency-holding-id</td>
+<td>The ID of the public or private currency holding that the micro currency order spent from, only shown if the logged in user made the order</td>
+</tr>
+<tr>
+<td>source-currency-holding-type</td>
+<td>Whether the currency holding that the micro currency order spent from is a &quot;PublicCurrencyHolding&quot; or a &quot;PrivateCurrencyHolding&quot;, only shown if the logged in user made the order</td>
+</tr>
+<tr>
+<td>before-amount-atomic</td>
+<td>The balance, in atomic units, of the currency holding before it was debited by the micro currency order, only shown if the logged in user made the order</td>
+</tr>
+<tr>
+<td>after-amount-atomic</td>
+<td>The balance, in atomic units, of the currency holding after it was debited by the micro currency order, only shown if the logged in user made the order</td>
+</tr>
+<tr>
+<td>day-counter</td>
+<td>The day counter of the currency holding when it was debited by the micro currency order, only shown if the logged in user made the order</td>
+</tr>
+<tr>
+<td>amount-atomic</td>
+<td>The amount of currency spent, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
+<td>product-id</td>
+<td>The ID of the product that was ordered</td>
+</tr>
+<tr>
+<td>product-name</td>
+<td>The name of the product that was ordered</td>
+</tr>
+<tr>
+<td>product-quantity</td>
+<td>The quantity of the product that was ordered</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the micro currency order was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the micro currency order was last updated</td>
 </tr>
 </tbody></table>
 
