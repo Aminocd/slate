@@ -6860,7 +6860,7 @@ id | The ID of the mid location
 name | The name of the mid location
 super-location-id | The ID of the parent super location
 
-### Sub Locations
+# Sub Locations
 
 ## Get a Sub Location
 

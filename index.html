@@ -574,10 +574,7 @@
                     <a href="#list-super-location-39-s-mid-locations" class="toc-h2 toc-link" data-title="List Super Location's Mid Locations">List Super Location's Mid Locations</a>
                   </li>
                   <li>
-                    <a href="#sub-categories-2" class="toc-h2 toc-link" data-title="Sub Categories">Sub Categories</a>
-                  </li>
-                  <li>
-                    <a href="#get-a-sub-category-2" class="toc-h2 toc-link" data-title="Get a Sub Category">Get a Sub Category</a>
+                    <a href="#get-a-sub-location" class="toc-h2 toc-link" data-title="Get a Sub Location">Get a Sub Location</a>
                   </li>
                   <li>
                     <a href="#list-sub-locations" class="toc-h2 toc-link" data-title="List Sub Locations">List Sub Locations</a>
@@ -10087,9 +10084,9 @@ Authentication: not required
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all super categories.</p>
+<p>This endpoint retrieves all super locations.</p>
 <h3 id='http-request-80'>HTTP Request</h3>
-<p><code>GET https://api.mycurrency.com/super_categories</code></p>
+<p><code>GET https://api.mycurrency.com/super_locations</code></p>
 
 <aside class="notice">
 Authentication: not required
@@ -10103,15 +10100,11 @@ Authentication: not required
 </thead><tbody>
 <tr>
 <td>id</td>
-<td>The ID of the super category</td>
+<td>The ID of the super location</td>
 </tr>
 <tr>
 <td>name</td>
-<td>The name of the super category</td>
-</tr>
-<tr>
-<td>description</td>
-<td>The description of the super category</td>
+<td>The name of the super location</td>
 </tr>
 </tbody></table>
 <h2 id='mid-locations'>Mid Locations</h2><h2 id='get-a-mid-location'>Get a Mid Location</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/mid_locations/1'</span> <span class="se">\</span>
@@ -10199,9 +10192,9 @@ Authentication: not required
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all mid categories.</p>
+<p>This endpoint retrieves all mid locations.</p>
 <h3 id='http-request-82'>HTTP Request</h3>
-<p><code>GET https://api.mycurrency.com/mid_categories</code></p>
+<p><code>GET https://api.mycurrency.com/mid_locations</code></p>
 
 <aside class="notice">
 Authentication: not required
@@ -10286,7 +10279,7 @@ Authentication: not required
 <td>The ID of the parent super location</td>
 </tr>
 </tbody></table>
-<h2 id='sub-categories-2'>Sub Categories</h2><h2 id='get-a-sub-category-2'>Get a Sub Category</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/sub_locations/1'</span> <span class="se">\</span>
+<h3 id='sub-locations'>Sub Locations</h3><h2 id='get-a-sub-location'>Get a Sub Location</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/sub_locations/1'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
