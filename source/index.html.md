@@ -6681,11 +6681,11 @@ curl 'https://api.mycurrency.com/super_locations' \
 }
 ```
 
-This endpoint retrieves all super categories.
+This endpoint retrieves all super locations.
 
 ### HTTP Request
 
-`GET https://api.mycurrency.com/super_categories`
+`GET https://api.mycurrency.com/super_locations`
 
 <aside class="notice">
 Authentication: not required
@@ -6695,9 +6695,8 @@ Authentication: not required
 
 Parameter | Description
 --------- | -----------
-id | The ID of the super category
-name | The name of the super category
-description | The description of the super category
+id | The ID of the super location
+name | The name of the super location
 
 ## Mid Locations
 
@@ -6787,11 +6786,11 @@ curl 'https://api.mycurrency.com/mid_locations' \
 }
 ```
 
-This endpoint retrieves all mid categories.
+This endpoint retrieves all mid locations.
 
 ### HTTP Request
 
-`GET https://api.mycurrency.com/mid_categories`
+`GET https://api.mycurrency.com/mid_locations`
 
 <aside class="notice">
 Authentication: not required
@@ -6861,9 +6860,9 @@ id | The ID of the mid location
 name | The name of the mid location
 super-location-id | The ID of the parent super location
 
-## Sub Categories
+### Sub Locations
 
-## Get a Sub Category
+## Get a Sub Location
 
 ```shell
 curl 'https://api.mycurrency.com/sub_locations/1' \
