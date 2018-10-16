@@ -512,16 +512,10 @@
             <a href="#categories" class="toc-h1 toc-link" data-title="Categories">Categories</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#super-categories" class="toc-h2 toc-link" data-title="Super Categories">Super Categories</a>
-                  </li>
-                  <li>
                     <a href="#get-a-super-category" class="toc-h2 toc-link" data-title="Get a Super Category">Get a Super Category</a>
                   </li>
                   <li>
                     <a href="#list-super-categories" class="toc-h2 toc-link" data-title="List Super Categories">List Super Categories</a>
-                  </li>
-                  <li>
-                    <a href="#mid-categories" class="toc-h2 toc-link" data-title="Mid Categories">Mid Categories</a>
                   </li>
                   <li>
                     <a href="#get-a-mid-category" class="toc-h2 toc-link" data-title="Get a Mid Category">Get a Mid Category</a>
@@ -531,9 +525,6 @@
                   </li>
                   <li>
                     <a href="#list-super-category-39-s-mid-categories" class="toc-h2 toc-link" data-title="List Super Category's Mid Categories">List Super Category's Mid Categories</a>
-                  </li>
-                  <li>
-                    <a href="#sub-categories" class="toc-h2 toc-link" data-title="Sub Categories">Sub Categories</a>
                   </li>
                   <li>
                     <a href="#get-a-sub-category" class="toc-h2 toc-link" data-title="Get a Sub Category">Get a Sub Category</a>
@@ -553,16 +544,10 @@
             <a href="#locations" class="toc-h1 toc-link" data-title="Locations">Locations</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#super-locations" class="toc-h2 toc-link" data-title="Super Locations">Super Locations</a>
-                  </li>
-                  <li>
                     <a href="#get-a-super-location" class="toc-h2 toc-link" data-title="Get a Super Location">Get a Super Location</a>
                   </li>
                   <li>
                     <a href="#list-super-locations" class="toc-h2 toc-link" data-title="List Super Locations">List Super Locations</a>
-                  </li>
-                  <li>
-                    <a href="#mid-locations" class="toc-h2 toc-link" data-title="Mid Locations">Mid Locations</a>
                   </li>
                   <li>
                     <a href="#get-a-mid-location" class="toc-h2 toc-link" data-title="Get a Mid Location">Get a Mid Location</a>
@@ -573,11 +558,6 @@
                   <li>
                     <a href="#list-super-location-39-s-mid-locations" class="toc-h2 toc-link" data-title="List Super Location's Mid Locations">List Super Location's Mid Locations</a>
                   </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#sub-locations" class="toc-h1 toc-link" data-title="Sub Locations">Sub Locations</a>
-              <ul class="toc-list-h2">
                   <li>
                     <a href="#get-a-sub-location" class="toc-h2 toc-link" data-title="Get a Sub Location">Get a Sub Location</a>
                   </li>
@@ -9405,7 +9385,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>Whether the listing has been canceled or not. Cancelled listings cannot be uncancelled or reactivated.</td>
 </tr>
 </tbody></table>
-<h1 id='categories'>Categories</h1><h2 id='super-categories'>Super Categories</h2><h2 id='get-a-super-category'>Get a Super Category</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/super_categories/1'</span> <span class="se">\</span>
+<h1 id='categories'>Categories</h1><h2 id='get-a-super-category'>Get a Super Category</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/super_categories/1'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
@@ -9525,7 +9505,7 @@ Authentication: not required
 <td>The description of the super category</td>
 </tr>
 </tbody></table>
-<h2 id='mid-categories'>Mid Categories</h2><h2 id='get-a-mid-category'>Get a Mid Category</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/mid_categories/1'</span> <span class="se">\</span>
+<h2 id='get-a-mid-category'>Get a Mid Category</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/mid_categories/1'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
@@ -9722,7 +9702,7 @@ Authentication: not required
 <td>The ID of the parent super category</td>
 </tr>
 </tbody></table>
-<h2 id='sub-categories'>Sub Categories</h2><h2 id='get-a-sub-category'>Get a Sub Category</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/sub_categories/1'</span> <span class="se">\</span>
+<h2 id='get-a-sub-category'>Get a Sub Category</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/sub_categories/1'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
@@ -10011,7 +9991,7 @@ Authentication: not required
 <td>The ID of the parent mid category</td>
 </tr>
 </tbody></table>
-<h1 id='locations'>Locations</h1><h2 id='super-locations'>Super Locations</h2><h2 id='get-a-super-location'>Get a Super Location</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/super_locations/1'</span> <span class="se">\</span>
+<h1 id='locations'>Locations</h1><h2 id='get-a-super-location'>Get a Super Location</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/super_locations/1'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
@@ -10112,7 +10092,7 @@ Authentication: not required
 <td>The name of the super location</td>
 </tr>
 </tbody></table>
-<h2 id='mid-locations'>Mid Locations</h2><h2 id='get-a-mid-location'>Get a Mid Location</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/mid_locations/1'</span> <span class="se">\</span>
+<h2 id='get-a-mid-location'>Get a Mid Location</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/mid_locations/1'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
@@ -10284,7 +10264,7 @@ Authentication: not required
 <td>The ID of the parent super location</td>
 </tr>
 </tbody></table>
-<h1 id='sub-locations'>Sub Locations</h1><h2 id='get-a-sub-location'>Get a Sub Location</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/sub_locations/1'</span> <span class="se">\</span>
+<h2 id='get-a-sub-location'>Get a Sub Location</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/sub_locations/1'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
 <blockquote>
