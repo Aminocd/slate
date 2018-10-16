@@ -7281,7 +7281,7 @@ Parameter | Type | Required | Description
 user_id | integer | yes | The ID of the user creating the order, provided in URL path
 ordering_user_id | integer | required if :selling_user_id not provided | The ID of the user that made the orders. If provided, the orders created by the specified user are returned.
 selling_user_id | integer | required if :ordering_user_id not provided | The ID of the user that owns the stores that received the order. If provided, the orders received by the specified user are returned.
-store_id | integer | no | The orders received by the store specified by the store_id are returned if store_id is provided. This parameter needs to be provided along with a :selling_user_id that ID of the user that owns the store.
+store_id | integer | no | The orders received by the store specified by the store_id are returned if store_id is provided. This parameter needs to be provided along with a :selling_user_id with a value that matches the ID of the user that owns the store.
 
 ### RESPONSE
 
