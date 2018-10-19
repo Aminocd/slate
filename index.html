@@ -592,6 +592,12 @@
                   <li>
                     <a href="#get-a-notice" class="toc-h2 toc-link" data-title="Get a Notice">Get a Notice</a>
                   </li>
+                  <li>
+                    <a href="#get-number-of-unseen-notices" class="toc-h2 toc-link" data-title="Get Number of Unseen Notices">Get Number of Unseen Notices</a>
+                  </li>
+                  <li>
+                    <a href="#list-notices" class="toc-h2 toc-link" data-title="List Notices">List Notices</a>
+                  </li>
               </ul>
           </li>
       </ul>
@@ -11109,6 +11115,258 @@ Authentication: the request requires the OAuth access-token associated with the 
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
 <h3 id='response-91'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the notice</td>
+</tr>
+<tr>
+<td>title</td>
+<td>The title of the notice</td>
+</tr>
+<tr>
+<td>message</td>
+<td>The main body of the notice</td>
+</tr>
+<tr>
+<td>seen</td>
+<td>Whether the notice&#39;s title has been seen by the user or not</td>
+</tr>
+<tr>
+<td>read</td>
+<td>Whether the notice&#39;s message has been read by the user or not</td>
+</tr>
+<tr>
+<td>notice-type</td>
+<td>Whether the notice is of notice type 2 (offers), 3 (transfers), 4 (issuances), 5 (listings) or 6 (orders)</td>
+</tr>
+<tr>
+<td>user-id</td>
+<td>The ID of the user that the notice belongs to</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the notice was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the notice was last updated</td>
+</tr>
+</tbody></table>
+<h2 id='get-number-of-unseen-notices'>Get Number of Unseen Notices</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/users/3/number_of_unseen_notices'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number-of-unseen-notices"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"number-of-unseen-notices"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves the number of notices belonging to the specified user that have not been seen by the user.</p>
+<h3 id='http-request-92'>HTTP Request</h3>
+<p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/number_of_unseen_notices</code></p>
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+<h3 id='response-92'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>number-of-unseen-notices</td>
+<td>The number of unseen notices belonging to the user</td>
+</tr>
+</tbody></table>
+<h2 id='list-notices'>List Notices</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/users/3/notices?per_page=10'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notices"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You made an issuance to your account"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"</span><span class="se">\n</span><span class="s2">Details of issuance:</span><span class="se">\n\n</span><span class="s2">Date Issuance was made: Sunday, August 12, 2018 at 01:17AM</span><span class="se">\n</span><span class="s2">1000.0000000000 Calm dollars sent from Hannibal to the private holding of Hannibal"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"read"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"notice-type"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T01:17:31.289-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-16T22:12:46.399-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notices"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You made an issuance to your account"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"</span><span class="se">\n</span><span class="s2">Details of issuance:</span><span class="se">\n\n</span><span class="s2">Date Issuance was made: Sunday, August 19, 2018 at 02:11PM</span><span class="se">\n</span><span class="s2">1000.0000000000 ACME Toon Shop dollars sent from Hannibal to the private holding of Hannibal"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"read"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"notice-type"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-19T14:11:16.976-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-16T22:12:46.404-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notices"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You made an issuance to your account"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"</span><span class="se">\n</span><span class="s2">Details of issuance:</span><span class="se">\n\n</span><span class="s2">Date Issuance was made: Sunday, August 19, 2018 at 02:24PM</span><span class="se">\n</span><span class="s2">1000.0000000000 macaroon dollars sent from Hannibal to the private holding of Hannibal"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"read"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"notice-type"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-19T14:24:09.649-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-16T22:12:46.408-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notices"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You made an issuance to ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"</span><span class="se">\n</span><span class="s2">Details of issuance:</span><span class="se">\n\n</span><span class="s2">Date Issuance was made: Saturday, September 15, 2018 at 08:37PM</span><span class="se">\n</span><span class="s2">10.0000000000 macaroon dollars sent from Hannibal to the private holding of ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"read"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"notice-type"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-15T20:37:38.352-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-16T22:12:46.413-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notices"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You received a transfer from ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"</span><span class="se">\n</span><span class="s2">Details of transfer made:</span><span class="se">\n\n</span><span class="s2">Date Transfer was made: Sunday, September 16, 2018 at 01:06PM</span><span class="se">\n</span><span class="s2">1.0000000000 macaroon dollars sent from the private holding of ScipioAfricanus to the private holding of Hannibal"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"read"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"notice-type"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-16T13:06:56.467-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-16T22:12:46.417-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notices"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You received a transfer from ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"</span><span class="se">\n</span><span class="s2">Details of transfer made:</span><span class="se">\n\n</span><span class="s2">Date Transfer was made: Sunday, September 16, 2018 at 01:08PM</span><span class="se">\n</span><span class="s2">1.0000000000 macaroon dollars sent from the private holding of ScipioAfricanus to the private holding of Hannibal"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"read"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"notice-type"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-16T13:08:27.258-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-16T22:12:46.422-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notices"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You made a transfer to your account"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"</span><span class="se">\n</span><span class="s2">Details of transfer made:</span><span class="se">\n\n</span><span class="s2">Date Transfer was made: Sunday, September 16, 2018 at 01:26PM</span><span class="se">\n</span><span class="s2">5.0000000000 ACME Toon Shop dollars sent from the private holding of Hannibal to the public holding of Hannibal"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"read"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"notice-type"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-16T13:26:52.086-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-16T22:12:46.426-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notices"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You received a transfer from ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"</span><span class="se">\n</span><span class="s2">Details of transfer made:</span><span class="se">\n\n</span><span class="s2">Date Transfer was made: Tuesday, October 02, 2018 at 04:33AM</span><span class="se">\n</span><span class="s2">1.0000000000 Pool coins sent from the private holding of ScipioAfricanus to the private holding of Hannibal"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"read"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"notice-type"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-02T04:33:05.434-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-16T22:12:46.430-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notices"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You made an issuance to ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"</span><span class="se">\n</span><span class="s2">Details of issuance:</span><span class="se">\n\n</span><span class="s2">Date Issuance was made: Tuesday, October 02, 2018 at 03:58PM</span><span class="se">\n</span><span class="s2">10.0000000000 macaroon dollars sent from Hannibal to the private holding of ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"read"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"notice-type"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-02T15:58:40.164-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-16T22:12:46.435-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notices"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You received a transfer from ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"</span><span class="se">\n</span><span class="s2">Details of transfer made:</span><span class="se">\n\n</span><span class="s2">Date Transfer was made: Wednesday, October 03, 2018 at 12:19AM</span><span class="se">\n</span><span class="s2">1.0000000000 Freds Fishing Supplies dollars sent from the private holding of ScipioAfricanus to the private holding of Hannibal"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"read"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"notice-type"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:19:35.227-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-16T22:12:46.439-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/users/3/notices?per_page=10"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/users/3/notices?page=1&amp;per_page=10"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"prev"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/users/3/notices?page=2&amp;per_page=10"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/users/3/notices?page=4&amp;per_page=10"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"per-page"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total-pages"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total-count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"35"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all of a user&#39;s notices. The action sets the value of the :seen attribute of all unseen notices to TRUE.</p>
+<h3 id='http-request-93'>HTTP Request</h3>
+<p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/notices</code></p>
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+<h3 id='response-93'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
