@@ -7443,3 +7443,235 @@ user-id | The ID of the user that the notice belongs to
 created-at | The time and date when the notice was created
 updated-at | The time and date when the notice was last updated
 
+## Get Number of Unseen Notices
+
+```shell
+curl 'https://api.mycurrency.com/users/3/number_of_unseen_notices' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "type": "number-of-unseen-notices",
+    "attributes": {
+      "number-of-unseen-notices": 1
+    }
+  }
+}
+```
+
+This endpoint retrieves the number of notices belonging to the specified user that have not been seen by the user.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/number_of_unseen_notices`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+number-of-unseen-notices | The number of unseen notices belonging to the user
+
+## List Notices
+
+```shell
+curl 'https://api.mycurrency.com/users/3/notices?per_page=10' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "notices",
+      "attributes": {
+        "title": "You made an issuance to your account",
+        "message": "\nDetails of issuance:\n\nDate Issuance was made: Sunday, August 12, 2018 at 01:17AM\n1000.0000000000 Calm dollars sent from Hannibal to the private holding of Hannibal",
+        "seen": true,
+        "read": false,
+        "notice-type": 4,
+        "user-id": 3,
+        "created-at": "2018-08-12T01:17:31.289-07:00",
+        "updated-at": "2018-10-16T22:12:46.399-07:00"
+      }
+    },
+    {
+      "id": "2",
+      "type": "notices",
+      "attributes": {
+        "title": "You made an issuance to your account",
+        "message": "\nDetails of issuance:\n\nDate Issuance was made: Sunday, August 19, 2018 at 02:11PM\n1000.0000000000 ACME Toon Shop dollars sent from Hannibal to the private holding of Hannibal",
+        "seen": true,
+        "read": false,
+        "notice-type": 4,
+        "user-id": 3,
+        "created-at": "2018-08-19T14:11:16.976-07:00",
+        "updated-at": "2018-10-16T22:12:46.404-07:00"
+      }
+    },
+    {
+      "id": "3",
+      "type": "notices",
+      "attributes": {
+        "title": "You made an issuance to your account",
+        "message": "\nDetails of issuance:\n\nDate Issuance was made: Sunday, August 19, 2018 at 02:24PM\n1000.0000000000 macaroon dollars sent from Hannibal to the private holding of Hannibal",
+        "seen": true,
+        "read": false,
+        "notice-type": 4,
+        "user-id": 3,
+        "created-at": "2018-08-19T14:24:09.649-07:00",
+        "updated-at": "2018-10-16T22:12:46.408-07:00"
+      }
+    },
+    {
+      "id": "7",
+      "type": "notices",
+      "attributes": {
+        "title": "You made an issuance to ScipioAfricanus",
+        "message": "\nDetails of issuance:\n\nDate Issuance was made: Saturday, September 15, 2018 at 08:37PM\n10.0000000000 macaroon dollars sent from Hannibal to the private holding of ScipioAfricanus",
+        "seen": true,
+        "read": false,
+        "notice-type": 4,
+        "user-id": 3,
+        "created-at": "2018-09-15T20:37:38.352-07:00",
+        "updated-at": "2018-10-16T22:12:46.413-07:00"
+      }
+    },
+    {
+      "id": "10",
+      "type": "notices",
+      "attributes": {
+        "title": "You received a transfer from ScipioAfricanus",
+        "message": "\nDetails of transfer made:\n\nDate Transfer was made: Sunday, September 16, 2018 at 01:06PM\n1.0000000000 macaroon dollars sent from the private holding of ScipioAfricanus to the private holding of Hannibal",
+        "seen": true,
+        "read": false,
+        "notice-type": 3,
+        "user-id": 3,
+        "created-at": "2018-09-16T13:06:56.467-07:00",
+        "updated-at": "2018-10-16T22:12:46.417-07:00"
+      }
+    },
+    {
+      "id": "12",
+      "type": "notices",
+      "attributes": {
+        "title": "You received a transfer from ScipioAfricanus",
+        "message": "\nDetails of transfer made:\n\nDate Transfer was made: Sunday, September 16, 2018 at 01:08PM\n1.0000000000 macaroon dollars sent from the private holding of ScipioAfricanus to the private holding of Hannibal",
+        "seen": true,
+        "read": false,
+        "notice-type": 3,
+        "user-id": 3,
+        "created-at": "2018-09-16T13:08:27.258-07:00",
+        "updated-at": "2018-10-16T22:12:46.422-07:00"
+      }
+    },
+    {
+      "id": "13",
+      "type": "notices",
+      "attributes": {
+        "title": "You made a transfer to your account",
+        "message": "\nDetails of transfer made:\n\nDate Transfer was made: Sunday, September 16, 2018 at 01:26PM\n5.0000000000 ACME Toon Shop dollars sent from the private holding of Hannibal to the public holding of Hannibal",
+        "seen": true,
+        "read": false,
+        "notice-type": 3,
+        "user-id": 3,
+        "created-at": "2018-09-16T13:26:52.086-07:00",
+        "updated-at": "2018-10-16T22:12:46.426-07:00"
+      }
+    },
+    {
+      "id": "16",
+      "type": "notices",
+      "attributes": {
+        "title": "You received a transfer from ScipioAfricanus",
+        "message": "\nDetails of transfer made:\n\nDate Transfer was made: Tuesday, October 02, 2018 at 04:33AM\n1.0000000000 Pool coins sent from the private holding of ScipioAfricanus to the private holding of Hannibal",
+        "seen": true,
+        "read": false,
+        "notice-type": 3,
+        "user-id": 3,
+        "created-at": "2018-10-02T04:33:05.434-07:00",
+        "updated-at": "2018-10-16T22:12:46.430-07:00"
+      }
+    },
+    {
+      "id": "17",
+      "type": "notices",
+      "attributes": {
+        "title": "You made an issuance to ScipioAfricanus",
+        "message": "\nDetails of issuance:\n\nDate Issuance was made: Tuesday, October 02, 2018 at 03:58PM\n10.0000000000 macaroon dollars sent from Hannibal to the private holding of ScipioAfricanus",
+        "seen": true,
+        "read": false,
+        "notice-type": 4,
+        "user-id": 3,
+        "created-at": "2018-10-02T15:58:40.164-07:00",
+        "updated-at": "2018-10-16T22:12:46.435-07:00"
+      }
+    },
+    {
+      "id": "20",
+      "type": "notices",
+      "attributes": {
+        "title": "You received a transfer from ScipioAfricanus",
+        "message": "\nDetails of transfer made:\n\nDate Transfer was made: Wednesday, October 03, 2018 at 12:19AM\n1.0000000000 Freds Fishing Supplies dollars sent from the private holding of ScipioAfricanus to the private holding of Hannibal",
+        "seen": true,
+        "read": false,
+        "notice-type": 3,
+        "user-id": 3,
+        "created-at": "2018-10-03T00:19:35.227-07:00",
+        "updated-at": "2018-10-16T22:12:46.439-07:00"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/users/3/notices?per_page=10",
+    "first": "https://api.mycurrency.com/users/3/notices?page=1&per_page=10",
+    "prev": null,
+    "next": "https://api.mycurrency.com/users/3/notices?page=2&per_page=10",
+    "last": "https://api.mycurrency.com/users/3/notices?page=4&per_page=10"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": "10",
+      "total-pages": "4",
+      "total-count": "35"
+    }
+  }
+}
+```
+
+This endpoint retrieves all of a user's notices. The action sets the value of the :seen attribute of all unseen notices to TRUE.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/notices`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the notice
+title | The title of the notice
+message | The main body of the notice
+seen | Whether the notice's title has been seen by the user or not
+read | Whether the notice's message has been read by the user or not
+notice-type | Whether the notice is of notice type 2 (offers), 3 (transfers), 4 (issuances), 5 (listings) or 6 (orders)
+user-id | The ID of the user that the notice belongs to
+created-at | The time and date when the notice was created
+updated-at | The time and date when the notice was last updated
+
