@@ -7419,7 +7419,7 @@ curl 'https://api.mycurrency.com/users/3/notices/35' \
 }
 ```
 
-This endpoint retrieves a particular notice. The logged in user must be active and must be the recipient of the notice to view it.
+This endpoint retrieves a particular notice. The logged in user must be active and must be the recipient of the notice to view it. Calling this endpoint also sets the :read attribute of the retrieved notice to TRUE
 
 ### HTTP Request
 
@@ -7651,7 +7651,7 @@ curl 'https://api.mycurrency.com/users/3/notices?per_page=10' \
 }
 ```
 
-This endpoint retrieves all of a user's notices. The action sets the value of the :seen attribute of all unseen notices to TRUE.
+This endpoint retrieves all of a user's notices. Calling this endpoint also sets the :seen attribute of all retrieved notices to TRUE.
 
 ### HTTP Request
 
@@ -7660,6 +7660,65 @@ This endpoint retrieves all of a user's notices. The action sets the value of th
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the notice
+title | The title of the notice
+message | The main body of the notice
+seen | Whether the notice's title has been seen by the user or not
+read | Whether the notice's message has been read by the user or not
+notice-type | Whether the notice is of notice type 2 (offers), 3 (transfers), 4 (issuances), 5 (listings) or 6 (orders)
+user-id | The ID of the user that the notice belongs to
+created-at | The time and date when the notice was created
+updated-at | The time and date when the notice was last updated
+
+## Update Notice
+
+```shell
+curl -X PUT 'https://api.mycurrency.com/users/3/notices/35' \
+  -d '{"notice": { "read": false } }' -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "35",
+    "type": "notices",
+    "attributes": {
+      "title": "You made an issuance to ScipioAfricanus",
+      "message": "\nDetails of issuance:\n\nDate Issuance was made: Wednesday, October 10, 2018 at 04:33AM\n10.0000000000 macaroon dollars sent from Hannibal to the private holding of ScipioAfricanus",
+      "seen": true,
+      "read": false,
+      "notice-type": 4,
+      "user-id": 3,
+      "created-at": "2018-10-10T04:33:15.831-07:00",
+      "updated-at": "2018-10-19T02:21:30.073-07:00"
+    }
+  }
+}
+```
+
+Updates a notice.
+
+### HTTP Request
+
+`POST https://api.mycurrency.com/users/<USER-ID>/notices/<ID>`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+read | boolean | yes | Whether the notice's message has been read by the user or not
 
 ### RESPONSE
 
