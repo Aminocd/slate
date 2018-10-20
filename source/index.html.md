@@ -7955,7 +7955,7 @@ Updates a voucher.
 
 ### HTTP Request
 
-`POST https://api.mycurrency.com/users/<USER-ID>/notices/<ID>`
+`POST https://api.mycurrency.com/users/<USER-ID>/vouchers/<ID>`
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
@@ -7965,7 +7965,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 
 Parameter | Type | Required | Description
 --------- | ------- | ------- | -----------
-redeemed | boolean | yes | Whether the voucher has been redeemed or not
+redeemed | boolean | yes | Whether the voucher is has been redeemed or not
 code | string | required if :redeemed has a value of true | The voucher's secret code, must be provided to redeem voucher
 
 ### RESPONSE

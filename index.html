@@ -603,6 +603,20 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#vouchers" class="toc-h1 toc-link" data-title="Vouchers">Vouchers</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-a-voucher" class="toc-h2 toc-link" data-title="Get a Voucher">Get a Voucher</a>
+                  </li>
+                  <li>
+                    <a href="#list-vouchers" class="toc-h2 toc-link" data-title="List Vouchers">List Vouchers</a>
+                  </li>
+                  <li>
+                    <a href="#update-voucher" class="toc-h2 toc-link" data-title="Update Voucher">Update Voucher</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='#'>Sign Up for a Developer Key</a> <!--- need to add link here ---></li>
@@ -10753,8 +10767,8 @@ Authentication: the request requires the OAuth access-token associated with the 
         </span><span class="s2">"burnrate-period-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
         </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"product-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing bait"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tackle"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:43:31.756-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:43:31.756-07:00"</span><span class="w">
@@ -10776,8 +10790,8 @@ Authentication: the request requires the OAuth access-token associated with the 
         </span><span class="s2">"burnrate-period-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
         </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"product-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing bait"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing rod"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T01:58:03.223-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T01:58:03.223-07:00"</span><span class="w">
@@ -10838,7 +10852,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>store_id</td>
 <td>integer</td>
 <td>no</td>
-<td>The orders received by the store specified by the store_id are returned if store_id is provided. This parameter needs to be provided along with a :selling_user_id with a value that matches the ID of the user that owns the store.</td>
+<td>The orders received by the specified store are returned if store_id is provided. This parameter needs to be provided along with a :selling_user_id with a value that matches the ID of the user that owns the store.</td>
 </tr>
 </tbody></table>
 <h3 id='response-89'>RESPONSE</h3>
@@ -11502,6 +11516,393 @@ Authentication: the request requires the OAuth access-token associated with the 
 <tr>
 <td>updated-at</td>
 <td>The time and date when the notice was last updated</td>
+</tr>
+</tbody></table>
+<h1 id='vouchers'>Vouchers</h1><h2 id='get-a-voucher'>Get a Voucher</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/vouchers/3'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vouchers"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"micro-currency-order-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"holding-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+      </span><span class="s2">"holding-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="w"> 
+      </span><span class="s2">"product-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing rod"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product-quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARCW97G8QJBZXZ5F7TC0K"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"expiration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-02T01:58:03.223-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"redeemed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T01:58:03.467-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T01:58:03.467-07:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a particular voucher. The logged in user must be either the holder of the voucher or the owner of the store at which the voucher is redeemable in order to view the voucher&#39;s details.</p>
+<h3 id='http-request-95'>HTTP Request</h3>
+<p><code>GET https://api.mycurrency.com/vouchers/&lt;ID&gt;</code></p>
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+<h3 id='response-95'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the voucher</td>
+</tr>
+<tr>
+<td>micro-currency-order-id</td>
+<td>The ID of the micro currency order that purchased the voucher</td>
+</tr>
+<tr>
+<td>holding-user-id</td>
+<td>The ID of the user that purchased the voucher</td>
+</tr>
+<tr>
+<td>holding-user-username</td>
+<td>The username of the user that purchased the voucher</td>
+</tr>
+<tr>
+<td>product-id</td>
+<td>The ID of the product for which the voucher is redeemable for</td>
+</tr>
+<tr>
+<td>product-name</td>
+<td>The name of the product for which the voucher is redeemable for</td>
+</tr>
+<tr>
+<td>product-quantity</td>
+<td>The quantity of the product for which the voucher is redeemable for</td>
+</tr>
+<tr>
+<td>store-id</td>
+<td>The ID of the store at which the product that the voucher can be redeemed for is sold at</td>
+</tr>
+<tr>
+<td>code</td>
+<td>The secret code that the voucher holder must reveal to the store owner in order to redeem their voucher, only shown if the logged-in user is the voucher holder</td>
+</tr>
+<tr>
+<td>expiration</td>
+<td>The date at which the voucher expires, which is one month after it is issued to the buyer</td>
+</tr>
+<tr>
+<td>redeemed</td>
+<td>Whether the voucher has been redeemed or not</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the voucher was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the voucher was last updated</td>
+</tr>
+</tbody></table>
+<h2 id='list-vouchers'>List Vouchers</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/vouchers?holding_user_id=3'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vouchers"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"micro-currency-order-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"holding-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="s2">"holding-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="w"> 
+        </span><span class="s2">"product-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing bait"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NQG05A1DGHC1ATZ0PLM5B"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"expiration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-02T00:39:37.861-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"redeemed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:39:37.942-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:39:37.942-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vouchers"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"micro-currency-order-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"holding-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="s2">"holding-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="w"> 
+        </span><span class="s2">"product-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tackle"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QT3W19RS0RMX07CCG5XWG"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"expiration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-02T00:43:31.756-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"redeemed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:43:31.834-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:43:31.834-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vouchers"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"micro-currency-order-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"holding-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="s2">"holding-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="w"> 
+        </span><span class="s2">"product-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing rod"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARCW97G8QJBZXZ5F7TC0K"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"expiration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-02T01:58:03.223-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"redeemed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T01:58:03.467-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T01:58:03.467-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/vouchers?holding_user_id=3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/vouchers?holding_user_id=3&amp;page=1&amp;per_page=25"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"prev"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/vouchers?holding_user_id=3&amp;page=2&amp;per_page=25"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/vouchers?holding_user_id=3&amp;page=0&amp;per_page=25"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"per-page"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total-pages"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total-count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a user&#39;s vouchers. </p>
+<h3 id='http-request-96'>HTTP Request</h3>
+<p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/offers?index_type={}</code></p>
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+<h3 id='arguments-27'>ARGUMENTS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>holding_user_id</td>
+<td>integer</td>
+<td>required if :issueing_user_id not provided</td>
+<td>The ID of the user that purchased the vouchers. If provided, the vouchers purchased by the logged-in are returned.</td>
+</tr>
+<tr>
+<td>issueing_user_id</td>
+<td>integer</td>
+<td>required if :holding_user_id not provided</td>
+<td>The ID of the user that owns the stores that issued the vouchers. If provided, the vouchers issued by the stored owned by the specified user are returned.</td>
+</tr>
+<tr>
+<td>store_id</td>
+<td>integer</td>
+<td>no</td>
+<td>The vouchers issued by the specified store are returned if store_id is provided. This parameter needs to be provided along with a :issueing_user_id with a value that matches the ID of the user that owns the store.</td>
+</tr>
+</tbody></table>
+<h3 id='response-96'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the voucher</td>
+</tr>
+<tr>
+<td>micro-currency-order-id</td>
+<td>The ID of the micro currency order that purchased the voucher</td>
+</tr>
+<tr>
+<td>holding-user-id</td>
+<td>The ID of the user that purchased the voucher</td>
+</tr>
+<tr>
+<td>holding-user-username</td>
+<td>The username of the user that purchased the voucher</td>
+</tr>
+<tr>
+<td>product-id</td>
+<td>The ID of the product for which the voucher is redeemable for</td>
+</tr>
+<tr>
+<td>product-name</td>
+<td>The name of the product for which the voucher is redeemable for</td>
+</tr>
+<tr>
+<td>product-quantity</td>
+<td>The quantity of the product for which the voucher is redeemable for</td>
+</tr>
+<tr>
+<td>store-id</td>
+<td>The ID of the store at which the product that the voucher can be redeemed for is sold at</td>
+</tr>
+<tr>
+<td>code</td>
+<td>The secret code that the voucher holder must reveal to the store owner in order to redeem their voucher, only shown if the logged-in user is the voucher holder</td>
+</tr>
+<tr>
+<td>expiration</td>
+<td>The date at which the voucher expires, which is one month after it is issued to the buyer</td>
+</tr>
+<tr>
+<td>redeemed</td>
+<td>Whether the voucher has been redeemed or not</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the voucher was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the voucher was last updated</td>
+</tr>
+</tbody></table>
+<h2 id='update-voucher'>Update Voucher</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="s1">'https://api.mycurrency.com/users/4/vouchers/1'</span> <span class="se">\</span>
+  -d <span class="s1">'{"voucher": { "redeemed": true, "code": "NQG05A1DGHC1ATZ0PLM5B" } }'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vouchers"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"micro-currency-order-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"holding-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"holding-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing bait"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product-quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"expiration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-02T00:39:37.861-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"redeemed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:39:37.942-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-20T01:45:15.259-07:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Updates a voucher.</p>
+<h3 id='http-request-97'>HTTP Request</h3>
+<p><code>POST https://api.mycurrency.com/users/&lt;USER-ID&gt;/notices/&lt;ID&gt;</code></p>
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+<h3 id='arguments-28'>ARGUMENTS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>redeemed</td>
+<td>boolean</td>
+<td>yes</td>
+<td>Whether the voucher has been redeemed or not</td>
+</tr>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>required if :redeemed has a value of true</td>
+<td>The voucher&#39;s secret code, must be provided to redeem voucher</td>
+</tr>
+</tbody></table>
+<h3 id='response-97'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the voucher</td>
+</tr>
+<tr>
+<td>micro-currency-order-id</td>
+<td>The ID of the micro currency order that purchased the voucher</td>
+</tr>
+<tr>
+<td>holding-user-id</td>
+<td>The ID of the user that purchased the voucher</td>
+</tr>
+<tr>
+<td>holding-user-username</td>
+<td>The username of the user that purchased the voucher</td>
+</tr>
+<tr>
+<td>product-id</td>
+<td>The ID of the product for which the voucher is redeemable for</td>
+</tr>
+<tr>
+<td>product-name</td>
+<td>The name of the product for which the voucher is redeemable for</td>
+</tr>
+<tr>
+<td>product-quantity</td>
+<td>The quantity of the product for which the voucher is redeemable for</td>
+</tr>
+<tr>
+<td>store-id</td>
+<td>The ID of the store at which the product that the voucher can be redeemed for is sold at</td>
+</tr>
+<tr>
+<td>code</td>
+<td>The secret code that the voucher holder must reveal to the store owner in order to redeem their voucher, only shown if the logged-in user is the voucher holder</td>
+</tr>
+<tr>
+<td>expiration</td>
+<td>The date at which the voucher expires, which is one month after it is issued to the buyer</td>
+</tr>
+<tr>
+<td>redeemed</td>
+<td>Whether the voucher has been redeemed or not</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the voucher was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the voucher was last updated</td>
 </tr>
 </tbody></table>
 
