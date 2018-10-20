@@ -7216,8 +7216,8 @@ curl 'https://api.mycurrency.com/order_sets?ordering_user_id=3' \
         "burnrate-period-id": 20,
         "day-counter": 0,
         "amount-atomic": 100000000000,
-        "product-id": 5,
-        "product-name": "fishing bait",
+        "product-id": 6,
+        "product-name": "tackle",
         "product-quantity": 1,
         "created-at": "2018-10-03T00:43:31.756-07:00",
         "updated-at": "2018-10-03T00:43:31.756-07:00"
@@ -7239,8 +7239,8 @@ curl 'https://api.mycurrency.com/order_sets?ordering_user_id=3' \
         "burnrate-period-id": 20,
         "day-counter": 0,
         "amount-atomic": 100000000000,
-        "product-id": 5,
-        "product-name": "fishing bait",
+        "product-id": 7,
+        "product-name": "fishing rod",
         "product-quantity": 1,
         "created-at": "2018-10-03T01:58:03.223-07:00",
         "updated-at": "2018-10-03T01:58:03.223-07:00"
@@ -7281,7 +7281,7 @@ Parameter | Type | Required | Description
 user_id | integer | yes | The ID of the user creating the order, provided in URL path
 ordering_user_id | integer | required if :selling_user_id not provided | The ID of the user that made the orders. If provided, the orders created by the specified user are returned.
 selling_user_id | integer | required if :ordering_user_id not provided | The ID of the user that owns the stores that received the order. If provided, the orders received by the specified user are returned.
-store_id | integer | no | The orders received by the store specified by the store_id are returned if store_id is provided. This parameter needs to be provided along with a :selling_user_id with a value that matches the ID of the user that owns the store.
+store_id | integer | no | The orders received by the specified store are returned if store_id is provided. This parameter needs to be provided along with a :selling_user_id with a value that matches the ID of the user that owns the store.
 
 ### RESPONSE
 
@@ -7734,3 +7734,254 @@ user-id | The ID of the user that the notice belongs to
 created-at | The time and date when the notice was created
 updated-at | The time and date when the notice was last updated
 
+# Vouchers
+
+## Get a Voucher
+
+```shell
+curl 'https://api.mycurrency.com/vouchers/3' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "3",
+    "type": "vouchers",
+    "attributes": {
+      "micro-currency-order-id": 3,
+      "holding-user-id": 3
+      "holding-user-username": "Hannibal" 
+      "product-id": 7,
+      "product-name": "fishing rod",
+      "product-quantity": 1,
+      "store-id": 3,
+      "code": "ARCW97G8QJBZXZ5F7TC0K",
+      "expiration": "2018-11-02T01:58:03.223-07:00",
+      "redeemed": false,
+      "created-at": "2018-10-03T01:58:03.467-07:00",
+      "updated-at": "2018-10-03T01:58:03.467-07:00"
+    }
+  }
+}
+```
+
+This endpoint retrieves a particular voucher. The logged in user must be either the holder of the voucher or the owner of the store at which the voucher is redeemable in order to view the voucher's details.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/vouchers/<ID>`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the voucher
+micro-currency-order-id | The ID of the micro currency order that purchased the voucher
+holding-user-id | The ID of the user that purchased the voucher
+holding-user-username | The username of the user that purchased the voucher
+product-id | The ID of the product for which the voucher is redeemable for
+product-name | The name of the product for which the voucher is redeemable for
+product-quantity | The quantity of the product for which the voucher is redeemable for
+store-id | The ID of the store at which the product that the voucher can be redeemed for is sold at
+code | The secret code that the voucher holder must reveal to the store owner in order to redeem their voucher, only shown if the logged-in user is the voucher holder
+expiration | The date at which the voucher expires, which is one month after it is issued to the buyer
+redeemed | Whether the voucher has been redeemed or not
+created-at | The time and date when the voucher was created
+updated-at | The time and date when the voucher was last updated
+
+## List Vouchers
+
+```shell
+curl 'https://api.mycurrency.com/vouchers?holding_user_id=3' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "vouchers",
+      "attributes": {
+        "micro-currency-order-id": 1,
+        "holding-user-id": 3
+        "holding-user-username": "Hannibal" 
+        "product-id": 5,
+        "product-name": "fishing bait",
+        "product-quantity": 1,
+        "store-id": 3,
+        "code": "NQG05A1DGHC1ATZ0PLM5B",
+        "expiration": "2018-11-02T00:39:37.861-07:00",
+        "redeemed": false,
+        "created-at": "2018-10-03T00:39:37.942-07:00",
+        "updated-at": "2018-10-03T00:39:37.942-07:00"
+      }
+    },
+    {
+      "id": "2",
+      "type": "vouchers",
+      "attributes": {
+        "micro-currency-order-id": 2,
+        "holding-user-id": 3
+        "holding-user-username": "Hannibal" 
+        "product-id": 6,
+        "product-name": "tackle",
+        "product-quantity": 1,
+        "store-id": 3,
+        "code": "QT3W19RS0RMX07CCG5XWG",
+        "expiration": "2018-11-02T00:43:31.756-07:00",
+        "redeemed": false,
+        "created-at": "2018-10-03T00:43:31.834-07:00",
+        "updated-at": "2018-10-03T00:43:31.834-07:00"
+      }
+    },
+    {
+      "id": "3",
+      "type": "vouchers",
+      "attributes": {
+        "micro-currency-order-id": 3,
+        "holding-user-id": 3
+        "holding-user-username": "Hannibal" 
+        "product-id": 7,
+        "product-name": "fishing rod",
+        "product-quantity": 1,
+        "store-id": 3,
+        "code": "ARCW97G8QJBZXZ5F7TC0K",
+        "expiration": "2018-11-02T01:58:03.223-07:00",
+        "redeemed": false,
+        "created-at": "2018-10-03T01:58:03.467-07:00",
+        "updated-at": "2018-10-03T01:58:03.467-07:00"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/vouchers?holding_user_id=3",
+    "first": "https://api.mycurrency.com/vouchers?holding_user_id=3&page=1&per_page=25",
+    "prev": null,
+    "next": "https://api.mycurrency.com/vouchers?holding_user_id=3&page=2&per_page=25",
+    "last": "https://api.mycurrency.com/vouchers?holding_user_id=3&page=0&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "3"
+    }
+  }
+}
+```
+
+This endpoint retrieves a user's vouchers. 
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/offers?index_type={}`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+holding_user_id | integer | required if :issueing_user_id not provided | The ID of the user that purchased the vouchers. If provided, the vouchers purchased by the logged-in are returned.
+issueing_user_id | integer | required if :holding_user_id not provided | The ID of the user that owns the stores that issued the vouchers. If provided, the vouchers issued by the stored owned by the specified user are returned.
+store_id | integer | no | The vouchers issued by the specified store are returned if store_id is provided. This parameter needs to be provided along with a :issueing_user_id with a value that matches the ID of the user that owns the store.
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the voucher
+micro-currency-order-id | The ID of the micro currency order that purchased the voucher
+holding-user-id | The ID of the user that purchased the voucher
+holding-user-username | The username of the user that purchased the voucher
+product-id | The ID of the product for which the voucher is redeemable for
+product-name | The name of the product for which the voucher is redeemable for
+product-quantity | The quantity of the product for which the voucher is redeemable for
+store-id | The ID of the store at which the product that the voucher can be redeemed for is sold at
+code | The secret code that the voucher holder must reveal to the store owner in order to redeem their voucher, only shown if the logged-in user is the voucher holder
+expiration | The date at which the voucher expires, which is one month after it is issued to the buyer
+redeemed | Whether the voucher has been redeemed or not
+created-at | The time and date when the voucher was created
+updated-at | The time and date when the voucher was last updated
+
+## Update Voucher
+
+```shell
+curl -X PUT 'https://api.mycurrency.com/users/4/vouchers/1' \
+  -d '{"voucher": { "redeemed": true, "code": "NQG05A1DGHC1ATZ0PLM5B" } }' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "1",
+    "type": "vouchers",
+    "attributes": {
+      "micro-currency-order-id": 1,
+      "holding-user-id": 3,
+      "holding-user-username": "Hannibal",
+      "product-id": 5,
+      "product-name": "fishing bait",
+      "product-quantity": 1,
+      "store-id": 3,
+      "expiration": "2018-11-02T00:39:37.861-07:00",
+      "redeemed": true,
+      "created-at": "2018-10-03T00:39:37.942-07:00",
+      "updated-at": "2018-10-20T01:45:15.259-07:00"
+    }
+  }
+}
+```
+
+Updates a voucher.
+
+### HTTP Request
+
+`POST https://api.mycurrency.com/users/<USER-ID>/notices/<ID>`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+redeemed | boolean | yes | Whether the voucher has been redeemed or not
+code | string | required if :redeemed has a value of true | The voucher's secret code, must be provided to redeem voucher
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the voucher
+micro-currency-order-id | The ID of the micro currency order that purchased the voucher
+holding-user-id | The ID of the user that purchased the voucher
+holding-user-username | The username of the user that purchased the voucher
+product-id | The ID of the product for which the voucher is redeemable for
+product-name | The name of the product for which the voucher is redeemable for
+product-quantity | The quantity of the product for which the voucher is redeemable for
+store-id | The ID of the store at which the product that the voucher can be redeemed for is sold at
+code | The secret code that the voucher holder must reveal to the store owner in order to redeem their voucher, only shown if the logged-in user is the voucher holder
+expiration | The date at which the voucher expires, which is one month after it is issued to the buyer
+redeemed | Whether the voucher has been redeemed or not
+created-at | The time and date when the voucher was created
+updated-at | The time and date when the voucher was last updated
