@@ -7093,6 +7093,98 @@ latitude | The latitude of the sub location
 time-zone | The time zone of the sub location
 mid-location-id | The ID of the parent mid location
 
+## List Nearby Sub Locations
+
+```shell
+curl 'https://api.mycurrency.com/nearby_locations/?ip_address=73.37.205.94' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "198",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "minneapolis / st paul",
+        "longitude": -93.20099979999999,
+        "latitude": 44.9374831,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 25
+      }
+    },
+    {
+      "id": "197",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "mankato",
+        "longitude": -93.99939959999999,
+        "latitude": 44.1635775,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 25
+      }
+    },
+    {
+      "id": "201",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "st cloud",
+        "longitude": -94.16324039999999,
+        "latitude": 45.5579451,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 25
+      }
+    },
+    {
+      "id": "199",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "rochester ",
+        "longitude": -92.4801989,
+        "latitude": 44.0121221,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 25
+      }
+    },
+    {
+      "id": "407",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "eau claire",
+        "longitude": -91.4984941,
+        "latitude": 44.811349,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 51
+      }
+    }
+  ]
+}
+```
+
+This endpoint retrieves the five sub locations closest to the geolocation of the IP address provided.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/nearby_locations?ip_address={}`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the sub location
+name | The name of the sub location
+longitude | The longitude of the sub location
+latitude | The latitude of the sub location
+time-zone | The time zone of the sub location
+mid-location-id | The ID of the parent mid location
+
 # Orders
 
 ## Get an Order
