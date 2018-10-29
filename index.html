@@ -570,6 +570,9 @@
                   <li>
                     <a href="#list-super-location-39-s-sub-locations" class="toc-h2 toc-link" data-title="List Super Location's Sub Locations">List Super Location's Sub Locations</a>
                   </li>
+                  <li>
+                    <a href="#list-nearby-sub-locations" class="toc-h2 toc-link" data-title="List Nearby Sub Locations">List Nearby Sub Locations</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -10604,6 +10607,111 @@ Authentication: not required
 <td>The ID of the parent mid location</td>
 </tr>
 </tbody></table>
+<h2 id='list-nearby-sub-locations'>List Nearby Sub Locations</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/nearby_locations/?ip_address=73.37.205.94'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"198"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub-locations"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"minneapolis / st paul"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-93.20099979999999</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">44.9374831</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"time-zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Chicago"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"197"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub-locations"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mankato"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-93.99939959999999</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">44.1635775</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"time-zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Chicago"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"201"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub-locations"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"st cloud"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-94.16324039999999</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">45.5579451</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"time-zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Chicago"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"199"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub-locations"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rochester "</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-92.4801989</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">44.0121221</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"time-zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Chicago"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"407"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub-locations"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eau claire"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-91.4984941</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">44.811349</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"time-zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Chicago"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">51</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves the five sub locations closest to the geolocation of the IP address provided.</p>
+<h3 id='http-request-88'>HTTP Request</h3>
+<p><code>GET https://api.mycurrency.com/nearby_locations?ip_address={}</code></p>
+
+<aside class="notice">
+Authentication: not required
+</aside>
+<h3 id='response-88'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the sub location</td>
+</tr>
+<tr>
+<td>name</td>
+<td>The name of the sub location</td>
+</tr>
+<tr>
+<td>longitude</td>
+<td>The longitude of the sub location</td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>The latitude of the sub location</td>
+</tr>
+<tr>
+<td>time-zone</td>
+<td>The time zone of the sub location</td>
+</tr>
+<tr>
+<td>mid-location-id</td>
+<td>The ID of the parent mid location</td>
+</tr>
+</tbody></table>
 <h1 id='orders'>Orders</h1><h2 id='get-an-order'>Get an Order</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/order_sets/1'</span> -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span>
 </code></pre>
@@ -10637,13 +10745,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular order. The logged in user must be active and be either the ordering user or the owner of the store that received the order to view it.</p>
-<h3 id='http-request-88'>HTTP Request</h3>
+<h3 id='http-request-89'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/order_sets/ID</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-88'>RESPONSE</h3>
+<h3 id='response-89'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10815,7 +10923,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a user&#39;s orders. </p>
-<h3 id='http-request-89'>HTTP Request</h3>
+<h3 id='http-request-90'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/offers?index_type={}</code></p>
 
 <aside class="notice">
@@ -10855,7 +10963,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The orders received by the specified store are returned if store_id is provided. This parameter needs to be provided along with a :selling_user_id with a value that matches the ID of the user that owns the store.</td>
 </tr>
 </tbody></table>
-<h3 id='response-89'>RESPONSE</h3>
+<h3 id='response-90'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10966,7 +11074,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Creates an Order.</p>
-<h3 id='http-request-90'>HTTP Request</h3>
+<h3 id='http-request-91'>HTTP Request</h3>
 <p><code>https://api.mycurrency.com/users/&lt;USER-ID&gt;/order_sets</code></p>
 
 <aside class="notice">
@@ -11024,7 +11132,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The quantity of the product that is being ordered</td>
 </tr>
 </tbody></table>
-<h3 id='response-90'>RESPONSE</h3>
+<h3 id='response-91'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11125,13 +11233,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular notice. The logged in user must be active and must be the recipient of the notice to view it. Calling this endpoint also sets the :read attribute of the retrieved notice to TRUE</p>
-<h3 id='http-request-91'>HTTP Request</h3>
+<h3 id='http-request-92'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/notices/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-91'>RESPONSE</h3>
+<h3 id='response-92'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11192,13 +11300,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the number of notices belonging to the specified user that have not been seen by the user.</p>
-<h3 id='http-request-92'>HTTP Request</h3>
+<h3 id='http-request-93'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/number_of_unseen_notices</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-92'>RESPONSE</h3>
+<h3 id='response-93'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11377,13 +11485,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all of a user&#39;s notices. Calling this endpoint also sets the :seen attribute of all retrieved notices to TRUE.</p>
-<h3 id='http-request-93'>HTTP Request</h3>
+<h3 id='http-request-94'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/notices</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-93'>RESPONSE</h3>
+<h3 id='response-94'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11452,7 +11560,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Updates a notice.</p>
-<h3 id='http-request-94'>HTTP Request</h3>
+<h3 id='http-request-95'>HTTP Request</h3>
 <p><code>POST https://api.mycurrency.com/users/&lt;USER-ID&gt;/notices/&lt;ID&gt;</code></p>
 
 <aside class="notice">
@@ -11474,7 +11582,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>Whether the notice&#39;s message has been read by the user or not</td>
 </tr>
 </tbody></table>
-<h3 id='response-94'>RESPONSE</h3>
+<h3 id='response-95'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11547,13 +11655,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular voucher. The logged in user must be either the holder of the voucher or the owner of the store at which the voucher is redeemable in order to view the voucher&#39;s details.</p>
-<h3 id='http-request-95'>HTTP Request</h3>
+<h3 id='http-request-96'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/vouchers/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-95'>RESPONSE</h3>
+<h3 id='response-96'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11694,7 +11802,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a user&#39;s vouchers. </p>
-<h3 id='http-request-96'>HTTP Request</h3>
+<h3 id='http-request-97'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/vouchers?issueing_user_id={}&amp;store_id={}</code></p>
 
 <aside class="notice">
@@ -11728,7 +11836,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The vouchers issued by the specified store are returned if store_id is provided. This parameter needs to be provided along with a :issueing_user_id with a value that matches the ID of the user that owns the store.</td>
 </tr>
 </tbody></table>
-<h3 id='response-96'>RESPONSE</h3>
+<h3 id='response-97'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11817,7 +11925,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Updates a voucher.</p>
-<h3 id='http-request-97'>HTTP Request</h3>
+<h3 id='http-request-98'>HTTP Request</h3>
 <p><code>POST https://api.mycurrency.com/users/&lt;USER-ID&gt;/vouchers/&lt;ID&gt;</code></p>
 
 <aside class="notice">
@@ -11845,7 +11953,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The voucher&#39;s secret code, must be provided to redeem voucher</td>
 </tr>
 </tbody></table>
-<h3 id='response-97'>RESPONSE</h3>
+<h3 id='response-98'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
