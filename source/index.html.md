@@ -6642,17 +6642,52 @@ curl 'https://api.mycurrency.com/super_locations' \
 {
   "data": [
     {
-      "id": "1",
+      "id": "2",
       "type": "super-locations",
       "attributes": {
         "name": "US"
       }
     },
     {
-      "id": "2",
+      "id": "3",
       "type": "super-locations",
       "attributes": {
         "name": "Canada"
+      }
+    },
+    {
+      "id": "4",
+      "type": "super-locations",
+      "attributes": {
+        "name": "Europe"
+      }
+    },
+    {
+      "id": "5",
+      "type": "super-locations",
+      "attributes": {
+        "name": "Asia, Pacific and Middle East"
+      }
+    },
+    {
+      "id": "6",
+      "type": "super-locations",
+      "attributes": {
+        "name": "Oceania"
+      }
+    },
+    {
+      "id": "7",
+      "type": "super-locations",
+      "attributes": {
+        "name": "Latin America and Caribbean"
+      }
+    },
+    {
+      "id": "8",
+      "type": "super-locations",
+      "attributes": {
+        "name": "Africa"
       }
     }
   ],
@@ -6667,7 +6702,7 @@ curl 'https://api.mycurrency.com/super_locations' \
     "pagination": {
       "per-page": null,
       "total-pages": "1",
-      "total-count": "2"
+      "total-count": "7"
     }
   }
 }
@@ -6693,7 +6728,7 @@ name | The name of the super location
 ## Get a Mid Location
 
 ```shell
-curl 'https://api.mycurrency.com/mid_locations/1' \
+curl 'https://api.mycurrency.com/mid_locations/2' \
   -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
 
@@ -6702,11 +6737,11 @@ curl 'https://api.mycurrency.com/mid_locations/1' \
 ```json
 {
   "data": {
-    "id": "1",
+    "id": "2",
     "type": "mid-locations",
     "attributes": {
-      "name": "California",
-      "super-location-id": 1
+      "name": "Alabama",
+      "super-location-id": 2
     }
   }
 }
@@ -6743,18 +6778,202 @@ curl 'https://api.mycurrency.com/mid_locations' \
 {
   "data": [
     {
-      "id": "1",
-      "type": "mid-locations",
-      "attributes": {
-        "name": "California",
-        "super-location-id": 1
-      }
-    },
-    {
       "id": "2",
       "type": "mid-locations",
       "attributes": {
-        "name": "British Columbia",
+        "name": "Alabama",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "3",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Alaska",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "4",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Arizona",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "5",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Arkansas",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "6",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "California",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "7",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Colorado",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "8",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Connecticut",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "9",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Delaware",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "10",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "District of Columbia",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "11",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Florida",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "12",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Georgia",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "13",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Hawaii",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "14",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Idaho",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "15",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Illinois",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "16",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Indiana",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "17",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Iowa",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "18",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Kansas",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "19",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Kentucky",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "20",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Louisiana",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "21",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Maine",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "22",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Maryland",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "23",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Massachusetts",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "24",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Michigan",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "25",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Minnesota",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "26",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Mississippi",
         "super-location-id": 2
       }
     }
@@ -6763,14 +6982,14 @@ curl 'https://api.mycurrency.com/mid_locations' \
     "self": "https://api.mycurrency.com/mid_locations?",
     "first": "https://api.mycurrency.com/mid_locations?page=1&per_page=25",
     "prev": null,
-    "next": null,
-    "last": "https://api.mycurrency.com/mid_locations?page=1&per_page=25"
+    "next": "https://api.mycurrency.com/mid_locations?page=2&per_page=25",
+    "last": "https://api.mycurrency.com/mid_locations?page=6&per_page=25"
   },
   "meta": {
     "pagination": {
       "per-page": null,
-      "total-pages": "1",
-      "total-count": "2"
+      "total-pages": "6",
+      "total-count": "140"
     }
   }
 }
@@ -6797,7 +7016,7 @@ super-location-id | The ID of the parent super location
 ## List Super Location's Mid Locations
 
 ```shell
-curl 'https://api.mycurrency.com/super_locations/1/mid_locations' \
+curl 'https://api.mycurrency.com/super_locations/2/mid_locations' \
   -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
 
@@ -6807,26 +7026,218 @@ curl 'https://api.mycurrency.com/super_locations/1/mid_locations' \
 {
   "data": [
     {
-      "id": "1",
+      "id": "2",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Alabama",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "3",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Alaska",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "4",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Arizona",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "5",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Arkansas",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "6",
       "type": "mid-locations",
       "attributes": {
         "name": "California",
-        "super-location-id": 1
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "7",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Colorado",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "8",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Connecticut",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "9",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Delaware",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "10",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "District of Columbia",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "11",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Florida",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "12",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Georgia",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "13",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Hawaii",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "14",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Idaho",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "15",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Illinois",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "16",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Indiana",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "17",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Iowa",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "18",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Kansas",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "19",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Kentucky",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "20",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Louisiana",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "21",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Maine",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "22",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Maryland",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "23",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Massachusetts",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "24",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Michigan",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "25",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Minnesota",
+        "super-location-id": 2
+      }
+    },
+    {
+      "id": "26",
+      "type": "mid-locations",
+      "attributes": {
+        "name": "Mississippi",
+        "super-location-id": 2
       }
     }
   ],
   "links": {
-    "self": "https://api.mycurrency.com/super_locations/1/mid_locations?",
-    "first": "https://api.mycurrency.com/super_locations/1/mid_locations?page=1&per_page=25",
+    "self": "https://api.mycurrency.com/super_locations/2/mid_locations?",
+    "first": "https://api.mycurrency.com/super_locations/2/mid_locations?page=1&per_page=25",
     "prev": null,
-    "next": null,
-    "last": "https://api.mycurrency.com/super_locations/1/mid_locations?page=1&per_page=25"
+    "next": "https://api.mycurrency.com/super_locations/2/mid_locations?page=2&per_page=25",
+    "last": "https://api.mycurrency.com/super_locations/2/mid_locations?page=3&per_page=25"
   },
   "meta": {
     "pagination": {
       "per-page": null,
-      "total-pages": "1",
-      "total-count": "1"
+      "total-pages": "3",
+      "total-count": "52"
     }
   }
 }
@@ -6853,7 +7264,7 @@ super-location-id | The ID of the parent super location
 ## Get a Sub Location
 
 ```shell
-curl 'https://api.mycurrency.com/sub_locations/1' \
+curl 'https://api.mycurrency.com/sub_locations/3' \
   -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
 
@@ -6862,13 +7273,13 @@ curl 'https://api.mycurrency.com/sub_locations/1' \
 ```json
 {
   "data": {
-    "id": "1",
+    "id": "3",
     "type": "sub-locations",
     "attributes": {
-      "name": "Vancouver",
-      "longitude": -123.116226,
-      "latitude": 49.246292,
-      "time-zone": "America/Vancouver",
+      "name": "auburn",
+      "longitude": -85.48078249999999,
+      "latitude": 32.6098566,
+      "time-zone": "America/Chicago",
       "mid-location-id": 2
     }
   }
@@ -6909,25 +7320,278 @@ curl 'https://api.mycurrency.com/sub_locations' \
 {
   "data": [
     {
-      "id": "1",
+      "id": "3",
       "type": "sub-locations",
       "attributes": {
-        "name": "Vancouver",
-        "longitude": -123.116226,
-        "latitude": 49.246292,
-        "time-zone": "America/Vancouver",
+        "name": "auburn",
+        "longitude": -85.48078249999999,
+        "latitude": 32.6098566,
+        "time-zone": "America/Chicago",
         "mid-location-id": 2
       }
     },
     {
-      "id": "2",
+      "id": "4",
       "type": "sub-locations",
       "attributes": {
-        "name": "San Francisco",
-        "longitude": -122.431297,
-        "latitude": 37.773972,
-        "time-zone": "America/Los_Angeles",
-        "mid-location-id": 1
+        "name": "birmingham",
+        "longitude": -86.8103567,
+        "latitude": 33.5185892,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 2
+      }
+    },
+    {
+      "id": "5",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "dothan",
+        "longitude": -85.3904888,
+        "latitude": 31.2232313,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 2
+      }
+    },
+    {
+      "id": "6",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "florence / muscle shoals",
+        "longitude": -87.66752919999999,
+        "latitude": 34.7448112,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 2
+      }
+    },
+    {
+      "id": "7",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "gadsden-anniston",
+        "longitude": -85.7933312,
+        "latitude": 33.7094448,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 2
+      }
+    },
+    {
+      "id": "8",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "huntsville / decatur",
+        "longitude": -86.9833417,
+        "latitude": 34.6059253,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 2
+      }
+    },
+    {
+      "id": "9",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "mobile",
+        "longitude": -88.0398912,
+        "latitude": 30.6953657,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 2
+      }
+    },
+    {
+      "id": "10",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "montgomery",
+        "longitude": -86.3077368,
+        "latitude": 32.3792233,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 2
+      }
+    },
+    {
+      "id": "11",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "tuscaloosa",
+        "longitude": -87.56917349999999,
+        "latitude": 33.2098407,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 2
+      }
+    },
+    {
+      "id": "12",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "anchorage / mat-su",
+        "longitude": -149.8714752,
+        "latitude": 61.1774892,
+        "time-zone": "America/Anchorage",
+        "mid-location-id": 3
+      }
+    },
+    {
+      "id": "13",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "fairbanks",
+        "longitude": -147.7163888,
+        "latitude": 64.8377778,
+        "time-zone": "America/Anchorage",
+        "mid-location-id": 3
+      }
+    },
+    {
+      "id": "14",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "kenai peninsula",
+        "longitude": -151.382264,
+        "latitude": 60.0858486,
+        "time-zone": "America/Anchorage",
+        "mid-location-id": 3
+      }
+    },
+    {
+      "id": "15",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "southeast alaska",
+        "longitude": -149.4936733,
+        "latitude": 64.2008413,
+        "time-zone": "America/Anchorage",
+        "mid-location-id": 3
+      }
+    },
+    {
+      "id": "16",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "flagstaff / sedona",
+        "longitude": -111.8108845,
+        "latitude": 34.8704779,
+        "time-zone": "America/Phoenix",
+        "mid-location-id": 4
+      }
+    },
+    {
+      "id": "17",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "mohave county",
+        "longitude": -113.7632828,
+        "latitude": 35.2143346,
+        "time-zone": "America/Phoenix",
+        "mid-location-id": 4
+      }
+    },
+    {
+      "id": "18",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "phoenix",
+        "longitude": -112.0740373,
+        "latitude": 33.4483771,
+        "time-zone": "America/Phoenix",
+        "mid-location-id": 4
+      }
+    },
+    {
+      "id": "19",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "prescott",
+        "longitude": -112.4685025,
+        "latitude": 34.5400242,
+        "time-zone": "America/Phoenix",
+        "mid-location-id": 4
+      }
+    },
+    {
+      "id": "20",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "show low",
+        "longitude": -110.0298327,
+        "latitude": 34.2542084,
+        "time-zone": "America/Phoenix",
+        "mid-location-id": 4
+      }
+    },
+    {
+      "id": "21",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "sierra vista",
+        "longitude": -110.2772856,
+        "latitude": 31.5455001,
+        "time-zone": "America/Phoenix",
+        "mid-location-id": 4
+      }
+    },
+    {
+      "id": "22",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "tucson",
+        "longitude": -110.9747108,
+        "latitude": 32.2226066,
+        "time-zone": "America/Phoenix",
+        "mid-location-id": 4
+      }
+    },
+    {
+      "id": "23",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "yuma",
+        "longitude": -114.6276916,
+        "latitude": 32.6926512,
+        "time-zone": "America/Phoenix",
+        "mid-location-id": 4
+      }
+    },
+    {
+      "id": "24",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "fayetteville ",
+        "longitude": -94.17185420000001,
+        "latitude": 36.082156,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 5
+      }
+    },
+    {
+      "id": "25",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "fort smith",
+        "longitude": -94.39854749999999,
+        "latitude": 35.3859242,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 5
+      }
+    },
+    {
+      "id": "26",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "jonesboro",
+        "longitude": -90.704279,
+        "latitude": 35.84229670000001,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 5
+      }
+    },
+    {
+      "id": "27",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "little rock",
+        "longitude": -92.28959479999999,
+        "latitude": 34.7464809,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 5
       }
     }
   ],
@@ -6935,14 +7599,14 @@ curl 'https://api.mycurrency.com/sub_locations' \
     "self": "https://api.mycurrency.com/sub_locations?",
     "first": "https://api.mycurrency.com/sub_locations?page=1&per_page=25",
     "prev": null,
-    "next": null,
-    "last": "https://api.mycurrency.com/sub_locations?page=1&per_page=25"
+    "next": "https://api.mycurrency.com/sub_locations?page=2&per_page=25",
+    "last": "https://api.mycurrency.com/sub_locations?page=29&per_page=25"
   },
   "meta": {
     "pagination": {
       "per-page": null,
-      "total-pages": "1",
-      "total-count": "2"
+      "total-pages": "29",
+      "total-count": "712"
     }
   }
 }
@@ -6982,13 +7646,101 @@ curl 'https://api.mycurrency.com/super_locations/2/mid_locations/2/sub_locations
 {
   "data": [
     {
-      "id": "1",
+      "id": "3",
       "type": "sub-locations",
       "attributes": {
-        "name": "Vancouver",
-        "longitude": -123.116226,
-        "latitude": 49.246292,
-        "time-zone": "America/Vancouver",
+        "name": "auburn",
+        "longitude": -85.48078249999999,
+        "latitude": 32.6098566,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 2
+      }
+    },
+    {
+      "id": "4",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "birmingham",
+        "longitude": -86.8103567,
+        "latitude": 33.5185892,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 2
+      }
+    },
+    {
+      "id": "5",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "dothan",
+        "longitude": -85.3904888,
+        "latitude": 31.2232313,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 2
+      }
+    },
+    {
+      "id": "6",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "florence / muscle shoals",
+        "longitude": -87.66752919999999,
+        "latitude": 34.7448112,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 2
+      }
+    },
+    {
+      "id": "7",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "gadsden-anniston",
+        "longitude": -85.7933312,
+        "latitude": 33.7094448,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 2
+      }
+    },
+    {
+      "id": "8",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "huntsville / decatur",
+        "longitude": -86.9833417,
+        "latitude": 34.6059253,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 2
+      }
+    },
+    {
+      "id": "9",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "mobile",
+        "longitude": -88.0398912,
+        "latitude": 30.6953657,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 2
+      }
+    },
+    {
+      "id": "10",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "montgomery",
+        "longitude": -86.3077368,
+        "latitude": 32.3792233,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 2
+      }
+    },
+    {
+      "id": "11",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "tuscaloosa",
+        "longitude": -87.56917349999999,
+        "latitude": 33.2098407,
+        "time-zone": "America/Chicago",
         "mid-location-id": 2
       }
     }
@@ -7004,7 +7756,7 @@ curl 'https://api.mycurrency.com/super_locations/2/mid_locations/2/sub_locations
     "pagination": {
       "per-page": null,
       "total-pages": "1",
-      "total-count": "1"
+      "total-count": "9"
     }
   }
 }
@@ -7044,14 +7796,278 @@ curl 'https://api.mycurrency.com/super_locations/2/sub_locations' \
 {
   "data": [
     {
-      "id": "1",
+      "id": "3",
       "type": "sub-locations",
       "attributes": {
-        "name": "Vancouver",
-        "longitude": -123.116226,
-        "latitude": 49.246292,
-        "time-zone": "America/Vancouver",
+        "name": "auburn",
+        "longitude": -85.48078249999999,
+        "latitude": 32.6098566,
+        "time-zone": "America/Chicago",
         "mid-location-id": 2
+      }
+    },
+    {
+      "id": "4",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "birmingham",
+        "longitude": -86.8103567,
+        "latitude": 33.5185892,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 2
+      }
+    },
+    {
+      "id": "5",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "dothan",
+        "longitude": -85.3904888,
+        "latitude": 31.2232313,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 2
+      }
+    },
+    {
+      "id": "6",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "florence / muscle shoals",
+        "longitude": -87.66752919999999,
+        "latitude": 34.7448112,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 2
+      }
+    },
+    {
+      "id": "7",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "gadsden-anniston",
+        "longitude": -85.7933312,
+        "latitude": 33.7094448,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 2
+      }
+    },
+    {
+      "id": "8",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "huntsville / decatur",
+        "longitude": -86.9833417,
+        "latitude": 34.6059253,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 2
+      }
+    },
+    {
+      "id": "9",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "mobile",
+        "longitude": -88.0398912,
+        "latitude": 30.6953657,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 2
+      }
+    },
+    {
+      "id": "10",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "montgomery",
+        "longitude": -86.3077368,
+        "latitude": 32.3792233,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 2
+      }
+    },
+    {
+      "id": "11",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "tuscaloosa",
+        "longitude": -87.56917349999999,
+        "latitude": 33.2098407,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 2
+      }
+    },
+    {
+      "id": "12",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "anchorage / mat-su",
+        "longitude": -149.8714752,
+        "latitude": 61.1774892,
+        "time-zone": "America/Anchorage",
+        "mid-location-id": 3
+      }
+    },
+    {
+      "id": "13",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "fairbanks",
+        "longitude": -147.7163888,
+        "latitude": 64.8377778,
+        "time-zone": "America/Anchorage",
+        "mid-location-id": 3
+      }
+    },
+    {
+      "id": "14",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "kenai peninsula",
+        "longitude": -151.382264,
+        "latitude": 60.0858486,
+        "time-zone": "America/Anchorage",
+        "mid-location-id": 3
+      }
+    },
+    {
+      "id": "15",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "southeast alaska",
+        "longitude": -149.4936733,
+        "latitude": 64.2008413,
+        "time-zone": "America/Anchorage",
+        "mid-location-id": 3
+      }
+    },
+    {
+      "id": "16",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "flagstaff / sedona",
+        "longitude": -111.8108845,
+        "latitude": 34.8704779,
+        "time-zone": "America/Phoenix",
+        "mid-location-id": 4
+      }
+    },
+    {
+      "id": "17",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "mohave county",
+        "longitude": -113.7632828,
+        "latitude": 35.2143346,
+        "time-zone": "America/Phoenix",
+        "mid-location-id": 4
+      }
+    },
+    {
+      "id": "18",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "phoenix",
+        "longitude": -112.0740373,
+        "latitude": 33.4483771,
+        "time-zone": "America/Phoenix",
+        "mid-location-id": 4
+      }
+    },
+    {
+      "id": "19",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "prescott",
+        "longitude": -112.4685025,
+        "latitude": 34.5400242,
+        "time-zone": "America/Phoenix",
+        "mid-location-id": 4
+      }
+    },
+    {
+      "id": "20",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "show low",
+        "longitude": -110.0298327,
+        "latitude": 34.2542084,
+        "time-zone": "America/Phoenix",
+        "mid-location-id": 4
+      }
+    },
+    {
+      "id": "21",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "sierra vista",
+        "longitude": -110.2772856,
+        "latitude": 31.5455001,
+        "time-zone": "America/Phoenix",
+        "mid-location-id": 4
+      }
+    },
+    {
+      "id": "22",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "tucson",
+        "longitude": -110.9747108,
+        "latitude": 32.2226066,
+        "time-zone": "America/Phoenix",
+        "mid-location-id": 4
+      }
+    },
+    {
+      "id": "23",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "yuma",
+        "longitude": -114.6276916,
+        "latitude": 32.6926512,
+        "time-zone": "America/Phoenix",
+        "mid-location-id": 4
+      }
+    },
+    {
+      "id": "24",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "fayetteville ",
+        "longitude": -94.17185420000001,
+        "latitude": 36.082156,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 5
+      }
+    },
+    {
+      "id": "25",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "fort smith",
+        "longitude": -94.39854749999999,
+        "latitude": 35.3859242,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 5
+      }
+    },
+    {
+      "id": "26",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "jonesboro",
+        "longitude": -90.704279,
+        "latitude": 35.84229670000001,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 5
+      }
+    },
+    {
+      "id": "27",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "little rock",
+        "longitude": -92.28959479999999,
+        "latitude": 34.7464809,
+        "time-zone": "America/Chicago",
+        "mid-location-id": 5
       }
     }
   ],
@@ -7059,14 +8075,14 @@ curl 'https://api.mycurrency.com/super_locations/2/sub_locations' \
     "self": "https://api.mycurrency.com/super_locations/2/sub_locations?",
     "first": "https://api.mycurrency.com/super_locations/2/sub_locations?page=1&per_page=25",
     "prev": null,
-    "next": null,
-    "last": "https://api.mycurrency.com/super_locations/2/sub_locations?page=1&per_page=25"
+    "next": "https://api.mycurrency.com/super_locations/2/sub_locations?page=2&per_page=25",
+    "last": "https://api.mycurrency.com/super_locations/2/sub_locations?page=17&per_page=25"
   },
   "meta": {
     "pagination": {
       "per-page": null,
-      "total-pages": "1",
-      "total-count": "1"
+      "total-pages": "17",
+      "total-count": "418"
     }
   }
 }
