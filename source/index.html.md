@@ -2517,7 +2517,7 @@ user_id | integer | yes | The ID of the user which offered the product that was 
 currency_id | integer | yes | The ID of the currency which was redeemable in the product that was cancelled, provided in URL path
 store_id | integer | yes | The ID of the store where the product being cancelled is sold, provided in URL path
 product_id | integer | yes | The ID of the product that is being cancelled, provided in URL path
-cancellation-message | string | no | The message explaining why the product is being cancelled
+cancellation_message | string | no | The message explaining why the product is being cancelled
 
 ### RESPONSE
 
@@ -2716,7 +2716,7 @@ user_id | integer | yes | The ID of the user which offered the product that is b
 currency_id | integer | yes | The ID of the currency which was redeemable in the product that is being cancelled, provided in URL path
 store_id | integer | yes | The ID of the store where the product being cancelled is sold, provided in URL path
 product_id | integer | yes | The ID of the product that is being cancelled, provided in URL path
-discontinual-message | string | no | The message explaining why the product will be cancelled
+discontinual_message | string | no | The message explaining why the product will be cancelled
 
 ### RESPONSE
 
