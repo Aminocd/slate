@@ -14,7 +14,9 @@ search: true
 
 # Introduction
 
-The MyCurrency REST API is hosted at https://api.mycurrency.com and provides the ability to fully interact with the MyCurrency application. This API reference provides information on available endpoints.
+The MyCurrency REST API is hosted at https://api.mycurrency.com and provides the ability to fully interact with the MyCurrency application. 
+
+This API reference provides information on available endpoints.
 
 # Users
 
