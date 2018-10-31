@@ -5,8 +5,6 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - shell
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a> <!--- need to add link here --->
-  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
   - errors
@@ -17,9 +15,6 @@ search: true
 # Introduction
 
 Welcome to the MyCurrency API! The MyCurrency API endpoints are hosted at https://api.mycurrency.com
-
-
-This example API documentation page was created with [Slate](https://github.com/lord/slate) <!--- need to add link here -->. Feel free to make pull requests if you have suggestions on how to augment it.
 
 # Users
 
@@ -63,7 +58,7 @@ Parameter | Description
 --------- | -----------
 id | The ID of the user
 username | The username that the user is identified by
-created_at | The time and date when the user was created
+created-at | The time and date when the user was created
 active | Whether the user is active or not
 get-avatar-url | The URL at which the user profile picture can be found
 
