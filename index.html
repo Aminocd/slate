@@ -384,6 +384,17 @@
               </ul>
           </li>
           <li>
+            <a href="#currency-holdings" class="toc-h1 toc-link" data-title="Currency Holdings">Currency Holdings</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#list-user-39-s-public-and-private-self-issued-currency-holdings-with-authorization" class="toc-h2 toc-link" data-title="List User's Public and Private Self-Issued Currency Holdings with Authorization">List User's Public and Private Self-Issued Currency Holdings with Authorization</a>
+                  </li>
+                  <li>
+                    <a href="#list-user-39-s-externally-issued-currency-holdings-with-authorization" class="toc-h2 toc-link" data-title="List User's Externally Issued Currency Holdings with Authorization">List User's Externally Issued Currency Holdings with Authorization</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#public-currency-holdings" class="toc-h1 toc-link" data-title="Public Currency Holdings">Public Currency Holdings</a>
               <ul class="toc-list-h2">
                   <li>
@@ -4380,6 +4391,331 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The time and date when the product discontinual was cancelled</td>
 </tr>
 </tbody></table>
+<h1 id='currency-holdings'>Currency Holdings</h1><h2 id='list-user-39-s-public-and-private-self-issued-currency-holdings-with-authorization'>List User&#39;s Public and Private Self-Issued Currency Holdings with Authorization</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/users/3/authorized_self_issued_currency_holdings'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"currency-holding-pair"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Micro Asteroid bucks"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/001/original/asteroid.png?1536142415"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"currency-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">9895827142424</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"burn-amount-out"</span><span class="p">:</span><span class="w"> </span><span class="mi">4172857576</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-05 13:27:52 -0800"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-08 13:26:13 -0800"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PublicCurrencyHolding"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Micro Asteroid bucks"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/001/original/asteroid.png?1536142415"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"currency-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">99957849922</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"burn-amount-out"</span><span class="p">:</span><span class="w"> </span><span class="mi">42150078</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-05 13:27:47 -0800"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-08 13:26:13 -0800"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves the full details of all of a user&#39;s public and private holdings of currencies that the user is also the issuer of, grouped in sets of up to two holdings containing the same currency </p>
+<h3 id='http-request-40'>HTTP Request</h3>
+<p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_self_issued_currency_holdings</code></p>
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+<h3 id='arguments-15'>ARGUMENTS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>integer</td>
+<td>yes</td>
+<td>The ID of the user which owns the currency holdings, provided in URL path</td>
+</tr>
+<tr>
+<td>exclude_empty</td>
+<td>boolean</td>
+<td>no</td>
+<td>If set to true, currency holding public private pairs where neither holding has an amount_atomic value greater than zero will be excluded from the results. By default this is set to false.</td>
+</tr>
+</tbody></table>
+<h3 id='response-40'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the currency holding</td>
+</tr>
+<tr>
+<td>currency-id</td>
+<td>The ID of the currency that the currency holding holds</td>
+</tr>
+<tr>
+<td>currency-name</td>
+<td>The name of the currency that the currency holding holds</td>
+</tr>
+<tr>
+<td>currency-icon-url</td>
+<td>The URL at which the icon picture of the currency that the currency holding holds can be found</td>
+</tr>
+<tr>
+<td>currency-burn-rate</td>
+<td>The annual rate at which the currency contained within the currency holding burns, by basis point (100 = 1%)</td>
+</tr>
+<tr>
+<td>amount-atomic</td>
+<td>The amount of currency held in the currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
+<td>burn-amount-out</td>
+<td>The total amount that has been debited from the public currency holding as a result of the daily burnrate of the currency</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the public currency holding was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the public currency holding was last updated</td>
+</tr>
+</tbody></table>
+<h2 id='list-user-39-s-externally-issued-currency-holdings-with-authorization'>List User&#39;s Externally Issued Currency Holdings with Authorization</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/users/3/authorized_externally_issued_currency_holdings'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"currency_holding_pair"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"currency_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"currency_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"solar electricity zaps"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"currency_icon_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/solar_zap.png?1536143418"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"amount_atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">9994565314</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"burn_amount_out"</span><span class="p">:</span><span class="w"> </span><span class="mi">5434686</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-05 13:27:52 -0800"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-08 13:26:13 -0800"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"currency_holding_pair"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"currency_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"currency_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Moon hotel coins"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"currency_icon_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/hyatt_moon.png?1536158915"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"amount_atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">4997675720243</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"burn_amount_out"</span><span class="p">:</span><span class="w"> </span><span class="mi">2324279757</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-05 13:27:52 -0800"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-08 13:26:13 -0800"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PublicCurrencyHolding"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"currency_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"currency_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Moon hotel coins"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"currency_icon_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/003/original/hyatt_moon.png?153615891b"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"amount_atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">4997675720243</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"burn_amount_out"</span><span class="p">:</span><span class="w"> </span><span class="mi">2324279757</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-05 13:27:47 -0800"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-08 13:26:13 -0800"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"currency_holding_pair"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"currency_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"currency_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spiderman pizza dollars"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"currency_icon_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/004/original/spiderman_pizza.png?1536159151"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"amount_atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">2499118493626</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"burn_amount_out"</span><span class="p">:</span><span class="w"> </span><span class="mi">881506374</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-05 13:27:52 -0800"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-08 13:26:13 -0800"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PublicCurrencyHolding"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"currency_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"currency_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spiderman pizza dollars"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"currency_icon_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/004/original/spiderman_pizza.png?1536159151"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"amount_atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">2499118493626</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"burn_amount_out"</span><span class="p">:</span><span class="w"> </span><span class="mi">881506374</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-05 13:27:47 -0800"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-08 13:26:13 -0800"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"currency_holding_pair"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"currency_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"currency_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Home Repair dollars"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"currency_icon_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/005/original/home_repair.png?1536171512"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"amount_atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">4998738679556</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"burn_amount_out"</span><span class="p">:</span><span class="w"> </span><span class="mi">1261320444</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-06 13:27:52 -0800"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-08 13:26:13 -0800"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"currency_holding_pair"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"currency_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"currency_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wholesome foods tokens"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"currency_icon_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/006/original/home_repair.png?1536172152"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"amount_atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">9995965387034</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"burn_amount_out"</span><span class="p">:</span><span class="w"> </span><span class="mi">4034612966</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-06 13:27:52 -0800"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-08 13:26:13 -0800"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves the full details of all of a user&#39;s public and private holdings of currencies that the user is not the issuer of, grouped in sets of up to two holdings containing the same currency </p>
+<h3 id='http-request-41'>HTTP Request</h3>
+<p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_externally_issued_currency_holdings</code></p>
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+<h3 id='arguments-16'>ARGUMENTS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>integer</td>
+<td>yes</td>
+<td>The ID of the user which owns the currency holdings, provided in URL path</td>
+</tr>
+<tr>
+<td>exclude_empty</td>
+<td>boolean</td>
+<td>no</td>
+<td>If set to true, currency holding public private pairs where neither holding has an amount_atomic value greater than zero will be excluded from the results. By default this is set to false.</td>
+</tr>
+</tbody></table>
+<h3 id='response-41'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the currency holding</td>
+</tr>
+<tr>
+<td>currency-id</td>
+<td>The ID of the currency that the currency holding holds</td>
+</tr>
+<tr>
+<td>currency-name</td>
+<td>The name of the currency that the currency holding holds</td>
+</tr>
+<tr>
+<td>currency-icon-url</td>
+<td>The URL at which the icon picture of the currency that the currency holding holds can be found</td>
+</tr>
+<tr>
+<td>currency-burn-rate</td>
+<td>The annual rate at which the currency contained within the currency holding burns, by basis point (100 = 1%)</td>
+</tr>
+<tr>
+<td>amount-atomic</td>
+<td>The amount of currency held in the currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
+<td>burn-amount-out</td>
+<td>The total amount that has been debited from the public currency holding as a result of the daily burnrate of the currency</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the public currency holding was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the public currency holding was last updated</td>
+</tr>
+</tbody></table>
 <h1 id='public-currency-holdings'>Public Currency Holdings</h1>
 <p>Unlike private currency holdings, the basic information of public currency holdings, like account balance, is publicly accessible. Authorized endpoints are only accessible to the user that owns the public currency holding and provides the full details of the holding. The publicly accessible endpoints provide basic information about the public currency holding.</p>
 <h2 id='get-a-public-currency-holding'>Get a Public Currency Holding</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/users/3/public_currency_holdings/3'</span> <span class="se">\</span>
@@ -4395,19 +4731,21 @@ Authentication: the request requires the OAuth access-token associated with the 
     </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"owning-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">49918217200</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular publicly viewable currency holding. </p>
-<h3 id='http-request-40'>HTTP Request</h3>
+<h3 id='http-request-42'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/public_currency_holdings/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-40'>RESPONSE</h3>
+<h3 id='response-42'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4425,6 +4763,14 @@ Authentication: not required
 <tr>
 <td>currency-id</td>
 <td>The ID of the currency that the public currency holding holds</td>
+</tr>
+<tr>
+<td>currency-name</td>
+<td>The name of the currency that the public currency holding holds</td>
+</tr>
+<tr>
+<td>currency-icon-url</td>
+<td>The URL at which the icon picture of the currency that the public currency holding holds can be found</td>
 </tr>
 <tr>
 <td>amount-atomic</td>
@@ -4445,6 +4791,8 @@ Authentication: not required
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"owning-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">49918217200</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
@@ -4454,6 +4802,8 @@ Authentication: not required
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"owning-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diamond dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/006/original/Diamond-coins.png?1534142996"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">99975465160</span><span class="w"> 
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -4475,13 +4825,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all of a user&#39;s publicly viewable holdings of currencies that the user is also the issuer of.</p>
-<h3 id='http-request-41'>HTTP Request</h3>
+<h3 id='http-request-43'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/self_issued_public_currency_holdings</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='arguments-15'>ARGUMENTS</h3>
+<h3 id='arguments-17'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4494,7 +4844,7 @@ Authentication: not required
 <td>user_id</td>
 <td>integer</td>
 <td>yes</td>
-<td>The ID of the user which offered the product that is being cancelled, provided in URL path</td>
+<td>The ID of the user which owns the currency holdings, provided in URL path</td>
 </tr>
 <tr>
 <td>min_amount</td>
@@ -4503,7 +4853,7 @@ Authentication: not required
 <td>The set of currency holdings returned will only include those with balances exceeding min_amount. The default min_amount is zero resulting in currency holdings with a zero balance not being returned.</td>
 </tr>
 </tbody></table>
-<h3 id='response-41'>RESPONSE</h3>
+<h3 id='response-43'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4521,6 +4871,14 @@ Authentication: not required
 <tr>
 <td>currency-id</td>
 <td>The ID of the currency that the public currency holding holds</td>
+</tr>
+<tr>
+<td>currency-name</td>
+<td>The name of the currency that the public currency holding holds</td>
+</tr>
+<tr>
+<td>currency-icon-url</td>
+<td>The URL at which the icon picture of the currency that the public currency holding holds can be found</td>
 </tr>
 <tr>
 <td>amount-atomic</td>
@@ -4541,6 +4899,8 @@ Authentication: not required
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"owning-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">119942752040</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
@@ -4550,6 +4910,8 @@ Authentication: not required
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"owning-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Horizon Cloud Computing dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/003/original/horizon_dollars.png?1534142996"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">79983643440</span><span class="w"> 
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -4571,13 +4933,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all of a user&#39;s publicly viewable holdings of currencies that the user is not the issuer of.</p>
-<h3 id='http-request-42'>HTTP Request</h3>
+<h3 id='http-request-44'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/self_issued_public_currency_holdings</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='arguments-16'>ARGUMENTS</h3>
+<h3 id='arguments-18'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4590,7 +4952,7 @@ Authentication: not required
 <td>user_id</td>
 <td>integer</td>
 <td>yes</td>
-<td>The ID of the user which offered the product that is being cancelled, provided in URL path</td>
+<td>The ID of the user which owns the currency holdings, provided in URL path</td>
 </tr>
 <tr>
 <td>min_amount</td>
@@ -4599,7 +4961,7 @@ Authentication: not required
 <td>The set of currency holdings returned will only include those with balances exceeding min_amount. The default min_amount is zero resulting in currency holdings with a zero balance not being returned.</td>
 </tr>
 </tbody></table>
-<h3 id='response-42'>RESPONSE</h3>
+<h3 id='response-44'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4617,6 +4979,14 @@ Authentication: not required
 <tr>
 <td>currency-id</td>
 <td>The ID of the currency that the public currency holding holds</td>
+</tr>
+<tr>
+<td>currency-name</td>
+<td>The name of the currency that the public currency holding holds</td>
+</tr>
+<tr>
+<td>currency-icon-url</td>
+<td>The URL at which the icon picture of the public currency that the currency holding holds can be found</td>
 </tr>
 <tr>
 <td>amount-atomic</td>
@@ -4637,6 +5007,9 @@ Authentication: not required
     </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"owning-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">450</span><span class="p">,</span><span class="w">
       </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">49918217200</span><span class="p">,</span><span class="w">
       </span><span class="s2">"transfer-out"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="s2">"transfer-in"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000000</span><span class="p">,</span><span class="w">
@@ -4650,13 +5023,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the full details of a particular publicly viewable currency holding. </p>
-<h3 id='http-request-43'>HTTP Request</h3>
+<h3 id='http-request-45'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_public_currency_holdings/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-43'>RESPONSE</h3>
+<h3 id='response-45'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4674,6 +5047,18 @@ Authentication: the request requires the OAuth access-token associated with the 
 <tr>
 <td>currency-id</td>
 <td>The ID of the currency that the public currency holding holds</td>
+</tr>
+<tr>
+<td>currency-name</td>
+<td>The name of the currency that the public currency holding holds</td>
+</tr>
+<tr>
+<td>currency-icon-url</td>
+<td>The URL at which the icon picture of the public currency that the currency holding holds can be found</td>
+</tr>
+<tr>
+<td>currency-burn-rate</td>
+<td>The annual rate at which the currency contained within the public currency holding burns, by basis point (100 = 1%)</td>
 </tr>
 <tr>
 <td>amount-atomic</td>
@@ -4723,6 +5108,9 @@ Authentication: the request requires the OAuth access-token associated with the 
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"owning-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">450</span><span class="p">,</span><span class="w">
         </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">49918217200</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-out"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-in"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000000</span><span class="p">,</span><span class="w">
@@ -4739,6 +5127,9 @@ Authentication: the request requires the OAuth access-token associated with the 
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"owning-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diamond dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/006/original/Diamond-coins.png?1534142996"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w">
         </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">99975465160</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-out"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000000</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-in"</span><span class="p">:</span><span class="w"> </span><span class="mi">150000000000</span><span class="p">,</span><span class="w">
@@ -4767,13 +5158,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the full details of all of a user&#39;s publicly viewable holdings of currencies that the user is also the issuer of.</p>
-<h3 id='http-request-44'>HTTP Request</h3>
+<h3 id='http-request-46'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_self_issued_public_currency_holdings</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-44'>RESPONSE</h3>
+<h3 id='response-46'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4791,6 +5182,18 @@ Authentication: the request requires the OAuth access-token associated with the 
 <tr>
 <td>currency-id</td>
 <td>The ID of the currency that the public currency holding holds</td>
+</tr>
+<tr>
+<td>currency-name</td>
+<td>The name of the currency that the public currency holding holds</td>
+</tr>
+<tr>
+<td>currency-icon-url</td>
+<td>The URL at which the icon picture of the public currency that the currency holding holds can be found</td>
+</tr>
+<tr>
+<td>currency-burn-rate</td>
+<td>The annual rate at which the currency contained within the public currency holding burns, by basis point (100 = 1%)</td>
 </tr>
 <tr>
 <td>amount-atomic</td>
@@ -4840,6 +5243,9 @@ Authentication: the request requires the OAuth access-token associated with the 
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"owning-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">450</span><span class="p">,</span><span class="w">
         </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">119942752040</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-out"</span><span class="p">:</span><span class="w"> </span><span class="mi">80000000000</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-in"</span><span class="p">:</span><span class="w"> </span><span class="mi">200000000000</span><span class="p">,</span><span class="w">
@@ -4856,6 +5262,9 @@ Authentication: the request requires the OAuth access-token associated with the 
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"owning-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Horizon Cloud Computing dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/003/original/horizon_dollars.png?1534142996"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">420</span><span class="p">,</span><span class="w">
         </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">79983643440</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-out"</span><span class="p">:</span><span class="w"> </span><span class="mi">80000000000</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-in"</span><span class="p">:</span><span class="w"> </span><span class="mi">160000000000</span><span class="p">,</span><span class="w">
@@ -4884,13 +5293,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the full details of all of a user&#39;s publicly viewable holdings of currencies that the user is not the issuer of.</p>
-<h3 id='http-request-45'>HTTP Request</h3>
+<h3 id='http-request-47'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_externally_issued_public_currency_holdings</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-45'>RESPONSE</h3>
+<h3 id='response-47'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4908,6 +5317,18 @@ Authentication: the request requires the OAuth access-token associated with the 
 <tr>
 <td>currency-id</td>
 <td>The ID of the currency that the public currency holding holds</td>
+</tr>
+<tr>
+<td>currency-name</td>
+<td>The name of the currency that the public currency holding holds</td>
+</tr>
+<tr>
+<td>currency-icon-url</td>
+<td>The URL at which the icon picture of the currency that the public currency holding holds can be found</td>
+</tr>
+<tr>
+<td>currency-burn-rate</td>
+<td>The annual rate at which the currency contained within the public currency holding burns, by basis point (100 = 1%)</td>
 </tr>
 <tr>
 <td>amount-atomic</td>
@@ -4958,6 +5379,9 @@ Authentication: the request requires the OAuth access-token associated with the 
     </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"owning-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Horizon Cloud Computing dollars"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/003/original/horizon_dollars.png?1534142996"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">420</span><span class="p">,</span><span class="w">
       </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="s2">"transfer-out"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000</span><span class="p">,</span><span class="w">
       </span><span class="s2">"transfer-in"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -4972,13 +5396,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the full details of a particular private currency holding. </p>
-<h3 id='http-request-46'>HTTP Request</h3>
+<h3 id='http-request-48'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_private_currency_holdings/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-46'>RESPONSE</h3>
+<h3 id='response-48'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4987,47 +5411,59 @@ Authentication: the request requires the OAuth access-token associated with the 
 </thead><tbody>
 <tr>
 <td>id</td>
-<td>The ID of the public currency holding</td>
+<td>The ID of the private currency holding</td>
 </tr>
 <tr>
 <td>owning-user-id</td>
-<td>The ID of the user that the public currency holding belongs to</td>
+<td>The ID of the user that the private currency holding belongs to</td>
 </tr>
 <tr>
 <td>currency-id</td>
-<td>The ID of the currency that the public currency holding holds</td>
+<td>The ID of the currency that the private currency holding holds</td>
+</tr>
+<tr>
+<td>currency-name</td>
+<td>The name of the currency that the private currency holding holds</td>
+</tr>
+<tr>
+<td>currency-icon-url</td>
+<td>The URL at which the icon picture of the currency that the private currency holding holds can be found</td>
+</tr>
+<tr>
+<td>currency-burn-rate</td>
+<td>The annual rate at which the currency contained within the private currency holding burns, by basis point (100 = 1%)</td>
 </tr>
 <tr>
 <td>amount-atomic</td>
-<td>The amount of currency held in the public currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+<td>The amount of currency held in the private currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
 </tr>
 <tr>
 <td>transfer-out</td>
-<td>The total amount that has been debited from the public currency holding as a result of outgoing transfers</td>
+<td>The total amount that has been debited from the private currency holding as a result of outgoing transfers</td>
 </tr>
 <tr>
 <td>transfer-in</td>
-<td>The total amount that has been credited to the public currency holding as a result of incoming transfers</td>
+<td>The total amount that has been credited to the private currency holding as a result of incoming transfers</td>
 </tr>
 <tr>
 <td>micro-currency-order-out</td>
-<td>The total amount that has been debited from the public currency holding as a result of micro_currency_orders</td>
+<td>The total amount that has been debited from the private currency holding as a result of micro_currency_orders</td>
 </tr>
 <tr>
 <td>issuance-in</td>
-<td>The total amount that has been credited to the public currency holding as a result of incoming issuances</td>
+<td>The total amount that has been credited to the private currency holding as a result of incoming issuances</td>
 </tr>
 <tr>
 <td>burn-amount-out</td>
-<td>The total amount that has been debited from the public currency holding as a result of the daily burnrate of the currency</td>
+<td>The total amount that has been debited from the private currency holding as a result of the daily burnrate of the currency</td>
 </tr>
 <tr>
 <td>created-at</td>
-<td>The time and date when the public currency holding was created</td>
+<td>The time and date when the private currency holding was created</td>
 </tr>
 <tr>
 <td>updated-at</td>
-<td>The time and date when the public currency holding was last updated</td>
+<td>The time and date when the private currency holding was last updated</td>
 </tr>
 </tbody></table>
 <h2 id='list-user-39-s-private-self-issued-currency-holdings-with-authorization'>List User&#39;s Private Self-Issued Currency Holdings with Authorization</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/users/3/authorized_self_issued_private_currency_holdings'</span> <span class="se">\</span>
@@ -5045,6 +5481,9 @@ Authentication: the request requires the OAuth access-token associated with the 
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"owning-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tom's Fruitstand bucks"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/004/original/Toms_bucks.png?1534144151"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
         </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">9964274765720</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-out"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-in"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -5062,6 +5501,9 @@ Authentication: the request requires the OAuth access-token associated with the 
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"owning-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chilli pesos"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/005/original/chilli_pesos.png?1534151581"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
         </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">9938553881223</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-out"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-in"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -5079,6 +5521,9 @@ Authentication: the request requires the OAuth access-token associated with the 
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"owning-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diamond dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/006/original/Diamond-coins.png?1534142996"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w">
         </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">9989990954562</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-out"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-in"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -5108,13 +5553,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the full details of all of a user&#39;s privately viewable holdings of currencies that the user is also the issuer of.</p>
-<h3 id='http-request-47'>HTTP Request</h3>
+<h3 id='http-request-49'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_self_issued_private_currency_holdings</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-47'>RESPONSE</h3>
+<h3 id='response-49'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5123,47 +5568,59 @@ Authentication: the request requires the OAuth access-token associated with the 
 </thead><tbody>
 <tr>
 <td>id</td>
-<td>The ID of the public currency holding</td>
+<td>The ID of the private currency holding</td>
 </tr>
 <tr>
 <td>owning-user-id</td>
-<td>The ID of the user that the public currency holding belongs to</td>
+<td>The ID of the user that the private currency holding belongs to</td>
 </tr>
 <tr>
 <td>currency-id</td>
-<td>The ID of the currency that the public currency holding holds</td>
+<td>The ID of the currency that the private currency holding holds</td>
+</tr>
+<tr>
+<td>currency-name</td>
+<td>The name of the currency that the private currency holding holds</td>
+</tr>
+<tr>
+<td>currency-icon-url</td>
+<td>The URL at which the icon picture of the currency that the private currency holding holds can be found</td>
+</tr>
+<tr>
+<td>currency-burn-rate</td>
+<td>The annual rate at which the currency contained within the private currency holding burns, by basis point (100 = 1%)</td>
 </tr>
 <tr>
 <td>amount-atomic</td>
-<td>The amount of currency held in the public currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+<td>The amount of currency held in the private currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
 </tr>
 <tr>
 <td>transfer-out</td>
-<td>The total amount that has been debited from the public currency holding as a result of outgoing transfers</td>
+<td>The total amount that has been debited from the private currency holding as a result of outgoing transfers</td>
 </tr>
 <tr>
 <td>transfer-in</td>
-<td>The total amount that has been credited to the public currency holding as a result of incoming transfers</td>
+<td>The total amount that has been credited to the private currency holding as a result of incoming transfers</td>
 </tr>
 <tr>
 <td>micro-currency-order-out</td>
-<td>The total amount that has been debited from the public currency holding as a result of micro_currency_orders</td>
+<td>The total amount that has been debited from the private currency holding as a result of micro_currency_orders</td>
 </tr>
 <tr>
 <td>issuance-in</td>
-<td>The total amount that has been credited to the public currency holding as a result of incoming issuances</td>
+<td>The total amount that has been credited to the private currency holding as a result of incoming issuances</td>
 </tr>
 <tr>
 <td>burn-amount-out</td>
-<td>The total amount that has been debited from the public currency holding as a result of the daily burnrate of the currency</td>
+<td>The total amount that has been debited from the private currency holding as a result of the daily burnrate of the currency</td>
 </tr>
 <tr>
 <td>created-at</td>
-<td>The time and date when the public currency holding was created</td>
+<td>The time and date when the private currency holding was created</td>
 </tr>
 <tr>
 <td>updated-at</td>
-<td>The time and date when the public currency holding was last updated</td>
+<td>The time and date when the private currency holding was last updated</td>
 </tr>
 </tbody></table>
 <h2 id='list-user-39-s-private-externally-issued-currency-holdings-with-authorization'>List User&#39;s Private Externally Issued Currency Holdings with Authorization</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/users/4/authorized_externally_issued_private_currency_holdings'</span> <span class="se">\</span>
@@ -5181,6 +5638,9 @@ Authentication: the request requires the OAuth access-token associated with the 
     </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"owning-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
     </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Horizon Cloud Computing dollars"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/003/original/horizon_dollars.png?1534142996"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"currency-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">420</span><span class="p">,</span><span class="w">
     </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="s2">"transfer-out"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000</span><span class="p">,</span><span class="w">
     </span><span class="s2">"transfer-in"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -5210,13 +5670,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the full details of all of a user&#39;s privately viewable holdings of currencies that the user is not the issuer of.</p>
-<h3 id='http-request-48'>HTTP Request</h3>
+<h3 id='http-request-50'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_externally_issued_public_currency_holdings</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-48'>RESPONSE</h3>
+<h3 id='response-50'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5225,47 +5685,59 @@ Authentication: the request requires the OAuth access-token associated with the 
 </thead><tbody>
 <tr>
 <td>id</td>
-<td>The ID of the public currency holding</td>
+<td>The ID of the private currency holding</td>
 </tr>
 <tr>
 <td>owning-user-id</td>
-<td>The ID of the user that the public currency holding belongs to</td>
+<td>The ID of the user that the private currency holding belongs to</td>
 </tr>
 <tr>
 <td>currency-id</td>
-<td>The ID of the currency that the public currency holding holds</td>
+<td>The ID of the currency that the private currency holding holds</td>
+</tr>
+<tr>
+<td>currency-name</td>
+<td>The name of the currency that the private currency holding holds</td>
+</tr>
+<tr>
+<td>currency-icon-url</td>
+<td>The URL at which the icon picture of the currency that the private currency holding holds can be found</td>
+</tr>
+<tr>
+<td>currency-burn-rate</td>
+<td>The annual rate at which the currency contained within the private currency holding burns, by basis point (100 = 1%)</td>
 </tr>
 <tr>
 <td>amount-atomic</td>
-<td>The amount of currency held in the public currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+<td>The amount of currency held in the private currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
 </tr>
 <tr>
 <td>transfer-out</td>
-<td>The total amount that has been debited from the public currency holding as a result of outgoing transfers</td>
+<td>The total amount that has been debited from the private currency holding as a result of outgoing transfers</td>
 </tr>
 <tr>
 <td>transfer-in</td>
-<td>The total amount that has been credited to the public currency holding as a result of incoming transfers</td>
+<td>The total amount that has been credited to the private currency holding as a result of incoming transfers</td>
 </tr>
 <tr>
 <td>micro-currency-order-out</td>
-<td>The total amount that has been debited from the public currency holding as a result of micro_currency_orders</td>
+<td>The total amount that has been debited from the private currency holding as a result of micro_currency_orders</td>
 </tr>
 <tr>
 <td>issuance-in</td>
-<td>The total amount that has been credited to the public currency holding as a result of incoming issuances</td>
+<td>The total amount that has been credited to the private currency holding as a result of incoming issuances</td>
 </tr>
 <tr>
 <td>burn-amount-out</td>
-<td>The total amount that has been debited from the public currency holding as a result of the daily burnrate of the currency</td>
+<td>The total amount that has been debited from the private currency holding as a result of the daily burnrate of the currency</td>
 </tr>
 <tr>
 <td>created-at</td>
-<td>The time and date when the public currency holding was created</td>
+<td>The time and date when the private currency holding was created</td>
 </tr>
 <tr>
 <td>updated-at</td>
-<td>The time and date when the public currency holding was last updated</td>
+<td>The time and date when the private currency holding was last updated</td>
 </tr>
 </tbody></table>
 <h1 id='transactions'>Transactions</h1>
@@ -5325,13 +5797,13 @@ Authentication: the request requires the OAuth access-token associated with the 
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-49'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-51'>HTTP Request</h3>
 <p><code>https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_public_currency_holdings/&lt;PUBLIC-CURRENCY-HOLDING-ID&gt;/pu_h_transactions</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-49'>RESPONSE</h3><h3 id='transfers'>Transfers:</h3>
+<h3 id='response-51'>RESPONSE</h3><h3 id='transfers'>Transfers:</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5634,13 +6106,13 @@ Authentication: the request requires the OAuth access-token associated with the 
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-50'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-52'>HTTP Request</h3>
 <p><code>https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_public_currency_holdings/&lt;PRIVATE-CURRENCY-HOLDING-ID&gt;/pr_h_transactions</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-50'>RESPONSE</h3><h3 id='transfers-2'>Transfers:</h3>
+<h3 id='response-52'>RESPONSE</h3><h3 id='transfers-2'>Transfers:</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6023,13 +6495,13 @@ Authentication: the request requires the OAuth access-token associated with the 
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-51'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-53'>HTTP Request</h3>
 <p><code>https://api.mycurrency.com/users/&lt;USER-ID&gt;/recent_transactions</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-51'>RESPONSE</h3><h3 id='transfers-3'>Transfers:</h3>
+<h3 id='response-53'>RESPONSE</h3><h3 id='transfers-3'>Transfers:</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6278,13 +6750,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular issuance. The logged in user must be active and be either the issuer or the receiver of the issuance to view it.</p>
-<h3 id='http-request-52'>HTTP Request</h3>
+<h3 id='http-request-54'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/issuances/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-52'>RESPONSE</h3>
+<h3 id='response-54'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6460,13 +6932,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all received or created issuances of a user. The logged in user must be active to view the issuances. </p>
-<h3 id='http-request-53'>HTTP Request</h3>
+<h3 id='http-request-55'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/issuances?receiving_user_id=&lt;USER-ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the USER-ID 
 </aside>
-<h3 id='arguments-17'>ARGUMENTS</h3>
+<h3 id='arguments-19'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6488,7 +6960,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The ID of the issuance creator. If provided, the outgoing issuances of the specified user are returned.</td>
 </tr>
 </tbody></table>
-<h3 id='response-53'>RESPONSE</h3>
+<h3 id='response-55'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6650,13 +7122,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all received or created issuances of a user associated with the currency specified by CURRENCY-ID. The logged in user must be active to view the issuances. </p>
-<h3 id='http-request-54'>HTTP Request</h3>
+<h3 id='http-request-56'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/currencies/&lt;CURRENCY-ID&gt;/issuances?issueing_user_id=&lt;USER-ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the USER-ID 
 </aside>
-<h3 id='arguments-18'>ARGUMENTS</h3>
+<h3 id='arguments-20'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6684,7 +7156,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The ID of the issuance creator. If provided, the outgoing issuances of the specified user are returned.</td>
 </tr>
 </tbody></table>
-<h3 id='response-54'>RESPONSE</h3>
+<h3 id='response-56'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6792,13 +7264,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Creates an issuance.</p>
-<h3 id='http-request-55'>HTTP Request</h3>
+<h3 id='http-request-57'>HTTP Request</h3>
 <p><code>https://api.mycurrency.com/users/&lt;USER-ID&gt;/issuer/currencies/&lt;CURRENCY-ID&gt;/issuances</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='arguments-19'>ARGUMENTS</h3>
+<h3 id='arguments-21'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6832,7 +7304,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The ID of the user that is to receive the issuance</td>
 </tr>
 </tbody></table>
-<h3 id='response-55'>RESPONSE</h3>
+<h3 id='response-57'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6942,13 +7414,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular transfer. The logged in user must be active and be either the transferrer or the receiver of the transfer to view it.</p>
-<h3 id='http-request-56'>HTTP Request</h3>
+<h3 id='http-request-58'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/transfers/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-56'>RESPONSE</h3>
+<h3 id='response-58'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -7067,13 +7539,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Creates a transfer.</p>
-<h3 id='http-request-57'>HTTP Request</h3>
+<h3 id='http-request-59'>HTTP Request</h3>
 <p><code>https://api.mycurrency.com/users/&lt;USER-ID&gt;/transfers</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='arguments-20'>ARGUMENTS</h3>
+<h3 id='arguments-22'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -7119,7 +7591,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>Whether the currency holding that the transfer is crediting to is a &quot;PublicCurrencyHolding&quot; or a &quot;PrivateCurrencyHolding&quot;. If no value is provided, it will default to &quot;PrivateCurrencyHolding&quot;. You cannot set this parameter to &quot;PublicCurrencyHolding&quot; unless the transfer is a self send of a currency from a user&#39;s private holding to public holding.</td>
 </tr>
 </tbody></table>
-<h3 id='response-57'>RESPONSE</h3>
+<h3 id='response-59'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -7284,13 +7756,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular offer. The logged in user must be active and be either the sender or receiver of the offer to view it.</p>
-<h3 id='http-request-58'>HTTP Request</h3>
+<h3 id='http-request-60'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/offers/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-58'>RESPONSE</h3><h3 id='offer'>Offer</h3>
+<h3 id='response-60'>RESPONSE</h3><h3 id='offer'>Offer</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -7625,13 +8097,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a user&#39;s offers. There are five different offer lists that can be returned, depending on what argument is passed to the endpoint.</p>
-<h3 id='http-request-59'>HTTP Request</h3>
+<h3 id='http-request-61'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/offers?index_type={}</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='arguments-21'>ARGUMENTS</h3>
+<h3 id='arguments-23'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -7687,7 +8159,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>returns the chain of offers associated with head offer (the last offer in an offer chain) referenced by :offer_id associated with user</td>
 </tr>
 </tbody></table>
-<h3 id='response-59'>RESPONSE</h3><h3 id='offer-2'>Offer</h3>
+<h3 id='response-61'>RESPONSE</h3><h3 id='offer-2'>Offer</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -7918,7 +8390,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Creates an offer. </p>
-<h3 id='http-request-60'>HTTP Request</h3>
+<h3 id='http-request-62'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/offers</code></p>
 
 <aside class="notice">
@@ -8032,7 +8504,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The amount of currency that is proposed to be issued, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
 </tr>
 </tbody></table>
-<h3 id='response-60'>RESPONSE</h3><h3 id='offer-3'>Offer</h3>
+<h3 id='response-62'>RESPONSE</h3><h3 id='offer-3'>Offer</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8210,13 +8682,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular listing and its basic public information by ID.</p>
-<h3 id='http-request-61'>HTTP Request</h3>
+<h3 id='http-request-63'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/listings/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-61'>RESPONSE</h3>
+<h3 id='response-63'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8299,13 +8771,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the full details of a particular listing. </p>
-<h3 id='http-request-62'>HTTP Request</h3>
+<h3 id='http-request-64'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_listings/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-62'>RESPONSE</h3>
+<h3 id='response-64'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8479,13 +8951,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all active listings and their basic public information.</p>
-<h3 id='http-request-63'>HTTP Request</h3>
+<h3 id='http-request-65'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/listings</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-63'>RESPONSE</h3>
+<h3 id='response-65'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8611,13 +9083,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all active listings created by the specified user and outputs their basic public information.</p>
-<h3 id='http-request-64'>HTTP Request</h3>
+<h3 id='http-request-66'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/listings</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-64'>RESPONSE</h3>
+<h3 id='response-66'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8743,13 +9215,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all active listings where the specified currency is being offered and outputs their basic public information.</p>
-<h3 id='http-request-65'>HTTP Request</h3>
+<h3 id='http-request-67'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/currencies/&lt;CURRENCY-ID&gt;/listings</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-65'>RESPONSE</h3>
+<h3 id='response-67'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8907,13 +9379,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all active listings being offered in the Craigslist region associated with the specified sub location and outputs their basic public information.</p>
-<h3 id='http-request-66'>HTTP Request</h3>
+<h3 id='http-request-68'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/sub_locations/&lt;SUB-LOCATION-ID&gt;/listings</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-66'>RESPONSE</h3>
+<h3 id='response-68'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -9073,13 +9545,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all active listings created by the logged in user and outputs their full details.</p>
-<h3 id='http-request-67'>HTTP Request</h3>
+<h3 id='http-request-69'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_listings</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-67'>RESPONSE</h3>
+<h3 id='response-69'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -9177,13 +9649,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint creates a listing. The cl-link provided in the parameters must exist, and the cl-title value must match the title of the Craigslist post found at the URL specified by the cl-link for the listing to be created. Successful listing creation also requires that listings with an :offer_currency value of true have at least as much available currency in the source currency holding they specify as the amount of currency specified by the :amount_atomic parameter they set.</p>
-<h3 id='http-request-68'>HTTP Request</h3>
+<h3 id='http-request-70'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_listings</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='arguments-22'>ARGUMENTS</h3>
+<h3 id='arguments-24'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -9235,7 +9707,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>Whether the currency holding that the offered currency is held in is a &quot;PublicCurrencyHolding&quot; or a &quot;PrivateCurrencyHolding&quot;</td>
 </tr>
 </tbody></table>
-<h3 id='response-68'>RESPONSE</h3>
+<h3 id='response-70'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -9333,13 +9805,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint updates a listing. The cl-link provided in the parameters must exist, and the cl-title value must match the title of the Craigslist post found at the URL specified by the cl-link, for the listing&#39;s :active value to be changed from false to true. Listing activation also requires that listings with an :offer_currency value of true have at least as much available currency in the source currency holding they specify as the amount of currency specified by the :amount_atomic field.</p>
-<h3 id='http-request-69'>HTTP Request</h3>
+<h3 id='http-request-71'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_listings/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='arguments-23'>ARGUMENTS</h3>
+<h3 id='arguments-25'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -9361,7 +9833,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>Whether the listing is active or not. Inactive listings can only be activated if the listing has not been cancelled.</td>
 </tr>
 </tbody></table>
-<h3 id='response-69'>RESPONSE</h3>
+<h3 id='response-71'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -9447,13 +9919,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular super category.</p>
-<h3 id='http-request-70'>HTTP Request</h3>
+<h3 id='http-request-72'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/super_categories/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-70'>RESPONSE</h3>
+<h3 id='response-72'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -9523,13 +9995,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all super categories.</p>
-<h3 id='http-request-71'>HTTP Request</h3>
+<h3 id='http-request-73'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/super_categories</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-71'>RESPONSE</h3>
+<h3 id='response-73'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -9568,13 +10040,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular mid category.</p>
-<h3 id='http-request-72'>HTTP Request</h3>
+<h3 id='http-request-74'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/mid_categories/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-72'>RESPONSE</h3>
+<h3 id='response-74'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -9651,13 +10123,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all mid categories.</p>
-<h3 id='http-request-73'>HTTP Request</h3>
+<h3 id='http-request-75'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/mid_categories</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-73'>RESPONSE</h3>
+<h3 id='response-75'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -9716,13 +10188,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all child mid categories of the specified super category.</p>
-<h3 id='http-request-74'>HTTP Request</h3>
+<h3 id='http-request-76'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/super_categories/&lt;SUPER-CATEGORY-ID&gt;/mid_categories</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-74'>RESPONSE</h3>
+<h3 id='response-76'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -9765,13 +10237,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular sub category.</p>
-<h3 id='http-request-75'>HTTP Request</h3>
+<h3 id='http-request-77'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/sub_categories/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-75'>RESPONSE</h3>
+<h3 id='response-77'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -9857,13 +10329,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all sub categories.</p>
-<h3 id='http-request-76'>HTTP Request</h3>
+<h3 id='http-request-78'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/sub_categories</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-76'>RESPONSE</h3>
+<h3 id='response-78'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -9931,13 +10403,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all child sub categories of the specified mid category.</p>
-<h3 id='http-request-77'>HTTP Request</h3>
+<h3 id='http-request-79'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/super_categories/&lt;SUPER-CATEGORY-ID&gt;/mid_categories/&lt;MID-CATEGORY-ID&gt;/sub_categories</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-77'>RESPONSE</h3>
+<h3 id='response-79'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10005,13 +10477,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all child sub categories of the specified super category.</p>
-<h3 id='http-request-78'>HTTP Request</h3>
+<h3 id='http-request-80'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/super_categories/&lt;SUPER-CATEGORY-ID&gt;/sub_categories</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-78'>RESPONSE</h3>
+<h3 id='response-80'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10052,13 +10524,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular super location.</p>
-<h3 id='http-request-79'>HTTP Request</h3>
+<h3 id='http-request-81'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/super_locations/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-79'>RESPONSE</h3>
+<h3 id='response-81'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10149,13 +10621,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all super locations.</p>
-<h3 id='http-request-80'>HTTP Request</h3>
+<h3 id='http-request-82'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/super_locations</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-80'>RESPONSE</h3>
+<h3 id='response-82'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10189,13 +10661,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular mid location.</p>
-<h3 id='http-request-81'>HTTP Request</h3>
+<h3 id='http-request-83'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/mid_locations/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-81'>RESPONSE</h3>
+<h3 id='response-83'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10441,13 +10913,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all mid locations.</p>
-<h3 id='http-request-82'>HTTP Request</h3>
+<h3 id='http-request-84'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/mid_locations</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-82'>RESPONSE</h3>
+<h3 id='response-84'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10693,13 +11165,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all child mid locations of the specified super location.</p>
-<h3 id='http-request-83'>HTTP Request</h3>
+<h3 id='http-request-85'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/super_locations/&lt;SUPER-LOCATION-ID&gt;/mid_locations</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-83'>RESPONSE</h3>
+<h3 id='response-85'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10740,13 +11212,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular sub location.</p>
-<h3 id='http-request-84'>HTTP Request</h3>
+<h3 id='http-request-86'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/sub_locations/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-84'>RESPONSE</h3>
+<h3 id='response-86'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11079,13 +11551,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all sub locations.</p>
-<h3 id='http-request-85'>HTTP Request</h3>
+<h3 id='http-request-87'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/sub_locations</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-85'>RESPONSE</h3>
+<h3 id='response-87'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11242,13 +11714,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all child sub locations of the specified mid location.</p>
-<h3 id='http-request-86'>HTTP Request</h3>
+<h3 id='http-request-88'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/super_locations/&lt;SUPER-LOCATION-ID&gt;/mid_locations/&lt;MID-LOCATION-ID&gt;/sub_locations</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-86'>RESPONSE</h3>
+<h3 id='response-88'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11581,13 +12053,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all child sub locations of the specified super location.</p>
-<h3 id='http-request-87'>HTTP Request</h3>
+<h3 id='http-request-89'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/super_locations/&lt;SUPER-LOCATION-ID&gt;/sub_locations</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-87'>RESPONSE</h3>
+<h3 id='response-89'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11686,13 +12158,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the five sub locations closest to the geolocation of the IP address provided.</p>
-<h3 id='http-request-88'>HTTP Request</h3>
+<h3 id='http-request-90'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/nearby_locations?ip_address={}</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-88'>RESPONSE</h3>
+<h3 id='response-90'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11757,13 +12229,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular order. The logged in user must be active and be either the ordering user or the owner of the store that received the order to view it.</p>
-<h3 id='http-request-89'>HTTP Request</h3>
+<h3 id='http-request-91'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/order_sets/ID</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-89'>RESPONSE</h3>
+<h3 id='response-91'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11935,13 +12407,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a user&#39;s orders. </p>
-<h3 id='http-request-90'>HTTP Request</h3>
+<h3 id='http-request-92'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/offers?index_type={}</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='arguments-24'>ARGUMENTS</h3>
+<h3 id='arguments-26'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11975,7 +12447,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The orders received by the specified store are returned if store_id is provided. This parameter needs to be provided along with a :selling_user_id with a value that matches the ID of the user that owns the store.</td>
 </tr>
 </tbody></table>
-<h3 id='response-90'>RESPONSE</h3>
+<h3 id='response-92'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12086,13 +12558,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Creates an Order.</p>
-<h3 id='http-request-91'>HTTP Request</h3>
+<h3 id='http-request-93'>HTTP Request</h3>
 <p><code>https://api.mycurrency.com/users/&lt;USER-ID&gt;/order_sets</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='arguments-25'>ARGUMENTS</h3>
+<h3 id='arguments-27'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12144,7 +12616,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The quantity of the product that is being ordered</td>
 </tr>
 </tbody></table>
-<h3 id='response-91'>RESPONSE</h3>
+<h3 id='response-93'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12245,13 +12717,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular notice. The logged in user must be active and must be the recipient of the notice to view it. Calling this endpoint also sets the :read attribute of the retrieved notice to TRUE</p>
-<h3 id='http-request-92'>HTTP Request</h3>
+<h3 id='http-request-94'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/notices/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-92'>RESPONSE</h3>
+<h3 id='response-94'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12312,13 +12784,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the number of notices belonging to the specified user that have not been seen by the user.</p>
-<h3 id='http-request-93'>HTTP Request</h3>
+<h3 id='http-request-95'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/number_of_unseen_notices</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-93'>RESPONSE</h3>
+<h3 id='response-95'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12497,13 +12969,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all of a user&#39;s notices. Calling this endpoint also sets the :seen attribute of all retrieved notices to TRUE.</p>
-<h3 id='http-request-94'>HTTP Request</h3>
+<h3 id='http-request-96'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/notices</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-94'>RESPONSE</h3>
+<h3 id='response-96'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12572,13 +13044,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Updates a notice.</p>
-<h3 id='http-request-95'>HTTP Request</h3>
+<h3 id='http-request-97'>HTTP Request</h3>
 <p><code>POST https://api.mycurrency.com/users/&lt;USER-ID&gt;/notices/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='arguments-26'>ARGUMENTS</h3>
+<h3 id='arguments-28'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12594,7 +13066,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>Whether the notice&#39;s message has been read by the user or not</td>
 </tr>
 </tbody></table>
-<h3 id='response-95'>RESPONSE</h3>
+<h3 id='response-97'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12667,13 +13139,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular voucher. The logged in user must be either the holder of the voucher or the owner of the store at which the voucher is redeemable in order to view the voucher&#39;s details.</p>
-<h3 id='http-request-96'>HTTP Request</h3>
+<h3 id='http-request-98'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/vouchers/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-96'>RESPONSE</h3>
+<h3 id='response-98'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12814,13 +13286,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a user&#39;s vouchers. </p>
-<h3 id='http-request-97'>HTTP Request</h3>
+<h3 id='http-request-99'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/vouchers?issueing_user_id={}&amp;store_id={}</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='arguments-27'>ARGUMENTS</h3>
+<h3 id='arguments-29'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12848,7 +13320,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The vouchers issued by the specified store are returned if store_id is provided. This parameter needs to be provided along with a :issueing_user_id with a value that matches the ID of the user that owns the store.</td>
 </tr>
 </tbody></table>
-<h3 id='response-97'>RESPONSE</h3>
+<h3 id='response-99'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12937,13 +13409,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Updates a voucher.</p>
-<h3 id='http-request-98'>HTTP Request</h3>
+<h3 id='http-request-100'>HTTP Request</h3>
 <p><code>POST https://api.mycurrency.com/users/&lt;USER-ID&gt;/vouchers/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='arguments-28'>ARGUMENTS</h3>
+<h3 id='arguments-30'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12965,7 +13437,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The voucher&#39;s secret code, must be provided to redeem voucher</td>
 </tr>
 </tbody></table>
-<h3 id='response-98'>RESPONSE</h3>
+<h3 id='response-100'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>

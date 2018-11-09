@@ -2756,7 +2756,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_currency_holding
             "attributes": {
               "currency-id": 1,
               "currency-name": "Micro Asteroid bucks",
-              "currency-icon-url": "/system/currencies/icons/000/000/001/original/asteroid.png?1536142415",
+              "currency-icon-url": "/icons/original/missing.png",
               "currency-burn-rate": 500,
               "amount-atomic": 9895827142424,
               "burn-amount-out": 4172857576,
@@ -2770,7 +2770,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_currency_holding
             "attributes": {
               "currency-id": 1,
               "currency-name": "Micro Asteroid bucks",
-              "currency-icon-url": "/system/currencies/icons/000/000/001/original/asteroid.png?1536142415",
+              "currency-icon-url": "/icons/original/missing.png",
               "currency-burn-rate": 500,
               "amount-atomic": 99957849922,
               "burn-amount-out": 42150078,
@@ -2830,121 +2830,128 @@ curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_currency_h
 {
   "data": [
     {
-      "currency_holding_pair": {
+      "currency-holding-pair": {
         "data": [
           {
             "id": 3,
             "type": "PrivateCurrencyHolding",
             "attributes": {
-              "currency_id": 2,
-              "currency_name": "solar electricity zaps",
-              "currency_icon_url": "/system/currencies/icons/000/000/002/original/solar_zap.png?1536143418",
-              "amount_atomic": 9994565314,
-              "burn_amount_out": 5434686,
-              "created_at": "2018-11-05 13:27:52 -0800",
-              "updated_at": "2018-11-08 13:26:13 -0800"
+              "currency-id": 2,
+              "currency-name": "solar electricity zaps",
+              "currency-icon-url": "/icons/original/missing.png",
+              "currency-burn-rate": 640,
+              "amount-atomic": 9994565314,
+              "burn-amount-out": 5434686,
+              "created-at": "2018-11-05 13:27:52 -0800",
+              "updated-at": "2018-11-08 13:26:13 -0800"
             }
           }
         ]
       }
     },
     {
-      "currency_holding_pair": {
+      "currency-holding-pair": {
         "data": [
           {
             "id": 6,
             "type": "PrivateCurrencyHolding",
             "attributes": {
-              "currency_id": 3,
-              "currency_name": "Moon hotel coins",
-              "currency_icon_url": "/system/currencies/icons/000/000/002/original/hyatt_moon.png?1536158915",
-              "amount_atomic": 4997675720243,
-              "burn_amount_out": 2324279757,
-              "created_at": "2018-11-05 13:27:52 -0800",
-              "updated_at": "2018-11-08 13:26:13 -0800"
+              "currency-id": 3,
+              "currency-name": "Moon hotel coins",
+              "currency-icon-url": "/icons/original/missing.png",
+              "currency-burn-rate": 550,
+              "amount-atomic": 4997675720243,
+              "burn-amount-out": 2324279757,
+              "created-at": "2018-11-05 13:27:52 -0800",
+              "updated-at": "2018-11-08 13:26:13 -0800"
             }
           },
           {
             "id": 4,
             "type": "PublicCurrencyHolding",
             "attributes": {
-              "currency_id": 3,
-              "currency_name": "Moon hotel coins",
-              "currency_icon_url": "/system/currencies/icons/000/000/003/original/hyatt_moon.png?153615891b",
-              "amount_atomic": 4997675720243,
-              "burn_amount_out": 2324279757,
-              "created_at": "2018-11-05 13:27:47 -0800",
-              "updated_at": "2018-11-08 13:26:13 -0800"
+              "currency-id": 3,
+              "currency-name": "Moon hotel coins",
+              "currency-icon-url": "/icons/original/missing.png",
+              "currency-burn-rate": 550,
+              "amount-atomic": 4997675720243,
+              "burn-amount-out": 2324279757,
+              "created-at": "2018-11-05 13:27:47 -0800",
+              "updated-at": "2018-11-08 13:26:13 -0800"
             }
           }
         ]
       }
     },
     {
-      "currency_holding_pair": {
+      "currency-holding-pair": {
         "data": [
           {
             "id": 9,
             "type": "PrivateCurrencyHolding",
             "attributes": {
-              "currency_id": 4,
-              "currency_name": "spiderman pizza dollars",
-              "currency_icon_url": "/system/currencies/icons/000/000/004/original/spiderman_pizza.png?1536159151",
-              "amount_atomic": 2499118493626,
-              "burn_amount_out": 881506374,
-              "created_at": "2018-11-05 13:27:52 -0800",
-              "updated_at": "2018-11-08 13:26:13 -0800"
+              "currency-id": 4,
+              "currency-name": "spiderman pizza dollars",
+              "currency-icon-url": "/icons/original/missing.png",
+              "currency-burn-rate": 420,
+              "amount-atomic": 2499118493626,
+              "burn-amount-out": 881506374,
+              "created-at": "2018-11-05 13:27:52 -0800",
+              "updated-at": "2018-11-08 13:26:13 -0800"
             }
           },
           {
             "id": 6,
             "type": "PublicCurrencyHolding",
             "attributes": {
-              "currency_id": 4,
-              "currency_name": "spiderman pizza dollars",
-              "currency_icon_url": "/system/currencies/icons/000/000/004/original/spiderman_pizza.png?1536159151",
-              "amount_atomic": 2499118493626,
-              "burn_amount_out": 881506374,
-              "created_at": "2018-11-05 13:27:47 -0800",
-              "updated_at": "2018-11-08 13:26:13 -0800"
+              "currency-id": 4,
+              "currency-name": "spiderman pizza dollars",
+              "currency-icon-url": "/icons/original/missing.png",
+              "currency-burn-rate": 420,
+              "amount-atomic": 2499118493626,
+              "burn-amount-out": 881506374,
+              "created-at": "2018-11-05 13:27:47 -0800",
+              "updated-at": "2018-11-08 13:26:13 -0800"
             }
           }
         ]
       }
     },
     {
-      "currency_holding_pair": {
+      "currency-holding-pair": {
         "data": [
           {
             "id": 13,
             "type": "PrivateCurrencyHolding",
             "attributes": {
-              "currency_id": 5,
-              "currency_name": "Home Repair dollars",
-              "currency_icon_url": "/system/currencies/icons/000/000/005/original/home_repair.png?1536171512",
-              "amount_atomic": 4998738679556,
-              "burn_amount_out": 1261320444,
-              "created_at": "2018-11-06 13:27:52 -0800",
-              "updated_at": "2018-11-08 13:26:13 -0800"
+              "currency-id": 5,
+              "currency-name": "Home Repair dollars",
+              "currency-icon-url": "/icons/original/missing.png",
+              "currency-burn-rate": 450,
+              "amount-atomic": 4998738679556,
+              "burn-amount-out": 1261320444,
+              "created-at": "2018-11-06 13:27:52 -0800",
+              "updated-at": "2018-11-08 13:26:13 -0800"
             }
           }
         ]
       }
     },
     {
-      "currency_holding_pair": {
+      "currency-holding-pair": {
         "data": [
           {
             "id": 12,
             "type": "PrivateCurrencyHolding",
             "attributes": {
-              "currency_id": 6,
-              "currency_name": "Wholesome foods tokens",
-              "currency_icon_url": "/system/currencies/icons/000/000/006/original/home_repair.png?1536172152",
-              "amount_atomic": 9995965387034,
-              "burn_amount_out": 4034612966,
-              "created_at": "2018-11-06 13:27:52 -0800",
-              "updated_at": "2018-11-08 13:26:13 -0800"
+              "currency-id": 6,
+              "currency-name": "Wholesome foods tokens",
+              "currency-icon-url": "/icons/original/missing.png",
+              "currency-burn-rate": 710,
+              "amount-atomic": 9995965387034,
+              "burn-amount-out": 4034612966,
+              "created-at": "2018-11-06 13:27:52 -0800",
+              "updated-at": "2018-11-08 13:26:13 -0800"
             }
           }
         ]
