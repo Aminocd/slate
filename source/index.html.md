@@ -2732,6 +2732,259 @@ discontinual-message | The message explaining why the product will be cancelled
 executed | Whether the product discontinual has been executed in order to create a product cancellation. Product discontinuals are executed 30 days after being created, giving holders of the currency that the product is redeemable in time to trade in their currency for that product before it is cancelled
 created-at | The time and date when the product discontinual was cancelled
 
+# Currency Holdings
+
+## List User's Public and Private Self-Issued Currency Holdings with Authorization
+
+```shell
+curl 'https://api.mycurrency.com/users/3/authorized_self_issued_currency_holdings' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "currency-holding-pair": {
+        "data": [
+          {
+            "id": 1,
+            "type": "PrivateCurrencyHolding",
+            "attributes": {
+              "currency-id": 1,
+              "currency-name": "Micro Asteroid bucks",
+              "currency-icon-url": "/system/currencies/icons/000/000/001/original/asteroid.png?1536142415",
+              "currency-burn-rate": 500,
+              "amount-atomic": 9895827142424,
+              "burn-amount-out": 4172857576,
+              "created-at": "2018-11-05 13:27:52 -0800",
+              "updated-at": "2018-11-08 13:26:13 -0800"
+            }
+          },
+          {
+            "id": 2,
+            "type": "PublicCurrencyHolding",
+            "attributes": {
+              "currency-id": 1,
+              "currency-name": "Micro Asteroid bucks",
+              "currency-icon-url": "/system/currencies/icons/000/000/001/original/asteroid.png?1536142415",
+              "currency-burn-rate": 500,
+              "amount-atomic": 99957849922,
+              "burn-amount-out": 42150078,
+              "created-at": "2018-11-05 13:27:47 -0800",
+              "updated-at": "2018-11-08 13:26:13 -0800"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+This endpoint retrieves the full details of all of a user's public and private holdings of currencies that the user is also the issuer of, grouped in sets of up to two holdings containing the same currency 
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/authorized_self_issued_currency_holdings`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+user_id | integer | yes | The ID of the user which owns the currency holdings, provided in URL path
+exclude_empty | boolean | no | If set to true, currency holding public private pairs where neither holding has an amount_atomic value greater than zero will be excluded from the results. By default this is set to false. 
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the currency holding
+currency-id | The ID of the currency that the currency holding holds
+currency-name | The name of the currency that the currency holding holds
+currency-icon-url | The URL at which the icon picture of the currency that the currency holding holds can be found
+currency-burn-rate | The annual rate at which the currency contained within the currency holding burns, by basis point (100 = 1%) 
+amount-atomic | The amount of currency held in the currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
+burn-amount-out | The total amount that has been debited from the public currency holding as a result of the daily burnrate of the currency 
+created-at | The time and date when the public currency holding was created
+updated-at | The time and date when the public currency holding was last updated
+
+## List User's Externally Issued Currency Holdings with Authorization
+
+```shell
+curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_currency_holdings' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "currency_holding_pair": {
+        "data": [
+          {
+            "id": 3,
+            "type": "PrivateCurrencyHolding",
+            "attributes": {
+              "currency_id": 2,
+              "currency_name": "solar electricity zaps",
+              "currency_icon_url": "/system/currencies/icons/000/000/002/original/solar_zap.png?1536143418",
+              "amount_atomic": 9994565314,
+              "burn_amount_out": 5434686,
+              "created_at": "2018-11-05 13:27:52 -0800",
+              "updated_at": "2018-11-08 13:26:13 -0800"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "currency_holding_pair": {
+        "data": [
+          {
+            "id": 6,
+            "type": "PrivateCurrencyHolding",
+            "attributes": {
+              "currency_id": 3,
+              "currency_name": "Moon hotel coins",
+              "currency_icon_url": "/system/currencies/icons/000/000/002/original/hyatt_moon.png?1536158915",
+              "amount_atomic": 4997675720243,
+              "burn_amount_out": 2324279757,
+              "created_at": "2018-11-05 13:27:52 -0800",
+              "updated_at": "2018-11-08 13:26:13 -0800"
+            }
+          },
+          {
+            "id": 4,
+            "type": "PublicCurrencyHolding",
+            "attributes": {
+              "currency_id": 3,
+              "currency_name": "Moon hotel coins",
+              "currency_icon_url": "/system/currencies/icons/000/000/003/original/hyatt_moon.png?153615891b",
+              "amount_atomic": 4997675720243,
+              "burn_amount_out": 2324279757,
+              "created_at": "2018-11-05 13:27:47 -0800",
+              "updated_at": "2018-11-08 13:26:13 -0800"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "currency_holding_pair": {
+        "data": [
+          {
+            "id": 9,
+            "type": "PrivateCurrencyHolding",
+            "attributes": {
+              "currency_id": 4,
+              "currency_name": "spiderman pizza dollars",
+              "currency_icon_url": "/system/currencies/icons/000/000/004/original/spiderman_pizza.png?1536159151",
+              "amount_atomic": 2499118493626,
+              "burn_amount_out": 881506374,
+              "created_at": "2018-11-05 13:27:52 -0800",
+              "updated_at": "2018-11-08 13:26:13 -0800"
+            }
+          },
+          {
+            "id": 6,
+            "type": "PublicCurrencyHolding",
+            "attributes": {
+              "currency_id": 4,
+              "currency_name": "spiderman pizza dollars",
+              "currency_icon_url": "/system/currencies/icons/000/000/004/original/spiderman_pizza.png?1536159151",
+              "amount_atomic": 2499118493626,
+              "burn_amount_out": 881506374,
+              "created_at": "2018-11-05 13:27:47 -0800",
+              "updated_at": "2018-11-08 13:26:13 -0800"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "currency_holding_pair": {
+        "data": [
+          {
+            "id": 13,
+            "type": "PrivateCurrencyHolding",
+            "attributes": {
+              "currency_id": 5,
+              "currency_name": "Home Repair dollars",
+              "currency_icon_url": "/system/currencies/icons/000/000/005/original/home_repair.png?1536171512",
+              "amount_atomic": 4998738679556,
+              "burn_amount_out": 1261320444,
+              "created_at": "2018-11-06 13:27:52 -0800",
+              "updated_at": "2018-11-08 13:26:13 -0800"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "currency_holding_pair": {
+        "data": [
+          {
+            "id": 12,
+            "type": "PrivateCurrencyHolding",
+            "attributes": {
+              "currency_id": 6,
+              "currency_name": "Wholesome foods tokens",
+              "currency_icon_url": "/system/currencies/icons/000/000/006/original/home_repair.png?1536172152",
+              "amount_atomic": 9995965387034,
+              "burn_amount_out": 4034612966,
+              "created_at": "2018-11-06 13:27:52 -0800",
+              "updated_at": "2018-11-08 13:26:13 -0800"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+This endpoint retrieves the full details of all of a user's public and private holdings of currencies that the user is not the issuer of, grouped in sets of up to two holdings containing the same currency 
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/authorized_externally_issued_currency_holdings`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+user_id | integer | yes | The ID of the user which owns the currency holdings, provided in URL path
+exclude_empty | boolean | no | If set to true, currency holding public private pairs where neither holding has an amount_atomic value greater than zero will be excluded from the results. By default this is set to false. 
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the currency holding
+currency-id | The ID of the currency that the currency holding holds
+currency-name | The name of the currency that the currency holding holds
+currency-icon-url | The URL at which the icon picture of the currency that the currency holding holds can be found
+currency-burn-rate | The annual rate at which the currency contained within the currency holding burns, by basis point (100 = 1%) 
+amount-atomic | The amount of currency held in the currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
+burn-amount-out | The total amount that has been debited from the public currency holding as a result of the daily burnrate of the currency 
+created-at | The time and date when the public currency holding was created
+updated-at | The time and date when the public currency holding was last updated
+
 # Public Currency Holdings
 
 Unlike private currency holdings, the basic information of public currency holdings, like account balance, is publicly accessible. Authorized endpoints are only accessible to the user that owns the public currency holding and provides the full details of the holding. The publicly accessible endpoints provide basic information about the public currency holding.
@@ -2753,6 +3006,8 @@ curl 'https://api.mycurrency.com/users/3/public_currency_holdings/3' \
     "attributes": {
       "owning-user-id": 3,
       "currency-id": 2,
+      "currency-name": "ACME Toon Shop dollars",
+      "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996",
       "amount-atomic": 49918217200
     }
   }
@@ -2776,6 +3031,8 @@ Parameter | Description
 id | The ID of the public currency holding
 owning-user-id | The ID of the user that the public currency holding belongs to
 currency-id | The ID of the currency that the public currency holding holds
+currency-name | The name of the currency that the public currency holding holds
+currency-icon-url | The URL at which the icon picture of the currency that the public currency holding holds can be found
 amount-atomic | The amount of currency held in the public currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
 
 ## List User's Public Self-Issued Currency Holdings 
@@ -2796,6 +3053,8 @@ curl 'https://api.mycurrency.com/users/3/self_issued_public_currency_holdings' \
       "attributes": {
         "owning-user-id": 3,
         "currency-id": 2,
+        "currency-name": "ACME Toon Shop dollars",
+        "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996",
         "amount-atomic": 49918217200
       }
     },
@@ -2805,6 +3064,8 @@ curl 'https://api.mycurrency.com/users/3/self_issued_public_currency_holdings' \
       "attributes": {
         "owning-user-id": 3,
         "currency-id": 6,
+        "currency-name": "Diamond dollars",
+        "currency-icon-url": "/system/currencies/icons/000/000/006/original/Diamond-coins.png?1534142996",
         "amount-atomic": 99975465160 
       }
     }
@@ -2840,7 +3101,7 @@ Authentication: not required
 
 Parameter | Type | Required | Description
 --------- | ------- | ------- | -----------
-user_id | integer | yes | The ID of the user which offered the product that is being cancelled, provided in URL path
+user_id | integer | yes | The ID of the user which owns the currency holdings, provided in URL path
 min_amount | integer | no | The set of currency holdings returned will only include those with balances exceeding min_amount. The default min_amount is zero resulting in currency holdings with a zero balance not being returned.
 
 ### RESPONSE
@@ -2850,6 +3111,8 @@ Parameter | Description
 id | The ID of the public currency holding
 owning-user-id | The ID of the user that the public currency holding belongs to
 currency-id | The ID of the currency that the public currency holding holds
+currency-name | The name of the currency that the public currency holding holds
+currency-icon-url | The URL at which the icon picture of the currency that the public currency holding holds can be found
 amount-atomic | The amount of currency held in the public currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
 
 ## List User's Public Externally Issued Currency Holdings 
@@ -2870,6 +3133,8 @@ curl 'https://api.mycurrency.com/users/4/externally_issued_public_currency_holdi
       "attributes": {
         "owning-user-id": 4,
         "currency-id": 2,
+        "currency-name": "ACME Toon Shop dollars",
+        "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996",
         "amount-atomic": 119942752040
       }
     },
@@ -2879,6 +3144,8 @@ curl 'https://api.mycurrency.com/users/4/externally_issued_public_currency_holdi
       "attributes": {
         "owning-user-id": 4,
         "currency-id": 3,
+        "currency-name": "Horizon Cloud Computing dollars",
+        "currency-icon-url": "/system/currencies/icons/000/000/003/original/horizon_dollars.png?1534142996",
         "amount-atomic": 79983643440 
       }
     }
@@ -2914,7 +3181,7 @@ Authentication: not required
 
 Parameter | Type | Required | Description
 --------- | ------- | ------- | -----------
-user_id | integer | yes | The ID of the user which offered the product that is being cancelled, provided in URL path
+user_id | integer | yes | The ID of the user which owns the currency holdings, provided in URL path
 min_amount | integer | no | The set of currency holdings returned will only include those with balances exceeding min_amount. The default min_amount is zero resulting in currency holdings with a zero balance not being returned.
 
 ### RESPONSE
@@ -2924,6 +3191,8 @@ Parameter | Description
 id | The ID of the public currency holding
 owning-user-id | The ID of the user that the public currency holding belongs to
 currency-id | The ID of the currency that the public currency holding holds
+currency-name | The name of the currency that the public currency holding holds
+currency-icon-url | The URL at which the icon picture of the public currency that the currency holding holds can be found
 amount-atomic | The amount of currency held in the public currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
 
 ## Get a Public Currency Holding with Authorization
@@ -2944,6 +3213,9 @@ curl 'https://api.mycurrency.com/users/3/authorized_public_currency_holdings/3' 
     "attributes": {
       "owning-user-id": 3,
       "currency-id": 2,
+      "currency-name": "ACME Toon Shop dollars",
+      "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996",
+      "currency-burn-rate": 450,
       "amount-atomic": 49918217200,
       "transfer-out": 0,
       "transfer-in": 50000000000,
@@ -2974,6 +3246,9 @@ Parameter | Description
 id | The ID of the public currency holding
 owning-user-id | The ID of the user that the public currency holding belongs to
 currency-id | The ID of the currency that the public currency holding holds
+currency-name | The name of the currency that the public currency holding holds
+currency-icon-url | The URL at which the icon picture of the public currency that the currency holding holds can be found
+currency-burn-rate | The annual rate at which the currency contained within the public currency holding burns, by basis point (100 = 1%) 
 amount-atomic | The amount of currency held in the public currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
 transfer-out | The total amount that has been debited from the public currency holding as a result of outgoing transfers
 transfer-in | The total amount that has been credited to the public currency holding as a result of incoming transfers
@@ -3002,6 +3277,9 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_public_currency_
       "attributes": {
         "owning-user-id": 3,
         "currency-id": 2,
+        "currency-name": "ACME Toon Shop dollars",
+        "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996",
+        "currency-burn-rate": 450,
         "amount-atomic": 49918217200,
         "transfer-out": 0,
         "transfer-in": 50000000000,
@@ -3018,6 +3296,9 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_public_currency_
       "attributes": {
         "owning-user-id": 3,
         "currency-id": 6,
+        "currency-name": "Diamond dollars",
+        "currency-icon-url": "/system/currencies/icons/000/000/006/original/Diamond-coins.png?1534142996",
+        "currency-burn-rate": 300,
         "amount-atomic": 99975465160,
         "transfer-out": 50000000000,
         "transfer-in": 150000000000,
@@ -3063,6 +3344,9 @@ Parameter | Description
 id | The ID of the public currency holding
 owning-user-id | The ID of the user that the public currency holding belongs to
 currency-id | The ID of the currency that the public currency holding holds
+currency-name | The name of the currency that the public currency holding holds
+currency-icon-url | The URL at which the icon picture of the public currency that the currency holding holds can be found
+currency-burn-rate | The annual rate at which the currency contained within the public currency holding burns, by basis point (100 = 1%) 
 amount-atomic | The amount of currency held in the public currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
 transfer-out | The total amount that has been debited from the public currency holding as a result of outgoing transfers
 transfer-in | The total amount that has been credited to the public currency holding as a result of incoming transfers
@@ -3091,6 +3375,9 @@ curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_public_cur
       "attributes": {
         "owning-user-id": 4,
         "currency-id": 2,
+        "currency-name": "ACME Toon Shop dollars",
+        "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996",
+        "currency-burn-rate": 450,
         "amount-atomic": 119942752040,
         "transfer-out": 80000000000,
         "transfer-in": 200000000000,
@@ -3107,6 +3394,9 @@ curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_public_cur
       "attributes": {
         "owning-user-id": 4,
         "currency-id": 3,
+        "currency-name": "Horizon Cloud Computing dollars",
+        "currency-icon-url": "/system/currencies/icons/000/000/003/original/horizon_dollars.png?1534142996",
+        "currency-burn-rate": 420,
         "amount-atomic": 79983643440,
         "transfer-out": 80000000000,
         "transfer-in": 160000000000,
@@ -3152,6 +3442,9 @@ Parameter | Description
 id | The ID of the public currency holding
 owning-user-id | The ID of the user that the public currency holding belongs to
 currency-id | The ID of the currency that the public currency holding holds
+currency-name | The name of the currency that the public currency holding holds
+currency-icon-url | The URL at which the icon picture of the currency that the public currency holding holds can be found
+currency-burn-rate | The annual rate at which the currency contained within the public currency holding burns, by basis point (100 = 1%) 
 amount-atomic | The amount of currency held in the public currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
 transfer-out | The total amount that has been debited from the public currency holding as a result of outgoing transfers
 transfer-in | The total amount that has been credited to the public currency holding as a result of incoming transfers
@@ -3183,6 +3476,9 @@ curl 'https://api.mycurrency.com/users/4/authorized_private_currency_holdings/7'
     "attributes": {
       "owning-user-id": 4,
       "currency-id": 3,
+      "currency-name": "Horizon Cloud Computing dollars",
+      "currency-icon-url": "/system/currencies/icons/000/000/003/original/horizon_dollars.png?1534142996",
+      "currency-burn-rate": 420,
       "amount-atomic": 0,
       "transfer-out": 100000000000,
       "transfer-in": 0,
@@ -3211,17 +3507,20 @@ Authentication: the request requires the OAuth access-token associated with the 
 
 Parameter | Description
 --------- | -----------
-id | The ID of the public currency holding
-owning-user-id | The ID of the user that the public currency holding belongs to
-currency-id | The ID of the currency that the public currency holding holds
-amount-atomic | The amount of currency held in the public currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
-transfer-out | The total amount that has been debited from the public currency holding as a result of outgoing transfers
-transfer-in | The total amount that has been credited to the public currency holding as a result of incoming transfers
-micro-currency-order-out | The total amount that has been debited from the public currency holding as a result of micro_currency_orders 
-issuance-in | The total amount that has been credited to the public currency holding as a result of incoming issuances
-burn-amount-out | The total amount that has been debited from the public currency holding as a result of the daily burnrate of the currency 
-created-at | The time and date when the public currency holding was created
-updated-at | The time and date when the public currency holding was last updated
+id | The ID of the private currency holding
+owning-user-id | The ID of the user that the private currency holding belongs to
+currency-id | The ID of the currency that the private currency holding holds
+currency-name | The name of the currency that the private currency holding holds
+currency-icon-url | The URL at which the icon picture of the currency that the private currency holding holds can be found
+currency-burn-rate | The annual rate at which the currency contained within the private currency holding burns, by basis point (100 = 1%) 
+amount-atomic | The amount of currency held in the private currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
+transfer-out | The total amount that has been debited from the private currency holding as a result of outgoing transfers
+transfer-in | The total amount that has been credited to the private currency holding as a result of incoming transfers
+micro-currency-order-out | The total amount that has been debited from the private currency holding as a result of micro_currency_orders 
+issuance-in | The total amount that has been credited to the private currency holding as a result of incoming issuances
+burn-amount-out | The total amount that has been debited from the private currency holding as a result of the daily burnrate of the currency 
+created-at | The time and date when the private currency holding was created
+updated-at | The time and date when the private currency holding was last updated
 
 ## List User's Private Self-Issued Currency Holdings with Authorization
 
@@ -3242,6 +3541,9 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_private_currency
       "attributes": {
         "owning-user-id": 4,
         "currency-id": 4,
+        "currency-name": "Tom's Fruitstand bucks",
+        "currency-icon-url": "/system/currencies/icons/000/000/004/original/Toms_bucks.png?1534144151",
+        "currency-burn-rate": 500,
         "amount-atomic": 9964274765720,
         "transfer-out": 0,
         "transfer-in": 0,
@@ -3259,6 +3561,9 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_private_currency
       "attributes": {
         "owning-user-id": 4,
         "currency-id": 5,
+        "currency-name": "Chilli pesos",
+        "currency-icon-url": "/system/currencies/icons/000/000/005/original/chilli_pesos.png?1534151581",
+        "currency-burn-rate": 500,
         "amount-atomic": 9938553881223,
         "transfer-out": 0,
         "transfer-in": 0,
@@ -3276,6 +3581,9 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_private_currency
       "attributes": {
         "owning-user-id": 4,
         "currency-id": 6,
+        "currency-name": "Diamond dollars",
+        "currency-icon-url": "/system/currencies/icons/000/000/006/original/Diamond-coins.png?1534142996",
+        "currency-burn-rate": 300,
         "amount-atomic": 9989990954562,
         "transfer-out": 0,
         "transfer-in": 0,
@@ -3319,17 +3627,20 @@ Authentication: the request requires the OAuth access-token associated with the 
 
 Parameter | Description
 --------- | -----------
-id | The ID of the public currency holding
-owning-user-id | The ID of the user that the public currency holding belongs to
-currency-id | The ID of the currency that the public currency holding holds
-amount-atomic | The amount of currency held in the public currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
-transfer-out | The total amount that has been debited from the public currency holding as a result of outgoing transfers
-transfer-in | The total amount that has been credited to the public currency holding as a result of incoming transfers
-micro-currency-order-out | The total amount that has been debited from the public currency holding as a result of micro_currency_orders 
-issuance-in | The total amount that has been credited to the public currency holding as a result of incoming issuances
-burn-amount-out | The total amount that has been debited from the public currency holding as a result of the daily burnrate of the currency 
-created-at | The time and date when the public currency holding was created
-updated-at | The time and date when the public currency holding was last updated
+id | The ID of the private currency holding
+owning-user-id | The ID of the user that the private currency holding belongs to
+currency-id | The ID of the currency that the private currency holding holds
+currency-name | The name of the currency that the private currency holding holds
+currency-icon-url | The URL at which the icon picture of the currency that the private currency holding holds can be found
+currency-burn-rate | The annual rate at which the currency contained within the private currency holding burns, by basis point (100 = 1%) 
+amount-atomic | The amount of currency held in the private currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
+transfer-out | The total amount that has been debited from the private currency holding as a result of outgoing transfers
+transfer-in | The total amount that has been credited to the private currency holding as a result of incoming transfers
+micro-currency-order-out | The total amount that has been debited from the private currency holding as a result of micro_currency_orders 
+issuance-in | The total amount that has been credited to the private currency holding as a result of incoming issuances
+burn-amount-out | The total amount that has been debited from the private currency holding as a result of the daily burnrate of the currency 
+created-at | The time and date when the private currency holding was created
+updated-at | The time and date when the private currency holding was last updated
 
 ## List User's Private Externally Issued Currency Holdings with Authorization
 
@@ -3350,6 +3661,9 @@ curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_private_cu
     "attributes": {
     "owning-user-id": 4,
     "currency-id": 3,
+    "currency-name": "Horizon Cloud Computing dollars",
+    "currency-icon-url": "/system/currencies/icons/000/000/003/original/horizon_dollars.png?1534142996",
+    "currency-burn-rate": 420,
     "amount-atomic": 0,
     "transfer-out": 100000000000,
     "transfer-in": 0,
@@ -3393,17 +3707,20 @@ Authentication: the request requires the OAuth access-token associated with the 
 
 Parameter | Description
 --------- | -----------
-id | The ID of the public currency holding
-owning-user-id | The ID of the user that the public currency holding belongs to
-currency-id | The ID of the currency that the public currency holding holds
-amount-atomic | The amount of currency held in the public currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
-transfer-out | The total amount that has been debited from the public currency holding as a result of outgoing transfers
-transfer-in | The total amount that has been credited to the public currency holding as a result of incoming transfers
-micro-currency-order-out | The total amount that has been debited from the public currency holding as a result of micro_currency_orders 
-issuance-in | The total amount that has been credited to the public currency holding as a result of incoming issuances
-burn-amount-out | The total amount that has been debited from the public currency holding as a result of the daily burnrate of the currency 
-created-at | The time and date when the public currency holding was created
-updated-at | The time and date when the public currency holding was last updated
+id | The ID of the private currency holding
+owning-user-id | The ID of the user that the private currency holding belongs to
+currency-id | The ID of the currency that the private currency holding holds
+currency-name | The name of the currency that the private currency holding holds
+currency-icon-url | The URL at which the icon picture of the currency that the private currency holding holds can be found
+currency-burn-rate | The annual rate at which the currency contained within the private currency holding burns, by basis point (100 = 1%) 
+amount-atomic | The amount of currency held in the private currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
+transfer-out | The total amount that has been debited from the private currency holding as a result of outgoing transfers
+transfer-in | The total amount that has been credited to the private currency holding as a result of incoming transfers
+micro-currency-order-out | The total amount that has been debited from the private currency holding as a result of micro_currency_orders 
+issuance-in | The total amount that has been credited to the private currency holding as a result of incoming issuances
+burn-amount-out | The total amount that has been debited from the private currency holding as a result of the daily burnrate of the currency 
+created-at | The time and date when the private currency holding was created
+updated-at | The time and date when the private currency holding was last updated
 
 # Transactions
 
