@@ -1539,6 +1539,10 @@ This endpoint retrieves all store reviews received by stores belonging to curren
 
 `GET https://api.mycurrency.com/issuers/<ISSUER-ID>/received_store_reviews`
 
+OR
+
+`GET https://api.mycurrency.com/users/<USER-ID>/issuer/received_store_reviews`
+
 <aside class="notice">
 Authentication: not required
 </aside>
