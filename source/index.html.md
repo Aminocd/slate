@@ -2738,7 +2738,7 @@ created-at | The time and date when the product discontinual was cancelled
 
 # Currency Holdings
 
-## List User's Public and Private Self-Issued Currency Holdings with Authorization
+## List User's Self-Issued Currency Holdings with Authorization
 
 ```shell
 curl 'https://api.mycurrency.com/users/3/authorized_self_issued_currency_holdings' \
