@@ -1401,11 +1401,11 @@ Authentication: the request requires the OAuth access-token associated with the 
 Parameter | Type | Required | Description
 --------- | ------- | ------- | -----------
 store_id | integer | yes | The ID of the store that the product is sold, provided in URL path
-sub_category_id | integer | yes | The sub category that the product belongs to 
-product_name | string | yes | The name of the product
-product_description | string | no | The description of the product
+sub_location_id | integer | yes | The sub location where the store is located
+physical | integer | yes | Whether the store is a physical location that customers can visit
+store_name | string | yes | The name of the store
+store_description | string | no | The description of the product
 active
-store-description | string | no | The description of the store
 
 ### RESPONSE
 
