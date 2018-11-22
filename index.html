@@ -407,6 +407,9 @@
                     <a href="#list-user-39-s-public-externally-issued-currency-holdings" class="toc-h2 toc-link" data-title="List User's Public Externally Issued Currency Holdings">List User's Public Externally Issued Currency Holdings</a>
                   </li>
                   <li>
+                    <a href="#list-public-holdings-of-currency" class="toc-h2 toc-link" data-title="List Public Holdings of Currency">List Public Holdings of Currency</a>
+                  </li>
+                  <li>
                     <a href="#get-a-public-currency-holding-with-authorization" class="toc-h2 toc-link" data-title="Get a Public Currency Holding with Authorization">Get a Public Currency Holding with Authorization</a>
                   </li>
                   <li>
@@ -1838,7 +1841,7 @@ Authentication: not required
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver ACME Toon Shop"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All manner of ACME Toon items available"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver ACME Toon Shop All manner of ACME Toon items available</span><span class="se">\n</span><span class="s2">Bugs Bunny Q-Tips - q-tips that work on the biggest ears, Toon products, products usable by toons - 1550</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-13T05:45:12.342-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-13T05:45:12.342-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-13T05:45:12.342-07:00"</span><span class="p">,</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
@@ -1944,7 +1947,7 @@ Authentication: not required
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver ACME Toon Shop"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All manner of ACME Toon items available"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver ACME Toon Shop All manner of ACME Toon items available</span><span class="se">\n</span><span class="s2">Bugs Bunny Q-Tips - q-tips that work on the biggest ears, Toon products, products usable by toons - 1550</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-13T05:45:12.342-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-13T05:45:12.342-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-13T05:45:12.342-07:00"</span><span class="p">,</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
@@ -4944,8 +4947,54 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all of a user&#39;s publicly viewable holdings of currencies that the user is not the issuer of.</p>
-<h3 id='http-request-44'>HTTP Request</h3>
-<p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/self_issued_public_currency_holdings</code></p>
+<h2 id='list-public-holdings-of-currency'>List Public Holdings of Currency</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/currencies/4/public_currency_holdings'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"public-currency-holdings"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"owning-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spiderman pizza dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">999647397450</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"public-currency-holdings"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"owning-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spiderman pizza dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">2499118493626</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/currencies/4/public_currency_holdings?"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/currencies/4/public_currency_holdings?page=1&amp;per_page=25"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"prev"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/currencies/4/public_currency_holdings?page=1&amp;per_page=25"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"per-page"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total-pages"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total-count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-44'>HTTP Request</h3>
+<p><code>GET https://api.mycurrency.com/currencies/&lt;CURRENCY-ID&gt;/public_currency_holdings</code></p>
 
 <aside class="notice">
 Authentication: not required
@@ -4960,10 +5009,10 @@ Authentication: not required
 </tr>
 </thead><tbody>
 <tr>
-<td>user_id</td>
+<td>currency_id</td>
 <td>integer</td>
 <td>yes</td>
-<td>The ID of the user which owns the currency holdings, provided in URL path</td>
+<td>The ID of the currency that the public holdings returned contain, provided in URL path</td>
 </tr>
 <tr>
 <td>min_amount</td>
