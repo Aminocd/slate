@@ -3180,6 +3180,32 @@ curl 'https://api.mycurrency.com/users/4/externally_issued_public_currency_holdi
 
 This endpoint retrieves all of a user's publicly viewable holdings of currencies that the user is not the issuer of.
 
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/externally_issued_public_currency_holdings`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+user_id | integer | yes | The ID of the user which owns the currency holdings, provided in URL path
+min_amount | integer | no | The set of currency holdings returned will only include those with balances exceeding min_amount. The default min_amount is zero resulting in currency holdings with a zero balance not being returned.
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the public currency holding
+owning-user-id | The ID of the user that the public currency holding belongs to
+currency-id | The ID of the currency that the public currency holding holds
+currency-name | The name of the currency that the public currency holding holds
+currency-icon-url | The URL at which the icon picture of the currency that the public currency holding holds can be found
+amount-atomic | The amount of currency held in the public currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
+
 ## List Public Holdings of Currency
 
 ```shell
