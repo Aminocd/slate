@@ -923,7 +923,7 @@ curl "https://api.mycurrency.com/stores" \
         "store-name": "Vancouver ACME Toon Shop",
         "store-description": "All manner of ACME Toon items available",
         "index": "Vancouver ACME Toon Shop All manner of ACME Toon items available\nBugs Bunny Q-Tips - q-tips that work on the biggest ears, Toon products, products usable by toons - 1550\n",
-        "updated-at": "2018-08-13T05:45:12.342-07:00",
+        "created-at": "2018-08-13T05:45:12.342-07:00",
         "updated-at": "2018-08-13T05:45:12.342-07:00",
       }
     },
@@ -1007,7 +1007,7 @@ curl "https://api.mycurrency.com/currencies/2/stores" \
         "store-name": "Vancouver ACME Toon Shop",
         "store-description": "All manner of ACME Toon items available",
         "index": "Vancouver ACME Toon Shop All manner of ACME Toon items available\nBugs Bunny Q-Tips - q-tips that work on the biggest ears, Toon products, products usable by toons - 1550\n",
-        "updated-at": "2018-08-13T05:45:12.342-07:00",
+        "created-at": "2018-08-13T05:45:12.342-07:00",
         "updated-at": "2018-08-13T05:45:12.342-07:00",
       }
     },
@@ -3180,9 +3180,61 @@ curl 'https://api.mycurrency.com/users/4/externally_issued_public_currency_holdi
 
 This endpoint retrieves all of a user's publicly viewable holdings of currencies that the user is not the issuer of.
 
+## List Public Holdings of Currency
+
+```shell
+curl 'https://api.mycurrency.com/currencies/4/public_currency_holdings' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "5",
+      "type": "public-currency-holdings",
+      "attributes": {
+        "owning-user-id": 1,
+        "currency-id": 4,
+        "currency-name": "spiderman pizza dollars",
+        "currency-icon-url": "/icons/original/missing.png",
+        "amount-atomic": 999647397450
+      }
+    },
+    {
+      "id": "6",
+      "type": "public-currency-holdings",
+      "attributes": {
+        "owning-user-id": 3,
+        "currency-id": 4,
+        "currency-name": "spiderman pizza dollars",
+        "currency-icon-url": "/icons/original/missing.png",
+        "amount-atomic": 2499118493626
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/currencies/4/public_currency_holdings?",
+    "first": "https://api.mycurrency.com/currencies/4/public_currency_holdings?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/currencies/4/public_currency_holdings?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "2"
+    }
+  }
+}
+```
+
 ### HTTP Request
 
-`GET https://api.mycurrency.com/users/<USER-ID>/self_issued_public_currency_holdings`
+`GET https://api.mycurrency.com/currencies/<CURRENCY-ID>/public_currency_holdings`
 
 <aside class="notice">
 Authentication: not required
@@ -3192,7 +3244,7 @@ Authentication: not required
 
 Parameter | Type | Required | Description
 --------- | ------- | ------- | -----------
-user_id | integer | yes | The ID of the user which owns the currency holdings, provided in URL path
+currency_id | integer | yes | The ID of the currency that the public holdings returned contain, provided in URL path
 min_amount | integer | no | The set of currency holdings returned will only include those with balances exceeding min_amount. The default min_amount is zero resulting in currency holdings with a zero balance not being returned.
 
 ### RESPONSE
