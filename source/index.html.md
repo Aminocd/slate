@@ -3305,6 +3305,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_public_currency_holdings/3' 
       "currency-name": "ACME Toon Shop dollars",
       "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996",
       "currency-burn-rate": 450,
+      "currency-daily-burn-rate": 0.00012614 
       "amount-atomic": 49918217200,
       "transfer-out": 0,
       "transfer-in": 50000000000,
@@ -3369,6 +3370,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_public_currency_
         "currency-name": "ACME Toon Shop dollars",
         "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996",
         "currency-burn-rate": 450,
+        "currency-daily-burn-rate": 0.00012614 
         "amount-atomic": 49918217200,
         "transfer-out": 0,
         "transfer-in": 50000000000,
@@ -3388,6 +3390,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_public_currency_
         "currency-name": "Diamond dollars",
         "currency-icon-url": "/system/currencies/icons/000/000/006/original/Diamond-coins.png?1534142996",
         "currency-burn-rate": 300,
+        "currency-daily-burn-rate": 0.00008345 
         "amount-atomic": 99975465160,
         "transfer-out": 50000000000,
         "transfer-in": 150000000000,
@@ -3467,6 +3470,7 @@ curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_public_cur
         "currency-name": "ACME Toon Shop dollars",
         "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996",
         "currency-burn-rate": 450,
+        "currency-daily-burn-rate": 0.00012614 
         "amount-atomic": 119942752040,
         "transfer-out": 80000000000,
         "transfer-in": 200000000000,
@@ -3486,6 +3490,7 @@ curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_public_cur
         "currency-name": "Horizon Cloud Computing dollars",
         "currency-icon-url": "/system/currencies/icons/000/000/003/original/horizon_dollars.png?1534142996",
         "currency-burn-rate": 420,
+        "currency-daily-burn-rate": 0.00011755
         "amount-atomic": 79983643440,
         "transfer-out": 80000000000,
         "transfer-in": 160000000000,
@@ -3568,6 +3573,7 @@ curl 'https://api.mycurrency.com/users/4/authorized_private_currency_holdings/7'
       "currency-name": "Horizon Cloud Computing dollars",
       "currency-icon-url": "/system/currencies/icons/000/000/003/original/horizon_dollars.png?1534142996",
       "currency-burn-rate": 420,
+      "currency-daily-burn-rate": 0.00011755
       "amount-atomic": 0,
       "transfer-out": 100000000000,
       "transfer-in": 0,
@@ -3633,6 +3639,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_private_currency
         "currency-name": "Tom's Fruitstand bucks",
         "currency-icon-url": "/system/currencies/icons/000/000/004/original/Toms_bucks.png?1534144151",
         "currency-burn-rate": 500,
+        "currency-daily-burn-rate": 0.00014052
         "amount-atomic": 9964274765720,
         "transfer-out": 0,
         "transfer-in": 0,
@@ -3653,6 +3660,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_private_currency
         "currency-name": "Chilli pesos",
         "currency-icon-url": "/system/currencies/icons/000/000/005/original/chilli_pesos.png?1534151581",
         "currency-burn-rate": 500,
+        "currency-daily-burn-rate": 0.00014052
         "amount-atomic": 9938553881223,
         "transfer-out": 0,
         "transfer-in": 0,
@@ -3673,6 +3681,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_private_currency
         "currency-name": "Diamond dollars",
         "currency-icon-url": "/system/currencies/icons/000/000/006/original/Diamond-coins.png?1534142996",
         "currency-burn-rate": 300,
+        "currency-daily-burn-rate": 0.00008345 
         "amount-atomic": 9989990954562,
         "transfer-out": 0,
         "transfer-in": 0,
@@ -3753,6 +3762,7 @@ curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_private_cu
     "currency-name": "Horizon Cloud Computing dollars",
     "currency-icon-url": "/system/currencies/icons/000/000/003/original/horizon_dollars.png?1534142996",
     "currency-burn-rate": 420,
+    "currency-daily-burn-rate": 0.00011755
     "amount-atomic": 0,
     "transfer-out": 100000000000,
     "transfer-in": 0,
@@ -3786,7 +3796,7 @@ This endpoint retrieves the full details of all of a user's privately viewable h
 
 ### HTTP Request
 
-`GET https://api.mycurrency.com/users/<USER-ID>/authorized_externally_issued_public_currency_holdings`
+`GET https://api.mycurrency.com/users/<USER-ID>/authorized_externally_issued_private_currency_holdings`
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 

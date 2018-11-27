@@ -2488,27 +2488,32 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The ID of the store that the product is sold, provided in URL path</td>
 </tr>
 <tr>
-<td>sub_category_id</td>
+<td>sub_location_id</td>
 <td>integer</td>
 <td>yes</td>
-<td>The sub category that the product belongs to</td>
+<td>The sub location where the store is located</td>
 </tr>
 <tr>
-<td>product_name</td>
+<td>physical</td>
+<td>integer</td>
+<td>yes</td>
+<td>Whether the store is a physical location that customers can visit</td>
+</tr>
+<tr>
+<td>store_name</td>
 <td>string</td>
 <td>yes</td>
-<td>The name of the product</td>
+<td>The name of the store</td>
 </tr>
 <tr>
-<td>product_description</td>
+<td>store_description</td>
 <td>string</td>
 <td>no</td>
 <td>The description of the product</td>
 </tr>
 </tbody></table>
 
-<p>active
-store-description | string | no | The description of the store</p>
+<p>active</p>
 <h3 id='response-21'>RESPONSE</h3>
 <table><thead>
 <tr>
