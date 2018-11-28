@@ -4848,6 +4848,7 @@ curl 'https://api.mycurrency.com/transfers/7' -H 'Accept: application/json' \
       "receiving-user-id": 3,
       "receiver-username": "Hannibal",
       "sender-day-counter": 36,
+      "sender-burnrate-period-id": 10
       "transfer-sender-currency-holding-type": "PrivateCurrencyHolding",
       "transfer-receiver-currency-holding-type": "PrivateCurrencyHolding",
       "transfer-sender-currency-holding-id": 5,
@@ -4882,6 +4883,8 @@ receiving-user-id | The ID of the transfer receiver, only shown if the owner of 
 receiver-username | The username of the transfer receiver, only shown if the owner of the currency holding that the transfer debited from is the logged-in user 
 sender-day-counter | The day counter of the sending currency holding when it was debited by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
 receiver-day-counter | The day counter of the receiving currency holding when it was credited by the transfer, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
+sender-burnrate-period-id | The ID of the burnrate period of the sending currency holding when it was debited by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
+receiver-burnrate-period-id | The ID of the burnrate period of the receiving currency holding when it was credited by the transfer, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
 transfer-sender-currency-holding-type | Whether the currency holding that the transfer debited from is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding", only shown if the owner of the currency holding that the transfer debited from is the logged-in user
 transfer-sender-currency-holding-id | The ID of the public or private currency holding that the transfer debited from, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
 transfer-receiver-currency-holding-type | Whether the currency holding that the transfer credited to is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding", only shown if the owner of the currency holding that the transfer credited to is the logged-in user
@@ -4918,6 +4921,7 @@ curl -X POST https://api.mycurrency.com/users/4/transfers \
       "receiving-user-id": 3,
       "receiver-username": "Hannibal",
       "sender-day-counter": 43,
+      "sender-burnrate-period-id": 10
       "transfer-sender-currency-holding-type": "PrivateCurrencyHolding",
       "transfer-receiver-currency-holding-type": "PrivateCurrencyHolding",
       "transfer-sender-currency-holding-id": 5,   
@@ -8677,6 +8681,7 @@ source-currency-holding-id | The ID of the public or private currency holding th
 source-currency-holding-type | Whether the currency holding that the micro currency order spent from is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding", only shown if the logged in user made the order
 before-amount-atomic | The balance, in atomic units, of the currency holding before it was debited by the micro currency order, only shown if the logged in user made the order
 after-amount-atomic | The balance, in atomic units, of the currency holding after it was debited by the micro currency order, only shown if the logged in user made the order
+burnrate-period-id | The ID of the burnrate period of the currency holding when it was debited by the micro currency order, only shown if the logged in user made the order 
 day-counter | The day counter of the currency holding when it was debited by the micro currency order, only shown if the logged in user made the order
 amount-atomic | The amount of currency spent, in atomic units (each whole unit is composed of 10^10 atomic units)
 product-id | The ID of the product that was ordered
