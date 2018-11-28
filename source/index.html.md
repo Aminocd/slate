@@ -8823,6 +8823,7 @@ source-currency-holding-id | The ID of the public or private currency holding th
 source-currency-holding-type | Whether the currency holding that the micro currency order spent from is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding", only shown if the logged in user made the order
 before-amount-atomic | The balance, in atomic units, of the currency holding before it was debited by the micro currency order, only shown if the logged in user made the order
 after-amount-atomic | The balance, in atomic units, of the currency holding after it was debited by the micro currency order, only shown if the logged in user made the order
+burnrate-period-id | The ID of the burnrate period of the currency holding when it was debited by the micro currency order, only shown if the logged in user made the order 
 day-counter | The day counter of the currency holding when it was debited by the micro currency order, only shown if the logged in user made the order
 amount-atomic | The amount of currency spent, in atomic units (each whole unit is composed of 10^10 atomic units)
 product-id | The ID of the product that was ordered
@@ -8906,6 +8907,7 @@ source-currency-holding-id | The ID of the public or private currency holding th
 source-currency-holding-type | Whether the currency holding that the micro currency order spent from is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding", only shown if the logged in user made the order
 before-amount-atomic | The balance, in atomic units, of the currency holding before it was debited by the micro currency order, only shown if the logged in user made the order
 after-amount-atomic | The balance, in atomic units, of the currency holding after it was debited by the micro currency order, only shown if the logged in user made the order
+burnrate-period-id | The ID of the burnrate period of the currency holding when it was debited by the micro currency order, only shown if the logged in user made the order 
 day-counter | The day counter of the currency holding when it was debited by the micro currency order, only shown if the logged in user made the order
 amount-atomic | The amount of currency spent, in atomic units (each whole unit is composed of 10^10 atomic units)
 product-id | The ID of the product that was ordered
