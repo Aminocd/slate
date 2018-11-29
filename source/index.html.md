@@ -64,6 +64,56 @@ created-at | The time and date when the user was created
 active | Whether the user is active or not
 get-avatar-url | The URL at which the user profile picture can be found
 
+## Get a User from Username
+
+```shell
+curl 'https://api.mycurrency.com/get_user_from_username?q=RonaldMcDonald' \
+  -H 'Host: api.mycurrency.com' -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "2",
+    "type": "users",
+    "attributes": {
+      "username": "RonaldMcDonald",
+      "created-at": "2018-08-08T01:22:54.571-07:00",
+      "active": true,
+      "get-avatar-url": "/system/users/avatars/000/000/002/original/afternoon_portrait.jpg?1534139495"
+    }
+  }
+}
+```
+
+This endpoint retrieves a particular user and its basic public information by ID.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/get_user_from_username?q=RonaldMcDonald`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+q | string | yes | The username of the user queried
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the user
+username | The username that the user is identified by
+created-at | The time and date when the user was created
+active | Whether the user is active or not
+get-avatar-url | The URL at which the user profile picture can be found
+
 ## Get a User with Authorization
 
 ```shell
