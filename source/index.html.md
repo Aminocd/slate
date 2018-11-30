@@ -8668,7 +8668,7 @@ latitude | The latitude of the sub location
 time-zone | The time zone of the sub location
 mid-location-id | The ID of the parent mid location
 
-# Orders
+j Orders
 
 ## Get an Order
 
@@ -8688,8 +8688,6 @@ curl 'https://api.mycurrency.com/order_sets/1' -H 'Accept: application/json' \
       "store-id": 3,
       "store-name": "Freds Fishing Supplies",
       "order-set-id": 1,
-      "ordering-user-id": 3
-      "ordering-user-name": "Hannibal"
       "source-currency-holding-id": 9,
       "source-currency-holding-type": "PrivateCurrencyHolding",
       "spent-currency-id": 5,
@@ -8762,8 +8760,6 @@ curl 'https://api.mycurrency.com/order_sets?ordering_user_id=3' \
         "store-id": 3,
         "store-name": "Freds Fishing Supplies",
         "order-set-id": 1,
-        "ordering-user-id": 3
-        "ordering-user-name": "Hannibal"
         "source-currency-holding-id": 9,
         "source-currency-holding-type": "PrivateCurrencyHolding",
         "spent-currency-id": 5,
@@ -8787,8 +8783,6 @@ curl 'https://api.mycurrency.com/order_sets?ordering_user_id=3' \
         "store-id": 3,
         "store-name": "Freds Fishing Supplies",
         "order-set-id": 2,
-        "ordering-user-id": 3
-        "ordering-user-name": "Hannibal"
         "source-currency-holding-id": 9,
         "source-currency-holding-type": "PrivateCurrencyHolding",
         "spent-currency-id": 5,
@@ -8812,8 +8806,6 @@ curl 'https://api.mycurrency.com/order_sets?ordering_user_id=3' \
         "store-id": 3,
         "store-name": "Freds Fishing Supplies",
         "order-set-id": 3,
-        "ordering-user-id": 3
-        "ordering-user-name": "Hannibal"
         "source-currency-holding-id": 9,
         "source-currency-holding-type": "PrivateCurrencyHolding",
         "spent-currency-id": 5,
@@ -8910,8 +8902,6 @@ curl -X POST https://api.mycurrency.com/users/3/order_sets \
       "store-id": 3,
       "store-name": "Freds Fishing Supplies",
       "order-set-id": 1,
-      "ordering-user-id": 3
-      "ordering-user-name": "Hannibal"
       "source-currency-holding-id": 9,
       "source-currency-holding-type": "PrivateCurrencyHolding",
       "spent-currency-id": 5,
