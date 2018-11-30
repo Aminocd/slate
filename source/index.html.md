@@ -8688,6 +8688,8 @@ curl 'https://api.mycurrency.com/order_sets/1' -H 'Accept: application/json' \
       "store-id": 3,
       "store-name": "Freds Fishing Supplies",
       "order-set-id": 1,
+      "ordering-user-id": 3
+      "ordering-user-name": "Hannibal"
       "source-currency-holding-id": 9,
       "source-currency-holding-type": "PrivateCurrencyHolding",
       "spent-currency-id": 5,
@@ -8726,7 +8728,7 @@ store-id | The ID of the store that the micro currency order was spent at
 store-name | The name of the store that the micro currency order was spent at
 order-set-id | The ID of the order set that the micro currency order is associated with
 ordering-user-id | The ID of the user that made the order, only shown if the logged in user is the owner of the store that received the order
-ordering-user-id | The username of the user that made the order, only shown if the logged in user is the owner of the store that received the order
+ordering-user-name | The username of the user that made the order, only shown if the logged in user is the owner of the store that received the order
 source-currency-holding-id | The ID of the public or private currency holding that the micro currency order spent from, only shown if the logged in user made the order
 source-currency-holding-type | Whether the currency holding that the micro currency order spent from is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding", only shown if the logged in user made the order
 before-amount-atomic | The balance, in atomic units, of the currency holding before it was debited by the micro currency order, only shown if the logged in user made the order
@@ -8760,6 +8762,8 @@ curl 'https://api.mycurrency.com/order_sets?ordering_user_id=3' \
         "store-id": 3,
         "store-name": "Freds Fishing Supplies",
         "order-set-id": 1,
+        "ordering-user-id": 3
+        "ordering-user-name": "Hannibal"
         "source-currency-holding-id": 9,
         "source-currency-holding-type": "PrivateCurrencyHolding",
         "spent-currency-id": 5,
@@ -8783,6 +8787,8 @@ curl 'https://api.mycurrency.com/order_sets?ordering_user_id=3' \
         "store-id": 3,
         "store-name": "Freds Fishing Supplies",
         "order-set-id": 2,
+        "ordering-user-id": 3
+        "ordering-user-name": "Hannibal"
         "source-currency-holding-id": 9,
         "source-currency-holding-type": "PrivateCurrencyHolding",
         "spent-currency-id": 5,
@@ -8806,6 +8812,8 @@ curl 'https://api.mycurrency.com/order_sets?ordering_user_id=3' \
         "store-id": 3,
         "store-name": "Freds Fishing Supplies",
         "order-set-id": 3,
+        "ordering-user-id": 3
+        "ordering-user-name": "Hannibal"
         "source-currency-holding-id": 9,
         "source-currency-holding-type": "PrivateCurrencyHolding",
         "spent-currency-id": 5,
@@ -8868,7 +8876,7 @@ store-id | The ID of the store that the micro currency order was spent at
 store-name | The name of the store that the micro currency order was spent at
 order-set-id | The ID of the order set that the micro currency order is associated with
 ordering-user-id | The ID of the user that made the order, only shown if the logged in user is the owner of the store that received the order
-ordering-user-id | The username of the user that made the order, only shown if the logged in user is the owner of the store that received the order
+ordering-user-name | The username of the user that made the order, only shown if the logged in user is the owner of the store that received the order
 source-currency-holding-id | The ID of the public or private currency holding that the micro currency order spent from, only shown if the logged in user made the order
 source-currency-holding-type | Whether the currency holding that the micro currency order spent from is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding", only shown if the logged in user made the order
 before-amount-atomic | The balance, in atomic units, of the currency holding before it was debited by the micro currency order, only shown if the logged in user made the order
@@ -8902,6 +8910,8 @@ curl -X POST https://api.mycurrency.com/users/3/order_sets \
       "store-id": 3,
       "store-name": "Freds Fishing Supplies",
       "order-set-id": 1,
+      "ordering-user-id": 3
+      "ordering-user-name": "Hannibal"
       "source-currency-holding-id": 9,
       "source-currency-holding-type": "PrivateCurrencyHolding",
       "spent-currency-id": 5,
@@ -8952,7 +8962,7 @@ store-id | The ID of the store that the micro currency order was spent at
 store-name | The name of the store that the micro currency order was spent at
 order-set-id | The ID of the order set that the micro currency order is associated with
 ordering-user-id | The ID of the user that made the order, only shown if the logged in user is the owner of the store that received the order
-ordering-user-id | The username of the user that made the order, only shown if the logged in user is the owner of the store that received the order
+ordering-user-name | The username of the user that made the order, only shown if the logged in user is the owner of the store that received the order
 source-currency-holding-id | The ID of the public or private currency holding that the micro currency order spent from, only shown if the logged in user made the order
 source-currency-holding-type | Whether the currency holding that the micro currency order spent from is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding", only shown if the logged in user made the order
 before-amount-atomic | The balance, in atomic units, of the currency holding before it was debited by the micro currency order, only shown if the logged in user made the order
