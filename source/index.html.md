@@ -9412,7 +9412,7 @@ This endpoint retrieves the voucher associated with a particular order. The logg
 
 ### HTTP Request
 
-`GET https://api.mycurrency.com/order_sets/<ORDER_SET_ID>/voucher`
+`GET https://api.mycurrency.com/order_sets/<ORDER-SET-ID>/voucher`
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User that issued the voucher or the user that holds it
