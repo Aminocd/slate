@@ -630,6 +630,9 @@
                     <a href="#get-a-voucher" class="toc-h2 toc-link" data-title="Get a Voucher">Get a Voucher</a>
                   </li>
                   <li>
+                    <a href="#get-an-order-39-s-voucher" class="toc-h2 toc-link" data-title="Get an Order's Voucher">Get an Order's Voucher</a>
+                  </li>
+                  <li>
                     <a href="#list-vouchers" class="toc-h2 toc-link" data-title="List Vouchers">List Vouchers</a>
                   </li>
                   <li>
@@ -13373,9 +13376,104 @@ Authentication: the request requires the OAuth access-token associated with the 
 <p><code>GET https://api.mycurrency.com/vouchers/&lt;ID&gt;</code></p>
 
 <aside class="notice">
-Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+Authentication: the request requires the OAuth access-token associated with the User that issued the voucher or the user that holds it
 </aside>
 <h3 id='response-100'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the voucher</td>
+</tr>
+<tr>
+<td>micro-currency-order-id</td>
+<td>The ID of the micro currency order that purchased the voucher</td>
+</tr>
+<tr>
+<td>holding-user-id</td>
+<td>The ID of the user that purchased the voucher</td>
+</tr>
+<tr>
+<td>holding-user-username</td>
+<td>The username of the user that purchased the voucher</td>
+</tr>
+<tr>
+<td>product-id</td>
+<td>The ID of the product for which the voucher is redeemable for</td>
+</tr>
+<tr>
+<td>product-name</td>
+<td>The name of the product for which the voucher is redeemable for</td>
+</tr>
+<tr>
+<td>product-quantity</td>
+<td>The quantity of the product for which the voucher is redeemable for</td>
+</tr>
+<tr>
+<td>store-id</td>
+<td>The ID of the store at which the product that the voucher can be redeemed for is sold at</td>
+</tr>
+<tr>
+<td>code</td>
+<td>The secret code that the voucher holder must reveal to the store owner in order to redeem their voucher, only shown if the logged-in user is the voucher holder</td>
+</tr>
+<tr>
+<td>expiration</td>
+<td>The date at which the voucher expires, which is one month after it is issued to the buyer</td>
+</tr>
+<tr>
+<td>redeemed</td>
+<td>Whether the voucher has been redeemed or not</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the voucher was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the voucher was last updated</td>
+</tr>
+</tbody></table>
+<h2 id='get-an-order-39-s-voucher'>Get an Order&#39;s Voucher</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/order_sets/3/voucher'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vouchers"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"micro-currency-order-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"holding-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+      </span><span class="s2">"holding-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="w"> 
+      </span><span class="s2">"product-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing rod"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product-quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARCW97G8QJBZXZ5F7TC0K"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"expiration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-02T01:58:03.223-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"redeemed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T01:58:03.467-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T01:58:03.467-07:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves the voucher associated with a particular order. The logged in user must be either the holder of the voucher or the owner of the store at which the voucher is redeemable in order to view the voucher&#39;s details.</p>
+<h3 id='http-request-101'>HTTP Request</h3>
+<p><code>GET https://api.mycurrency.com/order_sets/&lt;ORDER_SET_ID&gt;/voucher</code></p>
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User that issued the voucher or the user that holds it
+</aside>
+<h3 id='response-101'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -13516,7 +13614,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a user&#39;s vouchers. </p>
-<h3 id='http-request-101'>HTTP Request</h3>
+<h3 id='http-request-102'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/vouchers?issueing_user_id={}&amp;store_id={}</code></p>
 
 <aside class="notice">
@@ -13550,7 +13648,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The vouchers issued by the specified store are returned if store_id is provided. This parameter needs to be provided along with a :issueing_user_id with a value that matches the ID of the user that owns the store.</td>
 </tr>
 </tbody></table>
-<h3 id='response-101'>RESPONSE</h3>
+<h3 id='response-102'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -13639,7 +13737,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Updates a voucher.</p>
-<h3 id='http-request-102'>HTTP Request</h3>
+<h3 id='http-request-103'>HTTP Request</h3>
 <p><code>POST https://api.mycurrency.com/users/&lt;USER-ID&gt;/vouchers/&lt;ID&gt;</code></p>
 
 <aside class="notice">
@@ -13667,7 +13765,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The voucher&#39;s secret code, must be provided to redeem voucher</td>
 </tr>
 </tbody></table>
-<h3 id='response-102'>RESPONSE</h3>
+<h3 id='response-103'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
