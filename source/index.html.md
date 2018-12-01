@@ -9354,7 +9354,68 @@ This endpoint retrieves a particular voucher. The logged in user must be either 
 `GET https://api.mycurrency.com/vouchers/<ID>`
 
 <aside class="notice">
-Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+Authentication: the request requires the OAuth access-token associated with the User that issued the voucher or the user that holds it
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the voucher
+micro-currency-order-id | The ID of the micro currency order that purchased the voucher
+holding-user-id | The ID of the user that purchased the voucher
+holding-user-username | The username of the user that purchased the voucher
+product-id | The ID of the product for which the voucher is redeemable for
+product-name | The name of the product for which the voucher is redeemable for
+product-quantity | The quantity of the product for which the voucher is redeemable for
+store-id | The ID of the store at which the product that the voucher can be redeemed for is sold at
+code | The secret code that the voucher holder must reveal to the store owner in order to redeem their voucher, only shown if the logged-in user is the voucher holder
+expiration | The date at which the voucher expires, which is one month after it is issued to the buyer
+redeemed | Whether the voucher has been redeemed or not
+created-at | The time and date when the voucher was created
+updated-at | The time and date when the voucher was last updated
+
+## Get an Order's Voucher
+
+```shell
+curl 'https://api.mycurrency.com/order_sets/3/voucher' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "3",
+    "type": "vouchers",
+    "attributes": {
+      "micro-currency-order-id": 3,
+      "holding-user-id": 3
+      "holding-user-username": "Hannibal" 
+      "product-id": 7,
+      "product-name": "fishing rod",
+      "product-quantity": 1,
+      "store-id": 3,
+      "code": "ARCW97G8QJBZXZ5F7TC0K",
+      "expiration": "2018-11-02T01:58:03.223-07:00",
+      "redeemed": false,
+      "created-at": "2018-10-03T01:58:03.467-07:00",
+      "updated-at": "2018-10-03T01:58:03.467-07:00"
+    }
+  }
+}
+```
+
+This endpoint retrieves the voucher associated with a particular order. The logged in user must be either the holder of the voucher or the owner of the store at which the voucher is redeemable in order to view the voucher's details.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/order_sets/<ORDER_SET_ID>/voucher`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User that issued the voucher or the user that holds it
 </aside>
 
 ### RESPONSE
