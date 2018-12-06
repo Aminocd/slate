@@ -2421,6 +2421,7 @@ curl 'https://api.mycurrency.com/products/5/product_cancellation' \
     "type": "product-cancellations",
     "attributes": {
       "store-id": 3,
+      "store-name": "Freds Fishing Supplies",
       "product-id": 5,
       "product-discontinual-id": null,
       "product-name": "fishing bait",
@@ -2449,6 +2450,7 @@ Parameter | Description
 --------- | -----------
 id | The ID of the product cancellation
 store-id | The ID of the store where the cancelled product was sold
+store-name | The name of the store where the cancelled product was sold
 product-id | The ID of the product that was cancelled
 product-discontinual-id | The ID of the product_discontinual that created the product_cancellation
 product-name | The name of the cancelled product
@@ -2473,6 +2475,7 @@ curl 'https://api.mycurrency.com/users/4/issuer/product_cancellations' \
       "type": "product-cancellations",
       "attributes": {
         "store-id": 3,
+        "store-name": "Freds Fishing Supplies",
         "product-id": 5,
         "product-discontinual-id": null,
         "product-name": "fishing bait",
@@ -2486,6 +2489,7 @@ curl 'https://api.mycurrency.com/users/4/issuer/product_cancellations' \
       "type": "product-cancellations",
       "attributes": {
         "store-id": 4,
+        "store-name": "Jeffreys outdoor supplies",
         "product-id": 9,
         "product-discontinual-id": null,
         "product-name": "chameleon tent",
@@ -2499,6 +2503,7 @@ curl 'https://api.mycurrency.com/users/4/issuer/product_cancellations' \
       "type": "product-cancellations",
       "attributes": {
         "store-id": 6,
+        "store-name": "Honolulu pizza joint",
         "product-id": 12,
         "product-discontinual-id": null,
         "product-name": "Hawaiian pizza",
@@ -2547,6 +2552,7 @@ Parameter | Description
 --------- | -----------
 id | The ID of the product cancellation
 store-id | The ID of the store where the cancelled product was sold
+store-name | The name of the store where the cancelled product was sold
 product-id | The ID of the product that was cancelled
 product-discontinual-id | The ID of the product_discontinual that created the product_cancellation
 product-name | The name of the cancelled product
@@ -2571,6 +2577,7 @@ curl 'https://api.mycurrency.com/currencies/5/product_cancellations' \
       "type": "product-cancellations",
       "attributes": {
         "store-id": 3,
+        "store-name": "Freds Fishing Supplies",
         "product-id": 5,
         "product-discontinual-id": null,
         "product-name": "fishing bait",
@@ -2584,6 +2591,7 @@ curl 'https://api.mycurrency.com/currencies/5/product_cancellations' \
       "type": "product-cancellations",
       "attributes": {
         "store-id": 4,
+        "store-name": "Jeffreys outdoor supplies",
         "product-id": 9,
         "product-discontinual-id": null,
         "product-name": "chameleon tent",
@@ -2632,6 +2640,7 @@ Parameter | Description
 --------- | -----------
 id | The ID of the product cancellation
 store-id | The ID of the store where the cancelled product was sold
+store-name | The name of the store where the cancelled product was sold
 product-id | The ID of the product that was cancelled
 product-discontinual-id | The ID of the product_discontinual that created the product_cancellation
 product-name | The name of the cancelled product
@@ -2656,6 +2665,7 @@ curl 'https://api.mycurrency.com/stores/3/product_cancellations' \
       "type": "product-cancellations",
       "attributes": {
         "store-id": 3,
+        "store-name": "Jeffreys outdoor supplies",
         "product-id": 5,
         "product-discontinual-id": null,
         "product-name": "fishing bait",
@@ -2704,6 +2714,7 @@ Parameter | Description
 --------- | -----------
 id | The ID of the product cancellation
 store-id | The ID of the store where the cancelled product was sold
+store-name | The name of the store where the cancelled product was sold
 product-id | The ID of the product that was cancelled
 product-discontinual-id | The ID of the product_discontinual that created the product_cancellation
 product-name | The name of the cancelled product
@@ -2729,6 +2740,7 @@ curl -X POST https://api.mycurrency.com/users/4/issuer/currencies/5/stores/3/pro
     "type": "product-cancellations",
     "attributes": {
       "store-id": 3,
+      "store-name": "Freds Fishing Supplies",
       "product-id": 5,
       "product-discontinual-id": null,
       "product-name": "fishing bait",
@@ -2767,6 +2779,7 @@ Parameter | Description
 --------- | -----------
 id | The ID of the product cancellation
 store-id | The ID of the store where the cancelled product was sold
+store-name | The name of the store where the cancelled product was sold
 product-id | The ID of the product that was cancelled
 product-discontinual-id | The ID of the product_discontinual that created the product_cancellation
 product-name | The name of the cancelled product
