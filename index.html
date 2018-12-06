@@ -1820,8 +1820,17 @@ Authentication: the request requires the OAuth access-token associated with the 
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stores"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+      </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7.333333333333333333"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"number-of-products"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"number-of-product-cancellations"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="w">
+      </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"</span><span class="w">
       </span><span class="s2">"sub-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mid-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"British Columbia"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver ACME Toon Shop"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All manner of ACME Toon items available"</span><span class="p">,</span><span class="w">
@@ -1851,12 +1860,44 @@ Authentication: not required
 <td>The ID of the store</td>
 </tr>
 <tr>
+<td>number-of-reviews</td>
+<td>The number of store reviews created for the store</td>
+</tr>
+<tr>
+<td>average-score</td>
+<td>The average score of the store reviews, out of 10</td>
+</tr>
+<tr>
+<td>number-of-products</td>
+<td>The number of products belonging to the store where both the :active and :continued fields have a value of true</td>
+</tr>
+<tr>
+<td>number-of-product-cancellations</td>
+<td>The number of products belonging to the store that have been discontinued without the store owner providing advance notice</td>
+</tr>
+<tr>
 <td>currency-id</td>
 <td>The ID of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
+<td>currency-id</td>
+<td>The name of the currency that the store&#39;s products are purchasable with</td>
+</tr>
+<tr>
 <td>sub-location-id</td>
 <td>The sub location where the store is located</td>
+</tr>
+<tr>
+<td>sub-location-name</td>
+<td>The name of the sub location where the store is located</td>
+</tr>
+<tr>
+<td>mid-location-id</td>
+<td>The mid location where the store is located</td>
+</tr>
+<tr>
+<td>mid-location-name</td>
+<td>The name of the mid location where the store is located</td>
 </tr>
 <tr>
 <td>physical</td>
@@ -1897,8 +1938,17 @@ Authentication: not required
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stores"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number-of-products"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number-of-product-cancellations"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/001/original/calm_dollars.jpg?1534619841"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"sub-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mid-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm Spa"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A full service spa for full relaxation"</span><span class="p">,</span><span class="w">
@@ -1911,22 +1961,40 @@ Authentication: not required
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stores"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7.333333333333333333"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number-of-products"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number-of-product-cancellations"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> 
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="w">
+        </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"sub-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mid-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"British Columbia"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver ACME Toon Shop"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All manner of ACME Toon items available"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver ACME Toon Shop All manner of ACME Toon items available</span><span class="se">\n</span><span class="s2">Bugs Bunny Q-Tips - q-tips that work on the biggest ears, Toon products, products usable by toons - 1550</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-13T05:45:12.342-07:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-13T05:45:12.342-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver ACME Toon Shop All manner of ACME Toon items available</span><span class="se">\n</span><span class="s2">Bugs Bunny Q-Tips - q-tips that work on the biggest ears, Fictional items, Toon products - 1550</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T02:11:46.512-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T02:11:46.512-07:00"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stores"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number-of-products"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number-of-product-cancellations"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"sub-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mid-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco ACME Toon Shop"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco's premier shop for toons"</span><span class="p">,</span><span class="w">
@@ -1971,12 +2039,44 @@ Authentication: not required
 <td>The ID of the store</td>
 </tr>
 <tr>
+<td>number-of-reviews</td>
+<td>The number of store reviews created for the store</td>
+</tr>
+<tr>
+<td>average-score</td>
+<td>The average score of the store reviews, out of 10</td>
+</tr>
+<tr>
+<td>number-of-products</td>
+<td>The number of products belonging to the store where both the :active and :continued fields have a value of true</td>
+</tr>
+<tr>
+<td>number-of-product-cancellations</td>
+<td>The number of products belonging to the store that have been discontinued without the store owner providing advance notice</td>
+</tr>
+<tr>
 <td>currency-id</td>
 <td>The ID of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
+<td>currency-id</td>
+<td>The name of the currency that the store&#39;s products are purchasable with</td>
+</tr>
+<tr>
 <td>sub-location-id</td>
 <td>The sub location where the store is located</td>
+</tr>
+<tr>
+<td>sub-location-name</td>
+<td>The name of the sub location where the store is located</td>
+</tr>
+<tr>
+<td>mid-location-id</td>
+<td>The mid location where the store is located</td>
+</tr>
+<tr>
+<td>mid-location-name</td>
+<td>The name of the mid location where the store is located</td>
 </tr>
 <tr>
 <td>physical</td>
@@ -2017,26 +2117,44 @@ Authentication: not required
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stores"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7.333333333333333333"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number-of-products"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number-of-product-cancellations"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> 
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="w">
+        </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"</span><span class="w">
         </span><span class="s2">"sub-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mid-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"British Columbia"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver ACME Toon Shop"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All manner of ACME Toon items available"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver ACME Toon Shop All manner of ACME Toon items available</span><span class="se">\n</span><span class="s2">Bugs Bunny Q-Tips - q-tips that work on the biggest ears, Toon products, products usable by toons - 1550</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-13T05:45:12.342-07:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-13T05:45:12.342-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver ACME Toon Shop All manner of ACME Toon items available</span><span class="se">\n</span><span class="s2">Bugs Bunny Q-Tips - q-tips that work on the biggest ears, Fictional items, Toon products - 1550</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T02:11:46.512-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T02:11:46.512-07:00"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stores"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number-of-products"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number-of-product-cancellations"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"sub-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mid-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco ACME Toon Shop"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco's premier shop for toons"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco ACME Toon Shop San Francisco's premier shop for toons</span><span class="se">\n</span><span class="s2">Bugs Bunny Q-Tips - q-tips that work on the biggest ears, Fictional items, Toon products - 1550</span><span class="se">\n</span><span class="s2">Teleport hole - can turn any rock face into a tunnel, fictional items, Toon products - 4000</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco ACME Toon Shop San Francisco's premier shop for toons</span><span class="se">\n</span><span class="s2">Bugs Bunny Q-Tips - q-tips that work on the biggest ears, Toon products, products usable by toons - 1550</span><span class="se">\n</span><span class="s2">Teleport hole - can turn any rock face into a tunnel, Toon products, products usable by toons - 4000</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T02:11:46.512-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T02:11:46.512-07:00"</span><span class="w">
       </span><span class="p">}</span><span class="w">
@@ -2077,12 +2195,44 @@ Authentication: not required
 <td>The ID of the store</td>
 </tr>
 <tr>
+<td>number-of-reviews</td>
+<td>The number of store reviews created for the store</td>
+</tr>
+<tr>
+<td>average-score</td>
+<td>The average score of the store reviews, out of 10</td>
+</tr>
+<tr>
+<td>number-of-products</td>
+<td>The number of products belonging to the store where both the :active and :continued fields have a value of true</td>
+</tr>
+<tr>
+<td>number-of-product-cancellations</td>
+<td>The number of products belonging to the store that have been discontinued without the store owner providing advance notice</td>
+</tr>
+<tr>
 <td>currency-id</td>
 <td>The ID of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
+<td>currency-id</td>
+<td>The name of the currency that the store&#39;s products are purchasable with</td>
+</tr>
+<tr>
 <td>sub-location-id</td>
 <td>The sub location where the store is located</td>
+</tr>
+<tr>
+<td>sub-location-name</td>
+<td>The name of the sub location where the store is located</td>
+</tr>
+<tr>
+<td>mid-location-id</td>
+<td>The mid location where the store is located</td>
+</tr>
+<tr>
+<td>mid-location-name</td>
+<td>The name of the mid location where the store is located</td>
 </tr>
 <tr>
 <td>physical</td>
@@ -2123,8 +2273,17 @@ Authentication: not required
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stores"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number-of-products"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number-of-product-cancellations"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/001/original/calm_dollars.jpg?1534619841"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"sub-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mid-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm Spa"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A full service spa for full relaxation"</span><span class="p">,</span><span class="w">
@@ -2169,12 +2328,44 @@ Authentication: not required
 <td>The ID of the store</td>
 </tr>
 <tr>
+<td>number-of-reviews</td>
+<td>The number of store reviews created for the store</td>
+</tr>
+<tr>
+<td>average-score</td>
+<td>The average score of the store reviews, out of 10</td>
+</tr>
+<tr>
+<td>number-of-products</td>
+<td>The number of products belonging to the store where both the :active and :continued fields have a value of true</td>
+</tr>
+<tr>
+<td>number-of-product-cancellations</td>
+<td>The number of products belonging to the store that have been discontinued without the store owner providing advance notice</td>
+</tr>
+<tr>
 <td>currency-id</td>
 <td>The ID of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
+<td>currency-id</td>
+<td>The name of the currency that the store&#39;s products are purchasable with</td>
+</tr>
+<tr>
 <td>sub-location-id</td>
 <td>The sub location where the store is located</td>
+</tr>
+<tr>
+<td>sub-location-name</td>
+<td>The name of the sub location where the store is located</td>
+</tr>
+<tr>
+<td>mid-location-id</td>
+<td>The mid location where the store is located</td>
+</tr>
+<tr>
+<td>mid-location-name</td>
+<td>The name of the mid location where the store is located</td>
 </tr>
 <tr>
 <td>physical</td>
@@ -2215,8 +2406,17 @@ Authentication: not required
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stores"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number-of-products"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number-of-product-cancellations"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/001/original/calm_dollars.jpg?1534619841"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"sub-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mid-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm Spa"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A full service spa for full relaxation"</span><span class="p">,</span><span class="w">
@@ -2229,12 +2429,21 @@ Authentication: not required
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stores"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number-of-products"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number-of-product-cancellations"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"sub-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mid-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco ACME Toon Shop"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco's premier shop for toons"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco ACME Toon Shop San Francisco's premier shop for toons</span><span class="se">\n</span><span class="s2">Bugs Bunny Q-Tips - q-tips that work on the biggest ears, Fictional items, Toon products - 1550</span><span class="se">\n</span><span class="s2">Teleport hole - can turn any rock face into a tunnel, fictional items, Toon products - 4000</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco ACME Toon Shop San Francisco's premier shop for toons</span><span class="se">\n</span><span class="s2">Bugs Bunny Q-Tips - q-tips that work on the biggest ears, Toon products, products usable by toons - 1550</span><span class="se">\n</span><span class="s2">Teleport hole - can turn any rock face into a tunnel, Toon products, products usable by toons - 4000</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T02:11:46.512-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T02:11:46.512-07:00"</span><span class="w">
       </span><span class="p">}</span><span class="w">
@@ -2275,12 +2484,44 @@ Authentication: not required
 <td>The ID of the store</td>
 </tr>
 <tr>
+<td>number-of-reviews</td>
+<td>The number of store reviews created for the store</td>
+</tr>
+<tr>
+<td>average-score</td>
+<td>The average score of the store reviews, out of 10</td>
+</tr>
+<tr>
+<td>number-of-products</td>
+<td>The number of products belonging to the store where both the :active and :continued fields have a value of true</td>
+</tr>
+<tr>
+<td>number-of-product-cancellations</td>
+<td>The number of products belonging to the store that have been discontinued without the store owner providing advance notice</td>
+</tr>
+<tr>
 <td>currency-id</td>
 <td>The ID of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
+<td>currency-id</td>
+<td>The name of the currency that the store&#39;s products are purchasable with</td>
+</tr>
+<tr>
 <td>sub-location-id</td>
 <td>The sub location where the store is located</td>
+</tr>
+<tr>
+<td>sub-location-name</td>
+<td>The name of the sub location where the store is located</td>
+</tr>
+<tr>
+<td>mid-location-id</td>
+<td>The mid location where the store is located</td>
+</tr>
+<tr>
+<td>mid-location-name</td>
+<td>The name of the mid location where the store is located</td>
 </tr>
 <tr>
 <td>physical</td>
@@ -2321,12 +2562,21 @@ Authentication: not required
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stores"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number-of-products"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number-of-product-cancellations"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"sub-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mid-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco ACME Toon Shop"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco's premier shop for toons"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco ACME Toon Shop San Francisco's premier shop for toons</span><span class="se">\n</span><span class="s2">Bugs Bunny Q-Tips - q-tips that work on the biggest ears, Fictional items, Toon products - 1550</span><span class="se">\n</span><span class="s2">Teleport hole - can turn any rock face into a tunnel, fictional items, Toon products - 4000</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco ACME Toon Shop San Francisco's premier shop for toons</span><span class="se">\n</span><span class="s2">Bugs Bunny Q-Tips - q-tips that work on the biggest ears, Toon products, products usable by toons - 1550</span><span class="se">\n</span><span class="s2">Teleport hole - can turn any rock face into a tunnel, Toon products, products usable by toons - 4000</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T02:11:46.512-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T02:11:46.512-07:00"</span><span class="w">
       </span><span class="p">}</span><span class="w">
@@ -2367,12 +2617,44 @@ Authentication: not required
 <td>The ID of the store</td>
 </tr>
 <tr>
+<td>number-of-reviews</td>
+<td>The number of store reviews created for the store</td>
+</tr>
+<tr>
+<td>average-score</td>
+<td>The average score of the store reviews, out of 10</td>
+</tr>
+<tr>
+<td>number-of-products</td>
+<td>The number of products belonging to the store where both the :active and :continued fields have a value of true</td>
+</tr>
+<tr>
+<td>number-of-product-cancellations</td>
+<td>The number of products belonging to the store that have been discontinued without the store owner providing advance notice</td>
+</tr>
+<tr>
 <td>currency-id</td>
 <td>The ID of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
+<td>currency-id</td>
+<td>The name of the currency that the store&#39;s products are purchasable with</td>
+</tr>
+<tr>
 <td>sub-location-id</td>
 <td>The sub location where the store is located</td>
+</tr>
+<tr>
+<td>sub-location-name</td>
+<td>The name of the sub location where the store is located</td>
+</tr>
+<tr>
+<td>mid-location-id</td>
+<td>The mid location where the store is located</td>
+</tr>
+<tr>
+<td>mid-location-name</td>
+<td>The name of the mid location where the store is located</td>
 </tr>
 <tr>
 <td>physical</td>
@@ -2412,8 +2694,17 @@ Authentication: not required
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stores"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"number-of-products"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"number-of-product-cancellations"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chilli pesos"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/005/original/chilli-pesos.png?153414511"</span><span class="w">
       </span><span class="s2">"sub-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mid-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"British Columbia"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fishing supply shop"</span><span class="p">,</span><span class="w">
@@ -2483,12 +2774,44 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The ID of the store</td>
 </tr>
 <tr>
+<td>number-of-reviews</td>
+<td>The number of store reviews created for the store</td>
+</tr>
+<tr>
+<td>average-score</td>
+<td>The average score of the store reviews, out of 10</td>
+</tr>
+<tr>
+<td>number-of-products</td>
+<td>The number of products belonging to the store where both the :active and :continued fields have a value of true</td>
+</tr>
+<tr>
+<td>number-of-product-cancellations</td>
+<td>The number of products belonging to the store that have been discontinued without the store owner providing advance notice</td>
+</tr>
+<tr>
 <td>currency-id</td>
 <td>The ID of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
+<td>currency-id</td>
+<td>The name of the currency that the store&#39;s products are purchasable with</td>
+</tr>
+<tr>
 <td>sub-location-id</td>
 <td>The sub location where the store is located</td>
+</tr>
+<tr>
+<td>sub-location-name</td>
+<td>The name of the sub location where the store is located</td>
+</tr>
+<tr>
+<td>mid-location-id</td>
+<td>The mid location where the store is located</td>
+</tr>
+<tr>
+<td>mid-location-name</td>
+<td>The name of the mid location where the store is located</td>
 </tr>
 <tr>
 <td>physical</td>
@@ -2529,14 +2852,23 @@ Authentication: the request requires the OAuth access-token associated with the 
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stores"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"number-of-products"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"number-of-product-cancellations"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"sub-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chilli pesos"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/005/original/chilli-pesos.png?153414511"</span><span class="w">
+      </span><span class="s2">"sub-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mid-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
       </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The finest fishing shop in San Francisco"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The finest Fishing shop in San Francisco"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies The finest fishing shop in San Francisco"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-26T16:09:40.080-07:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-26T16:09:40.080-07:00"</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-26T17:43:32.080-07:00"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -2602,12 +2934,44 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The ID of the store</td>
 </tr>
 <tr>
+<td>number-of-reviews</td>
+<td>The number of store reviews created for the store</td>
+</tr>
+<tr>
+<td>average-score</td>
+<td>The average score of the store reviews, out of 10</td>
+</tr>
+<tr>
+<td>number-of-products</td>
+<td>The number of products belonging to the store where both the :active and :continued fields have a value of true</td>
+</tr>
+<tr>
+<td>number-of-product-cancellations</td>
+<td>The number of products belonging to the store that have been discontinued without the store owner providing advance notice</td>
+</tr>
+<tr>
 <td>currency-id</td>
-<td>The ID of the currency that the store&#39;s products are purchasable with, provided in URL path</td>
+<td>The ID of the currency that the store&#39;s products are purchasable with</td>
+</tr>
+<tr>
+<td>currency-id</td>
+<td>The name of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
 <td>sub-location-id</td>
 <td>The sub location where the store is located</td>
+</tr>
+<tr>
+<td>sub-location-name</td>
+<td>The name of the sub location where the store is located</td>
+</tr>
+<tr>
+<td>mid-location-id</td>
+<td>The mid location where the store is located</td>
+</tr>
+<tr>
+<td>mid-location-name</td>
+<td>The name of the mid location where the store is located</td>
 </tr>
 <tr>
 <td>physical</td>
