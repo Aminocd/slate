@@ -7903,7 +7903,7 @@ super-location-id | The ID of the parent super location
 ## Get a Sub Location
 
 ```shell
-curl 'https://api.mycurrency.com/sub_locations/3' \
+curl 'https://api.mycurrency.com/sub_locations/1' \
   -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
 
@@ -7912,14 +7912,15 @@ curl 'https://api.mycurrency.com/sub_locations/3' \
 ```json
 {
   "data": {
-    "id": "3",
+    "id": "1",
     "type": "sub-locations",
     "attributes": {
       "name": "auburn",
+      "mid-location-id": 1,
+      "mid-location-name": "Alabama",
       "longitude": -85.48078249999999,
       "latitude": 32.6098566,
-      "time-zone": "America/Chicago",
-      "mid-location-id": 2
+      "time-zone": "America/Chicago"
     }
   }
 }
@@ -7941,15 +7942,16 @@ Parameter | Description
 --------- | -----------
 id | The ID of the sub location
 name | The name of the sub location
+mid-location-id | The ID of the parent mid location
+mid-location-name | The name of the parent mid location
 longitude | The longitude of the sub location
 latitude | The latitude of the sub location
 time-zone | The time zone of the sub location
-mid-location-id | The ID of the parent mid location
 
 ## List Sub Locations
 
 ```shell
-curl 'https://api.mycurrency.com/sub_locations' \
+curl 'https://api.mycurrency.com/sub_locations?per_page=10' \
   -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
 
@@ -7959,292 +7961,137 @@ curl 'https://api.mycurrency.com/sub_locations' \
 {
   "data": [
     {
-      "id": "3",
+      "id": "1",
       "type": "sub-locations",
       "attributes": {
         "name": "auburn",
+        "mid-location-id": 1,
+        "mid-location-name": "Alabama",
         "longitude": -85.48078249999999,
         "latitude": 32.6098566,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 2
+        "time-zone": "America/Chicago"
+      }
+    },
+    {
+      "id": "2",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "birmingham",
+        "mid-location-id": 1,
+        "mid-location-name": "Alabama",
+        "longitude": -86.8103567,
+        "latitude": 33.5185892,
+        "time-zone": "America/Chicago"
+      }
+    },
+    {
+      "id": "3",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "dothan",
+        "mid-location-id": 1,
+        "mid-location-name": "Alabama",
+        "longitude": -85.3904888,
+        "latitude": 31.2232313,
+        "time-zone": "America/Chicago"
       }
     },
     {
       "id": "4",
       "type": "sub-locations",
       "attributes": {
-        "name": "birmingham",
-        "longitude": -86.8103567,
-        "latitude": 33.5185892,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 2
+        "name": "florence / muscle shoals",
+        "mid-location-id": 1,
+        "mid-location-name": "Alabama",
+        "longitude": -87.66752919999999,
+        "latitude": 34.7448112,
+        "time-zone": "America/Chicago"
       }
     },
     {
       "id": "5",
       "type": "sub-locations",
       "attributes": {
-        "name": "dothan",
-        "longitude": -85.3904888,
-        "latitude": 31.2232313,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 2
+        "name": "gadsden-anniston",
+        "mid-location-id": 1,
+        "mid-location-name": "Alabama",
+        "longitude": -85.7933312,
+        "latitude": 33.7094448,
+        "time-zone": "America/Chicago"
       }
     },
     {
       "id": "6",
       "type": "sub-locations",
       "attributes": {
-        "name": "florence / muscle shoals",
-        "longitude": -87.66752919999999,
-        "latitude": 34.7448112,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 2
+        "name": "huntsville / decatur",
+        "mid-location-id": 1,
+        "mid-location-name": "Alabama",
+        "longitude": -86.9833417,
+        "latitude": 34.6059253,
+        "time-zone": "America/Chicago"
       }
     },
     {
       "id": "7",
       "type": "sub-locations",
       "attributes": {
-        "name": "gadsden-anniston",
-        "longitude": -85.7933312,
-        "latitude": 33.7094448,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 2
+        "name": "mobile",
+        "mid-location-id": 1,
+        "mid-location-name": "Alabama",
+        "longitude": -88.0398912,
+        "latitude": 30.6953657,
+        "time-zone": "America/Chicago"
       }
     },
     {
       "id": "8",
       "type": "sub-locations",
       "attributes": {
-        "name": "huntsville / decatur",
-        "longitude": -86.9833417,
-        "latitude": 34.6059253,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 2
+        "name": "montgomery",
+        "mid-location-id": 1,
+        "mid-location-name": "Alabama",
+        "longitude": -86.3077368,
+        "latitude": 32.3792233,
+        "time-zone": "America/Chicago"
       }
     },
     {
       "id": "9",
       "type": "sub-locations",
       "attributes": {
-        "name": "mobile",
-        "longitude": -88.0398912,
-        "latitude": 30.6953657,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 2
+        "name": "tuscaloosa",
+        "mid-location-id": 1,
+        "mid-location-name": "Alabama",
+        "longitude": -87.56917349999999,
+        "latitude": 33.2098407,
+        "time-zone": "America/Chicago"
       }
     },
     {
       "id": "10",
       "type": "sub-locations",
       "attributes": {
-        "name": "montgomery",
-        "longitude": -86.3077368,
-        "latitude": 32.3792233,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 2
-      }
-    },
-    {
-      "id": "11",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "tuscaloosa",
-        "longitude": -87.56917349999999,
-        "latitude": 33.2098407,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 2
-      }
-    },
-    {
-      "id": "12",
-      "type": "sub-locations",
-      "attributes": {
         "name": "anchorage / mat-su",
+        "mid-location-id": 2,
+        "mid-location-name": "Alaska",
         "longitude": -149.8714752,
         "latitude": 61.1774892,
-        "time-zone": "America/Anchorage",
-        "mid-location-id": 3
-      }
-    },
-    {
-      "id": "13",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "fairbanks",
-        "longitude": -147.7163888,
-        "latitude": 64.8377778,
-        "time-zone": "America/Anchorage",
-        "mid-location-id": 3
-      }
-    },
-    {
-      "id": "14",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "kenai peninsula",
-        "longitude": -151.382264,
-        "latitude": 60.0858486,
-        "time-zone": "America/Anchorage",
-        "mid-location-id": 3
-      }
-    },
-    {
-      "id": "15",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "southeast alaska",
-        "longitude": -149.4936733,
-        "latitude": 64.2008413,
-        "time-zone": "America/Anchorage",
-        "mid-location-id": 3
-      }
-    },
-    {
-      "id": "16",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "flagstaff / sedona",
-        "longitude": -111.8108845,
-        "latitude": 34.8704779,
-        "time-zone": "America/Phoenix",
-        "mid-location-id": 4
-      }
-    },
-    {
-      "id": "17",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "mohave county",
-        "longitude": -113.7632828,
-        "latitude": 35.2143346,
-        "time-zone": "America/Phoenix",
-        "mid-location-id": 4
-      }
-    },
-    {
-      "id": "18",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "phoenix",
-        "longitude": -112.0740373,
-        "latitude": 33.4483771,
-        "time-zone": "America/Phoenix",
-        "mid-location-id": 4
-      }
-    },
-    {
-      "id": "19",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "prescott",
-        "longitude": -112.4685025,
-        "latitude": 34.5400242,
-        "time-zone": "America/Phoenix",
-        "mid-location-id": 4
-      }
-    },
-    {
-      "id": "20",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "show low",
-        "longitude": -110.0298327,
-        "latitude": 34.2542084,
-        "time-zone": "America/Phoenix",
-        "mid-location-id": 4
-      }
-    },
-    {
-      "id": "21",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "sierra vista",
-        "longitude": -110.2772856,
-        "latitude": 31.5455001,
-        "time-zone": "America/Phoenix",
-        "mid-location-id": 4
-      }
-    },
-    {
-      "id": "22",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "tucson",
-        "longitude": -110.9747108,
-        "latitude": 32.2226066,
-        "time-zone": "America/Phoenix",
-        "mid-location-id": 4
-      }
-    },
-    {
-      "id": "23",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "yuma",
-        "longitude": -114.6276916,
-        "latitude": 32.6926512,
-        "time-zone": "America/Phoenix",
-        "mid-location-id": 4
-      }
-    },
-    {
-      "id": "24",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "fayetteville ",
-        "longitude": -94.17185420000001,
-        "latitude": 36.082156,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 5
-      }
-    },
-    {
-      "id": "25",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "fort smith",
-        "longitude": -94.39854749999999,
-        "latitude": 35.3859242,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 5
-      }
-    },
-    {
-      "id": "26",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "jonesboro",
-        "longitude": -90.704279,
-        "latitude": 35.84229670000001,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 5
-      }
-    },
-    {
-      "id": "27",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "little rock",
-        "longitude": -92.28959479999999,
-        "latitude": 34.7464809,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 5
+        "time-zone": "America/Anchorage"
       }
     }
   ],
   "links": {
-    "self": "https://api.mycurrency.com/sub_locations?",
-    "first": "https://api.mycurrency.com/sub_locations?page=1&per_page=25",
+    "self": "https://api.mycurrency.com/sub_locations?per_page=10",
+    "first": "https://api.mycurrency.com/sub_locations?page=1&per_page=10",
     "prev": null,
-    "next": "https://api.mycurrency.com/sub_locations?page=2&per_page=25",
-    "last": "https://api.mycurrency.com/sub_locations?page=29&per_page=25"
+    "next": "https://api.mycurrency.com/sub_locations?page=2&per_page=10",
+    "last": "https://api.mycurrency.com/sub_locations?page=72&per_page=10"
   },
   "meta": {
     "pagination": {
-      "per-page": null,
-      "total-pages": "29",
+      "per-page": "10",
+      "total-pages": "72",
       "total-count": "712"
     }
   }
@@ -8267,15 +8114,16 @@ Parameter | Description
 --------- | -----------
 id | The ID of the sub location
 name | The name of the sub location
+mid-location-id | The ID of the parent mid location
+mid-location-name | The name of the parent mid location
 longitude | The longitude of the sub location
 latitude | The latitude of the sub location
 time-zone | The time zone of the sub location
-mid-location-id | The ID of the parent mid location
 
 ## List Mid Location's Sub Locations
 
 ```shell
-curl 'https://api.mycurrency.com/super_locations/2/mid_locations/2/sub_locations' \
+curl 'https://api.mycurrency.com/super_locations/2/mid_locations/54/sub_locations?per_page=10' \
   -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
 
@@ -8285,117 +8133,138 @@ curl 'https://api.mycurrency.com/super_locations/2/mid_locations/2/sub_locations
 {
   "data": [
     {
-      "id": "3",
+      "id": "426",
       "type": "sub-locations",
       "attributes": {
-        "name": "auburn",
-        "longitude": -85.48078249999999,
-        "latitude": 32.6098566,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 2
+        "name": "cariboo",
+        "mid-location-id": 54,
+        "mid-location-name": "British Columbia",
+        "longitude": -123.4553619,
+        "latitude": 52.4031805,
+        "time-zone": "America/Vancouver"
       }
     },
     {
-      "id": "4",
+      "id": "427",
       "type": "sub-locations",
       "attributes": {
-        "name": "birmingham",
-        "longitude": -86.8103567,
-        "latitude": 33.5185892,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 2
+        "name": "comox valley",
+        "mid-location-id": 54,
+        "mid-location-name": "British Columbia",
+        "longitude": -125.0219451,
+        "latitude": 49.70641879999999,
+        "time-zone": "America/Vancouver"
       }
     },
     {
-      "id": "5",
+      "id": "428",
       "type": "sub-locations",
       "attributes": {
-        "name": "dothan",
-        "longitude": -85.3904888,
-        "latitude": 31.2232313,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 2
+        "name": "fraser valley",
+        "mid-location-id": 54,
+        "mid-location-name": "British Columbia",
+        "longitude": -121.8159307,
+        "latitude": 49.3764104,
+        "time-zone": "America/Vancouver"
       }
     },
     {
-      "id": "6",
+      "id": "429",
       "type": "sub-locations",
       "attributes": {
-        "name": "florence / muscle shoals",
-        "longitude": -87.66752919999999,
-        "latitude": 34.7448112,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 2
+        "name": "kamloops",
+        "mid-location-id": 54,
+        "mid-location-name": "British Columbia",
+        "longitude": -120.3272675,
+        "latitude": 50.674522,
+        "time-zone": "America/Vancouver"
       }
     },
     {
-      "id": "7",
+      "id": "430",
       "type": "sub-locations",
       "attributes": {
-        "name": "gadsden-anniston",
-        "longitude": -85.7933312,
-        "latitude": 33.7094448,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 2
+        "name": "kelowna / okanagan",
+        "mid-location-id": 54,
+        "mid-location-name": "British Columbia",
+        "longitude": -119.4960106,
+        "latitude": 49.8879519,
+        "time-zone": "America/Vancouver"
       }
     },
     {
-      "id": "8",
+      "id": "431",
       "type": "sub-locations",
       "attributes": {
-        "name": "huntsville / decatur",
-        "longitude": -86.9833417,
-        "latitude": 34.6059253,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 2
+        "name": "kootenays",
+        "mid-location-id": 54,
+        "mid-location-name": "British Columbia",
+        "longitude": -115.9592102,
+        "latitude": 50.9769367,
+        "time-zone": "America/Edmonton"
       }
     },
     {
-      "id": "9",
+      "id": "432",
       "type": "sub-locations",
       "attributes": {
-        "name": "mobile",
-        "longitude": -88.0398912,
-        "latitude": 30.6953657,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 2
+        "name": "nanaimo",
+        "mid-location-id": 54,
+        "mid-location-name": "British Columbia",
+        "longitude": -123.9400648,
+        "latitude": 49.1658836,
+        "time-zone": "America/Vancouver"
       }
     },
     {
-      "id": "10",
+      "id": "433",
       "type": "sub-locations",
       "attributes": {
-        "name": "montgomery",
-        "longitude": -86.3077368,
-        "latitude": 32.3792233,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 2
+        "name": "prince george",
+        "mid-location-id": 54,
+        "mid-location-name": "British Columbia",
+        "longitude": -122.7496693,
+        "latitude": 53.9170641,
+        "time-zone": "America/Vancouver"
       }
     },
     {
-      "id": "11",
+      "id": "434",
       "type": "sub-locations",
       "attributes": {
-        "name": "tuscaloosa",
-        "longitude": -87.56917349999999,
-        "latitude": 33.2098407,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 2
+        "name": "skeena-bulkley",
+        "mid-location-id": 54,
+        "mid-location-name": "British Columbia",
+        "longitude": -126.907872,
+        "latitude": 54.8281552,
+        "time-zone": "America/Vancouver"
+      }
+    },
+    {
+      "id": "435",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "sunshine coast",
+        "mid-location-id": 54,
+        "mid-location-name": "British Columbia",
+        "longitude": -123.7643986,
+        "latitude": 49.7604377,
+        "time-zone": "America/Vancouver"
       }
     }
   ],
   "links": {
-    "self": "https://api.mycurrency.com/super_locations/2/mid_locations/2/sub_locations?",
-    "first": "https://api.mycurrency.com/super_locations/2/mid_locations/2/sub_locations?page=1&per_page=25",
+    "self": "https://api.mycurrency.com/super_locations/2/mid_locations/54/sub_locations?per_page=10",
+    "first": "https://api.mycurrency.com/super_locations/2/mid_locations/54/sub_locations?page=1&per_page=10",
     "prev": null,
-    "next": null,
-    "last": "https://api.mycurrency.com/super_locations/2/mid_locations/2/sub_locations?page=1&per_page=25"
+    "next": "https://api.mycurrency.com/super_locations/2/mid_locations/54/sub_locations?page=2&per_page=10",
+    "last": "https://api.mycurrency.com/super_locations/2/mid_locations/54/sub_locations?page=2&per_page=10"
   },
   "meta": {
     "pagination": {
-      "per-page": null,
-      "total-pages": "1",
-      "total-count": "9"
+      "per-page": "10",
+      "total-pages": "2",
+      "total-count": "13"
     }
   }
 }
@@ -8417,15 +8286,16 @@ Parameter | Description
 --------- | -----------
 id | The ID of the sub location
 name | The name of the sub location
+mid-location-id | The ID of the parent mid location
+mid-location-name | The name of the parent mid location
 longitude | The longitude of the sub location
 latitude | The latitude of the sub location
 time-zone | The time zone of the sub location
-mid-location-id | The ID of the parent mid location
 
 ## List Super Location's Sub Locations
 
 ```shell
-curl 'https://api.mycurrency.com/super_locations/2/sub_locations' \
+curl 'https://api.mycurrency.com/super_locations/2/sub_locations?per_page=10' \
   -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
 
@@ -8435,293 +8305,138 @@ curl 'https://api.mycurrency.com/super_locations/2/sub_locations' \
 {
   "data": [
     {
-      "id": "3",
+      "id": "419",
       "type": "sub-locations",
       "attributes": {
-        "name": "auburn",
-        "longitude": -85.48078249999999,
-        "latitude": 32.6098566,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 2
+        "name": "calgary",
+        "mid-location-id": 53,
+        "mid-location-name": "Alberta",
+        "longitude": -114.0708459,
+        "latitude": 51.0486151,
+        "time-zone": "America/Edmonton"
       }
     },
     {
-      "id": "4",
+      "id": "420",
       "type": "sub-locations",
       "attributes": {
-        "name": "birmingham",
-        "longitude": -86.8103567,
-        "latitude": 33.5185892,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 2
+        "name": "edmonton",
+        "mid-location-id": 53,
+        "mid-location-name": "Alberta",
+        "longitude": -113.4909267,
+        "latitude": 53.544389,
+        "time-zone": "America/Edmonton"
       }
     },
     {
-      "id": "5",
+      "id": "421",
       "type": "sub-locations",
       "attributes": {
-        "name": "dothan",
-        "longitude": -85.3904888,
-        "latitude": 31.2232313,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 2
+        "name": "ft mcmurray",
+        "mid-location-id": 53,
+        "mid-location-name": "Alberta",
+        "longitude": -111.3803407,
+        "latitude": 56.72637959999999,
+        "time-zone": "America/Edmonton"
       }
     },
     {
-      "id": "6",
+      "id": "422",
       "type": "sub-locations",
       "attributes": {
-        "name": "florence / muscle shoals",
-        "longitude": -87.66752919999999,
-        "latitude": 34.7448112,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 2
+        "name": "lethbridge",
+        "mid-location-id": 53,
+        "mid-location-name": "Alberta",
+        "longitude": -112.84184,
+        "latitude": 49.69349,
+        "time-zone": "America/Edmonton"
       }
     },
     {
-      "id": "7",
+      "id": "423",
       "type": "sub-locations",
       "attributes": {
-        "name": "gadsden-anniston",
-        "longitude": -85.7933312,
-        "latitude": 33.7094448,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 2
+        "name": "medicine hat",
+        "mid-location-id": 53,
+        "mid-location-name": "Alberta",
+        "longitude": -110.6764257,
+        "latitude": 50.0405486,
+        "time-zone": "America/Edmonton"
       }
     },
     {
-      "id": "8",
+      "id": "424",
       "type": "sub-locations",
       "attributes": {
-        "name": "huntsville / decatur",
-        "longitude": -86.9833417,
-        "latitude": 34.6059253,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 2
+        "name": "peace river country",
+        "mid-location-id": 53,
+        "mid-location-name": "Alberta",
+        "longitude": -117.2893839,
+        "latitude": 56.2341823,
+        "time-zone": "America/Edmonton"
       }
     },
     {
-      "id": "9",
+      "id": "425",
       "type": "sub-locations",
       "attributes": {
-        "name": "mobile",
-        "longitude": -88.0398912,
-        "latitude": 30.6953657,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 2
+        "name": "red deer",
+        "mid-location-id": 53,
+        "mid-location-name": "Alberta",
+        "longitude": -113.8112386,
+        "latitude": 52.2681118,
+        "time-zone": "America/Edmonton"
       }
     },
     {
-      "id": "10",
+      "id": "426",
       "type": "sub-locations",
       "attributes": {
-        "name": "montgomery",
-        "longitude": -86.3077368,
-        "latitude": 32.3792233,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 2
+        "name": "cariboo",
+        "mid-location-id": 54,
+        "mid-location-name": "British Columbia",
+        "longitude": -123.4553619,
+        "latitude": 52.4031805,
+        "time-zone": "America/Vancouver"
       }
     },
     {
-      "id": "11",
+      "id": "427",
       "type": "sub-locations",
       "attributes": {
-        "name": "tuscaloosa",
-        "longitude": -87.56917349999999,
-        "latitude": 33.2098407,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 2
+        "name": "comox valley",
+        "mid-location-id": 54,
+        "mid-location-name": "British Columbia",
+        "longitude": -125.0219451,
+        "latitude": 49.70641879999999,
+        "time-zone": "America/Vancouver"
       }
     },
     {
-      "id": "12",
+      "id": "428",
       "type": "sub-locations",
       "attributes": {
-        "name": "anchorage / mat-su",
-        "longitude": -149.8714752,
-        "latitude": 61.1774892,
-        "time-zone": "America/Anchorage",
-        "mid-location-id": 3
-      }
-    },
-    {
-      "id": "13",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "fairbanks",
-        "longitude": -147.7163888,
-        "latitude": 64.8377778,
-        "time-zone": "America/Anchorage",
-        "mid-location-id": 3
-      }
-    },
-    {
-      "id": "14",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "kenai peninsula",
-        "longitude": -151.382264,
-        "latitude": 60.0858486,
-        "time-zone": "America/Anchorage",
-        "mid-location-id": 3
-      }
-    },
-    {
-      "id": "15",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "southeast alaska",
-        "longitude": -149.4936733,
-        "latitude": 64.2008413,
-        "time-zone": "America/Anchorage",
-        "mid-location-id": 3
-      }
-    },
-    {
-      "id": "16",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "flagstaff / sedona",
-        "longitude": -111.8108845,
-        "latitude": 34.8704779,
-        "time-zone": "America/Phoenix",
-        "mid-location-id": 4
-      }
-    },
-    {
-      "id": "17",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "mohave county",
-        "longitude": -113.7632828,
-        "latitude": 35.2143346,
-        "time-zone": "America/Phoenix",
-        "mid-location-id": 4
-      }
-    },
-    {
-      "id": "18",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "phoenix",
-        "longitude": -112.0740373,
-        "latitude": 33.4483771,
-        "time-zone": "America/Phoenix",
-        "mid-location-id": 4
-      }
-    },
-    {
-      "id": "19",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "prescott",
-        "longitude": -112.4685025,
-        "latitude": 34.5400242,
-        "time-zone": "America/Phoenix",
-        "mid-location-id": 4
-      }
-    },
-    {
-      "id": "20",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "show low",
-        "longitude": -110.0298327,
-        "latitude": 34.2542084,
-        "time-zone": "America/Phoenix",
-        "mid-location-id": 4
-      }
-    },
-    {
-      "id": "21",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "sierra vista",
-        "longitude": -110.2772856,
-        "latitude": 31.5455001,
-        "time-zone": "America/Phoenix",
-        "mid-location-id": 4
-      }
-    },
-    {
-      "id": "22",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "tucson",
-        "longitude": -110.9747108,
-        "latitude": 32.2226066,
-        "time-zone": "America/Phoenix",
-        "mid-location-id": 4
-      }
-    },
-    {
-      "id": "23",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "yuma",
-        "longitude": -114.6276916,
-        "latitude": 32.6926512,
-        "time-zone": "America/Phoenix",
-        "mid-location-id": 4
-      }
-    },
-    {
-      "id": "24",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "fayetteville ",
-        "longitude": -94.17185420000001,
-        "latitude": 36.082156,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 5
-      }
-    },
-    {
-      "id": "25",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "fort smith",
-        "longitude": -94.39854749999999,
-        "latitude": 35.3859242,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 5
-      }
-    },
-    {
-      "id": "26",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "jonesboro",
-        "longitude": -90.704279,
-        "latitude": 35.84229670000001,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 5
-      }
-    },
-    {
-      "id": "27",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "little rock",
-        "longitude": -92.28959479999999,
-        "latitude": 34.7464809,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 5
+        "name": "fraser valley",
+        "mid-location-id": 54,
+        "mid-location-name": "British Columbia",
+        "longitude": -121.8159307,
+        "latitude": 49.3764104,
+        "time-zone": "America/Vancouver"
       }
     }
   ],
   "links": {
-    "self": "https://api.mycurrency.com/super_locations/2/sub_locations?",
-    "first": "https://api.mycurrency.com/super_locations/2/sub_locations?page=1&per_page=25",
+    "self": "https://api.mycurrency.com/super_locations/2/sub_locations?per_page=10",
+    "first": "https://api.mycurrency.com/super_locations/2/sub_locations?page=1&per_page=10",
     "prev": null,
-    "next": "https://api.mycurrency.com/super_locations/2/sub_locations?page=2&per_page=25",
-    "last": "https://api.mycurrency.com/super_locations/2/sub_locations?page=17&per_page=25"
+    "next": "https://api.mycurrency.com/super_locations/2/sub_locations?page=2&per_page=10",
+    "last": "https://api.mycurrency.com/super_locations/2/sub_locations?page=6&per_page=10"
   },
   "meta": {
     "pagination": {
-      "per-page": null,
-      "total-pages": "17",
-      "total-count": "418"
+      "per-page": "10",
+      "total-pages": "6",
+      "total-count": "55"
     }
   }
 }
@@ -8743,10 +8458,11 @@ Parameter | Description
 --------- | -----------
 id | The ID of the sub location
 name | The name of the sub location
+mid-location-id | The ID of the parent mid location
+mid-location-name | The name of the parent mid location
 longitude | The longitude of the sub location
 latitude | The latitude of the sub location
 time-zone | The time zone of the sub location
-mid-location-id | The ID of the parent mid location
 
 ## List Nearby Sub Locations
 
@@ -8761,58 +8477,63 @@ curl 'https://api.mycurrency.com/nearby_locations/?ip_address=73.37.205.94' \
 {
   "data": [
     {
-      "id": "198",
+      "id": "196",
       "type": "sub-locations",
       "attributes": {
         "name": "minneapolis / st paul",
+        "mid-location-id": 24,
+        "mid-location-name": "Minnesota",
         "longitude": -93.20099979999999,
         "latitude": 44.9374831,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 25
+        "time-zone": "America/Chicago"
       }
     },
     {
-      "id": "197",
+      "id": "195",
       "type": "sub-locations",
       "attributes": {
         "name": "mankato",
+        "mid-location-id": 24,
+        "mid-location-name": "Minnesota",
         "longitude": -93.99939959999999,
         "latitude": 44.1635775,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 25
-      }
-    },
-    {
-      "id": "201",
-      "type": "sub-locations",
-      "attributes": {
-        "name": "st cloud",
-        "longitude": -94.16324039999999,
-        "latitude": 45.5579451,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 25
+        "time-zone": "America/Chicago"
       }
     },
     {
       "id": "199",
       "type": "sub-locations",
       "attributes": {
-        "name": "rochester ",
-        "longitude": -92.4801989,
-        "latitude": 44.0121221,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 25
+        "name": "st cloud",
+        "mid-location-id": 24,
+        "mid-location-name": "Minnesota",
+        "longitude": -94.16324039999999,
+        "latitude": 45.5579451,
+        "time-zone": "America/Chicago"
       }
     },
     {
-      "id": "407",
+      "id": "197",
+      "type": "sub-locations",
+      "attributes": {
+        "name": "rochester ",
+        "mid-location-id": 24,
+        "mid-location-name": "Minnesota",
+        "longitude": -92.4801989,
+        "latitude": 44.0121221,
+        "time-zone": "America/Chicago"
+      }
+    },
+    {
+      "id": "405",
       "type": "sub-locations",
       "attributes": {
         "name": "eau claire",
+        "mid-location-id": 50,
+        "mid-location-name": "Wisconsin",
         "longitude": -91.4984941,
         "latitude": 44.811349,
-        "time-zone": "America/Chicago",
-        "mid-location-id": 51
+        "time-zone": "America/Chicago"
       }
     }
   ]
@@ -8835,10 +8556,11 @@ Parameter | Description
 --------- | -----------
 id | The ID of the sub location
 name | The name of the sub location
+mid-location-id | The ID of the parent mid location
+mid-location-name | The name of the parent mid location
 longitude | The longitude of the sub location
 latitude | The latitude of the sub location
 time-zone | The time zone of the sub location
-mid-location-id | The ID of the parent mid location
 
 # Orders
 
