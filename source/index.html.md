@@ -898,8 +898,17 @@ curl 'https://api.mycurrency.com/stores/2' \
     "id": "2",
     "type": "stores",
     "attributes": {
+      "number-of-reviews": 3
+      "average-score": "7.333333333333333333",
+      "number-of-products": 1,
+      "number-of-product-cancellations": 3,
       "currency-id": 2,
+      "currency-name": "ACME Toon Shop dollars"
+      "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
       "sub-location-id": 2,
+      "sub-location-name": "Vancouver",
+      "mid-location-id": 1,
+      "mid-location-name": "British Columbia",
       "physical": true,
       "store-name": "Vancouver ACME Toon Shop",
       "store-description": "All manner of ACME Toon items available",
@@ -926,8 +935,16 @@ Authentication: not required
 Parameter | Description
 --------- | -----------
 id | The ID of the store
+number-of-reviews | The number of store reviews created for the store
+average-score | The average score of the store reviews, out of 10
+number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
+number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
 currency-id | The ID of the currency that the store's products are purchasable with
+currency-id | The name of the currency that the store's products are purchasable with
 sub-location-id | The sub location where the store is located
+sub-location-name | The name of the sub location where the store is located
+mid-location-id | The mid location where the store is located
+mid-location-name | The name of the mid location where the store is located
 physical | Whether the store is a physical location that customers can visit
 store-name | The name of the store
 store-description | The description of the store
@@ -953,8 +970,17 @@ curl "https://api.mycurrency.com/stores" \
       "id": "1",
       "type": "stores",
       "attributes": {
+        "number-of-reviews": 0
+        "average-score": null,
+        "number-of-products": 1,
+        "number-of-product-cancellations": 0,
         "currency-id": 1,
+        "currency-name": "Calm dollars",
+        "currency-icon-url": "/system/currencies/icons/000/000/001/original/calm_dollars.jpg?1534619841",
         "sub-location-id": 1,
+        "sub-location-name": "San Francisco",
+        "mid-location-id": "2",
+        "mid-location-name": "California",
         "physical": true,
         "store-name": "Calm Spa",
         "store-description": "A full service spa for full relaxation",
@@ -967,22 +993,40 @@ curl "https://api.mycurrency.com/stores" \
       "id": "2",
       "type": "stores",
       "attributes": {
+        "number-of-reviews": 3
+        "average-score": "7.333333333333333333",
+        "number-of-products": 1,
+        "number-of-product-cancellations": 3 
         "currency-id": 2,
+        "currency-name": "ACME Toon Shop dollars"
+        "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996",
         "sub-location-id": 2,
+        "sub-location-name": "Vancouver",
+        "mid-location-id": 1,
+        "mid-location-name": "British Columbia",
         "physical": true,
         "store-name": "Vancouver ACME Toon Shop",
         "store-description": "All manner of ACME Toon items available",
-        "index": "Vancouver ACME Toon Shop All manner of ACME Toon items available\nBugs Bunny Q-Tips - q-tips that work on the biggest ears, Toon products, products usable by toons - 1550\n",
-        "created-at": "2018-08-13T05:45:12.342-07:00",
-        "updated-at": "2018-08-13T05:45:12.342-07:00",
+        "index": "Vancouver ACME Toon Shop All manner of ACME Toon items available\nBugs Bunny Q-Tips - q-tips that work on the biggest ears, Fictional items, Toon products - 1550\n",
+        "created-at": "2018-08-12T02:11:46.512-07:00",
+        "updated-at": "2018-08-12T02:11:46.512-07:00"
       }
     },
     {
       "id": "3",
       "type": "stores",
       "attributes": {
+        "number-of-reviews": 0
+        "average-score": null,
+        "number-of-products": 2,
+        "number-of-product-cancellations": 0,
         "currency-id": 2,
+        "currency-name": "ACME Toon Shop dollars",
+        "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996",
         "sub-location-id": 1,
+        "sub-location-name": "San Francisco",
+        "mid-location-id": "2",
+        "mid-location-name": "California",
         "physical": true,
         "store-name": "San Francisco ACME Toon Shop",
         "store-description": "San Francisco's premier shop for toons",
@@ -1024,8 +1068,16 @@ Authentication: not required
 Parameter | Description
 --------- | -----------
 id | The ID of the store
+number-of-reviews | The number of store reviews created for the store
+average-score | The average score of the store reviews, out of 10
+number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
+number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
 currency-id | The ID of the currency that the store's products are purchasable with
+currency-id | The name of the currency that the store's products are purchasable with
 sub-location-id | The sub location where the store is located
+sub-location-name | The name of the sub location where the store is located
+mid-location-id | The mid location where the store is located
+mid-location-name | The name of the mid location where the store is located
 physical | Whether the store is a physical location that customers can visit
 store-name | The name of the store
 store-description | The description of the store
@@ -1051,26 +1103,44 @@ curl "https://api.mycurrency.com/currencies/2/stores" \
       "id": "2",
       "type": "stores",
       "attributes": {
+        "number-of-reviews": 3
+        "average-score": "7.333333333333333333",
+        "number-of-products": 1,
+        "number-of-product-cancellations": 3 
         "currency-id": 2,
+        "currency-name": "ACME Toon Shop dollars"
+        "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
         "sub-location-id": 2,
+        "sub-location-name": "Vancouver",
+        "mid-location-id": 1,
+        "mid-location-name": "British Columbia",
         "physical": true,
         "store-name": "Vancouver ACME Toon Shop",
         "store-description": "All manner of ACME Toon items available",
-        "index": "Vancouver ACME Toon Shop All manner of ACME Toon items available\nBugs Bunny Q-Tips - q-tips that work on the biggest ears, Toon products, products usable by toons - 1550\n",
-        "created-at": "2018-08-13T05:45:12.342-07:00",
-        "updated-at": "2018-08-13T05:45:12.342-07:00",
+        "index": "Vancouver ACME Toon Shop All manner of ACME Toon items available\nBugs Bunny Q-Tips - q-tips that work on the biggest ears, Fictional items, Toon products - 1550\n",
+        "created-at": "2018-08-12T02:11:46.512-07:00",
+        "updated-at": "2018-08-12T02:11:46.512-07:00"
       }
     },
     {
       "id": "3",
       "type": "stores",
       "attributes": {
+        "number-of-reviews": 0
+        "average-score": null,
+        "number-of-products": 2,
+        "number-of-product-cancellations": 0,
         "currency-id": 2,
+        "currency-name": "ACME Toon Shop dollars",
+        "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996",
         "sub-location-id": 1,
+        "sub-location-name": "San Francisco",
+        "mid-location-id": "2",
+        "mid-location-name": "California",
         "physical": true,
         "store-name": "San Francisco ACME Toon Shop",
         "store-description": "San Francisco's premier shop for toons",
-        "index": "San Francisco ACME Toon Shop San Francisco's premier shop for toons\nBugs Bunny Q-Tips - q-tips that work on the biggest ears, Fictional items, Toon products - 1550\nTeleport hole - can turn any rock face into a tunnel, fictional items, Toon products - 4000\n",
+        "index": "San Francisco ACME Toon Shop San Francisco's premier shop for toons\nBugs Bunny Q-Tips - q-tips that work on the biggest ears, Toon products, products usable by toons - 1550\nTeleport hole - can turn any rock face into a tunnel, Toon products, products usable by toons - 4000\n",
         "created-at": "2018-08-12T02:11:46.512-07:00",
         "updated-at": "2018-08-12T02:11:46.512-07:00"
       }
@@ -1108,8 +1178,16 @@ Authentication: not required
 Parameter | Description
 --------- | -----------
 id | The ID of the store
+number-of-reviews | The number of store reviews created for the store
+average-score | The average score of the store reviews, out of 10
+number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
+number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
 currency-id | The ID of the currency that the store's products are purchasable with
+currency-id | The name of the currency that the store's products are purchasable with
 sub-location-id | The sub location where the store is located
+sub-location-name | The name of the sub location where the store is located
+mid-location-id | The mid location where the store is located
+mid-location-name | The name of the mid location where the store is located
 physical | Whether the store is a physical location that customers can visit
 store-name | The name of the store
 store-description | The description of the store
@@ -1135,8 +1213,17 @@ curl "https://api.mycurrency.com/stores?keyword=spa%20services" \
       "id": "1",
       "type": "stores",
       "attributes": {
+        "number-of-reviews": 0
+        "average-score": null,
+        "number-of-products": 1,
+        "number-of-product-cancellations": 0,
         "currency-id": 1,
+        "currency-name": "Calm dollars",
+        "currency-icon-url": "/system/currencies/icons/000/000/001/original/calm_dollars.jpg?1534619841",
         "sub-location-id": 1,
+        "sub-location-name": "San Francisco",
+        "mid-location-id": "2",
+        "mid-location-name": "California",
         "physical": true,
         "store-name": "Calm Spa",
         "store-description": "A full service spa for full relaxation",
@@ -1178,8 +1265,16 @@ Authentication: not required
 Parameter | Description
 --------- | -----------
 id | The ID of the store
+number-of-reviews | The number of store reviews created for the store
+average-score | The average score of the store reviews, out of 10
+number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
+number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
 currency-id | The ID of the currency that the store's products are purchasable with
+currency-id | The name of the currency that the store's products are purchasable with
 sub-location-id | The sub location where the store is located
+sub-location-name | The name of the sub location where the store is located
+mid-location-id | The mid location where the store is located
+mid-location-name | The name of the mid location where the store is located
 physical | Whether the store is a physical location that customers can visit
 store-name | The name of the store
 store-description | The description of the store
@@ -1205,8 +1300,17 @@ curl "https://api.mycurrency.com/sub_locations/1/stores" \
       "id": "1",
       "type": "stores",
       "attributes": {
+        "number-of-reviews": 0
+        "average-score": null,
+        "number-of-products": 1,
+        "number-of-product-cancellations": 0,
         "currency-id": 1,
+        "currency-name": "Calm dollars",
+        "currency-icon-url": "/system/currencies/icons/000/000/001/original/calm_dollars.jpg?1534619841",
         "sub-location-id": 1,
+        "sub-location-name": "San Francisco",
+        "mid-location-id": "2",
+        "mid-location-name": "California",
         "physical": true,
         "store-name": "Calm Spa",
         "store-description": "A full service spa for full relaxation",
@@ -1219,12 +1323,21 @@ curl "https://api.mycurrency.com/sub_locations/1/stores" \
       "id": "3",
       "type": "stores",
       "attributes": {
+        "number-of-reviews": 0
+        "average-score": null,
+        "number-of-products": 2,
+        "number-of-product-cancellations": 0,
         "currency-id": 2,
+        "currency-name": "ACME Toon Shop dollars",
+        "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996",
         "sub-location-id": 1,
+        "sub-location-name": "San Francisco",
+        "mid-location-id": "2",
+        "mid-location-name": "California",
         "physical": true,
         "store-name": "San Francisco ACME Toon Shop",
         "store-description": "San Francisco's premier shop for toons",
-        "index": "San Francisco ACME Toon Shop San Francisco's premier shop for toons\nBugs Bunny Q-Tips - q-tips that work on the biggest ears, Fictional items, Toon products - 1550\nTeleport hole - can turn any rock face into a tunnel, fictional items, Toon products - 4000\n",
+        "index": "San Francisco ACME Toon Shop San Francisco's premier shop for toons\nBugs Bunny Q-Tips - q-tips that work on the biggest ears, Toon products, products usable by toons - 1550\nTeleport hole - can turn any rock face into a tunnel, Toon products, products usable by toons - 4000\n",
         "created-at": "2018-08-12T02:11:46.512-07:00",
         "updated-at": "2018-08-12T02:11:46.512-07:00"
       }
@@ -1262,8 +1375,16 @@ Authentication: not required
 Parameter | Description
 --------- | -----------
 id | The ID of the store
+number-of-reviews | The number of store reviews created for the store
+average-score | The average score of the store reviews, out of 10
+number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
+number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
 currency-id | The ID of the currency that the store's products are purchasable with
+currency-id | The name of the currency that the store's products are purchasable with
 sub-location-id | The sub location where the store is located
+sub-location-name | The name of the sub location where the store is located
+mid-location-id | The mid location where the store is located
+mid-location-name | The name of the mid location where the store is located
 physical | Whether the store is a physical location that customers can visit
 store-name | The name of the store
 store-description | The description of the store
@@ -1289,12 +1410,21 @@ curl "https://api.mycurrency.com/sub_locations/1/stores?keyword=Bugs%20Bunny" \
       "id": "3",
       "type": "stores",
       "attributes": {
+        "number-of-reviews": 0
+        "average-score": null,
+        "number-of-products": 2,
+        "number-of-product-cancellations": 0,
         "currency-id": 2,
+        "currency-name": "ACME Toon Shop dollars",
+        "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996",
         "sub-location-id": 1,
+        "sub-location-name": "San Francisco",
+        "mid-location-id": "2",
+        "mid-location-name": "California",
         "physical": true,
         "store-name": "San Francisco ACME Toon Shop",
         "store-description": "San Francisco's premier shop for toons",
-        "index": "San Francisco ACME Toon Shop San Francisco's premier shop for toons\nBugs Bunny Q-Tips - q-tips that work on the biggest ears, Fictional items, Toon products - 1550\nTeleport hole - can turn any rock face into a tunnel, fictional items, Toon products - 4000\n",
+        "index": "San Francisco ACME Toon Shop San Francisco's premier shop for toons\nBugs Bunny Q-Tips - q-tips that work on the biggest ears, Toon products, products usable by toons - 1550\nTeleport hole - can turn any rock face into a tunnel, Toon products, products usable by toons - 4000\n",
         "created-at": "2018-08-12T02:11:46.512-07:00",
         "updated-at": "2018-08-12T02:11:46.512-07:00"
       }
@@ -1332,8 +1462,16 @@ Authentication: not required
 Parameter | Description
 --------- | -----------
 id | The ID of the store
+number-of-reviews | The number of store reviews created for the store
+average-score | The average score of the store reviews, out of 10
+number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
+number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
 currency-id | The ID of the currency that the store's products are purchasable with
+currency-id | The name of the currency that the store's products are purchasable with
 sub-location-id | The sub location where the store is located
+sub-location-name | The name of the sub location where the store is located
+mid-location-id | The mid location where the store is located
+mid-location-name | The name of the mid location where the store is located
 physical | Whether the store is a physical location that customers can visit
 store-name | The name of the store
 store-description | The description of the store
@@ -1358,8 +1496,17 @@ curl -X POST https://api.mycurrency.com/users/4/issuer/currencies/5/stores \
     "id": "3",
     "type": "stores",
     "attributes": {
+      "number-of-reviews": 0
+      "average-score": null,
+      "number-of-products": 0,
+      "number-of-product-cancellations": 0,
       "currency-id": 5,
+      "currency-name": "Chilli pesos",
+      "currency-icon-url": "/system/currencies/icons/000/000/005/original/chilli-pesos.png?153414511"
       "sub-location-id": 2,
+      "sub-location-name": "Vancouver",
+      "mid-location-id": 1,
+      "mid-location-name": "British Columbia",
       "physical": true,
       "store-name": "Freds Fishing Supplies",
       "store-description": "Fishing supply shop",
@@ -1396,8 +1543,16 @@ store-description | string | no | The description of the store
 Parameter | Description
 --------- | -----------
 id | The ID of the store
+number-of-reviews | The number of store reviews created for the store
+average-score | The average score of the store reviews, out of 10
+number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
+number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
 currency-id | The ID of the currency that the store's products are purchasable with
+currency-id | The name of the currency that the store's products are purchasable with
 sub-location-id | The sub location where the store is located
+sub-location-name | The name of the sub location where the store is located
+mid-location-id | The mid location where the store is located
+mid-location-name | The name of the mid location where the store is located
 physical | Whether the store is a physical location that customers can visit
 store-name | The name of the store
 store-description | The description of the store
@@ -1423,14 +1578,23 @@ curl -X PUT https://api.mycurrency.com/users/4/issuer/currencies/5/stores/3 \
     "id": "3",
     "type": "stores",
     "attributes": {
+      "number-of-reviews": 0
+      "average-score": null,
+      "number-of-products": 0,
+      "number-of-product-cancellations": 0,
       "currency-id": 5,
-      "sub-location-id": 2,
-      "physical": true,
+      "currency-name": "Chilli pesos",
+      "currency-icon-url": "/system/currencies/icons/000/000/005/original/chilli-pesos.png?153414511"
+      "sub-location-id": 1,
+      "sub-location-name": "San Francisco",
+      "mid-location-id": 2,
+      "mid-location-name": "California",
+      "physical": false,
       "store-name": "Freds Fishing Supplies",
-      "store-description": "The finest fishing shop in San Francisco",
+      "store-description": "The finest Fishing shop in San Francisco",
       "index": "Freds Fishing Supplies The finest fishing shop in San Francisco",
       "created-at": "2018-08-26T16:09:40.080-07:00",
-      "updated-at": "2018-08-26T16:09:40.080-07:00"
+      "updated-at": "2018-08-26T17:43:32.080-07:00"
     }
   }
 }
@@ -1462,8 +1626,16 @@ active
 Parameter | Description
 --------- | -----------
 id | The ID of the store
-currency-id | The ID of the currency that the store's products are purchasable with, provided in URL path
+number-of-reviews | The number of store reviews created for the store
+average-score | The average score of the store reviews, out of 10
+number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
+number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
+currency-id | The ID of the currency that the store's products are purchasable with
+currency-id | The name of the currency that the store's products are purchasable with
 sub-location-id | The sub location where the store is located
+sub-location-name | The name of the sub location where the store is located
+mid-location-id | The mid location where the store is located
+mid-location-name | The name of the mid location where the store is located
 physical | Whether the store is a physical location that customers can visit
 store-name | The name of the store
 store-description | The description of the store
