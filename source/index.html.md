@@ -1985,7 +1985,8 @@ curl 'https://api.mycurrency.com/products/1' \
     "id": "1",
     "type": "products",
     "attributes": {
-      "sub-category-id": 2,
+      "sub-category-id": 3,
+      "sub-category-name": "skin treatment"
       "store-id":1,
       "product-name": "Facial",
       "product-description": "standard facial",
@@ -2017,6 +2018,7 @@ Parameter | Description
 --------- | -----------
 id | The ID of the product
 sub-category-id | The sub category that the product belongs to
+sub-category-name | The name of the sub category that the product belongs to
 store-id | The ID of the store where the product is sold
 product-name | The name of the product
 product-description | The description of the product
@@ -2044,7 +2046,8 @@ curl "https://api.mycurrency.com/products" \
       "id": "1",
       "type": "products",
       "attributes": {
-        "sub-category-id": 2,
+        "sub-category-id": 3,
+        "sub-category-name": "standard facial",
         "store-id":1,
         "product-name": "Facial",
         "product-description": "standard facial",
@@ -2062,6 +2065,7 @@ curl "https://api.mycurrency.com/products" \
       "type": "products",
       "attributes": {
         "sub-category-id": 6,
+        "sub-category-name": "cartoon products",
         "store-id":2,
         "product-name": "Bugs Bunny Q-Tips",
         "product-description": "q-tips that work on the biggest ears",
@@ -2079,6 +2083,7 @@ curl "https://api.mycurrency.com/products" \
       "type": "products",
       "attributes": {
         "sub-category-id": 6,
+        "sub-category-name": "cartoon products",
         "store-id":3,
         "product-name": "Bugs Bunny Q-Tips",
         "product-description": "q-tips that work on the biggest ears",
@@ -2096,6 +2101,7 @@ curl "https://api.mycurrency.com/products" \
       "type": "products",
       "attributes": {
         "sub-category-id": 6,
+        "sub-category-name": "cartoon products",
         "store-id":3,
         "product-name": "Teleport hole",
         "product-description": "can turn any rock face into a tunnel",
@@ -2142,6 +2148,7 @@ Parameter | Description
 --------- | -----------
 id | The ID of the product
 sub-category-id | The sub category that the product belongs to
+sub-category-name | The name of the sub category that the product belongs to
 store-id | The ID of the store where the product is sold
 product-name | The name of the product
 product-description | The description of the product
@@ -2170,6 +2177,7 @@ curl "https://api.mycurrency.com/stores/3/products" \
       "type": "products",
       "attributes": {
         "sub-category-id": 6,
+        "sub-category-name": "cartoon products",
         "store-id":3,
         "product-name": "Bugs Bunny Q-Tips",
         "product-description": "q-tips that work on the biggest ears",
@@ -2187,6 +2195,7 @@ curl "https://api.mycurrency.com/stores/3/products" \
       "type": "products",
       "attributes": {
         "sub-category-id": 6,
+        "sub-category-name": "cartoon products",
         "store-id":3,
         "product-name": "Teleport hole",
         "product-description": "can turn any rock face into a tunnel",
@@ -2233,6 +2242,7 @@ Parameter | Description
 --------- | -----------
 id | The ID of the product
 sub-category-id | The sub category that the product belongs to
+sub-category-name | The name of the sub category that the product belongs to
 store-id | The ID of the store where the product is sold
 product-name | The name of the product
 product-description | The description of the product
@@ -2263,6 +2273,7 @@ curl -X POST https://api.mycurrency.com/users/4/issuer/currencies/5/stores/3/pro
     "type":"products",
     "attributes": {
       "sub-category-id": 4,
+      "sub-category-name": "fishing supplies",
       "store-id": 3,
       "product-name": "fishing bait",
       "product-description": "natural fishing bait made of worms",
@@ -2306,6 +2317,7 @@ Parameter | Description
 --------- | -----------
 id | The ID of the product
 sub-category-id | The sub category that the product belongs to
+sub-category-name | The name of the sub category that the product belongs to
 store-id | The ID of the store where the product is sold
 product-name | The name of the product
 product-description | The description of the product
@@ -2336,6 +2348,7 @@ curl -X PUT https://api.mycurrency.com/users/4/issuer/currencies/5/stores/3/prod
     "type": "products",
     "attributes": {
       "sub-category-id": 4,
+      "sub-category-name": "fishing supplies",
       "store-id": 3,
       "product-name": "fishing bait",
       "product-description": "natural fishing bait made of worms",
@@ -2378,6 +2391,7 @@ Parameter | Description
 --------- | -----------
 id | The ID of the product
 sub-category-id | The sub category that the product belongs to
+sub-category-name | The name of the sub category that the product belongs to
 store-id | The ID of the store where the product is sold
 product-name | The name of the product
 product-description | The description of the product
