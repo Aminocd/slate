@@ -6527,7 +6527,7 @@ curl https://api.mycurrency.com/users/4/authorized_listings \
 }
 ```
 
-This endpoint retrieves all active listings created by the logged in user and outputs their full details.
+This endpoint retrieves all listings created by the logged in user and outputs their full details.
 
 ### HTTP Request
 
