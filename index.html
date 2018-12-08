@@ -4086,6 +4086,7 @@ Authentication: the request requires the OAuth access-token associated with the 
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"product-cancellations"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"product-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
       </span><span class="s2">"product-discontinual-id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing bait"</span><span class="p">,</span><span class="w">
@@ -4118,6 +4119,10 @@ Authentication: not required
 <tr>
 <td>store-id</td>
 <td>The ID of the store where the cancelled product was sold</td>
+</tr>
+<tr>
+<td>store-name</td>
+<td>The name of the store where the cancelled product was sold</td>
 </tr>
 <tr>
 <td>product-id</td>
@@ -4157,6 +4162,7 @@ Authentication: not required
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"product-cancellations"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-discontinual-id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing bait"</span><span class="p">,</span><span class="w">
@@ -4170,6 +4176,7 @@ Authentication: not required
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"product-cancellations"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jeffreys outdoor supplies"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-discontinual-id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chameleon tent"</span><span class="p">,</span><span class="w">
@@ -4183,6 +4190,7 @@ Authentication: not required
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"product-cancellations"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Honolulu pizza joint"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-discontinual-id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hawaiian pizza"</span><span class="p">,</span><span class="w">
@@ -4247,6 +4255,10 @@ Authentication: not required
 <td>The ID of the store where the cancelled product was sold</td>
 </tr>
 <tr>
+<td>store-name</td>
+<td>The name of the store where the cancelled product was sold</td>
+</tr>
+<tr>
 <td>product-id</td>
 <td>The ID of the product that was cancelled</td>
 </tr>
@@ -4284,6 +4296,7 @@ Authentication: not required
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"product-cancellations"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-discontinual-id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing bait"</span><span class="p">,</span><span class="w">
@@ -4297,6 +4310,7 @@ Authentication: not required
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"product-cancellations"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jeffreys outdoor supplies"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-discontinual-id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chameleon tent"</span><span class="p">,</span><span class="w">
@@ -4361,6 +4375,10 @@ Authentication: not required
 <td>The ID of the store where the cancelled product was sold</td>
 </tr>
 <tr>
+<td>store-name</td>
+<td>The name of the store where the cancelled product was sold</td>
+</tr>
+<tr>
 <td>product-id</td>
 <td>The ID of the product that was cancelled</td>
 </tr>
@@ -4398,6 +4416,7 @@ Authentication: not required
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"product-cancellations"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jeffreys outdoor supplies"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-discontinual-id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing bait"</span><span class="p">,</span><span class="w">
@@ -4462,6 +4481,10 @@ Authentication: not required
 <td>The ID of the store where the cancelled product was sold</td>
 </tr>
 <tr>
+<td>store-name</td>
+<td>The name of the store where the cancelled product was sold</td>
+</tr>
+<tr>
 <td>product-id</td>
 <td>The ID of the product that was cancelled</td>
 </tr>
@@ -4500,6 +4523,7 @@ Authentication: not required
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"product-cancellations"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"product-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
       </span><span class="s2">"product-discontinual-id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing bait"</span><span class="p">,</span><span class="w">
@@ -4572,6 +4596,10 @@ Authentication: the request requires the OAuth access-token associated with the 
 <tr>
 <td>store-id</td>
 <td>The ID of the store where the cancelled product was sold</td>
+</tr>
+<tr>
+<td>store-name</td>
+<td>The name of the store where the cancelled product was sold</td>
 </tr>
 <tr>
 <td>product-id</td>
