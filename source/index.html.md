@@ -8765,7 +8765,11 @@ This endpoint retrieves a user's orders.
 
 ### HTTP Request
 
-`GET https://api.mycurrency.com/users/<USER-ID>/offers?index_type={}`
+`GET https://api.mycurrency.com/order_sets?ordering_user_id={}`
+
+OR
+
+`GET https://api.mycurrency.com/order_sets?selling_user_id={}`
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
