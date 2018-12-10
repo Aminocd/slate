@@ -8650,6 +8650,8 @@ ordering-user-id | The ID of the user that made the order, only shown if the log
 ordering-user-name | The username of the user that made the order, only shown if the logged in user is the owner of the store that received the order
 source-currency-holding-id | The ID of the public or private currency holding that the micro currency order spent from, only shown if the logged in user made the order
 source-currency-holding-type | Whether the currency holding that the micro currency order spent from is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding", only shown if the logged in user made the order
+spent-currency-id | The ID of the currency spent
+spent-currency-name | The name of the currency spent
 before-amount-atomic | The balance, in atomic units, of the currency holding before it was debited by the micro currency order, only shown if the logged in user made the order
 after-amount-atomic | The balance, in atomic units, of the currency holding after it was debited by the micro currency order, only shown if the logged in user made the order
 burnrate-period-id | The ID of the burnrate period of the currency holding when it was debited by the micro currency order, only shown if the logged in user made the order 
@@ -8796,6 +8798,8 @@ ordering-user-id | The ID of the user that made the order, only shown if the log
 ordering-user-name | The username of the user that made the order, only shown if the logged in user is the owner of the store that received the order
 source-currency-holding-id | The ID of the public or private currency holding that the micro currency order spent from, only shown if the logged in user made the order
 source-currency-holding-type | Whether the currency holding that the micro currency order spent from is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding", only shown if the logged in user made the order
+spent-currency-id | The ID of the currency spent
+spent-currency-name | The name of the currency spent
 before-amount-atomic | The balance, in atomic units, of the currency holding before it was debited by the micro currency order, only shown if the logged in user made the order
 after-amount-atomic | The balance, in atomic units, of the currency holding after it was debited by the micro currency order, only shown if the logged in user made the order
 burnrate-period-id | The ID of the burnrate period of the currency holding when it was debited by the micro currency order, only shown if the logged in user made the order 
@@ -8880,6 +8884,8 @@ ordering-user-id | The ID of the user that made the order, only shown if the log
 ordering-user-name | The username of the user that made the order, only shown if the logged in user is the owner of the store that received the order
 source-currency-holding-id | The ID of the public or private currency holding that the micro currency order spent from, only shown if the logged in user made the order
 source-currency-holding-type | Whether the currency holding that the micro currency order spent from is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding", only shown if the logged in user made the order
+spent-currency-id | The ID of the currency spent
+spent-currency-name | The name of the currency spent
 before-amount-atomic | The balance, in atomic units, of the currency holding before it was debited by the micro currency order, only shown if the logged in user made the order
 after-amount-atomic | The balance, in atomic units, of the currency holding after it was debited by the micro currency order, only shown if the logged in user made the order
 burnrate-period-id | The ID of the burnrate period of the currency holding when it was debited by the micro currency order, only shown if the logged in user made the order 
