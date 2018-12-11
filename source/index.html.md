@@ -136,6 +136,7 @@ curl "https://api.mycurrency.com/users/2" \
       "get-avatar-url": "/system/users/avatars/000/000/002/original/afternoon_portrait.jpg?1534139495"
       "email": "RonaldMcDonald@mcdonalds.com",
       "sub-location-id": 1,
+      "sub-location-name": "San Francisco",
       "updated-at": "2018-08-14T14:51:07.965-07:00"
     }
   }
@@ -163,6 +164,7 @@ active | Whether the user is active or not
 get-avatar-url | The URL at which the user profile picture can be found
 email | The email address associated with the user account
 sub-location-id | The ID of the sub location associated with the user account
+sub-location-name | The name of the sub location associated with the user account
 updated-at | The time and date when the user was last updated
 
 ## Update User
@@ -189,6 +191,7 @@ curl -X PUT https://api.mycurrency.com/users/2 \
       "get-avatar-url": "/system/users/avatars/000/000/002/original/afternoon_portrait.jpg?1534139495"
       "email": "RonaldMcDonald@mcdonalds.com",
       "sub-location-id": 2,
+      "sub-location-name": "Vancouver",
       "updated-at": "2018-08-22T01:28:56.872-07:00"
     }
   }
@@ -225,6 +228,7 @@ active | Whether the user is active or not
 get-avatar-url | The URL at which the user profile picture can be found
 email | The email address associated with the user account
 sub-location-id | The ID of the sub location associated with the user account
+sub-location-name | The name of the sub location associated with the user account
 updated-at | The time and date when the user was last updated
 
 # Issuers
@@ -331,6 +335,8 @@ curl 'https://api.mycurrency.com/currencies/2' \
     "type": "currencies",
     "attributes": {
       "issuer-id": 2,
+      "issuer-user-id": 3,
+      "issuer-user-username": "Hannibal",
       "burn-rate": 450,
       "name": "ACME Toon Shop dollars",
       "description": "Spendable at any ACME Toon Shop",
@@ -358,6 +364,8 @@ Parameter | Description
 --------- | -----------
 id | The ID of the currency
 issuer-id | The ID of the issuer account that issued the currency
+issuer-user-id | The ID of the user account that issued the currency
+issuer-user-username | The ID of the user account that issued the currency
 burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
 name | The name of the currency
 description | The description of the currency
@@ -382,6 +390,8 @@ curl "https://api.mycurrency.com/currencies" \
       "type": "currencies",
       "attributes": {
         "issuer-id": 2,
+        "issuer-user-id": 3,
+        "issuer-user-username": "Hannibal",
         "burn-rate": 740,
         "name": "Calm dollars",
         "description": "Redeemable for services at Calm Massage Therapy",
@@ -395,6 +405,8 @@ curl "https://api.mycurrency.com/currencies" \
       "type": "currencies",
       "attributes": {
         "issuer-id": 3,
+        "issuer-user-id": 4,
+        "issuer-user-username": "ScipioAfricanus",
         "burn-rate": 450,
         "name": "ACME Toon Shop dollars",
         "description": "Spendable at any ACME Toon Shop",
@@ -408,6 +420,8 @@ curl "https://api.mycurrency.com/currencies" \
       "type": "currencies",
       "attributes": {
         "issuer-id": 3,
+        "issuer-user-id": 4,
+        "issuer-user-username": "ScipioAfricanus",
         "burn-rate": 420,
         "name": "Horizon Cloud Computing dollars",
         "description": "Redeemable for Horizon Cloud Computing services",
@@ -421,6 +435,8 @@ curl "https://api.mycurrency.com/currencies" \
       "type": "currencies",
       "attributes": {
         "issuer-id": 4,
+        "issuer-user-id": 5,
+        "issuer-user-username": "Tom",
         "burn-rate": 550,
         "name": "Tom's Fruitstand bucks",
         "description": "Redeem Tom's Fruitstand bucks for delicious fruit",
@@ -434,6 +450,8 @@ curl "https://api.mycurrency.com/currencies" \
       "type": "currencies",
       "attributes": {
         "issuer-id": 5,
+        "issuer-user-id": 6,
+        "issuer-user-username": "Estevan",
         "burn-rate": 500,
         "name": "Chilli pesos",
         "description": "Chilli pesos are backed by chillis",
@@ -476,6 +494,8 @@ Parameter | Description
 --------- | -----------
 id | The ID of the currency
 issuer-id | The ID of the issuer account that issued the currency
+issuer-user-id | The ID of the user account that issued the currency
+issuer-user-username | The ID of the user account that issued the currency
 burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
 name | The name of the currency
 description | The description of the currency
@@ -500,6 +520,8 @@ curl "https://api.mycurrency.com/currencies?user_id=3" \
       "type": "currencies",
       "attributes": {
         "issuer-id": 3,
+        "issuer-user-id": 4,
+        "issuer-user-username": "ScipioAfricanus",
         "burn-rate": 450,
         "name": "ACME Toon Shop dollars",
         "description": "Spendable at any ACME Toon Shop",
@@ -513,6 +535,8 @@ curl "https://api.mycurrency.com/currencies?user_id=3" \
       "type": "currencies",
       "attributes": {
         "issuer-id": 3,
+        "issuer-user-id": 4,
+        "issuer-user-username": "ScipioAfricanus",
         "burn-rate": 420,
         "name": "Horizon Cloud Computing dollars",
         "description": "Redeemable for Horizon Cloud Computing services",
@@ -555,6 +579,8 @@ Parameter | Description
 --------- | -----------
 id | The ID of the currency
 issuer-id | The ID of the issuer account that issued the currency
+issuer-user-id | The ID of the user account that issued the currency
+issuer-user-username | The ID of the user account that issued the currency
 burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
 name | The name of the currency
 description | The description of the currency
@@ -580,6 +606,8 @@ curl -X POST https://api.mycurrency.com/users/2/issuer/currencies \
     "type":"currencies",
     "attributes": {
       "issuer-id": 2,
+      "issuer-user-id": 3,
+      "issuer-user-username": "Hannibal",
       "burn-rate": 740,
       "name": "Calm dollars",
       "description": "Redeemable for services at Calm Massage Therapy",
@@ -616,6 +644,8 @@ Parameter | Description
 --------- | -----------
 id | The ID of the new currency
 issuer-id | The ID of the issuer account that issued the currency
+issuer-user-id | The ID of the user account that issued the currency
+issuer-user-username | The ID of the user account that issued the currency
 burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
 name | The name of the currency
 description | The description of the currency
@@ -641,6 +671,8 @@ curl -X PUT https://api.mycurrency.com/users/2/issuer/currencies/1 \
     "type":"currencies",
     "attributes": {
       "issuer-id": 2,
+      "issuer-user-id": 3,
+      "issuer-user-username": "Hannibal",
       "burn-rate": 740,
       "name": "Calm dollars",
       "description": "Redeemable for services at Calm Massage Therapy",
@@ -675,6 +707,8 @@ Parameter | Description
 --------- | -----------
 id | The ID of the updated currency
 issuer-id | The ID of the issuer account that issued the currency
+issuer-user-id | The ID of the user account that issued the currency
+issuer-user-username | The ID of the user account that issued the currency
 burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
 name | The name of the currency
 description | The description of the currency
@@ -682,7 +716,7 @@ created-at | The time and date when the currency was created
 updated-at | The time and date when the currency was last updated
 get-icon-url | The URL at which the currency icon picture can be found
 
-#Burnrate Change
+# Burnrate Change
 
 ## Get a Burnrate Change
 
@@ -1183,7 +1217,7 @@ average-score | The average score of the store reviews, out of 10
 number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
 number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
 currency-id | The ID of the currency that the store's products are purchasable with
-currency-id | The name of the currency that the store's products are purchasable with
+currency-name | The name of the currency that the store's products are purchasable with
 sub-location-id | The sub location where the store is located
 sub-location-name | The name of the sub location where the store is located
 mid-location-id | The mid location where the store is located
@@ -1270,7 +1304,7 @@ average-score | The average score of the store reviews, out of 10
 number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
 number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
 currency-id | The ID of the currency that the store's products are purchasable with
-currency-id | The name of the currency that the store's products are purchasable with
+currency-name | The name of the currency that the store's products are purchasable with
 sub-location-id | The sub location where the store is located
 sub-location-name | The name of the sub location where the store is located
 mid-location-id | The mid location where the store is located
@@ -1380,7 +1414,7 @@ average-score | The average score of the store reviews, out of 10
 number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
 number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
 currency-id | The ID of the currency that the store's products are purchasable with
-currency-id | The name of the currency that the store's products are purchasable with
+currency-name | The name of the currency that the store's products are purchasable with
 sub-location-id | The sub location where the store is located
 sub-location-name | The name of the sub location where the store is located
 mid-location-id | The mid location where the store is located
@@ -1467,7 +1501,7 @@ average-score | The average score of the store reviews, out of 10
 number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
 number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
 currency-id | The ID of the currency that the store's products are purchasable with
-currency-id | The name of the currency that the store's products are purchasable with
+currency-name | The name of the currency that the store's products are purchasable with
 sub-location-id | The sub location where the store is located
 sub-location-name | The name of the sub location where the store is located
 mid-location-id | The mid location where the store is located
@@ -1548,7 +1582,7 @@ average-score | The average score of the store reviews, out of 10
 number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
 number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
 currency-id | The ID of the currency that the store's products are purchasable with
-currency-id | The name of the currency that the store's products are purchasable with
+currency-name | The name of the currency that the store's products are purchasable with
 sub-location-id | The sub location where the store is located
 sub-location-name | The name of the sub location where the store is located
 mid-location-id | The mid location where the store is located
@@ -1631,7 +1665,7 @@ average-score | The average score of the store reviews, out of 10
 number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
 number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
 currency-id | The ID of the currency that the store's products are purchasable with
-currency-id | The name of the currency that the store's products are purchasable with
+currency-name | The name of the currency that the store's products are purchasable with
 sub-location-id | The sub location where the store is located
 sub-location-name | The name of the sub location where the store is located
 mid-location-id | The mid location where the store is located
@@ -1987,7 +2021,10 @@ curl 'https://api.mycurrency.com/products/1' \
     "attributes": {
       "sub-category-id": 3,
       "sub-category-name": "skin treatment"
-      "store-id":1,
+      "currency-id": 1,
+      "currency-name": "Calm dollars",
+      "store-id": 1,
+      "store-name": "Calm Spa",
       "product-name": "Facial",
       "product-description": "standard facial",
       "price-cents": 5000,
@@ -2019,7 +2056,10 @@ Parameter | Description
 id | The ID of the product
 sub-category-id | The sub category that the product belongs to
 sub-category-name | The name of the sub category that the product belongs to
+currency-id | The ID of the currency that the product can be redeemed by
+currency-name | The name of the currency that the product can be redeemed by
 store-id | The ID of the store where the product is sold
+store-name | The name of the store where the product is sold
 product-name | The name of the product
 product-description | The description of the product
 price-cents | The price of the product by multiple of 100, and denominated in the currency of the store where the product is sold
@@ -2048,7 +2088,10 @@ curl "https://api.mycurrency.com/products" \
       "attributes": {
         "sub-category-id": 3,
         "sub-category-name": "standard facial",
-        "store-id":1,
+        "currency-id": 1,
+        "currency-name": "Calm dollars",
+        "store-id": 1,
+        "store-name": "Calm Spa",
         "product-name": "Facial",
         "product-description": "standard facial",
         "price-cents": 5000,
@@ -2066,7 +2109,10 @@ curl "https://api.mycurrency.com/products" \
       "attributes": {
         "sub-category-id": 6,
         "sub-category-name": "cartoon products",
-        "store-id":2,
+        "currency-id": 2,
+        "currency-name": "ACME Toon Shop dollars"
+        "store-id": 2,
+        "store-name": "Vancouver ACME Toon Shop",
         "product-name": "Bugs Bunny Q-Tips",
         "product-description": "q-tips that work on the biggest ears",
         "price-cents": 1500,
@@ -2084,7 +2130,10 @@ curl "https://api.mycurrency.com/products" \
       "attributes": {
         "sub-category-id": 6,
         "sub-category-name": "cartoon products",
-        "store-id":3,
+        "currency-id": 2,
+        "currency-name": "ACME Toon Shop dollars"
+        "store-id": 3,
+        "store-name": "San Francisco ACME Toon Shop",
         "product-name": "Bugs Bunny Q-Tips",
         "product-description": "q-tips that work on the biggest ears",
         "price-cents": 1500,
@@ -2102,7 +2151,10 @@ curl "https://api.mycurrency.com/products" \
       "attributes": {
         "sub-category-id": 6,
         "sub-category-name": "cartoon products",
-        "store-id":3,
+        "currency-id": 2,
+        "currency-name": "ACME Toon Shop dollars"
+        "store-id": 3,
+        "store-name": "San Francisco ACME Toon Shop",
         "product-name": "Teleport hole",
         "product-description": "can turn any rock face into a tunnel",
         "price-cents": 4000,
@@ -2149,7 +2201,10 @@ Parameter | Description
 id | The ID of the product
 sub-category-id | The sub category that the product belongs to
 sub-category-name | The name of the sub category that the product belongs to
+currency-id | The ID of the currency that the product can be redeemed by
+currency-name | The name of the currency that the product can be redeemed by
 store-id | The ID of the store where the product is sold
+store-name | The name of the store where the product is sold
 product-name | The name of the product
 product-description | The description of the product
 price-cents | The price of the product by multiple of 100, and denominated in the currency of the store where the product is sold
@@ -2178,7 +2233,10 @@ curl "https://api.mycurrency.com/stores/3/products" \
       "attributes": {
         "sub-category-id": 6,
         "sub-category-name": "cartoon products",
-        "store-id":3,
+        "currency-id": 2,
+        "currency-name": "ACME Toon Shop dollars"
+        "store-id": 3,
+        "store-name": "San Francisco ACME Toon Shop",
         "product-name": "Bugs Bunny Q-Tips",
         "product-description": "q-tips that work on the biggest ears",
         "price-cents": 1500,
@@ -2196,7 +2254,10 @@ curl "https://api.mycurrency.com/stores/3/products" \
       "attributes": {
         "sub-category-id": 6,
         "sub-category-name": "cartoon products",
-        "store-id":3,
+        "currency-id": 2,
+        "currency-name": "ACME Toon Shop dollars"
+        "store-id": 3,
+        "store-name": "San Francisco ACME Toon Shop",
         "product-name": "Teleport hole",
         "product-description": "can turn any rock face into a tunnel",
         "price-cents": 4000,
@@ -2243,7 +2304,10 @@ Parameter | Description
 id | The ID of the product
 sub-category-id | The sub category that the product belongs to
 sub-category-name | The name of the sub category that the product belongs to
+currency-id | The ID of the currency that the product can be redeemed by
+currency-name | The name of the currency that the product can be redeemed by
 store-id | The ID of the store where the product is sold
+store-name | The name of the store where the product is sold
 product-name | The name of the product
 product-description | The description of the product
 price-cents | The price of the product by multiple of 100, and denominated in the currency of the store where the product is sold
@@ -2274,7 +2338,10 @@ curl -X POST https://api.mycurrency.com/users/4/issuer/currencies/5/stores/3/pro
     "attributes": {
       "sub-category-id": 4,
       "sub-category-name": "fishing supplies",
+      "currency-id": 5,
+      "currency-name": "Freds Fishing Supplies dollars",
       "store-id": 3,
+      "store-name": "Freds Fishing Supplies",
       "product-name": "fishing bait",
       "product-description": "natural fishing bait made of worms",
       "price-cents": 1000,
@@ -2318,7 +2385,10 @@ Parameter | Description
 id | The ID of the product
 sub-category-id | The sub category that the product belongs to
 sub-category-name | The name of the sub category that the product belongs to
+currency-id | The ID of the currency that the product can be redeemed by
+currency-name | The name of the currency that the product can be redeemed by
 store-id | The ID of the store where the product is sold
+store-name | The name of the store where the product is sold
 product-name | The name of the product
 product-description | The description of the product
 price-cents | The price of the product by multiple of 100, and denominated in the currency of the store where the product is sold
@@ -2349,7 +2419,10 @@ curl -X PUT https://api.mycurrency.com/users/4/issuer/currencies/5/stores/3/prod
     "attributes": {
       "sub-category-id": 4,
       "sub-category-name": "fishing supplies",
+      "currency-id": 5,
+      "currency-name": "Freds Fishing Supplies dollars",
       "store-id": 3,
+      "store-name": "Freds Fishing Supplies",
       "product-name": "fishing bait",
       "product-description": "natural fishing bait made of worms",
       "price-cents": 1000,
@@ -2392,7 +2465,10 @@ Parameter | Description
 id | The ID of the product
 sub-category-id | The sub category that the product belongs to
 sub-category-name | The name of the sub category that the product belongs to
+currency-id | The ID of the currency that the product can be redeemed by
+currency-name | The name of the currency that the product can be redeemed by
 store-id | The ID of the store where the product is sold
+store-name | The name of the store where the product is sold
 product-name | The name of the product
 product-description | The description of the product
 price-cents | The price of the product by multiple of 100, and denominated in the currency of the store where the product is sold
@@ -3265,6 +3341,7 @@ curl 'https://api.mycurrency.com/users/3/public_currency_holdings/3' \
     "type": "public-currency-holdings",
     "attributes": {
       "owning-user-id": 3,
+      "owning-user-username": "Hannibal",
       "currency-id": 2,
       "currency-name": "ACME Toon Shop dollars",
       "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996",
@@ -3290,6 +3367,7 @@ Parameter | Description
 --------- | -----------
 id | The ID of the public currency holding
 owning-user-id | The ID of the user that the public currency holding belongs to
+owning-user-username | The username of the user that the public currency holding belongs to
 currency-id | The ID of the currency that the public currency holding holds
 currency-name | The name of the currency that the public currency holding holds
 currency-icon-url | The URL at which the icon picture of the currency that the public currency holding holds can be found
@@ -3312,6 +3390,7 @@ curl 'https://api.mycurrency.com/users/3/self_issued_public_currency_holdings' \
       "type": "public-currency-holdings",
       "attributes": {
         "owning-user-id": 3,
+        "owning-user-username": "Hannibal",
         "currency-id": 2,
         "currency-name": "ACME Toon Shop dollars",
         "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996",
@@ -3323,6 +3402,7 @@ curl 'https://api.mycurrency.com/users/3/self_issued_public_currency_holdings' \
       "type": "public-currency-holdings",
       "attributes": {
         "owning-user-id": 3,
+        "owning-user-username": "Hannibal",
         "currency-id": 6,
         "currency-name": "Diamond dollars",
         "currency-icon-url": "/system/currencies/icons/000/000/006/original/Diamond-coins.png?1534142996",
@@ -3370,6 +3450,7 @@ Parameter | Description
 --------- | -----------
 id | The ID of the public currency holding
 owning-user-id | The ID of the user that the public currency holding belongs to
+owning-user-username | The username of the user that the public currency holding belongs to
 currency-id | The ID of the currency that the public currency holding holds
 currency-name | The name of the currency that the public currency holding holds
 currency-icon-url | The URL at which the icon picture of the currency that the public currency holding holds can be found
@@ -3392,6 +3473,7 @@ curl 'https://api.mycurrency.com/users/4/externally_issued_public_currency_holdi
       "type": "public-currency-holdings",
       "attributes": {
         "owning-user-id": 4,
+        "owning-user-username": "ScipioAfricanus",
         "currency-id": 2,
         "currency-name": "ACME Toon Shop dollars",
         "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996",
@@ -3403,6 +3485,7 @@ curl 'https://api.mycurrency.com/users/4/externally_issued_public_currency_holdi
       "type": "public-currency-holdings",
       "attributes": {
         "owning-user-id": 4,
+        "owning-user-username": "ScipioAfricanus",
         "currency-id": 3,
         "currency-name": "Horizon Cloud Computing dollars",
         "currency-icon-url": "/system/currencies/icons/000/000/003/original/horizon_dollars.png?1534142996",
@@ -3450,6 +3533,7 @@ Parameter | Description
 --------- | -----------
 id | The ID of the public currency holding
 owning-user-id | The ID of the user that the public currency holding belongs to
+owning-user-username | The username of the user that the public currency holding belongs to
 currency-id | The ID of the currency that the public currency holding holds
 currency-name | The name of the currency that the public currency holding holds
 currency-icon-url | The URL at which the icon picture of the currency that the public currency holding holds can be found
@@ -3472,6 +3556,7 @@ curl 'https://api.mycurrency.com/currencies/4/public_currency_holdings' \
       "type": "public-currency-holdings",
       "attributes": {
         "owning-user-id": 1,
+        "owning-user-id": "admin",
         "currency-id": 4,
         "currency-name": "spiderman pizza dollars",
         "currency-icon-url": "/icons/original/missing.png",
@@ -3483,6 +3568,7 @@ curl 'https://api.mycurrency.com/currencies/4/public_currency_holdings' \
       "type": "public-currency-holdings",
       "attributes": {
         "owning-user-id": 3,
+        "owning-user-id": "Hannibal",
         "currency-id": 4,
         "currency-name": "spiderman pizza dollars",
         "currency-icon-url": "/icons/original/missing.png",
@@ -3528,6 +3614,7 @@ Parameter | Description
 --------- | -----------
 id | The ID of the public currency holding
 owning-user-id | The ID of the user that the public currency holding belongs to
+owning-user-username | The username of the user that the public currency holding belongs to
 currency-id | The ID of the currency that the public currency holding holds
 currency-name | The name of the currency that the public currency holding holds
 currency-icon-url | The URL at which the icon picture of the public currency that the currency holding holds can be found
@@ -3550,6 +3637,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_public_currency_holdings/3' 
     "type": "public-currency-holdings",
     "attributes": {
       "owning-user-id": 3,
+      "owning-user-username": "Hannibal",
       "currency-id": 2,
       "currency-name": "ACME Toon Shop dollars",
       "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996",
@@ -3584,6 +3672,7 @@ Parameter | Description
 --------- | -----------
 id | The ID of the public currency holding
 owning-user-id | The ID of the user that the public currency holding belongs to
+owning-user-username | The username of the user that the public currency holding belongs to
 currency-id | The ID of the currency that the public currency holding holds
 currency-name | The name of the currency that the public currency holding holds
 currency-icon-url | The URL at which the icon picture of the public currency that the currency holding holds can be found
