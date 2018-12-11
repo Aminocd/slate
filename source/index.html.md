@@ -9003,143 +9003,143 @@ curl 'https://api.mycurrency.com/users/3/notices?per_page=10' \
 {
   "data": [
     {
-      "id": "1",
+      "id": "29",
       "type": "notices",
       "attributes": {
-        "title": "You made an issuance to your account",
-        "message": "\nDetails of issuance:\n\nDate Issuance was made: Sunday, August 12, 2018 at 01:17AM\n1000.0000000000 Calm dollars sent from Hannibal to the private holding of Hannibal",
+        "title": "ScipioAfricanus ordered a product from your store, Asteroid Industries",
+        "message": "\nDetails of order:\n\nDate Order was made: Friday, November 30, 2018 at 11:13PM\n1 mine 1 pound of X-group asteroid purchased by ScipioAfricanus from Asteroid Industries for 10000.0000000000 Micro Asteroid bucks",
         "seen": true,
         "read": false,
-        "notice-type": 4,
+        "notice-type": 6,
         "user-id": 3,
-        "created-at": "2018-08-12T01:17:31.289-07:00",
-        "updated-at": "2018-10-16T22:12:46.399-07:00"
+        "created-at": "2018-11-30T23:13:41.215-08:00",
+        "updated-at": "2018-12-05T04:59:41.744-08:00"
       }
     },
     {
-      "id": "2",
-      "type": "notices",
-      "attributes": {
-        "title": "You made an issuance to your account",
-        "message": "\nDetails of issuance:\n\nDate Issuance was made: Sunday, August 19, 2018 at 02:11PM\n1000.0000000000 ACME Toon Shop dollars sent from Hannibal to the private holding of Hannibal",
-        "seen": true,
-        "read": false,
-        "notice-type": 4,
-        "user-id": 3,
-        "created-at": "2018-08-19T14:11:16.976-07:00",
-        "updated-at": "2018-10-16T22:12:46.404-07:00"
-      }
-    },
-    {
-      "id": "3",
-      "type": "notices",
-      "attributes": {
-        "title": "You made an issuance to your account",
-        "message": "\nDetails of issuance:\n\nDate Issuance was made: Sunday, August 19, 2018 at 02:24PM\n1000.0000000000 macaroon dollars sent from Hannibal to the private holding of Hannibal",
-        "seen": true,
-        "read": false,
-        "notice-type": 4,
-        "user-id": 3,
-        "created-at": "2018-08-19T14:24:09.649-07:00",
-        "updated-at": "2018-10-16T22:12:46.408-07:00"
-      }
-    },
-    {
-      "id": "7",
+      "id": "26",
       "type": "notices",
       "attributes": {
         "title": "You made an issuance to ScipioAfricanus",
-        "message": "\nDetails of issuance:\n\nDate Issuance was made: Saturday, September 15, 2018 at 08:37PM\n10.0000000000 macaroon dollars sent from Hannibal to the private holding of ScipioAfricanus",
+        "message": "\nDetails of issuance:\n\nDate Issuance was made: Friday, November 30, 2018 at 11:04PM\n100000.0000000000 Micro Asteroid bucks sent from Hannibal to the private holding of ScipioAfricanus",
         "seen": true,
         "read": false,
         "notice-type": 4,
         "user-id": 3,
-        "created-at": "2018-09-15T20:37:38.352-07:00",
-        "updated-at": "2018-10-16T22:12:46.413-07:00"
+        "created-at": "2018-11-30T23:04:51.059-08:00",
+        "updated-at": "2018-12-05T04:59:41.737-08:00"
       }
     },
     {
-      "id": "10",
+      "id": "25",
       "type": "notices",
       "attributes": {
         "title": "You received a transfer from ScipioAfricanus",
-        "message": "\nDetails of transfer made:\n\nDate Transfer was made: Sunday, September 16, 2018 at 01:06PM\n1.0000000000 macaroon dollars sent from the private holding of ScipioAfricanus to the private holding of Hannibal",
+        "message": "\nDetails of transfer made:\n\nDate Transfer was made: Monday, November 05, 2018 at 06:29PM\n500.0000000000 Home Repair dollars sent from the private holding of ScipioAfricanus to the private holding of Hannibal",
         "seen": true,
         "read": false,
         "notice-type": 3,
         "user-id": 3,
-        "created-at": "2018-09-16T13:06:56.467-07:00",
-        "updated-at": "2018-10-16T22:12:46.417-07:00"
+        "created-at": "2018-11-05T18:29:51.630-08:00",
+        "updated-at": "2018-12-05T04:59:41.730-08:00"
+      }
+    },
+    {
+      "id": "23",
+      "type": "notices",
+      "attributes": {
+        "title": "You received an issuance from ScipioAfricanus",
+        "message": "\nDetails of issuance:\n\nDate Issuance was made: Monday, November 05, 2018 at 06:28PM\n1000.0000000000 Wholesome foods tokens sent from ScipioAfricanus to the private holding of Hannibal",
+        "seen": true,
+        "read": false,
+        "notice-type": 4,
+        "user-id": 3,
+        "created-at": "2018-11-05T18:28:14.593-08:00",
+        "updated-at": "2018-12-05T04:59:41.723-08:00"
+      }
+    },
+    {
+      "id": "19",
+      "type": "notices",
+      "attributes": {
+        "title": "You made a transfer to your account",
+        "message": "\nDetails of transfer made:\n\nDate Transfer was made: Monday, November 05, 2018 at 11:15AM\n250.0000000000 spiderman pizza dollars sent from the private holding of Hannibal to the public holding of Hannibal",
+        "seen": true,
+        "read": false,
+        "notice-type": 3,
+        "user-id": 3,
+        "created-at": "2018-11-05T11:15:33.244-08:00",
+        "updated-at": "2018-12-05T04:59:41.716-08:00"
+      }
+    },
+    {
+      "id": "18",
+      "type": "notices",
+      "attributes": {
+        "title": "You received a transfer from spiderman",
+        "message": "\nDetails of transfer made:\n\nDate Transfer was made: Monday, November 05, 2018 at 11:12AM\n500.0000000000 spiderman pizza dollars sent from the private holding of spiderman to the private holding of Hannibal",
+        "seen": true,
+        "read": false,
+        "notice-type": 3,
+        "user-id": 3,
+        "created-at": "2018-11-05T11:12:30.742-08:00",
+        "updated-at": "2018-12-05T04:59:41.709-08:00"
       }
     },
     {
       "id": "12",
       "type": "notices",
       "attributes": {
-        "title": "You received a transfer from ScipioAfricanus",
-        "message": "\nDetails of transfer made:\n\nDate Transfer was made: Sunday, September 16, 2018 at 01:08PM\n1.0000000000 macaroon dollars sent from the private holding of ScipioAfricanus to the private holding of Hannibal",
+        "title": "You made a transfer to your account",
+        "message": "\nDetails of transfer made:\n\nDate Transfer was made: Monday, November 05, 2018 at 11:07AM\n500.0000000000 Moon hotel coins sent from the private holding of Hannibal to the public holding of Hannibal",
         "seen": true,
         "read": false,
         "notice-type": 3,
         "user-id": 3,
-        "created-at": "2018-09-16T13:08:27.258-07:00",
-        "updated-at": "2018-10-16T22:12:46.422-07:00"
+        "created-at": "2018-11-05T11:07:15.076-08:00",
+        "updated-at": "2018-12-05T04:59:41.702-08:00"
       }
     },
     {
-      "id": "13",
+      "id": "11",
+      "type": "notices",
+      "attributes": {
+        "title": "You received a transfer from ScipioAfricanus",
+        "message": "\nDetails of transfer made:\n\nDate Transfer was made: Monday, November 05, 2018 at 11:05AM\n1000.0000000000 Moon hotel coins sent from the private holding of ScipioAfricanus to the private holding of Hannibal",
+        "seen": true,
+        "read": false,
+        "notice-type": 3,
+        "user-id": 3,
+        "created-at": "2018-11-05T11:05:32.103-08:00",
+        "updated-at": "2018-12-05T04:59:41.694-08:00"
+      }
+    },
+    {
+      "id": "7",
       "type": "notices",
       "attributes": {
         "title": "You made a transfer to your account",
-        "message": "\nDetails of transfer made:\n\nDate Transfer was made: Sunday, September 16, 2018 at 01:26PM\n5.0000000000 ACME Toon Shop dollars sent from the private holding of Hannibal to the public holding of Hannibal",
+        "message": "\nDetails of transfer made:\n\nDate Transfer was made: Monday, November 05, 2018 at 11:00AM\n10.0000000000 Micro Asteroid bucks sent from the private holding of Hannibal to the public holding of Hannibal",
         "seen": true,
         "read": false,
         "notice-type": 3,
         "user-id": 3,
-        "created-at": "2018-09-16T13:26:52.086-07:00",
-        "updated-at": "2018-10-16T22:12:46.426-07:00"
+        "created-at": "2018-11-05T11:00:13.494-08:00",
+        "updated-at": "2018-12-05T04:59:41.687-08:00"
       }
     },
     {
-      "id": "16",
+      "id": "4",
       "type": "notices",
       "attributes": {
         "title": "You received a transfer from ScipioAfricanus",
-        "message": "\nDetails of transfer made:\n\nDate Transfer was made: Tuesday, October 02, 2018 at 04:33AM\n1.0000000000 Pool coins sent from the private holding of ScipioAfricanus to the private holding of Hannibal",
+        "message": "\nDetails of transfer made:\n\nDate Transfer was made: Monday, November 05, 2018 at 10:40AM\n1.0000000000 solar electricity zaps sent from the private holding of ScipioAfricanus to the private holding of Hannibal",
         "seen": true,
         "read": false,
         "notice-type": 3,
         "user-id": 3,
-        "created-at": "2018-10-02T04:33:05.434-07:00",
-        "updated-at": "2018-10-16T22:12:46.430-07:00"
-      }
-    },
-    {
-      "id": "17",
-      "type": "notices",
-      "attributes": {
-        "title": "You made an issuance to ScipioAfricanus",
-        "message": "\nDetails of issuance:\n\nDate Issuance was made: Tuesday, October 02, 2018 at 03:58PM\n10.0000000000 macaroon dollars sent from Hannibal to the private holding of ScipioAfricanus",
-        "seen": true,
-        "read": false,
-        "notice-type": 4,
-        "user-id": 3,
-        "created-at": "2018-10-02T15:58:40.164-07:00",
-        "updated-at": "2018-10-16T22:12:46.435-07:00"
-      }
-    },
-    {
-      "id": "20",
-      "type": "notices",
-      "attributes": {
-        "title": "You received a transfer from ScipioAfricanus",
-        "message": "\nDetails of transfer made:\n\nDate Transfer was made: Wednesday, October 03, 2018 at 12:19AM\n1.0000000000 Freds Fishing Supplies dollars sent from the private holding of ScipioAfricanus to the private holding of Hannibal",
-        "seen": true,
-        "read": false,
-        "notice-type": 3,
-        "user-id": 3,
-        "created-at": "2018-10-03T00:19:35.227-07:00",
-        "updated-at": "2018-10-16T22:12:46.439-07:00"
+        "created-at": "2018-11-05T10:40:50.242-08:00",
+        "updated-at": "2018-12-05T04:59:41.680-08:00"
       }
     }
   ],
@@ -9148,13 +9148,13 @@ curl 'https://api.mycurrency.com/users/3/notices?per_page=10' \
     "first": "https://api.mycurrency.com/users/3/notices?page=1&per_page=10",
     "prev": null,
     "next": "https://api.mycurrency.com/users/3/notices?page=2&per_page=10",
-    "last": "https://api.mycurrency.com/users/3/notices?page=4&per_page=10"
+    "last": "https://api.mycurrency.com/users/3/notices?page=2&per_page=10"
   },
   "meta": {
     "pagination": {
       "per-page": "10",
-      "total-pages": "4",
-      "total-count": "35"
+      "total-pages": "2",
+      "total-count": "11"
     }
   }
 }
@@ -9165,6 +9165,284 @@ This endpoint retrieves all of a user's notices. Calling this endpoint also sets
 ### HTTP Request
 
 `GET https://api.mycurrency.com/users/<USER-ID>/notices`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the notice
+title | The title of the notice
+message | The main body of the notice
+seen | Whether the notice's title has been seen by the user or not
+read | Whether the notice's message has been read by the user or not
+notice-type | Whether the notice is of notice type 2 (offers), 3 (transfers), 4 (issuances), 5 (listings) or 6 (orders)
+user-id | The ID of the user that the notice belongs to
+created-at | The time and date when the notice was created
+updated-at | The time and date when the notice was last updated
+
+## List Unread Notices
+
+```shell
+curl 'https://api.mycurrency.com/users/3/unread_notices?per_page=10' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "29",
+      "type": "notices",
+      "attributes": {
+        "title": "ScipioAfricanus ordered a product from your store, Asteroid Industries",
+        "message": "\nDetails of order:\n\nDate Order was made: Friday, November 30, 2018 at 11:13PM\n1 mine 1 pound of X-group asteroid purchased by ScipioAfricanus from Asteroid Industries for 10000.0000000000 Micro Asteroid bucks",
+        "seen": true,
+        "read": false,
+        "notice-type": 6,
+        "user-id": 3,
+        "created-at": "2018-11-30T23:13:41.215-08:00",
+        "updated-at": "2018-12-05T04:59:41.744-08:00"
+      }
+    },
+    {
+      "id": "26",
+      "type": "notices",
+      "attributes": {
+        "title": "You made an issuance to ScipioAfricanus",
+        "message": "\nDetails of issuance:\n\nDate Issuance was made: Friday, November 30, 2018 at 11:04PM\n100000.0000000000 Micro Asteroid bucks sent from Hannibal to the private holding of ScipioAfricanus",
+        "seen": true,
+        "read": false,
+        "notice-type": 4,
+        "user-id": 3,
+        "created-at": "2018-11-30T23:04:51.059-08:00",
+        "updated-at": "2018-12-05T04:59:41.737-08:00"
+      }
+    },
+    {
+      "id": "25",
+      "type": "notices",
+      "attributes": {
+        "title": "You received a transfer from ScipioAfricanus",
+        "message": "\nDetails of transfer made:\n\nDate Transfer was made: Monday, November 05, 2018 at 06:29PM\n500.0000000000 Home Repair dollars sent from the private holding of ScipioAfricanus to the private holding of Hannibal",
+        "seen": true,
+        "read": false,
+        "notice-type": 3,
+        "user-id": 3,
+        "created-at": "2018-11-05T18:29:51.630-08:00",
+        "updated-at": "2018-12-05T04:59:41.730-08:00"
+      }
+    },
+    {
+      "id": "23",
+      "type": "notices",
+      "attributes": {
+        "title": "You received an issuance from ScipioAfricanus",
+        "message": "\nDetails of issuance:\n\nDate Issuance was made: Monday, November 05, 2018 at 06:28PM\n1000.0000000000 Wholesome foods tokens sent from ScipioAfricanus to the private holding of Hannibal",
+        "seen": true,
+        "read": false,
+        "notice-type": 4,
+        "user-id": 3,
+        "created-at": "2018-11-05T18:28:14.593-08:00",
+        "updated-at": "2018-12-05T04:59:41.723-08:00"
+      }
+    },
+    {
+      "id": "19",
+      "type": "notices",
+      "attributes": {
+        "title": "You made a transfer to your account",
+        "message": "\nDetails of transfer made:\n\nDate Transfer was made: Monday, November 05, 2018 at 11:15AM\n250.0000000000 spiderman pizza dollars sent from the private holding of Hannibal to the public holding of Hannibal",
+        "seen": true,
+        "read": false,
+        "notice-type": 3,
+        "user-id": 3,
+        "created-at": "2018-11-05T11:15:33.244-08:00",
+        "updated-at": "2018-12-05T04:59:41.716-08:00"
+      }
+    },
+    {
+      "id": "18",
+      "type": "notices",
+      "attributes": {
+        "title": "You received a transfer from spiderman",
+        "message": "\nDetails of transfer made:\n\nDate Transfer was made: Monday, November 05, 2018 at 11:12AM\n500.0000000000 spiderman pizza dollars sent from the private holding of spiderman to the private holding of Hannibal",
+        "seen": true,
+        "read": false,
+        "notice-type": 3,
+        "user-id": 3,
+        "created-at": "2018-11-05T11:12:30.742-08:00",
+        "updated-at": "2018-12-05T04:59:41.709-08:00"
+      }
+    },
+    {
+      "id": "12",
+      "type": "notices",
+      "attributes": {
+        "title": "You made a transfer to your account",
+        "message": "\nDetails of transfer made:\n\nDate Transfer was made: Monday, November 05, 2018 at 11:07AM\n500.0000000000 Moon hotel coins sent from the private holding of Hannibal to the public holding of Hannibal",
+        "seen": true,
+        "read": false,
+        "notice-type": 3,
+        "user-id": 3,
+        "created-at": "2018-11-05T11:07:15.076-08:00",
+        "updated-at": "2018-12-05T04:59:41.702-08:00"
+      }
+    },
+    {
+      "id": "11",
+      "type": "notices",
+      "attributes": {
+        "title": "You received a transfer from ScipioAfricanus",
+        "message": "\nDetails of transfer made:\n\nDate Transfer was made: Monday, November 05, 2018 at 11:05AM\n1000.0000000000 Moon hotel coins sent from the private holding of ScipioAfricanus to the private holding of Hannibal",
+        "seen": true,
+        "read": false,
+        "notice-type": 3,
+        "user-id": 3,
+        "created-at": "2018-11-05T11:05:32.103-08:00",
+        "updated-at": "2018-12-05T04:59:41.694-08:00"
+      }
+    },
+    {
+      "id": "7",
+      "type": "notices",
+      "attributes": {
+        "title": "You made a transfer to your account",
+        "message": "\nDetails of transfer made:\n\nDate Transfer was made: Monday, November 05, 2018 at 11:00AM\n10.0000000000 Micro Asteroid bucks sent from the private holding of Hannibal to the public holding of Hannibal",
+        "seen": true,
+        "read": false,
+        "notice-type": 3,
+        "user-id": 3,
+        "created-at": "2018-11-05T11:00:13.494-08:00",
+        "updated-at": "2018-12-05T04:59:41.687-08:00"
+      }
+    },
+    {
+      "id": "4",
+      "type": "notices",
+      "attributes": {
+        "title": "You received a transfer from ScipioAfricanus",
+        "message": "\nDetails of transfer made:\n\nDate Transfer was made: Monday, November 05, 2018 at 10:40AM\n1.0000000000 solar electricity zaps sent from the private holding of ScipioAfricanus to the private holding of Hannibal",
+        "seen": true,
+        "read": false,
+        "notice-type": 3,
+        "user-id": 3,
+        "created-at": "2018-11-05T10:40:50.242-08:00",
+        "updated-at": "2018-12-05T04:59:41.680-08:00"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/users/3/unread_notices?per_page=10",
+    "first": "https://api.mycurrency.com/users/3/unread_notices?page=1&per_page=10",
+    "prev": null,
+    "next": "https://api.mycurrency.com/users/3/unread_notices?page=2&per_page=10",
+    "last": "https://api.mycurrency.com/users/3/unread_notices?page=2&per_page=10"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": "10",
+      "total-pages": "2",
+      "total-count": "11"
+    }
+  }
+}
+```
+
+This endpoint retrieves all of a user's unread notices. Calling this endpoint also sets the :seen attribute of all retrieved notices to TRUE.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/unread_notices`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the notice
+title | The title of the notice
+message | The main body of the notice
+seen | Whether the notice's title has been seen by the user or not
+read | Whether the notice's message has been read by the user or not
+notice-type | Whether the notice is of notice type 2 (offers), 3 (transfers), 4 (issuances), 5 (listings) or 6 (orders)
+user-id | The ID of the user that the notice belongs to
+created-at | The time and date when the notice was created
+updated-at | The time and date when the notice was last updated
+
+## List Recent Unread Notices
+
+```shell
+curl 'https://api.mycurrency.com/users/3/recent_unread_notices?per_page=10' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "29",
+      "type": "notices",
+      "attributes": {
+        "title": "ScipioAfricanus ordered a product from your store, Asteroid Industries",
+        "message": "\nDetails of order:\n\nDate Order was made: Friday, November 30, 2018 at 11:13PM\n1 mine 1 pound of X-group asteroid purchased by ScipioAfricanus from Asteroid Industries for 10000.0000000000 Micro Asteroid bucks",
+        "seen": true,
+        "read": false,
+        "notice-type": 6,
+        "user-id": 3,
+        "created-at": "2018-11-30T23:13:41.215-08:00",
+        "updated-at": "2018-12-05T04:59:41.744-08:00"
+      }
+    },
+    {
+      "id": "26",
+      "type": "notices",
+      "attributes": {
+        "title": "You made an issuance to ScipioAfricanus",
+        "message": "\nDetails of issuance:\n\nDate Issuance was made: Friday, November 30, 2018 at 11:04PM\n100000.0000000000 Micro Asteroid bucks sent from Hannibal to the private holding of ScipioAfricanus",
+        "seen": true,
+        "read": false,
+        "notice-type": 4,
+        "user-id": 3,
+        "created-at": "2018-11-30T23:04:51.059-08:00",
+        "updated-at": "2018-12-05T04:59:41.737-08:00"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/users/3/recent_unread_notices?per_page=10",
+    "first": "https://api.mycurrency.com/users/3/recent_unread_notices?page=1&per_page=10",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/users/3/recent_unread_notices?page=1&per_page=10"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": "10",
+      "total-pages": "1",
+      "total-count": "2"
+    }
+  }
+}
+```
+
+This endpoint retrieves all of a user's unread notices that are less than 30 days old. Calling this endpoint also sets the :seen attribute of all retrieved notices to TRUE.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/recent_unread_notices`
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
