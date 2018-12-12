@@ -797,6 +797,7 @@ Authentication: not required
       </span><span class="s2">"get-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/002/original/afternoon_portrait.jpg?1534139495"</span><span class="w">
       </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RonaldMcDonald@mcdonalds.com"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"sub-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-14T14:51:07.965-07:00"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -845,6 +846,10 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The ID of the sub location associated with the user account</td>
 </tr>
 <tr>
+<td>sub-location-name</td>
+<td>The name of the sub location associated with the user account</td>
+</tr>
+<tr>
 <td>updated-at</td>
 <td>The time and date when the user was last updated</td>
 </tr>
@@ -869,6 +874,7 @@ Authentication: the request requires the OAuth access-token associated with the 
       </span><span class="s2">"get-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/002/original/afternoon_portrait.jpg?1534139495"</span><span class="w">
       </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RonaldMcDonald@mcdonalds.com"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"sub-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-22T01:28:56.872-07:00"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -949,6 +955,10 @@ Authentication: the request requires the OAuth access-token associated with the 
 <tr>
 <td>sub-location-id</td>
 <td>The ID of the sub location associated with the user account</td>
+</tr>
+<tr>
+<td>sub-location-name</td>
+<td>The name of the sub location associated with the user account</td>
 </tr>
 <tr>
 <td>updated-at</td>
@@ -1065,6 +1075,8 @@ Authentication: not required
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issuer-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issuer-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">450</span><span class="p">,</span><span class="w">
       </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spendable at any ACME Toon Shop"</span><span class="p">,</span><span class="w">
@@ -1096,6 +1108,14 @@ Authentication: not required
 <tr>
 <td>issuer-id</td>
 <td>The ID of the issuer account that issued the currency</td>
+</tr>
+<tr>
+<td>issuer-user-id</td>
+<td>The ID of the user account that issued the currency</td>
+</tr>
+<tr>
+<td>issuer-user-username</td>
+<td>The ID of the user account that issued the currency</td>
 </tr>
 <tr>
 <td>burn-rate</td>
@@ -1135,6 +1155,8 @@ Authentication: not required
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">740</span><span class="p">,</span><span class="w">
         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm dollars"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Redeemable for services at Calm Massage Therapy"</span><span class="p">,</span><span class="w">
@@ -1148,6 +1170,8 @@ Authentication: not required
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">450</span><span class="p">,</span><span class="w">
         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spendable at any ACME Toon Shop"</span><span class="p">,</span><span class="w">
@@ -1161,6 +1185,8 @@ Authentication: not required
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">420</span><span class="p">,</span><span class="w">
         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Horizon Cloud Computing dollars"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Redeemable for Horizon Cloud Computing services"</span><span class="p">,</span><span class="w">
@@ -1174,6 +1200,8 @@ Authentication: not required
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tom"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">550</span><span class="p">,</span><span class="w">
         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tom's Fruitstand bucks"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Redeem Tom's Fruitstand bucks for delicious fruit"</span><span class="p">,</span><span class="w">
@@ -1187,6 +1215,8 @@ Authentication: not required
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Estevan"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chilli pesos"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chilli pesos are backed by chillis"</span><span class="p">,</span><span class="w">
@@ -1235,6 +1265,14 @@ Authentication: not required
 <td>The ID of the issuer account that issued the currency</td>
 </tr>
 <tr>
+<td>issuer-user-id</td>
+<td>The ID of the user account that issued the currency</td>
+</tr>
+<tr>
+<td>issuer-user-username</td>
+<td>The ID of the user account that issued the currency</td>
+</tr>
+<tr>
 <td>burn-rate</td>
 <td>The annual rate at which holdings of the currency burn, by basis point (100 = 1%)</td>
 </tr>
@@ -1272,6 +1310,8 @@ Authentication: not required
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">450</span><span class="p">,</span><span class="w">
         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spendable at any ACME Toon Shop"</span><span class="p">,</span><span class="w">
@@ -1285,6 +1325,8 @@ Authentication: not required
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">420</span><span class="p">,</span><span class="w">
         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Horizon Cloud Computing dollars"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Redeemable for Horizon Cloud Computing services"</span><span class="p">,</span><span class="w">
@@ -1333,6 +1375,14 @@ Authentication: not required
 <td>The ID of the issuer account that issued the currency</td>
 </tr>
 <tr>
+<td>issuer-user-id</td>
+<td>The ID of the user account that issued the currency</td>
+</tr>
+<tr>
+<td>issuer-user-username</td>
+<td>The ID of the user account that issued the currency</td>
+</tr>
+<tr>
 <td>burn-rate</td>
 <td>The annual rate at which holdings of the currency burn, by basis point (100 = 1%)</td>
 </tr>
@@ -1371,6 +1421,8 @@ Authentication: not required
     </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issuer-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issuer-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">740</span><span class="p">,</span><span class="w">
       </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm dollars"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Redeemable for services at Calm Massage Therapy"</span><span class="p">,</span><span class="w">
@@ -1438,6 +1490,14 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The ID of the issuer account that issued the currency</td>
 </tr>
 <tr>
+<td>issuer-user-id</td>
+<td>The ID of the user account that issued the currency</td>
+</tr>
+<tr>
+<td>issuer-user-username</td>
+<td>The ID of the user account that issued the currency</td>
+</tr>
+<tr>
 <td>burn-rate</td>
 <td>The annual rate at which holdings of the currency burn, by basis point (100 = 1%)</td>
 </tr>
@@ -1476,6 +1536,8 @@ Authentication: the request requires the OAuth access-token associated with the 
     </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issuer-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issuer-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">740</span><span class="p">,</span><span class="w">
       </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm dollars"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Redeemable for services at Calm Massage Therapy"</span><span class="p">,</span><span class="w">
@@ -1529,6 +1591,14 @@ Authentication: the request requires the OAuth access-token associated with the 
 <tr>
 <td>issuer-id</td>
 <td>The ID of the issuer account that issued the currency</td>
+</tr>
+<tr>
+<td>issuer-user-id</td>
+<td>The ID of the user account that issued the currency</td>
+</tr>
+<tr>
+<td>issuer-user-username</td>
+<td>The ID of the user account that issued the currency</td>
 </tr>
 <tr>
 <td>burn-rate</td>
@@ -2221,7 +2291,7 @@ Authentication: not required
 <td>The ID of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
-<td>currency-id</td>
+<td>currency-name</td>
 <td>The name of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
@@ -2354,7 +2424,7 @@ Authentication: not required
 <td>The ID of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
-<td>currency-id</td>
+<td>currency-name</td>
 <td>The name of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
@@ -2510,7 +2580,7 @@ Authentication: not required
 <td>The ID of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
-<td>currency-id</td>
+<td>currency-name</td>
 <td>The name of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
@@ -2643,7 +2713,7 @@ Authentication: not required
 <td>The ID of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
-<td>currency-id</td>
+<td>currency-name</td>
 <td>The name of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
@@ -2800,7 +2870,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The ID of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
-<td>currency-id</td>
+<td>currency-name</td>
 <td>The name of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
@@ -2960,7 +3030,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The ID of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
-<td>currency-id</td>
+<td>currency-name</td>
 <td>The name of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
@@ -3415,7 +3485,10 @@ Authentication: the request requires the OAuth access-token associated with the 
     </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"sub-category-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
       </span><span class="s2">"sub-category-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"skin treatment"</span><span class="w">
-      </span><span class="s2">"store-id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm dollars"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm Spa"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Facial"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"product-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"standard facial"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"price-cents"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w">
@@ -3456,8 +3529,20 @@ Authentication: not required for active products that have not been discontinued
 <td>The name of the sub category that the product belongs to</td>
 </tr>
 <tr>
+<td>currency-id</td>
+<td>The ID of the currency that the product can be redeemed by</td>
+</tr>
+<tr>
+<td>currency-name</td>
+<td>The name of the currency that the product can be redeemed by</td>
+</tr>
+<tr>
 <td>store-id</td>
 <td>The ID of the store where the product is sold</td>
+</tr>
+<tr>
+<td>store-name</td>
+<td>The name of the store where the product is sold</td>
 </tr>
 <tr>
 <td>product-name</td>
@@ -3510,7 +3595,10 @@ Authentication: not required for active products that have not been discontinued
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"sub-category-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
         </span><span class="s2">"sub-category-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"standard facial"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm Spa"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Facial"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"standard facial"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"price-cents"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w">
@@ -3528,7 +3616,10 @@ Authentication: not required for active products that have not been discontinued
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"sub-category-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
         </span><span class="s2">"sub-category-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cartoon products"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver ACME Toon Shop"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bugs Bunny Q-Tips"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"q-tips that work on the biggest ears"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"price-cents"</span><span class="p">:</span><span class="w"> </span><span class="mi">1500</span><span class="p">,</span><span class="w">
@@ -3546,7 +3637,10 @@ Authentication: not required for active products that have not been discontinued
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"sub-category-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
         </span><span class="s2">"sub-category-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cartoon products"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco ACME Toon Shop"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bugs Bunny Q-Tips"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"q-tips that work on the biggest ears"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"price-cents"</span><span class="p">:</span><span class="w"> </span><span class="mi">1500</span><span class="p">,</span><span class="w">
@@ -3564,7 +3658,10 @@ Authentication: not required for active products that have not been discontinued
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"sub-category-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
         </span><span class="s2">"sub-category-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cartoon products"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco ACME Toon Shop"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Teleport hole"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"can turn any rock face into a tunnel"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"price-cents"</span><span class="p">:</span><span class="w"> </span><span class="mi">4000</span><span class="p">,</span><span class="w">
@@ -3620,8 +3717,20 @@ Authentication: not required
 <td>The name of the sub category that the product belongs to</td>
 </tr>
 <tr>
+<td>currency-id</td>
+<td>The ID of the currency that the product can be redeemed by</td>
+</tr>
+<tr>
+<td>currency-name</td>
+<td>The name of the currency that the product can be redeemed by</td>
+</tr>
+<tr>
 <td>store-id</td>
 <td>The ID of the store where the product is sold</td>
+</tr>
+<tr>
+<td>store-name</td>
+<td>The name of the store where the product is sold</td>
 </tr>
 <tr>
 <td>product-name</td>
@@ -3674,7 +3783,10 @@ Authentication: not required
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"sub-category-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
         </span><span class="s2">"sub-category-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cartoon products"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco ACME Toon Shop"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bugs Bunny Q-Tips"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"q-tips that work on the biggest ears"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"price-cents"</span><span class="p">:</span><span class="w"> </span><span class="mi">1500</span><span class="p">,</span><span class="w">
@@ -3692,7 +3804,10 @@ Authentication: not required
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"sub-category-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
         </span><span class="s2">"sub-category-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cartoon products"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco ACME Toon Shop"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Teleport hole"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"can turn any rock face into a tunnel"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"price-cents"</span><span class="p">:</span><span class="w"> </span><span class="mi">4000</span><span class="p">,</span><span class="w">
@@ -3748,8 +3863,20 @@ Authentication: not required to see the products of a store that are active and 
 <td>The name of the sub category that the product belongs to</td>
 </tr>
 <tr>
+<td>currency-id</td>
+<td>The ID of the currency that the product can be redeemed by</td>
+</tr>
+<tr>
+<td>currency-name</td>
+<td>The name of the currency that the product can be redeemed by</td>
+</tr>
+<tr>
 <td>store-id</td>
 <td>The ID of the store where the product is sold</td>
+</tr>
+<tr>
+<td>store-name</td>
+<td>The name of the store where the product is sold</td>
 </tr>
 <tr>
 <td>product-name</td>
@@ -3804,7 +3931,10 @@ Authentication: not required to see the products of a store that are active and 
     </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"sub-category-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
       </span><span class="s2">"sub-category-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing supplies"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies dollars"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing bait"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"product-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"natural fishing bait made of worms"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"price-cents"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
@@ -3897,8 +4027,20 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The name of the sub category that the product belongs to</td>
 </tr>
 <tr>
+<td>currency-id</td>
+<td>The ID of the currency that the product can be redeemed by</td>
+</tr>
+<tr>
+<td>currency-name</td>
+<td>The name of the currency that the product can be redeemed by</td>
+</tr>
+<tr>
 <td>store-id</td>
 <td>The ID of the store where the product is sold</td>
+</tr>
+<tr>
+<td>store-name</td>
+<td>The name of the store where the product is sold</td>
 </tr>
 <tr>
 <td>product-name</td>
@@ -3953,7 +4095,10 @@ Authentication: the request requires the OAuth access-token associated with the 
     </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"sub-category-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
       </span><span class="s2">"sub-category-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing supplies"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies dollars"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing bait"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"product-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"natural fishing bait made of worms"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"price-cents"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
@@ -4040,8 +4185,20 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The name of the sub category that the product belongs to</td>
 </tr>
 <tr>
+<td>currency-id</td>
+<td>The ID of the currency that the product can be redeemed by</td>
+</tr>
+<tr>
+<td>currency-name</td>
+<td>The name of the currency that the product can be redeemed by</td>
+</tr>
+<tr>
 <td>store-id</td>
 <td>The ID of the store where the product is sold</td>
+</tr>
+<tr>
+<td>store-name</td>
+<td>The name of the store where the product is sold</td>
 </tr>
 <tr>
 <td>product-name</td>
@@ -5252,6 +5409,7 @@ Authentication: the request requires the OAuth access-token associated with the 
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"public-currency-holdings"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"owning-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"owning-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"</span><span class="p">,</span><span class="w">
@@ -5283,6 +5441,10 @@ Authentication: not required
 <td>The ID of the user that the public currency holding belongs to</td>
 </tr>
 <tr>
+<td>owning-user-username</td>
+<td>The username of the user that the public currency holding belongs to</td>
+</tr>
+<tr>
 <td>currency-id</td>
 <td>The ID of the currency that the public currency holding holds</td>
 </tr>
@@ -5312,6 +5474,7 @@ Authentication: not required
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"public-currency-holdings"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"owning-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"owning-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"</span><span class="p">,</span><span class="w">
@@ -5323,6 +5486,7 @@ Authentication: not required
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"public-currency-holdings"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"owning-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"owning-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diamond dollars"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/006/original/Diamond-coins.png?1534142996"</span><span class="p">,</span><span class="w">
@@ -5391,6 +5555,10 @@ Authentication: not required
 <td>The ID of the user that the public currency holding belongs to</td>
 </tr>
 <tr>
+<td>owning-user-username</td>
+<td>The username of the user that the public currency holding belongs to</td>
+</tr>
+<tr>
 <td>currency-id</td>
 <td>The ID of the currency that the public currency holding holds</td>
 </tr>
@@ -5420,6 +5588,7 @@ Authentication: not required
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"public-currency-holdings"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"owning-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"owning-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"</span><span class="p">,</span><span class="w">
@@ -5431,6 +5600,7 @@ Authentication: not required
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"public-currency-holdings"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"owning-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"owning-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Horizon Cloud Computing dollars"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/003/original/horizon_dollars.png?1534142996"</span><span class="p">,</span><span class="w">
@@ -5499,6 +5669,10 @@ Authentication: not required
 <td>The ID of the user that the public currency holding belongs to</td>
 </tr>
 <tr>
+<td>owning-user-username</td>
+<td>The username of the user that the public currency holding belongs to</td>
+</tr>
+<tr>
 <td>currency-id</td>
 <td>The ID of the currency that the public currency holding holds</td>
 </tr>
@@ -5528,6 +5702,7 @@ Authentication: not required
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"public-currency-holdings"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"owning-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"owning-user-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spiderman pizza dollars"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
@@ -5539,6 +5714,7 @@ Authentication: not required
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"public-currency-holdings"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"owning-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"owning-user-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spiderman pizza dollars"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
@@ -5605,6 +5781,10 @@ Authentication: not required
 <td>The ID of the user that the public currency holding belongs to</td>
 </tr>
 <tr>
+<td>owning-user-username</td>
+<td>The username of the user that the public currency holding belongs to</td>
+</tr>
+<tr>
 <td>currency-id</td>
 <td>The ID of the currency that the public currency holding holds</td>
 </tr>
@@ -5634,6 +5814,7 @@ Authentication: not required
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"public-currency-holdings"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"owning-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"owning-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"</span><span class="p">,</span><span class="w">
@@ -5672,6 +5853,10 @@ Authentication: the request requires the OAuth access-token associated with the 
 <tr>
 <td>owning-user-id</td>
 <td>The ID of the user that the public currency holding belongs to</td>
+</tr>
+<tr>
+<td>owning-user-username</td>
+<td>The username of the user that the public currency holding belongs to</td>
 </tr>
 <tr>
 <td>currency-id</td>
