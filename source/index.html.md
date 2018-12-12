@@ -783,15 +783,16 @@ curl "https://api.mycurrency.com/currencies/1/burnrate_changes" \
 {
   "data": [
     {
-      "id":"1",
-      "type":"burnrate-changes",
+      "id": "3",
+      "type": "burnrate-changes",
       "attributes": {
-        "old-burn-rate": 740,
-        "new-burn-rate": 500,
+        "old-burn-rate": 580,
+        "new-burn-rate": 600,
         "currency-id": 1,
-        "comment": "lowering the burn rate",
-        "created-at":"2018-08-19T17:00:50.093-07:00",
-        "updated-at":"2018-08-19T17:00:50.093-07:00"
+        "comment": "a slight increase in burn rate",
+        "created-at": "2018-08-22T09:54:07.685-07:00",
+        "updated-at": "2018-08-22T09:54:07.685-07:00"
+      }
     },
     {
       "id": "2",
@@ -806,16 +807,15 @@ curl "https://api.mycurrency.com/currencies/1/burnrate_changes" \
       }
     },
     {
-      "id": "3",
-      "type": "burnrate-changes",
+      "id":"1",
+      "type":"burnrate-changes",
       "attributes": {
-        "old-burn-rate": 580,
-        "new-burn-rate": 600,
+        "old-burn-rate": 740,
+        "new-burn-rate": 500,
         "currency-id": 1,
-        "comment": "a slight increase in burn rate",
-        "created-at": "2018-08-22T09:54:07.685-07:00",
-        "updated-at": "2018-08-22T09:54:07.685-07:00"
-      }
+        "comment": "lowering the burn rate",
+        "created-at":"2018-08-19T17:00:50.093-07:00",
+        "updated-at":"2018-08-19T17:00:50.093-07:00"
     }
   ],
   "links": {
@@ -835,7 +835,7 @@ curl "https://api.mycurrency.com/currencies/1/burnrate_changes" \
 }
 ```
 
-This endpoint retrieves all of the specified currency's burnrate changes.
+This endpoint retrieves all of the specified currency's burnrate changes, sorted by created_at date, starting from the most recent
 
 ### HTTP Request
 
@@ -8852,7 +8852,7 @@ curl 'https://api.mycurrency.com/order_sets?ordering_user_id=3' \
 }
 ```
 
-This endpoint retrieves a user's orders. 
+This endpoint retrieves a user's orders sorted by created_at date, starting from the most recent
 
 ### HTTP Request
 
