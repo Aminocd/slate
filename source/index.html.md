@@ -8766,26 +8766,26 @@ curl 'https://api.mycurrency.com/order_sets?ordering_user_id=3' \
 {
   "data": [
     {
-      "id": "1",
+      "id": "3",
       "type": "micro-currency-orders",
       "attributes": {
         "store-id": 3,
         "store-name": "Freds Fishing Supplies",
-        "order-set-id": 1,
+        "order-set-id": 3,
         "source-currency-holding-id": 9,
         "source-currency-holding-type": "PrivateCurrencyHolding",
         "spent-currency-id": 5,
         "spent-currency-name": "Freds Fishing Supplies dollars",
-        "before-amount-atomic": 510000000000,
-        "after-amount-atomic": 410000000000,
+        "before-amount-atomic": 310000000000,
+        "after-amount-atomic": 210000000000,
         "burnrate-period-id": 20,
         "day-counter": 0,
         "amount-atomic": 100000000000,
-        "product-id": 5,
-        "product-name": "fishing bait",
+        "product-id": 7,
+        "product-name": "fishing rod",
         "product-quantity": 1,
-        "created-at": "2018-10-03T00:39:37.860-07:00",
-        "updated-at": "2018-10-03T00:39:37.860-07:00"
+        "created-at": "2018-10-03T01:58:03.223-07:00",
+        "updated-at": "2018-10-03T01:58:03.223-07:00"
       }
     },
     {
@@ -8812,26 +8812,26 @@ curl 'https://api.mycurrency.com/order_sets?ordering_user_id=3' \
       }
     },
     {
-      "id": "3",
+      "id": "1",
       "type": "micro-currency-orders",
       "attributes": {
         "store-id": 3,
         "store-name": "Freds Fishing Supplies",
-        "order-set-id": 3,
+        "order-set-id": 1,
         "source-currency-holding-id": 9,
         "source-currency-holding-type": "PrivateCurrencyHolding",
         "spent-currency-id": 5,
         "spent-currency-name": "Freds Fishing Supplies dollars",
-        "before-amount-atomic": 310000000000,
-        "after-amount-atomic": 210000000000,
+        "before-amount-atomic": 510000000000,
+        "after-amount-atomic": 410000000000,
         "burnrate-period-id": 20,
         "day-counter": 0,
         "amount-atomic": 100000000000,
-        "product-id": 7,
-        "product-name": "fishing rod",
+        "product-id": 5,
+        "product-name": "fishing bait",
         "product-quantity": 1,
-        "created-at": "2018-10-03T01:58:03.223-07:00",
-        "updated-at": "2018-10-03T01:58:03.223-07:00"
+        "created-at": "2018-10-03T00:39:37.860-07:00",
+        "updated-at": "2018-10-03T00:39:37.860-07:00"
       }
     }
   ],
