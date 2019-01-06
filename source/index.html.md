@@ -4226,7 +4226,7 @@ curl 'https://api.mycurrency.com/users/4/authorized_public_currency_holdings/4/p
 
 ### HTTP Request
 
-`https://api.mycurrency.com/users/<USER-ID>/authorized_public_currency_holdings/<PUBLIC-CURRENCY-HOLDING-ID>/pu_h_transactions`
+`GET https://api.mycurrency.com/users/<USER-ID>/authorized_public_currency_holdings/<PUBLIC-CURRENCY-HOLDING-ID>/pu_h_transactions`
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
@@ -4413,7 +4413,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_private_currency_holdings/9/
 
 ### HTTP Request
 
-`https://api.mycurrency.com/users/<USER-ID>/authorized_public_currency_holdings/<PRIVATE-CURRENCY-HOLDING-ID>/pr_h_transactions`
+`GET https://api.mycurrency.com/users/<USER-ID>/authorized_public_currency_holdings/<PRIVATE-CURRENCY-HOLDING-ID>/pr_h_transactions`
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
@@ -4680,7 +4680,7 @@ curl 'https://api.mycurrency.com/users/3/recent_transactions?per_page=10' \
 
 ### HTTP Request
 
-`https://api.mycurrency.com/users/<USER-ID>/recent_transactions`
+`GET https://api.mycurrency.com/users/<USER-ID>/recent_transactions`
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
