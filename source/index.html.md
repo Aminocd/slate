@@ -3677,6 +3677,7 @@ currency-id | The ID of the currency that the public currency holding holds
 currency-name | The name of the currency that the public currency holding holds
 currency-icon-url | The URL at which the icon picture of the public currency that the currency holding holds can be found
 currency-burn-rate | The annual rate at which the currency contained within the public currency holding burns, by basis point (100 = 1%) 
+currency-daily-burn-rate | The daily rate at which the currency contained within the public currency holding burns, by fraction of 1 (0.01 = 1%) 
 amount-atomic | The amount of currency held in the public currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
 transfer-out | The total amount that has been debited from the public currency holding as a result of outgoing transfers
 transfer-in | The total amount that has been credited to the public currency holding as a result of incoming transfers
@@ -3777,6 +3778,7 @@ currency-id | The ID of the currency that the public currency holding holds
 currency-name | The name of the currency that the public currency holding holds
 currency-icon-url | The URL at which the icon picture of the public currency that the currency holding holds can be found
 currency-burn-rate | The annual rate at which the currency contained within the public currency holding burns, by basis point (100 = 1%) 
+currency-daily-burn-rate | The daily rate at which the currency contained within the public currency holding burns, by fraction of 1 (0.01 = 1%) 
 amount-atomic | The amount of currency held in the public currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
 transfer-out | The total amount that has been debited from the public currency holding as a result of outgoing transfers
 transfer-in | The total amount that has been credited to the public currency holding as a result of incoming transfers
@@ -3877,6 +3879,7 @@ currency-id | The ID of the currency that the public currency holding holds
 currency-name | The name of the currency that the public currency holding holds
 currency-icon-url | The URL at which the icon picture of the currency that the public currency holding holds can be found
 currency-burn-rate | The annual rate at which the currency contained within the public currency holding burns, by basis point (100 = 1%) 
+currency-daily-burn-rate | The daily rate at which the currency contained within the public currency holding burns, by fraction of 1 (0.01 = 1%) 
 amount-atomic | The amount of currency held in the public currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
 transfer-out | The total amount that has been debited from the public currency holding as a result of outgoing transfers
 transfer-in | The total amount that has been credited to the public currency holding as a result of incoming transfers
@@ -3946,6 +3949,7 @@ currency-id | The ID of the currency that the private currency holding holds
 currency-name | The name of the currency that the private currency holding holds
 currency-icon-url | The URL at which the icon picture of the currency that the private currency holding holds can be found
 currency-burn-rate | The annual rate at which the currency contained within the private currency holding burns, by basis point (100 = 1%) 
+currency-daily-burn-rate | The daily rate at which the currency contained within the public currency holding burns, by fraction of 1 (0.01 = 1%) 
 amount-atomic | The amount of currency held in the private currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
 transfer-out | The total amount that has been debited from the private currency holding as a result of outgoing transfers
 transfer-in | The total amount that has been credited to the private currency holding as a result of incoming transfers
@@ -4069,6 +4073,7 @@ currency-id | The ID of the currency that the private currency holding holds
 currency-name | The name of the currency that the private currency holding holds
 currency-icon-url | The URL at which the icon picture of the currency that the private currency holding holds can be found
 currency-burn-rate | The annual rate at which the currency contained within the private currency holding burns, by basis point (100 = 1%) 
+currency-daily-burn-rate | The daily rate at which the currency contained within the public currency holding burns, by fraction of 1 (0.01 = 1%) 
 amount-atomic | The amount of currency held in the private currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
 transfer-out | The total amount that has been debited from the private currency holding as a result of outgoing transfers
 transfer-in | The total amount that has been credited to the private currency holding as a result of incoming transfers
@@ -4150,6 +4155,7 @@ currency-id | The ID of the currency that the private currency holding holds
 currency-name | The name of the currency that the private currency holding holds
 currency-icon-url | The URL at which the icon picture of the currency that the private currency holding holds can be found
 currency-burn-rate | The annual rate at which the currency contained within the private currency holding burns, by basis point (100 = 1%) 
+currency-daily-burn-rate | The daily rate at which the currency contained within the public currency holding burns, by fraction of 1 (0.01 = 1%) 
 amount-atomic | The amount of currency held in the private currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
 transfer-out | The total amount that has been debited from the private currency holding as a result of outgoing transfers
 transfer-in | The total amount that has been credited to the private currency holding as a result of incoming transfers
