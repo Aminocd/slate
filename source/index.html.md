@@ -9902,7 +9902,7 @@ Updates a voucher.
 
 OR 
 
-`POST https://api.mycurrency.com/users/<USER-ID>/voucher`
+`POST https://api.mycurrency.com/users/<USER-ID>/voucher` (if code provided)
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
