@@ -9900,6 +9900,10 @@ Updates a voucher.
 
 `POST https://api.mycurrency.com/users/<USER-ID>/vouchers/<ID>`
 
+OR 
+
+`POST https://api.mycurrency.com/users/<USER-ID>/voucher`
+
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
