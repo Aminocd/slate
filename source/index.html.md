@@ -1119,6 +1119,139 @@ index | Keywords derived from the description of the store and its products that
 created-at | The time and date when the currency was created
 updated-at | The time and date when the currency was last updated
 
+## List a User's Stores
+
+```shell
+curl "https://api.mycurrency.com/users/4/stores" \
+  -H 'Host: api.mycurrency.com' \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "2",
+      "type": "stores",
+      "attributes": {
+        "number-of-reviews": 0,
+        "average-score": null,
+        "number-of-products": 0,
+        "number-of-product-cancellations": 0,
+        "currency-id": 2,
+        "currency-name": "solar electricity zaps",
+        "currency-icon-url": "/icons/original/missing.png",
+        "sub-location-id": 436,
+        "sub-location-name": "vancouver",
+        "mid-location-id": 54,
+        "mid-location-name": "British Columbia",
+        "physical": true,
+        "store-name": "Vancouver Solar Zap",
+        "store-description": "Vancouver's premium solar electricity source",
+        "index": "Vancouver Solar Zap Vancouver's premium solar electricity source",
+        "created-at": "2019-02-05T16:14:24.041-08:00",
+        "updated-at": "2019-02-05T16:28:54.269-08:00"
+      }
+    },
+    {
+      "id": "3",
+      "type": "stores",
+      "attributes": {
+        "number-of-reviews": 0,
+        "average-score": null,
+        "number-of-products": 0,
+        "number-of-product-cancellations": 0,
+        "currency-id": 2,
+        "currency-name": "solar electricity zaps",
+        "currency-icon-url": "/icons/original/missing.png",
+        "sub-location-id": 45,
+        "sub-location-name": "san francisco bay area",
+        "mid-location-id": 5,
+        "mid-location-name": "California",
+        "physical": true,
+        "store-name": "San Fran Solar Zap",
+        "store-description": "San Francisco's premium solar electricity source",
+        "index": "San Fran Solar Zap San Francisco's premium solar electricity source",
+        "created-at": "2019-02-05T16:16:48.844-08:00",
+        "updated-at": "2019-02-05T16:29:05.167-08:00"
+      }
+    },
+    {
+      "id": "4",
+      "type": "stores",
+      "attributes": {
+        "number-of-reviews": 0,
+        "average-score": null,
+        "number-of-products": 0,
+        "number-of-product-cancellations": 0,
+        "currency-id": 3,
+        "currency-name": "Moon hotel coins",
+        "currency-icon-url": "/icons/original/missing.png",
+        "sub-location-id": 45,
+        "sub-location-name": "san francisco bay area",
+        "mid-location-id": 5,
+        "mid-location-name": "California",
+        "physical": false,
+        "store-name": "Moon Hotel",
+        "store-description": "situated on the edge of the Sea of Tranquility",
+        "index": "Moon Hotel situated on the edge of the Sea of Tranquility",
+        "created-at": "2019-02-05T16:19:54.194-08:00",
+        "updated-at": "2019-02-05T16:19:54.194-08:00"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/users/4/stores?",
+    "first": "https://api.mycurrency.com/users/4/stores?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/users/4/stores?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "3"
+    }
+  }
+}
+```
+
+This endpoint retrieves all stores belonging to the user associated with the ID provided.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/stores`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the store
+number-of-reviews | The number of store reviews created for the store
+average-score | The average score of the store reviews, out of 10
+number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
+number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
+currency-id | The ID of the currency that the store's products are purchasable with
+currency-name | The name of the currency that the store's products are purchasable with
+sub-location-id | The sub location where the store is located
+sub-location-name | The name of the sub location where the store is located
+mid-location-id | The mid location where the store is located
+mid-location-name | The name of the mid location where the store is located
+physical | Whether the store is a physical location that customers can visit
+store-name | The name of the store
+store-description | The description of the store
+index | Keywords derived from the description of the store and its products that are checked against in searches
+created-at | The time and date when the currency was created
+updated-at | The time and date when the currency was last updated
+
 ## List a Currency's Stores
 
 ```shell
