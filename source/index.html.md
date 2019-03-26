@@ -2633,7 +2633,6 @@ curl 'https://api.mycurrency.com/products/5/product_cancellation' \
       "store-name": "Freds Fishing Supplies",
       "product-id": 5,
       "product-discontinual-id": null,
-      "product-name": "fishing bait",
       "cancellation-message": "cancelling fishing bait due to health code regulations",
       "with-advance-notice": false,
       "created-at": "2018-09-06T00:07:27.093-07:00",
@@ -2687,7 +2686,6 @@ curl 'https://api.mycurrency.com/users/4/issuer/product_cancellations' \
         "store-name": "Freds Fishing Supplies",
         "product-id": 5,
         "product-discontinual-id": null,
-        "product-name": "fishing bait",
         "cancellation-message": "cancelling fishing bait due to health code regulations",
         "with-advance-notice": false,
         "created-at": "2018-09-06T00:07:27.093-07:00"
@@ -2701,7 +2699,6 @@ curl 'https://api.mycurrency.com/users/4/issuer/product_cancellations' \
         "store-name": "Jeffreys outdoor supplies",
         "product-id": 9,
         "product-discontinual-id": null,
-        "product-name": "chameleon tent",
         "cancellation-message": "the Defense Ministry classified the synthetic skin used to provide tent's chameleon effect",
         "with-advance-notice": false,
         "created-at": "2018-09-07T14:04:44.141-07:00"
@@ -2715,7 +2712,6 @@ curl 'https://api.mycurrency.com/users/4/issuer/product_cancellations' \
         "store-name": "Honolulu pizza joint",
         "product-id": 12,
         "product-discontinual-id": null,
-        "product-name": "Hawaiian pizza",
         "cancellation-message": "change of menu",
         "with-advance-notice": false,
         "created-at": "2018-09-08T11:18:31.411-07:00"
@@ -2764,7 +2760,6 @@ store-id | The ID of the store where the cancelled product was sold
 store-name | The name of the store where the cancelled product was sold
 product-id | The ID of the product that was cancelled
 product-discontinual-id | The ID of the product_discontinual that created the product_cancellation
-product-name | The name of the cancelled product
 cancellation-message | The message explaining why the product was cancelled
 with-advance-notice | Whether there was advance notice of the product's cancellation given to those holding the currency that was redeemable in the product, in order to give them the opportunity to spend their currency on the product before its cancellation
 created-at | The time and date when the product cancellation was cancelled
@@ -2789,7 +2784,6 @@ curl 'https://api.mycurrency.com/currencies/5/product_cancellations' \
         "store-name": "Freds Fishing Supplies",
         "product-id": 5,
         "product-discontinual-id": null,
-        "product-name": "fishing bait",
         "cancellation-message": "cancelling fishing bait due to health code regulations",
         "with-advance-notice": false,
         "created-at": "2018-09-06T00:07:27.093-07:00"
@@ -2803,7 +2797,6 @@ curl 'https://api.mycurrency.com/currencies/5/product_cancellations' \
         "store-name": "Jeffreys outdoor supplies",
         "product-id": 9,
         "product-discontinual-id": null,
-        "product-name": "chameleon tent",
         "cancellation-message": "the Defense Ministry classified the synthetic skin used to provide tent's chameleon effect",
         "with-advance-notice": false,
         "created-at": "2018-09-07T14:04:44.141-07:00"
@@ -2852,7 +2845,6 @@ store-id | The ID of the store where the cancelled product was sold
 store-name | The name of the store where the cancelled product was sold
 product-id | The ID of the product that was cancelled
 product-discontinual-id | The ID of the product_discontinual that created the product_cancellation
-product-name | The name of the cancelled product
 cancellation-message | The message explaining why the product was cancelled
 with-advance-notice | Whether there was advance notice of the product's cancellation given to those holding the currency that was redeemable in the product, in order to give them the opportunity to spend their currency on the product before its cancellation
 created-at | The time and date when the product cancellation was cancelled
@@ -2877,7 +2869,6 @@ curl 'https://api.mycurrency.com/stores/3/product_cancellations' \
         "store-name": "Jeffreys outdoor supplies",
         "product-id": 5,
         "product-discontinual-id": null,
-        "product-name": "fishing bait",
         "cancellation-message": "cancelling fishing bait due to health code regulations",
         "with-advance-notice": false,
         "created-at": "2018-09-06T00:07:27.093-07:00"
@@ -2926,7 +2917,6 @@ store-id | The ID of the store where the cancelled product was sold
 store-name | The name of the store where the cancelled product was sold
 product-id | The ID of the product that was cancelled
 product-discontinual-id | The ID of the product_discontinual that created the product_cancellation
-product-name | The name of the cancelled product
 cancellation-message | The message explaining why the product was cancelled
 with-advance-notice | Whether there was advance notice of the product's cancellation given to those holding the currency that was redeemable in the product, in order to give them the opportunity to spend their currency on the product before its cancellation
 created-at | The time and date when the product cancellation was cancelled
@@ -2952,7 +2942,6 @@ curl -X POST https://api.mycurrency.com/users/4/issuer/currencies/5/stores/3/pro
       "store-name": "Freds Fishing Supplies",
       "product-id": 5,
       "product-discontinual-id": null,
-      "product-name": "fishing bait",
       "cancellation-message": "cancelling fishing bait due to health code regulations",
       "with-advance-notice": false,
       "created-at": "2018-09-06T00:07:27.093-07:00",
@@ -2991,7 +2980,6 @@ store-id | The ID of the store where the cancelled product was sold
 store-name | The name of the store where the cancelled product was sold
 product-id | The ID of the product that was cancelled
 product-discontinual-id | The ID of the product_discontinual that created the product_cancellation
-product-name | The name of the cancelled product
 cancellation-message | The message explaining why the product was cancelled
 with-advance-notice | Set to false, indicating there was no advance notice of the product's cancellation given to those holding the currency that was redeemable in the product. To provide advance notice, a product_discontinual must be created instead of a product_cancellation
 created-at | The time and date when the product cancellation was cancelled
