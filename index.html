@@ -1080,12 +1080,18 @@ Authentication: not required
       </span><span class="s2">"issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
       </span><span class="s2">"issuer-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
       </span><span class="s2">"issuer-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issuer-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/004/original/1.jpg?1559736060"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">450</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00012614"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"listing-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
       </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spendable at any ACME Toon Shop"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T01:17:31.176-07:00"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T23:49:56.793-07:00"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"get-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"</span><span class="w">
+      </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7.333333333333333333"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1121,8 +1127,24 @@ Authentication: not required
 <td>The ID of the user account that issued the currency</td>
 </tr>
 <tr>
+<td>issuer-user-avatar-url</td>
+<td>The URL at which the avatar picture of the user that issues the currency can be found</td>
+</tr>
+<tr>
 <td>burn-rate</td>
 <td>The annual rate at which holdings of the currency burn, by basis point (100 = 1%)</td>
+</tr>
+<tr>
+<td>daily-burn-rate</td>
+<td>The daily rate at which the currency burns, by fraction of 1 (0.01 = 1%)</td>
+</tr>
+<tr>
+<td>store-count</td>
+<td>The number of stores associated with the currency</td>
+</tr>
+<tr>
+<td>listing-count</td>
+<td>The number of active listings associated with the currency</td>
 </tr>
 <tr>
 <td>name</td>
@@ -1144,6 +1166,14 @@ Authentication: not required
 <td>get-icon-url</td>
 <td>The URL at which the currency icon picture can be found</td>
 </tr>
+<tr>
+<td>number-of-reviews</td>
+<td>The number of store reviews created for the store</td>
+</tr>
+<tr>
+<td>average-score</td>
+<td>The average score of the store reviews, out of 10</td>
+</tr>
 </tbody></table>
 <h2 id='list-currencies'>List Currencies</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/currencies"</span> <span class="se">\</span>
   -H <span class="s1">'Host: api.mycurrency.com'</span> -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
@@ -1160,27 +1190,39 @@ Authentication: not required
         </span><span class="s2">"issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
         </span><span class="s2">"issuer-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
         </span><span class="s2">"issuer-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/004/original/1.jpg?1559736060"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">740</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000210611"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"listing-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm dollars"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Redeemable for services at Calm Massage Therapy"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-10T17:03:08.287-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-10T17:58:08.738-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"get-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/001/original/calm_dollars.jpg?1534619841"</span><span class="w">
+        </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.400000000000000000"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"issuer-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"issuer-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/004/original/1.jpg?1559736060"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">450</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00012614"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"listing-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spendable at any ACME Toon Shop"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T01:17:31.176-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T23:49:56.793-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"get-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"</span><span class="w">
+        </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7.333333333333333333"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -1190,12 +1232,18 @@ Authentication: not required
         </span><span class="s2">"issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
         </span><span class="s2">"issuer-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
         </span><span class="s2">"issuer-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/005/original/portrait.jpg?1559144410"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">420</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000117548"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"listing-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Horizon Cloud Computing dollars"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Redeemable for Horizon Cloud Computing services"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-22T17:10:21.588-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-22T17:10:21.588-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"get-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/003/original/horizon-cloud.png?1534243939"</span><span class="w">
+        </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8.000000000000000000"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -1205,12 +1253,18 @@ Authentication: not required
         </span><span class="s2">"issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
         </span><span class="s2">"issuer-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
         </span><span class="s2">"issuer-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tom"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/006/original/face.jpg?1560144110"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">550</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000154976"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"listing-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tom's Fruitstand bucks"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Redeem Tom's Fruitstand bucks for delicious fruit"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-22T17:10:21.588-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-22T17:10:21.588-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"get-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/004/original/Tom-bucks.png?1534148467"</span><span class="w">
+        </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.000000000000000000"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -1220,12 +1274,18 @@ Authentication: not required
         </span><span class="s2">"issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
         </span><span class="s2">"issuer-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
         </span><span class="s2">"issuer-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Estevan"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/007/original/face.jpg?1560144110"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00014052"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"listing-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chilli pesos"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chilli pesos are backed by chillis"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-22T18:57:27.193-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-22T18:57:27.193-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"get-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/005/original/chilli-pesos.png?153414511"</span><span class="w">
+        </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.15555555555555555"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
@@ -1276,8 +1336,24 @@ Authentication: not required
 <td>The ID of the user account that issued the currency</td>
 </tr>
 <tr>
+<td>issuer-user-avatar-url</td>
+<td>The URL at which the avatar picture of the user that issues the currency can be found</td>
+</tr>
+<tr>
 <td>burn-rate</td>
 <td>The annual rate at which holdings of the currency burn, by basis point (100 = 1%)</td>
+</tr>
+<tr>
+<td>daily-burn-rate</td>
+<td>The daily rate at which the currency burns, by fraction of 1 (0.01 = 1%)</td>
+</tr>
+<tr>
+<td>store-count</td>
+<td>The number of stores associated with the currency</td>
+</tr>
+<tr>
+<td>listing-count</td>
+<td>The number of active listings associated with the currency</td>
 </tr>
 <tr>
 <td>name</td>
@@ -1299,6 +1375,14 @@ Authentication: not required
 <td>get-icon-url</td>
 <td>The URL at which the currency icon picture can be found</td>
 </tr>
+<tr>
+<td>number-of-reviews</td>
+<td>The number of store reviews created for the store</td>
+</tr>
+<tr>
+<td>average-score</td>
+<td>The average score of the store reviews, out of 10</td>
+</tr>
 </tbody></table>
 <h2 id='list-a-user-39-s-currencies'>List a User&#39;s Currencies</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/currencies?user_id=3"</span> <span class="se">\</span>
   -H <span class="s1">'Host: api.mycurrency.com'</span> -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
@@ -1312,15 +1396,21 @@ Authentication: not required
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"issuer-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"issuer-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/004/original/1.jpg?1559736060"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">450</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00012614"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"listing-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spendable at any ACME Toon Shop"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T01:17:31.176-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T23:49:56.793-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"get-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"</span><span class="w">
+        </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7.333333333333333333"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -1330,12 +1420,18 @@ Authentication: not required
         </span><span class="s2">"issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
         </span><span class="s2">"issuer-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
         </span><span class="s2">"issuer-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/005/original/portrait.jpg?1559144410"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">420</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000117548"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"listing-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Horizon Cloud Computing dollars"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Redeemable for Horizon Cloud Computing services"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-22T17:10:21.588-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-22T17:10:21.588-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"get-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/003/original/horizon-cloud.png?1534243939"</span><span class="w">
+        </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8.000000000000000000"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">  
   </span><span class="p">],</span><span class="w">
@@ -1386,8 +1482,24 @@ Authentication: not required
 <td>The ID of the user account that issued the currency</td>
 </tr>
 <tr>
+<td>issuer-user-avatar-url</td>
+<td>The URL at which the avatar picture of the user that issues the currency can be found</td>
+</tr>
+<tr>
 <td>burn-rate</td>
 <td>The annual rate at which holdings of the currency burn, by basis point (100 = 1%)</td>
+</tr>
+<tr>
+<td>daily-burn-rate</td>
+<td>The daily rate at which the currency burns, by fraction of 1 (0.01 = 1%)</td>
+</tr>
+<tr>
+<td>store-count</td>
+<td>The number of stores associated with the currency</td>
+</tr>
+<tr>
+<td>listing-count</td>
+<td>The number of active listings associated with the currency</td>
 </tr>
 <tr>
 <td>name</td>
@@ -1409,6 +1521,14 @@ Authentication: not required
 <td>get-icon-url</td>
 <td>The URL at which the currency icon picture can be found</td>
 </tr>
+<tr>
+<td>number-of-reviews</td>
+<td>The number of store reviews created for the store</td>
+</tr>
+<tr>
+<td>average-score</td>
+<td>The average score of the store reviews, out of 10</td>
+</tr>
 </tbody></table>
 <h2 id='create-currency'>Create Currency</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.mycurrency.com/users/2/issuer/currencies <span class="se">\</span>
   -d <span class="s1">'{"currency": { "burn_rate": 740, "name": "Calm dollars", "description": "Redeemable for services at Calm Massage Therapy" } }'</span> <span class="se">\</span>
@@ -1423,15 +1543,21 @@ Authentication: not required
     </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
       </span><span class="s2">"issuer-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"issuer-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">740</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm dollars"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Redeemable for services at Calm Massage Therapy"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-10T17:03:08.287-07:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-10T17:58:08.738-07:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"get-icon-url"</span><span class="p">:</span><span class="s2">"/icons/original/missing.png"</span><span class="w">
+      </span><span class="s2">"issuer-user-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issuer-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/avatars/original/missing.png"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00014052"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"listing-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Micro Asteroid bucks"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"credit toward asteroid mining missions"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-05T02:19:23.338-08:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-05T02:19:23.338-08:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"get-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7.333333333333333333"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1486,7 +1612,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </thead><tbody>
 <tr>
 <td>id</td>
-<td>The ID of the new currency</td>
+<td>The ID of the currency</td>
 </tr>
 <tr>
 <td>issuer-id</td>
@@ -1501,8 +1627,24 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The ID of the user account that issued the currency</td>
 </tr>
 <tr>
+<td>issuer-user-avatar-url</td>
+<td>The URL at which the avatar picture of the user that issues the currency can be found</td>
+</tr>
+<tr>
 <td>burn-rate</td>
 <td>The annual rate at which holdings of the currency burn, by basis point (100 = 1%)</td>
+</tr>
+<tr>
+<td>daily-burn-rate</td>
+<td>The daily rate at which the currency burns, by fraction of 1 (0.01 = 1%)</td>
+</tr>
+<tr>
+<td>store-count</td>
+<td>The number of stores associated with the currency</td>
+</tr>
+<tr>
+<td>listing-count</td>
+<td>The number of active listings associated with the currency</td>
 </tr>
 <tr>
 <td>name</td>
@@ -1524,6 +1666,14 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>get-icon-url</td>
 <td>The URL at which the currency icon picture can be found</td>
 </tr>
+<tr>
+<td>number-of-reviews</td>
+<td>The number of store reviews created for the store</td>
+</tr>
+<tr>
+<td>average-score</td>
+<td>The average score of the store reviews, out of 10</td>
+</tr>
 </tbody></table>
 <h2 id='update-currency'>Update Currency</h2><pre class="highlight shell tab-shell"><code>curl -X PUT https://api.mycurrency.com/users/2/issuer/currencies/1 <span class="se">\</span>
   -F <span class="s1">'currency[icon]=@calm_dollars.jpg'</span> <span class="se">\</span>
@@ -1538,15 +1688,21 @@ Authentication: the request requires the OAuth access-token associated with the 
     </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
       </span><span class="s2">"issuer-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"issuer-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">740</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm dollars"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Redeemable for services at Calm Massage Therapy"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-10T17:03:08.287-07:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-10T17:58:08.738-07:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"get-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/001/original/calm_dollars.jpg?1534619841"</span><span class="w">
+      </span><span class="s2">"issuer-user-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issuer-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/avatars/original/missing.png"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00014052"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"listing-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Micro Asteroid bucks"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"credit toward asteroid mining missions"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-05T02:19:23.338-08:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-05T02:19:23.338-08:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"get-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/001/original/calm_dollars.jpg?1514241100"</span><span class="w">
+      </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7.333333333333333333"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1589,7 +1745,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </thead><tbody>
 <tr>
 <td>id</td>
-<td>The ID of the updated currency</td>
+<td>The ID of the currency</td>
 </tr>
 <tr>
 <td>issuer-id</td>
@@ -1604,8 +1760,24 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The ID of the user account that issued the currency</td>
 </tr>
 <tr>
+<td>issuer-user-avatar-url</td>
+<td>The URL at which the avatar picture of the user that issues the currency can be found</td>
+</tr>
+<tr>
 <td>burn-rate</td>
 <td>The annual rate at which holdings of the currency burn, by basis point (100 = 1%)</td>
+</tr>
+<tr>
+<td>daily-burn-rate</td>
+<td>The daily rate at which the currency burns, by fraction of 1 (0.01 = 1%)</td>
+</tr>
+<tr>
+<td>store-count</td>
+<td>The number of stores associated with the currency</td>
+</tr>
+<tr>
+<td>listing-count</td>
+<td>The number of active listings associated with the currency</td>
 </tr>
 <tr>
 <td>name</td>
@@ -1626,6 +1798,14 @@ Authentication: the request requires the OAuth access-token associated with the 
 <tr>
 <td>get-icon-url</td>
 <td>The URL at which the currency icon picture can be found</td>
+</tr>
+<tr>
+<td>number-of-reviews</td>
+<td>The number of store reviews created for the store</td>
+</tr>
+<tr>
+<td>average-score</td>
+<td>The average score of the store reviews, out of 10</td>
 </tr>
 </tbody></table>
 <h1 id='burnrate-change'>Burnrate Change</h1><h2 id='get-a-burnrate-change'>Get a Burnrate Change</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/currencies/1/burnrate_changes/1"</span> <span class="se">\</span>
@@ -5977,7 +6157,7 @@ Authentication: not required
       </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">450</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"currency-daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00012614</span><span class="w"> 
+      </span><span class="s2">"currency-daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00012614"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">49918217200</span><span class="p">,</span><span class="w">
       </span><span class="s2">"transfer-out"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="s2">"transfer-in"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000000</span><span class="p">,</span><span class="w">
@@ -6087,7 +6267,7 @@ Authentication: the request requires the OAuth access-token associated with the 
         </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">450</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"currency-daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00012614</span><span class="w"> 
+        </span><span class="s2">"currency-daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00012614"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">49918217200</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-out"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-in"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000000</span><span class="p">,</span><span class="w">
@@ -6107,7 +6287,7 @@ Authentication: the request requires the OAuth access-token associated with the 
         </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diamond dollars"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/006/original/Diamond-coins.png?1534142996"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"currency-daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00008345</span><span class="w"> 
+        </span><span class="s2">"currency-daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00008345"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">99975465160</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-out"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000000</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-in"</span><span class="p">:</span><span class="w"> </span><span class="mi">150000000000</span><span class="p">,</span><span class="w">
@@ -6228,7 +6408,7 @@ Authentication: the request requires the OAuth access-token associated with the 
         </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">450</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"currency-daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00012614</span><span class="w"> 
+        </span><span class="s2">"currency-daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00012614"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">119942752040</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-out"</span><span class="p">:</span><span class="w"> </span><span class="mi">80000000000</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-in"</span><span class="p">:</span><span class="w"> </span><span class="mi">200000000000</span><span class="p">,</span><span class="w">
@@ -6248,7 +6428,7 @@ Authentication: the request requires the OAuth access-token associated with the 
         </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Horizon Cloud Computing dollars"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/003/original/horizon_dollars.png?1534142996"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">420</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"currency-daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00011755</span><span class="w">
+        </span><span class="s2">"currency-daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00011755"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">79983643440</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-out"</span><span class="p">:</span><span class="w"> </span><span class="mi">80000000000</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-in"</span><span class="p">:</span><span class="w"> </span><span class="mi">160000000000</span><span class="p">,</span><span class="w">
@@ -6370,7 +6550,7 @@ Authentication: the request requires the OAuth access-token associated with the 
       </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Horizon Cloud Computing dollars"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/003/original/horizon_dollars.png?1534142996"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">420</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"currency-daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00011755</span><span class="w">
+      </span><span class="s2">"currency-daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00011755"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="s2">"transfer-out"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000</span><span class="p">,</span><span class="w">
       </span><span class="s2">"transfer-in"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -6477,7 +6657,7 @@ Authentication: the request requires the OAuth access-token associated with the 
         </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tom's Fruitstand bucks"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/004/original/Toms_bucks.png?1534144151"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"currency-daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00014052</span><span class="w">
+        </span><span class="s2">"currency-daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00014052"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">9964274765720</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-out"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-in"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -6498,7 +6678,7 @@ Authentication: the request requires the OAuth access-token associated with the 
         </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chilli pesos"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/005/original/chilli_pesos.png?1534151581"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"currency-daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00014052</span><span class="w">
+        </span><span class="s2">"currency-daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00014052"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">9938553881223</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-out"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-in"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -6519,7 +6699,7 @@ Authentication: the request requires the OAuth access-token associated with the 
         </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diamond dollars"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/006/original/Diamond-coins.png?1534142996"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"currency-daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00008345</span><span class="w"> 
+        </span><span class="s2">"currency-daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00008345"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">9989990954562</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-out"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-in"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -6641,7 +6821,7 @@ Authentication: the request requires the OAuth access-token associated with the 
     </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Horizon Cloud Computing dollars"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/003/original/horizon_dollars.png?1534142996"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"currency-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">420</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"currency-daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00011755</span><span class="w">
+    </span><span class="s2">"currency-daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00011755"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="s2">"transfer-out"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000</span><span class="p">,</span><span class="w">
     </span><span class="s2">"transfer-in"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
