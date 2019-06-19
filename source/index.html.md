@@ -337,12 +337,18 @@ curl 'https://api.mycurrency.com/currencies/2' \
       "issuer-id": 2,
       "issuer-user-id": 3,
       "issuer-user-username": "Hannibal",
+      "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
       "burn-rate": 450,
+      "daily-burn-rate": "0.00012614",
+      "store-count": 2,
+      "listing-count": 5,
       "name": "ACME Toon Shop dollars",
       "description": "Spendable at any ACME Toon Shop",
       "created-at": "2018-08-12T01:17:31.176-07:00",
       "updated-at": "2018-08-12T23:49:56.793-07:00",
       "get-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
+      "number-of-reviews": 5,
+      "average-score": "7.333333333333333333"
     }
   }
 }
@@ -366,12 +372,18 @@ id | The ID of the currency
 issuer-id | The ID of the issuer account that issued the currency
 issuer-user-id | The ID of the user account that issued the currency
 issuer-user-username | The ID of the user account that issued the currency
+issuer-user-avatar-url | The URL at which the avatar picture of the user that issues the currency can be found
 burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
+daily-burn-rate | The daily rate at which the currency burns, by fraction of 1 (0.01 = 1%)
+store-count | The number of stores associated with the currency
+listing-count | The number of active listings associated with the currency
 name | The name of the currency
 description | The description of the currency
 created-at | The time and date when the currency was created
 updated-at | The time and date when the currency was last updated
 get-icon-url | The URL at which the currency icon picture can be found
+number-of-reviews | The number of store reviews created for the store
+average-score | The average score of the store reviews, out of 10
 
 ## List Currencies
 
@@ -392,27 +404,39 @@ curl "https://api.mycurrency.com/currencies" \
         "issuer-id": 2,
         "issuer-user-id": 3,
         "issuer-user-username": "Hannibal",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "burn-rate": 740,
+        "daily-burn-rate": "0.000210611",
+        "store-count": 3, 
+        "listing-count": 0,
         "name": "Calm dollars",
         "description": "Redeemable for services at Calm Massage Therapy",
         "created-at": "2017-08-10T17:03:08.287-07:00",
         "updated-at": "2017-08-10T17:58:08.738-07:00",
         "get-icon-url": "/system/currencies/icons/000/000/001/original/calm_dollars.jpg?1534619841"
+        "number-of-reviews": 3,
+        "average-score": "5.400000000000000000"
       }
     },
     {
       "id": "2",
       "type": "currencies",
       "attributes": {
-        "issuer-id": 3,
-        "issuer-user-id": 4,
-        "issuer-user-username": "ScipioAfricanus",
+        "issuer-id": 2,
+        "issuer-user-id": 3,
+        "issuer-user-username": "Hannibal",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "burn-rate": 450,
+        "daily-burn-rate": "0.00012614",
+        "store-count": 2,
+        "listing-count": 5,
         "name": "ACME Toon Shop dollars",
         "description": "Spendable at any ACME Toon Shop",
         "created-at": "2018-08-12T01:17:31.176-07:00",
         "updated-at": "2018-08-12T23:49:56.793-07:00",
         "get-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
+        "number-of-reviews": 5,
+        "average-score": "7.333333333333333333"
       }
     },
     {
@@ -422,12 +446,18 @@ curl "https://api.mycurrency.com/currencies" \
         "issuer-id": 3,
         "issuer-user-id": 4,
         "issuer-user-username": "ScipioAfricanus",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
         "burn-rate": 420,
+        "daily-burn-rate": "0.000117548",
+        "store-count": 4,
+        "listing-count": 1,
         "name": "Horizon Cloud Computing dollars",
         "description": "Redeemable for Horizon Cloud Computing services",
         "created-at": "2018-09-22T17:10:21.588-07:00",
         "updated-at": "2018-09-22T17:10:21.588-07:00",
         "get-icon-url": "/system/currencies/icons/000/000/003/original/horizon-cloud.png?1534243939"
+        "number-of-reviews": 3,
+        "average-score": "8.000000000000000000"
       }
     },
     {
@@ -437,12 +467,18 @@ curl "https://api.mycurrency.com/currencies" \
         "issuer-id": 4,
         "issuer-user-id": 5,
         "issuer-user-username": "Tom",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/006/original/face.jpg?1560144110",
         "burn-rate": 550,
+        "daily-burn-rate": "0.000154976",
+        "store-count": 1,
+        "listing-count": 10,
         "name": "Tom's Fruitstand bucks",
         "description": "Redeem Tom's Fruitstand bucks for delicious fruit",
         "created-at": "2018-09-22T17:10:21.588-07:00",
         "updated-at": "2018-09-22T17:10:21.588-07:00",
         "get-icon-url": "/system/currencies/icons/000/000/004/original/Tom-bucks.png?1534148467"
+        "number-of-reviews": 7,
+        "average-score": "10.000000000000000000"
       }
     },
     {
@@ -452,12 +488,18 @@ curl "https://api.mycurrency.com/currencies" \
         "issuer-id": 5,
         "issuer-user-id": 6,
         "issuer-user-username": "Estevan",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/007/original/face.jpg?1560144110",
         "burn-rate": 500,
+        "daily-burn-rate": "0.00014052",
+        "store-count": 16,
+        "listing-count": 4,
         "name": "Chilli pesos",
         "description": "Chilli pesos are backed by chillis",
         "created-at": "2018-09-22T18:57:27.193-07:00",
         "updated-at": "2018-09-22T18:57:27.193-07:00",
         "get-icon-url": "/system/currencies/icons/000/000/005/original/chilli-pesos.png?153414511"
+        "number-of-reviews": 14,
+        "average-score": "9.15555555555555555"
       }
     }
   ],
@@ -496,12 +538,18 @@ id | The ID of the currency
 issuer-id | The ID of the issuer account that issued the currency
 issuer-user-id | The ID of the user account that issued the currency
 issuer-user-username | The ID of the user account that issued the currency
+issuer-user-avatar-url | The URL at which the avatar picture of the user that issues the currency can be found
 burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
+daily-burn-rate | The daily rate at which the currency burns, by fraction of 1 (0.01 = 1%)
+store-count | The number of stores associated with the currency
+listing-count | The number of active listings associated with the currency
 name | The name of the currency
 description | The description of the currency
 created-at | The time and date when the currency was created
 updated-at | The time and date when the currency was last updated
 get-icon-url | The URL at which the currency icon picture can be found
+number-of-reviews | The number of store reviews created for the store
+average-score | The average score of the store reviews, out of 10
 
 ## List a User's Currencies
 
@@ -519,15 +567,21 @@ curl "https://api.mycurrency.com/currencies?user_id=3" \
       "id": "2",
       "type": "currencies",
       "attributes": {
-        "issuer-id": 3,
-        "issuer-user-id": 4,
-        "issuer-user-username": "ScipioAfricanus",
+        "issuer-id": 2,
+        "issuer-user-id": 3,
+        "issuer-user-username": "Hannibal",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "burn-rate": 450,
+        "daily-burn-rate": "0.00012614",
+        "store-count": 2,
+        "listing-count": 5,
         "name": "ACME Toon Shop dollars",
         "description": "Spendable at any ACME Toon Shop",
         "created-at": "2018-08-12T01:17:31.176-07:00",
         "updated-at": "2018-08-12T23:49:56.793-07:00",
         "get-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
+        "number-of-reviews": 5,
+        "average-score": "7.333333333333333333"
       }
     },
     {
@@ -537,12 +591,18 @@ curl "https://api.mycurrency.com/currencies?user_id=3" \
         "issuer-id": 3,
         "issuer-user-id": 4,
         "issuer-user-username": "ScipioAfricanus",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
         "burn-rate": 420,
+        "daily-burn-rate": "0.000117548",
+        "store-count": 4,
+        "listing-count": 1,
         "name": "Horizon Cloud Computing dollars",
         "description": "Redeemable for Horizon Cloud Computing services",
         "created-at": "2018-09-22T17:10:21.588-07:00",
         "updated-at": "2018-09-22T17:10:21.588-07:00",
         "get-icon-url": "/system/currencies/icons/000/000/003/original/horizon-cloud.png?1534243939"
+        "number-of-reviews": 3,
+        "average-score": "8.000000000000000000"
       }
     }  
   ],
@@ -581,12 +641,18 @@ id | The ID of the currency
 issuer-id | The ID of the issuer account that issued the currency
 issuer-user-id | The ID of the user account that issued the currency
 issuer-user-username | The ID of the user account that issued the currency
+issuer-user-avatar-url | The URL at which the avatar picture of the user that issues the currency can be found
 burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
+daily-burn-rate | The daily rate at which the currency burns, by fraction of 1 (0.01 = 1%)
+store-count | The number of stores associated with the currency
+listing-count | The number of active listings associated with the currency
 name | The name of the currency
 description | The description of the currency
 created-at | The time and date when the currency was created
 updated-at | The time and date when the currency was last updated
 get-icon-url | The URL at which the currency icon picture can be found
+number-of-reviews | The number of store reviews created for the store
+average-score | The average score of the store reviews, out of 10
 
 ## Create Currency
 
@@ -605,15 +671,21 @@ curl -X POST https://api.mycurrency.com/users/2/issuer/currencies \
     "id":"1",
     "type":"currencies",
     "attributes": {
-      "issuer-id": 2,
+      "issuer-id": 3,
       "issuer-user-id": 3,
-      "issuer-user-username": "Hannibal",
-      "burn-rate": 740,
-      "name": "Calm dollars",
-      "description": "Redeemable for services at Calm Massage Therapy",
-      "created-at": "2017-08-10T17:03:08.287-07:00",
-      "updated-at": "2017-08-10T17:58:08.738-07:00",
-      "get-icon-url":"/icons/original/missing.png"
+      "issuer-user-name": "Hannibal",
+      "issuer-user-avatar-url": "/avatars/original/missing.png",
+      "burn-rate": 500,
+      "daily-burn-rate": "0.00014052",
+      "store-count": 1,
+      "listing-count": 0,
+      "name": "Micro Asteroid bucks",
+      "description": "credit toward asteroid mining missions",
+      "created-at": "2018-11-05T02:19:23.338-08:00",
+      "updated-at": "2018-11-05T02:19:23.338-08:00",
+      "get-icon-url": "/icons/original/missing.png",
+      "number-of-reviews": 3,
+      "average-score": "7.333333333333333333"
     }
   }
 }
@@ -642,16 +714,22 @@ icon | filename | no | The image file to be uploaded as currency's icon picture
 
 Parameter | Description
 --------- | -----------
-id | The ID of the new currency
+id | The ID of the currency
 issuer-id | The ID of the issuer account that issued the currency
 issuer-user-id | The ID of the user account that issued the currency
 issuer-user-username | The ID of the user account that issued the currency
+issuer-user-avatar-url | The URL at which the avatar picture of the user that issues the currency can be found
 burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
+daily-burn-rate | The daily rate at which the currency burns, by fraction of 1 (0.01 = 1%)
+store-count | The number of stores associated with the currency
+listing-count | The number of active listings associated with the currency
 name | The name of the currency
 description | The description of the currency
 created-at | The time and date when the currency was created
 updated-at | The time and date when the currency was last updated
 get-icon-url | The URL at which the currency icon picture can be found
+number-of-reviews | The number of store reviews created for the store
+average-score | The average score of the store reviews, out of 10
 
 ## Update Currency
 
@@ -670,15 +748,21 @@ curl -X PUT https://api.mycurrency.com/users/2/issuer/currencies/1 \
     "id":"1",
     "type":"currencies",
     "attributes": {
-      "issuer-id": 2,
+      "issuer-id": 3,
       "issuer-user-id": 3,
-      "issuer-user-username": "Hannibal",
-      "burn-rate": 740,
-      "name": "Calm dollars",
-      "description": "Redeemable for services at Calm Massage Therapy",
-      "created-at": "2017-08-10T17:03:08.287-07:00",
-      "updated-at": "2017-08-10T17:58:08.738-07:00",
-      "get-icon-url": "/system/currencies/icons/000/000/001/original/calm_dollars.jpg?1534619841"
+      "issuer-user-name": "Hannibal",
+      "issuer-user-avatar-url": "/avatars/original/missing.png",
+      "burn-rate": 500,
+      "daily-burn-rate": "0.00014052",
+      "store-count": 1,
+      "listing-count": 0,
+      "name": "Micro Asteroid bucks",
+      "description": "credit toward asteroid mining missions",
+      "created-at": "2018-11-05T02:19:23.338-08:00",
+      "updated-at": "2018-11-05T02:19:23.338-08:00",
+      "get-icon-url": "/system/currencies/icons/000/000/001/original/calm_dollars.jpg?1514241100"
+      "number-of-reviews": 3,
+      "average-score": "7.333333333333333333"
     }
   }
 }
@@ -705,16 +789,22 @@ icon | filename | no | The image file to be uploaded as currency's icon picture
 
 Parameter | Description
 --------- | -----------
-id | The ID of the updated currency
+id | The ID of the currency
 issuer-id | The ID of the issuer account that issued the currency
 issuer-user-id | The ID of the user account that issued the currency
 issuer-user-username | The ID of the user account that issued the currency
+issuer-user-avatar-url | The URL at which the avatar picture of the user that issues the currency can be found
 burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
+daily-burn-rate | The daily rate at which the currency burns, by fraction of 1 (0.01 = 1%)
+store-count | The number of stores associated with the currency
+listing-count | The number of active listings associated with the currency
 name | The name of the currency
 description | The description of the currency
 created-at | The time and date when the currency was created
 updated-at | The time and date when the currency was last updated
 get-icon-url | The URL at which the currency icon picture can be found
+number-of-reviews | The number of store reviews created for the store
+average-score | The average score of the store reviews, out of 10
 
 # Burnrate Change
 
@@ -3763,7 +3853,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_public_currency_holdings/3' 
       "currency-name": "ACME Toon Shop dollars",
       "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996",
       "currency-burn-rate": 450,
-      "currency-daily-burn-rate": 0.00012614 
+      "currency-daily-burn-rate": "0.00012614",
       "amount-atomic": 49918217200,
       "transfer-out": 0,
       "transfer-in": 50000000000,
@@ -3830,7 +3920,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_public_currency_
         "currency-name": "ACME Toon Shop dollars",
         "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996",
         "currency-burn-rate": 450,
-        "currency-daily-burn-rate": 0.00012614 
+        "currency-daily-burn-rate": "0.00012614",
         "amount-atomic": 49918217200,
         "transfer-out": 0,
         "transfer-in": 50000000000,
@@ -3850,7 +3940,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_public_currency_
         "currency-name": "Diamond dollars",
         "currency-icon-url": "/system/currencies/icons/000/000/006/original/Diamond-coins.png?1534142996",
         "currency-burn-rate": 300,
-        "currency-daily-burn-rate": 0.00008345 
+        "currency-daily-burn-rate": "0.00008345",
         "amount-atomic": 99975465160,
         "transfer-out": 50000000000,
         "transfer-in": 150000000000,
@@ -3931,7 +4021,7 @@ curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_public_cur
         "currency-name": "ACME Toon Shop dollars",
         "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996",
         "currency-burn-rate": 450,
-        "currency-daily-burn-rate": 0.00012614 
+        "currency-daily-burn-rate": "0.00012614",
         "amount-atomic": 119942752040,
         "transfer-out": 80000000000,
         "transfer-in": 200000000000,
@@ -3951,7 +4041,7 @@ curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_public_cur
         "currency-name": "Horizon Cloud Computing dollars",
         "currency-icon-url": "/system/currencies/icons/000/000/003/original/horizon_dollars.png?1534142996",
         "currency-burn-rate": 420,
-        "currency-daily-burn-rate": 0.00011755
+        "currency-daily-burn-rate": "0.00011755",
         "amount-atomic": 79983643440,
         "transfer-out": 80000000000,
         "transfer-in": 160000000000,
@@ -4035,7 +4125,7 @@ curl 'https://api.mycurrency.com/users/4/authorized_private_currency_holdings/7'
       "currency-name": "Horizon Cloud Computing dollars",
       "currency-icon-url": "/system/currencies/icons/000/000/003/original/horizon_dollars.png?1534142996",
       "currency-burn-rate": 420,
-      "currency-daily-burn-rate": 0.00011755
+      "currency-daily-burn-rate": "0.00011755",
       "amount-atomic": 0,
       "transfer-out": 100000000000,
       "transfer-in": 0,
@@ -4102,7 +4192,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_private_currency
         "currency-name": "Tom's Fruitstand bucks",
         "currency-icon-url": "/system/currencies/icons/000/000/004/original/Toms_bucks.png?1534144151",
         "currency-burn-rate": 500,
-        "currency-daily-burn-rate": 0.00014052
+        "currency-daily-burn-rate": "0.00014052",
         "amount-atomic": 9964274765720,
         "transfer-out": 0,
         "transfer-in": 0,
@@ -4123,7 +4213,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_private_currency
         "currency-name": "Chilli pesos",
         "currency-icon-url": "/system/currencies/icons/000/000/005/original/chilli_pesos.png?1534151581",
         "currency-burn-rate": 500,
-        "currency-daily-burn-rate": 0.00014052
+        "currency-daily-burn-rate": "0.00014052",
         "amount-atomic": 9938553881223,
         "transfer-out": 0,
         "transfer-in": 0,
@@ -4144,7 +4234,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_private_currency
         "currency-name": "Diamond dollars",
         "currency-icon-url": "/system/currencies/icons/000/000/006/original/Diamond-coins.png?1534142996",
         "currency-burn-rate": 300,
-        "currency-daily-burn-rate": 0.00008345 
+        "currency-daily-burn-rate": "0.00008345",
         "amount-atomic": 9989990954562,
         "transfer-out": 0,
         "transfer-in": 0,
@@ -4226,7 +4316,7 @@ curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_private_cu
     "currency-name": "Horizon Cloud Computing dollars",
     "currency-icon-url": "/system/currencies/icons/000/000/003/original/horizon_dollars.png?1534142996",
     "currency-burn-rate": 420,
-    "currency-daily-burn-rate": 0.00011755
+    "currency-daily-burn-rate": "0.00011755",
     "amount-atomic": 0,
     "transfer-out": 100000000000,
     "transfer-in": 0,
