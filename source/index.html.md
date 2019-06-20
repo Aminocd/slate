@@ -387,6 +387,85 @@ get-icon-url | The URL at which the currency icon picture can be found
 number-of-reviews | The number of store reviews created for the store
 average-score | The average score of the store reviews, out of 10
 
+## Get a Currency with Authorization
+
+```shell
+curl 'https://api.mycurrency.com/authorized_currencies/4' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "4",
+    "type": "currencies",
+    "attributes": {
+      "issuer-id": 2,
+      "issuer-user-id": 2,
+      "issuer-user-name": "spiderman",
+      "issuer-user-avatar-url": "/avatars/original/missing.png",
+      "burn-rate": 420,
+      "daily-burn-rate": "0.000117548",
+      "store-count": 0,
+      "listing-count": 0,
+      "product-count": 0,
+      "name": "spiderman pizza dollars",
+      "description": "loyalty points for spiderman pizza",
+      "created-at": "2018-11-05T11:10:12.729-08:00",
+      "updated-at": "2018-11-05T11:10:12.729-08:00",
+      "get-icon-url": "/icons/original/missing.png",
+      "number-of-reviews": 0,
+      "average-score": null,
+      "private-amount-atomic": 10496473974509,
+      "public-amount-atomic": 500000000000,
+      "total-amount-atomic": 10996473974509,
+      "number-of-burn-rate-changes": 0,
+      "number-public-currency-holdings": 3,
+      "next-daily-burn-amount": "1292613522.755583932"
+    }
+  }
+}
+```
+
+This endpoint retrieves a particular currency and more detailed public information by ID as well as details about logged-in user's holdings of that currency 
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/authorized_currencies/<ID>`
+
+<aside class="notice">
+Authentication: not required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the currency
+issuer-id | The ID of the issuer account that issued the currency
+issuer-user-id | The ID of the user account that issued the currency
+issuer-user-username | The ID of the user account that issued the currency
+issuer-user-avatar-url | The URL at which the avatar picture of the user that issues the currency can be found
+burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
+daily-burn-rate | The daily rate at which the currency burns, by fraction of 1 (0.01 = 1%)
+store-count | The number of stores associated with the currency
+listing-count | The number of active listings associated with the currency
+product-count | The number of products associated with the currency
+name | The name of the currency
+description | The description of the currency
+created-at | The time and date when the currency was created
+updated-at | The time and date when the currency was last updated
+get-icon-url | The URL at which the currency icon picture can be found
+number-of-reviews | The number of store reviews created for the store
+average-score | The average score of the store reviews, out of 10
+private-amount-atomic | The amount held in the logged-in user's private holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
+public-amount-atomic | The amount held in the logged-in user's public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
+total-amount-atomic | The total amount held in the logged-in user's public and private holdings of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
+number-of-burn-rate-changes | The number of burn rate changes that the currency has undergone since its creation
+number-of-public-currency-holdings | The number of public holdings of the currency
+next-daily-burn-amount | The total amount of units in the logged-in user's public and private currency holdings of the specified currency that will be burned over the next day, in atomic units (each whole unit is composed of 10^10 atomic units) 
 ## List Currencies
 
 ```shell
