@@ -256,6 +256,9 @@
                     <a href="#get-a-currency" class="toc-h2 toc-link" data-title="Get a Currency">Get a Currency</a>
                   </li>
                   <li>
+                    <a href="#get-a-currency-with-authorization" class="toc-h2 toc-link" data-title="Get a Currency with Authorization">Get a Currency with Authorization</a>
+                  </li>
+                  <li>
                     <a href="#list-currencies" class="toc-h2 toc-link" data-title="List Currencies">List Currencies</a>
                   </li>
                   <li>
@@ -1180,6 +1183,150 @@ Authentication: not required
 <td>The average score of the store reviews, out of 10</td>
 </tr>
 </tbody></table>
+<h2 id='get-a-currency-with-authorization'>Get a Currency with Authorization</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/authorized_currencies/4'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"currencies"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issuer-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issuer-user-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spiderman"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issuer-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/avatars/original/missing.png"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">420</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"daily-burn-rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000117548"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"listing-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spiderman pizza dollars"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"loyalty points for spiderman pizza"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-05T11:10:12.729-08:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-05T11:10:12.729-08:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"get-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"private-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10496473974509</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"public-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">500000000000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10996473974509</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"number-of-burn-rate-changes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"number-public-currency-holdings"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"next-daily-burn-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1292613522.755583932"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a particular currency and more detailed public information by ID as well as details about logged-in user&#39;s holdings of that currency </p>
+<h3 id='http-request-8'>HTTP Request</h3>
+<p><code>GET https://api.mycurrency.com/authorized_currencies/&lt;ID&gt;</code></p>
+
+<aside class="notice">
+Authentication: not required
+</aside>
+<h3 id='response-8'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the currency</td>
+</tr>
+<tr>
+<td>issuer-id</td>
+<td>The ID of the issuer account that issued the currency</td>
+</tr>
+<tr>
+<td>issuer-user-id</td>
+<td>The ID of the user account that issued the currency</td>
+</tr>
+<tr>
+<td>issuer-user-username</td>
+<td>The ID of the user account that issued the currency</td>
+</tr>
+<tr>
+<td>issuer-user-avatar-url</td>
+<td>The URL at which the avatar picture of the user that issues the currency can be found</td>
+</tr>
+<tr>
+<td>burn-rate</td>
+<td>The annual rate at which holdings of the currency burn, by basis point (100 = 1%)</td>
+</tr>
+<tr>
+<td>daily-burn-rate</td>
+<td>The daily rate at which the currency burns, by fraction of 1 (0.01 = 1%)</td>
+</tr>
+<tr>
+<td>store-count</td>
+<td>The number of stores associated with the currency</td>
+</tr>
+<tr>
+<td>listing-count</td>
+<td>The number of active listings associated with the currency</td>
+</tr>
+<tr>
+<td>product-count</td>
+<td>The number of products associated with the currency</td>
+</tr>
+<tr>
+<td>name</td>
+<td>The name of the currency</td>
+</tr>
+<tr>
+<td>description</td>
+<td>The description of the currency</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the currency was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the currency was last updated</td>
+</tr>
+<tr>
+<td>get-icon-url</td>
+<td>The URL at which the currency icon picture can be found</td>
+</tr>
+<tr>
+<td>number-of-reviews</td>
+<td>The number of store reviews created for the store</td>
+</tr>
+<tr>
+<td>average-score</td>
+<td>The average score of the store reviews, out of 10</td>
+</tr>
+<tr>
+<td>private-amount-atomic</td>
+<td>The amount held in the logged-in user&#39;s private holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
+<td>public-amount-atomic</td>
+<td>The amount held in the logged-in user&#39;s public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
+<td>total-amount-atomic</td>
+<td>The total amount held in the logged-in user&#39;s public and private holdings of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
+<td>number-of-burn-rate-changes</td>
+<td>The number of burn rate changes that the currency has undergone since its creation</td>
+</tr>
+<tr>
+<td>number-of-public-currency-holdings</td>
+<td>The number of public holdings of the currency</td>
+</tr>
+<tr>
+<td>next-daily-burn-amount</td>
+<td>The total amount of units in the logged-in user&#39;s public and private currency holdings of the specified currency that will be burned over the next day, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+</tbody></table>
 <h2 id='list-currencies'>List Currencies</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/currencies"</span> <span class="se">\</span>
   -H <span class="s1">'Host: api.mycurrency.com'</span> -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre>
@@ -1316,13 +1463,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all currencies.</p>
-<h3 id='http-request-8'>HTTP Request</h3>
+<h3 id='http-request-9'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/currencies</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-8'>RESPONSE</h3>
+<h3 id='response-9'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1468,13 +1615,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all currencies belonging to the user associated with the ID provided.</p>
-<h3 id='http-request-9'>HTTP Request</h3>
+<h3 id='http-request-10'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/currencies?user_id={}</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-9'>RESPONSE</h3>
+<h3 id='response-10'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1584,7 +1731,7 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Creates a currency.</p>
-<h3 id='http-request-10'>HTTP Request</h3>
+<h3 id='http-request-11'>HTTP Request</h3>
 <p><code>POST https://api.mycurrency.com/users/&lt;USER-ID&gt;/issuer/currencies</code></p>
 
 <aside class="notice">
@@ -1624,7 +1771,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The image file to be uploaded as currency&#39;s icon picture</td>
 </tr>
 </tbody></table>
-<h3 id='response-10'>RESPONSE</h3>
+<h3 id='response-11'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1730,7 +1877,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Updates a currency.</p>
-<h3 id='http-request-11'>HTTP Request</h3>
+<h3 id='http-request-12'>HTTP Request</h3>
 <p><code>PUT https://api.mycurrency.com/users/&lt;USER-ID&gt;/issuer/currencies/&lt;ID&gt;</code></p>
 
 <aside class="notice">
@@ -1758,7 +1905,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The image file to be uploaded as currency&#39;s icon picture</td>
 </tr>
 </tbody></table>
-<h3 id='response-11'>RESPONSE</h3>
+<h3 id='response-12'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1854,13 +2001,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular burnrate change by ID.</p>
-<h3 id='http-request-12'>HTTP Request</h3>
+<h3 id='http-request-13'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/currencies/&lt;CURRENCY-ID&gt;/burnrate_changes/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-12'>RESPONSE</h3>
+<h3 id='response-13'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1959,13 +2106,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all of the specified currency&#39;s burnrate changes, sorted by created_at date, starting from the most recent</p>
-<h3 id='http-request-13'>HTTP Request</h3>
+<h3 id='http-request-14'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/currencies/&lt;CURRENCY-ID&gt;/burnrate_changes</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-13'>RESPONSE</h3>
+<h3 id='response-14'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2026,7 +2173,7 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Updating a currency&#39;s burn rate requires accessing the <code>burnrate_change</code> endpoint and creating a burnrate change record. Burnrate change records create an auditable and publicly accessible log of changes to a currency&#39;s burn rate.</p>
-<h3 id='http-request-14'>HTTP Request</h3>
+<h3 id='http-request-15'>HTTP Request</h3>
 <p><code>POST https://api.mycurrency.com/currencies/&lt;CURRENCY-ID&gt;/burnrate_change</code></p>
 
 <aside class="notice">
@@ -2054,7 +2201,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>A comment to explain to currency holders why the burn rate was changed</td>
 </tr>
 </tbody></table>
-<h3 id='response-14'>RESPONSE</h3>
+<h3 id='response-15'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2123,13 +2270,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular store.</p>
-<h3 id='http-request-15'>HTTP Request</h3>
+<h3 id='http-request-16'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/stores/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-15'>RESPONSE</h3>
+<h3 id='response-16'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2302,13 +2449,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all stores.</p>
-<h3 id='http-request-16'>HTTP Request</h3>
+<h3 id='http-request-17'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/stores</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-16'>RESPONSE</h3>
+<h3 id='response-17'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2481,13 +2628,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all stores belonging to the user associated with the ID provided.</p>
-<h3 id='http-request-17'>HTTP Request</h3>
+<h3 id='http-request-18'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/stores</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-17'>RESPONSE</h3>
+<h3 id='response-18'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2637,13 +2784,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all stores belonging to the currency associated with the ID provided.</p>
-<h3 id='http-request-18'>HTTP Request</h3>
+<h3 id='http-request-19'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/currencies/&lt;CURRENCY-ID&gt;/stores</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-18'>RESPONSE</h3>
+<h3 id='response-19'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2770,13 +2917,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all stores that have an index that contains text that matches the search keyword provided.</p>
-<h3 id='http-request-19'>HTTP Request</h3>
+<h3 id='http-request-20'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/stores?keyword={}</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-19'>RESPONSE</h3>
+<h3 id='response-20'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2926,13 +3073,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all stores belonging to the sub location associated with the ID provided.</p>
-<h3 id='http-request-20'>HTTP Request</h3>
+<h3 id='http-request-21'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/sub_locations/&lt;SUB-LOCATION-ID&gt;/stores</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-20'>RESPONSE</h3>
+<h3 id='response-21'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3059,13 +3206,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all stores that belong to the sub location associated with the ID provided and contain text that matches the search keyword provided.</p>
-<h3 id='http-request-21'>HTTP Request</h3>
+<h3 id='http-request-22'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/sub_locations/&lt;SUB-LOCATION-ID&gt;/stores?keyword={}</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-21'>RESPONSE</h3>
+<h3 id='response-22'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3176,7 +3323,7 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Creates a store.</p>
-<h3 id='http-request-22'>HTTP Request</h3>
+<h3 id='http-request-23'>HTTP Request</h3>
 <p><code>POST https://api.mycurrency.com/users/&lt;USER-ID&gt;/issuer/currencies/&lt;CURRENCY-ID&gt;/stores</code></p>
 
 <aside class="notice">
@@ -3222,7 +3369,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The description of the store</td>
 </tr>
 </tbody></table>
-<h3 id='response-22'>RESPONSE</h3>
+<h3 id='response-23'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3334,7 +3481,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Updates a store.</p>
-<h3 id='http-request-23'>HTTP Request</h3>
+<h3 id='http-request-24'>HTTP Request</h3>
 <p><code>PUT https://api.mycurrency.com/users/&lt;USER-ID&gt;/issuer/currencies/&lt;CURRENCY-ID&gt;/stores/&lt;ID&gt;</code></p>
 
 <aside class="notice">
@@ -3382,7 +3529,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tbody></table>
 
 <p>active</p>
-<h3 id='response-23'>RESPONSE</h3>
+<h3 id='response-24'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3481,13 +3628,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular store review.</p>
-<h3 id='http-request-24'>HTTP Request</h3>
+<h3 id='http-request-25'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/stores/&lt;STORE-ID&gt;/store_reviews/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-24'>RESPONSE</h3>
+<h3 id='response-25'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3574,7 +3721,7 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all store reviews received by stores belonging to currencies associated with a particular issuer.</p>
-<h3 id='http-request-25'>HTTP Request</h3>
+<h3 id='http-request-26'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/issuers/&lt;ISSUER-ID&gt;/received_store_reviews</code></p>
 
 <p>OR</p>
@@ -3584,7 +3731,7 @@ Authentication: not required
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-25'>RESPONSE</h3>
+<h3 id='response-26'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3660,13 +3807,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all store reviews received by stores belonging to the currency specified by the CURRENCY-ID.</p>
-<h3 id='http-request-26'>HTTP Request</h3>
+<h3 id='http-request-27'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/currencies/&lt;CURRENCY-ID&gt;/received_store_reviews</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-26'>RESPONSE</h3>
+<h3 id='response-27'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3731,13 +3878,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all store reviews received by stores belonging to the store specified by the STORE-ID.</p>
-<h3 id='http-request-27'>HTTP Request</h3>
+<h3 id='http-request-28'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/stores/&lt;STORE-ID&gt;/received_store_reviews</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-27'>RESPONSE</h3>
+<h3 id='response-28'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3788,7 +3935,7 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Creates a store review.</p>
-<h3 id='http-request-28'>HTTP Request</h3>
+<h3 id='http-request-29'>HTTP Request</h3>
 <p><code>POST https://api.mycurrency.com/users/&lt;USER-ID&gt;/store_reviews</code></p>
 
 <aside class="notice">
@@ -3828,7 +3975,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>A score between 0 and 10 (inclusive)</td>
 </tr>
 </tbody></table>
-<h3 id='response-28'>RESPONSE</h3>
+<h3 id='response-29'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3887,13 +4034,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular product. The product must be active and not discontinued to be viewable by a non-authorized user.</p>
-<h3 id='http-request-29'>HTTP Request</h3>
+<h3 id='http-request-30'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/products/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: not required for active products that have not been discontinued. To view details of products that are inactive or discontinued, the request requires the OAuth access-token associated with the User that the product's store belongs to
 </aside>
-<h3 id='response-29'>RESPONSE</h3>
+<h3 id='response-30'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4075,13 +4222,13 @@ Authentication: not required for active products that have not been discontinued
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all products that are active and not discontinued.</p>
-<h3 id='http-request-30'>HTTP Request</h3>
+<h3 id='http-request-31'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/products</code></p>
 
 <aside class="notice">
 Authentication: not required 
 </aside>
-<h3 id='response-30'>RESPONSE</h3>
+<h3 id='response-31'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4221,13 +4368,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all products belonging to a particular currency. Only products that are active and not discontinued are shown to non-authorized users while authorized users see all of the store&#39;s products.</p>
-<h3 id='http-request-31'>HTTP Request</h3>
+<h3 id='http-request-32'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/stores/&lt;STORE-ID&gt;/products</code></p>
 
 <aside class="notice">
 Authentication: not required to see the products of a store that are active and that have not been discontinued. To view details of a store's products that are inactive and/or discontinued, the request requires the OAuth access-token associated with the User that the specified store belongs to
 </aside>
-<h3 id='response-31'>RESPONSE</h3>
+<h3 id='response-32'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4333,7 +4480,7 @@ Authentication: not required to see the products of a store that are active and 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Creates a product.</p>
-<h3 id='http-request-32'>HTTP Request</h3>
+<h3 id='http-request-33'>HTTP Request</h3>
 <p><code>POST https://api.mycurrency.com/users/&lt;USER-ID&gt;/issuer/currencies/&lt;CURRENCY-ID&gt;/stores/&lt;STORE-ID&gt;/products</code></p>
 
 <aside class="notice">
@@ -4391,7 +4538,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The image file to be uploaded as product&#39;s image picture</td>
 </tr>
 </tbody></table>
-<h3 id='response-32'>RESPONSE</h3>
+<h3 id='response-33'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4497,7 +4644,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Updates a product.</p>
-<h3 id='http-request-33'>HTTP Request</h3>
+<h3 id='http-request-34'>HTTP Request</h3>
 <p><code>PUT https://api.mycurrency.com/users/&lt;USER-ID&gt;/issuer/currencies/&lt;CURRENCY-ID&gt;/stores/&lt;STORE-ID&gt;/products/&lt;ID&gt;</code></p>
 
 <aside class="notice">
@@ -4549,7 +4696,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The image file to be uploaded as product&#39;s image picture</td>
 </tr>
 </tbody></table>
-<h3 id='response-33'>RESPONSE</h3>
+<h3 id='response-34'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4645,13 +4792,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular product cancellation. </p>
-<h3 id='http-request-34'>HTTP Request</h3>
+<h3 id='http-request-35'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/products/&lt;PRODUCT-ID&gt;/product_cancellation</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-34'>RESPONSE</h3>
+<h3 id='response-35'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4760,7 +4907,7 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all product cancellations associated with the stores of a particular issuer, by the USER-ID of the issuer&#39;s associated user account</p>
-<h3 id='http-request-35'>HTTP Request</h3>
+<h3 id='http-request-36'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/issuer/product_cancellations</code></p>
 
 <aside class="notice">
@@ -4782,7 +4929,7 @@ Authentication: not required
 <td>If set to true, only returns the product cancellations in the set that have the :with_advance_notice field set to false</td>
 </tr>
 </tbody></table>
-<h3 id='response-35'>RESPONSE</h3>
+<h3 id='response-36'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4874,7 +5021,7 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all product cancellations associated with the stores belonging to the currency referenced by CURRENCY-ID</p>
-<h3 id='http-request-36'>HTTP Request</h3>
+<h3 id='http-request-37'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/currencies/&lt;CURRENCY-ID&gt;/product_cancellations</code></p>
 
 <aside class="notice">
@@ -4896,7 +5043,7 @@ Authentication: not required
 <td>If set to true, only returns the product cancellations in the set that have the :with_advance_notice field set to false</td>
 </tr>
 </tbody></table>
-<h3 id='response-36'>RESPONSE</h3>
+<h3 id='response-37'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4975,7 +5122,7 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all product cancellations associated with the store referenced by STORE-ID</p>
-<h3 id='http-request-37'>HTTP Request</h3>
+<h3 id='http-request-38'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/stores/&lt;STORE-ID&gt;/product_cancellations</code></p>
 
 <aside class="notice">
@@ -4997,7 +5144,7 @@ Authentication: not required
 <td>If set to true, only returns the product cancellations in the set that have the :with_advance_notice field set to false</td>
 </tr>
 </tbody></table>
-<h3 id='response-37'>RESPONSE</h3>
+<h3 id='response-38'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5063,7 +5210,7 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Creates a product cancellation.</p>
-<h3 id='http-request-38'>HTTP Request</h3>
+<h3 id='http-request-39'>HTTP Request</h3>
 <p><code>POST https://api.mycurrency.com/users/&lt;USER-ID&gt;/issuer/currencies/&lt;CURRENCY-ID&gt;/stores/&lt;STORE-ID&gt;/products/&lt;PRODUCT-ID&gt;/product_cancellation</code></p>
 
 <aside class="notice">
@@ -5109,7 +5256,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The message explaining why the product is being cancelled</td>
 </tr>
 </tbody></table>
-<h3 id='response-38'>RESPONSE</h3>
+<h3 id='response-39'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5171,13 +5318,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular product discontinual. </p>
-<h3 id='http-request-39'>HTTP Request</h3>
+<h3 id='http-request-40'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/products/&lt;PRODUCT-ID&gt;/product_discontinual</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-39'>RESPONSE</h3>
+<h3 id='response-40'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5275,13 +5422,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all product discontinuals associated with the store specified by the STORE-ID</p>
-<h3 id='http-request-40'>HTTP Request</h3>
+<h3 id='http-request-41'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/stores/&lt;STORE-ID&gt;/product_discontinuals</code></p>
 
 <aside class="notice">
 Authentication: not required for product discontinuals that have not been executed. To view details of all product discontinuals, including those that have already been executed, the request requires the OAuth access-token associated with the User that the product's store belongs to
 </aside>
-<h3 id='response-40'>RESPONSE</h3>
+<h3 id='response-41'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5341,7 +5488,7 @@ Authentication: not required for product discontinuals that have not been execut
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Creates a product discontinual.</p>
-<h3 id='http-request-41'>HTTP Request</h3>
+<h3 id='http-request-42'>HTTP Request</h3>
 <p><code>POST https://api.mycurrency.com/users/&lt;USER-ID&gt;/issuer/currencies/&lt;CURRENCY-ID&gt;/stores/&lt;STORE-ID&gt;/products/&lt;PRODUCT-ID&gt;/product_discontinual</code></p>
 
 <aside class="notice">
@@ -5387,7 +5534,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The message explaining why the product will be cancelled</td>
 </tr>
 </tbody></table>
-<h3 id='response-41'>RESPONSE</h3>
+<h3 id='response-42'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5470,7 +5617,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the full details of all of a user&#39;s public and private holdings of currencies that the user is also the issuer of, grouped in sets of up to two holdings containing the same currency </p>
-<h3 id='http-request-42'>HTTP Request</h3>
+<h3 id='http-request-43'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_self_issued_currency_holdings</code></p>
 
 <aside class="notice">
@@ -5498,7 +5645,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>If set to true, currency holding public private pairs where neither holding has an amount_atomic value greater than zero will be excluded from the results. By default this is set to false.</td>
 </tr>
 </tbody></table>
-<h3 id='response-42'>RESPONSE</h3>
+<h3 id='response-43'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5683,7 +5830,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the full details of all of a user&#39;s public and private holdings of currencies that the user is not the issuer of, grouped in sets of up to two holdings containing the same currency </p>
-<h3 id='http-request-43'>HTTP Request</h3>
+<h3 id='http-request-44'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_externally_issued_currency_holdings</code></p>
 
 <aside class="notice">
@@ -5711,7 +5858,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>If set to true, currency holding public private pairs where neither holding has an amount_atomic value greater than zero will be excluded from the results. By default this is set to false.</td>
 </tr>
 </tbody></table>
-<h3 id='response-43'>RESPONSE</h3>
+<h3 id='response-44'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5779,13 +5926,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular publicly viewable currency holding. </p>
-<h3 id='http-request-44'>HTTP Request</h3>
+<h3 id='http-request-45'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/public_currency_holdings/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-44'>RESPONSE</h3>
+<h3 id='response-45'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5871,7 +6018,7 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all of a user&#39;s publicly viewable holdings of currencies that the user is also the issuer of.</p>
-<h3 id='http-request-45'>HTTP Request</h3>
+<h3 id='http-request-46'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/self_issued_public_currency_holdings</code></p>
 
 <aside class="notice">
@@ -5899,7 +6046,7 @@ Authentication: not required
 <td>The set of currency holdings returned will only include those with balances exceeding min_amount. The default min_amount is zero resulting in currency holdings with a zero balance not being returned.</td>
 </tr>
 </tbody></table>
-<h3 id='response-45'>RESPONSE</h3>
+<h3 id='response-46'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5985,7 +6132,7 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all of a user&#39;s publicly viewable holdings of currencies that the user is not the issuer of.</p>
-<h3 id='http-request-46'>HTTP Request</h3>
+<h3 id='http-request-47'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/externally_issued_public_currency_holdings</code></p>
 
 <aside class="notice">
@@ -6013,7 +6160,7 @@ Authentication: not required
 <td>The set of currency holdings returned will only include those with balances exceeding min_amount. The default min_amount is zero resulting in currency holdings with a zero balance not being returned.</td>
 </tr>
 </tbody></table>
-<h3 id='response-46'>RESPONSE</h3>
+<h3 id='response-47'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6097,7 +6244,7 @@ Authentication: not required
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-47'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-48'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/currencies/&lt;CURRENCY-ID&gt;/public_currency_holdings</code></p>
 
 <aside class="notice">
@@ -6125,7 +6272,7 @@ Authentication: not required
 <td>The set of currency holdings returned will only include those with balances exceeding min_amount. The default min_amount is zero resulting in currency holdings with a zero balance not being returned.</td>
 </tr>
 </tbody></table>
-<h3 id='response-47'>RESPONSE</h3>
+<h3 id='response-48'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6193,13 +6340,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the full details of a particular publicly viewable currency holding. </p>
-<h3 id='http-request-48'>HTTP Request</h3>
+<h3 id='http-request-49'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_public_currency_holdings/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-48'>RESPONSE</h3>
+<h3 id='response-49'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6338,13 +6485,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the full details of all of a user&#39;s publicly viewable holdings of currencies that the user is also the issuer of.</p>
-<h3 id='http-request-49'>HTTP Request</h3>
+<h3 id='http-request-50'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_self_issued_public_currency_holdings</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-49'>RESPONSE</h3>
+<h3 id='response-50'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6479,13 +6626,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the full details of all of a user&#39;s publicly viewable holdings of currencies that the user is not the issuer of.</p>
-<h3 id='http-request-50'>HTTP Request</h3>
+<h3 id='http-request-51'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_externally_issued_public_currency_holdings</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-50'>RESPONSE</h3>
+<h3 id='response-51'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6587,13 +6734,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the full details of a particular private currency holding. </p>
-<h3 id='http-request-51'>HTTP Request</h3>
+<h3 id='http-request-52'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_private_currency_holdings/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-51'>RESPONSE</h3>
+<h3 id='response-52'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6751,13 +6898,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the full details of all of a user&#39;s privately viewable holdings of currencies that the user is also the issuer of.</p>
-<h3 id='http-request-52'>HTTP Request</h3>
+<h3 id='http-request-53'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_self_issued_private_currency_holdings</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-52'>RESPONSE</h3>
+<h3 id='response-53'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6873,13 +7020,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the full details of all of a user&#39;s privately viewable holdings of currencies that the user is not the issuer of.</p>
-<h3 id='http-request-53'>HTTP Request</h3>
+<h3 id='http-request-54'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_externally_issued_private_currency_holdings</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-53'>RESPONSE</h3>
+<h3 id='response-54'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -7004,13 +7151,13 @@ Authentication: the request requires the OAuth access-token associated with the 
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-54'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-55'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_public_currency_holdings/&lt;PUBLIC-CURRENCY-HOLDING-ID&gt;/pu_h_transactions</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-54'>RESPONSE</h3><h3 id='transfers'>Transfers:</h3>
+<h3 id='response-55'>RESPONSE</h3><h3 id='transfers'>Transfers:</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -7313,13 +7460,13 @@ Authentication: the request requires the OAuth access-token associated with the 
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-55'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-56'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_public_currency_holdings/&lt;PRIVATE-CURRENCY-HOLDING-ID&gt;/pr_h_transactions</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-55'>RESPONSE</h3><h3 id='transfers-2'>Transfers:</h3>
+<h3 id='response-56'>RESPONSE</h3><h3 id='transfers-2'>Transfers:</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -7702,13 +7849,13 @@ Authentication: the request requires the OAuth access-token associated with the 
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-56'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-57'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/recent_transactions</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-56'>RESPONSE</h3><h3 id='transfers-3'>Transfers:</h3>
+<h3 id='response-57'>RESPONSE</h3><h3 id='transfers-3'>Transfers:</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -7957,13 +8104,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular issuance. The logged in user must be active and be either the issuer or the receiver of the issuance to view it.</p>
-<h3 id='http-request-57'>HTTP Request</h3>
+<h3 id='http-request-58'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/issuances/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-57'>RESPONSE</h3>
+<h3 id='response-58'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8139,7 +8286,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all received or created issuances of a user. The logged in user must be active to view the issuances. </p>
-<h3 id='http-request-58'>HTTP Request</h3>
+<h3 id='http-request-59'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/issuances?receiving_user_id=&lt;USER-ID&gt;</code></p>
 
 <aside class="notice">
@@ -8167,7 +8314,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The ID of the issuance creator. If provided, the outgoing issuances of the specified user are returned.</td>
 </tr>
 </tbody></table>
-<h3 id='response-58'>RESPONSE</h3>
+<h3 id='response-59'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8329,7 +8476,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all received or created issuances of a user associated with the currency specified by CURRENCY-ID. The logged in user must be active to view the issuances. </p>
-<h3 id='http-request-59'>HTTP Request</h3>
+<h3 id='http-request-60'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/currencies/&lt;CURRENCY-ID&gt;/issuances?issueing_user_id=&lt;USER-ID&gt;</code></p>
 
 <aside class="notice">
@@ -8363,7 +8510,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The ID of the issuance creator. If provided, the outgoing issuances of the specified user are returned.</td>
 </tr>
 </tbody></table>
-<h3 id='response-59'>RESPONSE</h3>
+<h3 id='response-60'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8471,7 +8618,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Creates an issuance.</p>
-<h3 id='http-request-60'>HTTP Request</h3>
+<h3 id='http-request-61'>HTTP Request</h3>
 <p><code>https://api.mycurrency.com/users/&lt;USER-ID&gt;/issuer/currencies/&lt;CURRENCY-ID&gt;/issuances</code></p>
 
 <aside class="notice">
@@ -8511,7 +8658,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The ID of the user that is to receive the issuance</td>
 </tr>
 </tbody></table>
-<h3 id='response-60'>RESPONSE</h3>
+<h3 id='response-61'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8622,13 +8769,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular transfer. The logged in user must be active and be either the transferrer or the receiver of the transfer to view it.</p>
-<h3 id='http-request-61'>HTTP Request</h3>
+<h3 id='http-request-62'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/transfers/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-61'>RESPONSE</h3>
+<h3 id='response-62'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8756,7 +8903,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Creates a transfer.</p>
-<h3 id='http-request-62'>HTTP Request</h3>
+<h3 id='http-request-63'>HTTP Request</h3>
 <p><code>https://api.mycurrency.com/users/&lt;USER-ID&gt;/transfers</code></p>
 
 <aside class="notice">
@@ -8808,7 +8955,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>Whether the currency holding that the transfer is crediting to is a &quot;PublicCurrencyHolding&quot; or a &quot;PrivateCurrencyHolding&quot;. If no value is provided, it will default to &quot;PrivateCurrencyHolding&quot;. You cannot set this parameter to &quot;PublicCurrencyHolding&quot; unless the transfer is a self send of a currency from a user&#39;s private holding to public holding.</td>
 </tr>
 </tbody></table>
-<h3 id='response-62'>RESPONSE</h3>
+<h3 id='response-63'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8973,13 +9120,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular offer. The logged in user must be active and be either the sender or receiver of the offer to view it.</p>
-<h3 id='http-request-63'>HTTP Request</h3>
+<h3 id='http-request-64'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/offers/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-63'>RESPONSE</h3><h3 id='offer'>Offer</h3>
+<h3 id='response-64'>RESPONSE</h3><h3 id='offer'>Offer</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -9314,7 +9461,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a user&#39;s offers. There are five different offer lists that can be returned, depending on what argument is passed to the endpoint.</p>
-<h3 id='http-request-64'>HTTP Request</h3>
+<h3 id='http-request-65'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/offers?index_type={}</code></p>
 
 <aside class="notice">
@@ -9376,7 +9523,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>returns the chain of offers associated with head offer (the last offer in an offer chain) referenced by :offer_id associated with user</td>
 </tr>
 </tbody></table>
-<h3 id='response-64'>RESPONSE</h3><h3 id='offer-2'>Offer</h3>
+<h3 id='response-65'>RESPONSE</h3><h3 id='offer-2'>Offer</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -9607,7 +9754,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Creates an offer. </p>
-<h3 id='http-request-65'>HTTP Request</h3>
+<h3 id='http-request-66'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/offers</code></p>
 
 <aside class="notice">
@@ -9721,7 +9868,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The amount of currency that is proposed to be issued, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
 </tr>
 </tbody></table>
-<h3 id='response-65'>RESPONSE</h3><h3 id='offer-3'>Offer</h3>
+<h3 id='response-66'>RESPONSE</h3><h3 id='offer-3'>Offer</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -9899,13 +10046,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular listing and its basic public information by ID.</p>
-<h3 id='http-request-66'>HTTP Request</h3>
+<h3 id='http-request-67'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/listings/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-66'>RESPONSE</h3>
+<h3 id='response-67'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -9988,13 +10135,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the full details of a particular listing. </p>
-<h3 id='http-request-67'>HTTP Request</h3>
+<h3 id='http-request-68'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_listings/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-67'>RESPONSE</h3>
+<h3 id='response-68'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10168,13 +10315,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all active listings and their basic public information.</p>
-<h3 id='http-request-68'>HTTP Request</h3>
+<h3 id='http-request-69'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/listings</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-68'>RESPONSE</h3>
+<h3 id='response-69'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10300,13 +10447,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all active listings created by the specified user and outputs their basic public information.</p>
-<h3 id='http-request-69'>HTTP Request</h3>
+<h3 id='http-request-70'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/listings</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-69'>RESPONSE</h3>
+<h3 id='response-70'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10432,13 +10579,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all active listings where the specified currency is being offered and outputs their basic public information.</p>
-<h3 id='http-request-70'>HTTP Request</h3>
+<h3 id='http-request-71'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/currencies/&lt;CURRENCY-ID&gt;/listings</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-70'>RESPONSE</h3>
+<h3 id='response-71'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10596,13 +10743,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all active listings being offered in the Craigslist region associated with the specified sub location and outputs their basic public information.</p>
-<h3 id='http-request-71'>HTTP Request</h3>
+<h3 id='http-request-72'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/sub_locations/&lt;SUB-LOCATION-ID&gt;/listings</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-71'>RESPONSE</h3>
+<h3 id='response-72'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10762,13 +10909,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all listings created by the logged in user and outputs their full details.</p>
-<h3 id='http-request-72'>HTTP Request</h3>
+<h3 id='http-request-73'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_listings</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-72'>RESPONSE</h3>
+<h3 id='response-73'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10866,7 +11013,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint creates a listing. The cl-link provided in the parameters must exist, and the cl-title value must match the title of the Craigslist post found at the URL specified by the cl-link for the listing to be created. Successful listing creation also requires that listings with an :offer_currency value of true have at least as much available currency in the source currency holding they specify as the amount of currency specified by the :amount_atomic parameter they set.</p>
-<h3 id='http-request-73'>HTTP Request</h3>
+<h3 id='http-request-74'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_listings</code></p>
 
 <aside class="notice">
@@ -10924,7 +11071,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>Whether the currency holding that the offered currency is held in is a &quot;PublicCurrencyHolding&quot; or a &quot;PrivateCurrencyHolding&quot;</td>
 </tr>
 </tbody></table>
-<h3 id='response-73'>RESPONSE</h3>
+<h3 id='response-74'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11022,7 +11169,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint updates a listing. The cl-link provided in the parameters must exist, and the cl-title value must match the title of the Craigslist post found at the URL specified by the cl-link, for the listing&#39;s :active value to be changed from false to true. Listing activation also requires that listings with an :offer_currency value of true have at least as much available currency in the source currency holding they specify as the amount of currency specified by the :amount_atomic field.</p>
-<h3 id='http-request-74'>HTTP Request</h3>
+<h3 id='http-request-75'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/authorized_listings/&lt;ID&gt;</code></p>
 
 <aside class="notice">
@@ -11050,7 +11197,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>Whether the listing is active or not. Inactive listings can only be activated if the listing has not been cancelled.</td>
 </tr>
 </tbody></table>
-<h3 id='response-74'>RESPONSE</h3>
+<h3 id='response-75'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11136,13 +11283,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular super category.</p>
-<h3 id='http-request-75'>HTTP Request</h3>
+<h3 id='http-request-76'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/super_categories/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-75'>RESPONSE</h3>
+<h3 id='response-76'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11212,13 +11359,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all super categories.</p>
-<h3 id='http-request-76'>HTTP Request</h3>
+<h3 id='http-request-77'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/super_categories</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-76'>RESPONSE</h3>
+<h3 id='response-77'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11257,13 +11404,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular mid category.</p>
-<h3 id='http-request-77'>HTTP Request</h3>
+<h3 id='http-request-78'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/mid_categories/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-77'>RESPONSE</h3>
+<h3 id='response-78'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11340,13 +11487,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all mid categories.</p>
-<h3 id='http-request-78'>HTTP Request</h3>
+<h3 id='http-request-79'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/mid_categories</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-78'>RESPONSE</h3>
+<h3 id='response-79'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11405,13 +11552,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all child mid categories of the specified super category.</p>
-<h3 id='http-request-79'>HTTP Request</h3>
+<h3 id='http-request-80'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/super_categories/&lt;SUPER-CATEGORY-ID&gt;/mid_categories</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-79'>RESPONSE</h3>
+<h3 id='response-80'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11454,13 +11601,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular sub category.</p>
-<h3 id='http-request-80'>HTTP Request</h3>
+<h3 id='http-request-81'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/sub_categories/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-80'>RESPONSE</h3>
+<h3 id='response-81'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11546,13 +11693,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all sub categories.</p>
-<h3 id='http-request-81'>HTTP Request</h3>
+<h3 id='http-request-82'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/sub_categories</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-81'>RESPONSE</h3>
+<h3 id='response-82'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11620,13 +11767,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all child sub categories of the specified mid category.</p>
-<h3 id='http-request-82'>HTTP Request</h3>
+<h3 id='http-request-83'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/super_categories/&lt;SUPER-CATEGORY-ID&gt;/mid_categories/&lt;MID-CATEGORY-ID&gt;/sub_categories</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-82'>RESPONSE</h3>
+<h3 id='response-83'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11694,13 +11841,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all child sub categories of the specified super category.</p>
-<h3 id='http-request-83'>HTTP Request</h3>
+<h3 id='http-request-84'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/super_categories/&lt;SUPER-CATEGORY-ID&gt;/sub_categories</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-83'>RESPONSE</h3>
+<h3 id='response-84'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11741,13 +11888,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular super location.</p>
-<h3 id='http-request-84'>HTTP Request</h3>
+<h3 id='http-request-85'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/super_locations/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-84'>RESPONSE</h3>
+<h3 id='response-85'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11838,13 +11985,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all super locations.</p>
-<h3 id='http-request-85'>HTTP Request</h3>
+<h3 id='http-request-86'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/super_locations</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-85'>RESPONSE</h3>
+<h3 id='response-86'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11878,13 +12025,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular mid location.</p>
-<h3 id='http-request-86'>HTTP Request</h3>
+<h3 id='http-request-87'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/mid_locations/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-86'>RESPONSE</h3>
+<h3 id='response-87'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12130,13 +12277,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all mid locations.</p>
-<h3 id='http-request-87'>HTTP Request</h3>
+<h3 id='http-request-88'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/mid_locations</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-87'>RESPONSE</h3>
+<h3 id='response-88'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12382,13 +12529,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all child mid locations of the specified super location.</p>
-<h3 id='http-request-88'>HTTP Request</h3>
+<h3 id='http-request-89'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/super_locations/&lt;SUPER-LOCATION-ID&gt;/mid_locations</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-88'>RESPONSE</h3>
+<h3 id='response-89'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12430,13 +12577,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular sub location.</p>
-<h3 id='http-request-89'>HTTP Request</h3>
+<h3 id='http-request-90'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/sub_locations/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-89'>RESPONSE</h3>
+<h3 id='response-90'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12618,13 +12765,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all sub locations.</p>
-<h3 id='http-request-90'>HTTP Request</h3>
+<h3 id='http-request-91'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/sub_locations</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-90'>RESPONSE</h3>
+<h3 id='response-91'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12806,13 +12953,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all child sub locations of the specified mid location.</p>
-<h3 id='http-request-91'>HTTP Request</h3>
+<h3 id='http-request-92'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/super_locations/&lt;SUPER-LOCATION-ID&gt;/mid_locations/&lt;MID-LOCATION-ID&gt;/sub_locations</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-91'>RESPONSE</h3>
+<h3 id='response-92'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12994,13 +13141,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all child sub locations of the specified super location.</p>
-<h3 id='http-request-92'>HTTP Request</h3>
+<h3 id='http-request-93'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/super_locations/&lt;SUPER-LOCATION-ID&gt;/sub_locations</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-92'>RESPONSE</h3>
+<h3 id='response-93'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -13108,13 +13255,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the five sub locations closest to the geolocation of the IP address provided.</p>
-<h3 id='http-request-93'>HTTP Request</h3>
+<h3 id='http-request-94'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/nearby_locations?ip_address={}</code></p>
 
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='response-93'>RESPONSE</h3>
+<h3 id='response-94'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -13183,13 +13330,13 @@ Authentication: not required
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular order. The logged in user must be active and be either the ordering user or the owner of the store that received the order to view it.</p>
-<h3 id='http-request-94'>HTTP Request</h3>
+<h3 id='http-request-95'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/order_sets/ID</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-94'>RESPONSE</h3>
+<h3 id='response-95'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -13373,7 +13520,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a user&#39;s orders sorted by created_at date, starting from the most recent</p>
-<h3 id='http-request-95'>HTTP Request</h3>
+<h3 id='http-request-96'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/order_sets?ordering_user_id={}</code></p>
 
 <p>OR</p>
@@ -13417,7 +13564,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The orders received by the specified store are returned if store_id is provided. This parameter needs to be provided along with a :selling_user_id with a value that matches the ID of the user that owns the store.</td>
 </tr>
 </tbody></table>
-<h3 id='response-95'>RESPONSE</h3>
+<h3 id='response-96'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -13540,7 +13687,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Creates an Order.</p>
-<h3 id='http-request-96'>HTTP Request</h3>
+<h3 id='http-request-97'>HTTP Request</h3>
 <p><code>https://api.mycurrency.com/users/&lt;USER-ID&gt;/order_sets</code></p>
 
 <aside class="notice">
@@ -13598,7 +13745,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The quantity of the product that is being ordered</td>
 </tr>
 </tbody></table>
-<h3 id='response-96'>RESPONSE</h3>
+<h3 id='response-97'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -13711,13 +13858,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular notice. The logged in user must be active and must be the recipient of the notice to view it. Calling this endpoint also sets the :read attribute of the retrieved notice to TRUE</p>
-<h3 id='http-request-97'>HTTP Request</h3>
+<h3 id='http-request-98'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/notices/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-97'>RESPONSE</h3>
+<h3 id='response-98'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -13778,13 +13925,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the number of notices belonging to the specified user that have not been seen by the user.</p>
-<h3 id='http-request-98'>HTTP Request</h3>
+<h3 id='http-request-99'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/number_of_unseen_notices</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-98'>RESPONSE</h3>
+<h3 id='response-99'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -13963,13 +14110,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all of a user&#39;s notices. Calling this endpoint also sets the :seen attribute of all retrieved notices to TRUE.</p>
-<h3 id='http-request-99'>HTTP Request</h3>
+<h3 id='http-request-100'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/notices</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-99'>RESPONSE</h3>
+<h3 id='response-100'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -14180,13 +14327,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all of a user&#39;s unread notices. Calling this endpoint also sets the :seen attribute of all retrieved notices to TRUE.</p>
-<h3 id='http-request-100'>HTTP Request</h3>
+<h3 id='http-request-101'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/unread_notices</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-100'>RESPONSE</h3>
+<h3 id='response-101'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -14285,13 +14432,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all of a user&#39;s unread notices that are less than 30 days old. Calling this endpoint also sets the :seen attribute of all retrieved notices to TRUE.</p>
-<h3 id='http-request-101'>HTTP Request</h3>
+<h3 id='http-request-102'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/users/&lt;USER-ID&gt;/recent_unread_notices</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='response-101'>RESPONSE</h3>
+<h3 id='response-102'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -14360,7 +14507,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Updates a notice.</p>
-<h3 id='http-request-102'>HTTP Request</h3>
+<h3 id='http-request-103'>HTTP Request</h3>
 <p><code>POST https://api.mycurrency.com/users/&lt;USER-ID&gt;/notices/&lt;ID&gt;</code></p>
 
 <aside class="notice">
@@ -14382,7 +14529,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>Whether the notice&#39;s message has been read by the user or not</td>
 </tr>
 </tbody></table>
-<h3 id='response-102'>RESPONSE</h3>
+<h3 id='response-103'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -14455,13 +14602,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a particular voucher. The logged in user must be either the holder of the voucher or the owner of the store at which the voucher is redeemable in order to view the voucher&#39;s details.</p>
-<h3 id='http-request-103'>HTTP Request</h3>
+<h3 id='http-request-104'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/vouchers/&lt;ID&gt;</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User that issued the voucher or the user that holds it
 </aside>
-<h3 id='response-103'>RESPONSE</h3>
+<h3 id='response-104'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -14550,13 +14697,13 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the voucher associated with a particular order. The logged in user must be either the holder of the voucher or the owner of the store at which the voucher is redeemable in order to view the voucher&#39;s details.</p>
-<h3 id='http-request-104'>HTTP Request</h3>
+<h3 id='http-request-105'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/order_sets/&lt;ORDER-SET-ID&gt;/voucher</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User that issued the voucher or the user that holds it
 </aside>
-<h3 id='response-104'>RESPONSE</h3>
+<h3 id='response-105'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -14697,7 +14844,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a user&#39;s vouchers. </p>
-<h3 id='http-request-105'>HTTP Request</h3>
+<h3 id='http-request-106'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/vouchers?issueing_user_id={}&amp;store_id={}</code></p>
 
 <aside class="notice">
@@ -14731,7 +14878,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The vouchers issued by the specified store are returned if store_id is provided. This parameter needs to be provided along with a :issueing_user_id with a value that matches the ID of the user that owns the store.</td>
 </tr>
 </tbody></table>
-<h3 id='response-105'>RESPONSE</h3>
+<h3 id='response-106'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -14820,7 +14967,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Updates a voucher.</p>
-<h3 id='http-request-106'>HTTP Request</h3>
+<h3 id='http-request-107'>HTTP Request</h3>
 <p><code>POST https://api.mycurrency.com/users/&lt;USER-ID&gt;/vouchers/&lt;ID&gt;</code></p>
 
 <p>Optional path, only viable if code provided:</p>
@@ -14852,7 +14999,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The voucher&#39;s secret code, must be provided to redeem voucher</td>
 </tr>
 </tbody></table>
-<h3 id='response-106'>RESPONSE</h3>
+<h3 id='response-107'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
