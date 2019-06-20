@@ -342,6 +342,7 @@ curl 'https://api.mycurrency.com/currencies/2' \
       "daily-burn-rate": "0.00012614",
       "store-count": 2,
       "listing-count": 5,
+      "product-count": 20,
       "name": "ACME Toon Shop dollars",
       "description": "Spendable at any ACME Toon Shop",
       "created-at": "2018-08-12T01:17:31.176-07:00",
@@ -377,6 +378,7 @@ burn-rate | The annual rate at which holdings of the currency burn, by basis poi
 daily-burn-rate | The daily rate at which the currency burns, by fraction of 1 (0.01 = 1%)
 store-count | The number of stores associated with the currency
 listing-count | The number of active listings associated with the currency
+product-count | The number of products associated with the currency
 name | The name of the currency
 description | The description of the currency
 created-at | The time and date when the currency was created
@@ -409,6 +411,7 @@ curl "https://api.mycurrency.com/currencies" \
         "daily-burn-rate": "0.000210611",
         "store-count": 3, 
         "listing-count": 0,
+        "product-count": 12,
         "name": "Calm dollars",
         "description": "Redeemable for services at Calm Massage Therapy",
         "created-at": "2017-08-10T17:03:08.287-07:00",
@@ -430,6 +433,7 @@ curl "https://api.mycurrency.com/currencies" \
         "daily-burn-rate": "0.00012614",
         "store-count": 2,
         "listing-count": 5,
+        "product-count": 52,
         "name": "ACME Toon Shop dollars",
         "description": "Spendable at any ACME Toon Shop",
         "created-at": "2018-08-12T01:17:31.176-07:00",
@@ -451,6 +455,7 @@ curl "https://api.mycurrency.com/currencies" \
         "daily-burn-rate": "0.000117548",
         "store-count": 4,
         "listing-count": 1,
+        "product-count": 16,
         "name": "Horizon Cloud Computing dollars",
         "description": "Redeemable for Horizon Cloud Computing services",
         "created-at": "2018-09-22T17:10:21.588-07:00",
@@ -472,6 +477,7 @@ curl "https://api.mycurrency.com/currencies" \
         "daily-burn-rate": "0.000154976",
         "store-count": 1,
         "listing-count": 10,
+        "product-count": 19,
         "name": "Tom's Fruitstand bucks",
         "description": "Redeem Tom's Fruitstand bucks for delicious fruit",
         "created-at": "2018-09-22T17:10:21.588-07:00",
@@ -493,6 +499,7 @@ curl "https://api.mycurrency.com/currencies" \
         "daily-burn-rate": "0.00014052",
         "store-count": 16,
         "listing-count": 4,
+        "product-count": 31,
         "name": "Chilli pesos",
         "description": "Chilli pesos are backed by chillis",
         "created-at": "2018-09-22T18:57:27.193-07:00",
@@ -543,6 +550,7 @@ burn-rate | The annual rate at which holdings of the currency burn, by basis poi
 daily-burn-rate | The daily rate at which the currency burns, by fraction of 1 (0.01 = 1%)
 store-count | The number of stores associated with the currency
 listing-count | The number of active listings associated with the currency
+product-count | The number of products associated with the currency
 name | The name of the currency
 description | The description of the currency
 created-at | The time and date when the currency was created
@@ -575,6 +583,7 @@ curl "https://api.mycurrency.com/currencies?user_id=3" \
         "daily-burn-rate": "0.00012614",
         "store-count": 2,
         "listing-count": 5,
+        "product-count": 10,
         "name": "ACME Toon Shop dollars",
         "description": "Spendable at any ACME Toon Shop",
         "created-at": "2018-08-12T01:17:31.176-07:00",
@@ -596,6 +605,7 @@ curl "https://api.mycurrency.com/currencies?user_id=3" \
         "daily-burn-rate": "0.000117548",
         "store-count": 4,
         "listing-count": 1,
+        "product-count": 28,
         "name": "Horizon Cloud Computing dollars",
         "description": "Redeemable for Horizon Cloud Computing services",
         "created-at": "2018-09-22T17:10:21.588-07:00",
@@ -646,6 +656,7 @@ burn-rate | The annual rate at which holdings of the currency burn, by basis poi
 daily-burn-rate | The daily rate at which the currency burns, by fraction of 1 (0.01 = 1%)
 store-count | The number of stores associated with the currency
 listing-count | The number of active listings associated with the currency
+product-count | The number of products associated with the currency
 name | The name of the currency
 description | The description of the currency
 created-at | The time and date when the currency was created
@@ -679,13 +690,14 @@ curl -X POST https://api.mycurrency.com/users/2/issuer/currencies \
       "daily-burn-rate": "0.00014052",
       "store-count": 1,
       "listing-count": 0,
+      "product-count": 0,
       "name": "Micro Asteroid bucks",
       "description": "credit toward asteroid mining missions",
       "created-at": "2018-11-05T02:19:23.338-08:00",
       "updated-at": "2018-11-05T02:19:23.338-08:00",
       "get-icon-url": "/icons/original/missing.png",
-      "number-of-reviews": 3,
-      "average-score": "7.333333333333333333"
+      "number-of-reviews": 0,
+      "average-score": null 
     }
   }
 }
@@ -756,13 +768,14 @@ curl -X PUT https://api.mycurrency.com/users/2/issuer/currencies/1 \
       "daily-burn-rate": "0.00014052",
       "store-count": 1,
       "listing-count": 0,
+      "product-count": 0,
       "name": "Micro Asteroid bucks",
       "description": "credit toward asteroid mining missions",
       "created-at": "2018-11-05T02:19:23.338-08:00",
       "updated-at": "2018-11-05T02:19:23.338-08:00",
       "get-icon-url": "/system/currencies/icons/000/000/001/original/calm_dollars.jpg?1514241100"
-      "number-of-reviews": 3,
-      "average-score": "7.333333333333333333"
+      "number-of-reviews": 0,
+      "average-score": null
     }
   }
 }
