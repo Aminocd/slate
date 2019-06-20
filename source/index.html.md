@@ -436,7 +436,7 @@ This endpoint retrieves a particular currency and more detailed public informati
 `GET https://api.mycurrency.com/authorized_currencies/<ID>`
 
 <aside class="notice">
-Authentication: not required
+Authentication: required
 </aside>
 
 ### RESPONSE
