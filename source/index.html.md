@@ -391,6 +391,7 @@ average-score | The average score of the store reviews, out of 10
 
 ```shell
 curl 'https://api.mycurrency.com/authorized_currencies/4' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' \
   -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
 
