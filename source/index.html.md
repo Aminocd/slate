@@ -3370,7 +3370,7 @@ created-at | The time and date when the product discontinual was cancelled
 ## List User's Self-Issued Currency Holdings with Authorization
 
 ```shell
-curl 'https://api.mycurrency.com/users/3/authorized_self_issued_currency_holdings' \
+curl 'https://api.mycurrency.com/users/4/authorized_self_issued_currency_holdings' \
   -H 'Accept: application/json' -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
 ```
@@ -3379,42 +3379,199 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_currency_holding
 
 ```json
 {
-  "data": [
+  "data": [{
+      "currency-holding-pair": {
+        "data": [{
+          "id": 2,
+          "type": "PrivateCurrencyHolding",
+          "attributes": {
+            "currency-id": 2,
+            "currency-name": "solar electricity zaps",
+            "currency-icon-url": "/icons/original/missing.png",
+            "currency-burn-rate": 640,
+            "currency-daily-burn-rate": "0.000181189",
+            "store_count": 2,
+            "amount-atomic": 4884625096360,
+            "burn-amount-out": 5374903640,
+            "is-issuer-active": true,
+            "issuer-user-id": 4,
+            "issuer-user-name": "ScipioAfricanus",
+            "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+            "created-at": "2018-11-05 13:27:52 -0800",
+            "updated-at": "2018-12-17 05:15:10 -0800"
+          }
+        }]
+      }
+    },
     {
       "currency-holding-pair": {
-        "data": [
-          {
-            "id": 1,
+        "data": [{
+          "id": 5,
+          "type": "PrivateCurrencyHolding",
+          "attributes": {
+            "currency-id": 3,
+            "currency-name": "Moon hotel coins",
+            "currency-icon-url": "/icons/original/missing.png",
+            "currency-burn-rate": 550,
+            "currency-daily-burn-rate": "0.000154976",
+            "store_count": 1,
+            "amount-atomic": 9795351440488,
+            "burn-amount-out": 4648559512,
+            "is-issuer-active": true,
+            "issuer-user-id": 4,
+            "issuer-user-name": "ScipioAfricanus",
+            "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+            "created-at": "2018-11-05 13:27:52 -0800",
+            "updated-at": "2018-12-20 06:18:37 -0800"
+          }
+        }]
+      }
+    },
+    {
+      "currency-holding-pair": {
+        "data": [{
+          "id": 10,
+          "type": "PrivateCurrencyHolding",
+          "attributes": {
+            "currency-id": 5,
+            "currency-name": "Home Repair dollars",
+            "currency-icon-url": "/icons/original/missing.png",
+            "currency-burn-rate": 450,
+            "currency-daily-burn-rate": "0.00012614",
+            "store_count": 0,
+            "amount-atomic": 4998738679556,
+            "burn-amount-out": 1261320444,
+            "is-issuer-active": true,
+            "issuer-user-id": 4,
+            "issuer-user-name": "ScipioAfricanus",
+            "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+            "created-at": "2018-11-06 13:27:52 -0800",
+            "updated-at": "2018-11-08 13:26:13 -0800"
+          }
+        }]
+      }
+    },
+    {
+      "currency-holding-pair": {
+        "data": [{
+          "id": 11,
+          "type": "PrivateCurrencyHolding",
+          "attributes": {
+            "currency-id": 6,
+            "currency-name": "Wholesome foods tokens",
+            "currency-icon-url": "/icons/original/missing.png",
+            "currency-burn-rate": 710,
+            "currency-daily-burn-rate": "0.000201751",
+            "store_count": 0,
+            "amount-atomic": 9995965387034,
+            "burn-amount-out": 4034612966,
+            "is-issuer-active": true,
+            "issuer-user-id": 4,
+            "issuer-user-name": "ScipioAfricanus",
+            "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+            "created-at": "2018-11-06 13:27:52 -0800",
+            "updated-at": "2018-11-08 13:26:13 -0800"
+          }
+        }]
+      }
+    },
+    {
+      "currency-holding-pair": {
+        "data": [{
+            "id": 17,
             "type": "PrivateCurrencyHolding",
             "attributes": {
-              "currency-id": 1,
-              "currency-name": "Micro Asteroid bucks",
+              "currency-id": 9,
+              "currency-name": "Alabama steak coins",
               "currency-icon-url": "/icons/original/missing.png",
-              "currency-burn-rate": 500,
-              "amount-atomic": 9895827142424,
-              "burn-amount-out": 4172857576,
-              "created-at": "2018-11-05 13:27:52 -0800",
-              "updated-at": "2018-11-08 13:26:13 -0800"
+              "currency-burn-rate": 550,
+              "currency-daily-burn-rate": "0.000154976",
+              "store_count": 1,
+              "amount-atomic": 130000000000000,
+              "burn-amount-out": 0,
+              "is-issuer-active": true,
+              "issuer-user-id": 4,
+              "issuer-user-name": "ScipioAfricanus",
+              "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+              "created-at": "2019-06-12 03:23:26 -0700",
+              "updated-at": "2019-06-12 03:39:39 -0700"
             }
           },
           {
-            "id": 2,
+            "id": 11,
             "type": "PublicCurrencyHolding",
             "attributes": {
-              "currency-id": 1,
-              "currency-name": "Micro Asteroid bucks",
+              "currency-id": 9,
+              "currency-name": "Alabama steak coins",
               "currency-icon-url": "/icons/original/missing.png",
-              "currency-burn-rate": 500,
-              "amount-atomic": 99957849922,
-              "burn-amount-out": 42150078,
-              "created-at": "2018-11-05 13:27:47 -0800",
-              "updated-at": "2018-11-08 13:26:13 -0800"
+              "currency-burn-rate": 550,
+              "currency-daily-burn-rate": "0.000154976",
+              "store_count": 1,
+              "amount-atomic": 80000000000000,
+              "burn-amount-out": 0,
+              "is-issuer-active": true,
+              "issuer-user-id": 4,
+              "issuer-user-name": "ScipioAfricanus",
+              "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+              "created-at": "2019-06-12 03:39:39 -0700",
+              "updated-at": "2019-06-12 03:39:39 -0700"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "currency-holding-pair": {
+        "data": [{
+            "id": 18,
+            "type": "PrivateCurrencyHolding",
+            "attributes": {
+              "currency-id": 10,
+              "currency-name": "Turbo points",
+              "currency-icon-url": "/icons/original/missing.png",
+              "currency-burn-rate": 600,
+              "currency-daily-burn-rate": "0.000169508",
+              "store_count": 1,
+              "amount-atomic": 40000000000000,
+              "burn-amount-out": 0,
+              "is-issuer-active": true,
+              "issuer-user-id": 4,
+              "issuer-user-name": "ScipioAfricanus",
+              "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+              "created-at": "2019-06-12 03:24:27 -0700",
+              "updated-at": "2019-06-12 03:41:24 -0700"
+            }
+          },
+          {
+            "id": 12,
+            "type": "PublicCurrencyHolding",
+            "attributes": {
+              "currency-id": 10,
+              "currency-name": "Turbo points",
+              "currency-icon-url": "/icons/original/missing.png",
+              "currency-burn-rate": 600,
+              "currency-daily-burn-rate": "0.000169508",
+              "store_count": 1,
+              "amount-atomic": 62000000000000,
+              "burn-amount-out": 0,
+              "is-issuer-active": true,
+              "issuer-user-id": 4,
+              "issuer-user-name": "ScipioAfricanus",
+              "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+              "created-at": "2019-06-12 03:41:24 -0700",
+              "updated-at": "2019-06-17 10:06:45 -0700"
             }
           }
         ]
       }
     }
-  ]
+  ],
+  "meta": {
+    "user-data": {
+      "number-of-reviews": 23,
+      "currency-count": 6
+    }
+  }
 }
 ```
 
@@ -3444,15 +3601,21 @@ currency-id | The ID of the currency that the currency holding holds
 currency-name | The name of the currency that the currency holding holds
 currency-icon-url | The URL at which the icon picture of the currency that the currency holding holds can be found
 currency-burn-rate | The annual rate at which the currency contained within the currency holding burns, by basis point (100 = 1%) 
+currency-daily-burn-rate | The daily rate at which the currency contained within the public currency holding burns, by fraction of 1 (0.01 = 1%) 
+store-count | The number of stores associated with the currency
 amount-atomic | The amount of currency held in the currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
 burn-amount-out | The total amount that has been debited from the public currency holding as a result of the daily burnrate of the currency 
+is-issuer-active | Whether the issuer of the currency is active
+issuer-user-id | The ID of the user that issues the currency
+issuer-user-name | The username of the user that issues the currency
+issuer-user-avatar-url | The URL of the avatar of the user that issues the currency
 created-at | The time and date when the public currency holding was created
 updated-at | The time and date when the public currency holding was last updated
 
 ## List User's Externally Issued Currency Holdings with Authorization
 
 ```shell
-curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_currency_holdings' \
+curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_currency_holdings' \
   -H 'Accept: application/json' -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
 ```
@@ -3461,110 +3624,46 @@ curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_currency_h
 
 ```json
 {
-  "data": [
-    {
+  "data": [{
       "currency-holding-pair": {
-        "data": [
-          {
-            "id": 3,
+        "data": [{
+            "id": 14,
             "type": "PrivateCurrencyHolding",
             "attributes": {
-              "currency-id": 2,
-              "currency-name": "solar electricity zaps",
+              "currency-id": 1,
+              "currency-name": "Micro Asteroid bucks",
               "currency-icon-url": "/icons/original/missing.png",
-              "currency-burn-rate": 640,
-              "amount-atomic": 9994565314,
-              "burn-amount-out": 5434686,
-              "created-at": "2018-11-05 13:27:52 -0800",
-              "updated-at": "2018-11-08 13:26:13 -0800"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "currency-holding-pair": {
-        "data": [
-          {
-            "id": 6,
-            "type": "PrivateCurrencyHolding",
-            "attributes": {
-              "currency-id": 3,
-              "currency-name": "Moon hotel coins",
-              "currency-icon-url": "/icons/original/missing.png",
-              "currency-burn-rate": 550,
-              "amount-atomic": 4997675720243,
-              "burn-amount-out": 2324279757,
-              "created-at": "2018-11-05 13:27:52 -0800",
-              "updated-at": "2018-11-08 13:26:13 -0800"
+              "currency-burn-rate": 500,
+              "currency-daily-burn-rate": "0.00014052",
+              "store_count": 1,
+              "amount-atomic": 800500000000000,
+              "burn-amount-out": 0,
+              "is-issuer-active": true,
+              "issuer-user-id": 3,
+              "issuer-user-name": "Hannibal",
+              "issuer-user-avatar-url": "/avatars/original/missing.png",
+              "created-at": "2018-11-30 23:04:50 -0800",
+              "updated-at": "2019-06-12 03:56:21 -0700"
             }
           },
-          {
-            "id": 4,
-            "type": "PublicCurrencyHolding",
-            "attributes": {
-              "currency-id": 3,
-              "currency-name": "Moon hotel coins",
-              "currency-icon-url": "/icons/original/missing.png",
-              "currency-burn-rate": 550,
-              "amount-atomic": 4997675720243,
-              "burn-amount-out": 2324279757,
-              "created-at": "2018-11-05 13:27:47 -0800",
-              "updated-at": "2018-11-08 13:26:13 -0800"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "currency-holding-pair": {
-        "data": [
-          {
-            "id": 9,
-            "type": "PrivateCurrencyHolding",
-            "attributes": {
-              "currency-id": 4,
-              "currency-name": "spiderman pizza dollars",
-              "currency-icon-url": "/icons/original/missing.png",
-              "currency-burn-rate": 420,
-              "amount-atomic": 2499118493626,
-              "burn-amount-out": 881506374,
-              "created-at": "2018-11-05 13:27:52 -0800",
-              "updated-at": "2018-11-08 13:26:13 -0800"
-            }
-          },
-          {
-            "id": 6,
-            "type": "PublicCurrencyHolding",
-            "attributes": {
-              "currency-id": 4,
-              "currency-name": "spiderman pizza dollars",
-              "currency-icon-url": "/icons/original/missing.png",
-              "currency-burn-rate": 420,
-              "amount-atomic": 2499118493626,
-              "burn-amount-out": 881506374,
-              "created-at": "2018-11-05 13:27:47 -0800",
-              "updated-at": "2018-11-08 13:26:13 -0800"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "currency-holding-pair": {
-        "data": [
           {
             "id": 13,
-            "type": "PrivateCurrencyHolding",
+            "type": "PublicCurrencyHolding",
             "attributes": {
-              "currency-id": 5,
-              "currency-name": "Home Repair dollars",
+              "currency-id": 1,
+              "currency-name": "Micro Asteroid bucks",
               "currency-icon-url": "/icons/original/missing.png",
-              "currency-burn-rate": 450,
-              "amount-atomic": 4998738679556,
-              "burn-amount-out": 1261320444,
-              "created-at": "2018-11-06 13:27:52 -0800",
-              "updated-at": "2018-11-08 13:26:13 -0800"
+              "currency-burn-rate": 500,
+              "currency-daily-burn-rate": "0.00014052",
+              "store_count": 1,
+              "amount-atomic": 500000000000,
+              "burn-amount-out": 0,
+              "is-issuer-active": true,
+              "issuer-user-id": 3,
+              "issuer-user-name": "Hannibal",
+              "issuer-user-avatar-url": "/avatars/original/missing.png",
+              "created-at": "2019-06-12 03:45:36 -0700",
+              "updated-at": "2019-06-12 03:56:21 -0700"
             }
           }
         ]
@@ -3572,25 +3671,56 @@ curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_currency_h
     },
     {
       "currency-holding-pair": {
-        "data": [
-          {
-            "id": 12,
+        "data": [{
+            "id": 8,
             "type": "PrivateCurrencyHolding",
             "attributes": {
-              "currency-id": 6,
-              "currency-name": "Wholesome foods tokens",
+              "currency-id": 4,
+              "currency-name": "spiderman pizza dollars",
               "currency-icon-url": "/icons/original/missing.png",
-              "currency-burn-rate": 710,
-              "amount-atomic": 9995965387034,
-              "burn-amount-out": 4034612966,
-              "created-at": "2018-11-06 13:27:52 -0800",
-              "updated-at": "2018-11-08 13:26:13 -0800"
+              "currency-burn-rate": 420,
+              "currency-daily-burn-rate": "0.000117548",
+              "store_count": 0,
+              "amount-atomic": 10496473974509,
+              "burn-amount-out": 3526025491,
+              "is-issuer-active": true,
+              "issuer-user-id": 2,
+              "issuer-user-name": "spiderman",
+              "issuer-user-avatar-url": "/avatars/original/missing.png",
+              "created-at": "2018-11-05 13:27:52 -0800",
+              "updated-at": "2019-06-12 03:55:15 -0700"
+            }
+          },
+          {
+            "id": 16,
+            "type": "PublicCurrencyHolding",
+            "attributes": {
+              "currency-id": 4,
+              "currency-name": "spiderman pizza dollars",
+              "currency-icon-url": "/icons/original/missing.png",
+              "currency-burn-rate": 420,
+              "currency-daily-burn-rate": "0.000117548",
+              "store_count": 0,
+              "amount-atomic": 500000000000,
+              "burn-amount-out": 0,
+              "is-issuer-active": true,
+              "issuer-user-id": 2,
+              "issuer-user-name": "spiderman",
+              "issuer-user-avatar-url": "/avatars/original/missing.png",
+              "created-at": "2019-06-12 03:55:15 -0700",
+              "updated-at": "2019-06-12 03:55:15 -0700"
             }
           }
         ]
       }
     }
-  ]
+  ],
+  "meta": {
+    "user-data": {
+      "number-of-reviews": 23,
+      "currency-count": 6
+    }
+  }
 }
 ```
 
@@ -3620,8 +3750,14 @@ currency-id | The ID of the currency that the currency holding holds
 currency-name | The name of the currency that the currency holding holds
 currency-icon-url | The URL at which the icon picture of the currency that the currency holding holds can be found
 currency-burn-rate | The annual rate at which the currency contained within the currency holding burns, by basis point (100 = 1%) 
+currency-daily-burn-rate | The daily rate at which the currency contained within the public currency holding burns, by fraction of 1 (0.01 = 1%) 
+store-count | The number of stores associated with the currency
 amount-atomic | The amount of currency held in the currency holding, in atomic units (each whole unit is composed of 10^10 atomic units)
 burn-amount-out | The total amount that has been debited from the public currency holding as a result of the daily burnrate of the currency 
+is-issuer-active | Whether the issuer of the currency is active
+issuer-user-id | The ID of the user that issues the currency
+issuer-user-name | The username of the user that issues the currency
+issuer-user-avatar-url | The URL of the avatar of the user that issues the currency
 created-at | The time and date when the public currency holding was created
 updated-at | The time and date when the public currency holding was last updated
 
