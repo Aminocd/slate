@@ -38,7 +38,15 @@ curl 'https://api.mycurrency.com/users/2' \
       "username": "RonaldMcDonald",
       "created-at": "2018-08-08T01:22:54.571-07:00",
       "active": true,
+      "public-email": null,
       "get-avatar-url": "/system/users/avatars/000/000/002/original/afternoon_portrait.jpg?1534139495"
+      "number-of-reviews": 0,
+      "average-score": null,
+      "product-count": 0,
+      "product-cancellation-count": 0,
+      "store-count": 0,
+      "currency-count": 1,
+      "listing-count": 0
     }
   }
 }
@@ -62,7 +70,15 @@ id | The ID of the user
 username | The username that the user is identified by
 created-at | The time and date when the user was created
 active | Whether the user is active or not
+public-email | An email that is viewable by the public
 get-avatar-url | The URL at which the user profile picture can be found
+number-of-reviews | The total number of reviews received by all of the user's stores
+average-score | The average score of all the reviews received by the user's stores
+product-count | The number of products offered by all of the user's stores
+product-cancellation-count | The number of product cancellations created by the user
+store-count | The number of stores belonging to the user
+currency-count | The number of currencies belonging to the user
+listing-count | The number of active listings belonging to the user
 
 ## Get a User from Username
 
@@ -82,7 +98,15 @@ curl 'https://api.mycurrency.com/get_user_from_username?q=RonaldMcDonald' \
       "username": "RonaldMcDonald",
       "created-at": "2018-08-08T01:22:54.571-07:00",
       "active": true,
+      "public-email": null,
       "get-avatar-url": "/system/users/avatars/000/000/002/original/afternoon_portrait.jpg?1534139495"
+      "number-of-reviews": 0,
+      "average-score": null,
+      "product-count": 0,
+      "product-cancellation-count": 0,
+      "store-count": 0,
+      "currency-count": 1,
+      "listing-count": 0
     }
   }
 }
@@ -112,7 +136,15 @@ id | The ID of the user
 username | The username that the user is identified by
 created-at | The time and date when the user was created
 active | Whether the user is active or not
+public-email | An email that is viewable by the public
 get-avatar-url | The URL at which the user profile picture can be found
+number-of-reviews | The total number of reviews received by all of the user's stores
+average-score | The average score of all the reviews received by the user's stores
+product-count | The number of products offered by all of the user's stores
+product-cancellation-count | The number of product cancellations created by the user
+store-count | The number of stores belonging to the user
+currency-count | The number of currencies belonging to the user
+listing-count | The number of active listings belonging to the user
 
 ## Get a User with Authorization
 
@@ -133,11 +165,19 @@ curl "https://api.mycurrency.com/users/2" \
       "username": "RonaldMcDonald",
       "created-at": "2018-08-08T01:22:54.571-07:00",
       "active": true,
+      "public-email": null,
       "get-avatar-url": "/system/users/avatars/000/000/002/original/afternoon_portrait.jpg?1534139495"
+      "number-of-reviews": 0,
+      "average-score": null,
+      "product-count": 0,
+      "product-cancellation-count": 0,
+      "store-count": 0,
+      "currency-count": 1,
+      "listing-count": 0
       "email": "RonaldMcDonald@mcdonalds.com",
       "sub-location-id": 1,
       "sub-location-name": "San Francisco",
-      "updated-at": "2018-08-14T14:51:07.965-07:00"
+      "updated-at": "2018-08-22T01:28:56.872-07:00"
     }
   }
 }
@@ -161,11 +201,168 @@ id | The ID of the user
 username | The username that the user is identified by
 created-at | The time and date when the user was created
 active | Whether the user is active or not
+public-email | An email that is viewable by the public
 get-avatar-url | The URL at which the user profile picture can be found
+number-of-reviews | The total number of reviews received by all of the user's stores
+average-score | The average score of all the reviews received by the user's stores
+product-count | The number of products offered by all of the user's stores
+product-cancellation-count | The number of product cancellations created by the user
+store-count | The number of stores belonging to the user
+currency-count | The number of currencies belonging to the user
+listing-count | The number of active listings belonging to the user
 email | The email address associated with the user account
 sub-location-id | The ID of the sub location associated with the user account
 sub-location-name | The name of the sub location associated with the user account
 updated-at | The time and date when the user was last updated
+
+## List User Contacts
+
+```shell
+curl "https://api.mycurrency.com/user_contacts" \
+  -H "Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao" \
+  -H 'Host: api.mycurrency.com' -H 'Accept: application/json' -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "3",
+      "type": "users",
+      "attributes": {
+        "username": "Hannibal",
+        "created-at": "2018-11-04T12:08:04.094-08:00",
+        "active": true,
+        "public-email": null,
+        "get-avatar-url": "/avatars/original/missing.png",
+        "number-of-reviews": 3,
+        "average-score": "7.333333333333333333",
+        "product-count": 1,
+        "product-cancellation-count": 3,
+        "store-count": 1,
+        "currency-count": 1,
+        "listing-count": 0
+      }
+    },
+    {
+      "id": "18",
+      "type": "users",
+      "attributes": {
+        "username": "ariastark",
+        "created-at": "2019-06-12T06:57:52.302-07:00",
+        "active": true,
+        "public-email": null,
+        "get-avatar-url": "/system/users/avatars/000/000/018/original/avatar.jpg?1561108444",
+        "number-of-reviews": 0,
+        "average-score": null,
+        "product-count": 0,
+        "product-cancellation-count": 0,
+        "store-count": 0,
+        "currency-count": 2,
+        "listing-count": 0
+      }
+    },
+    {
+      "id": "17",
+      "type": "users",
+      "attributes": {
+        "username": "eddardstark",
+        "created-at": "2019-06-12T01:53:25.132-07:00",
+        "active": true,
+        "public-email": null,
+        "get-avatar-url": "/system/users/avatars/000/000/017/original/avatar.jpg?1560946499",
+        "number-of-reviews": 0,
+        "average-score": null,
+        "product-count": 0,
+        "product-cancellation-count": 0,
+        "store-count": 0,
+        "currency-count": 12,
+        "listing-count": 0
+      }
+    },
+    {
+      "id": "16",
+      "type": "users",
+      "attributes": {
+        "username": "the_hulk",
+        "created-at": "2019-06-06T11:18:50.759-07:00",
+        "active": true,
+        "public-email": null,
+        "get-avatar-url": "/avatars/original/missing.png",
+        "number-of-reviews": 0,
+        "average-score": null,
+        "product-count": 0,
+        "product-cancellation-count": 0,
+        "store-count": 0,
+        "currency-count": 0,
+        "listing-count": 0
+      }
+    },
+    {
+      "id": "2",
+      "type": "users",
+      "attributes": {
+        "username": "spiderman",
+        "created-at": "2018-11-04T12:04:25.987-08:00",
+        "active": true,
+        "public-email": null,
+        "get-avatar-url": "/avatars/original/missing.png",
+        "number-of-reviews": 0,
+        "average-score": null,
+        "product-count": 0,
+        "product-cancellation-count": 0,
+        "store-count": 0,
+        "currency-count": 1,
+        "listing-count": 0
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/user_contacts?",
+    "first": "https://api.mycurrency.com/user_contacts?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/user_contacts?page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "5"
+    }
+  }
+}
+```
+
+This endpoint retrieves a list of users that the logged-in user has sent or received transfers and issuances to and from, ordered from users that received the most transfers and issuances from the subject to those that received the fewest, followed by users that sent the most transfers and issuances to the subject to those that sent the fewest.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/user_contacts`
+
+<aside class="notice">
+Authentication: required 
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the user
+username | The username that the user is identified by
+created-at | The time and date when the user was created
+active | Whether the user is active or not
+public-email | An email that is viewable by the public
+get-avatar-url | The URL at which the user profile picture can be found
+number-of-reviews | The total number of reviews received by all of the user's stores
+average-score | The average score of all the reviews received by the user's stores
+product-count | The number of products offered by all of the user's stores
+product-cancellation-count | The number of product cancellations created by the user
+store-count | The number of stores belonging to the user
+currency-count | The number of currencies belonging to the user
+listing-count | The number of active listings belonging to the user
 
 ## Update User
 
@@ -188,7 +385,15 @@ curl -X PUT https://api.mycurrency.com/users/2 \
       "username": "RonaldMcDonald",
       "created-at": "2018-08-08T01:22:54.571-07:00",
       "active": true,
+      "public-email": null,
       "get-avatar-url": "/system/users/avatars/000/000/002/original/afternoon_portrait.jpg?1534139495"
+      "number-of-reviews": 0,
+      "average-score": null,
+      "product-count": 0,
+      "product-cancellation-count": 0,
+      "store-count": 0,
+      "currency-count": 1,
+      "listing-count": 0
       "email": "RonaldMcDonald@mcdonalds.com",
       "sub-location-id": 2,
       "sub-location-name": "Vancouver",
@@ -225,7 +430,15 @@ id | The ID of the user
 username | The username that the user is identified by
 created-at | The time and date when the user was created
 active | Whether the user is active or not
+public-email | An email that is viewable by the public
 get-avatar-url | The URL at which the user profile picture can be found
+number-of-reviews | The total number of reviews received by all of the user's stores
+average-score | The average score of all the reviews received by the user's stores
+product-count | The number of products offered by all of the user's stores
+product-cancellation-count | The number of product cancellations created by the user
+store-count | The number of stores belonging to the user
+currency-count | The number of currencies belonging to the user
+listing-count | The number of active listings belonging to the user
 email | The email address associated with the user account
 sub-location-id | The ID of the sub location associated with the user account
 sub-location-name | The name of the sub location associated with the user account
