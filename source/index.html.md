@@ -4210,9 +4210,6 @@ is-issuer-active | Whether the user that issues the currency holder is active
 currency-burn-rate | The annual burn rate of the currency in the holding
 currency-daily-burn-rate | The daily burn rate of the currency in the holding
 store-count | The number of stores associated with the currency in the holding
-issuer-user-id | The ID of the user that issues the currency in the holding
-issuer-user-name | The username of the user that issues the currency in the holding 
-issuer-user-avatar-url | The URL of the user that issues the currency in the holding 
 
 ## List User's Public Externally Issued Currency Holdings 
 
