@@ -4960,10 +4960,6 @@ issuance-in | The total amount that has been credited to the private currency ho
 burn-amount-out | The total amount that has been debited from the private currency holding as a result of the daily burnrate of the currency 
 created-at | The time and date when the private currency holding was created
 updated-at | The time and date when the private currency holding was last updated
-is-issuer-active | Whether the issuer of the currency is active
-issuer-user-id | The ID of the user that issues the currency
-issuer-user-name | The username of the user that issues the currency
-issuer-user-avatar-url | The URL of the avatar of the user that issues the currency
 
 ## List User's Private Externally Issued Currency Holdings with Authorization
 
