@@ -721,6 +721,12 @@ curl 'https://api.mycurrency.com/authorized_currencies/4' \
       "number-of-burn-rate-changes": 0,
       "number-public-currency-holdings": 3,
       "next-daily-burn-amount": "1292613522.755583932"
+      "private-currency-holding-id": 18,
+      "public-currency-holding-id": 12,
+      "timedate-of-last-private-tx": "Jun 12, 2019",
+      "amount-of-last-private-tx": "-7000",
+      "timedate-of-last-public-tx": "Jun 17, 2019",
+      "amount-of-last-public-tx": "+200
     }
   }
 }
@@ -763,6 +769,13 @@ total-amount-atomic | The total amount held in the logged-in user's public and p
 number-of-burn-rate-changes | The number of burn rate changes that the currency has undergone since its creation
 number-of-public-currency-holdings | The number of public holdings of the currency
 next-daily-burn-amount | The total amount of units in the logged-in user's public and private currency holdings of the specified currency that will be burned over the next day, in atomic units (each whole unit is composed of 10^10 atomic units) 
+private-currency-holding-id | The ID of the logged-in user's private holding of the specified currency
+public-currency-holding-id | The ID of the logged-in user's public holding of the specified currency
+timedate-of-last-private-tx | The date when the last transaction in the logged-in user's private holding of the specified currency took place
+amount-of-last-private-tx | The amount, in whole units, that was transferred in the last transaction to/from the logged-in user's private holding of the specified currency
+timedate-of-last-public-tx | The date when the last transaction in the logged-in user's public holding of the specified currency took place
+amount-of-last-public-tx | The amount, in whole units, that was transferred in the last transaction to/from the logged-in user's public holding of the specified currency
+
 ## List Currencies
 
 ```shell
