@@ -6047,14 +6047,14 @@ transfer-receiver-currency-holding-type | Whether the currency holding that the 
 transfer-receiver-currency-holding-id | The ID of the public or private currency holding that the transfer credited to, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
 sending-user-id | The ID of the transfer sender, only shown if the owner of the currency holding that the transfer credited to is the logged-in user 
 sender-username | The username of the transfer sender, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
-sending_user_avatar_url | The URL of the avatar of the transfer sender, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
+sending-user-avatar-url | The URL of the avatar of the transfer sender, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
 sender-before-amount-atomic | The balance, in atomic units, of the sending currency holding before it was debited from by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
 sender-after-amount-atomic | The balance, in atomic units, of the sending currency holding after it was debited from by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
 receiver-before-amount-atomic | The balance, in atomic units, of the receiving currency holding before it was credited to by the transfer, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
 receiver-after-amount-atomic | The balance, in atomic units, of the receiving currency holding after it was credited to by the transfer, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
 transferred-currency-id | The ID of the transferred currency
 transferred-currency-name | The name of the transferred currency
-transferred_currency_icon_url | The URL of the icon of the transferred currency
+transferred-currency-icon-url | The URL of the icon of the transferred currency
 created-at | The time and date when the transfer was created
 updated-at | The time and date when the transfer was last updated
 
@@ -6072,10 +6072,10 @@ issuance-receiver-currency-holding-id | The ID of the public or private currency
 issuance-receiver-currency-holding-type | Whether the currency holding that the issuance credited to is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding", only shown if the issuance receiver is the logged-in user
 issued-currency-id | The ID of the issued currency
 issued-currency-name | The name of the issued currency
-issued_currency_icon_url | The URL of the icon of the issued currency
+issued-currency-icon-url | The URL of the icon of the issued currency
 issueing-user-id | The ID of the issueing user, only shown if the issuance receiver is the logged-in user 
 issuer-username | The username of the issueing user, only shown if the issuance receiver is the logged-in user
-issueing_user_avatar_url | The URL of the avatar of the issueing user, only shown if the issuance receiver is the logged-in user
+issueing-user-avatar-url | The URL of the avatar of the issueing user, only shown if the issuance receiver is the logged-in user
 before-amount-atomic | The balance, in atomic units, of the currency holding before it was credited by the issuance, only shown if the issuance receiver is the logged-in user
 after-amount-atomic | The balance, in atomic units, of the currency holding after it was credited by the issuance, only shown if the issuance receiver is the logged-in user
 created-at | The time and date when the transfer was created
@@ -6094,7 +6094,7 @@ source-currency-holding-id | The ID of the public or private currency holding th
 source-currency-holding-type | Whether the currency holding that the micro currency order spent from is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding"
 spent-currency-id | The ID of the spent currency
 spent-currency-name | The name of the spent currency
-spent_currency_icon_url | The URL of the icon of the spent currency
+spent-currency-icon-url | The URL of the icon of the spent currency
 before-amount-atomic | The balance, in atomic units, of the currency holding before it was debited by the micro currency order
 after-amount-atomic | The balance, in atomic units, of the currency holding after it was debited by the micro currency order
 created-at | The time and date when the micro currency order was created
