@@ -5523,7 +5523,7 @@ updated-at | The time and date when the burnrate period was last updated
 This endpoint retrieves the 100 most recently created issuances, transfers, and outgoing micro currency orders associated with a user, sorted by created_at date, starting from the most recent
 
 ```shell
-curl 'https://api.mycurrency.com/users/3/recent_transactions?per_page=10' \
+curl 'https://api.mycurrency.com/users/4/recent_transactions?per_page=10' \
   -H 'Accept: application/json' -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
 ```
@@ -5534,182 +5534,487 @@ curl 'https://api.mycurrency.com/users/3/recent_transactions?per_page=10' \
 {
   "data": [
     {
-      "id": "3",
-      "type": "micro-currency-orders",
+      "id": "35",
+      "type": "issuances",
       "attributes": {
-        "day-counter": 0,
-        "amount-atomic": 100000000000,
-        "store-id": 3,
-        "store-name": "Freds Fishing Supplies",
-        "source-currency-holding-id": 9,
-        "source-currency-holding-type": "PrivateCurrencyHolding",
-        "spent-currency-id": 5,
-        "spent-currency-name": "Freds Fishing Supplies dollars",
-        "before-amount-atomic": 310000000000,
-        "after-amount-atomic": 210000000000,
-        "created-at": "2018-10-03T01:58:03.223-07:00",
-        "updated-at": "2018-10-03T01:58:03.223-07:00"
+        "day-counter": 3,
+        "amount-atomic": 1000000000000,
+        "receiving-user-id": 4,
+        "receiver-username": "ScipioAfricanus",
+        "receiving-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "issuance-receiver-currency-holding-id": 2,
+        "issuance-receiver-currency-holding-type": "PrivateCurrencyHolding",
+        "issued-currency-id": 2,
+        "issued-currency-name": "solar electricity zaps",
+        "issued-currency-icon-url": "/icons/original/missing.png",
+        "issueing-user-id": 4,
+        "issuer-username": "ScipioAfricanus",
+        "issueing-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "before-amount-atomic": 4884625096360,
+        "after-amount-atomic": 5884625096360,
+        "created-at": "2019-06-25T07:15:10.739-07:00",
+        "updated-at": "2019-06-25T07:15:10.739-07:00"
       }
     },
     {
-      "id": "2",
-      "type": "micro-currency-orders",
+      "id": "26",
+      "type": "transfers",
       "attributes": {
-        "day-counter": 0,
-        "amount-atomic": 100000000000,
-        "store-id": 3,
-        "store-name": "Freds Fishing Supplies",
-        "source-currency-holding-id": 9,
-        "source-currency-holding-type": "PrivateCurrencyHolding",
-        "spent-currency-id": 5,
-        "spent-currency-name": "Freds Fishing Supplies dollars",
-        "before-amount-atomic": 410000000000,
-        "after-amount-atomic": 310000000000,
-        "created-at": "2018-10-03T00:43:31.756-07:00",
-        "updated-at": "2018-10-03T00:43:31.756-07:00"
+        "amount-atomic": 2000000000000,
+        "receiving-user-id": 3,
+        "receiver-username": "Hannibal",
+        "receiving-user-avatar-url": "/avatars/original/missing.png",
+        "sender-day-counter": 0,
+        "transfer-sender-currency-holding-type": "PublicCurrencyHolding",
+        "transfer-sender-currency-holding-id": 12,
+        "sender-before-amount-atomic": 64000000000000,
+        "sender-after-amount-atomic": 62000000000000,
+        "transferred-currency-id": 10,
+        "transferred-currency-name": "Turbo points",
+        "transferred-currency-icon-url": "/icons/original/missing.png",
+        "created-at": "2019-06-17T10:06:45.138-07:00",
+        "updated-at": "2019-06-17T10:06:45.138-07:00"
       }
     },
     {
-      "id": "1",
-      "type": "micro-currency-orders",
+      "id": "25",
+      "type": "transfers",
       "attributes": {
-        "day-counter": 0,
-        "amount-atomic": 100000000000,
-        "store-id": 3,
-        "store-name": "Freds Fishing Supplies",
-        "source-currency-holding-id": 9,
-        "source-currency-holding-type": "PrivateCurrencyHolding",
-        "spent-currency-id": 5,
-        "spent-currency-name": "Freds Fishing Supplies dollars",
-        "before-amount-atomic": 510000000000,
-        "after-amount-atomic": 410000000000,
-        "created-at": "2018-10-03T00:39:37.860-07:00",
-        "updated-at": "2018-10-03T00:39:37.860-07:00"
+        "amount-atomic": 2000000000000,
+        "receiving-user-id": 18,
+        "receiver-username": "AriaStark",
+        "receiving-user-avatar-url": "/system/users/avatars/000/000/018/original/avatar.jpg?1561108444",
+        "sender-day-counter": 0,
+        "transfer-sender-currency-holding-type": "PublicCurrencyHolding",
+        "transfer-sender-currency-holding-id": 12,
+        "sender-before-amount-atomic": 66000000000000,
+        "sender-after-amount-atomic": 64000000000000,
+        "transferred-currency-id": 10,
+        "transferred-currency-name": "Turbo points",
+        "transferred-currency-icon-url": "/icons/original/missing.png",
+        "created-at": "2019-06-17T10:06:16.148-07:00",
+        "updated-at": "2019-06-17T10:06:16.148-07:00"
       }
     },
     {
-      "id": "7",
+      "id": "24",
+      "type": "transfers",
+      "attributes": {
+        "amount-atomic": 2000000000000,
+        "receiving-user-id": 17,
+        "receiver-username": "EddardStark",
+        "receiving-user-avatar-url": "/system/users/avatars/000/000/017/original/avatar.jpg?1560946499",
+        "sender-day-counter": 0,
+        "transfer-sender-currency-holding-type": "PublicCurrencyHolding",
+        "transfer-sender-currency-holding-id": 12,
+        "sender-before-amount-atomic": 68000000000000,
+        "sender-after-amount-atomic": 66000000000000,
+        "transferred-currency-id": 10,
+        "transferred-currency-name": "Turbo points",
+        "transferred-currency-icon-url": "/icons/original/missing.png",
+        "created-at": "2019-06-17T10:05:59.479-07:00",
+        "updated-at": "2019-06-17T10:05:59.479-07:00"
+      }
+    },
+    {
+      "id": "23",
+      "type": "transfers",
+      "attributes": {
+        "amount-atomic": 2000000000000,
+        "receiving-user-id": 16,
+        "receiver-username": "BranStark",
+        "receiving-user-avatar-url": "/avatars/original/missing.png",
+        "sender-day-counter": 0,
+        "transfer-sender-currency-holding-type": "PublicCurrencyHolding",
+        "transfer-sender-currency-holding-id": 12,
+        "sender-before-amount-atomic": 70000000000000,
+        "sender-after-amount-atomic": 68000000000000,
+        "transferred-currency-id": 10,
+        "transferred-currency-name": "Turbo points",
+        "transferred-currency-icon-url": "/icons/original/missing.png",
+        "created-at": "2019-06-17T02:44:09.676-07:00",
+        "updated-at": "2019-06-17T02:44:09.676-07:00"
+      }
+    },
+    {
+      "id": "22",
+      "type": "transfers",
+      "attributes": {
+        "amount-atomic": 500000000000,
+        "receiving-user-id": 4,
+        "receiver-username": "ScipioAfricanus",
+        "receiving-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "sender-day-counter": 0,
+        "receiver-day-counter": 0,
+        "transfer-sender-currency-holding-type": "PrivateCurrencyHolding",
+        "transfer-receiver-currency-holding-type": "PublicCurrencyHolding",
+        "transfer-sender-currency-holding-id": 14,
+        "transfer-receiver-currency-holding-id": 13,
+        "sending-user-id": 4,
+        "sender-username": "ScipioAfricanus",
+        "sending-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "sender-before-amount-atomic": 801000000000000,
+        "sender-after-amount-atomic": 800500000000000,
+        "receiver-before-amount-atomic": 0,
+        "receiver-after-amount-atomic": 500000000000,
+        "transferred-currency-id": 1,
+        "transferred-currency-name": "Micro Asteroid bucks",
+        "transferred-currency-icon-url": "/icons/original/missing.png",
+        "created-at": "2019-06-12T03:56:21.311-07:00",
+        "updated-at": "2019-06-12T03:56:21.311-07:00"
+      }
+    },
+    {
+      "id": "21",
+      "type": "transfers",
+      "attributes": {
+        "amount-atomic": 500000000000,
+        "receiving-user-id": 4,
+        "receiver-username": "ScipioAfricanus",
+        "receiving-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "sender-day-counter": 3,
+        "receiver-day-counter": 0,
+        "transfer-sender-currency-holding-type": "PrivateCurrencyHolding",
+        "transfer-receiver-currency-holding-type": "PublicCurrencyHolding",
+        "transfer-sender-currency-holding-id": 8,
+        "transfer-receiver-currency-holding-id": 16,
+        "sending-user-id": 4,
+        "sender-username": "ScipioAfricanus",
+        "sending-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "sender-before-amount-atomic": 10996473974509,
+        "sender-after-amount-atomic": 10496473974509,
+        "receiver-before-amount-atomic": 0,
+        "receiver-after-amount-atomic": 500000000000,
+        "transferred-currency-id": 4,
+        "transferred-currency-name": "spiderman pizza dollars",
+        "transferred-currency-icon-url": "/icons/original/missing.png",
+        "created-at": "2019-06-12T03:55:15.779-07:00",
+        "updated-at": "2019-06-12T03:55:15.779-07:00"
+      }
+    },
+    {
+      "id": "20",
+      "type": "transfers",
+      "attributes": {
+        "amount-atomic": 1000000000000,
+        "receiver-day-counter": 3,
+        "transfer-receiver-currency-holding-type": "PrivateCurrencyHolding",
+        "transfer-receiver-currency-holding-id": 8,
+        "sending-user-id": 3,
+        "sender-username": "Hannibal",
+        "sending-user-avatar-url": "/avatars/original/missing.png",
+        "receiver-before-amount-atomic": 9996473974509,
+        "receiver-after-amount-atomic": 10996473974509,
+        "transferred-currency-id": 4,
+        "transferred-currency-name": "spiderman pizza dollars",
+        "transferred-currency-icon-url": "/icons/original/missing.png",
+        "created-at": "2019-06-12T03:53:10.039-07:00",
+        "updated-at": "2019-06-12T03:53:10.039-07:00"
+      }
+    },
+    {
+      "id": "19",
       "type": "transfers",
       "attributes": {
         "amount-atomic": 500000000000,
         "receiver-day-counter": 0,
         "transfer-receiver-currency-holding-type": "PrivateCurrencyHolding",
-        "transfer-receiver-currency-holding-id": 9,
-        "sending-user-id": 4,
-        "sender-username": "ScipioAfricanus",
-        "receiver-before-amount-atomic": 10000000000,
-        "receiver-after-amount-atomic": 510000000000,
-        "transferred-currency-id": 5,
-        "transferred-currency-name": "Freds Fishing Supplies dollars",
-        "created-at": "2018-10-03T00:20:58.124-07:00",
-        "updated-at": "2018-10-03T00:20:58.124-07:00"
+        "transfer-receiver-currency-holding-id": 14,
+        "sending-user-id": 3,
+        "sender-username": "Hannibal",
+        "sending-user-avatar-url": "/avatars/original/missing.png",
+        "receiver-before-amount-atomic": 800500000000000,
+        "receiver-after-amount-atomic": 801000000000000,
+        "transferred-currency-id": 1,
+        "transferred-currency-name": "Micro Asteroid bucks",
+        "transferred-currency-icon-url": "/icons/original/missing.png",
+        "created-at": "2019-06-12T03:51:51.767-07:00",
+        "updated-at": "2019-06-12T03:51:51.767-07:00"
       }
     },
     {
-      "id": "6",
+      "id": "17",
       "type": "transfers",
       "attributes": {
-        "amount-atomic": 10000000000,
+        "amount-atomic": 500000000000,
         "receiver-day-counter": 0,
         "transfer-receiver-currency-holding-type": "PrivateCurrencyHolding",
-        "transfer-receiver-currency-holding-id": 9,
-        "sending-user-id": 4,
-        "sender-username": "ScipioAfricanus",
-        "receiver-before-amount-atomic": 0,
-        "receiver-after-amount-atomic": 10000000000,
-        "transferred-currency-id": 5,
-        "transferred-currency-name": "Freds Fishing Supplies dollars",
-        "created-at": "2018-10-03T00:19:35.177-07:00",
-        "updated-at": "2018-10-03T00:19:35.177-07:00"
+        "transfer-receiver-currency-holding-id": 14,
+        "sending-user-id": 3,
+        "sender-username": "Hannibal",
+        "sending-user-avatar-url": "/avatars/original/missing.png",
+        "receiver-before-amount-atomic": 800000000000000,
+        "receiver-after-amount-atomic": 800500000000000,
+        "transferred-currency-id": 1,
+        "transferred-currency-name": "Micro Asteroid bucks",
+        "transferred-currency-icon-url": "/icons/original/missing.png",
+        "created-at": "2019-06-12T03:47:09.010-07:00",
+        "updated-at": "2019-06-12T03:47:09.010-07:00"
       }
     },
     {
-      "id": "8",
-      "type": "issuances",
+      "id": "16",
+      "type": "transfers",
       "attributes": {
-        "amount-atomic": 100000000000,
+        "amount-atomic": 70000000000000,
         "receiving-user-id": 4,
         "receiver-username": "ScipioAfricanus",
-        "issued-currency-id": 3,
-        "issued-currency-name": "macaroon dollars",
-        "created-at": "2018-10-02T15:58:40.136-07:00",
-        "updated-at": "2018-10-02T15:58:40.136-07:00"
-      }
-    },
-    {
-      "id": "5",
-      "type": "transfers",
-      "attributes": {
-        "amount-atomic": 10000000000,
+        "receiving-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "sender-day-counter": 0,
         "receiver-day-counter": 0,
-        "transfer-receiver-currency-holding-type": "PrivateCurrencyHolding",
-        "transfer-receiver-currency-holding-id": 8,
+        "transfer-sender-currency-holding-type": "PrivateCurrencyHolding",
+        "transfer-receiver-currency-holding-type": "PublicCurrencyHolding",
+        "transfer-sender-currency-holding-id": 18,
+        "transfer-receiver-currency-holding-id": 12,
         "sending-user-id": 4,
         "sender-username": "ScipioAfricanus",
+        "sending-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "sender-before-amount-atomic": 110000000000000,
+        "sender-after-amount-atomic": 40000000000000,
         "receiver-before-amount-atomic": 0,
-        "receiver-after-amount-atomic": 10000000000,
-        "transferred-currency-id": 4,
-        "transferred-currency-name": "Pool coins",
-        "created-at": "2018-10-02T04:33:05.301-07:00",
-        "updated-at": "2018-10-02T04:33:05.301-07:00"
+        "receiver-after-amount-atomic": 70000000000000,
+        "transferred-currency-id": 10,
+        "transferred-currency-name": "Turbo points",
+        "transferred-currency-icon-url": "/icons/original/missing.png",
+        "created-at": "2019-06-12T03:41:24.043-07:00",
+        "updated-at": "2019-06-12T03:41:24.043-07:00"
       }
     },
     {
-      "id": "3",
+      "id": "15",
+      "type": "transfers",
+      "attributes": {
+        "amount-atomic": 80000000000000,
+        "receiving-user-id": 4,
+        "receiver-username": "ScipioAfricanus",
+        "receiving-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "sender-day-counter": 0,
+        "receiver-day-counter": 0,
+        "transfer-sender-currency-holding-type": "PrivateCurrencyHolding",
+        "transfer-receiver-currency-holding-type": "PublicCurrencyHolding",
+        "transfer-sender-currency-holding-id": 17,
+        "transfer-receiver-currency-holding-id": 11,
+        "sending-user-id": 4,
+        "sender-username": "ScipioAfricanus",
+        "sending-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "sender-before-amount-atomic": 210000000000000,
+        "sender-after-amount-atomic": 130000000000000,
+        "receiver-before-amount-atomic": 0,
+        "receiver-after-amount-atomic": 80000000000000,
+        "transferred-currency-id": 9,
+        "transferred-currency-name": "Alabama steak coins",
+        "transferred-currency-icon-url": "/icons/original/missing.png",
+        "created-at": "2019-06-12T03:39:39.324-07:00",
+        "updated-at": "2019-06-12T03:39:39.324-07:00"
+      }
+    },
+    {
+      "id": "18",
+      "type": "issuances",
+      "attributes": {
+        "day-counter": 0,
+        "amount-atomic": 100000000000000,
+        "receiving-user-id": 4,
+        "receiver-username": "ScipioAfricanus",
+        "receiving-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "issuance-receiver-currency-holding-id": 18,
+        "issuance-receiver-currency-holding-type": "PrivateCurrencyHolding",
+        "issued-currency-id": 10,
+        "issued-currency-name": "Turbo points",
+        "issued-currency-icon-url": "/icons/original/missing.png",
+        "issueing-user-id": 4,
+        "issuer-username": "ScipioAfricanus",
+        "issueing-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "before-amount-atomic": 10000000000000,
+        "after-amount-atomic": 110000000000000,
+        "created-at": "2019-06-12T03:38:17.848-07:00",
+        "updated-at": "2019-06-12T03:38:17.848-07:00"
+      }
+    },
+    {
+      "id": "17",
+      "type": "issuances",
+      "attributes": {
+        "day-counter": 0,
+        "amount-atomic": 100000000000000,
+        "receiving-user-id": 4,
+        "receiver-username": "ScipioAfricanus",
+        "receiving-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "issuance-receiver-currency-holding-id": 17,
+        "issuance-receiver-currency-holding-type": "PrivateCurrencyHolding",
+        "issued-currency-id": 9,
+        "issued-currency-name": "Alabama steak coins",
+        "issued-currency-icon-url": "/icons/original/missing.png",
+        "issueing-user-id": 4,
+        "issuer-username": "ScipioAfricanus",
+        "issueing-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "before-amount-atomic": 110000000000000,
+        "after-amount-atomic": 210000000000000,
+        "created-at": "2019-06-12T03:37:56.733-07:00",
+        "updated-at": "2019-06-12T03:37:56.733-07:00"
+      }
+    },
+    {
+      "id": "16",
+      "type": "issuances",
+      "attributes": {
+        "day-counter": 0,
+        "amount-atomic": 100000000000000,
+        "receiving-user-id": 4,
+        "receiver-username": "ScipioAfricanus",
+        "receiving-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "issuance-receiver-currency-holding-id": 17,
+        "issuance-receiver-currency-holding-type": "PrivateCurrencyHolding",
+        "issued-currency-id": 9,
+        "issued-currency-name": "Alabama steak coins",
+        "issued-currency-icon-url": "/icons/original/missing.png",
+        "issueing-user-id": 4,
+        "issuer-username": "ScipioAfricanus",
+        "issueing-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "before-amount-atomic": 10000000000000,
+        "after-amount-atomic": 110000000000000,
+        "created-at": "2019-06-12T03:37:52.479-07:00",
+        "updated-at": "2019-06-12T03:37:52.479-07:00"
+      }
+    },
+    {
+      "id": "15",
+      "type": "issuances",
+      "attributes": {
+        "day-counter": 0,
+        "amount-atomic": 10000000000000,
+        "receiving-user-id": 4,
+        "receiver-username": "ScipioAfricanus",
+        "receiving-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "issuance-receiver-currency-holding-id": 18,
+        "issuance-receiver-currency-holding-type": "PrivateCurrencyHolding",
+        "issued-currency-id": 10,
+        "issued-currency-name": "Turbo points",
+        "issued-currency-icon-url": "/icons/original/missing.png",
+        "issueing-user-id": 4,
+        "issuer-username": "ScipioAfricanus",
+        "issueing-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "before-amount-atomic": 0,
+        "after-amount-atomic": 10000000000000,
+        "created-at": "2019-06-12T03:24:27.676-07:00",
+        "updated-at": "2019-06-12T03:24:27.676-07:00"
+      }
+    },
+    {
+      "id": "14",
+      "type": "issuances",
+      "attributes": {
+        "day-counter": 0,
+        "amount-atomic": 10000000000000,
+        "receiving-user-id": 4,
+        "receiver-username": "ScipioAfricanus",
+        "receiving-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "issuance-receiver-currency-holding-id": 17,
+        "issuance-receiver-currency-holding-type": "PrivateCurrencyHolding",
+        "issued-currency-id": 9,
+        "issued-currency-name": "Alabama steak coins",
+        "issued-currency-icon-url": "/icons/original/missing.png",
+        "issueing-user-id": 4,
+        "issuer-username": "ScipioAfricanus",
+        "issueing-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "before-amount-atomic": 0,
+        "after-amount-atomic": 10000000000000,
+        "created-at": "2019-06-12T03:23:26.885-07:00",
+        "updated-at": "2019-06-12T03:23:26.885-07:00"
+      }
+    },
+    {
+      "id": "2",
+      "type": "micro-currency-orders",
+      "attributes": {
+        "day-counter": 0,
+        "amount-atomic": 100000000000000,
+        "store-id": 1,
+        "store-name": "Asteroid Industries",
+        "source-currency-holding-id": 14,
+        "source-currency-holding-type": "PrivateCurrencyHolding",
+        "spent-currency-id": 1,
+        "spent-currency-name": "Micro Asteroid bucks",
+        "spent-currency-icon-url": "/icons/original/missing.png",
+        "before-amount-atomic": 900000000000000,
+        "after-amount-atomic": 800000000000000,
+        "created-at": "2019-02-02T19:34:49.934-08:00",
+        "updated-at": "2019-02-02T19:34:49.934-08:00"
+      }
+    },
+    {
+      "id": "13",
       "type": "transfers",
       "attributes": {
         "amount-atomic": 50000000000,
         "receiving-user-id": 3,
         "receiver-username": "Hannibal",
-        "sender-day-counter": 0,
-        "receiver-day-counter": 0,
+        "receiving-user-avatar-url": "/avatars/original/missing.png",
+        "sender-day-counter": 3,
         "transfer-sender-currency-holding-type": "PrivateCurrencyHolding",
-        "transfer-receiver-currency-holding-type": "PublicCurrencyHolding",
-        "transfer-sender-currency-holding-id": 2,
-        "transfer-receiver-currency-holding-id": 3,
-        "sending-user-id": 3,
-        "sender-username": "Hannibal",
-        "sender-before-amount-atomic": 10000000000000,
-        "sender-after-amount-atomic": 9950000000000,
-        "receiver-before-amount-atomic": 0,
-        "receiver-after-amount-atomic": 50000000000,
-        "transferred-currency-id": 2,
-        "transferred-currency-name": "ACME bucks",
-        "created-at": "2018-09-16T13:26:52.053-07:00",
-        "updated-at": "2018-09-16T13:26:52.053-07:00"
+        "transfer-sender-currency-holding-id": 5,
+        "sender-before-amount-atomic": 9845351440488,
+        "sender-after-amount-atomic": 9795351440488,
+        "transferred-currency-id": 3,
+        "transferred-currency-name": "Moon hotel coins",
+        "transferred-currency-icon-url": "/icons/original/missing.png",
+        "created-at": "2018-12-20T06:18:37.168-08:00",
+        "updated-at": "2018-12-20T06:18:37.168-08:00"
       }
     },
     {
-      "id": "2",
+      "id": "12",
       "type": "transfers",
       "attributes": {
-        "amount-atomic": 10000000000,
-        "receiver-day-counter": 0,
-        "transfer-receiver-currency-holding-type": "PrivateCurrencyHolding",
-        "transfer-receiver-currency-holding-id": 3,
-        "sending-user-id": 4,
-        "sender-username": "ScipioAfricanus",
-        "receiver-before-amount-atomic": 10010000000000,
-        "receiver-after-amount-atomic": 10020000000000,
+        "amount-atomic": 50000000000,
+        "receiving-user-id": 3,
+        "receiver-username": "Hannibal",
+        "receiving-user-avatar-url": "/avatars/original/missing.png",
+        "sender-day-counter": 3,
+        "transfer-sender-currency-holding-type": "PrivateCurrencyHolding",
+        "transfer-sender-currency-holding-id": 5,
+        "sender-before-amount-atomic": 9895351440488,
+        "sender-after-amount-atomic": 9845351440488,
         "transferred-currency-id": 3,
-        "transferred-currency-name": "macaroon dollars",
-        "created-at": "2018-09-16T13:08:27.204-07:00",
-        "updated-at": "2018-09-16T13:08:27.204-07:00"
+        "transferred-currency-name": "Moon hotel coins",
+        "transferred-currency-icon-url": "/icons/original/missing.png",
+        "created-at": "2018-12-20T06:07:25.932-08:00",
+        "updated-at": "2018-12-20T06:07:25.932-08:00"
+      }
+    },
+    {
+      "id": "11",
+      "type": "transfers",
+      "attributes": {
+        "amount-atomic": 50000000000,
+        "receiving-user-id": 3,
+        "receiver-username": "Hannibal",
+        "receiving-user-avatar-url": "/avatars/original/missing.png",
+        "sender-day-counter": 3,
+        "transfer-sender-currency-holding-type": "PrivateCurrencyHolding",
+        "transfer-sender-currency-holding-id": 5,
+        "sender-before-amount-atomic": 9945351440488,
+        "sender-after-amount-atomic": 9895351440488,
+        "transferred-currency-id": 3,
+        "transferred-currency-name": "Moon hotel coins",
+        "transferred-currency-icon-url": "/icons/original/missing.png",
+        "created-at": "2018-12-20T06:02:42.232-08:00",
+        "updated-at": "2018-12-20T06:02:42.232-08:00"
       }
     }
   ],
   "links": {
-    "self": "https://api.mycurrency.com/users/3/recent_transactions?per_page=10",
-    "first": "https://api.mycurrency.com/users/3/recent_transactions?page=1&per_page=10",
+    "self": "https://api.mycurrency.com/users/4/recent_transactions?",
+    "first": "https://api.mycurrency.com/users/4/recent_transactions?page=1&per_page=25",
     "prev": null,
-    "next": "https://api.mycurrency.com/users/3/recent_transactions?page=2&per_page=10",
-    "last": "https://api.mycurrency.com/users/3/recent_transactions?page=2&per_page=10"
+    "next": "https://api.mycurrency.com/users/4/recent_transactions?page=2&per_page=25",
+    "last": "https://api.mycurrency.com/users/4/recent_transactions?page=2&per_page=25"
   },
   "meta": {
     "pagination": {
-      "per-page": "10",
+      "per-page": null,
       "total-pages": "2",
-      "total-count": "15"
+      "total-count": "40"
     }
   }
 }
@@ -5733,6 +6038,7 @@ id | The ID of the transfer
 amount-atomic | The amount of currency transferred, in atomic units (each whole unit is composed of 10^10 atomic units)
 receiving-user-id | The ID of the transfer receiver, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
 receiver-username | The username of the transfer receiver, only shown if the owner of the currency holding that the transfer debited from is the logged-in user 
+receiving-user-avatar-url | The URL of the avatar of the transfer receiver, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
 sender-day-counter | The day counter of the sending currency holding when it was debited by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
 receiver-day-counter | The day counter of the receiving currency holding when it was credited by the transfer, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
 transfer-sender-currency-holding-type | Whether the currency holding that the transfer debited from is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding", only shown if the owner of the currency holding that the transfer debited from is the logged-in user
@@ -5741,12 +6047,14 @@ transfer-receiver-currency-holding-type | Whether the currency holding that the 
 transfer-receiver-currency-holding-id | The ID of the public or private currency holding that the transfer credited to, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
 sending-user-id | The ID of the transfer sender, only shown if the owner of the currency holding that the transfer credited to is the logged-in user 
 sender-username | The username of the transfer sender, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
+sending_user_avatar_url | The URL of the avatar of the transfer sender, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
 sender-before-amount-atomic | The balance, in atomic units, of the sending currency holding before it was debited from by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
 sender-after-amount-atomic | The balance, in atomic units, of the sending currency holding after it was debited from by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
 receiver-before-amount-atomic | The balance, in atomic units, of the receiving currency holding before it was credited to by the transfer, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
 receiver-after-amount-atomic | The balance, in atomic units, of the receiving currency holding after it was credited to by the transfer, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
 transferred-currency-id | The ID of the transferred currency
 transferred-currency-name | The name of the transferred currency
+transferred_currency_icon_url | The URL of the icon of the transferred currency
 created-at | The time and date when the transfer was created
 updated-at | The time and date when the transfer was last updated
 
@@ -5759,12 +6067,15 @@ day-counter | The day counter of the currency holding when it was credited by th
 amount-atomic | The amount of currency issued, in atomic units (each whole unit is composed of 10^10 atomic units)
 receiving-user-id | The ID of the issuance receiver, only shown if the issuer is the logged-in user
 receiver-username | The username of the issuance sender, only shown if the issuer is the logged-in user 
+receiving-user-avatar-url | The URL of the avatar of the issuance receiver, only shown if the issuer is the logged-in user
 issuance-receiver-currency-holding-id | The ID of the public or private currency holding that the issuance credited to, only shown if the issuance receiver is the logged-in user
 issuance-receiver-currency-holding-type | Whether the currency holding that the issuance credited to is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding", only shown if the issuance receiver is the logged-in user
 issued-currency-id | The ID of the issued currency
 issued-currency-name | The name of the issued currency
+issued_currency_icon_url | The URL of the icon of the issued currency
 issueing-user-id | The ID of the issueing user, only shown if the issuance receiver is the logged-in user 
 issuer-username | The username of the issueing user, only shown if the issuance receiver is the logged-in user
+issueing_user_avatar_url | The URL of the avatar of the issueing user, only shown if the issuance receiver is the logged-in user
 before-amount-atomic | The balance, in atomic units, of the currency holding before it was credited by the issuance, only shown if the issuance receiver is the logged-in user
 after-amount-atomic | The balance, in atomic units, of the currency holding after it was credited by the issuance, only shown if the issuance receiver is the logged-in user
 created-at | The time and date when the transfer was created
@@ -5781,8 +6092,9 @@ store-id | The ID of the store that the micro currency order was spent at
 store-name | The name of the store that the micro currency order was spent at
 source-currency-holding-id | The ID of the public or private currency holding that the micro currency order spent from
 source-currency-holding-type | Whether the currency holding that the micro currency order spent from is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding"
-spent-currency-id | The ID of the issued currency
-spent-currency-name | The name of the issued currency
+spent-currency-id | The ID of the spent currency
+spent-currency-name | The name of the spent currency
+spent_currency_icon_url | The URL of the icon of the spent currency
 before-amount-atomic | The balance, in atomic units, of the currency holding before it was debited by the micro currency order
 after-amount-atomic | The balance, in atomic units, of the currency holding after it was debited by the micro currency order
 created-at | The time and date when the micro currency order was created
