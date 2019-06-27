@@ -5372,6 +5372,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_private_currency_holdings/9/
         "receiver-day-counter": 0,
         "sending-user-id": 4,
         "sender-username": "ScipioAfricanus",
+        "sending-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "receiver-before-amount-atomic": 0,
         "receiver-after-amount-atomic": 10000000000,
         "created-at": "2018-10-03T00:19:35.177-07:00",
@@ -5386,6 +5387,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_private_currency_holdings/9/
         "receiver-day-counter": 0,
         "sending-user-id": 4,
         "sender-username": "ScipioAfricanus",
+        "sending-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "receiver-before-amount-atomic": 10000000000,
         "receiver-after-amount-atomic": 510000000000,
         "created-at": "2018-10-03T00:20:58.124-07:00",
@@ -5472,8 +5474,10 @@ sender-day-counter | The day counter of the sending currency holding when it was
 receiver-day-counter | The day counter of the receiving currency holding when it was credited by the transfer, only shown if the owner of the public or private currency holding is the receiving user
 sending-user-id | The ID of the transfer sender, only shown if the owner of the private currency holding is the transfer receiver 
 sender-username | The username of the transfer sender, only shown if the owner of the private currency holding is the transfer receiver
+sending-user-avatar-url | The URL of the avatar of the transfer sender, only shown if the owner of the private currency holding is the transfer receiver
 receiving-user-id | The ID of the transfer receiver, only shown if owner of the private currency holding is the transfer sender
 receiving-username | The username of the transfer sender, only shown if the owner of the private currency holding is the transfer sender 
+receiving-user-avatar-url | The URL of the avatar of the transfer receiver, only shown if the owner of the private currency holding is the transfer sender 
 sender-before-amount-atomic | The balance, in atomic units, of the sending currency holding before it was debited by the transfer, only shown if the logged-in user that owns the private currency holding is the transfer sender
 sender-after-amount-atomic | The balance, in atomic units, of the sending currency holding after it was debited by the transfer, only shown if the logged-in user that owns the private currency holding is the transfer sender
 receiver-before-amount-atomic | The balance, in atomic units, of the receiving currency holding before it was credited by the transfer, only shown if the logged-in user that owns the private currency holding is the transfer receiver
@@ -5489,6 +5493,7 @@ id | The ID of the issuance
 amount-atomic | The amount of currency issued, in atomic units (each whole unit is composed of 10^10 atomic units)
 issueing-user-id | The ID of the issueing user
 issuer-username | The username of the issueing user
+issuer-user-avatar-url | The URL of the avatar of the issueing user
 before-amount-atomic | The balance, in atomic units, of the private currency holding before it was credited by the issuance
 after-amount-atomic | The balance, in atomic units, of the private currency holding after it was credited by the issuance
 day-counter | The day counter of the private currency holding when it was credited by the issuance
