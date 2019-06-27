@@ -696,37 +696,37 @@ curl 'https://api.mycurrency.com/authorized_currencies/4' \
 ```json
 {
   "data": {
-    "id": "4",
+    "id": "10",
     "type": "currencies",
     "attributes": {
-      "issuer-id": 2,
-      "issuer-user-id": 2,
-      "issuer-user-name": "spiderman",
-      "issuer-user-avatar-url": "/avatars/original/missing.png",
-      "burn-rate": 420,
-      "daily-burn-rate": "0.000117548",
-      "store-count": 0,
+      "issuer-id": 4,
+      "issuer-user-id": 4,
+      "issuer-user-name": "ScipioAfricanus",
+      "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+      "burn-rate": 600,
+      "daily-burn-rate": "0.000169508",
+      "store-count": 1,
       "listing-count": 0,
-      "product-count": 0,
-      "name": "spiderman pizza dollars",
-      "description": "loyalty points for spiderman pizza",
-      "created-at": "2018-11-05T11:10:12.729-08:00",
-      "updated-at": "2018-11-05T11:10:12.729-08:00",
+      "product-count": 1,
+      "name": "Turbo points",
+      "description": "use to buy all sorts of turbo engines",
+      "created-at": "2019-06-12T03:24:27.658-07:00",
+      "updated-at": "2019-06-12T03:24:27.658-07:00",
       "get-icon-url": "/icons/original/missing.png",
       "number-of-reviews": 0,
       "average-score": null,
-      "private-amount-atomic": 10496473974509,
-      "public-amount-atomic": 500000000000,
-      "total-amount-atomic": 10996473974509,
+      "private-amount-atomic": 40000000000000,
+      "public-amount-atomic": 62000000000000,
+      "total-amount-atomic": 102000000000000,
       "number-of-burn-rate-changes": 0,
-      "number-public-currency-holdings": 3,
-      "next-daily-burn-amount": "1292613522.755583932"
+      "number-public-currency-holdings": 2,
+      "next-daily-burn-amount": "17289816000.0",
       "private-currency-holding-id": 18,
       "public-currency-holding-id": 12,
-      "timedate-of-last-private-tx": "Jun 12, 2019",
-      "amount-of-last-private-tx": "-7000",
-      "timedate-of-last-public-tx": "Jun 17, 2019",
-      "amount-of-last-public-tx": "+200
+      "timedate-of-last-private-tx": "2019-06-12T03:41:24-07:00",
+      "amount-of-last-private-tx": -70000000000000,
+      "timedate-of-last-public-tx": "2019-06-17T10:06:45-07:00",
+      "amount-of-last-public-tx": 2000000000000
     }
   }
 }
@@ -771,10 +771,10 @@ number-of-public-currency-holdings | The number of public holdings of the curren
 next-daily-burn-amount | The total amount of units in the logged-in user's public and private currency holdings of the specified currency that will be burned over the next day, in atomic units (each whole unit is composed of 10^10 atomic units) 
 private-currency-holding-id | The ID of the logged-in user's private holding of the specified currency
 public-currency-holding-id | The ID of the logged-in user's public holding of the specified currency
-timedate-of-last-private-tx | The date when the last transaction in the logged-in user's private holding of the specified currency took place
-amount-of-last-private-tx | The amount, in whole units, that was transferred in the last transaction to/from the logged-in user's private holding of the specified currency
-timedate-of-last-public-tx | The date when the last transaction in the logged-in user's public holding of the specified currency took place
-amount-of-last-public-tx | The amount, in whole units, that was transferred in the last transaction to/from the logged-in user's public holding of the specified currency
+timedate-of-last-private-tx | The date in ISO format when the last transaction in the logged-in user's private holding of the specified currency took place
+amount-of-last-private-tx | The amount, in atomic units, that was transferred in the last transaction to/from the logged-in user's private holding of the specified currency
+timedate-of-last-public-tx | The date in ISO format when the last transaction in the logged-in user's public holding of the specified currency took place
+amount-of-last-public-tx | The amount, in atomic units, that was transferred in the last transaction to/from the logged-in user's public holding of the specified currency
 
 ## List Currencies
 
