@@ -8714,7 +8714,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tbody></table>
 <h2 id='list-user-39-s-recent-transactions'>List User&#39;s Recent Transactions</h2>
 <p>This endpoint retrieves the 100 most recently created issuances, transfers, and outgoing micro currency orders associated with a user, sorted by created_at date, starting from the most recent</p>
-<pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/users/3/recent_transactions?per_page=10'</span> <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/users/4/recent_transactions?per_page=10'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span>
 </code></pre>
@@ -8724,182 +8724,487 @@ Authentication: the request requires the OAuth access-token associated with the 
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"micro-currency-orders"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"35"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"issuances"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"source-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"source-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"spent-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"spent-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies dollars"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">310000000000</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">210000000000</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T01:58:03.223-07:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T01:58:03.223-07:00"</span><span class="w">
+        </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/004/original/1.jpg?1559736060"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuance-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuance-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"solar electricity zaps"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issueing-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issueing-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/004/original/1.jpg?1559736060"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">4884625096360</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">5884625096360</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-25T07:15:10.739-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-25T07:15:10.739-07:00"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"micro-currency-orders"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfers"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"source-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"source-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"spent-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"spent-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies dollars"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">410000000000</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">310000000000</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:43:31.756-07:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:43:31.756-07:00"</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/avatars/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-sender-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PublicCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-sender-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">64000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">62000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Turbo points"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-17T10:06:45.138-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-17T10:06:45.138-07:00"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"micro-currency-orders"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfers"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"source-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"source-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"spent-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"spent-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies dollars"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">510000000000</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">410000000000</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:39:37.860-07:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:39:37.860-07:00"</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AriaStark"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/018/original/avatar.jpg?1561108444"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-sender-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PublicCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-sender-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">66000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">64000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Turbo points"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-17T10:06:16.148-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-17T10:06:16.148-07:00"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfers"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EddardStark"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/017/original/avatar.jpg?1560946499"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-sender-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PublicCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-sender-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">68000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">66000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Turbo points"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-17T10:05:59.479-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-17T10:05:59.479-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfers"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BranStark"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/avatars/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-sender-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PublicCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-sender-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">70000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">68000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Turbo points"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-17T02:44:09.676-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-17T02:44:09.676-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfers"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">500000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/004/original/1.jpg?1559736060"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-sender-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PublicCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-sender-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sending-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sending-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/004/original/1.jpg?1559736060"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">801000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">800500000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">500000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Micro Asteroid bucks"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-12T03:56:21.311-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-12T03:56:21.311-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfers"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">500000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/004/original/1.jpg?1559736060"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-sender-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PublicCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-sender-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sending-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sending-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/004/original/1.jpg?1559736060"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10996473974509</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10496473974509</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">500000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spiderman pizza dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-12T03:55:15.779-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-12T03:55:15.779-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfers"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sending-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sending-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/avatars/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">9996473974509</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10996473974509</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spiderman pizza dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-12T03:53:10.039-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-12T03:53:10.039-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"19"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfers"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">500000000000</span><span class="p">,</span><span class="w">
         </span><span class="s2">"receiver-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"transfer-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sending-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sender-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"receiver-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"receiver-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">510000000000</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"transferred-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"transferred-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies dollars"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:20:58.124-07:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:20:58.124-07:00"</span><span class="w">
+        </span><span class="s2">"transfer-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sending-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sending-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/avatars/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">800500000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">801000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Micro Asteroid bucks"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-12T03:51:51.767-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-12T03:51:51.767-07:00"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfers"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">500000000000</span><span class="p">,</span><span class="w">
         </span><span class="s2">"receiver-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"transfer-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sending-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sender-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"receiver-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"receiver-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"transferred-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"transferred-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies dollars"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:19:35.177-07:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:19:35.177-07:00"</span><span class="w">
+        </span><span class="s2">"transfer-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sending-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sending-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/avatars/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">800000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">800500000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Micro Asteroid bucks"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-12T03:47:09.010-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-12T03:47:09.010-07:00"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"issuances"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfers"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">70000000000000</span><span class="p">,</span><span class="w">
         </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
         </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"issued-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"issued-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"macaroon dollars"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-02T15:58:40.136-07:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-02T15:58:40.136-07:00"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfers"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/004/original/1.jpg?1559736060"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"receiver-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"transfer-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"transfer-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-sender-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PublicCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-sender-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
         </span><span class="s2">"sending-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
         </span><span class="s2">"sender-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sending-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/004/original/1.jpg?1559736060"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">110000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">40000000000000</span><span class="p">,</span><span class="w">
         </span><span class="s2">"receiver-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"receiver-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"transferred-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"transferred-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pool coins"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-02T04:33:05.301-07:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-02T04:33:05.301-07:00"</span><span class="w">
+        </span><span class="s2">"receiver-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">70000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Turbo points"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-12T03:41:24.043-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-12T03:41:24.043-07:00"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfers"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">80000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/004/original/1.jpg?1559736060"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-sender-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PublicCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-sender-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sending-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sending-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/004/original/1.jpg?1559736060"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">210000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">130000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">80000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alabama steak coins"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-12T03:39:39.324-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-12T03:39:39.324-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"issuances"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/004/original/1.jpg?1559736060"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuance-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuance-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Turbo points"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issueing-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issueing-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/004/original/1.jpg?1559736060"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">110000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-12T03:38:17.848-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-12T03:38:17.848-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"issuances"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/004/original/1.jpg?1559736060"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuance-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuance-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alabama steak coins"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issueing-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issueing-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/004/original/1.jpg?1559736060"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">110000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">210000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-12T03:37:56.733-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-12T03:37:56.733-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"issuances"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/004/original/1.jpg?1559736060"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuance-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuance-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alabama steak coins"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issueing-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issueing-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/004/original/1.jpg?1559736060"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">110000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-12T03:37:52.479-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-12T03:37:52.479-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"issuances"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/004/original/1.jpg?1559736060"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuance-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuance-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Turbo points"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issueing-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issueing-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/004/original/1.jpg?1559736060"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-12T03:24:27.676-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-12T03:24:27.676-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"issuances"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/004/original/1.jpg?1559736060"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuance-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuance-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alabama steak coins"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issueing-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issueing-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/004/original/1.jpg?1559736060"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-12T03:23:26.885-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-12T03:23:26.885-07:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"micro-currency-orders"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Asteroid Industries"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"source-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"source-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"spent-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"spent-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Micro Asteroid bucks"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"spent-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">900000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">800000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-02-02T19:34:49.934-08:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-02-02T19:34:49.934-08:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfers"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000000</span><span class="p">,</span><span class="w">
         </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
         </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sender-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"receiver-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/avatars/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transfer-sender-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"transfer-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PublicCurrencyHolding"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"transfer-sender-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"transfer-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sending-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sender-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sender-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000000</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sender-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">9950000000000</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"receiver-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"receiver-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000000</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"transferred-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"transferred-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME bucks"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-16T13:26:52.053-07:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-16T13:26:52.053-07:00"</span><span class="w">
+        </span><span class="s2">"transfer-sender-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">9845351440488</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">9795351440488</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Moon hotel coins"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-20T06:18:37.168-08:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-20T06:18:37.168-08:00"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfers"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"receiver-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"transfer-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"transfer-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sending-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sender-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"receiver-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10010000000000</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"receiver-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10020000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/avatars/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-sender-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-sender-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">9895351440488</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">9845351440488</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transferred-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"transferred-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"macaroon dollars"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-16T13:08:27.204-07:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-16T13:08:27.204-07:00"</span><span class="w">
+        </span><span class="s2">"transferred-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Moon hotel coins"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-20T06:07:25.932-08:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-20T06:07:25.932-08:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfers"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/avatars/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-sender-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transfer-sender-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">9945351440488</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">9895351440488</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Moon hotel coins"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transferred-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-20T06:02:42.232-08:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-20T06:02:42.232-08:00"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/users/3/recent_transactions?per_page=10"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/users/3/recent_transactions?page=1&amp;per_page=10"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/users/4/recent_transactions?"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/users/4/recent_transactions?page=1&amp;per_page=25"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"prev"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/users/3/recent_transactions?page=2&amp;per_page=10"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/users/3/recent_transactions?page=2&amp;per_page=10"</span><span class="w">
+    </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/users/4/recent_transactions?page=2&amp;per_page=25"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/users/4/recent_transactions?page=2&amp;per_page=25"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"per-page"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"per-page"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="s2">"total-pages"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"total-count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15"</span><span class="w">
+      </span><span class="s2">"total-count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -8931,6 +9236,10 @@ Authentication: the request requires the OAuth access-token associated with the 
 <tr>
 <td>receiver-username</td>
 <td>The username of the transfer receiver, only shown if the owner of the currency holding that the transfer debited from is the logged-in user</td>
+</tr>
+<tr>
+<td>receiving-user-avatar-url</td>
+<td>The URL of the avatar of the transfer receiver, only shown if the owner of the currency holding that the transfer debited from is the logged-in user</td>
 </tr>
 <tr>
 <td>sender-day-counter</td>
@@ -8965,6 +9274,10 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The username of the transfer sender, only shown if the owner of the currency holding that the transfer credited to is the logged-in user</td>
 </tr>
 <tr>
+<td>sending_user_avatar_url</td>
+<td>The URL of the avatar of the transfer sender, only shown if the owner of the currency holding that the transfer credited to is the logged-in user</td>
+</tr>
+<tr>
 <td>sender-before-amount-atomic</td>
 <td>The balance, in atomic units, of the sending currency holding before it was debited from by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user</td>
 </tr>
@@ -8987,6 +9300,10 @@ Authentication: the request requires the OAuth access-token associated with the 
 <tr>
 <td>transferred-currency-name</td>
 <td>The name of the transferred currency</td>
+</tr>
+<tr>
+<td>transferred_currency_icon_url</td>
+<td>The URL of the icon of the transferred currency</td>
 </tr>
 <tr>
 <td>created-at</td>
@@ -9025,6 +9342,10 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The username of the issuance sender, only shown if the issuer is the logged-in user</td>
 </tr>
 <tr>
+<td>receiving-user-avatar-url</td>
+<td>The URL of the avatar of the issuance receiver, only shown if the issuer is the logged-in user</td>
+</tr>
+<tr>
 <td>issuance-receiver-currency-holding-id</td>
 <td>The ID of the public or private currency holding that the issuance credited to, only shown if the issuance receiver is the logged-in user</td>
 </tr>
@@ -9041,12 +9362,20 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The name of the issued currency</td>
 </tr>
 <tr>
+<td>issued_currency_icon_url</td>
+<td>The URL of the icon of the issued currency</td>
+</tr>
+<tr>
 <td>issueing-user-id</td>
 <td>The ID of the issueing user, only shown if the issuance receiver is the logged-in user</td>
 </tr>
 <tr>
 <td>issuer-username</td>
 <td>The username of the issueing user, only shown if the issuance receiver is the logged-in user</td>
+</tr>
+<tr>
+<td>issueing_user_avatar_url</td>
+<td>The URL of the avatar of the issueing user, only shown if the issuance receiver is the logged-in user</td>
 </tr>
 <tr>
 <td>before-amount-atomic</td>
@@ -9102,11 +9431,15 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 <tr>
 <td>spent-currency-id</td>
-<td>The ID of the issued currency</td>
+<td>The ID of the spent currency</td>
 </tr>
 <tr>
 <td>spent-currency-name</td>
-<td>The name of the issued currency</td>
+<td>The name of the spent currency</td>
+</tr>
+<tr>
+<td>spent_currency_icon_url</td>
+<td>The URL of the icon of the spent currency</td>
 </tr>
 <tr>
 <td>before-amount-atomic</td>
