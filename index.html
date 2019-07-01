@@ -9509,8 +9509,10 @@ Authentication: the request requires the OAuth access-token associated with the 
       </span><span class="s2">"issuer-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
       </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"receiving-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/avatars/original/missing.png"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"issued-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="s2">"issued-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm dollars"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issued-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/001/original/currency.jpg?1561201201"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T01:17:31.260-07:00"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T01:17:31.260-07:00"</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -9588,12 +9590,20 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The username of the issuance sender, only shown if the issuer is the logged-in user</td>
 </tr>
 <tr>
+<td>receiver-user-avatar-url</td>
+<td>The URL of the avatar of the issuer, only shown if the issuer is the logged-in user</td>
+</tr>
+<tr>
 <td>issued-currency-id</td>
 <td>The ID of the issued currency</td>
 </tr>
 <tr>
 <td>issued-currency-name</td>
 <td>The name of the issued currency</td>
+</tr>
+<tr>
+<td>issued-currency-icon-url</td>
+<td>The URL of the icon of the issued currency</td>
 </tr>
 <tr>
 <td>created-at</td>
@@ -9630,8 +9640,10 @@ Authentication: the request requires the OAuth access-token associated with the 
         </span><span class="s2">"issuer-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
         </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/avatars/original/missing.png"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"issued-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"issued-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/001/original/currency.jpg?1561201201"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T01:17:31.260-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T01:17:31.260-07:00"</span><span class="w">
       </span><span class="p">}</span><span class="w">
@@ -9644,19 +9656,21 @@ Authentication: the request requires the OAuth access-token associated with the 
         </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000000</span><span class="p">,</span><span class="w">
         </span><span class="s2">"is-genesis-issuance"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"issuance-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"issuance-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuance-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"burnrate-period-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"burnrate-period-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000000</span><span class="p">,</span><span class="w">
         </span><span class="s2">"issueing-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
         </span><span class="s2">"issuer-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
         </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/avatars/original/missing.png"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"issued-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"issued-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME bucks"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-19T14:11:16.951-07:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-19T14:11:16.951-07:00"</span><span class="w">
+        </span><span class="s2">"issued-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/currency.jpg?1561020503"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T01:17:31.260-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T01:17:31.260-07:00"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -9676,8 +9690,10 @@ Authentication: the request requires the OAuth access-token associated with the 
         </span><span class="s2">"issuer-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
         </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/avatars/original/missing.png"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"issued-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
         </span><span class="s2">"issued-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"macaroon dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/003/original/currency.jpg?1561113125"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-19T14:24:09.642-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-19T14:24:09.642-07:00"</span><span class="w">
       </span><span class="p">}</span><span class="w">
@@ -9792,12 +9808,20 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The username of the issuance sender, only shown if the issuer is the logged-in user</td>
 </tr>
 <tr>
+<td>receiver-user-avatar-url</td>
+<td>The URL of the avatar of the issuer, only shown if the issuer is the logged-in user</td>
+</tr>
+<tr>
 <td>issued-currency-id</td>
 <td>The ID of the issued currency</td>
 </tr>
 <tr>
 <td>issued-currency-name</td>
 <td>The name of the issued currency</td>
+</tr>
+<tr>
+<td>issued-currency-icon-url</td>
+<td>The URL of the icon of the issued currency</td>
 </tr>
 <tr>
 <td>created-at</td>
@@ -9808,7 +9832,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The time and date when the transfer was last updated</td>
 </tr>
 </tbody></table>
-<h2 id='list-user-39-s-issuances-of-particular-currency'>List User&#39;s Issuances of Particular Currency</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/currencies/3/issuances?issueing_user_id=3'</span> <span class="se">\</span>
+<h2 id='list-user-39-s-issuances-of-particular-currency'>List User&#39;s Issuances of Particular Currency</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/currencies/3/issuances?issueing_user_id=4'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span>
 </code></pre>
@@ -9818,73 +9842,68 @@ Authentication: the request requires the OAuth access-token associated with the 
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"issuances"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"proposed-issuance-id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000000</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"is-genesis-issuance"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"issuance-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"issuance-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"burnrate-period-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000000</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"issueing-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"issuer-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"issued-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"issued-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"macaroon dollars"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-19T14:24:09.642-07:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-19T14:24:09.642-07:00"</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"issuances"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"proposed-issuance-id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is-genesis-issuance"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuance-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuance-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"burnrate-period-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issueing-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/004/original/1.jpg?1559736060"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Moon hotel coins"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-05T11:02:43.272-08:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-05T11:02:43.272-08:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"issuances"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"proposed-issuance-id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is-genesis-issuance"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuance-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuance-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"burnrate-period-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">20000000000000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issueing-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issuer-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"receiving-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/004/original/1.jpg?1559736060"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Moon hotel coins"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-05T11:03:46.101-08:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-05T11:03:46.101-08:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"issuances"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"proposed-issuance-id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"is-genesis-issuance"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"issuance-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"issued-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"issued-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"macaroon dollars"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-15T20:37:38.324-07:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-15T20:37:38.324-07:00"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"issuances"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"proposed-issuance-id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"is-genesis-issuance"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"issuance-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"issued-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"issued-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"macaroon dollars"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-02T15:58:40.136-07:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-02T15:58:40.136-07:00"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.mycurrency.com/currencies/3/issuances?issueing_user_id=3"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.mycurrency.com/currencies/3/issuances?issueing_user_id=3&amp;page=1&amp;per_page=25"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/currencies/3/issuances?issueing_user_id=4"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/currencies/3/issuances?issueing_user_id=4&amp;page=1&amp;per_page=25"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"prev"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.mycurrency.com/currencies/3/issuances?issueing_user_id=3&amp;page=1&amp;per_page=25"</span><span class="w">
+    </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/currencies/3/issuances?issueing_user_id=4&amp;page=1&amp;per_page=25"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"per-page"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="s2">"total-pages"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"total-count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="w">
+      </span><span class="s2">"total-count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -9988,12 +10007,20 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The username of the issuance sender, only shown if the issuer is the logged-in user</td>
 </tr>
 <tr>
+<td>receiver-user-avatar-url</td>
+<td>The URL of the avatar of the issuer, only shown if the issuer is the logged-in user</td>
+</tr>
+<tr>
 <td>issued-currency-id</td>
 <td>The ID of the issued currency</td>
 </tr>
 <tr>
 <td>issued-currency-name</td>
 <td>The name of the issued currency</td>
+</tr>
+<tr>
+<td>issued-currency-icon-url</td>
+<td>The URL of the icon of the issued currency</td>
 </tr>
 <tr>
 <td>created-at</td>
@@ -10018,15 +10045,24 @@ Authentication: the request requires the OAuth access-token associated with the 
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"issuances"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"proposed-issuance-id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000000</span><span class="p">,</span><span class="w">
       </span><span class="s2">"is-genesis-issuance"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
       </span><span class="s2">"issuance-receiver-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issuance-receiver-currency-holding-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"burnrate-period-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"before-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">20000000000000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issueing-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issuer-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
       </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ScipioAfricanus"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"receiving-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/004/original/1.jpg?1559736060"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"issued-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"issued-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"macaroon dollars"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-10T04:33:15.801-07:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-10T04:33:15.801-07:00"</span><span class="w">
+      </span><span class="s2">"issued-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Moon hotel coins"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"issued-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-05T11:03:46.101-08:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-05T11:03:46.101-08:00"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -10136,12 +10172,20 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The username of the issuance sender, only shown if the issuer is the logged-in user</td>
 </tr>
 <tr>
+<td>receiver-user-avatar-url</td>
+<td>The URL of the avatar of the issuer, only shown if the issuer is the logged-in user</td>
+</tr>
+<tr>
 <td>issued-currency-id</td>
 <td>The ID of the issued currency</td>
 </tr>
 <tr>
 <td>issued-currency-name</td>
 <td>The name of the issued currency</td>
+</tr>
+<tr>
+<td>issued-currency-icon-url</td>
+<td>The URL of the icon of the issued currency</td>
 </tr>
 <tr>
 <td>created-at</td>
