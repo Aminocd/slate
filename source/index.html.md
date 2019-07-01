@@ -723,9 +723,9 @@ curl 'https://api.mycurrency.com/authorized_currencies/4' \
       "next-daily-burn-amount": "17289816000.0",
       "private-currency-holding-id": 18,
       "public-currency-holding-id": 12,
-      "timedate-of-last-private-tx": "2019-06-12T10:41:24Z",
+      "timedate-of-last-private-tx": "2019-06-12T10:41:24-07:00",
       "amount-of-last-private-tx": -70000000000000,
-      "timedate-of-last-public-tx": "2019-06-17T17:06:45Z",
+      "timedate-of-last-public-tx": "2019-06-17T17:06:45-07:00",
       "amount-of-last-public-tx": 2000000000000
     }
   }
@@ -771,9 +771,9 @@ number-of-public-currency-holdings | The number of public holdings of the curren
 next-daily-burn-amount | The total amount of units in the logged-in user's public and private currency holdings of the specified currency that will be burned over the next day, in atomic units (each whole unit is composed of 10^10 atomic units) 
 private-currency-holding-id | The ID of the logged-in user's private holding of the specified currency
 public-currency-holding-id | The ID of the logged-in user's public holding of the specified currency
-timedate-of-last-private-tx | The date when the last transaction in the logged-in user's private holding of the specified currency took place, in ISO format and in the UTC time zone
+timedate-of-last-private-tx | The date when the last transaction in the logged-in user's private holding of the specified currency took place
 amount-of-last-private-tx | The amount, in atomic units, that was transferred in the last transaction to/from the logged-in user's private holding of the specified currency
-timedate-of-last-public-tx | The date when the last transaction in the logged-in user's public holding of the specified currency took place, in ISO format and in the UTC time zone
+timedate-of-last-public-tx | The date when the last transaction in the logged-in user's public holding of the specified currency took place
 amount-of-last-public-tx | The amount, in atomic units, that was transferred in the last transaction to/from the logged-in user's public holding of the specified currency
 
 ## List Currencies
