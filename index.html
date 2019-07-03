@@ -10211,6 +10211,7 @@ Authentication: the request requires the OAuth access-token associated with the 
       </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">500000000000</span><span class="p">,</span><span class="w">
       </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
       </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"receiving-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/003/original/avatar.jpg?1561125132"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"sender-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">36</span><span class="p">,</span><span class="w">
       </span><span class="s2">"sender-burnrate-period-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
       </span><span class="s2">"transfer-sender-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
@@ -10220,6 +10221,7 @@ Authentication: the request requires the OAuth access-token associated with the 
       </span><span class="s2">"sender-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">9418678637475</span><span class="p">,</span><span class="w">
       </span><span class="s2">"transferred-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
       </span><span class="s2">"transferred-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies dollars"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"transferred-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/005/original/currency.jpg?1550842432"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:20:58.124-07:00"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T00:20:58.124-07:00"</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -10255,6 +10257,10 @@ Authentication: the request requires the OAuth access-token associated with the 
 <tr>
 <td>receiver-username</td>
 <td>The username of the transfer receiver, only shown if the owner of the currency holding that the transfer debited from is the logged-in user</td>
+</tr>
+<tr>
+<td>receiver-user-avatar</td>
+<td>The URL of the avatar of the transfer receiver, only shown if the owner of the currency holding that the transfer debited from is the logged-in user</td>
 </tr>
 <tr>
 <td>sender-day-counter</td>
@@ -10297,6 +10303,10 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The username of the transfer sender, only shown if the owner of the currency holding that the transfer credited to is the logged-in user</td>
 </tr>
 <tr>
+<td>sender-user-avatar</td>
+<td>The URL of the avatar of the transfer receiver, only shown if the owner of the currency holding that the transfer credited to is the logged-in user</td>
+</tr>
+<tr>
 <td>sender-before-amount-atomic</td>
 <td>The balance, in atomic units, of the sending currency holding before it was debited from by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user</td>
 </tr>
@@ -10319,6 +10329,10 @@ Authentication: the request requires the OAuth access-token associated with the 
 <tr>
 <td>transferred-currency-name</td>
 <td>The name of the transferred currency</td>
+</tr>
+<tr>
+<td>transferred-currency-icon-url</td>
+<td>The URL of the icon of the transferred currency</td>
 </tr>
 <tr>
 <td>created-at</td>
@@ -10345,6 +10359,7 @@ Authentication: the request requires the OAuth access-token associated with the 
       </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000000</span><span class="p">,</span><span class="w">
       </span><span class="s2">"receiving-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
       </span><span class="s2">"receiver-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"receiving-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/003/original/avatar.jpg?1561125132"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"sender-day-counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w">
       </span><span class="s2">"sender-burnrate-period-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
       </span><span class="s2">"transfer-sender-currency-holding-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrivateCurrencyHolding"</span><span class="p">,</span><span class="w">
@@ -10354,6 +10369,7 @@ Authentication: the request requires the OAuth access-token associated with the 
       </span><span class="s2">"sender-after-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">9385579089463</span><span class="p">,</span><span class="w">
       </span><span class="s2">"transferred-currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
       </span><span class="s2">"transferred-currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies dollars"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"transferred-currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/005/original/currency.jpg?1550842432"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-10T16:57:37.062-07:00"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-10T16:57:37.062-07:00"</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -10437,12 +10453,24 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The username of the transfer receiver, only shown if the owner of the currency holding that the transfer debited from is the logged-in user</td>
 </tr>
 <tr>
+<td>receiver-user-avatar</td>
+<td>The URL of the avatar of the transfer receiver, only shown if the owner of the currency holding that the transfer debited from is the logged-in user</td>
+</tr>
+<tr>
 <td>sender-day-counter</td>
 <td>The day counter of the sending currency holding when it was debited by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user</td>
 </tr>
 <tr>
 <td>receiver-day-counter</td>
 <td>The day counter of the receiving currency holding when it was credited by the transfer, only shown if the owner of the currency holding that the transfer credited to is the logged-in user</td>
+</tr>
+<tr>
+<td>sender-burnrate-period-id</td>
+<td>The ID of the burnrate period of the sending currency holding when it was debited by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user</td>
+</tr>
+<tr>
+<td>receiver-burnrate-period-id</td>
+<td>The ID of the burnrate period of the receiving currency holding when it was credited by the transfer, only shown if the owner of the currency holding that the transfer credited to is the logged-in user</td>
 </tr>
 <tr>
 <td>transfer-sender-currency-holding-type</td>
@@ -10469,6 +10497,10 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The username of the transfer sender, only shown if the owner of the currency holding that the transfer credited to is the logged-in user</td>
 </tr>
 <tr>
+<td>sender-user-avatar</td>
+<td>The URL of the avatar of the transfer receiver, only shown if the owner of the currency holding that the transfer credited to is the logged-in user</td>
+</tr>
+<tr>
 <td>sender-before-amount-atomic</td>
 <td>The balance, in atomic units, of the sending currency holding before it was debited from by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user</td>
 </tr>
@@ -10491,6 +10523,10 @@ Authentication: the request requires the OAuth access-token associated with the 
 <tr>
 <td>transferred-currency-name</td>
 <td>The name of the transferred currency</td>
+</tr>
+<tr>
+<td>transferred-currency-icon-url</td>
+<td>The URL of the icon of the transferred currency</td>
 </tr>
 <tr>
 <td>created-at</td>
