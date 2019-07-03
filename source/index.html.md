@@ -6599,7 +6599,7 @@ id | The ID of the transfer
 amount-atomic | The amount of currency transferred, in atomic units (each whole unit is composed of 10^10 atomic units)
 receiving-user-id | The ID of the transfer receiver, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
 receiver-username | The username of the transfer receiver, only shown if the owner of the currency holding that the transfer debited from is the logged-in user 
-receiver-user-avatar | The URL of the avatar of the transfer receiver, only shown if the owner of the currency holding that the transfer debited from is the logged-in user 
+receiver-user-avatar-url | The URL of the avatar of the transfer receiver, only shown if the owner of the currency holding that the transfer debited from is the logged-in user 
 sender-day-counter | The day counter of the sending currency holding when it was debited by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
 receiver-day-counter | The day counter of the receiving currency holding when it was credited by the transfer, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
 sender-burnrate-period-id | The ID of the burnrate period of the sending currency holding when it was debited by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
@@ -6610,7 +6610,7 @@ transfer-receiver-currency-holding-type | Whether the currency holding that the 
 transfer-receiver-currency-holding-id | The ID of the public or private currency holding that the transfer credited to, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
 sending-user-id | The ID of the transfer sender, only shown if the owner of the currency holding that the transfer credited to is the logged-in user 
 sender-username | The username of the transfer sender, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
-sender-user-avatar | The URL of the avatar of the transfer receiver, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
+sender-user-avatar-url | The URL of the avatar of the transfer receiver, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
 sender-before-amount-atomic | The balance, in atomic units, of the sending currency holding before it was debited from by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
 sender-after-amount-atomic | The balance, in atomic units, of the sending currency holding after it was debited from by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
 receiver-before-amount-atomic | The balance, in atomic units, of the receiving currency holding before it was credited to by the transfer, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
@@ -6688,7 +6688,7 @@ id | The ID of the transfer
 amount-atomic | The amount of currency transferred, in atomic units (each whole unit is composed of 10^10 atomic units)
 receiving-user-id | The ID of the transfer receiver, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
 receiver-username | The username of the transfer receiver, only shown if the owner of the currency holding that the transfer debited from is the logged-in user 
-receiver-user-avatar | The URL of the avatar of the transfer receiver, only shown if the owner of the currency holding that the transfer debited from is the logged-in user 
+receiver-user-avatar-url | The URL of the avatar of the transfer receiver, only shown if the owner of the currency holding that the transfer debited from is the logged-in user 
 sender-day-counter | The day counter of the sending currency holding when it was debited by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
 receiver-day-counter | The day counter of the receiving currency holding when it was credited by the transfer, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
 sender-burnrate-period-id | The ID of the burnrate period of the sending currency holding when it was debited by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
@@ -6699,7 +6699,7 @@ transfer-receiver-currency-holding-type | Whether the currency holding that the 
 transfer-receiver-currency-holding-id | The ID of the public or private currency holding that the transfer credited to, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
 sending-user-id | The ID of the transfer sender, only shown if the owner of the currency holding that the transfer credited to is the logged-in user 
 sender-username | The username of the transfer sender, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
-sender-user-avatar | The URL of the avatar of the transfer receiver, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
+sender-user-avatar-url | The URL of the avatar of the transfer receiver, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
 sender-before-amount-atomic | The balance, in atomic units, of the sending currency holding before it was debited from by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
 sender-after-amount-atomic | The balance, in atomic units, of the sending currency holding after it was debited from by the transfer, only shown if the owner of the currency holding that the transfer debited from is the logged-in user
 receiver-before-amount-atomic | The balance, in atomic units, of the receiving currency holding before it was credited to by the transfer, only shown if the owner of the currency holding that the transfer credited to is the logged-in user
