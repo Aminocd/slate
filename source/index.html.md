@@ -4096,7 +4096,7 @@ curl 'https://api.mycurrency.com/users/4/authorized_self_issued_combined_currenc
         "issuer-user-id": 3,
         "issuer-user-name": "Hannibal",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
-        "total-amount-atomic": 13995784992346
+        "amount-atomic": 13995784992346
       }
     },
     {
@@ -4112,7 +4112,7 @@ curl 'https://api.mycurrency.com/users/4/authorized_self_issued_combined_currenc
         "issuer-user-id": 3,
         "issuer-user-name": "Hannibal",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
-        "total-amount-atomic": 10000000000000
+        "amount-atomic": 10000000000000
       }
     }
   ],
@@ -4152,7 +4152,7 @@ currency-icon-url | The URL at which the icon picture of the currency that the c
 currency-burn-rate | The annual rate at which the currency contained within the currency holding burns, by basis point (100 = 1%) 
 currency-daily-burn-rate | The daily rate at which the currency contained within the currency holding burns, by fraction of 1 (0.01 = 1%) 
 store-count | The number of stores associated with the currency
-total-amount-atomic | The amount of currency held in both the private and public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
+amount-atomic | The amount of currency held in both the private and public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
 is-issuer-active | Whether the issuer of the currency is active
 issuer-user-id | The ID of the user that issues the currency
 issuer-user-name | The username of the user that issues the currency
@@ -4184,7 +4184,7 @@ curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_combined_c
         "issuer-user-id": 4,
         "issuer-user-name": "ScipioAfricanus",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
-        "total-amount-atomic": 10009994565314
+        "amount-atomic": 10009994565314
       }
     },
     {
@@ -4200,7 +4200,7 @@ curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_combined_c
         "issuer-user-id": 4,
         "issuer-user-name": "ScipioAfricanus",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
-        "total-amount-atomic": 10195351440486
+        "amount-atomic": 10195351440486
       }
     },
     {
@@ -4216,7 +4216,7 @@ curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_combined_c
         "issuer-user-id": 2,
         "issuer-user-name": "spiderman",
         "issuer-user-avatar-url": "/avatars/original/missing.png",
-        "total-amount-atomic": 3998236987252
+        "amount-atomic": 3998236987252
       }
     },
     {
@@ -4232,7 +4232,7 @@ curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_combined_c
         "issuer-user-id": 4,
         "issuer-user-name": "ScipioAfricanus",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
-        "total-amount-atomic": 5098738679556
+        "amount-atomic": 5098738679556
       }
     },
     {
@@ -4248,7 +4248,7 @@ curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_combined_c
         "issuer-user-id": 4,
         "issuer-user-name": "ScipioAfricanus",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
-        "total-amount-atomic": 13995965387034
+        "amount-atomic": 13995965387034
       }
     },
     {
@@ -4264,7 +4264,7 @@ curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_combined_c
         "issuer-user-id": 9,
         "issuer-user-name": "alex",
         "issuer-user-avatar-url": "/avatars/original/missing.png",
-        "total-amount-atomic": 3000000000000
+        "amount-atomic": 3000000000000
       }
     },
     {
@@ -4280,7 +4280,7 @@ curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_combined_c
         "issuer-user-id": 4,
         "issuer-user-name": "ScipioAfricanus",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
-        "total-amount-atomic": 1000000000000
+        "amount-atomic": 1000000000000
       }
     },
     {
@@ -4296,7 +4296,7 @@ curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_combined_c
         "issuer-user-id": 4,
         "issuer-user-name": "ScipioAfricanus",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
-        "total-amount-atomic": 5600000000000
+        "amount-atomic": 5600000000000
       }
     },
     {
@@ -4312,7 +4312,7 @@ curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_combined_c
         "issuer-user-id": 4,
         "issuer-user-name": "ScipioAfricanus",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
-        "total-amount-atomic": 3000000000000
+        "amount-atomic": 3000000000000
       }
     }
   ],
@@ -4352,7 +4352,7 @@ currency-icon-url | The URL at which the icon picture of the currency that the c
 currency-burn-rate | The annual rate at which the currency contained within the currency holding burns, by basis point (100 = 1%) 
 currency-daily-burn-rate | The daily rate at which the currency contained within the currency holding burns, by fraction of 1 (0.01 = 1%) 
 store-count | The number of stores associated with the currency
-total-amount-atomic | The amount of currency held in both the private and public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
+amount-atomic | The amount of currency held in both the private and public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
 is-issuer-active | Whether the issuer of the currency is active
 issuer-user-id | The ID of the user that issues the currency
 issuer-user-name | The username of the user that issues the currency
