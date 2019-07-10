@@ -4070,6 +4070,294 @@ issuer-user-avatar-url | The URL of the avatar of the user that issues the curre
 created-at | The time and date when the public currency holding was created
 updated-at | The time and date when the public currency holding was last updated
 
+## List User's Self-Issued Combined Currency Holdings with Authorization
+
+```shell
+curl 'https://api.mycurrency.com/users/4/authorized_self_issued_combined_currency_holdings' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "type": "combined-currency-holdings",
+      "attributes": {
+        "currency-id": 1,
+        "currency-name": "Micro Asteroid bucks",
+        "currency-icon-url": "/icons/original/missing.png",
+        "currency-burn-rate": 400,
+        "currency-daily-burn-rate": "0.000111835",
+        "store_count": 1,
+        "is-issuer-active": true,
+        "issuer-user-id": 3,
+        "issuer-user-name": "Hannibal",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
+        "total-amount-atomic": 13995784992346
+      }
+    },
+    {
+      "type": "combined-currency-holdings",
+      "attributes": {
+        "currency-id": 60,
+        "currency-name": "Hoola Hoop Cash",
+        "currency-icon-url": "/system/currencies/icons/000/000/060/original/currency.jpg?1562578289",
+        "currency-burn-rate": 800,
+        "currency-daily-burn-rate": "0.000228417",
+        "store_count": 0,
+        "is-issuer-active": true,
+        "issuer-user-id": 3,
+        "issuer-user-name": "Hannibal",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
+        "total-amount-atomic": 10000000000000
+      }
+    }
+  ],
+  "meta": {
+    "user-data": {
+      "number-of-reviews": 3,
+      "currency-count": 2
+    }
+  }
+}
+```
+
+This endpoint retrieves the details of all of a user's public and private holdings of currencies that the user is also the issuer of, with a combined amount-atomic value showing the sum of units in the holding pair.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/authorized_self_issued_combined_currency_holdings`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+user_id | integer | yes | The ID of the user which owns the currency holdings, provided in URL path
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the currency holding
+currency-id | The ID of the currency that the currency holding holds
+currency-name | The name of the currency that the currency holding holds
+currency-icon-url | The URL at which the icon picture of the currency that the currency holding holds can be found
+currency-burn-rate | The annual rate at which the currency contained within the currency holding burns, by basis point (100 = 1%) 
+currency-daily-burn-rate | The daily rate at which the currency contained within the currency holding burns, by fraction of 1 (0.01 = 1%) 
+store-count | The number of stores associated with the currency
+total-amount-atomic | The amount of currency held in both the private and public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
+is-issuer-active | Whether the issuer of the currency is active
+issuer-user-id | The ID of the user that issues the currency
+issuer-user-name | The username of the user that issues the currency
+issuer-user-avatar-url | The URL of the avatar of the user that issues the currency
+
+## List User's Externally Issued Combined Currency Holdings with Authorization
+
+```shell
+curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_combined_currency_holdings' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "type": "combined-currency-holdings",
+      "attributes": {
+        "currency-id": 2,
+        "currency-name": "solar electricity zaps",
+        "currency-icon-url": "/icons/original/missing.png",
+        "currency-burn-rate": 400,
+        "currency-daily-burn-rate": "0.000111835",
+        "store_count": 2,
+        "is-issuer-active": false,
+        "issuer-user-id": 4,
+        "issuer-user-name": "ScipioAfricanus",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "total-amount-atomic": 10009994565314
+      }
+    },
+    {
+      "type": "combined-currency-holdings",
+      "attributes": {
+        "currency-id": 3,
+        "currency-name": "Moon hotel coins",
+        "currency-icon-url": "/icons/original/missing.png",
+        "currency-burn-rate": 550,
+        "currency-daily-burn-rate": "0.000154976",
+        "store_count": 1,
+        "is-issuer-active": false,
+        "issuer-user-id": 4,
+        "issuer-user-name": "ScipioAfricanus",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "total-amount-atomic": 10195351440486
+      }
+    },
+    {
+      "type": "combined-currency-holdings",
+      "attributes": {
+        "currency-id": 4,
+        "currency-name": "spiderman pizza dollars",
+        "currency-icon-url": "/icons/original/missing.png",
+        "currency-burn-rate": 420,
+        "currency-daily-burn-rate": "0.000117548",
+        "store_count": 0,
+        "is-issuer-active": true,
+        "issuer-user-id": 2,
+        "issuer-user-name": "spiderman",
+        "issuer-user-avatar-url": "/avatars/original/missing.png",
+        "total-amount-atomic": 3998236987252
+      }
+    },
+    {
+      "type": "combined-currency-holdings",
+      "attributes": {
+        "currency-id": 5,
+        "currency-name": "Home Repair dollars",
+        "currency-icon-url": "/icons/original/missing.png",
+        "currency-burn-rate": 450,
+        "currency-daily-burn-rate": "0.00012614",
+        "store_count": 0,
+        "is-issuer-active": false,
+        "issuer-user-id": 4,
+        "issuer-user-name": "ScipioAfricanus",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "total-amount-atomic": 5098738679556
+      }
+    },
+    {
+      "type": "combined-currency-holdings",
+      "attributes": {
+        "currency-id": 6,
+        "currency-name": "Wholesome foods tokens",
+        "currency-icon-url": "/icons/original/missing.png",
+        "currency-burn-rate": 710,
+        "currency-daily-burn-rate": "0.000201751",
+        "store_count": 0,
+        "is-issuer-active": false,
+        "issuer-user-id": 4,
+        "issuer-user-name": "ScipioAfricanus",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "total-amount-atomic": 13995965387034
+      }
+    },
+    {
+      "type": "combined-currency-holdings",
+      "attributes": {
+        "currency-id": 8,
+        "currency-name": "Alex Token",
+        "currency-icon-url": "/icons/original/missing.png",
+        "currency-burn-rate": 350,
+        "currency-daily-burn-rate": "0.000097604",
+        "store_count": 0,
+        "is-issuer-active": true,
+        "issuer-user-id": 9,
+        "issuer-user-name": "alex",
+        "issuer-user-avatar-url": "/avatars/original/missing.png",
+        "total-amount-atomic": 3000000000000
+      }
+    },
+    {
+      "type": "combined-currency-holdings",
+      "attributes": {
+        "currency-id": 9,
+        "currency-name": "Alabama steak coins",
+        "currency-icon-url": "/icons/original/missing.png",
+        "currency-burn-rate": 550,
+        "currency-daily-burn-rate": "0.000154976",
+        "store_count": 1,
+        "is-issuer-active": false,
+        "issuer-user-id": 4,
+        "issuer-user-name": "ScipioAfricanus",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "total-amount-atomic": 1000000000000
+      }
+    },
+    {
+      "type": "combined-currency-holdings",
+      "attributes": {
+        "currency-id": 10,
+        "currency-name": "Turbo points",
+        "currency-icon-url": "/icons/original/missing.png",
+        "currency-burn-rate": 600,
+        "currency-daily-burn-rate": "0.000169508",
+        "store_count": 1,
+        "is-issuer-active": false,
+        "issuer-user-id": 4,
+        "issuer-user-name": "ScipioAfricanus",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "total-amount-atomic": 5600000000000
+      }
+    },
+    {
+      "type": "combined-currency-holdings",
+      "attributes": {
+        "currency-id": 57,
+        "currency-name": "Rails Programming Dollars",
+        "currency-icon-url": "/system/currencies/icons/000/000/057/original/currency.jpg?1562376330",
+        "currency-burn-rate": 500,
+        "currency-daily-burn-rate": "0.00014052",
+        "store_count": 0,
+        "is-issuer-active": false,
+        "issuer-user-id": 4,
+        "issuer-user-name": "ScipioAfricanus",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "total-amount-atomic": 3000000000000
+      }
+    }
+  ],
+  "meta": {
+    "user-data": {
+      "number-of-reviews": 3,
+      "currency-count": 2
+    }
+  }
+}
+```
+
+This endpoint retrieves the details of all of a user's public and private holdings of currencies that the user is not the issuer of, with a combined amount-atomic value showing the sum of units in the holding pair.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/authorized_externally_issued_combined_currency_holdings`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+user_id | integer | yes | The ID of the user which owns the currency holdings, provided in URL path
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the currency holding
+currency-id | The ID of the currency that the currency holding holds
+currency-name | The name of the currency that the currency holding holds
+currency-icon-url | The URL at which the icon picture of the currency that the currency holding holds can be found
+currency-burn-rate | The annual rate at which the currency contained within the currency holding burns, by basis point (100 = 1%) 
+currency-daily-burn-rate | The daily rate at which the currency contained within the currency holding burns, by fraction of 1 (0.01 = 1%) 
+store-count | The number of stores associated with the currency
+total-amount-atomic | The amount of currency held in both the private and public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
+is-issuer-active | Whether the issuer of the currency is active
+issuer-user-id | The ID of the user that issues the currency
+issuer-user-name | The username of the user that issues the currency
+issuer-user-avatar-url | The URL of the avatar of the user that issues the currency
+
 # Public Currency Holdings
 
 Unlike private currency holdings, the basic information of public currency holdings, like account balance, is publicly accessible. Authorized endpoints are only accessible to the user that owns the public currency holding and provides the full details of the holding. The publicly accessible endpoints provide basic information about the public currency holding.
