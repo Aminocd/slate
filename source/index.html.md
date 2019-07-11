@@ -2327,7 +2327,6 @@ curl 'https://api.mycurrency.com/stores/1/store_reviews/1' \
       "user-name": "ScipioAfricanus",
       "user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
       "created-at": "2018-08-29T00:51:11.631-07:00",
-      "updated-at": "2018-08-29T00:51:11.631-07:00"
     }
   }
 }
@@ -2351,6 +2350,8 @@ id | The ID of the store review
 store-id | The ID of the store that the store review relates to
 comment | The written content of the review
 score | A score between 0 and 10 (inclusive) by the store reviewer 
+user-name | The user name of the store review author
+user-avatar-url | The URL of the store review author's avatar
 created-at | The time and date when the store review was created
 
 ## List Issuer's Received Store Reviews
@@ -2444,6 +2445,8 @@ id | The ID of the store review
 store-id | The ID of the store that the store review relates to
 comment | The written content of the review
 score | A score between 0 and 10 (inclusive) by the store reviewer 
+user-name | The user name of the store review author
+user-avatar-url | The URL of the store review author's avatar
 created-at | The time and date when the store review was created
 
 ## List Currency's Received Store Reviews
@@ -2520,6 +2523,8 @@ id | The ID of the store review
 store-id | The ID of the store that the store review relates to
 comment | The written content of the review
 score | A score between 0 and 10 (inclusive) by the store reviewer 
+user-name | The user name of the store review author
+user-avatar-url | The URL of the store review author's avatar
 created-at | The time and date when the store review was created
 
 ## List Store's Received Store Reviews
@@ -2583,6 +2588,8 @@ id | The ID of the store review
 store-id | The ID of the store that the store review relates to
 comment | The written content of the review
 score | A score between 0 and 10 (inclusive) by the store reviewer 
+user-name | The user name of the store review author
+user-avatar-url | The URL of the store review author's avatar
 created-at | The time and date when the store review was created
 
 ## Create Store Review
@@ -2641,6 +2648,8 @@ id | The ID of the store review
 store-id | The ID of the store that the store review relates to
 comment | The written content of the review
 score | A score between 0 and 10 (inclusive) by the store reviewer 
+user-name | The user name of the store review author
+user-avatar-url | The URL of the store review author's avatar
 created-at | The time and date when the store review was created
 
 # Products
