@@ -2324,6 +2324,8 @@ curl 'https://api.mycurrency.com/stores/1/store_reviews/1' \
       "user-id": 4,
       "comment": "Schrauder Export Consulting is one of the best business strategy consultancy's I've had the pleasure to use. They have a deep understanding of how to navigate the legal and commercial landscape to achieve international sales",
       "score": 9,
+      "user-name": "ScipioAfricanus",
+      "user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
       "created-at": "2018-08-29T00:51:11.631-07:00",
       "updated-at": "2018-08-29T00:51:11.631-07:00"
     }
@@ -2371,6 +2373,8 @@ curl "https://api.mycurrency.com/issuers/3/received_store_reviews" \
         "user-id": 4,
         "comment": "Schrauder Export Consulting is one of the best business strategy consultancies I've had the pleasure to use. They have a deep understanding of how to navigate the legal and commercial landscape to achieve international sales",
         "score": 10,
+        "user-name": "ScipioAfricanus",
+        "user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "created-at": "2018-08-29T00:51:11.631-07:00"
       }
     },
@@ -2382,6 +2386,8 @@ curl "https://api.mycurrency.com/issuers/3/received_store_reviews" \
         "user-id": 4,
         "comment": "Schrauder Japan knows the ins and outs of the Japanese import market. Their professionalism was impressive.",
         "score": 9,
+        "user-name": "ScipioAfricanus",
+        "user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "created-at": "2018-08-29T22:11:23.788-07:00"
       }
     },
@@ -2393,6 +2399,8 @@ curl "https://api.mycurrency.com/issuers/3/received_store_reviews" \
         "user-id": 4,
         "comment": "I've been using McRyan's Grocers for about two years and am very happy with their growing selection of fresh fruits and vegetables",
         "score": 9,
+        "user-name": "ScipioAfricanus",
+        "user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "created-at": "2018-08-29T22:15:34.052-07:00"
       }
     }
@@ -2458,6 +2466,8 @@ curl "https://api.mycurrency.com/currencies/3/received_store_reviews" \
         "user-id": 4,
         "comment": "Schrauder Export Consulting is one of the best business strategy consultancies I've had the pleasure to use. They have a deep understanding of how to navigate the legal and commercial landscape to achieve international sales",
         "score": 10,
+        "user-name": "ScipioAfricanus",
+        "user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "created-at": "2018-08-29T00:51:11.631-07:00"
       }
     },
@@ -2469,6 +2479,8 @@ curl "https://api.mycurrency.com/currencies/3/received_store_reviews" \
         "user-id": 4,
         "comment": "Schrauder Japan knows the ins and outs of the Japanese import market. Their professionalism was impressive.",
         "score": 9,
+        "user-name": "ScipioAfricanus",
+        "user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "created-at": "2018-08-29T22:11:23.788-07:00"
       }
     }
@@ -2530,6 +2542,8 @@ curl "https://api.mycurrency.com/stores/5/received_store_reviews" \
         "user-id": 4,
         "comment": "I've been using McRyan's Grocers for about two years and am very happy with their growing selection of fresh fruits and vegetables",
         "score": 9,
+        "user-name": "ScipioAfricanus",
+        "user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "created-at": "2018-08-29T22:15:34.052-07:00"
       }
     }
@@ -2592,6 +2606,8 @@ curl -X POST https://api.mycurrency.com/users/4/store_reviews \
       "user-id": 4,
       "comment": "Lucy's Tom Yum Soup is as good as anything I had in Thailand",
       "score": 9,
+      "user-name": "ScipioAfricanus",
+      "user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
       "created-at": "2018-08-29T22:45:12.219-07:00"
     }
   }
