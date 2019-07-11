@@ -2323,7 +2323,7 @@ curl 'https://api.mycurrency.com/stores/1/store_reviews/1' \
       "store-id": 1,
       "user-id": 4,
       "comment": "Schrauder Export Consulting is one of the best business strategy consultancy's I've had the pleasure to use. They have a deep understanding of how to navigate the legal and commercial landscape to achieve international sales",
-      "score": 9,
+      "score": 4,
       "user-name": "ScipioAfricanus",
       "user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
       "created-at": "2018-08-29T00:51:11.631-07:00",
@@ -2349,7 +2349,7 @@ Parameter | Description
 id | The ID of the store review
 store-id | The ID of the store that the store review relates to
 comment | The written content of the review
-score | A score between 0 and 10 (inclusive) by the store reviewer 
+score | A score between 0 and 5 (inclusive) by the store reviewer 
 user-name | The user name of the store review author
 user-avatar-url | The URL of the store review author's avatar
 created-at | The time and date when the store review was created
@@ -2373,7 +2373,7 @@ curl "https://api.mycurrency.com/issuers/3/received_store_reviews" \
         "store-id": 1,
         "user-id": 4,
         "comment": "Schrauder Export Consulting is one of the best business strategy consultancies I've had the pleasure to use. They have a deep understanding of how to navigate the legal and commercial landscape to achieve international sales",
-        "score": 10,
+        "score": 5,
         "user-name": "ScipioAfricanus",
         "user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "created-at": "2018-08-29T00:51:11.631-07:00"
@@ -2386,7 +2386,7 @@ curl "https://api.mycurrency.com/issuers/3/received_store_reviews" \
         "store-id": 2,
         "user-id": 4,
         "comment": "Schrauder Japan knows the ins and outs of the Japanese import market. Their professionalism was impressive.",
-        "score": 9,
+        "score": 4,
         "user-name": "ScipioAfricanus",
         "user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "created-at": "2018-08-29T22:11:23.788-07:00"
@@ -2399,7 +2399,7 @@ curl "https://api.mycurrency.com/issuers/3/received_store_reviews" \
         "store-id": 5,
         "user-id": 4,
         "comment": "I've been using McRyan's Grocers for about two years and am very happy with their growing selection of fresh fruits and vegetables",
-        "score": 9,
+        "score": 4,
         "user-name": "ScipioAfricanus",
         "user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "created-at": "2018-08-29T22:15:34.052-07:00"
@@ -2444,7 +2444,7 @@ Parameter | Description
 id | The ID of the store review
 store-id | The ID of the store that the store review relates to
 comment | The written content of the review
-score | A score between 0 and 10 (inclusive) by the store reviewer 
+score | A score between 0 and 5 (inclusive) by the store reviewer 
 user-name | The user name of the store review author
 user-avatar-url | The URL of the store review author's avatar
 created-at | The time and date when the store review was created
@@ -2468,7 +2468,7 @@ curl "https://api.mycurrency.com/currencies/3/received_store_reviews" \
         "store-id": 1,
         "user-id": 4,
         "comment": "Schrauder Export Consulting is one of the best business strategy consultancies I've had the pleasure to use. They have a deep understanding of how to navigate the legal and commercial landscape to achieve international sales",
-        "score": 10,
+        "score": 5,
         "user-name": "ScipioAfricanus",
         "user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "created-at": "2018-08-29T00:51:11.631-07:00"
@@ -2481,7 +2481,7 @@ curl "https://api.mycurrency.com/currencies/3/received_store_reviews" \
         "store-id": 2,
         "user-id": 4,
         "comment": "Schrauder Japan knows the ins and outs of the Japanese import market. Their professionalism was impressive.",
-        "score": 9,
+        "score": 4,
         "user-name": "ScipioAfricanus",
         "user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "created-at": "2018-08-29T22:11:23.788-07:00"
@@ -2522,7 +2522,7 @@ Parameter | Description
 id | The ID of the store review
 store-id | The ID of the store that the store review relates to
 comment | The written content of the review
-score | A score between 0 and 10 (inclusive) by the store reviewer 
+score | A score between 0 and 5 (inclusive) by the store reviewer 
 user-name | The user name of the store review author
 user-avatar-url | The URL of the store review author's avatar
 created-at | The time and date when the store review was created
@@ -2546,7 +2546,7 @@ curl "https://api.mycurrency.com/stores/5/received_store_reviews" \
         "store-id": 5,
         "user-id": 4,
         "comment": "I've been using McRyan's Grocers for about two years and am very happy with their growing selection of fresh fruits and vegetables",
-        "score": 9,
+        "score": 4,
         "user-name": "ScipioAfricanus",
         "user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "created-at": "2018-08-29T22:15:34.052-07:00"
@@ -2587,7 +2587,7 @@ Parameter | Description
 id | The ID of the store review
 store-id | The ID of the store that the store review relates to
 comment | The written content of the review
-score | A score between 0 and 10 (inclusive) by the store reviewer 
+score | A score between 0 and 5 (inclusive) by the store reviewer 
 user-name | The user name of the store review author
 user-avatar-url | The URL of the store review author's avatar
 created-at | The time and date when the store review was created
@@ -2596,7 +2596,7 @@ created-at | The time and date when the store review was created
 
 ```shell
 curl -X POST https://api.mycurrency.com/users/4/store_reviews \
-  -d '{"store_review": { "store_id": "1", "score": "9", "comment": "Lucy'\''s Tom Yum Soup is as good as anything I had in Thailand"} }' \
+  -d '{"store_review": { "store_id": "1", "score": "4", "comment": "Lucy'\''s Tom Yum Soup is as good as anything I had in Thailand"} }' \
   -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' \
   -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
@@ -2612,7 +2612,7 @@ curl -X POST https://api.mycurrency.com/users/4/store_reviews \
       "store-id": 1,
       "user-id": 4,
       "comment": "Lucy's Tom Yum Soup is as good as anything I had in Thailand",
-      "score": 9,
+      "score": 4,
       "user-name": "ScipioAfricanus",
       "user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
       "created-at": "2018-08-29T22:45:12.219-07:00"
@@ -2638,7 +2638,7 @@ Parameter | Type | Required | Description
 store_id | integer | yes | The ID of the store that the store review is written for
 user_id | integer | yes | The ID of the user that the store review is written by, provided in URL path
 comment | string | no | The written content of the review
-score | integer | yes | A score between 0 and 10 (inclusive)
+score | integer | yes | A score between 0 and 5 (inclusive)
 
 ### RESPONSE
 
@@ -2647,7 +2647,7 @@ Parameter | Description
 id | The ID of the store review
 store-id | The ID of the store that the store review relates to
 comment | The written content of the review
-score | A score between 0 and 10 (inclusive) by the store reviewer 
+score | A score between 0 and 5 (inclusive) by the store reviewer. If error is generated, it may state that the maximum allowed value is 10, because the API multiplies the user inputted value by two before submitting it to the database
 user-name | The user name of the store review author
 user-avatar-url | The URL of the store review author's avatar
 created-at | The time and date when the store review was created
