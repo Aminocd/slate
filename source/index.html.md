@@ -1425,9 +1425,12 @@ curl 'https://api.mycurrency.com/stores/2' \
     "type": "stores",
     "attributes": {
       "number-of-reviews": 3
-      "average-score": "7.333333333333333333",
+      "average-score": "3.67",
       "number-of-products": 1,
       "number-of-product-cancellations": 3,
+      "owner-id": 3,
+      "owner-username": "Hannibal",
+      "owner-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
       "currency-id": 2,
       "currency-name": "ACME Toon Shop dollars"
       "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
@@ -1465,8 +1468,12 @@ number-of-reviews | The number of store reviews created for the store
 average-score | The average score of the store reviews, out of 10
 number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
 number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
+owner-id | The ID of the user that owns the store
+owner-username | The username of the user that owns the store
+owner-avatar-url | The URL of the avatar of the user that owns the store
 currency-id | The ID of the currency that the store's products are purchasable with
-currency-id | The name of the currency that the store's products are purchasable with
+currency-name | The name of the currency that the store's products are purchasable with
+currency-icon-url | The URL of the icon of the currency that the store's products are purchasable with
 sub-location-id | The sub location where the store is located
 sub-location-name | The name of the sub location where the store is located
 mid-location-id | The mid location where the store is located
@@ -1598,8 +1605,12 @@ number-of-reviews | The number of store reviews created for the store
 average-score | The average score of the store reviews, out of 10
 number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
 number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
+owner-id | The ID of the user that owns the store
+owner-username | The username of the user that owns the store
+owner-avatar-url | The URL of the avatar of the user that owns the store
 currency-id | The ID of the currency that the store's products are purchasable with
-currency-id | The name of the currency that the store's products are purchasable with
+currency-name | The name of the currency that the store's products are purchasable with
+currency-icon-url | The URL of the icon of the currency that the store's products are purchasable with
 sub-location-id | The sub location where the store is located
 sub-location-name | The name of the sub location where the store is located
 mid-location-id | The mid location where the store is located
@@ -1731,8 +1742,12 @@ number-of-reviews | The number of store reviews created for the store
 average-score | The average score of the store reviews, out of 10
 number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
 number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
+owner-id | The ID of the user that owns the store
+owner-username | The username of the user that owns the store
+owner-avatar-url | The URL of the avatar of the user that owns the store
 currency-id | The ID of the currency that the store's products are purchasable with
 currency-name | The name of the currency that the store's products are purchasable with
+currency-icon-url | The URL of the icon of the currency that the store's products are purchasable with
 sub-location-id | The sub location where the store is located
 sub-location-name | The name of the sub location where the store is located
 mid-location-id | The mid location where the store is located
@@ -1841,8 +1856,12 @@ number-of-reviews | The number of store reviews created for the store
 average-score | The average score of the store reviews, out of 10
 number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
 number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
+owner-id | The ID of the user that owns the store
+owner-username | The username of the user that owns the store
+owner-avatar-url | The URL of the avatar of the user that owns the store
 currency-id | The ID of the currency that the store's products are purchasable with
 currency-name | The name of the currency that the store's products are purchasable with
+currency-icon-url | The URL of the icon of the currency that the store's products are purchasable with
 sub-location-id | The sub location where the store is located
 sub-location-name | The name of the sub location where the store is located
 mid-location-id | The mid location where the store is located
@@ -1928,8 +1947,12 @@ number-of-reviews | The number of store reviews created for the store
 average-score | The average score of the store reviews, out of 10
 number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
 number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
+owner-id | The ID of the user that owns the store
+owner-username | The username of the user that owns the store
+owner-avatar-url | The URL of the avatar of the user that owns the store
 currency-id | The ID of the currency that the store's products are purchasable with
 currency-name | The name of the currency that the store's products are purchasable with
+currency-icon-url | The URL of the icon of the currency that the store's products are purchasable with
 sub-location-id | The sub location where the store is located
 sub-location-name | The name of the sub location where the store is located
 mid-location-id | The mid location where the store is located
@@ -2038,8 +2061,12 @@ number-of-reviews | The number of store reviews created for the store
 average-score | The average score of the store reviews, out of 10
 number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
 number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
+owner-id | The ID of the user that owns the store
+owner-username | The username of the user that owns the store
+owner-avatar-url | The URL of the avatar of the user that owns the store
 currency-id | The ID of the currency that the store's products are purchasable with
 currency-name | The name of the currency that the store's products are purchasable with
+currency-icon-url | The URL of the icon of the currency that the store's products are purchasable with
 sub-location-id | The sub location where the store is located
 sub-location-name | The name of the sub location where the store is located
 mid-location-id | The mid location where the store is located
@@ -2125,8 +2152,12 @@ number-of-reviews | The number of store reviews created for the store
 average-score | The average score of the store reviews, out of 10
 number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
 number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
+owner-id | The ID of the user that owns the store
+owner-username | The username of the user that owns the store
+owner-avatar-url | The URL of the avatar of the user that owns the store
 currency-id | The ID of the currency that the store's products are purchasable with
 currency-name | The name of the currency that the store's products are purchasable with
+currency-icon-url | The URL of the icon of the currency that the store's products are purchasable with
 sub-location-id | The sub location where the store is located
 sub-location-name | The name of the sub location where the store is located
 mid-location-id | The mid location where the store is located
@@ -2206,8 +2237,12 @@ number-of-reviews | The number of store reviews created for the store
 average-score | The average score of the store reviews, out of 10
 number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
 number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
+owner-id | The ID of the user that owns the store
+owner-username | The username of the user that owns the store
+owner-avatar-url | The URL of the avatar of the user that owns the store
 currency-id | The ID of the currency that the store's products are purchasable with
 currency-name | The name of the currency that the store's products are purchasable with
+currency-icon-url | The URL of the icon of the currency that the store's products are purchasable with
 sub-location-id | The sub location where the store is located
 sub-location-name | The name of the sub location where the store is located
 mid-location-id | The mid location where the store is located
