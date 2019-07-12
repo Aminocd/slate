@@ -2762,9 +2762,12 @@ Authentication: the request requires the OAuth access-token associated with the 
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stores"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
-      </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7.333333333333333333"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.67"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"number-of-products"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="s2">"number-of-product-cancellations"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"owner-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"owner-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"owner-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/004/original/1.jpg?1559736060"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="w">
       </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"</span><span class="w">
@@ -2817,12 +2820,28 @@ Authentication: not required
 <td>The number of products belonging to the store that have been discontinued without the store owner providing advance notice</td>
 </tr>
 <tr>
+<td>owner-id</td>
+<td>The ID of the user that owns the store</td>
+</tr>
+<tr>
+<td>owner-username</td>
+<td>The username of the user that owns the store</td>
+</tr>
+<tr>
+<td>owner-avatar-url</td>
+<td>The URL of the avatar of the user that owns the store</td>
+</tr>
+<tr>
 <td>currency-id</td>
 <td>The ID of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
-<td>currency-id</td>
+<td>currency-name</td>
 <td>The name of the currency that the store&#39;s products are purchasable with</td>
+</tr>
+<tr>
+<td>currency-icon-url</td>
+<td>The URL of the icon of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
 <td>sub-location-id</td>
@@ -2996,12 +3015,28 @@ Authentication: not required
 <td>The number of products belonging to the store that have been discontinued without the store owner providing advance notice</td>
 </tr>
 <tr>
+<td>owner-id</td>
+<td>The ID of the user that owns the store</td>
+</tr>
+<tr>
+<td>owner-username</td>
+<td>The username of the user that owns the store</td>
+</tr>
+<tr>
+<td>owner-avatar-url</td>
+<td>The URL of the avatar of the user that owns the store</td>
+</tr>
+<tr>
 <td>currency-id</td>
 <td>The ID of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
-<td>currency-id</td>
+<td>currency-name</td>
 <td>The name of the currency that the store&#39;s products are purchasable with</td>
+</tr>
+<tr>
+<td>currency-icon-url</td>
+<td>The URL of the icon of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
 <td>sub-location-id</td>
@@ -3175,12 +3210,28 @@ Authentication: not required
 <td>The number of products belonging to the store that have been discontinued without the store owner providing advance notice</td>
 </tr>
 <tr>
+<td>owner-id</td>
+<td>The ID of the user that owns the store</td>
+</tr>
+<tr>
+<td>owner-username</td>
+<td>The username of the user that owns the store</td>
+</tr>
+<tr>
+<td>owner-avatar-url</td>
+<td>The URL of the avatar of the user that owns the store</td>
+</tr>
+<tr>
 <td>currency-id</td>
 <td>The ID of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
 <td>currency-name</td>
 <td>The name of the currency that the store&#39;s products are purchasable with</td>
+</tr>
+<tr>
+<td>currency-icon-url</td>
+<td>The URL of the icon of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
 <td>sub-location-id</td>
@@ -3331,12 +3382,28 @@ Authentication: not required
 <td>The number of products belonging to the store that have been discontinued without the store owner providing advance notice</td>
 </tr>
 <tr>
+<td>owner-id</td>
+<td>The ID of the user that owns the store</td>
+</tr>
+<tr>
+<td>owner-username</td>
+<td>The username of the user that owns the store</td>
+</tr>
+<tr>
+<td>owner-avatar-url</td>
+<td>The URL of the avatar of the user that owns the store</td>
+</tr>
+<tr>
 <td>currency-id</td>
 <td>The ID of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
 <td>currency-name</td>
 <td>The name of the currency that the store&#39;s products are purchasable with</td>
+</tr>
+<tr>
+<td>currency-icon-url</td>
+<td>The URL of the icon of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
 <td>sub-location-id</td>
@@ -3464,12 +3531,28 @@ Authentication: not required
 <td>The number of products belonging to the store that have been discontinued without the store owner providing advance notice</td>
 </tr>
 <tr>
+<td>owner-id</td>
+<td>The ID of the user that owns the store</td>
+</tr>
+<tr>
+<td>owner-username</td>
+<td>The username of the user that owns the store</td>
+</tr>
+<tr>
+<td>owner-avatar-url</td>
+<td>The URL of the avatar of the user that owns the store</td>
+</tr>
+<tr>
 <td>currency-id</td>
 <td>The ID of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
 <td>currency-name</td>
 <td>The name of the currency that the store&#39;s products are purchasable with</td>
+</tr>
+<tr>
+<td>currency-icon-url</td>
+<td>The URL of the icon of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
 <td>sub-location-id</td>
@@ -3620,12 +3703,28 @@ Authentication: not required
 <td>The number of products belonging to the store that have been discontinued without the store owner providing advance notice</td>
 </tr>
 <tr>
+<td>owner-id</td>
+<td>The ID of the user that owns the store</td>
+</tr>
+<tr>
+<td>owner-username</td>
+<td>The username of the user that owns the store</td>
+</tr>
+<tr>
+<td>owner-avatar-url</td>
+<td>The URL of the avatar of the user that owns the store</td>
+</tr>
+<tr>
 <td>currency-id</td>
 <td>The ID of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
 <td>currency-name</td>
 <td>The name of the currency that the store&#39;s products are purchasable with</td>
+</tr>
+<tr>
+<td>currency-icon-url</td>
+<td>The URL of the icon of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
 <td>sub-location-id</td>
@@ -3753,12 +3852,28 @@ Authentication: not required
 <td>The number of products belonging to the store that have been discontinued without the store owner providing advance notice</td>
 </tr>
 <tr>
+<td>owner-id</td>
+<td>The ID of the user that owns the store</td>
+</tr>
+<tr>
+<td>owner-username</td>
+<td>The username of the user that owns the store</td>
+</tr>
+<tr>
+<td>owner-avatar-url</td>
+<td>The URL of the avatar of the user that owns the store</td>
+</tr>
+<tr>
 <td>currency-id</td>
 <td>The ID of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
 <td>currency-name</td>
 <td>The name of the currency that the store&#39;s products are purchasable with</td>
+</tr>
+<tr>
+<td>currency-icon-url</td>
+<td>The URL of the icon of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
 <td>sub-location-id</td>
@@ -3910,12 +4025,28 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The number of products belonging to the store that have been discontinued without the store owner providing advance notice</td>
 </tr>
 <tr>
+<td>owner-id</td>
+<td>The ID of the user that owns the store</td>
+</tr>
+<tr>
+<td>owner-username</td>
+<td>The username of the user that owns the store</td>
+</tr>
+<tr>
+<td>owner-avatar-url</td>
+<td>The URL of the avatar of the user that owns the store</td>
+</tr>
+<tr>
 <td>currency-id</td>
 <td>The ID of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
 <td>currency-name</td>
 <td>The name of the currency that the store&#39;s products are purchasable with</td>
+</tr>
+<tr>
+<td>currency-icon-url</td>
+<td>The URL of the icon of the currency that the store&#39;s products are purchasable with</td>
 </tr>
 <tr>
 <td>sub-location-id</td>
