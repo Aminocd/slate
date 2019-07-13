@@ -73,7 +73,7 @@ active | Whether the user is active or not
 public-email | An email that is viewable by the public
 get-avatar-url | The URL at which the user profile picture can be found
 number-of-reviews | The total number of reviews received by all of the user's stores
-average-score | The average score of all the reviews received by the user's stores
+average-score | The average score of all the reviews received by the user's stores, out of 5
 product-count | The number of products offered by all of the user's stores
 product-cancellation-count | The number of product cancellations created by the user
 store-count | The number of stores belonging to the user
@@ -139,7 +139,7 @@ active | Whether the user is active or not
 public-email | An email that is viewable by the public
 get-avatar-url | The URL at which the user profile picture can be found
 number-of-reviews | The total number of reviews received by all of the user's stores
-average-score | The average score of all the reviews received by the user's stores
+average-score | The average score of all the reviews received by the user's stores, out of 5
 product-count | The number of products offered by all of the user's stores
 product-cancellation-count | The number of product cancellations created by the user
 store-count | The number of stores belonging to the user
@@ -204,7 +204,7 @@ active | Whether the user is active or not
 public-email | An email that is viewable by the public
 get-avatar-url | The URL at which the user profile picture can be found
 number-of-reviews | The total number of reviews received by all of the user's stores
-average-score | The average score of all the reviews received by the user's stores
+average-score | The average score of all the reviews received by the user's stores, out of 5
 product-count | The number of products offered by all of the user's stores
 product-cancellation-count | The number of product cancellations created by the user
 store-count | The number of stores belonging to the user
@@ -238,7 +238,7 @@ curl "https://api.mycurrency.com/user_contacts" \
         "public-email": null,
         "get-avatar-url": "/avatars/original/missing.png",
         "number-of-reviews": 3,
-        "average-score": "7.333333333333333333",
+        "average-score": "3.67",
         "product-count": 1,
         "product-cancellation-count": 3,
         "store-count": 1,
@@ -357,7 +357,7 @@ active | Whether the user is active or not
 public-email | An email that is viewable by the public
 get-avatar-url | The URL at which the user profile picture can be found
 number-of-reviews | The total number of reviews received by all of the user's stores
-average-score | The average score of all the reviews received by the user's stores
+average-score | The average score of all the reviews received by the user's stores, out of 5
 product-count | The number of products offered by all of the user's stores
 product-cancellation-count | The number of product cancellations created by the user
 store-count | The number of stores belonging to the user
@@ -440,7 +440,7 @@ active | Whether the user is active or not
 public-email | An email that is viewable by the public
 get-avatar-url | The URL at which the user profile picture can be found
 number-of-reviews | The total number of reviews received by all of the user's stores
-average-score | The average score of all the reviews received by the user's stores
+average-score | The average score of all the reviews received by the user's stores, out of 5
 product-count | The number of products offered by all of the user's stores
 product-cancellation-count | The number of product cancellations created by the user
 store-count | The number of stores belonging to the user
@@ -516,7 +516,7 @@ active | Whether the user is active or not
 public-email | An email that is viewable by the public
 get-avatar-url | The URL at which the user profile picture can be found
 number-of-reviews | The total number of reviews received by all of the user's stores
-average-score | The average score of all the reviews received by the user's stores
+average-score | The average score of all the reviews received by the user's stores, out of 5
 product-count | The number of products offered by all of the user's stores
 product-cancellation-count | The number of product cancellations created by the user
 store-count | The number of stores belonging to the user
@@ -645,7 +645,7 @@ curl 'https://api.mycurrency.com/currencies/2' \
       "updated-at": "2018-08-12T23:49:56.793-07:00",
       "get-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
       "number-of-reviews": 5,
-      "average-score": "7.333333333333333333"
+      "average-score": "3.67"
     }
   }
 }
@@ -680,8 +680,8 @@ description | The description of the currency
 created-at | The time and date when the currency was created
 updated-at | The time and date when the currency was last updated
 get-icon-url | The URL at which the currency icon picture can be found
-number-of-reviews | The number of store reviews created for the store
-average-score | The average score of the store reviews, out of 10
+number-of-reviews | The number of store reviews created for all stores associated with the currency
+average-score | The average score of store reviews created for all stores associated with the currency, out of 5
 
 ## Get a Currency with Authorization
 
@@ -762,7 +762,7 @@ created-at | The time and date when the currency was created
 updated-at | The time and date when the currency was last updated
 get-icon-url | The URL at which the currency icon picture can be found
 number-of-reviews | The number of store reviews created for the store
-average-score | The average score of the store reviews, out of 10
+average-score | The average score of store reviews created for all stores associated with the currency, out of 5
 private-amount-atomic | The amount held in the logged-in user's private holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
 public-amount-atomic | The amount held in the logged-in user's public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
 total-amount-atomic | The total amount held in the logged-in user's public and private holdings of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
@@ -807,7 +807,7 @@ curl "https://api.mycurrency.com/currencies" \
         "updated-at": "2017-08-10T17:58:08.738-07:00",
         "get-icon-url": "/system/currencies/icons/000/000/001/original/calm_dollars.jpg?1534619841"
         "number-of-reviews": 3,
-        "average-score": "5.400000000000000000"
+        "average-score": "2.61"
       }
     },
     {
@@ -829,7 +829,7 @@ curl "https://api.mycurrency.com/currencies" \
         "updated-at": "2018-08-12T23:49:56.793-07:00",
         "get-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
         "number-of-reviews": 5,
-        "average-score": "7.333333333333333333"
+        "average-score": "3.67"
       }
     },
     {
@@ -851,7 +851,7 @@ curl "https://api.mycurrency.com/currencies" \
         "updated-at": "2018-09-22T17:10:21.588-07:00",
         "get-icon-url": "/system/currencies/icons/000/000/003/original/horizon-cloud.png?1534243939"
         "number-of-reviews": 3,
-        "average-score": "8.000000000000000000"
+        "average-score": "4.00"
       }
     },
     {
@@ -873,7 +873,7 @@ curl "https://api.mycurrency.com/currencies" \
         "updated-at": "2018-09-22T17:10:21.588-07:00",
         "get-icon-url": "/system/currencies/icons/000/000/004/original/Tom-bucks.png?1534148467"
         "number-of-reviews": 7,
-        "average-score": "10.000000000000000000"
+        "average-score": "5.00"
       }
     },
     {
@@ -895,7 +895,7 @@ curl "https://api.mycurrency.com/currencies" \
         "updated-at": "2018-09-22T18:57:27.193-07:00",
         "get-icon-url": "/system/currencies/icons/000/000/005/original/chilli-pesos.png?153414511"
         "number-of-reviews": 14,
-        "average-score": "9.15555555555555555"
+        "average-score": "4.61"
       }
     }
   ],
@@ -945,8 +945,8 @@ description | The description of the currency
 created-at | The time and date when the currency was created
 updated-at | The time and date when the currency was last updated
 get-icon-url | The URL at which the currency icon picture can be found
-number-of-reviews | The number of store reviews created for the store
-average-score | The average score of the store reviews, out of 10
+number-of-reviews | The number of store reviews created for all stores associated with the currency
+average-score | The average score of the store reviews, out of 5
 
 ## List a User's Currencies
 
@@ -979,7 +979,7 @@ curl "https://api.mycurrency.com/currencies?user_id=3" \
         "updated-at": "2018-08-12T23:49:56.793-07:00",
         "get-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
         "number-of-reviews": 5,
-        "average-score": "7.333333333333333333"
+        "average-score": "3.67"
       }
     },
     {
@@ -1001,7 +1001,7 @@ curl "https://api.mycurrency.com/currencies?user_id=3" \
         "updated-at": "2018-09-22T17:10:21.588-07:00",
         "get-icon-url": "/system/currencies/icons/000/000/003/original/horizon-cloud.png?1534243939"
         "number-of-reviews": 3,
-        "average-score": "8.000000000000000000"
+        "average-score": "4.00"
       }
     }  
   ],
@@ -1052,7 +1052,9 @@ created-at | The time and date when the currency was created
 updated-at | The time and date when the currency was last updated
 get-icon-url | The URL at which the currency icon picture can be found
 number-of-reviews | The number of store reviews created for the store
-average-score | The average score of the store reviews, out of 10
+average-score | The average score of the store reviews created for all stores associated with the currency, out of 5
+public-amount-atomic | The amount held in the logged-in user's public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
+public-currency-holding-id | The ID of the logged-in user's public holding of the specified currency
 
 ## Create Currency
 
@@ -1130,7 +1132,7 @@ created-at | The time and date when the currency was created
 updated-at | The time and date when the currency was last updated
 get-icon-url | The URL at which the currency icon picture can be found
 number-of-reviews | The number of store reviews created for the store
-average-score | The average score of the store reviews, out of 10
+average-score | The average score of the store reviews, out of 5
 
 ## Update Currency
 
@@ -1206,7 +1208,7 @@ created-at | The time and date when the currency was created
 updated-at | The time and date when the currency was last updated
 get-icon-url | The URL at which the currency icon picture can be found
 number-of-reviews | The number of store reviews created for the store
-average-score | The average score of the store reviews, out of 10
+average-score | The average score of the store reviews, out of 5
 
 # Burnrate Change
 
@@ -1465,7 +1467,7 @@ Parameter | Description
 --------- | -----------
 id | The ID of the store
 number-of-reviews | The number of store reviews created for the store
-average-score | The average score of the store reviews, out of 10
+average-score | The average score of the store reviews, out of 5
 number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
 number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
 owner-id | The ID of the user that owns the store
@@ -1527,7 +1529,7 @@ curl "https://api.mycurrency.com/stores" \
       "type": "stores",
       "attributes": {
         "number-of-reviews": 3
-        "average-score": "7.333333333333333333",
+        "average-score": "3.67",
         "number-of-products": 1,
         "number-of-product-cancellations": 3 
         "currency-id": 2,
@@ -1602,7 +1604,7 @@ Parameter | Description
 --------- | -----------
 id | The ID of the store
 number-of-reviews | The number of store reviews created for the store
-average-score | The average score of the store reviews, out of 10
+average-score | The average score of the store reviews, out of 5
 number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
 number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
 owner-id | The ID of the user that owns the store
@@ -1739,7 +1741,7 @@ Parameter | Description
 --------- | -----------
 id | The ID of the store
 number-of-reviews | The number of store reviews created for the store
-average-score | The average score of the store reviews, out of 10
+average-score | The average score of the store reviews, out of 5
 number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
 number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
 owner-id | The ID of the user that owns the store
@@ -1778,7 +1780,7 @@ curl "https://api.mycurrency.com/currencies/2/stores" \
       "type": "stores",
       "attributes": {
         "number-of-reviews": 3
-        "average-score": "7.333333333333333333",
+        "average-score": "3.67",
         "number-of-products": 1,
         "number-of-product-cancellations": 3 
         "currency-id": 2,
@@ -1853,7 +1855,7 @@ Parameter | Description
 --------- | -----------
 id | The ID of the store
 number-of-reviews | The number of store reviews created for the store
-average-score | The average score of the store reviews, out of 10
+average-score | The average score of the store reviews, out of 5
 number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
 number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
 owner-id | The ID of the user that owns the store
@@ -1944,7 +1946,7 @@ Parameter | Description
 --------- | -----------
 id | The ID of the store
 number-of-reviews | The number of store reviews created for the store
-average-score | The average score of the store reviews, out of 10
+average-score | The average score of the store reviews, out of 5
 number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
 number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
 owner-id | The ID of the user that owns the store
@@ -2058,7 +2060,7 @@ Parameter | Description
 --------- | -----------
 id | The ID of the store
 number-of-reviews | The number of store reviews created for the store
-average-score | The average score of the store reviews, out of 10
+average-score | The average score of the store reviews, out of 5
 number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
 number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
 owner-id | The ID of the user that owns the store
@@ -2149,7 +2151,7 @@ Parameter | Description
 --------- | -----------
 id | The ID of the store
 number-of-reviews | The number of store reviews created for the store
-average-score | The average score of the store reviews, out of 10
+average-score | The average score of the store reviews, out of 5
 number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
 number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
 owner-id | The ID of the user that owns the store
@@ -2234,7 +2236,7 @@ Parameter | Description
 --------- | -----------
 id | The ID of the store
 number-of-reviews | The number of store reviews created for the store
-average-score | The average score of the store reviews, out of 10
+average-score | The average score of the store reviews, out of 5
 number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
 number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
 owner-id | The ID of the user that owns the store
@@ -2321,7 +2323,7 @@ Parameter | Description
 --------- | -----------
 id | The ID of the store
 number-of-reviews | The number of store reviews created for the store
-average-score | The average score of the store reviews, out of 10
+average-score | The average score of the store reviews, out of 5
 number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
 number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
 currency-id | The ID of the currency that the store's products are purchasable with
