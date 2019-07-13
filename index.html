@@ -744,7 +744,7 @@ Authentication: not required
 </tr>
 <tr>
 <td>average-score</td>
-<td>The average score of all the reviews received by the user&#39;s stores</td>
+<td>The average score of all the reviews received by the user&#39;s stores, out of 5</td>
 </tr>
 <tr>
 <td>product-count</td>
@@ -854,7 +854,7 @@ Authentication: not required
 </tr>
 <tr>
 <td>average-score</td>
-<td>The average score of all the reviews received by the user&#39;s stores</td>
+<td>The average score of all the reviews received by the user&#39;s stores, out of 5</td>
 </tr>
 <tr>
 <td>product-count</td>
@@ -953,7 +953,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 <tr>
 <td>average-score</td>
-<td>The average score of all the reviews received by the user&#39;s stores</td>
+<td>The average score of all the reviews received by the user&#39;s stores, out of 5</td>
 </tr>
 <tr>
 <td>product-count</td>
@@ -1011,7 +1011,7 @@ Authentication: the request requires the OAuth access-token associated with the 
         </span><span class="s2">"public-email"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"get-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/avatars/original/missing.png"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7.333333333333333333"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.67"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-cancellation-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -1152,7 +1152,7 @@ Authentication: required
 </tr>
 <tr>
 <td>average-score</td>
-<td>The average score of all the reviews received by the user&#39;s stores</td>
+<td>The average score of all the reviews received by the user&#39;s stores, out of 5</td>
 </tr>
 <tr>
 <td>product-count</td>
@@ -1279,7 +1279,7 @@ Authentication: required
 </tr>
 <tr>
 <td>average-score</td>
-<td>The average score of all the reviews received by the user&#39;s stores</td>
+<td>The average score of all the reviews received by the user&#39;s stores, out of 5</td>
 </tr>
 <tr>
 <td>product-count</td>
@@ -1414,7 +1414,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 <tr>
 <td>average-score</td>
-<td>The average score of all the reviews received by the user&#39;s stores</td>
+<td>The average score of all the reviews received by the user&#39;s stores, out of 5</td>
 </tr>
 <tr>
 <td>product-count</td>
@@ -1577,7 +1577,7 @@ Authentication: not required
       </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T23:49:56.793-07:00"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"get-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"</span><span class="w">
       </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7.333333333333333333"</span><span class="w">
+      </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.67"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1658,11 +1658,11 @@ Authentication: not required
 </tr>
 <tr>
 <td>number-of-reviews</td>
-<td>The number of store reviews created for the store</td>
+<td>The number of store reviews created for all stores associated with the currency</td>
 </tr>
 <tr>
 <td>average-score</td>
-<td>The average score of the store reviews, out of 10</td>
+<td>The average score of store reviews created for all stores associated with the currency, out of 5</td>
 </tr>
 </tbody></table>
 <h2 id='get-a-currency-with-authorization'>Get a Currency with Authorization</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/authorized_currencies/4'</span> <span class="se">\</span>
@@ -1789,7 +1789,7 @@ Authentication: required
 </tr>
 <tr>
 <td>average-score</td>
-<td>The average score of the store reviews, out of 10</td>
+<td>The average score of store reviews created for all stores associated with the currency, out of 5</td>
 </tr>
 <tr>
 <td>private-amount-atomic</td>
@@ -1867,7 +1867,7 @@ Authentication: required
         </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-10T17:58:08.738-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"get-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/001/original/calm_dollars.jpg?1534619841"</span><span class="w">
         </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.400000000000000000"</span><span class="w">
+        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.61"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -1889,7 +1889,7 @@ Authentication: required
         </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T23:49:56.793-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"get-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"</span><span class="w">
         </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7.333333333333333333"</span><span class="w">
+        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.67"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -1911,7 +1911,7 @@ Authentication: required
         </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-22T17:10:21.588-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"get-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/003/original/horizon-cloud.png?1534243939"</span><span class="w">
         </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8.000000000000000000"</span><span class="w">
+        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.00"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -1933,7 +1933,7 @@ Authentication: required
         </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-22T17:10:21.588-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"get-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/004/original/Tom-bucks.png?1534148467"</span><span class="w">
         </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.000000000000000000"</span><span class="w">
+        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.00"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -1955,7 +1955,7 @@ Authentication: required
         </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-22T18:57:27.193-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"get-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/005/original/chilli-pesos.png?153414511"</span><span class="w">
         </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.15555555555555555"</span><span class="w">
+        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.61"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
@@ -2051,11 +2051,11 @@ Authentication: not required
 </tr>
 <tr>
 <td>number-of-reviews</td>
-<td>The number of store reviews created for the store</td>
+<td>The number of store reviews created for all stores associated with the currency</td>
 </tr>
 <tr>
 <td>average-score</td>
-<td>The average score of the store reviews, out of 10</td>
+<td>The average score of the store reviews, out of 5</td>
 </tr>
 </tbody></table>
 <h2 id='list-a-user-39-s-currencies'>List a User&#39;s Currencies</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/currencies?user_id=3"</span> <span class="se">\</span>
@@ -2085,7 +2085,7 @@ Authentication: not required
         </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T23:49:56.793-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"get-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"</span><span class="w">
         </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7.333333333333333333"</span><span class="w">
+        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.67"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -2107,7 +2107,7 @@ Authentication: not required
         </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-22T17:10:21.588-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"get-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/003/original/horizon-cloud.png?1534243939"</span><span class="w">
         </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8.000000000000000000"</span><span class="w">
+        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.00"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">  
   </span><span class="p">],</span><span class="w">
@@ -2207,7 +2207,15 @@ Authentication: not required
 </tr>
 <tr>
 <td>average-score</td>
-<td>The average score of the store reviews, out of 10</td>
+<td>The average score of the store reviews created for all stores associated with the currency, out of 5</td>
+</tr>
+<tr>
+<td>public-amount-atomic</td>
+<td>The amount held in the logged-in user&#39;s public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
+<td>public-currency-holding-id</td>
+<td>The ID of the logged-in user&#39;s public holding of the specified currency</td>
 </tr>
 </tbody></table>
 <h2 id='create-currency'>Create Currency</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.mycurrency.com/users/2/issuer/currencies <span class="se">\</span>
@@ -2353,7 +2361,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 <tr>
 <td>average-score</td>
-<td>The average score of the store reviews, out of 10</td>
+<td>The average score of the store reviews, out of 5</td>
 </tr>
 </tbody></table>
 <h2 id='update-currency'>Update Currency</h2><pre class="highlight shell tab-shell"><code>curl -X PUT https://api.mycurrency.com/users/2/issuer/currencies/1 <span class="se">\</span>
@@ -2487,7 +2495,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 <tr>
 <td>average-score</td>
-<td>The average score of the store reviews, out of 10</td>
+<td>The average score of the store reviews, out of 5</td>
 </tr>
 </tbody></table>
 <h1 id='burnrate-change'>Burnrate Change</h1><h2 id='get-a-burnrate-change'>Get a Burnrate Change</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/currencies/1/burnrate_changes/1"</span> <span class="se">\</span>
@@ -2809,7 +2817,7 @@ Authentication: not required
 </tr>
 <tr>
 <td>average-score</td>
-<td>The average score of the store reviews, out of 10</td>
+<td>The average score of the store reviews, out of 5</td>
 </tr>
 <tr>
 <td>number-of-products</td>
@@ -2922,7 +2930,7 @@ Authentication: not required
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stores"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
-        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7.333333333333333333"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.67"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"number-of-products"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"number-of-product-cancellations"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> 
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
@@ -3004,7 +3012,7 @@ Authentication: not required
 </tr>
 <tr>
 <td>average-score</td>
-<td>The average score of the store reviews, out of 10</td>
+<td>The average score of the store reviews, out of 5</td>
 </tr>
 <tr>
 <td>number-of-products</td>
@@ -3199,7 +3207,7 @@ Authentication: not required
 </tr>
 <tr>
 <td>average-score</td>
-<td>The average score of the store reviews, out of 10</td>
+<td>The average score of the store reviews, out of 5</td>
 </tr>
 <tr>
 <td>number-of-products</td>
@@ -3289,7 +3297,7 @@ Authentication: not required
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stores"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
-        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7.333333333333333333"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.67"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"number-of-products"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"number-of-product-cancellations"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> 
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
@@ -3371,7 +3379,7 @@ Authentication: not required
 </tr>
 <tr>
 <td>average-score</td>
-<td>The average score of the store reviews, out of 10</td>
+<td>The average score of the store reviews, out of 5</td>
 </tr>
 <tr>
 <td>number-of-products</td>
@@ -3520,7 +3528,7 @@ Authentication: not required
 </tr>
 <tr>
 <td>average-score</td>
-<td>The average score of the store reviews, out of 10</td>
+<td>The average score of the store reviews, out of 5</td>
 </tr>
 <tr>
 <td>number-of-products</td>
@@ -3692,7 +3700,7 @@ Authentication: not required
 </tr>
 <tr>
 <td>average-score</td>
-<td>The average score of the store reviews, out of 10</td>
+<td>The average score of the store reviews, out of 5</td>
 </tr>
 <tr>
 <td>number-of-products</td>
@@ -3841,7 +3849,7 @@ Authentication: not required
 </tr>
 <tr>
 <td>average-score</td>
-<td>The average score of the store reviews, out of 10</td>
+<td>The average score of the store reviews, out of 5</td>
 </tr>
 <tr>
 <td>number-of-products</td>
@@ -4014,7 +4022,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 <tr>
 <td>average-score</td>
-<td>The average score of the store reviews, out of 10</td>
+<td>The average score of the store reviews, out of 5</td>
 </tr>
 <tr>
 <td>number-of-products</td>
@@ -4190,7 +4198,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 <tr>
 <td>average-score</td>
-<td>The average score of the store reviews, out of 10</td>
+<td>The average score of the store reviews, out of 5</td>
 </tr>
 <tr>
 <td>number-of-products</td>
