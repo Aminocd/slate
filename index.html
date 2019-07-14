@@ -6853,6 +6853,12 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>yes</td>
 <td>The ID of the user which owns the currency holdings, provided in URL path</td>
 </tr>
+<tr>
+<td>exclude_empty</td>
+<td>boolean</td>
+<td>no</td>
+<td>If set to true, currency holding public private pairs where neither holding has an amount_atomic value greater than zero will be excluded from the results. By default this is set to false.</td>
+</tr>
 </tbody></table>
 <h3 id='response-47'>RESPONSE</h3>
 <table><thead>
@@ -7093,6 +7099,12 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>integer</td>
 <td>yes</td>
 <td>The ID of the user which owns the currency holdings, provided in URL path</td>
+</tr>
+<tr>
+<td>exclude_empty</td>
+<td>boolean</td>
+<td>no</td>
+<td>If set to true, currency holding public private pairs where neither holding has an amount_atomic value greater than zero will be excluded from the results. By default this is set to false.</td>
 </tr>
 </tbody></table>
 <h3 id='response-48'>RESPONSE</h3>
