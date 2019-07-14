@@ -4202,6 +4202,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 Parameter | Type | Required | Description
 --------- | ------- | ------- | -----------
 user_id | integer | yes | The ID of the user which owns the currency holdings, provided in URL path
+exclude_empty | boolean | no | If set to true, currency holding public private pairs where neither holding has an amount_atomic value greater than zero will be excluded from the results. By default this is set to false. 
 
 ### RESPONSE
 
@@ -4402,6 +4403,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 Parameter | Type | Required | Description
 --------- | ------- | ------- | -----------
 user_id | integer | yes | The ID of the user which owns the currency holdings, provided in URL path
+exclude_empty | boolean | no | If set to true, currency holding public private pairs where neither holding has an amount_atomic value greater than zero will be excluded from the results. By default this is set to false. 
 
 ### RESPONSE
 
