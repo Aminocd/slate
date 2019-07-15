@@ -1975,7 +1975,7 @@ Authentication: required
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all currencies.</p>
+<p>This endpoint retrieves all currencies with an active issuer.</p>
 <h3 id='http-request-11'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/currencies</code></p>
 
@@ -2988,7 +2988,7 @@ Authentication: not required
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all stores.</p>
+<p>This endpoint retrieves all stores that have an active owner.</p>
 <h3 id='http-request-19'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/stores</code></p>
 
@@ -3504,7 +3504,7 @@ Authentication: not required
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all stores that have an index that contains text that matches the search keyword provided.</p>
+<p>This endpoint retrieves all stores that have an active owner that have an index that contains text that matches the search keyword provided.</p>
 <h3 id='http-request-22'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/stores?keyword={}</code></p>
 
@@ -3676,7 +3676,7 @@ Authentication: not required
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all stores belonging to the sub location associated with the ID provided.</p>
+<p>This endpoint retrieves all stores that have an active owner belonging to the sub location associated with the ID provided.</p>
 <h3 id='http-request-23'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/sub_locations/&lt;SUB-LOCATION-ID&gt;/stores</code></p>
 
@@ -3825,7 +3825,7 @@ Authentication: not required
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all stores that belong to the sub location associated with the ID provided and contain text that matches the search keyword provided.</p>
+<p>This endpoint retrieves all stores that have an active owner that belong to the sub location associated with the ID provided and contain text that matches the search keyword provided.</p>
 <h3 id='http-request-24'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/sub_locations/&lt;SUB-LOCATION-ID&gt;/stores?keyword={}</code></p>
 
