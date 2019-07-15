@@ -916,7 +916,7 @@ curl "https://api.mycurrency.com/currencies" \
 }
 ```
 
-This endpoint retrieves all currencies.
+This endpoint retrieves all currencies with an active issuer.
 
 ### HTTP Request
 
@@ -1588,7 +1588,7 @@ curl "https://api.mycurrency.com/stores" \
 }
 ```
 
-This endpoint retrieves all stores.
+This endpoint retrieves all stores that have an active owner.
 
 ### HTTP Request
 
@@ -1930,7 +1930,7 @@ curl "https://api.mycurrency.com/stores?keyword=spa%20services" \
 }
 ```
 
-This endpoint retrieves all stores that have an index that contains text that matches the search keyword provided.
+This endpoint retrieves all stores that have an active owner that have an index that contains text that matches the search keyword provided.
 
 ### HTTP Request
 
@@ -2044,7 +2044,7 @@ curl "https://api.mycurrency.com/sub_locations/1/stores" \
 }
 ```
 
-This endpoint retrieves all stores belonging to the sub location associated with the ID provided.
+This endpoint retrieves all stores that have an active owner belonging to the sub location associated with the ID provided.
 
 ### HTTP Request
 
@@ -2135,7 +2135,7 @@ curl "https://api.mycurrency.com/sub_locations/1/stores?keyword=Bugs%20Bunny" \
 }
 ```
 
-This endpoint retrieves all stores that belong to the sub location associated with the ID provided and contain text that matches the search keyword provided.
+This endpoint retrieves all stores that have an active owner that belong to the sub location associated with the ID provided and contain text that matches the search keyword provided.
 
 ### HTTP Request
 
