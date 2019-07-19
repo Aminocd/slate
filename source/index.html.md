@@ -2706,21 +2706,26 @@ curl 'https://api.mycurrency.com/products/1' \
     "id": "1",
     "type": "products",
     "attributes": {
-      "sub-category-id": 3,
-      "sub-category-name": "skin treatment"
+      "sub-category-id": 57,
+      "sub-category-name": "general labor",
       "currency-id": 1,
-      "currency-name": "Calm dollars",
+      "currency-name": "Micro Asteroid bucks",
+      "currency-icon-url": "/icons/original/missing.png",
+      "days-to-cancellation": null,
       "store-id": 1,
-      "store-name": "Calm Spa",
-      "product-name": "Facial",
-      "product-description": "standard facial",
-      "price-cents": 5000,
+      "store-name": "Asteroid Industries",
+      "product-name": "mine 1 pound of X-group asteroid",
+      "product-description": "will mine 1 pound of material from an X-group asteroid and deliver it to the LEO processing facility",
+      "price-cents": 1000000,
       "active": true,
       "continued": true,
-      "last-activated-at": "2018-08-24T05:01:25.879-07:00",
-      "created-at": "2018-08-24T05:01:25.879-07:00",
-      "updated-at": "2018-08-24T05:01:25.879-07:00",
-      "get-image-url": "/system/products/images/000/000/001/original/facial.jpg"
+      "last-activated-at": "2018-11-30T08:29:04.233-08:00",
+      "created-at": "2018-11-30T08:29:04.233-08:00",
+      "updated-at": "2018-11-30T08:29:04.233-08:00",
+      "get-image-url": "/images/original/missing.png",
+      "public-amount-atomic": 0,
+      "private-amount-atomic": 2000000000000,
+      "total-amount-atomic": 2000000000000
     }
   }
 }
@@ -2756,6 +2761,9 @@ last-activated-at | The time and date when the product was last activated
 created-at | The time and date when the product was created
 updated-at | The time and date when the product was last updated
 get-image-url | The URL at which the product image picture can be found
+public-amount-atomic | The number of atomic units in the logged-in user's public holding of the currency that the product can be redeemed by
+private-amount-atomic | The number of atomic units in the logged-in user's private holding of the currency that the product can be redeemed by
+total-amount-atomic | The total number of atomic units in the logged-in user's public and private holding of the currency that the product can be redeemed by
 
 ## List Products
 
