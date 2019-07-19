@@ -2750,6 +2750,8 @@ sub-category-id | The sub category that the product belongs to
 sub-category-name | The name of the sub category that the product belongs to
 currency-id | The ID of the currency that the product can be redeemed by
 currency-name | The name of the currency that the product can be redeemed by
+currency-icon-url | The URL of the icon of the currency that the product can be redeemed by 
+days-to-cancellation | How many days until the product's product-discontinual is activated and the product is cancelled. A NULL value if the product has no product discontinual
 store-id | The ID of the store where the product is sold
 store-name | The name of the store where the product is sold
 product-name | The name of the product
@@ -2785,6 +2787,8 @@ curl "https://api.mycurrency.com/products" \
         "sub-category-name": "standard facial",
         "currency-id": 1,
         "currency-name": "Calm dollars",
+        "currency-icon-url": "/icons/original/missing.png",
+        "days-to-cancellation": null,
         "store-id": 1,
         "store-name": "Calm Spa",
         "product-name": "Facial",
@@ -2806,6 +2810,8 @@ curl "https://api.mycurrency.com/products" \
         "sub-category-name": "cartoon products",
         "currency-id": 2,
         "currency-name": "ACME Toon Shop dollars"
+        "currency-icon-url": "/icons/original/missing.png",
+        "days-to-cancellation": null,
         "store-id": 2,
         "store-name": "Vancouver ACME Toon Shop",
         "product-name": "Bugs Bunny Q-Tips",
@@ -2827,6 +2833,8 @@ curl "https://api.mycurrency.com/products" \
         "sub-category-name": "cartoon products",
         "currency-id": 2,
         "currency-name": "ACME Toon Shop dollars"
+        "currency-icon-url": "/icons/original/missing.png",
+        "days-to-cancellation": null,
         "store-id": 3,
         "store-name": "San Francisco ACME Toon Shop",
         "product-name": "Bugs Bunny Q-Tips",
@@ -2848,6 +2856,8 @@ curl "https://api.mycurrency.com/products" \
         "sub-category-name": "cartoon products",
         "currency-id": 2,
         "currency-name": "ACME Toon Shop dollars"
+        "currency-icon-url": "/icons/original/missing.png",
+        "days-to-cancellation": null,
         "store-id": 3,
         "store-name": "San Francisco ACME Toon Shop",
         "product-name": "Teleport hole",
@@ -2898,6 +2908,8 @@ sub-category-id | The sub category that the product belongs to
 sub-category-name | The name of the sub category that the product belongs to
 currency-id | The ID of the currency that the product can be redeemed by
 currency-name | The name of the currency that the product can be redeemed by
+currency-icon-url | The URL of the icon of the currency that the product can be redeemed by 
+days-to-cancellation | How many days until the product's product-discontinual is activated and the product is cancelled. A NULL value if the product has no product discontinual
 store-id | The ID of the store where the product is sold
 store-name | The name of the store where the product is sold
 product-name | The name of the product
@@ -2930,6 +2942,8 @@ curl "https://api.mycurrency.com/stores/3/products" \
         "sub-category-name": "cartoon products",
         "currency-id": 2,
         "currency-name": "ACME Toon Shop dollars"
+        "currency-icon-url": "/icons/original/missing.png",
+        "days-to-cancellation": null,
         "store-id": 3,
         "store-name": "San Francisco ACME Toon Shop",
         "product-name": "Bugs Bunny Q-Tips",
@@ -2951,6 +2965,8 @@ curl "https://api.mycurrency.com/stores/3/products" \
         "sub-category-name": "cartoon products",
         "currency-id": 2,
         "currency-name": "ACME Toon Shop dollars"
+        "currency-icon-url": "/icons/original/missing.png",
+        "days-to-cancellation": null,
         "store-id": 3,
         "store-name": "San Francisco ACME Toon Shop",
         "product-name": "Teleport hole",
@@ -3001,6 +3017,8 @@ sub-category-id | The sub category that the product belongs to
 sub-category-name | The name of the sub category that the product belongs to
 currency-id | The ID of the currency that the product can be redeemed by
 currency-name | The name of the currency that the product can be redeemed by
+currency-icon-url | The URL of the icon of the currency that the product can be redeemed by 
+days-to-cancellation | How many days until the product's product-discontinual is activated and the product is cancelled. A NULL value if the product has no product discontinual
 store-id | The ID of the store where the product is sold
 store-name | The name of the store where the product is sold
 product-name | The name of the product
@@ -3035,6 +3053,8 @@ curl -X POST https://api.mycurrency.com/users/4/issuer/currencies/5/stores/3/pro
       "sub-category-name": "fishing supplies",
       "currency-id": 5,
       "currency-name": "Freds Fishing Supplies dollars",
+      "currency-icon-url": "/icons/original/missing.png",
+      "days-to-cancellation": null,
       "store-id": 3,
       "store-name": "Freds Fishing Supplies",
       "product-name": "fishing bait",
@@ -3082,6 +3102,8 @@ sub-category-id | The sub category that the product belongs to
 sub-category-name | The name of the sub category that the product belongs to
 currency-id | The ID of the currency that the product can be redeemed by
 currency-name | The name of the currency that the product can be redeemed by
+currency-icon-url | The URL of the icon of the currency that the product can be redeemed by 
+days-to-cancellation | How many days until the product's product-discontinual is activated and the product is cancelled. A NULL value if the product has no product discontinual
 store-id | The ID of the store where the product is sold
 store-name | The name of the store where the product is sold
 product-name | The name of the product
@@ -3116,6 +3138,8 @@ curl -X PUT https://api.mycurrency.com/users/4/issuer/currencies/5/stores/3/prod
       "sub-category-name": "fishing supplies",
       "currency-id": 5,
       "currency-name": "Freds Fishing Supplies dollars",
+      "currency-icon-url": "/icons/original/missing.png",
+      "days-to-cancellation": null,
       "store-id": 3,
       "store-name": "Freds Fishing Supplies",
       "product-name": "fishing bait",
@@ -3162,6 +3186,8 @@ sub-category-id | The sub category that the product belongs to
 sub-category-name | The name of the sub category that the product belongs to
 currency-id | The ID of the currency that the product can be redeemed by
 currency-name | The name of the currency that the product can be redeemed by
+currency-icon-url | The URL of the icon of the currency that the product can be redeemed by 
+days-to-cancellation | How many days until the product's product-discontinual is activated and the product is cancelled. A NULL value if the product has no product discontinual
 store-id | The ID of the store where the product is sold
 store-name | The name of the store where the product is sold
 product-name | The name of the product
