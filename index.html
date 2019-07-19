@@ -4780,6 +4780,14 @@ Authentication: not required for active products that have not been discontinued
 <td>The name of the currency that the product can be redeemed by</td>
 </tr>
 <tr>
+<td>currency-icon-url</td>
+<td>The URL of the icon of the currency that the product can be redeemed by</td>
+</tr>
+<tr>
+<td>days-to-cancellation</td>
+<td>How many days until the product&#39;s product-discontinual is activated and the product is cancelled. A NULL value if the product has no product discontinual</td>
+</tr>
+<tr>
 <td>store-id</td>
 <td>The ID of the store where the product is sold</td>
 </tr>
@@ -4852,6 +4860,8 @@ Authentication: not required for active products that have not been discontinued
         </span><span class="s2">"sub-category-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"standard facial"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"days-to-cancellation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm Spa"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Facial"</span><span class="p">,</span><span class="w">
@@ -4873,6 +4883,8 @@ Authentication: not required for active products that have not been discontinued
         </span><span class="s2">"sub-category-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cartoon products"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="w">
+        </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"days-to-cancellation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver ACME Toon Shop"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bugs Bunny Q-Tips"</span><span class="p">,</span><span class="w">
@@ -4894,6 +4906,8 @@ Authentication: not required for active products that have not been discontinued
         </span><span class="s2">"sub-category-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cartoon products"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="w">
+        </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"days-to-cancellation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco ACME Toon Shop"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bugs Bunny Q-Tips"</span><span class="p">,</span><span class="w">
@@ -4915,6 +4929,8 @@ Authentication: not required for active products that have not been discontinued
         </span><span class="s2">"sub-category-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cartoon products"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="w">
+        </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"days-to-cancellation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco ACME Toon Shop"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Teleport hole"</span><span class="p">,</span><span class="w">
@@ -4980,6 +4996,14 @@ Authentication: not required
 <td>The name of the currency that the product can be redeemed by</td>
 </tr>
 <tr>
+<td>currency-icon-url</td>
+<td>The URL of the icon of the currency that the product can be redeemed by</td>
+</tr>
+<tr>
+<td>days-to-cancellation</td>
+<td>How many days until the product&#39;s product-discontinual is activated and the product is cancelled. A NULL value if the product has no product discontinual</td>
+</tr>
+<tr>
 <td>store-id</td>
 <td>The ID of the store where the product is sold</td>
 </tr>
@@ -5040,6 +5064,8 @@ Authentication: not required
         </span><span class="s2">"sub-category-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cartoon products"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="w">
+        </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"days-to-cancellation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco ACME Toon Shop"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bugs Bunny Q-Tips"</span><span class="p">,</span><span class="w">
@@ -5061,6 +5087,8 @@ Authentication: not required
         </span><span class="s2">"sub-category-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cartoon products"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Shop dollars"</span><span class="w">
+        </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"days-to-cancellation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco ACME Toon Shop"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Teleport hole"</span><span class="p">,</span><span class="w">
@@ -5126,6 +5154,14 @@ Authentication: not required to see the products of a store that are active and 
 <td>The name of the currency that the product can be redeemed by</td>
 </tr>
 <tr>
+<td>currency-icon-url</td>
+<td>The URL of the icon of the currency that the product can be redeemed by</td>
+</tr>
+<tr>
+<td>days-to-cancellation</td>
+<td>How many days until the product&#39;s product-discontinual is activated and the product is cancelled. A NULL value if the product has no product discontinual</td>
+</tr>
+<tr>
 <td>store-id</td>
 <td>The ID of the store where the product is sold</td>
 </tr>
@@ -5188,6 +5224,8 @@ Authentication: not required to see the products of a store that are active and 
       </span><span class="s2">"sub-category-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing supplies"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies dollars"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"days-to-cancellation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
       </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing bait"</span><span class="p">,</span><span class="w">
@@ -5290,6 +5328,14 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The name of the currency that the product can be redeemed by</td>
 </tr>
 <tr>
+<td>currency-icon-url</td>
+<td>The URL of the icon of the currency that the product can be redeemed by</td>
+</tr>
+<tr>
+<td>days-to-cancellation</td>
+<td>How many days until the product&#39;s product-discontinual is activated and the product is cancelled. A NULL value if the product has no product discontinual</td>
+</tr>
+<tr>
 <td>store-id</td>
 <td>The ID of the store where the product is sold</td>
 </tr>
@@ -5352,6 +5398,8 @@ Authentication: the request requires the OAuth access-token associated with the 
       </span><span class="s2">"sub-category-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing supplies"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies dollars"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"days-to-cancellation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
       </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishing bait"</span><span class="p">,</span><span class="w">
@@ -5446,6 +5494,14 @@ Authentication: the request requires the OAuth access-token associated with the 
 <tr>
 <td>currency-name</td>
 <td>The name of the currency that the product can be redeemed by</td>
+</tr>
+<tr>
+<td>currency-icon-url</td>
+<td>The URL of the icon of the currency that the product can be redeemed by</td>
+</tr>
+<tr>
+<td>days-to-cancellation</td>
+<td>How many days until the product&#39;s product-discontinual is activated and the product is cancelled. A NULL value if the product has no product discontinual</td>
 </tr>
 <tr>
 <td>store-id</td>
