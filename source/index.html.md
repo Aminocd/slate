@@ -3173,8 +3173,8 @@ Parameter | Type | Required | Description
 sub_category_id | integer | yes | The sub category that the product belongs to
 store_id | integer | yes | The ID of the store where the product is sold, provided in URL path
 product_description | string | no | The description of the product
-price_cents | integer | yes | The price of the product by multiple of 100, and denominated in the currency of the store where the product is sold
-active | boolean | yes | Whether the product is active or not
+price_cents | integer | yes | The price of the product by multiple of 100, and denominated in the currency of the store where the product is sold, can only be updated when the product is inactive
+active | boolean | yes | Whether the product is active or not, can only be updated within 24 hours of the product's last activation
 image | filename | no | The image file to be uploaded as product's image picture
 
 ### RESPONSE
