@@ -7110,25 +7110,27 @@ curl 'https://api.mycurrency.com/users/3/offers/4' -H 'Accept: application/json'
 ```json
 {
   "data": {
-    "id": "4",
+    "id": "1",
     "type": "offers",
     "attributes": {
-      "offer-receiver-id": 3,
-      "offer-receiver-username": "Hannibal",
-      "offer-sender-id": 4,
-      "offer-sender-username": "ScipioAfricanus",
-      "previous-offer-id": 4,
-      "offer-type": 1,
+      "offer-receiver-id": 4,
+      "offer-receiver-username": "ScipioAfricanus",
+      "offer-receiver-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+      "offer-sender-id": 3,
+      "offer-sender-username": "Hannibal",
+      "offer-sender-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
+      "previous-offer-id": 0,
+      "offer-type": 0,
       "active": false,
       "self-cancellation": false,
-      "created-at": "2018-10-11T20:18:34.813-07:00",
-      "updated-at": "2018-10-11T20:18:47.253-07:00"
+      "created-at": "2019-01-25T15:48:29.219-08:00",
+      "updated-at": "2019-01-25T15:57:08.524-08:00"
     },
     "relationships": {
       "proposed-transfers": {
         "data": [
           {
-            "id": "3",
+            "id": "1",
             "type": "proposed-transfers"
           }
         ]
@@ -7136,7 +7138,7 @@ curl 'https://api.mycurrency.com/users/3/offers/4' -H 'Accept: application/json'
       "proposed-issuances": {
         "data": [
           {
-            "id": "3",
+            "id": "1",
             "type": "proposed-issuances"
           }
         ]
@@ -7145,34 +7147,72 @@ curl 'https://api.mycurrency.com/users/3/offers/4' -H 'Accept: application/json'
   },
   "included": [
     {
-      "id": "3",
+      "id": "1",
       "type": "proposed-transfers",
       "attributes": {
-        "offer-id": 5,
-        "source-currency-holding-id": 5,
-        "source-currency-id": 4,
-        "source-currency-name": "Pool coins",
-        "currency-sender-id": 4,
-        "currency-sender-username": "ScipioAfricanus",
+        "offer-id": 1,
+        "source-currency-holding-id": 2,
+        "source-currency-id": 1,
+        "source-currency-name": "Micro Asteroid bucks",
+        "source-currency-icon-url": "/icons/original/missing.png",
+        "source-currency-burn-rate": 450,
+        "source-currency-daily-burn-rate": "0.00012614",
+        "source-currency-store-count": 1,
+        "currency-sender-id": 3,
+        "currency-sender-username": "Hannibal",
         "amount-atomic": 50000000000,
         "active": false,
-        "created-at": "2018-10-11T20:18:34.829-07:00",
-        "updated-at": "2018-10-11T20:18:47.255-07:00"
+        "product-1-name": "GPS satellite",
+        "product-1-image-url": "/images/original/missing.png",
+        "product-1-price-cents": 1000000,
+        "product-1-sub-category-id": 16,
+        "product-1-sub-category-name": "prepared food",
+        "product-2-name": "XeeLine spacesuit",
+        "product-2-image-url": "/images/original/missing.png",
+        "product-2-price-cents": 400000,
+        "product-2-sub-category-id": 57,
+        "product-2-sub-category-name": "general labor",
+        "product-3-name": null,
+        "product-3-image-url": "/images/original/missing.png",
+        "product-3-price-cents": 100000,
+        "product-3-sub-category-id": 57,
+        "product-3-sub-category-name": "general labor",
+        "created-at": "2019-01-25T15:48:29.612-08:00",
+        "updated-at": "2019-01-25T15:57:08.540-08:00"
       }
     },
     {
-      "id": "3",
+      "id": "1",
       "type": "proposed-issuances",
       "attributes": {
-        "offer-id": 5,
-        "source-currency-id": 3,
-        "source-currency-name": "macaroon dollars",
-        "currency-issuer-id": 3,
-        "currency-issuer-username": "Hannibal",
-        "amount-atomic": 60000000000,
+        "offer-id": 1,
+        "source-currency-id": 2,
+        "source-currency-name": "solar electricity zaps",
+        "source-currency-icon-url": "/icons/original/missing.png",
+        "source-currency-burn-rate": 400,
+        "source-currency-daily-burn-rate": "0.000111835",
+        "source-currency-store-count": 2,
+        "currency-issuer-id": 4,
+        "currency-issuer-username": "ScipioAfricanus",
+        "amount-atomic": 50000000000,
         "active": false,
-        "created-at": "2018-10-11T20:18:34.829-07:00",
-        "updated-at": "2018-10-11T20:18:47.256-07:00"
+        "product-1-name": null,
+        "product-1-image-url": null,
+        "product-1-price-cents": null,
+        "product-1-sub-category-id": null,
+        "product-1-sub-category-name": null,
+        "product-2-name": null,
+        "product-2-image-url": null,
+        "product-2-price-cents": null,
+        "product-2-sub-category-id": null,
+        "product-2-sub-category-name": null,
+        "product-3-name": null,
+        "product-3-image-url": null,
+        "product-3-price-cents": null,
+        "product-3-sub-category-id": null,
+        "product-3-sub-category-name": null,
+        "created-at": "2019-01-25T15:48:29.613-08:00",
+        "updated-at": "2019-01-25T15:57:08.548-08:00"
       }
     }
   ]
@@ -7196,10 +7236,12 @@ Authentication: the request requires the OAuth access-token associated with the 
 Parameter | Description
 --------- | -----------
 id | The ID of the offer
-offer-receiver-id | The ID of the user that made the offer
-offer-receiver-username | The username of the user that made the offer
-offer-sender-id | The ID of the user that received the offer
-offer-sender-username | The username of the user that received the offer
+offer-receiver-id | The ID of the user that received the offer
+offer-receiver-username | The username of the user that received the offer
+offer-receiver-avatar-url | The URL of the avatar of the user that received the offer
+offer-sender-id | The ID of the user that made the offer
+offer-sender-username | The username of the user that made the offer
+offer-sender-avatar-url | The URL of the avatar of the user that made the offer
 previous-offer-id | The ID of the offer that is being counter-offered. If the first offer of an offer-chain, the value will be 0
 offer-type | 0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, and 3 is an offer acceptance
 active | Whether the offer is still active and can be countered or accepted/rejected
@@ -7216,10 +7258,29 @@ offer-id | The ID of the offer that the proposed transfer is associated with
 source-currency-holding-id | The ID of the public currency holding from which the proposed transfer would be sent
 source-currency-id | The ID of the currency that is proposed to be transferred
 source-currency-name | The name of the currency that is proposed to be transferred
+source-currency-icon-url | The URL of the icon of the currency that is proposed to be transferred
+source-currency-burn-rate | The burn rate of the currency that is proposed to be transferred
+source-currency-daily-burn-rate | The daily burn rate of the currency that is proposed to be transferred
+source-currency-store-count | The number of stores associated with the currency that is proposed to be transferred
 currency-sender-id | The ID of the user that would send the proposed transfer
 currency-sender-username | The username of the user that would send the proposed transfer
 amount-atomic | The amount of currency that is proposed to be transferred, in atomic units (each whole unit is composed of 10^10 atomic units)
 active | Whether the proposed transfer is still valid or not
+product-1-name | The name of the most recently updated product associated with the currency that is proposed to be transfered
+product-1-image-url | The URL of the image of the most recently updated product associated with the currency that is proposed to be transfered
+product-1-price-cents | The price of the most recently product associated with the currency that is proposed to be transferred, by multiple of 100, and denominated in the currency of the store where the product is sold
+product-1-sub-category-id | The ID of the sub-category of the most recently updated product associated with the currency that is proposed to be transfered
+product-1-sub-category-id | The name of the sub-category of the most recently updated product associated with the currency that is proposed to be transfered
+product-2-name | The name of the second most recently updated product associated with the currency that is proposed to be transfered
+product-2-image-url | The URL of the image of the second most recently updated product associated with the currency that is proposed to be transfered
+product-2-price-cents | The price of the second most recently product associated with the currency that is proposed to be transferred, by multiple of 100, and denominated in the currency of the store where the product is sold
+product-2-sub-category-id | The ID of the sub-category of the second most recently updated product associated with the currency that is proposed to be transfered
+product-2-sub-category-id | The name of the sub-category of the second most recently updated product associated with the currency that is proposed to be transfered
+product-3-name | The name of the third most recently updated product associated with the currency that is proposed to be transfered
+product-3-image-url | The URL of the image of the third most recently updated product associated with the currency that is proposed to be transfered
+product-3-price-cents | The price of the third most recently product associated with the currency that is proposed to be transferred, by multiple of 100, and denominated in the currency of the store where the product is sold
+product-3-sub-category-id | The ID of the sub-category of the third most recently updated product associated with the currency that is proposed to be transfered
+product-3-sub-category-id | The name of the sub-category of the third most recently updated product associated with the currency that is proposed to be transfered
 created-at | The time and date when the proposed transfer was created
 updated-at | The time and date when the proposed transfer was last updated
 
@@ -7231,17 +7292,36 @@ id | The ID of the proposed issuance
 offer-id | The ID of the offer that the proposed issuance is associated with
 source-currency-id | The ID of the currency that is proposed to be issued
 source-currency-name | The name of the currency that is proposed to be issued
+source-currency-icon-url | The URL of the icon of the currency that is proposed to be transferred
+source-currency-burn-rate | The burn rate of the currency that is proposed to be transferred
+source-currency-daily-burn-rate | The daily burn rate of the currency that is proposed to be transferred
+source-currency-store-count | The number of stores associated with the currency that is proposed to be transferred
 currency-issuer-id | The ID of the user that would issue the proposed issuance
 currency-issuer-username | The username of the user that would issue the proposed issuance
 amount-atomic | The amount of currency that is proposed to be issued, in atomic units (each whole unit is composed of 10^10 atomic units)
 active | Whether the proposed issuance is still valid or not
+product-1-name | The name of the most recently updated product associated with the currency that is proposed to be issued
+product-1-image-url | The URL of the image of the most recently updated product associated with the currency that is proposed to be issued
+product-1-price-cents | The price of the most recently product associated with the currency that is proposed to be issued, by multiple of 100, and denominated in the currency of the store where the product is sold
+product-1-sub-category-id | The ID of the sub-category of the most recently updated product associated with the currency that is proposed to be issued
+product-1-sub-category-id | The name of the sub-category of the most recently updated product associated with the currency that is proposed to be issued
+product-2-name | The name of the second most recently updated product associated with the currency that is proposed to be transfered
+product-2-image-url | The URL of the image of the second most recently updated product associated with the currency that is proposed to be issued
+product-2-price-cents | The price of the second most recently product associated with the currency that is proposed to be transferred, by multiple of 100, and denominated in the currency of the store where the product is sold
+product-2-sub-category-id | The ID of the sub-category of the second most recently updated product associated with the currency that is proposed to be issued
+product-2-sub-category-id | The name of the sub-category of the second most recently updated product associated with the currency that is proposed to be issued
+product-3-name | The name of the third most recently updated product associated with the currency that is proposed to be issued
+product-3-image-url | The URL of the image of the third most recently updated product associated with the currency that is proposed to be issued
+product-3-price-cents | The price of the third most recently product associated with the currency that is proposed to be issued, by multiple of 100, and denominated in the currency of the store where the product is sold
+product-3-sub-category-id | The ID of the sub-category of the third most recently updated product associated with the currency that is proposed to be issued
+product-3-sub-category-id | The name of the sub-category of the third most recently updated product associated with the currency that is proposed to be issued
 created-at | The time and date when the proposed issuance was created
 updated-at | The time and date when the proposed issuance was last updated
 
 ## List Offers
 
 ```shell
-curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=3' \
+curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=10' \
   -H 'Accept: application/json' -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
 ```
@@ -7252,19 +7332,21 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
 {
   "data": [
     {
-      "id": "3",
+      "id": "10",
       "type": "offers",
       "attributes": {
-        "offer-receiver-id": 4,
-        "offer-receiver-username": "ScipioAfricanus",
-        "offer-sender-id": 3,
-        "offer-sender-username": "Hannibal",
-        "previous-offer-id": 2,
-        "offer-type": 3,
+        "offer-receiver-id": 3,
+        "offer-receiver-username": "Hannibal",
+        "offer-receiver-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
+        "offer-sender-id": 2,
+        "offer-sender-username": "spiderman",
+        "offer-sender-avatar-url": "/avatars/original/missing.png",
+        "previous-offer-id": 9,
+        "offer-type": 2,
         "active": false,
         "self-cancellation": false,
-        "created-at": "2018-10-11T20:13:12.601-07:00",
-        "updated-at": "2018-10-11T20:13:12.601-07:00"
+        "created-at": "2019-07-21T18:32:48.989-07:00",
+        "updated-at": "2019-07-21T18:32:48.989-07:00"
       },
       "relationships": {
         "proposed-transfers": {
@@ -7276,25 +7358,27 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
       }
     },
     {
-      "id": "2",
+      "id": "9",
       "type": "offers",
       "attributes": {
-        "offer-receiver-id": 3,
-        "offer-receiver-username": "Hannibal",
-        "offer-sender-id": 4,
-        "offer-sender-username": "ScipioAfricanus",
-        "previous-offer-id": 1,
+        "offer-receiver-id": 2,
+        "offer-receiver-username": "spiderman",
+        "offer-receiver-avatar-url": "/avatars/original/missing.png",
+        "offer-sender-id": 3,
+        "offer-sender-username": "Hannibal",
+        "offer-sender-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
+        "previous-offer-id": 8,
         "offer-type": 1,
         "active": false,
         "self-cancellation": false,
-        "created-at": "2018-10-11T20:05:35.628-07:00",
-        "updated-at": "2018-10-11T20:13:12.869-07:00"
+        "created-at": "2019-07-21T18:32:30.701-07:00",
+        "updated-at": "2019-07-21T18:32:49.017-07:00"
       },
       "relationships": {
         "proposed-transfers": {
           "data": [
             {
-              "id": "2",
+              "id": "9",
               "type": "proposed-transfers"
             }
           ]
@@ -7302,7 +7386,7 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
         "proposed-issuances": {
           "data": [
             {
-              "id": "2",
+              "id": "9",
               "type": "proposed-issuances"
             }
           ]
@@ -7310,25 +7394,27 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
       }
     },
     {
-      "id": "1",
+      "id": "8",
       "type": "offers",
       "attributes": {
-        "offer-receiver-id": 4,
-        "offer-receiver-username": "ScipioAfricanus",
-        "offer-sender-id": 3,
-        "offer-sender-username": "Hannibal",
-        "previous-offer-id": 0,
-        "offer-type": 0,
+        "offer-receiver-id": 3,
+        "offer-receiver-username": "Hannibal",
+        "offer-receiver-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
+        "offer-sender-id": 2,
+        "offer-sender-username": "spiderman",
+        "offer-sender-avatar-url": "/avatars/original/missing.png",
+        "previous-offer-id": 7,
+        "offer-type": 1,
         "active": false,
         "self-cancellation": false,
-        "created-at": "2018-10-11T19:58:07.003-07:00",
-        "updated-at": "2018-10-11T20:05:35.636-07:00"
+        "created-at": "2019-07-21T18:30:26.893-07:00",
+        "updated-at": "2019-07-21T18:32:30.719-07:00"
       },
       "relationships": {
         "proposed-transfers": {
           "data": [
             {
-              "id": "1",
+              "id": "8",
               "type": "proposed-transfers"
             }
           ]
@@ -7336,7 +7422,43 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
         "proposed-issuances": {
           "data": [
             {
-              "id": "1",
+              "id": "8",
+              "type": "proposed-issuances"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "7",
+      "type": "offers",
+      "attributes": {
+        "offer-receiver-id": 2,
+        "offer-receiver-username": "spiderman",
+        "offer-receiver-avatar-url": "/avatars/original/missing.png",
+        "offer-sender-id": 3,
+        "offer-sender-username": "Hannibal",
+        "offer-sender-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
+        "previous-offer-id": 0,
+        "offer-type": 0,
+        "active": false,
+        "self-cancellation": false,
+        "created-at": "2019-07-21T18:29:36.808-07:00",
+        "updated-at": "2019-07-21T18:30:26.909-07:00"
+      },
+      "relationships": {
+        "proposed-transfers": {
+          "data": [
+            {
+              "id": "7",
+              "type": "proposed-transfers"
+            }
+          ]
+        },
+        "proposed-issuances": {
+          "data": [
+            {
+              "id": "7",
               "type": "proposed-issuances"
             }
           ]
@@ -7346,80 +7468,225 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
   ],
   "included": [
     {
-      "id": "2",
+      "id": "9",
       "type": "proposed-transfers",
       "attributes": {
-        "offer-id": 2,
-        "source-currency-holding-id": 5,
-        "source-currency-id": 4,
-        "source-currency-name": "Pool coins",
-        "currency-sender-id": 4,
-        "currency-sender-username": "ScipioAfricanus",
+        "offer-id": 9,
+        "source-currency-holding-id": 2,
+        "source-currency-id": 1,
+        "source-currency-name": "Micro Asteroid bucks",
+        "source-currency-icon-url": "/icons/original/missing.png",
+        "source-currency-burn-rate": 450,
+        "source-currency-daily-burn-rate": "0.00012614",
+        "source-currency-store-count": 1,
+        "currency-sender-id": 3,
+        "currency-sender-username": "Hannibal",
         "amount-atomic": 50000000000,
         "active": false,
-        "created-at": "2018-10-11T20:05:35.645-07:00",
-        "updated-at": "2018-10-11T20:13:12.757-07:00"
+        "product-1-name": "GPS satellite",
+        "product-1-image-url": "/images/original/missing.png",
+        "product-1-price-cents": 1000000,
+        "product-1-sub-category-id": 16,
+        "product-1-sub-category-name": "prepared food",
+        "product-2-name": "XeeLine spacesuit",
+        "product-2-image-url": "/images/original/missing.png",
+        "product-2-price-cents": 400000,
+        "product-2-sub-category-id": 57,
+        "product-2-sub-category-name": "general labor",
+        "product-3-name": null,
+        "product-3-image-url": "/images/original/missing.png",
+        "product-3-price-cents": 100000,
+        "product-3-sub-category-id": 57,
+        "product-3-sub-category-name": "general labor",
+        "created-at": "2019-07-21T18:32:30.727-07:00",
+        "updated-at": "2019-07-21T18:32:49.019-07:00"
       }
     },
     {
-      "id": "2",
+      "id": "9",
       "type": "proposed-issuances",
       "attributes": {
-        "offer-id": 2,
-        "source-currency-id": 3,
-        "source-currency-name": "macaroon dollars",
-        "currency-issuer-id": 3,
-        "currency-issuer-username": "Hannibal",
-        "amount-atomic": 60000000000,
+        "offer-id": 9,
+        "source-currency-id": 4,
+        "source-currency-name": "spiderman pizza dollars",
+        "source-currency-icon-url": "/icons/original/missing.png",
+        "source-currency-burn-rate": 420,
+        "source-currency-daily-burn-rate": "0.000117548",
+        "source-currency-store-count": 0,
+        "currency-issuer-id": 2,
+        "currency-issuer-username": "spiderman",
+        "amount-atomic": 50000000000,
         "active": false,
-        "created-at": "2018-10-11T20:05:35.646-07:00",
-        "updated-at": "2018-10-11T20:13:12.837-07:00"
+        "product-1-name": null,
+        "product-1-image-url": null,
+        "product-1-price-cents": null,
+        "product-1-sub-category-id": null,
+        "product-1-sub-category-name": null,
+        "product-2-name": null,
+        "product-2-image-url": null,
+        "product-2-price-cents": null,
+        "product-2-sub-category-id": null,
+        "product-2-sub-category-name": null,
+        "product-3-name": null,
+        "product-3-image-url": null,
+        "product-3-price-cents": null,
+        "product-3-sub-category-id": null,
+        "product-3-sub-category-name": null,
+        "created-at": "2019-07-21T18:32:30.728-07:00",
+        "updated-at": "2019-07-21T18:32:49.020-07:00"
       }
     },
     {
-      "id": "1",
+      "id": "8",
       "type": "proposed-transfers",
       "attributes": {
-        "offer-id": 1,
-        "source-currency-holding-id": 5,
-        "source-currency-id": 4,
-        "source-currency-name": "Pool coins",
-        "currency-sender-id": 4,
-        "currency-sender-username": "ScipioAfricanus",
-        "amount-atomic": 50000000000,
+        "offer-id": 8,
+        "source-currency-holding-id": 2,
+        "source-currency-id": 1,
+        "source-currency-name": "Micro Asteroid bucks",
+        "source-currency-icon-url": "/icons/original/missing.png",
+        "source-currency-burn-rate": 450,
+        "source-currency-daily-burn-rate": "0.00012614",
+        "source-currency-store-count": 1,
+        "currency-sender-id": 3,
+        "currency-sender-username": "Hannibal",
+        "amount-atomic": 55000000000,
         "active": false,
-        "created-at": "2018-10-11T19:58:07.038-07:00",
-        "updated-at": "2018-10-11T20:05:35.641-07:00"
+        "product-1-name": "GPS satellite",
+        "product-1-image-url": "/images/original/missing.png",
+        "product-1-price-cents": 1000000,
+        "product-1-sub-category-id": 16,
+        "product-1-sub-category-name": "prepared food",
+        "product-2-name": "XeeLine spacesuit",
+        "product-2-image-url": "/images/original/missing.png",
+        "product-2-price-cents": 400000,
+        "product-2-sub-category-id": 57,
+        "product-2-sub-category-name": "general labor",
+        "product-3-name": null,
+        "product-3-image-url": "/images/original/missing.png",
+        "product-3-price-cents": 100000,
+        "product-3-sub-category-id": 57,
+        "product-3-sub-category-name": "general labor",
+        "created-at": "2019-07-21T18:30:26.916-07:00",
+        "updated-at": "2019-07-21T18:32:30.723-07:00"
       }
     },
     {
-      "id": "1",
+      "id": "8",
       "type": "proposed-issuances",
       "attributes": {
-        "offer-id": 1,
-        "source-currency-id": 3,
-        "source-currency-name": "macaroon dollars",
-        "currency-issuer-id": 3,
-        "currency-issuer-username": "Hannibal",
+        "offer-id": 8,
+        "source-currency-id": 4,
+        "source-currency-name": "spiderman pizza dollars",
+        "source-currency-icon-url": "/icons/original/missing.png",
+        "source-currency-burn-rate": 420,
+        "source-currency-daily-burn-rate": "0.000117548",
+        "source-currency-store-count": 0,
+        "currency-issuer-id": 2,
+        "currency-issuer-username": "spiderman",
         "amount-atomic": 50000000000,
         "active": false,
-        "created-at": "2018-10-11T19:58:07.040-07:00",
-        "updated-at": "2018-10-11T20:05:35.644-07:00"
+        "product-1-name": null,
+        "product-1-image-url": null,
+        "product-1-price-cents": null,
+        "product-1-sub-category-id": null,
+        "product-1-sub-category-name": null,
+        "product-2-name": null,
+        "product-2-image-url": null,
+        "product-2-price-cents": null,
+        "product-2-sub-category-id": null,
+        "product-2-sub-category-name": null,
+        "product-3-name": null,
+        "product-3-image-url": null,
+        "product-3-price-cents": null,
+        "product-3-sub-category-id": null,
+        "product-3-sub-category-name": null,
+        "created-at": "2019-07-21T18:30:26.917-07:00",
+        "updated-at": "2019-07-21T18:32:30.726-07:00"
+      }
+    },
+    {
+      "id": "7",
+      "type": "proposed-transfers",
+      "attributes": {
+        "offer-id": 7,
+        "source-currency-holding-id": 2,
+        "source-currency-id": 1,
+        "source-currency-name": "Micro Asteroid bucks",
+        "source-currency-icon-url": "/icons/original/missing.png",
+        "source-currency-burn-rate": 450,
+        "source-currency-daily-burn-rate": "0.00012614",
+        "source-currency-store-count": 1,
+        "currency-sender-id": 3,
+        "currency-sender-username": "Hannibal",
+        "amount-atomic": 50000000000,
+        "active": false,
+        "product-1-name": "GPS satellite",
+        "product-1-image-url": "/images/original/missing.png",
+        "product-1-price-cents": 1000000,
+        "product-1-sub-category-id": 16,
+        "product-1-sub-category-name": "prepared food",
+        "product-2-name": "XeeLine spacesuit",
+        "product-2-image-url": "/images/original/missing.png",
+        "product-2-price-cents": 400000,
+        "product-2-sub-category-id": 57,
+        "product-2-sub-category-name": "general labor",
+        "product-3-name": null,
+        "product-3-image-url": "/images/original/missing.png",
+        "product-3-price-cents": 100000,
+        "product-3-sub-category-id": 57,
+        "product-3-sub-category-name": "general labor",
+        "created-at": "2019-07-21T18:29:36.824-07:00",
+        "updated-at": "2019-07-21T18:30:26.912-07:00"
+      }
+    },
+    {
+      "id": "7",
+      "type": "proposed-issuances",
+      "attributes": {
+        "offer-id": 7,
+        "source-currency-id": 4,
+        "source-currency-name": "spiderman pizza dollars",
+        "source-currency-icon-url": "/icons/original/missing.png",
+        "source-currency-burn-rate": 420,
+        "source-currency-daily-burn-rate": "0.000117548",
+        "source-currency-store-count": 0,
+        "currency-issuer-id": 2,
+        "currency-issuer-username": "spiderman",
+        "amount-atomic": 50000000000,
+        "active": false,
+        "product-1-name": null,
+        "product-1-image-url": null,
+        "product-1-price-cents": null,
+        "product-1-sub-category-id": null,
+        "product-1-sub-category-name": null,
+        "product-2-name": null,
+        "product-2-image-url": null,
+        "product-2-price-cents": null,
+        "product-2-sub-category-id": null,
+        "product-2-sub-category-name": null,
+        "product-3-name": null,
+        "product-3-image-url": null,
+        "product-3-price-cents": null,
+        "product-3-sub-category-id": null,
+        "product-3-sub-category-name": null,
+        "created-at": "2019-07-21T18:29:36.825-07:00",
+        "updated-at": "2019-07-21T18:30:26.915-07:00"
       }
     }
   ],
   "links": {
-    "self": "https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=3",
-    "first": "https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=3&page=1&per_page=25",
+    "self": "https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=10",
+    "first": "https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=10&page=1&per_page=25",
     "prev": null,
     "next": null,
-    "last": "https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=3&page=1&per_page=25"
+    "last": "https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=10&page=1&per_page=25"
   },
   "meta": {
     "pagination": {
       "per-page": null,
       "total-pages": "1",
-      "total-count": "3"
+      "total-count": "4"
     }
   }
 }
@@ -7460,10 +7727,12 @@ offer_chain | returns the chain of offers associated with head offer (the last o
 Parameter | Description
 --------- | -----------
 id | The ID of the offer
-offer-receiver-id | The ID of the user that made the offer
-offer-receiver-username | The username of the user that made the offer
-offer-sender-id | The ID of the user that received the offer
-offer-sender-username | The username of the user that received the offer
+offer-receiver-id | The ID of the user that received the offer
+offer-receiver-username | The username of the user that received the offer
+offer-receiver-avatar-url | The URL of the avatar of the user that received the offer
+offer-sender-id | The ID of the user that made the offer
+offer-sender-username | The username of the user that made the offer
+offer-sender-avatar-url | The URL of the avatar of the user that made the offer
 previous-offer-id | The ID of the offer that is being counter-offered. If the first offer of an offer-chain, the value will be 0
 offer-type | 0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, and 3 is an offer acceptance
 active | Whether the offer is still active and can be countered or accepted/rejected
@@ -7480,10 +7749,29 @@ offer-id | The ID of the offer that the proposed transfer is associated with
 source-currency-holding-id | The ID of the public currency holding from which the proposed transfer would be sent
 source-currency-id | The ID of the currency that is proposed to be transferred
 source-currency-name | The name of the currency that is proposed to be transferred
+source-currency-icon-url | The URL of the icon of the currency that is proposed to be transferred
+source-currency-burn-rate | The burn rate of the currency that is proposed to be transferred
+source-currency-daily-burn-rate | The daily burn rate of the currency that is proposed to be transferred
+source-currency-store-count | The number of stores associated with the currency that is proposed to be transferred
 currency-sender-id | The ID of the user that would send the proposed transfer
 currency-sender-username | The username of the user that would send the proposed transfer
 amount-atomic | The amount of currency that is proposed to be transferred, in atomic units (each whole unit is composed of 10^10 atomic units)
 active | Whether the proposed transfer is still valid or not
+product-1-name | The name of the most recently updated product associated with the currency that is proposed to be transfered
+product-1-image-url | The URL of the image of the most recently updated product associated with the currency that is proposed to be transfered
+product-1-price-cents | The price of the most recently product associated with the currency that is proposed to be transferred, by multiple of 100, and denominated in the currency of the store where the product is sold
+product-1-sub-category-id | The ID of the sub-category of the most recently updated product associated with the currency that is proposed to be transfered
+product-1-sub-category-id | The name of the sub-category of the most recently updated product associated with the currency that is proposed to be transfered
+product-2-name | The name of the second most recently updated product associated with the currency that is proposed to be transfered
+product-2-image-url | The URL of the image of the second most recently updated product associated with the currency that is proposed to be transfered
+product-2-price-cents | The price of the second most recently product associated with the currency that is proposed to be transferred, by multiple of 100, and denominated in the currency of the store where the product is sold
+product-2-sub-category-id | The ID of the sub-category of the second most recently updated product associated with the currency that is proposed to be transfered
+product-2-sub-category-id | The name of the sub-category of the second most recently updated product associated with the currency that is proposed to be transfered
+product-3-name | The name of the third most recently updated product associated with the currency that is proposed to be transfered
+product-3-image-url | The URL of the image of the third most recently updated product associated with the currency that is proposed to be transfered
+product-3-price-cents | The price of the third most recently product associated with the currency that is proposed to be transferred, by multiple of 100, and denominated in the currency of the store where the product is sold
+product-3-sub-category-id | The ID of the sub-category of the third most recently updated product associated with the currency that is proposed to be transfered
+product-3-sub-category-id | The name of the sub-category of the third most recently updated product associated with the currency that is proposed to be transfered
 created-at | The time and date when the proposed transfer was created
 updated-at | The time and date when the proposed transfer was last updated
 
@@ -7495,17 +7783,36 @@ id | The ID of the proposed issuance
 offer-id | The ID of the offer that the proposed issuance is associated with
 source-currency-id | The ID of the currency that is proposed to be issued
 source-currency-name | The name of the currency that is proposed to be issued
+source-currency-icon-url | The URL of the icon of the currency that is proposed to be transferred
+source-currency-burn-rate | The burn rate of the currency that is proposed to be transferred
+source-currency-daily-burn-rate | The daily burn rate of the currency that is proposed to be transferred
+source-currency-store-count | The number of stores associated with the currency that is proposed to be transferred
 currency-issuer-id | The ID of the user that would issue the proposed issuance
 currency-issuer-username | The username of the user that would issue the proposed issuance
 amount-atomic | The amount of currency that is proposed to be issued, in atomic units (each whole unit is composed of 10^10 atomic units)
 active | Whether the proposed issuance is still valid or not
+product-1-name | The name of the most recently updated product associated with the currency that is proposed to be issued
+product-1-image-url | The URL of the image of the most recently updated product associated with the currency that is proposed to be issued
+product-1-price-cents | The price of the most recently product associated with the currency that is proposed to be issued, by multiple of 100, and denominated in the currency of the store where the product is sold
+product-1-sub-category-id | The ID of the sub-category of the most recently updated product associated with the currency that is proposed to be issued
+product-1-sub-category-id | The name of the sub-category of the most recently updated product associated with the currency that is proposed to be issued
+product-2-name | The name of the second most recently updated product associated with the currency that is proposed to be transfered
+product-2-image-url | The URL of the image of the second most recently updated product associated with the currency that is proposed to be issued
+product-2-price-cents | The price of the second most recently product associated with the currency that is proposed to be transferred, by multiple of 100, and denominated in the currency of the store where the product is sold
+product-2-sub-category-id | The ID of the sub-category of the second most recently updated product associated with the currency that is proposed to be issued
+product-2-sub-category-id | The name of the sub-category of the second most recently updated product associated with the currency that is proposed to be issued
+product-3-name | The name of the third most recently updated product associated with the currency that is proposed to be issued
+product-3-image-url | The URL of the image of the third most recently updated product associated with the currency that is proposed to be issued
+product-3-price-cents | The price of the third most recently product associated with the currency that is proposed to be issued, by multiple of 100, and denominated in the currency of the store where the product is sold
+product-3-sub-category-id | The ID of the sub-category of the third most recently updated product associated with the currency that is proposed to be issued
+product-3-sub-category-id | The name of the sub-category of the third most recently updated product associated with the currency that is proposed to be issued
 created-at | The time and date when the proposed issuance was created
 updated-at | The time and date when the proposed issuance was last updated
 
 ## Create Offer
 
 ```shell
-curl https://api.mycurrency.com/users/3/offers -d '{ "offer": {"offer_sender_id": "3", "offer_receiver_id": "4", "offer_type": "0", "proposed_transfers_attributes": [{"source_currency_holding_id": "5", "amount_atomic": "50000000000"}], "proposed_issuances_attributes": [{"source_currency_id": "3", "amount_atomic": "50000000000"}] }}' \
+curl https://api.mycurrency.com/users/3/offers -d '{ "offer": {"previous_offer_id": "8", "offer_sender_id": "3", "offer_receiver_id": "2", "offer_type": "1", "proposed_transfers_attributes": [{"source_currency_holding_id": "2", "amount_atomic": "50000000000"}], "proposed_issuances_attributes": [{"source_currency_id": "4", "amount_atomic": "50000000000"}] }}' \
   -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' \
   -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
@@ -7515,33 +7822,35 @@ curl https://api.mycurrency.com/users/3/offers -d '{ "offer": {"offer_sender_id"
 ```json
 {
   "data": {
-    "id": "10",
+    "id": "9",
     "type": "offers",
     "attributes": {
-      "offer-receiver-id": 4,
-      "offer-receiver-username": "ScipioAfricanus",
+      "offer-receiver-id": 2,
+      "offer-receiver-username": "spiderman",
+      "offer-receiver-avatar-url": "/avatars/original/missing.png",
       "offer-sender-id": 3,
       "offer-sender-username": "Hannibal",
-      "previous-offer-id": 0,
-      "offer-type": 0,
+      "offer-sender-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
+      "previous-offer-id": 8,
+      "offer-type": 1,
       "active": true,
       "self-cancellation": false,
-      "created-at": "2018-10-13T03:29:56.858-07:00",
-      "updated-at": "2018-10-13T03:29:56.858-07:00"
+      "created-at": "2019-07-21T18:32:30.701-07:00",
+      "updated-at": "2019-07-21T18:32:30.701-07:00"
     },
     "relationships": {
       "proposed-transfers": {
         "data": [
           {
-            "id": "7",
-            "type":"proposed-transfers"
+            "id": "9",
+            "type": "proposed-transfers"
           }
         ]
       },
       "proposed-issuances": {
         "data": [
           {
-            "id": "7",
+            "id": "9",
             "type": "proposed-issuances"
           }
         ]
@@ -7550,35 +7859,72 @@ curl https://api.mycurrency.com/users/3/offers -d '{ "offer": {"offer_sender_id"
   },
   "included": [
     {
-      "id": "7",
+      "id": "9",
       "type": "proposed-transfers",
       "attributes": {
-        "offer-id": 10,
-        "source-currency-holding-id": 5,
-        "source-currency-id": 4,
-        "source-currency-name": "Pool coins",
-        "currency-sender-id": 4,
-        "currency-sender-username": "ScipioAfricanus",
-        "amount-atomic": 50000000000, 
+        "offer-id": 9,
+        "source-currency-holding-id": 2,
+        "source-currency-id": 1,
+        "source-currency-name": "Micro Asteroid bucks",
+        "source-currency-icon-url": "/icons/original/missing.png",
+        "source-currency-burn-rate": 450,
+        "source-currency-daily-burn-rate": "0.00012614",
+        "source-currency-store-count": 1,
+        "currency-sender-id": 3,
+        "currency-sender-username": "Hannibal",
+        "amount-atomic": 50000000000,
         "active": true,
-        "created-at": "2018-10-13T03:29:56.886-07:00",
-        "updated-at": "2018-10-13T03:29:56.886-07:00"
+        "product-1-name": "GPS satellite",
+        "product-1-image-url": "/images/original/missing.png",
+        "product-1-price-cents": 1000000,
+        "product-1-sub-category-id": 16,
+        "product-1-sub-category-name": "prepared food",
+        "product-2-name": "XeeLine spacesuit",
+        "product-2-image-url": "/images/original/missing.png",
+        "product-2-price-cents": 400000,
+        "product-2-sub-category-id": 57,
+        "product-2-sub-category-name": "general labor",
+        "product-3-name": null,
+        "product-3-image-url": "/images/original/missing.png",
+        "product-3-price-cents": 100000,
+        "product-3-sub-category-id": 57,
+        "product-3-sub-category-name": "general labor",
+        "created-at": "2019-07-21T18:32:30.727-07:00",
+        "updated-at": "2019-07-21T18:32:30.727-07:00"
       }
     },
     {
-      "id": "7",
-      "type":
-      "proposed-issuances",
+      "id": "9",
+      "type": "proposed-issuances",
       "attributes": {
-        "offer-id": 10,
-        "source-currency-id": 3,
-        "source-currency-name": "macaroon dollars",
-        "currency-issuer-id": 3,
-        "currency-issuer-username": "Hannibal",
+        "offer-id": 9,
+        "source-currency-id": 4,
+        "source-currency-name": "spiderman pizza dollars",
+        "source-currency-icon-url": "/icons/original/missing.png",
+        "source-currency-burn-rate": 420,
+        "source-currency-daily-burn-rate": "0.000117548",
+        "source-currency-store-count": 0,
+        "currency-issuer-id": 2,
+        "currency-issuer-username": "spiderman",
         "amount-atomic": 50000000000,
-        "active": true, 
-        "created-at": "2018-10-13T03:29:56.887-07:00",
-        "updated-at": "2018-10-13T03:29:56.887-07:00"
+        "active": true,
+        "product-1-name": null,
+        "product-1-image-url": null,
+        "product-1-price-cents": null,
+        "product-1-sub-category-id": null,
+        "product-1-sub-category-name": null,
+        "product-2-name": null,
+        "product-2-image-url": null,
+        "product-2-price-cents": null,
+        "product-2-sub-category-id": null,
+        "product-2-sub-category-name": null,
+        "product-3-name": null,
+        "product-3-image-url": null,
+        "product-3-price-cents": null,
+        "product-3-sub-category-id": null,
+        "product-3-sub-category-name": null,
+        "created-at": "2019-07-21T18:32:30.728-07:00",
+        "updated-at": "2019-07-21T18:32:30.728-07:00"
       }
     }
   ]
@@ -7635,10 +7981,12 @@ amount-atomic | integer | yes | The amount of currency that is proposed to be is
 Parameter | Description
 --------- | -----------
 id | The ID of the offer
-offer-receiver-id | The ID of the user that made the offer
-offer-receiver-username | The username of the user that made the offer
-offer-sender-id | The ID of the user that received the offer
-offer-sender-username | The username of the user that received the offer
+offer-receiver-id | The ID of the user that received the offer
+offer-receiver-username | The username of the user that received the offer
+offer-receiver-avatar-url | The URL of the avatar of the user that received the offer
+offer-sender-id | The ID of the user that made the offer
+offer-sender-username | The username of the user that made the offer
+offer-sender-avatar-url | The URL of the avatar of the user that made the offer
 previous-offer-id | The ID of the offer that is being counter-offered. If the first offer of an offer-chain, the value will be 0
 offer-type | 0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, and 3 is an offer acceptance
 active | Whether the offer is still active and can be countered or accepted/rejected
@@ -7655,10 +8003,29 @@ offer-id | The ID of the offer that the proposed transfer is associated with
 source-currency-holding-id | The ID of the public currency holding from which the proposed transfer would be sent
 source-currency-id | The ID of the currency that is proposed to be transferred
 source-currency-name | The name of the currency that is proposed to be transferred
+source-currency-icon-url | The URL of the icon of the currency that is proposed to be transferred
+source-currency-burn-rate | The burn rate of the currency that is proposed to be transferred
+source-currency-daily-burn-rate | The daily burn rate of the currency that is proposed to be transferred
+source-currency-store-count | The number of stores associated with the currency that is proposed to be transferred
 currency-sender-id | The ID of the user that would send the proposed transfer
 currency-sender-username | The username of the user that would send the proposed transfer
 amount-atomic | The amount of currency that is proposed to be transferred, in atomic units (each whole unit is composed of 10^10 atomic units)
 active | Whether the proposed transfer is still valid or not
+product-1-name | The name of the most recently updated product associated with the currency that is proposed to be transfered
+product-1-image-url | The URL of the image of the most recently updated product associated with the currency that is proposed to be transfered
+product-1-price-cents | The price of the most recently product associated with the currency that is proposed to be transferred, by multiple of 100, and denominated in the currency of the store where the product is sold
+product-1-sub-category-id | The ID of the sub-category of the most recently updated product associated with the currency that is proposed to be transfered
+product-1-sub-category-id | The name of the sub-category of the most recently updated product associated with the currency that is proposed to be transfered
+product-2-name | The name of the second most recently updated product associated with the currency that is proposed to be transfered
+product-2-image-url | The URL of the image of the second most recently updated product associated with the currency that is proposed to be transfered
+product-2-price-cents | The price of the second most recently product associated with the currency that is proposed to be transferred, by multiple of 100, and denominated in the currency of the store where the product is sold
+product-2-sub-category-id | The ID of the sub-category of the second most recently updated product associated with the currency that is proposed to be transfered
+product-2-sub-category-id | The name of the sub-category of the second most recently updated product associated with the currency that is proposed to be transfered
+product-3-name | The name of the third most recently updated product associated with the currency that is proposed to be transfered
+product-3-image-url | The URL of the image of the third most recently updated product associated with the currency that is proposed to be transfered
+product-3-price-cents | The price of the third most recently product associated with the currency that is proposed to be transferred, by multiple of 100, and denominated in the currency of the store where the product is sold
+product-3-sub-category-id | The ID of the sub-category of the third most recently updated product associated with the currency that is proposed to be transfered
+product-3-sub-category-id | The name of the sub-category of the third most recently updated product associated with the currency that is proposed to be transfered
 created-at | The time and date when the proposed transfer was created
 updated-at | The time and date when the proposed transfer was last updated
 
@@ -7670,10 +8037,29 @@ id | The ID of the proposed issuance
 offer-id | The ID of the offer that the proposed issuance is associated with
 source-currency-id | The ID of the currency that is proposed to be issued
 source-currency-name | The name of the currency that is proposed to be issued
+source-currency-icon-url | The URL of the icon of the currency that is proposed to be transferred
+source-currency-burn-rate | The burn rate of the currency that is proposed to be transferred
+source-currency-daily-burn-rate | The daily burn rate of the currency that is proposed to be transferred
+source-currency-store-count | The number of stores associated with the currency that is proposed to be transferred
 currency-issuer-id | The ID of the user that would issue the proposed issuance
 currency-issuer-username | The username of the user that would issue the proposed issuance
 amount-atomic | The amount of currency that is proposed to be issued, in atomic units (each whole unit is composed of 10^10 atomic units)
 active | Whether the proposed issuance is still valid or not
+product-1-name | The name of the most recently updated product associated with the currency that is proposed to be issued
+product-1-image-url | The URL of the image of the most recently updated product associated with the currency that is proposed to be issued
+product-1-price-cents | The price of the most recently product associated with the currency that is proposed to be issued, by multiple of 100, and denominated in the currency of the store where the product is sold
+product-1-sub-category-id | The ID of the sub-category of the most recently updated product associated with the currency that is proposed to be issued
+product-1-sub-category-id | The name of the sub-category of the most recently updated product associated with the currency that is proposed to be issued
+product-2-name | The name of the second most recently updated product associated with the currency that is proposed to be transfered
+product-2-image-url | The URL of the image of the second most recently updated product associated with the currency that is proposed to be issued
+product-2-price-cents | The price of the second most recently product associated with the currency that is proposed to be transferred, by multiple of 100, and denominated in the currency of the store where the product is sold
+product-2-sub-category-id | The ID of the sub-category of the second most recently updated product associated with the currency that is proposed to be issued
+product-2-sub-category-id | The name of the sub-category of the second most recently updated product associated with the currency that is proposed to be issued
+product-3-name | The name of the third most recently updated product associated with the currency that is proposed to be issued
+product-3-image-url | The URL of the image of the third most recently updated product associated with the currency that is proposed to be issued
+product-3-price-cents | The price of the third most recently product associated with the currency that is proposed to be issued, by multiple of 100, and denominated in the currency of the store where the product is sold
+product-3-sub-category-id | The ID of the sub-category of the third most recently updated product associated with the currency that is proposed to be issued
+product-3-sub-category-id | The name of the sub-category of the third most recently updated product associated with the currency that is proposed to be issued
 created-at | The time and date when the proposed issuance was created
 updated-at | The time and date when the proposed issuance was last updated
 
