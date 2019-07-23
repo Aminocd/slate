@@ -4727,6 +4727,7 @@ Authentication: the request requires the OAuth access-token associated with the 
       </span><span class="s2">"currency-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Micro Asteroid bucks"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/icons/original/missing.png"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"days-to-cancellation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"minutes-to-cancellation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Asteroid Industries"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mine 1 pound of X-group asteroid"</span><span class="p">,</span><span class="w">
@@ -4738,6 +4739,9 @@ Authentication: the request requires the OAuth access-token associated with the 
       </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-30T08:29:04.233-08:00"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-30T08:29:04.233-08:00"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"get-image-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/images/original/missing.png"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"owner-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"owner-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"owner-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/003/original/avatar.jpg?1562578009"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"public-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="s2">"private-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000000000000</span><span class="p">,</span><span class="w">
       </span><span class="s2">"total-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000000000000</span><span class="w">
@@ -4788,6 +4792,10 @@ Authentication: not required for active products that have not been discontinued
 <td>How many days until the product&#39;s product-discontinual is activated and the product is cancelled. A NULL value if the product has no product discontinual</td>
 </tr>
 <tr>
+<td>minutes-to-cancellation</td>
+<td>How many minutes until the product&#39;s product-discontinual is activated and the product is cancelled. A NULL value if the product has no product discontinual</td>
+</tr>
+<tr>
 <td>store-id</td>
 <td>The ID of the store where the product is sold</td>
 </tr>
@@ -4833,15 +4841,15 @@ Authentication: not required for active products that have not been discontinued
 </tr>
 <tr>
 <td>public-amount-atomic</td>
-<td>The number of atomic units in the logged-in user&#39;s public holding of the currency that the product can be redeemed by</td>
+<td>The number of atomic units in the logged-in user&#39;s public holding of the currency that the product can be redeemed by, only shown if logged-in user is not the owner of the store that sells the product</td>
 </tr>
 <tr>
 <td>private-amount-atomic</td>
-<td>The number of atomic units in the logged-in user&#39;s private holding of the currency that the product can be redeemed by</td>
+<td>The number of atomic units in the logged-in user&#39;s private holding of the currency that the product can be redeemed by, only shown if logged-in user is not the owner of the store that sells the product</td>
 </tr>
 <tr>
 <td>total-amount-atomic</td>
-<td>The total number of atomic units in the logged-in user&#39;s public and private holding of the currency that the product can be redeemed by</td>
+<td>The total number of atomic units in the logged-in user&#39;s public and private holding of the currency that the product can be redeemed by, only shown if logged-in user is not the owner of the store that sells the product</td>
 </tr>
 </tbody></table>
 <h2 id='list-products'>List Products</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mycurrency.com/products"</span> <span class="se">\</span>
