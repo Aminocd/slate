@@ -2712,6 +2712,7 @@ curl 'https://api.mycurrency.com/products/1' \
       "currency-name": "Micro Asteroid bucks",
       "currency-icon-url": "/icons/original/missing.png",
       "days-to-cancellation": null,
+      "minutes-to-cancellation": null,
       "store-id": 1,
       "store-name": "Asteroid Industries",
       "product-name": "mine 1 pound of X-group asteroid",
@@ -2723,6 +2724,9 @@ curl 'https://api.mycurrency.com/products/1' \
       "created-at": "2018-11-30T08:29:04.233-08:00",
       "updated-at": "2018-11-30T08:29:04.233-08:00",
       "get-image-url": "/images/original/missing.png",
+      "owner-id": 3,
+      "owner-username": "Hannibal",
+      "owner-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
       "public-amount-atomic": 0,
       "private-amount-atomic": 2000000000000,
       "total-amount-atomic": 2000000000000
@@ -2752,6 +2756,7 @@ currency-id | The ID of the currency that the product can be redeemed by
 currency-name | The name of the currency that the product can be redeemed by
 currency-icon-url | The URL of the icon of the currency that the product can be redeemed by 
 days-to-cancellation | How many days until the product's product-discontinual is activated and the product is cancelled. A NULL value if the product has no product discontinual
+minutes-to-cancellation | How many minutes until the product's product-discontinual is activated and the product is cancelled. A NULL value if the product has no product discontinual
 store-id | The ID of the store where the product is sold
 store-name | The name of the store where the product is sold
 product-name | The name of the product
@@ -2763,9 +2768,9 @@ last-activated-at | The time and date when the product was last activated
 created-at | The time and date when the product was created
 updated-at | The time and date when the product was last updated
 get-image-url | The URL at which the product image picture can be found
-public-amount-atomic | The number of atomic units in the logged-in user's public holding of the currency that the product can be redeemed by
-private-amount-atomic | The number of atomic units in the logged-in user's private holding of the currency that the product can be redeemed by
-total-amount-atomic | The total number of atomic units in the logged-in user's public and private holding of the currency that the product can be redeemed by
+public-amount-atomic | The number of atomic units in the logged-in user's public holding of the currency that the product can be redeemed by, only shown if logged-in user is not the owner of the store that sells the product
+private-amount-atomic | The number of atomic units in the logged-in user's private holding of the currency that the product can be redeemed by, only shown if logged-in user is not the owner of the store that sells the product
+total-amount-atomic | The total number of atomic units in the logged-in user's public and private holding of the currency that the product can be redeemed by, only shown if logged-in user is not the owner of the store that sells the product
 
 ## List Products
 
