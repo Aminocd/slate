@@ -5593,10 +5593,10 @@ Transactions are all user actions that change the balance of currency holdings: 
 
 ## List Public Currency Holding's Transactions
 
-This endpoint retrieves all issuances, transfers, micro currency orders and burnrate periods associated with a public currency holding, sorted by created_at date, from the oldest to the most recent
+This endpoint retrieves all issuances, transfers, micro currency orders and burnrate periods associated with a public currency holding, sorted by created_at date, the most recent to the oldest
 
 ```shell
-curl 'https://api.mycurrency.com/users/4/authorized_public_currency_holdings/4/pu_h_transactions' \
+curl 'https://api.mycurrency.com/users/3/authorized_public_currency_holdings/4/pu_h_transactions' \
   -H 'Accept: application/json' -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
 ```
@@ -5607,47 +5607,94 @@ curl 'https://api.mycurrency.com/users/4/authorized_public_currency_holdings/4/p
 {
   "data": [
     {
-      "id": "18",
-      "type": "burnrate-periods",
+      "id": "107",
+      "type": "transfers",
       "attributes": {
-        "day-counter": 16,
-        "final-day-counter": null,
-        "burn-rate": 580,
-        "daily-burn-rate": "0.000163686",
-        "start-amount-atomic": 0,
-        "last-amount-atomic": 79790738929
-        "created-at": "2018-09-16T13:40:22.420-07:00",
-        "updated-at": "2018-10-02T19:44:06.603-07:00",
+        "amount-atomic": 1000000000000,
+        "transfer-type": "transfer-from-private",
+        "receiver-day-counter": 0,
+        "sending-user-id": 3,
+        "sender-username": "Hannibal",
+        "sending-user-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
+        "receiver-before-amount-atomic": 4997675720243,
+        "receiver-after-amount-atomic": 5997675720243,
+        "transfer-sender-currency-holding-type": "PrivateCurrencyHolding",
+        "created-at": "2019-07-08T02:22:55.070-07:00",
+        "updated-at": "2019-07-08T02:22:55.070-07:00"
       }
     },
     {
-      "id": "4",
+      "id": "51",
+      "type": "burnrate-periods",
+      "attributes": {
+        "day-counter": 0,
+        "final-day-counter": null,
+        "burn-rate": 550,
+        "daily-burn-rate": "0.000154976",
+        "start-amount-atomic": 4997675720243,
+        "last-amount-atomic": 5997675720243,
+        "created-at": "2019-06-20T00:15:20.343-07:00",
+        "updated-at": "2019-07-08T02:22:55.073-07:00"
+      }
+    },
+    {
+      "id": "47",
+      "type": "burnrate-periods",
+      "attributes": {
+        "day-counter": 0,
+        "final-day-counter": 0,
+        "burn-rate": 2000,
+        "daily-burn-rate": "0.000611166",
+        "start-amount-atomic": 4997675720243,
+        "last-amount-atomic": 4997675720243,
+        "created-at": "2019-06-20T00:08:34.886-07:00",
+        "updated-at": "2019-06-20T00:15:20.340-07:00"
+      }
+    },
+    {
+      "id": "5",
       "type": "transfers",
       "attributes": {
-        "amount-atomic": 80000000000,
+        "amount-atomic": 5000000000000,
+        "transfer-type": "transfer-from-private",
         "receiver-day-counter": 0,
-        "sending-user-id": 4,
-        "sender-username": "ScipioAfricanus",
-        "sending-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "sending-user-id": 3,
+        "sender-username": "Hannibal",
+        "sending-user-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
         "receiver-before-amount-atomic": 0,
-        "receiver-after-amount-atomic": 80000000000,
-        "created-at": "2018-09-16T13:40:22.461-07:00",
-        "updated-at": "2018-09-16T13:40:22.461-07:00",
+        "receiver-after-amount-atomic": 5000000000000,
+        "transfer-sender-currency-holding-type": "PrivateCurrencyHolding",
+        "created-at": "2018-11-05T11:07:15.062-08:00",
+        "updated-at": "2018-11-05T11:07:15.062-08:00"
+      }
+    },
+    {
+      "id": "10",
+      "type": "burnrate-periods",
+      "attributes": {
+        "day-counter": 3,
+        "final-day-counter": 3,
+        "burn-rate": 550,
+        "daily-burn-rate": "0.000154976",
+        "start-amount-atomic": 0,
+        "last-amount-atomic": 4997675720243,
+        "created-at": "2018-11-05T11:07:15.043-08:00",
+        "updated-at": "2019-06-20T00:08:34.882-07:00"
       }
     }
   ],
   "links": {
-    "self": "https://api.mycurrency.com/users/4/authorized_public_currency_holdings/4/pu_h_transactions?",
-    "first": "https://api.mycurrency.com/users/4/authorized_public_currency_holdings/4/pu_h_transactions?page=1&per_page=25",
+    "self": "https://api.mycurrency.com/users/3/authorized_public_currency_holdings/4/pu_h_transactions?",
+    "first": "https://api.mycurrency.com/users/3/authorized_public_currency_holdings/4/pu_h_transactions?page=1&per_page=25",
     "prev": null,
     "next": null,
-    "last": "https://api.mycurrency.com/users/4/authorized_public_currency_holdings/4/pu_h_transactions?page=1&per_page=25"
+    "last": "https://api.mycurrency.com/users/3/authorized_public_currency_holdings/4/pu_h_transactions?page=1&per_page=25"
   },
   "meta": {
     "pagination": {
       "per-page": null,
       "total-pages": "1",
-      "total-count": "2"
+      "total-count": "5"
     }
   }
 }
@@ -5728,7 +5775,7 @@ updated-at | The time and date when the burnrate period was last updated
 
 ## List Private Currency Holding's Transactions
 
-This endpoint retrieves all issuances, transfers, micro currency orders and burnrate periods associated with a private currency holding, sorted by created_at date, from the oldest to the most recent
+This endpoint retrieves all issuances, transfers, micro currency orders and burnrate periods associated with a private currency holding, sorted by created_at date, the most recent to the oldest
 
 ```shell
 curl 'https://api.mycurrency.com/users/3/authorized_private_currency_holdings/9/pr_h_transactions' \
@@ -5742,104 +5789,100 @@ curl 'https://api.mycurrency.com/users/3/authorized_private_currency_holdings/9/
 {
   "data": [
     {
-      "id": "20",
-      "type": "burnrate-periods",
+      "id": "171",
+      "type": "transfers",
       "attributes": {
-        "day-counter": 0,
-        "final-day-counter": null,
-        "burn-rate": 700,
-        "daily-burn-rate": "0.000198805",
-        "start-amount-atomic": 0,
-        "last-amount-atomic": 210000000000,
-        "created-at": "2018-10-03T00:19:35.155-07:00",
-        "updated-at": "2018-10-03T01:58:03.334-07:00"
+        "amount-atomic": 800000000000,
+        "transfer-type": "transfer-in",
+        "receiver-day-counter": 3,
+        "sending-user-id": 2,
+        "sender-username": "spiderman",
+        "sending-user-avatar-url": "/avatars/original/missing.png",
+        "receiver-before-amount-atomic": 1499118493626,
+        "receiver-after-amount-atomic": 2299118493626,
+        "transfer-sender-currency-holding-type": "PublicCurrencyHolding",
+        "created-at": "2019-07-21T20:43:04.398-07:00",
+        "updated-at": "2019-07-21T20:43:04.398-07:00"
       }
     },
     {
-      "id": "6",
+      "id": "20",
       "type": "transfers",
       "attributes": {
-        "amount-atomic": 10000000000,
-        "receiver-day-counter": 0,
-        "sending-user-id": 4,
-        "sender-username": "ScipioAfricanus",
-        "sending-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
-        "receiver-before-amount-atomic": 0,
-        "receiver-after-amount-atomic": 10000000000,
-        "created-at": "2018-10-03T00:19:35.177-07:00",
-        "updated-at": "2018-10-03T00:19:35.177-07:00"
+        "amount-atomic": 1000000000000,
+        "transfer-type": "transfer-out",
+        "sender-day-counter": 3,
+        "receiving-user-id": 4,
+        "receiver-username": "ScipioAfricanus",
+        "receiving-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "sender-before-amount-atomic": 2499118493626,
+        "sender-after-amount-atomic": 1499118493626,
+        "transfer-receiver-currency-holding-type": "PrivateCurrencyHolding",
+        "created-at": "2019-06-12T03:53:10.039-07:00",
+        "updated-at": "2019-06-12T03:53:10.039-07:00"
       }
     },
     {
       "id": "7",
       "type": "transfers",
       "attributes": {
-        "amount-atomic": 500000000000,
+        "amount-atomic": 2500000000000,
+        "transfer-type": "transfer-to-public",
+        "sender-day-counter": 0,
+        "receiving-user-id": 3,
+        "receiver-username": "Hannibal",
+        "receiving-user-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
+        "sender-before-amount-atomic": 5000000000000,
+        "sender-after-amount-atomic": 2500000000000,
+        "transfer-receiver-currency-holding-type": "PublicCurrencyHolding",
+        "created-at": "2018-11-05T11:15:33.226-08:00",
+        "updated-at": "2018-11-05T11:15:33.226-08:00"
+      }
+    },
+    {
+      "id": "6",
+      "type": "transfers",
+      "attributes": {
+        "amount-atomic": 5000000000000,
+        "transfer-type": "transfer-in",
         "receiver-day-counter": 0,
-        "sending-user-id": 4,
-        "sender-username": "ScipioAfricanus",
-        "sending-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
-        "receiver-before-amount-atomic": 10000000000,
-        "receiver-after-amount-atomic": 510000000000,
-        "created-at": "2018-10-03T00:20:58.124-07:00",
-        "updated-at": "2018-10-03T00:20:58.124-07:00"
+        "sending-user-id": 2,
+        "sender-username": "spiderman",
+        "sending-user-avatar-url": "/avatars/original/missing.png",
+        "receiver-before-amount-atomic": 0,
+        "receiver-after-amount-atomic": 5000000000000,
+        "transfer-sender-currency-holding-type": "PrivateCurrencyHolding",
+        "created-at": "2018-11-05T11:12:30.723-08:00",
+        "updated-at": "2018-11-05T11:12:30.723-08:00"
       }
     },
     {
-      "id": "1",
-      "type": "micro-currency-orders",
+      "id": "15",
+      "type": "burnrate-periods",
       "attributes": {
-        "amount-atomic": 100000000000,
-        "store-id": 3,
-        "store-name": "Freds Fishing Supplies",
-        "before-amount-atomic": 510000000000,
-        "after-amount-atomic": 410000000000,
-        "day-counter": 0,
-        "created-at": "2018-10-03T00:39:37.860-07:00",
-        "updated-at": "2018-10-03T00:39:37.860-07:00"
-      }
-    },
-    {
-      "id": "2",
-      "type": "micro-currency-orders",
-      "attributes": {
-        "amount-atomic": 100000000000,
-        "store-id": 3,
-        "store-name": "Freds Fishing Supplies",
-        "before-amount-atomic": 410000000000,
-        "after-amount-atomic": 310000000000,
-        "day-counter": 0,
-        "created-at": "2018-10-03T00:43:31.756-07:00",
-        "updated-at": "2018-10-03T00:43:31.756-07:00"
-      }
-    },
-    {
-      "id": "3",
-      "type": "micro-currency-orders",
-      "attributes": {
-        "amount-atomic": 100000000000,
-        "store-id": 3,
-        "store-name": "Freds Fishing Supplies",
-        "before-amount-atomic": 310000000000,
-        "after-amount-atomic": 210000000000,
-        "day-counter": 0,
-        "created-at": "2018-10-03T01:58:03.223-07:00",
-        "updated-at": "2018-10-03T01:58:03.223-07:00"
+        "day-counter": 3,
+        "final-day-counter": null,
+        "burn-rate": 420,
+        "daily-burn-rate": "0.000117548",
+        "start-amount-atomic": 0,
+        "last-amount-atomic": 2299118493626,
+        "created-at": "2018-11-05T11:12:30.704-08:00",
+        "updated-at": "2019-07-21T20:43:04.413-07:00"
       }
     }
   ],
-    "links": {
-      "self": "https://api.mycurrency.com/users/3/authorized_private_currency_holdings/9/pr_h_transactions?",
-      "first": "https://api.mycurrency.com/users/3/authorized_private_currency_holdings/9/pr_h_transactions?page=1&per_page=25",
-      "prev": null,
-      "next": null,
-      "last": "https://api.mycurrency.com/users/3/authorized_private_currency_holdings/9/pr_h_transactions?page=1&per_page=25"
+  "links": {
+    "self": "https://api.mycurrency.com/users/3/authorized_private_currency_holdings/9/pr_h_transactions?",
+    "first": "https://api.mycurrency.com/users/3/authorized_private_currency_holdings/9/pr_h_transactions?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/users/3/authorized_private_currency_holdings/9/pr_h_transactions?page=1&per_page=25"
   },
-    "meta": {
+  "meta": {
     "pagination": {
       "per-page": null,
       "total-pages": "1",
-      "total-count": "6"
+      "total-count": "5"
     }
   }
 }
