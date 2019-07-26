@@ -2768,6 +2768,9 @@ last-activated-at | The time and date when the product was last activated
 created-at | The time and date when the product was created
 updated-at | The time and date when the product was last updated
 get-image-url | The URL at which the product image picture can be found
+owner-id | The ID of the owner of the store where the product is sold
+owner-username | The username of the owner of the store where the product is sold
+owner-avatar-url | The URL of the avatar of the owner of the store where the product is sold 
 public-amount-atomic | The number of atomic units in the logged-in user's public holding of the currency that the product can be redeemed by, only shown if logged-in user is not the owner of the store that sells the product
 private-amount-atomic | The number of atomic units in the logged-in user's private holding of the currency that the product can be redeemed by, only shown if logged-in user is not the owner of the store that sells the product
 total-amount-atomic | The total number of atomic units in the logged-in user's public and private holding of the currency that the product can be redeemed by, only shown if logged-in user is not the owner of the store that sells the product
@@ -3039,11 +3042,10 @@ get-image-url | The URL at which the product image picture can be found
 ## Create Product
 
 ```shell
-curl -X POST https://api.mycurrency.com/users/4/issuer/currencies/5/stores/3/products \
-  -d '{"product": { "sub_category_id": "4", "product_name": "fishing bait", "product_description": "natural fishing bait made of worms", "active": "true", "price_cents": "1000"} }' 
-  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' 
-  -H 'Accept: application/json' 
-  -H 'Content-Type: application/json'
+curl -X POST https://api.mycurrency.com/users/3/issuer/currencies/1/stores/1/products \
+  -d '{"product": { "sub_category_id": "15", "product_name": "goliath rocket 2", "product_description": "second version of rocket for reaching the moon", "active": "true", "price_cents": "1000000"} }' \
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNTM1MzQyNzY4LCJleHAiOjE1MzU0MjkxNjgsImp0aSI6IjcxMTU1YWEwLTBjYWItNDJmNi1hY2FjLWNjYTA0MDM5ZGUzMSJ9.vUfErKhiJ4fB5QueiWAUoxQLE8gsqyzNIBFibzcztT8' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
 
 > The above command returns JSON structured like this:
@@ -3051,26 +3053,30 @@ curl -X POST https://api.mycurrency.com/users/4/issuer/currencies/5/stores/3/pro
 ```json
 {
   "data": {
-    "id":"5",
-    "type":"products",
+    "id": "40",
+    "type": "products",
     "attributes": {
-      "sub-category-id": 4,
-      "sub-category-name": "fishing supplies",
-      "currency-id": 5,
-      "currency-name": "Freds Fishing Supplies dollars",
-      "currency-icon-url": "/icons/original/missing.png",
+      "sub-category-id": 15,
+      "sub-category-name": "audio equipment",
+      "currency-id": 1,
+      "currency-name": "Micro Asteroid bucks",
+      "currency-icon-url": "/system/currencies/icons/missing.png",
       "days-to-cancellation": null,
-      "store-id": 3,
-      "store-name": "Freds Fishing Supplies",
-      "product-name": "fishing bait",
-      "product-description": "natural fishing bait made of worms",
-      "price-cents": 1000,
+      "minutes-to-cancellation": null,
+      "store-id": 1,
+      "store-name": "Asteroid Industries",
+      "product-name": "goliath rocket 2",
+      "product-description": "second version of rocket for reaching the moon",
+      "price-cents": 1000000,
       "active": true,
       "continued": true,
-      "last-activated-at": "2018-08-26T17:15:53.011-07:00",
-      "created-at": "2018-08-26T17:15:53.011-07:00",
-      "updated-at": "2018-08-26T17:15:53.011-07:00",
-      "get-image-url": "/images/original/missing.png"
+      "last-activated-at": "2019-07-26T04:57:32.173-07:00",
+      "created-at": "2019-07-26T04:57:32.173-07:00",
+      "updated-at": "2019-07-26T04:57:32.173-07:00",
+      "get-image-url": "/system/products/images/original/missing.png",
+      "owner-id": 3,
+      "owner-username": "Hannibal",
+      "owner-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009"
     }
   }
 }
@@ -3120,6 +3126,9 @@ last-activated-at | The time and date when the product was last activated
 created-at | The time and date when the product was created
 updated-at | The time and date when the product was last updated
 get-image-url | The URL at which the product image picture can be found
+owner-id | The ID of the owner of the store where the product is sold
+owner-username | The username of the owner of the store where the product is sold
+owner-avatar-url | The URL of the avatar of the owner of the store where the product is sold 
 
 ## Update Product
 
@@ -3156,6 +3165,9 @@ curl -X PUT https://api.mycurrency.com/users/4/issuer/currencies/5/stores/3/prod
       "created-at": "2018-08-26T17:15:53.011-07:00",
       "updated-at": "2018-08-26T21:07:27.184-07:00",
       "get-image-url": "/system/products/images/000/000/005/original/fish_bait.jpg?1535342847"
+      "owner-id": 4,
+      "owner-username": "ScipioAfricanus",
+      "owner-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060"
     }
   }
 }
@@ -3204,6 +3216,9 @@ last-activated-at | The time and date when the product was last activated
 created-at | The time and date when the product was created
 updated-at | The time and date when the product was last updated
 get-image-url | The URL at which the product image picture can be found
+owner-id | The ID of the owner of the store where the product is sold
+owner-username | The username of the owner of the store where the product is sold
+owner-avatar-url | The URL of the avatar of the owner of the store where the product is sold 
 
 # Product Cancellations
 
