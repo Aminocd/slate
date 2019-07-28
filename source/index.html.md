@@ -4189,7 +4189,7 @@ updated-at | The time and date when the public currency holding was last updated
 ## List User's Self-Issued Combined Currency Holdings with Authorization
 
 ```shell
-curl 'https://api.mycurrency.com/users/4/authorized_self_issued_combined_currency_holdings' \
+curl 'https://api.mycurrency.com/users/3/authorized_self_issued_combined_currency_holdings' \
   -H 'Accept: application/json' -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
 ```
@@ -4200,29 +4200,65 @@ curl 'https://api.mycurrency.com/users/4/authorized_self_issued_combined_currenc
 {
   "data": [
     {
+      "id": "1",
       "type": "combined-currency-holdings",
       "attributes": {
         "currency-id": 1,
         "currency-name": "Micro Asteroid bucks",
-        "currency-icon-url": "/icons/original/missing.png",
-        "currency-burn-rate": 400,
-        "currency-daily-burn-rate": "0.000111835",
+        "currency-icon-url": "/system/currencies/icons/missing.png",
+        "currency-burn-rate": 450,
+        "currency-daily-burn-rate": "0.00012614",
         "store-count": 1,
         "is-issuer-active": true,
         "issuer-user-id": 3,
         "issuer-user-name": "Hannibal",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
-        "amount-atomic": 13995784992346
+        "amount-atomic": 10245784992346
       }
     },
     {
+      "id": "60",
       "type": "combined-currency-holdings",
       "attributes": {
         "currency-id": 60,
         "currency-name": "Hoola Hoop Cash",
         "currency-icon-url": "/system/currencies/icons/000/000/060/original/currency.jpg?1562578289",
-        "currency-burn-rate": 800,
-        "currency-daily-burn-rate": "0.000228417",
+        "currency-burn-rate": 500,
+        "currency-daily-burn-rate": "0.00014052",
+        "store-count": 0,
+        "is-issuer-active": true,
+        "issuer-user-id": 3,
+        "issuer-user-name": "Hannibal",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
+        "amount-atomic": 9000000000000
+      }
+    },
+    {
+      "id": "74",
+      "type": "combined-currency-holdings",
+      "attributes": {
+        "currency-id": 74,
+        "currency-name": "sam dollar",
+        "currency-icon-url": "/system/currencies/icons/000/000/074/original/currency.jpg?1563139948",
+        "currency-burn-rate": 0,
+        "currency-daily-burn-rate": "0.0",
+        "store-count": 0,
+        "is-issuer-active": true,
+        "issuer-user-id": 3,
+        "issuer-user-name": "Hannibal",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
+        "amount-atomic": 7000000000000
+      }
+    },
+    {
+      "id": "75",
+      "type": "combined-currency-holdings",
+      "attributes": {
+        "currency-id": 75,
+        "currency-name": "Saint Patricks Day Money",
+        "currency-icon-url": "/system/currencies/icons/000/000/075/original/currency.jpg?1563341979",
+        "currency-burn-rate": 1000,
+        "currency-daily-burn-rate": "0.000288618",
         "store-count": 0,
         "is-issuer-active": true,
         "issuer-user-id": 3,
@@ -4232,10 +4268,22 @@ curl 'https://api.mycurrency.com/users/4/authorized_self_issued_combined_currenc
       }
     }
   ],
+  "links": {
+    "self": "https://api.mycurrency.com/users/3/authorized_self_issued_combined_currency_holdings?",
+    "first": "https://api.mycurrency.com/users/3/authorized_self_issued_combined_currency_holdings?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/users/3/authorized_self_issued_combined_currency_holdings?page=1&per_page=25"
+  },
   "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "4"
+    },
     "user-data": {
-      "number-of-reviews": 3,
-      "currency-count": 2
+      "number-of-reviews": 5,
+      "currency-count": 4
     }
   }
 }
@@ -4260,6 +4308,8 @@ exclude_empty | boolean | no | If set to true, currency holding public private p
 
 ### RESPONSE
 
+### COMBINED CURRENCY HOLDING
+
 Parameter | Description
 --------- | -----------
 id | The ID of the currency holding
@@ -4275,10 +4325,17 @@ issuer-user-id | The ID of the user that issues the currency
 issuer-user-name | The username of the user that issues the currency
 issuer-user-avatar-url | The URL of the avatar of the user that issues the currency
 
+### USER INFO
+
+Parameter | Description
+--------- | -----------
+number-of-reviews | The number of store reviews received by stores owned by the logged-in user
+currency-count | The number of currencies owned by the logged-in user
+
 ## List User's Externally Issued Combined Currency Holdings with Authorization
 
 ```shell
-curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_combined_currency_holdings' \
+curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_combined_currency_holdings' \
   -H 'Accept: application/json' -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
 ```
@@ -4289,11 +4346,12 @@ curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_combined_c
 {
   "data": [
     {
+      "id": "2",
       "type": "combined-currency-holdings",
       "attributes": {
         "currency-id": 2,
         "currency-name": "solar electricity zaps",
-        "currency-icon-url": "/icons/original/missing.png",
+        "currency-icon-url": "/system/currencies/icons/missing.png",
         "currency-burn-rate": 400,
         "currency-daily-burn-rate": "0.000111835",
         "store-count": 2,
@@ -4305,11 +4363,12 @@ curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_combined_c
       }
     },
     {
+      "id": "3",
       "type": "combined-currency-holdings",
       "attributes": {
         "currency-id": 3,
         "currency-name": "Moon hotel coins",
-        "currency-icon-url": "/icons/original/missing.png",
+        "currency-icon-url": "/system/currencies/icons/missing.png",
         "currency-burn-rate": 550,
         "currency-daily-burn-rate": "0.000154976",
         "store-count": 1,
@@ -4321,27 +4380,29 @@ curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_combined_c
       }
     },
     {
+      "id": "4",
       "type": "combined-currency-holdings",
       "attributes": {
         "currency-id": 4,
         "currency-name": "spiderman pizza dollars",
-        "currency-icon-url": "/icons/original/missing.png",
+        "currency-icon-url": "/system/currencies/icons/missing.png",
         "currency-burn-rate": 420,
         "currency-daily-burn-rate": "0.000117548",
         "store-count": 0,
         "is-issuer-active": true,
         "issuer-user-id": 2,
         "issuer-user-name": "spiderman",
-        "issuer-user-avatar-url": "/avatars/original/missing.png",
-        "amount-atomic": 3998236987252
+        "issuer-user-avatar-url": "/system/users/avatars/original/missing.png",
+        "amount-atomic": 4198236987252
       }
     },
     {
+      "id": "5",
       "type": "combined-currency-holdings",
       "attributes": {
         "currency-id": 5,
         "currency-name": "Home Repair dollars",
-        "currency-icon-url": "/icons/original/missing.png",
+        "currency-icon-url": "/system/currencies/icons/missing.png",
         "currency-burn-rate": 450,
         "currency-daily-burn-rate": "0.00012614",
         "store-count": 0,
@@ -4353,11 +4414,12 @@ curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_combined_c
       }
     },
     {
+      "id": "6",
       "type": "combined-currency-holdings",
       "attributes": {
         "currency-id": 6,
         "currency-name": "Wholesome foods tokens",
-        "currency-icon-url": "/icons/original/missing.png",
+        "currency-icon-url": "/system/currencies/icons/missing.png",
         "currency-burn-rate": 710,
         "currency-daily-burn-rate": "0.000201751",
         "store-count": 0,
@@ -4369,27 +4431,29 @@ curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_combined_c
       }
     },
     {
+      "id": "8",
       "type": "combined-currency-holdings",
       "attributes": {
         "currency-id": 8,
         "currency-name": "Alex Token",
-        "currency-icon-url": "/icons/original/missing.png",
+        "currency-icon-url": "/system/currencies/icons/missing.png",
         "currency-burn-rate": 350,
         "currency-daily-burn-rate": "0.000097604",
         "store-count": 0,
         "is-issuer-active": true,
         "issuer-user-id": 9,
         "issuer-user-name": "alex",
-        "issuer-user-avatar-url": "/avatars/original/missing.png",
+        "issuer-user-avatar-url": "/system/users/avatars/original/missing.png",
         "amount-atomic": 3000000000000
       }
     },
     {
+      "id": "9",
       "type": "combined-currency-holdings",
       "attributes": {
         "currency-id": 9,
         "currency-name": "Alabama steak coins",
-        "currency-icon-url": "/icons/original/missing.png",
+        "currency-icon-url": "/system/currencies/icons/missing.png",
         "currency-burn-rate": 550,
         "currency-daily-burn-rate": "0.000154976",
         "store-count": 1,
@@ -4401,11 +4465,12 @@ curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_combined_c
       }
     },
     {
+      "id": "10",
       "type": "combined-currency-holdings",
       "attributes": {
         "currency-id": 10,
         "currency-name": "Turbo points",
-        "currency-icon-url": "/icons/original/missing.png",
+        "currency-icon-url": "/system/currencies/icons/missing.png",
         "currency-burn-rate": 600,
         "currency-daily-burn-rate": "0.000169508",
         "store-count": 1,
@@ -4417,6 +4482,24 @@ curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_combined_c
       }
     },
     {
+      "id": "21",
+      "type": "combined-currency-holdings",
+      "attributes": {
+        "currency-id": 21,
+        "currency-name": "new",
+        "currency-icon-url": "/system/currencies/icons/000/000/021/original/currency.jpg?1561624253",
+        "currency-burn-rate": 500,
+        "currency-daily-burn-rate": "0.00014052",
+        "store-count": 1,
+        "is-issuer-active": true,
+        "issuer-user-id": 5,
+        "issuer-user-name": "Kostya",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/avatar.jpg?1561060914",
+        "amount-atomic": 0
+      }
+    },
+    {
+      "id": "57",
       "type": "combined-currency-holdings",
       "attributes": {
         "currency-id": 57,
@@ -4433,10 +4516,22 @@ curl 'https://api.mycurrency.com/users/4/authorized_externally_issued_combined_c
       }
     }
   ],
+  "links": {
+    "self": "https://api.mycurrency.com/users/3/authorized_externally_issued_combined_currency_holdings?",
+    "first": "https://api.mycurrency.com/users/3/authorized_externally_issued_combined_currency_holdings?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/users/3/authorized_externally_issued_combined_currency_holdings?page=1&per_page=25"
+  },
   "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "10"
+    },
     "user-data": {
-      "number-of-reviews": 3,
-      "currency-count": 2
+      "number-of-reviews": 5,
+      "currency-count": 4
     }
   }
 }
@@ -4461,6 +4556,8 @@ exclude_empty | boolean | no | If set to true, currency holding public private p
 
 ### RESPONSE
 
+### COMBINED CURRENCY HOLDING
+
 Parameter | Description
 --------- | -----------
 id | The ID of the currency holding
@@ -4475,6 +4572,13 @@ is-issuer-active | Whether the issuer of the currency is active
 issuer-user-id | The ID of the user that issues the currency
 issuer-user-name | The username of the user that issues the currency
 issuer-user-avatar-url | The URL of the avatar of the user that issues the currency
+
+### USER INFO
+
+Parameter | Description
+--------- | -----------
+number-of-reviews | The number of store reviews received by stores owned by the logged-in user
+currency-count | The number of currencies owned by the logged-in user
 
 # Public Currency Holdings
 
