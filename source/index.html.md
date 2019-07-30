@@ -789,69 +789,25 @@ curl "https://api.mycurrency.com/currencies" \
 {
   "data": [
     {
-      "id": "1",
+      "id": "5",
       "type": "currencies",
       "attributes": {
-        "issuer-id": 2,
-        "issuer-user-id": 3,
-        "issuer-user-username": "Hannibal",
-        "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
-        "burn-rate": 740,
-        "daily-burn-rate": "0.000210611",
-        "store-count": 3, 
-        "listing-count": 0,
-        "product-count": 12,
-        "name": "Calm dollars",
-        "description": "Redeemable for services at Calm Massage Therapy",
-        "created-at": "2017-08-10T17:03:08.287-07:00",
-        "updated-at": "2017-08-10T17:58:08.738-07:00",
-        "get-icon-url": "/system/currencies/icons/000/000/001/original/calm_dollars.jpg?1534619841"
-        "number-of-reviews": 3,
-        "average-score": "2.61"
-      }
-    },
-    {
-      "id": "2",
-      "type": "currencies",
-      "attributes": {
-        "issuer-id": 2,
-        "issuer-user-id": 3,
-        "issuer-user-username": "Hannibal",
-        "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
-        "burn-rate": 450,
-        "daily-burn-rate": "0.00012614",
-        "store-count": 2,
-        "listing-count": 5,
-        "product-count": 52,
-        "name": "ACME Toon Shop dollars",
-        "description": "Spendable at any ACME Toon Shop",
-        "created-at": "2018-08-12T01:17:31.176-07:00",
-        "updated-at": "2018-08-12T23:49:56.793-07:00",
-        "get-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
-        "number-of-reviews": 5,
-        "average-score": "3.67"
-      }
-    },
-    {
-      "id": "3",
-      "type": "currencies",
-      "attributes": {
-        "issuer-id": 3,
-        "issuer-user-id": 4,
-        "issuer-user-username": "ScipioAfricanus",
-        "issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
-        "burn-rate": 420,
-        "daily-burn-rate": "0.000117548",
-        "store-count": 4,
-        "listing-count": 1,
-        "product-count": 16,
-        "name": "Horizon Cloud Computing dollars",
-        "description": "Redeemable for Horizon Cloud Computing services",
-        "created-at": "2018-09-22T17:10:21.588-07:00",
-        "updated-at": "2018-09-22T17:10:21.588-07:00",
-        "get-icon-url": "/system/currencies/icons/000/000/003/original/horizon-cloud.png?1534243939"
-        "number-of-reviews": 3,
-        "average-score": "4.00"
+        "issuer-id": 5,
+        "issuer-user-id": 6,
+        "issuer-user-username": "Estevan",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/007/original/face.jpg?1560144110",
+        "burn-rate": 500,
+        "daily-burn-rate": "0.00014052",
+        "store-count": 16,
+        "listing-count": 4,
+        "product-count": 31,
+        "name": "Chilli pesos",
+        "description": "Chilli pesos are backed by chillis",
+        "created-at": "2018-09-22T18:57:27.193-07:00",
+        "updated-at": "2018-09-22T18:57:27.193-07:00",
+        "get-icon-url": "/system/currencies/icons/000/000/005/original/chilli-pesos.png?153414511"
+        "number-of-reviews": 14,
+        "average-score": "4.61"
       }
     },
     {
@@ -877,25 +833,69 @@ curl "https://api.mycurrency.com/currencies" \
       }
     },
     {
-      "id": "5",
+      "id": "3",
       "type": "currencies",
       "attributes": {
-        "issuer-id": 5,
-        "issuer-user-id": 6,
-        "issuer-user-username": "Estevan",
-        "issuer-user-avatar-url": "/system/users/avatars/000/000/007/original/face.jpg?1560144110",
-        "burn-rate": 500,
-        "daily-burn-rate": "0.00014052",
-        "store-count": 16,
-        "listing-count": 4,
-        "product-count": 31,
-        "name": "Chilli pesos",
-        "description": "Chilli pesos are backed by chillis",
-        "created-at": "2018-09-22T18:57:27.193-07:00",
-        "updated-at": "2018-09-22T18:57:27.193-07:00",
-        "get-icon-url": "/system/currencies/icons/000/000/005/original/chilli-pesos.png?153414511"
-        "number-of-reviews": 14,
-        "average-score": "4.61"
+        "issuer-id": 3,
+        "issuer-user-id": 4,
+        "issuer-user-username": "ScipioAfricanus",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
+        "burn-rate": 420,
+        "daily-burn-rate": "0.000117548",
+        "store-count": 4,
+        "listing-count": 1,
+        "product-count": 16,
+        "name": "Horizon Cloud Computing dollars",
+        "description": "Redeemable for Horizon Cloud Computing services",
+        "created-at": "2018-09-22T17:10:21.588-07:00",
+        "updated-at": "2018-09-22T17:10:21.588-07:00",
+        "get-icon-url": "/system/currencies/icons/000/000/003/original/horizon-cloud.png?1534243939"
+        "number-of-reviews": 3,
+        "average-score": "4.00"
+      }
+    },
+    {
+      "id": "2",
+      "type": "currencies",
+      "attributes": {
+        "issuer-id": 2,
+        "issuer-user-id": 3,
+        "issuer-user-username": "Hannibal",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "burn-rate": 450,
+        "daily-burn-rate": "0.00012614",
+        "store-count": 2,
+        "listing-count": 5,
+        "product-count": 52,
+        "name": "ACME Toon Shop dollars",
+        "description": "Spendable at any ACME Toon Shop",
+        "created-at": "2018-08-12T01:17:31.176-07:00",
+        "updated-at": "2018-08-12T23:49:56.793-07:00",
+        "get-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
+        "number-of-reviews": 5,
+        "average-score": "3.67"
+      }
+    },
+    {
+      "id": "1",
+      "type": "currencies",
+      "attributes": {
+        "issuer-id": 2,
+        "issuer-user-id": 3,
+        "issuer-user-username": "Hannibal",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "burn-rate": 740,
+        "daily-burn-rate": "0.000210611",
+        "store-count": 3, 
+        "listing-count": 0,
+        "product-count": 12,
+        "name": "Calm dollars",
+        "description": "Redeemable for services at Calm Massage Therapy",
+        "created-at": "2017-08-10T17:03:08.287-07:00",
+        "updated-at": "2017-08-10T17:58:08.738-07:00",
+        "get-icon-url": "/system/currencies/icons/000/000/001/original/calm_dollars.jpg?1534619841"
+        "number-of-reviews": 3,
+        "average-score": "2.61"
       }
     }
   ],
@@ -916,7 +916,7 @@ curl "https://api.mycurrency.com/currencies" \
 }
 ```
 
-This endpoint retrieves all currencies with an active issuer.
+This endpoint retrieves all currencies with an active issuer, sorted by ID in descending order.
 
 ### HTTP Request
 
@@ -961,28 +961,6 @@ curl "https://api.mycurrency.com/currencies?user_id=3" \
 {
   "data": [
     {
-      "id": "2",
-      "type": "currencies",
-      "attributes": {
-        "issuer-id": 2,
-        "issuer-user-id": 3,
-        "issuer-user-username": "Hannibal",
-        "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
-        "burn-rate": 450,
-        "daily-burn-rate": "0.00012614",
-        "store-count": 2,
-        "listing-count": 5,
-        "product-count": 10,
-        "name": "ACME Toon Shop dollars",
-        "description": "Spendable at any ACME Toon Shop",
-        "created-at": "2018-08-12T01:17:31.176-07:00",
-        "updated-at": "2018-08-12T23:49:56.793-07:00",
-        "get-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
-        "number-of-reviews": 5,
-        "average-score": "3.67"
-      }
-    },
-    {
       "id": "3",
       "type": "currencies",
       "attributes": {
@@ -1003,7 +981,29 @@ curl "https://api.mycurrency.com/currencies?user_id=3" \
         "number-of-reviews": 3,
         "average-score": "4.00"
       }
-    }  
+    },  
+    {
+      "id": "2",
+      "type": "currencies",
+      "attributes": {
+        "issuer-id": 2,
+        "issuer-user-id": 3,
+        "issuer-user-username": "Hannibal",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "burn-rate": 450,
+        "daily-burn-rate": "0.00012614",
+        "store-count": 2,
+        "listing-count": 5,
+        "product-count": 10,
+        "name": "ACME Toon Shop dollars",
+        "description": "Spendable at any ACME Toon Shop",
+        "created-at": "2018-08-12T01:17:31.176-07:00",
+        "updated-at": "2018-08-12T23:49:56.793-07:00",
+        "get-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
+        "number-of-reviews": 5,
+        "average-score": "3.67"
+      }
+    }
   ],
   "links": {
     "self": "http://api.mycurrency.com/currencies?user_id=3",
@@ -1022,7 +1022,7 @@ curl "https://api.mycurrency.com/currencies?user_id=3" \
 }
 ```
 
-This endpoint retrieves all currencies belonging to the user associated with the ID provided.
+This endpoint retrieves all currencies belonging to the user associated with the ID provided, sorted by ID in descending order.
 
 ### HTTP Request
 
@@ -1502,26 +1502,26 @@ curl "https://api.mycurrency.com/stores" \
 {
   "data": [
     {
-      "id": "1",
+      "id": "3",
       "type": "stores",
       "attributes": {
         "number-of-reviews": 0
         "average-score": null,
-        "number-of-products": 1,
+        "number-of-products": 2,
         "number-of-product-cancellations": 0,
-        "currency-id": 1,
-        "currency-name": "Calm dollars",
-        "currency-icon-url": "/system/currencies/icons/000/000/001/original/calm_dollars.jpg?1534619841",
+        "currency-id": 2,
+        "currency-name": "ACME Toon Shop dollars",
+        "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996",
         "sub-location-id": 1,
         "sub-location-name": "San Francisco",
         "mid-location-id": "2",
         "mid-location-name": "California",
         "physical": true,
-        "store-name": "Calm Spa",
-        "store-description": "A full service spa for full relaxation",
-        "index": "Calm Spa A full service spa for full relaxation\nFacial - standard facial, spa services, includes facials, manicures and pedicures - 5000\n",
-        "created-at": "2018-08-11T12:11:16.475-07:00",
-        "updated-at": "2018-08-12T02:21:49.458-07:00"
+        "store-name": "San Francisco ACME Toon Shop",
+        "store-description": "San Francisco's premier shop for toons",
+        "index": "San Francisco ACME Toon Shop San Francisco's premier shop for toons\nBugs Bunny Q-Tips - q-tips that work on the biggest ears, Toon products, products usable by toons - 1550\nTeleport hole - can turn any rock face into a tunnel, Toon products, products usable by toons - 4000\n",
+        "created-at": "2018-08-12T02:11:46.512-07:00",
+        "updated-at": "2018-08-12T02:11:46.512-07:00"
       }
     },
     {
@@ -1548,26 +1548,26 @@ curl "https://api.mycurrency.com/stores" \
       }
     },
     {
-      "id": "3",
+      "id": "1",
       "type": "stores",
       "attributes": {
         "number-of-reviews": 0
         "average-score": null,
-        "number-of-products": 2,
+        "number-of-products": 1,
         "number-of-product-cancellations": 0,
-        "currency-id": 2,
-        "currency-name": "ACME Toon Shop dollars",
-        "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996",
+        "currency-id": 1,
+        "currency-name": "Calm dollars",
+        "currency-icon-url": "/system/currencies/icons/000/000/001/original/calm_dollars.jpg?1534619841",
         "sub-location-id": 1,
         "sub-location-name": "San Francisco",
         "mid-location-id": "2",
         "mid-location-name": "California",
         "physical": true,
-        "store-name": "San Francisco ACME Toon Shop",
-        "store-description": "San Francisco's premier shop for toons",
-        "index": "San Francisco ACME Toon Shop San Francisco's premier shop for toons\nBugs Bunny Q-Tips - q-tips that work on the biggest ears, Toon products, products usable by toons - 1550\nTeleport hole - can turn any rock face into a tunnel, Toon products, products usable by toons - 4000\n",
-        "created-at": "2018-08-12T02:11:46.512-07:00",
-        "updated-at": "2018-08-12T02:11:46.512-07:00"
+        "store-name": "Calm Spa",
+        "store-description": "A full service spa for full relaxation",
+        "index": "Calm Spa A full service spa for full relaxation\nFacial - standard facial, spa services, includes facials, manicures and pedicures - 5000\n",
+        "created-at": "2018-08-11T12:11:16.475-07:00",
+        "updated-at": "2018-08-12T02:21:49.458-07:00"
       }
     }
   ],
@@ -1588,7 +1588,7 @@ curl "https://api.mycurrency.com/stores" \
 }
 ```
 
-This endpoint retrieves all stores that have an active owner.
+This endpoint retrieves all stores that have an active owner, sorted by ID in descending order.
 
 ### HTTP Request
 
@@ -1639,26 +1639,26 @@ curl "https://api.mycurrency.com/users/4/stores" \
 {
   "data": [
     {
-      "id": "2",
+      "id": "4",
       "type": "stores",
       "attributes": {
         "number-of-reviews": 0,
         "average-score": null,
         "number-of-products": 0,
         "number-of-product-cancellations": 0,
-        "currency-id": 2,
-        "currency-name": "solar electricity zaps",
+        "currency-id": 3,
+        "currency-name": "Moon hotel coins",
         "currency-icon-url": "/icons/original/missing.png",
-        "sub-location-id": 436,
-        "sub-location-name": "vancouver",
-        "mid-location-id": 54,
-        "mid-location-name": "British Columbia",
-        "physical": true,
-        "store-name": "Vancouver Solar Zap",
-        "store-description": "Vancouver's premium solar electricity source",
-        "index": "Vancouver Solar Zap Vancouver's premium solar electricity source",
-        "created-at": "2019-02-05T16:14:24.041-08:00",
-        "updated-at": "2019-02-05T16:28:54.269-08:00"
+        "sub-location-id": 45,
+        "sub-location-name": "san francisco bay area",
+        "mid-location-id": 5,
+        "mid-location-name": "California",
+        "physical": false,
+        "store-name": "Moon Hotel",
+        "store-description": "situated on the edge of the Sea of Tranquility",
+        "index": "Moon Hotel situated on the edge of the Sea of Tranquility",
+        "created-at": "2019-02-05T16:19:54.194-08:00",
+        "updated-at": "2019-02-05T16:19:54.194-08:00"
       }
     },
     {
@@ -1685,26 +1685,26 @@ curl "https://api.mycurrency.com/users/4/stores" \
       }
     },
     {
-      "id": "4",
+      "id": "2",
       "type": "stores",
       "attributes": {
         "number-of-reviews": 0,
         "average-score": null,
         "number-of-products": 0,
         "number-of-product-cancellations": 0,
-        "currency-id": 3,
-        "currency-name": "Moon hotel coins",
+        "currency-id": 2,
+        "currency-name": "solar electricity zaps",
         "currency-icon-url": "/icons/original/missing.png",
-        "sub-location-id": 45,
-        "sub-location-name": "san francisco bay area",
-        "mid-location-id": 5,
-        "mid-location-name": "California",
-        "physical": false,
-        "store-name": "Moon Hotel",
-        "store-description": "situated on the edge of the Sea of Tranquility",
-        "index": "Moon Hotel situated on the edge of the Sea of Tranquility",
-        "created-at": "2019-02-05T16:19:54.194-08:00",
-        "updated-at": "2019-02-05T16:19:54.194-08:00"
+        "sub-location-id": 436,
+        "sub-location-name": "vancouver",
+        "mid-location-id": 54,
+        "mid-location-name": "British Columbia",
+        "physical": true,
+        "store-name": "Vancouver Solar Zap",
+        "store-description": "Vancouver's premium solar electricity source",
+        "index": "Vancouver Solar Zap Vancouver's premium solar electricity source",
+        "created-at": "2019-02-05T16:14:24.041-08:00",
+        "updated-at": "2019-02-05T16:28:54.269-08:00"
       }
     }
   ],
@@ -1725,7 +1725,7 @@ curl "https://api.mycurrency.com/users/4/stores" \
 }
 ```
 
-This endpoint retrieves all stores belonging to the user associated with the ID provided.
+This endpoint retrieves all stores belonging to the user associated with the ID provided, sorted by ID in descending order.
 
 ### HTTP Request
 
@@ -1776,29 +1776,6 @@ curl "https://api.mycurrency.com/currencies/2/stores" \
 {
   "data": [
     {
-      "id": "2",
-      "type": "stores",
-      "attributes": {
-        "number-of-reviews": 3
-        "average-score": "3.67",
-        "number-of-products": 1,
-        "number-of-product-cancellations": 3 
-        "currency-id": 2,
-        "currency-name": "ACME Toon Shop dollars"
-        "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
-        "sub-location-id": 2,
-        "sub-location-name": "Vancouver",
-        "mid-location-id": 1,
-        "mid-location-name": "British Columbia",
-        "physical": true,
-        "store-name": "Vancouver ACME Toon Shop",
-        "store-description": "All manner of ACME Toon items available",
-        "index": "Vancouver ACME Toon Shop All manner of ACME Toon items available\nBugs Bunny Q-Tips - q-tips that work on the biggest ears, Fictional items, Toon products - 1550\n",
-        "created-at": "2018-08-12T02:11:46.512-07:00",
-        "updated-at": "2018-08-12T02:11:46.512-07:00"
-      }
-    },
-    {
       "id": "3",
       "type": "stores",
       "attributes": {
@@ -1817,6 +1794,29 @@ curl "https://api.mycurrency.com/currencies/2/stores" \
         "store-name": "San Francisco ACME Toon Shop",
         "store-description": "San Francisco's premier shop for toons",
         "index": "San Francisco ACME Toon Shop San Francisco's premier shop for toons\nBugs Bunny Q-Tips - q-tips that work on the biggest ears, Toon products, products usable by toons - 1550\nTeleport hole - can turn any rock face into a tunnel, Toon products, products usable by toons - 4000\n",
+        "created-at": "2018-08-12T02:11:46.512-07:00",
+        "updated-at": "2018-08-12T02:11:46.512-07:00"
+      }
+    },
+    {
+      "id": "2",
+      "type": "stores",
+      "attributes": {
+        "number-of-reviews": 3
+        "average-score": "3.67",
+        "number-of-products": 1,
+        "number-of-product-cancellations": 3 
+        "currency-id": 2,
+        "currency-name": "ACME Toon Shop dollars"
+        "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
+        "sub-location-id": 2,
+        "sub-location-name": "Vancouver",
+        "mid-location-id": 1,
+        "mid-location-name": "British Columbia",
+        "physical": true,
+        "store-name": "Vancouver ACME Toon Shop",
+        "store-description": "All manner of ACME Toon items available",
+        "index": "Vancouver ACME Toon Shop All manner of ACME Toon items available\nBugs Bunny Q-Tips - q-tips that work on the biggest ears, Fictional items, Toon products - 1550\n",
         "created-at": "2018-08-12T02:11:46.512-07:00",
         "updated-at": "2018-08-12T02:11:46.512-07:00"
       }
@@ -1839,7 +1839,7 @@ curl "https://api.mycurrency.com/currencies/2/stores" \
 }
 ```
 
-This endpoint retrieves all stores belonging to the currency associated with the ID provided.
+This endpoint retrieves all stores belonging to the currency associated with the ID provided, sorted by ID in descending order.
 
 ### HTTP Request
 
@@ -1930,7 +1930,7 @@ curl "https://api.mycurrency.com/stores?keyword=spa%20services" \
 }
 ```
 
-This endpoint retrieves all stores that have an active owner that have an index that contains text that matches the search keyword provided.
+This endpoint retrieves all stores that have an active owner that have an index that contains text that matches the search keyword provided, sorted by ID in descending order.
 
 ### HTTP Request
 
@@ -1981,29 +1981,6 @@ curl "https://api.mycurrency.com/sub_locations/1/stores" \
 {
   "data": [
     {
-      "id": "1",
-      "type": "stores",
-      "attributes": {
-        "number-of-reviews": 0
-        "average-score": null,
-        "number-of-products": 1,
-        "number-of-product-cancellations": 0,
-        "currency-id": 1,
-        "currency-name": "Calm dollars",
-        "currency-icon-url": "/system/currencies/icons/000/000/001/original/calm_dollars.jpg?1534619841",
-        "sub-location-id": 1,
-        "sub-location-name": "San Francisco",
-        "mid-location-id": "2",
-        "mid-location-name": "California",
-        "physical": true,
-        "store-name": "Calm Spa",
-        "store-description": "A full service spa for full relaxation",
-        "index": "Calm Spa A full service spa for full relaxation\nFacial - standard facial, spa services, includes facials, manicures and pedicures - 5000\n",
-        "created-at": "2018-08-11T12:11:16.475-07:00",
-        "updated-at": "2018-08-12T02:21:49.458-07:00"
-      }
-    },
-    {
       "id": "3",
       "type": "stores",
       "attributes": {
@@ -2025,6 +2002,29 @@ curl "https://api.mycurrency.com/sub_locations/1/stores" \
         "created-at": "2018-08-12T02:11:46.512-07:00",
         "updated-at": "2018-08-12T02:11:46.512-07:00"
       }
+    },
+    {
+      "id": "1",
+      "type": "stores",
+      "attributes": {
+        "number-of-reviews": 0
+        "average-score": null,
+        "number-of-products": 1,
+        "number-of-product-cancellations": 0,
+        "currency-id": 1,
+        "currency-name": "Calm dollars",
+        "currency-icon-url": "/system/currencies/icons/000/000/001/original/calm_dollars.jpg?1534619841",
+        "sub-location-id": 1,
+        "sub-location-name": "San Francisco",
+        "mid-location-id": "2",
+        "mid-location-name": "California",
+        "physical": true,
+        "store-name": "Calm Spa",
+        "store-description": "A full service spa for full relaxation",
+        "index": "Calm Spa A full service spa for full relaxation\nFacial - standard facial, spa services, includes facials, manicures and pedicures - 5000\n",
+        "created-at": "2018-08-11T12:11:16.475-07:00",
+        "updated-at": "2018-08-12T02:21:49.458-07:00"
+      }
     }
   ],
   "links": {
@@ -2044,7 +2044,7 @@ curl "https://api.mycurrency.com/sub_locations/1/stores" \
 }
 ```
 
-This endpoint retrieves all stores that have an active owner belonging to the sub location associated with the ID provided.
+This endpoint retrieves all stores that have an active owner belonging to the sub location associated with the ID provided, sorted by ID in descending order.
 
 ### HTTP Request
 
@@ -2135,7 +2135,7 @@ curl "https://api.mycurrency.com/sub_locations/1/stores?keyword=Bugs%20Bunny" \
 }
 ```
 
-This endpoint retrieves all stores that have an active owner that belong to the sub location associated with the ID provided and contain text that matches the search keyword provided.
+This endpoint retrieves all stores that have an active owner that belong to the sub location associated with the ID provided and contain text that matches the search keyword provided, sorted by ID in descending order.
 
 ### HTTP Request
 
