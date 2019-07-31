@@ -634,6 +634,7 @@ curl 'https://api.mycurrency.com/currencies/2' \
       "issuer-user-id": 3,
       "issuer-user-username": "Hannibal",
       "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+      "issuer-public-currency-holding-id": 4,
       "burn-rate": 450,
       "daily-burn-rate": "0.00012614",
       "store-count": 2,
@@ -670,6 +671,7 @@ issuer-id | The ID of the issuer account that issued the currency
 issuer-user-id | The ID of the user account that issued the currency
 issuer-user-username | The ID of the user account that issued the currency
 issuer-user-avatar-url | The URL at which the avatar picture of the user that issues the currency can be found
+issuer-public-currency-holding-id | The user ID of the public currency holding of the issuer of the currency
 burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
 daily-burn-rate | The daily rate at which the currency burns, by fraction of 1 (0.01 = 1%)
 store-count | The number of stores associated with the currency
@@ -703,6 +705,7 @@ curl 'https://api.mycurrency.com/authorized_currencies/4' \
       "issuer-user-id": 4,
       "issuer-user-name": "ScipioAfricanus",
       "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+      "issuer-public-currency-holding-id": 24,
       "burn-rate": 600,
       "daily-burn-rate": "0.000169508",
       "store-count": 1,
@@ -751,6 +754,7 @@ issuer-id | The ID of the issuer account that issued the currency
 issuer-user-id | The ID of the user account that issued the currency
 issuer-user-username | The ID of the user account that issued the currency
 issuer-user-avatar-url | The URL at which the avatar picture of the user that issues the currency can be found
+issuer-public-currency-holding-id | The user ID of the public currency holding of the issuer of the currency
 burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
 daily-burn-rate | The daily rate at which the currency burns, by fraction of 1 (0.01 = 1%)
 store-count | The number of stores associated with the currency
@@ -796,6 +800,7 @@ curl "https://api.mycurrency.com/currencies" \
         "issuer-user-id": 6,
         "issuer-user-username": "Estevan",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/007/original/face.jpg?1560144110",
+        "issuer-public-currency-holding-id": 24,
         "burn-rate": 500,
         "daily-burn-rate": "0.00014052",
         "store-count": 16,
@@ -818,6 +823,7 @@ curl "https://api.mycurrency.com/currencies" \
         "issuer-user-id": 5,
         "issuer-user-username": "Tom",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/006/original/face.jpg?1560144110",
+        "issuer-public-currency-holding-id": 13,
         "burn-rate": 550,
         "daily-burn-rate": "0.000154976",
         "store-count": 1,
@@ -840,6 +846,7 @@ curl "https://api.mycurrency.com/currencies" \
         "issuer-user-id": 4,
         "issuer-user-username": "ScipioAfricanus",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
+        "issuer-public-currency-holding-id": 7,
         "burn-rate": 420,
         "daily-burn-rate": "0.000117548",
         "store-count": 4,
@@ -862,6 +869,7 @@ curl "https://api.mycurrency.com/currencies" \
         "issuer-user-id": 3,
         "issuer-user-username": "Hannibal",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "issuer-public-currency-holding-id": 4,
         "burn-rate": 450,
         "daily-burn-rate": "0.00012614",
         "store-count": 2,
@@ -884,6 +892,7 @@ curl "https://api.mycurrency.com/currencies" \
         "issuer-user-id": 3,
         "issuer-user-username": "Hannibal",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "issuer-public-currency-holding-id": 3,
         "burn-rate": 740,
         "daily-burn-rate": "0.000210611",
         "store-count": 3, 
@@ -935,6 +944,7 @@ issuer-id | The ID of the issuer account that issued the currency
 issuer-user-id | The ID of the user account that issued the currency
 issuer-user-username | The ID of the user account that issued the currency
 issuer-user-avatar-url | The URL at which the avatar picture of the user that issues the currency can be found
+issuer-public-currency-holding-id | The user ID of the public currency holding of the issuer of the currency
 burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
 daily-burn-rate | The daily rate at which the currency burns, by fraction of 1 (0.01 = 1%)
 store-count | The number of stores associated with the currency
@@ -968,6 +978,7 @@ curl "https://api.mycurrency.com/currencies?user_id=3" \
         "issuer-user-id": 4,
         "issuer-user-username": "ScipioAfricanus",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
+        "issuer-public-currency-holding-id": 7,
         "burn-rate": 420,
         "daily-burn-rate": "0.000117548",
         "store-count": 4,
@@ -990,6 +1001,7 @@ curl "https://api.mycurrency.com/currencies?user_id=3" \
         "issuer-user-id": 3,
         "issuer-user-username": "Hannibal",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "issuer-public-currency-holding-id": 4,
         "burn-rate": 450,
         "daily-burn-rate": "0.00012614",
         "store-count": 2,
@@ -1041,6 +1053,7 @@ issuer-id | The ID of the issuer account that issued the currency
 issuer-user-id | The ID of the user account that issued the currency
 issuer-user-username | The ID of the user account that issued the currency
 issuer-user-avatar-url | The URL at which the avatar picture of the user that issues the currency can be found
+issuer-public-currency-holding-id | The user ID of the public currency holding of the issuer of the currency
 burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
 daily-burn-rate | The daily rate at which the currency burns, by fraction of 1 (0.01 = 1%)
 store-count | The number of stores associated with the currency
@@ -1070,13 +1083,14 @@ curl -X POST https://api.mycurrency.com/users/2/issuer/currencies \
 ```json
 {
   "data": {
-    "id":"1",
-    "type":"currencies",
+    "id": "1",
+    "type": "currencies",
     "attributes": {
       "issuer-id": 3,
       "issuer-user-id": 3,
       "issuer-user-name": "Hannibal",
       "issuer-user-avatar-url": "/avatars/original/missing.png",
+      "issuer-public-currency-holding-id": 3,
       "burn-rate": 500,
       "daily-burn-rate": "0.00014052",
       "store-count": 1,
@@ -1122,6 +1136,7 @@ issuer-id | The ID of the issuer account that issued the currency
 issuer-user-id | The ID of the user account that issued the currency
 issuer-user-username | The ID of the user account that issued the currency
 issuer-user-avatar-url | The URL at which the avatar picture of the user that issues the currency can be found
+issuer-public-currency-holding-id | The user ID of the public currency holding of the issuer of the currency
 burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
 daily-burn-rate | The daily rate at which the currency burns, by fraction of 1 (0.01 = 1%)
 store-count | The number of stores associated with the currency
@@ -1155,6 +1170,7 @@ curl -X PUT https://api.mycurrency.com/users/2/issuer/currencies/1 \
       "issuer-user-id": 3,
       "issuer-user-name": "Hannibal",
       "issuer-user-avatar-url": "/avatars/original/missing.png",
+      "issuer-public-currency-holding-id": 3,
       "burn-rate": 500,
       "daily-burn-rate": "0.00014052",
       "store-count": 1,
@@ -1198,6 +1214,7 @@ issuer-id | The ID of the issuer account that issued the currency
 issuer-user-id | The ID of the user account that issued the currency
 issuer-user-username | The ID of the user account that issued the currency
 issuer-user-avatar-url | The URL at which the avatar picture of the user that issues the currency can be found
+issuer-public-currency-holding-id | The user ID of the public currency holding of the issuer of the currency
 burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
 daily-burn-rate | The daily rate at which the currency burns, by fraction of 1 (0.01 = 1%)
 store-count | The number of stores associated with the currency
