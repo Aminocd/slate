@@ -1450,6 +1450,7 @@ curl 'https://api.mycurrency.com/stores/2' \
       "owner-id": 3,
       "owner-username": "Hannibal",
       "owner-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+      "issuer-public-currency-holding-id": 4,
       "currency-id": 2,
       "currency-name": "ACME Toon Shop dollars"
       "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
@@ -1490,6 +1491,7 @@ number-of-product-cancellations | The number of products belonging to the store 
 owner-id | The ID of the user that owns the store
 owner-username | The username of the user that owns the store
 owner-avatar-url | The URL of the avatar of the user that owns the store
+issuer-public-currency-holding-id | The user ID of the public currency holding of the issuer of the currency that the store's products are purchasable with
 currency-id | The ID of the currency that the store's products are purchasable with
 currency-name | The name of the currency that the store's products are purchasable with
 currency-icon-url | The URL of the icon of the currency that the store's products are purchasable with
@@ -1526,6 +1528,7 @@ curl "https://api.mycurrency.com/stores" \
         "average-score": null,
         "number-of-products": 2,
         "number-of-product-cancellations": 0,
+        "issuer-public-currency-holding-id": 4,
         "currency-id": 2,
         "currency-name": "ACME Toon Shop dollars",
         "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996",
@@ -1549,6 +1552,7 @@ curl "https://api.mycurrency.com/stores" \
         "average-score": "3.67",
         "number-of-products": 1,
         "number-of-product-cancellations": 3 
+        "issuer-public-currency-holding-id": 4,
         "currency-id": 2,
         "currency-name": "ACME Toon Shop dollars"
         "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996",
@@ -1572,6 +1576,7 @@ curl "https://api.mycurrency.com/stores" \
         "average-score": null,
         "number-of-products": 1,
         "number-of-product-cancellations": 0,
+        "issuer-public-currency-holding-id": 2,
         "currency-id": 1,
         "currency-name": "Calm dollars",
         "currency-icon-url": "/system/currencies/icons/000/000/001/original/calm_dollars.jpg?1534619841",
@@ -1627,6 +1632,7 @@ number-of-product-cancellations | The number of products belonging to the store 
 owner-id | The ID of the user that owns the store
 owner-username | The username of the user that owns the store
 owner-avatar-url | The URL of the avatar of the user that owns the store
+issuer-public-currency-holding-id | The user ID of the public currency holding of the issuer of the currency that the store's products are purchasable with
 currency-id | The ID of the currency that the store's products are purchasable with
 currency-name | The name of the currency that the store's products are purchasable with
 currency-icon-url | The URL of the icon of the currency that the store's products are purchasable with
@@ -1663,6 +1669,7 @@ curl "https://api.mycurrency.com/users/4/stores" \
         "average-score": null,
         "number-of-products": 0,
         "number-of-product-cancellations": 0,
+        "issuer-public-currency-holding-id": 3,
         "currency-id": 3,
         "currency-name": "Moon hotel coins",
         "currency-icon-url": "/icons/original/missing.png",
@@ -1686,6 +1693,7 @@ curl "https://api.mycurrency.com/users/4/stores" \
         "average-score": null,
         "number-of-products": 0,
         "number-of-product-cancellations": 0,
+        "issuer-public-currency-holding-id": 4,
         "currency-id": 2,
         "currency-name": "solar electricity zaps",
         "currency-icon-url": "/icons/original/missing.png",
@@ -1709,6 +1717,7 @@ curl "https://api.mycurrency.com/users/4/stores" \
         "average-score": null,
         "number-of-products": 0,
         "number-of-product-cancellations": 0,
+        "issuer-public-currency-holding-id": 4,
         "currency-id": 2,
         "currency-name": "solar electricity zaps",
         "currency-icon-url": "/icons/original/missing.png",
@@ -1764,6 +1773,7 @@ number-of-product-cancellations | The number of products belonging to the store 
 owner-id | The ID of the user that owns the store
 owner-username | The username of the user that owns the store
 owner-avatar-url | The URL of the avatar of the user that owns the store
+issuer-public-currency-holding-id | The user ID of the public currency holding of the issuer of the currency that the store's products are purchasable with
 currency-id | The ID of the currency that the store's products are purchasable with
 currency-name | The name of the currency that the store's products are purchasable with
 currency-icon-url | The URL of the icon of the currency that the store's products are purchasable with
@@ -1800,6 +1810,7 @@ curl "https://api.mycurrency.com/currencies/2/stores" \
         "average-score": null,
         "number-of-products": 2,
         "number-of-product-cancellations": 0,
+        "issuer-public-currency-holding-id": 4,
         "currency-id": 2,
         "currency-name": "ACME Toon Shop dollars",
         "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996",
@@ -1823,6 +1834,7 @@ curl "https://api.mycurrency.com/currencies/2/stores" \
         "average-score": "3.67",
         "number-of-products": 1,
         "number-of-product-cancellations": 3 
+        "issuer-public-currency-holding-id": 4,
         "currency-id": 2,
         "currency-name": "ACME Toon Shop dollars"
         "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
@@ -1878,6 +1890,7 @@ number-of-product-cancellations | The number of products belonging to the store 
 owner-id | The ID of the user that owns the store
 owner-username | The username of the user that owns the store
 owner-avatar-url | The URL of the avatar of the user that owns the store
+issuer-public-currency-holding-id | The user ID of the public currency holding of the issuer of the currency that the store's products are purchasable with
 currency-id | The ID of the currency that the store's products are purchasable with
 currency-name | The name of the currency that the store's products are purchasable with
 currency-icon-url | The URL of the icon of the currency that the store's products are purchasable with
@@ -1914,6 +1927,7 @@ curl "https://api.mycurrency.com/stores?keyword=spa%20services" \
         "average-score": null,
         "number-of-products": 1,
         "number-of-product-cancellations": 0,
+        "issuer-public-currency-holding-id": 2,
         "currency-id": 1,
         "currency-name": "Calm dollars",
         "currency-icon-url": "/system/currencies/icons/000/000/001/original/calm_dollars.jpg?1534619841",
@@ -1969,6 +1983,7 @@ number-of-product-cancellations | The number of products belonging to the store 
 owner-id | The ID of the user that owns the store
 owner-username | The username of the user that owns the store
 owner-avatar-url | The URL of the avatar of the user that owns the store
+issuer-public-currency-holding-id | The user ID of the public currency holding of the issuer of the currency that the store's products are purchasable with
 currency-id | The ID of the currency that the store's products are purchasable with
 currency-name | The name of the currency that the store's products are purchasable with
 currency-icon-url | The URL of the icon of the currency that the store's products are purchasable with
@@ -2005,6 +2020,7 @@ curl "https://api.mycurrency.com/sub_locations/1/stores" \
         "average-score": null,
         "number-of-products": 2,
         "number-of-product-cancellations": 0,
+        "issuer-public-currency-holding-id": 4,
         "currency-id": 2,
         "currency-name": "ACME Toon Shop dollars",
         "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996",
@@ -2028,6 +2044,7 @@ curl "https://api.mycurrency.com/sub_locations/1/stores" \
         "average-score": null,
         "number-of-products": 1,
         "number-of-product-cancellations": 0,
+        "issuer-public-currency-holding-id": 2,
         "currency-id": 1,
         "currency-name": "Calm dollars",
         "currency-icon-url": "/system/currencies/icons/000/000/001/original/calm_dollars.jpg?1534619841",
@@ -2083,6 +2100,7 @@ number-of-product-cancellations | The number of products belonging to the store 
 owner-id | The ID of the user that owns the store
 owner-username | The username of the user that owns the store
 owner-avatar-url | The URL of the avatar of the user that owns the store
+issuer-public-currency-holding-id | The user ID of the public currency holding of the issuer of the currency that the store's products are purchasable with
 currency-id | The ID of the currency that the store's products are purchasable with
 currency-name | The name of the currency that the store's products are purchasable with
 currency-icon-url | The URL of the icon of the currency that the store's products are purchasable with
@@ -2119,6 +2137,7 @@ curl "https://api.mycurrency.com/sub_locations/1/stores?keyword=Bugs%20Bunny" \
         "average-score": null,
         "number-of-products": 2,
         "number-of-product-cancellations": 0,
+        "issuer-public-currency-holding-id": 4,
         "currency-id": 2,
         "currency-name": "ACME Toon Shop dollars",
         "currency-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996",
@@ -2174,6 +2193,7 @@ number-of-product-cancellations | The number of products belonging to the store 
 owner-id | The ID of the user that owns the store
 owner-username | The username of the user that owns the store
 owner-avatar-url | The URL of the avatar of the user that owns the store
+issuer-public-currency-holding-id | The user ID of the public currency holding of the issuer of the currency that the store's products are purchasable with
 currency-id | The ID of the currency that the store's products are purchasable with
 currency-name | The name of the currency that the store's products are purchasable with
 currency-icon-url | The URL of the icon of the currency that the store's products are purchasable with
@@ -2259,6 +2279,7 @@ number-of-product-cancellations | The number of products belonging to the store 
 owner-id | The ID of the user that owns the store
 owner-username | The username of the user that owns the store
 owner-avatar-url | The URL of the avatar of the user that owns the store
+issuer-public-currency-holding-id | The user ID of the public currency holding of the issuer of the currency that the store's products are purchasable with
 currency-id | The ID of the currency that the store's products are purchasable with
 currency-name | The name of the currency that the store's products are purchasable with
 currency-icon-url | The URL of the icon of the currency that the store's products are purchasable with
@@ -2343,6 +2364,7 @@ number-of-reviews | The number of store reviews created for the store
 average-score | The average score of the store reviews, out of 5
 number-of-products | The number of products belonging to the store where both the :active and :continued fields have a value of true
 number-of-product-cancellations | The number of products belonging to the store that have been discontinued without the store owner providing advance notice
+issuer-public-currency-holding-id | The user ID of the public currency holding of the issuer of the currency that the store's products are purchasable with
 currency-id | The ID of the currency that the store's products are purchasable with
 currency-name | The name of the currency that the store's products are purchasable with
 sub-location-id | The sub location where the store is located
@@ -2728,6 +2750,7 @@ curl 'https://api.mycurrency.com/products/1' \
       "currency-id": 1,
       "currency-name": "Micro Asteroid bucks",
       "currency-icon-url": "/icons/original/missing.png",
+      "issuer-public-currency-holding-id": 2,
       "days-to-cancellation": null,
       "minutes-to-cancellation": null,
       "store-id": 1,
@@ -2772,6 +2795,7 @@ sub-category-name | The name of the sub category that the product belongs to
 currency-id | The ID of the currency that the product can be redeemed by
 currency-name | The name of the currency that the product can be redeemed by
 currency-icon-url | The URL of the icon of the currency that the product can be redeemed by 
+issuer-public-currency-holding-id | The user ID of the public currency holding of the issuer of the currency that the store's products are purchasable with
 days-to-cancellation | How many days until the product's product-discontinual is activated and the product is cancelled. A NULL value if the product has no product discontinual
 minutes-to-cancellation | How many minutes until the product's product-discontinual is activated and the product is cancelled. A NULL value if the product has no product discontinual
 store-id | The ID of the store where the product is sold
@@ -2813,6 +2837,7 @@ curl "https://api.mycurrency.com/products" \
         "currency-id": 1,
         "currency-name": "Calm dollars",
         "currency-icon-url": "/icons/original/missing.png",
+        "issuer-public-currency-holding-id": 2,
         "days-to-cancellation": null,
         "store-id": 1,
         "store-name": "Calm Spa",
@@ -2836,6 +2861,7 @@ curl "https://api.mycurrency.com/products" \
         "currency-id": 2,
         "currency-name": "ACME Toon Shop dollars"
         "currency-icon-url": "/icons/original/missing.png",
+        "issuer-public-currency-holding-id": 4,
         "days-to-cancellation": null,
         "store-id": 2,
         "store-name": "Vancouver ACME Toon Shop",
@@ -2859,6 +2885,7 @@ curl "https://api.mycurrency.com/products" \
         "currency-id": 2,
         "currency-name": "ACME Toon Shop dollars"
         "currency-icon-url": "/icons/original/missing.png",
+        "issuer-public-currency-holding-id": 4,
         "days-to-cancellation": null,
         "store-id": 3,
         "store-name": "San Francisco ACME Toon Shop",
@@ -2882,6 +2909,7 @@ curl "https://api.mycurrency.com/products" \
         "currency-id": 2,
         "currency-name": "ACME Toon Shop dollars"
         "currency-icon-url": "/icons/original/missing.png",
+        "issuer-public-currency-holding-id": 4,
         "days-to-cancellation": null,
         "store-id": 3,
         "store-name": "San Francisco ACME Toon Shop",
@@ -2934,6 +2962,7 @@ sub-category-name | The name of the sub category that the product belongs to
 currency-id | The ID of the currency that the product can be redeemed by
 currency-name | The name of the currency that the product can be redeemed by
 currency-icon-url | The URL of the icon of the currency that the product can be redeemed by 
+issuer-public-currency-holding-id | The user ID of the public currency holding of the issuer of the currency that the store's products are purchasable with
 days-to-cancellation | How many days until the product's product-discontinual is activated and the product is cancelled. A NULL value if the product has no product discontinual
 store-id | The ID of the store where the product is sold
 store-name | The name of the store where the product is sold
@@ -2968,6 +2997,7 @@ curl "https://api.mycurrency.com/stores/3/products" \
         "currency-id": 2,
         "currency-name": "ACME Toon Shop dollars"
         "currency-icon-url": "/icons/original/missing.png",
+        "issuer-public-currency-holding-id": 4,
         "days-to-cancellation": null,
         "store-id": 3,
         "store-name": "San Francisco ACME Toon Shop",
@@ -2991,6 +3021,7 @@ curl "https://api.mycurrency.com/stores/3/products" \
         "currency-id": 2,
         "currency-name": "ACME Toon Shop dollars"
         "currency-icon-url": "/icons/original/missing.png",
+        "issuer-public-currency-holding-id": 4,
         "days-to-cancellation": null,
         "store-id": 3,
         "store-name": "San Francisco ACME Toon Shop",
@@ -3043,6 +3074,7 @@ sub-category-name | The name of the sub category that the product belongs to
 currency-id | The ID of the currency that the product can be redeemed by
 currency-name | The name of the currency that the product can be redeemed by
 currency-icon-url | The URL of the icon of the currency that the product can be redeemed by 
+issuer-public-currency-holding-id | The user ID of the public currency holding of the issuer of the currency that the store's products are purchasable with
 days-to-cancellation | How many days until the product's product-discontinual is activated and the product is cancelled. A NULL value if the product has no product discontinual
 store-id | The ID of the store where the product is sold
 store-name | The name of the store where the product is sold
@@ -3078,6 +3110,7 @@ curl -X POST https://api.mycurrency.com/users/3/issuer/currencies/1/stores/1/pro
       "currency-id": 1,
       "currency-name": "Micro Asteroid bucks",
       "currency-icon-url": "/system/currencies/icons/missing.png",
+      "issuer-public-currency-holding-id": 2,
       "days-to-cancellation": null,
       "minutes-to-cancellation": null,
       "store-id": 1,
@@ -3131,6 +3164,7 @@ sub-category-name | The name of the sub category that the product belongs to
 currency-id | The ID of the currency that the product can be redeemed by
 currency-name | The name of the currency that the product can be redeemed by
 currency-icon-url | The URL of the icon of the currency that the product can be redeemed by 
+issuer-public-currency-holding-id | The user ID of the public currency holding of the issuer of the currency that the store's products are purchasable with
 days-to-cancellation | How many days until the product's product-discontinual is activated and the product is cancelled. A NULL value if the product has no product discontinual
 store-id | The ID of the store where the product is sold
 store-name | The name of the store where the product is sold
@@ -3221,6 +3255,7 @@ sub-category-name | The name of the sub category that the product belongs to
 currency-id | The ID of the currency that the product can be redeemed by
 currency-name | The name of the currency that the product can be redeemed by
 currency-icon-url | The URL of the icon of the currency that the product can be redeemed by 
+issuer-public-currency-holding-id | The user ID of the public currency holding of the issuer of the currency that the store's products are purchasable with
 days-to-cancellation | How many days until the product's product-discontinual is activated and the product is cancelled. A NULL value if the product has no product discontinual
 store-id | The ID of the store where the product is sold
 store-name | The name of the store where the product is sold
