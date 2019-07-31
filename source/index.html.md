@@ -7268,7 +7268,7 @@ updated-at | The time and date when the transfer was last updated
 ## Get an Offer
 
 ```shell
-curl 'https://api.mycurrency.com/users/3/offers/4' -H 'Accept: application/json' \
+curl 'https://api.mycurrency.com/users/2/offers/9' -H 'Accept: application/json' \
   -H 'Content-Type: application/json' -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
 ```
 
