@@ -7277,112 +7277,174 @@ curl 'https://api.mycurrency.com/users/3/offers/4' -H 'Accept: application/json'
 ```json
 {
   "data": {
-    "id": "1",
+    "id": "9",
     "type": "offers",
     "attributes": {
-      "offer-receiver-id": 4,
-      "offer-receiver-username": "ScipioAfricanus",
-      "offer-receiver-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+      "offer-receiver-id": 2,
+      "offer-receiver-username": "spiderman",
+      "offer-receiver-avatar-url": "/system/users/avatars/original/missing.png",
       "offer-sender-id": 3,
       "offer-sender-username": "Hannibal",
       "offer-sender-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
-      "previous-offer-id": 0,
-      "offer-type": 0,
-      "active": false,
-      "self-cancellation": false,
-      "created-at": "2019-01-25T15:48:29.219-08:00",
-      "updated-at": "2019-01-25T15:57:08.524-08:00"
-    },
-    "relationships": {
+      "previous-offer-id": 8,
       "proposed-transfers": {
         "data": [
           {
-            "id": "1",
-            "type": "proposed-transfers"
+            "id": "9",
+            "type": "proposed-transfers",
+            "attributes": {
+              "offer-id": 9,
+              "source-currency-holding-id": 2,
+              "source-currency-id": 1,
+              "source-currency-name": "Micro Asteroid bucks",
+              "source-currency-icon-url": "/system/currencies/icons/missing.png",
+              "source-currency-burn-rate": 450,
+              "source-currency-daily-burn-rate": "0.00012614",
+              "source-currency-store-count": 2,
+              "currency-sender-id": 3,
+              "currency-sender-username": "Hannibal",
+              "amount-atomic": 50000000000,
+              "products": {
+                "data": [
+                  {
+                    "id": "51",
+                    "type": "products",
+                    "attributes": {
+                      "sub-category-id": 12,
+                      "sub-category-name": "computer accessories",
+                      "currency-id": 1,
+                      "currency-name": "Micro Asteroid bucks",
+                      "currency-icon-url": "/system/currencies/icons/missing.png",
+                      "days-to-cancellation": null,
+                      "minutes-to-cancellation": null,
+                      "store-id": 28,
+                      "store-name": "Moon Store",
+                      "product-name": "Lunar solar panels",
+                      "product-description": "solar panels designed to be installed on the moon",
+                      "price-cents": 100000,
+                      "active": true,
+                      "continued": true,
+                      "last-activated-at": "2019-07-29T16:56:30.169-07:00",
+                      "created-at": "2019-07-29T16:56:30.169-07:00",
+                      "updated-at": "2019-07-29T16:56:30.169-07:00",
+                      "get-image-url": "/system/products/images/original/missing.png"
+                    }
+                  },
+                  {
+                    "id": "40",
+                    "type": "products",
+                    "attributes": {
+                      "sub-category-id": 15,
+                      "sub-category-name": "audio equipment",
+                      "currency-id": 1,
+                      "currency-name": "Micro Asteroid bucks",
+                      "currency-icon-url": "/system/currencies/icons/missing.png",
+                      "days-to-cancellation": null,
+                      "minutes-to-cancellation": null,
+                      "store-id": 1,
+                      "store-name": "Asteroid Industries",
+                      "product-name": "goliath rocket 2",
+                      "product-description": "second version of rocket for reaching the moon",
+                      "price-cents": 1000000,
+                      "active": true,
+                      "continued": true,
+                      "last-activated-at": "2019-07-26T04:57:32.173-07:00",
+                      "created-at": "2019-07-26T04:57:32.173-07:00",
+                      "updated-at": "2019-07-26T04:57:32.173-07:00",
+                      "get-image-url": "/system/products/images/original/missing.png"
+                    }
+                  },
+                  {
+                    "id": "39",
+                    "type": "products",
+                    "attributes": {
+                      "sub-category-id": 15,
+                      "sub-category-name": "audio equipment",
+                      "currency-id": 1,
+                      "currency-name": "Micro Asteroid bucks",
+                      "currency-icon-url": "/system/currencies/icons/missing.png",
+                      "days-to-cancellation": null,
+                      "minutes-to-cancellation": null,
+                      "store-id": 1,
+                      "store-name": "Asteroid Industries",
+                      "product-name": "goliath rocket",
+                      "product-description": "rocket for reaching the moon",
+                      "price-cents": 1000000,
+                      "active": true,
+                      "continued": true,
+                      "last-activated-at": "2019-07-26T04:51:29.353-07:00",
+                      "created-at": "2019-07-26T04:51:29.353-07:00",
+                      "updated-at": "2019-07-26T04:51:29.353-07:00",
+                      "get-image-url": "/system/products/images/original/missing.png"
+                    }
+                  }
+                ]
+              },
+              "active": false,
+              "created-at": "2019-07-21T18:32:30.727-07:00",
+              "updated-at": "2019-07-21T18:32:49.019-07:00"
+            }
           }
         ]
       },
       "proposed-issuances": {
         "data": [
           {
-            "id": "1",
-            "type": "proposed-issuances"
+            "id": "9",
+            "type": "proposed-issuances",
+            "attributes": {
+              "offer-id": 9,
+              "source-currency-id": 4,
+              "source-currency-name": "spiderman pizza dollars",
+              "source-currency-icon-url": "/system/currencies/icons/missing.png",
+              "source-currency-burn-rate": 420,
+              "source-currency-daily-burn-rate": "0.000117548",
+              "source-currency-store-count": 3,
+              "currency-issuer-id": 2,
+              "currency-issuer-username": "spiderman",
+              "amount-atomic": 50000000000,
+              "products": {
+                "data": [
+                  {
+                    "id": "52",
+                    "type": "products",
+                    "attributes": {
+                      "sub-category-id": 20,
+                      "sub-category-name": "kid's clothing",
+                      "currency-id": 4,
+                      "currency-name": "spiderman pizza dollars",
+                      "currency-icon-url": "/system/currencies/icons/missing.png",
+                      "days-to-cancellation": null,
+                      "minutes-to-cancellation": null,
+                      "store-id": 29,
+                      "store-name": "Spiderman store",
+                      "product-name": "spidermask",
+                      "product-description": "a spiderman mask",
+                      "price-cents": 200,
+                      "active": true,
+                      "continued": true,
+                      "last-activated-at": "2019-07-29T17:07:27.574-07:00",
+                      "created-at": "2019-07-29T17:07:27.574-07:00",
+                      "updated-at": "2019-07-29T17:07:27.574-07:00",
+                      "get-image-url": "/system/products/images/original/missing.png"
+                    }
+                  }
+                ]
+              },
+              "active": false,
+              "created-at": "2019-07-21T18:32:30.728-07:00",
+              "updated-at": "2019-07-21T18:32:49.020-07:00"
+            }
           }
         ]
-      }
+      },
+      "offer-type": 1,
+      "active": false,
+      "self-cancellation": false,
+      "created-at": "2019-07-21T18:32:30.701-07:00",
+      "updated-at": "2019-07-21T18:32:49.017-07:00"
     }
-  },
-  "included": [
-    {
-      "id": "1",
-      "type": "proposed-transfers",
-      "attributes": {
-        "offer-id": 1,
-        "source-currency-holding-id": 2,
-        "source-currency-id": 1,
-        "source-currency-name": "Micro Asteroid bucks",
-        "source-currency-icon-url": "/icons/original/missing.png",
-        "source-currency-burn-rate": 450,
-        "source-currency-daily-burn-rate": "0.00012614",
-        "source-currency-store-count": 1,
-        "currency-sender-id": 3,
-        "currency-sender-username": "Hannibal",
-        "amount-atomic": 50000000000,
-        "active": false,
-        "product-1-name": "GPS satellite",
-        "product-1-image-url": "/images/original/missing.png",
-        "product-1-price-cents": 1000000,
-        "product-1-sub-category-id": 16,
-        "product-1-sub-category-name": "prepared food",
-        "product-2-name": "XeeLine spacesuit",
-        "product-2-image-url": "/images/original/missing.png",
-        "product-2-price-cents": 400000,
-        "product-2-sub-category-id": 57,
-        "product-2-sub-category-name": "general labor",
-        "product-3-name": null,
-        "product-3-image-url": "/images/original/missing.png",
-        "product-3-price-cents": 100000,
-        "product-3-sub-category-id": 57,
-        "product-3-sub-category-name": "general labor",
-        "created-at": "2019-01-25T15:48:29.612-08:00",
-        "updated-at": "2019-01-25T15:57:08.540-08:00"
-      }
-    },
-    {
-      "id": "1",
-      "type": "proposed-issuances",
-      "attributes": {
-        "offer-id": 1,
-        "source-currency-id": 2,
-        "source-currency-name": "solar electricity zaps",
-        "source-currency-icon-url": "/icons/original/missing.png",
-        "source-currency-burn-rate": 400,
-        "source-currency-daily-burn-rate": "0.000111835",
-        "source-currency-store-count": 2,
-        "currency-issuer-id": 4,
-        "currency-issuer-username": "ScipioAfricanus",
-        "amount-atomic": 50000000000,
-        "active": false,
-        "product-1-name": null,
-        "product-1-image-url": null,
-        "product-1-price-cents": null,
-        "product-1-sub-category-id": null,
-        "product-1-sub-category-name": null,
-        "product-2-name": null,
-        "product-2-image-url": null,
-        "product-2-price-cents": null,
-        "product-2-sub-category-id": null,
-        "product-2-sub-category-name": null,
-        "product-3-name": null,
-        "product-3-image-url": null,
-        "product-3-price-cents": null,
-        "product-3-sub-category-id": null,
-        "product-3-sub-category-name": null,
-        "created-at": "2019-01-25T15:48:29.613-08:00",
-        "updated-at": "2019-01-25T15:57:08.548-08:00"
-      }
-    }
-  ]
+  }
 }
 ```
 
@@ -7412,6 +7474,8 @@ offer-sender-avatar-url | The URL of the avatar of the user that made the offer
 previous-offer-id | The ID of the offer that is being counter-offered. If the first offer of an offer-chain, the value will be 0
 offer-type | 0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, and 3 is an offer acceptance
 active | Whether the offer is still active and can be countered or accepted/rejected
+proposed-transfers | The proposed_transfers included in the offer
+proposed-issuances | The proposed_issuances included in the offer
 self-cancellation | Whether the offer sender has cancelled the offer by disactivating their user account
 created-at | The time and date when the offer was created
 updated-at | The time and date when the offer was last updated
@@ -7433,21 +7497,7 @@ currency-sender-id | The ID of the user that would send the proposed transfer
 currency-sender-username | The username of the user that would send the proposed transfer
 amount-atomic | The amount of currency that is proposed to be transferred, in atomic units (each whole unit is composed of 10^10 atomic units)
 active | Whether the proposed transfer is still valid or not
-product-1-name | The name of the most recently updated product associated with the currency that is proposed to be transfered
-product-1-image-url | The URL of the image of the most recently updated product associated with the currency that is proposed to be transfered
-product-1-price-cents | The price of the most recently product associated with the currency that is proposed to be transferred, by multiple of 100, and denominated in the currency of the store where the product is sold
-product-1-sub-category-id | The ID of the sub-category of the most recently updated product associated with the currency that is proposed to be transfered
-product-1-sub-category-id | The name of the sub-category of the most recently updated product associated with the currency that is proposed to be transfered
-product-2-name | The name of the second most recently updated product associated with the currency that is proposed to be transfered
-product-2-image-url | The URL of the image of the second most recently updated product associated with the currency that is proposed to be transfered
-product-2-price-cents | The price of the second most recently product associated with the currency that is proposed to be transferred, by multiple of 100, and denominated in the currency of the store where the product is sold
-product-2-sub-category-id | The ID of the sub-category of the second most recently updated product associated with the currency that is proposed to be transfered
-product-2-sub-category-id | The name of the sub-category of the second most recently updated product associated with the currency that is proposed to be transfered
-product-3-name | The name of the third most recently updated product associated with the currency that is proposed to be transfered
-product-3-image-url | The URL of the image of the third most recently updated product associated with the currency that is proposed to be transfered
-product-3-price-cents | The price of the third most recently product associated with the currency that is proposed to be transferred, by multiple of 100, and denominated in the currency of the store where the product is sold
-product-3-sub-category-id | The ID of the sub-category of the third most recently updated product associated with the currency that is proposed to be transfered
-product-3-sub-category-id | The name of the sub-category of the third most recently updated product associated with the currency that is proposed to be transfered
+products | The three most recently updated products associated with the currency of the proposed_transfer
 created-at | The time and date when the proposed transfer was created
 updated-at | The time and date when the proposed transfer was last updated
 
@@ -7467,21 +7517,7 @@ currency-issuer-id | The ID of the user that would issue the proposed issuance
 currency-issuer-username | The username of the user that would issue the proposed issuance
 amount-atomic | The amount of currency that is proposed to be issued, in atomic units (each whole unit is composed of 10^10 atomic units)
 active | Whether the proposed issuance is still valid or not
-product-1-name | The name of the most recently updated product associated with the currency that is proposed to be issued
-product-1-image-url | The URL of the image of the most recently updated product associated with the currency that is proposed to be issued
-product-1-price-cents | The price of the most recently product associated with the currency that is proposed to be issued, by multiple of 100, and denominated in the currency of the store where the product is sold
-product-1-sub-category-id | The ID of the sub-category of the most recently updated product associated with the currency that is proposed to be issued
-product-1-sub-category-id | The name of the sub-category of the most recently updated product associated with the currency that is proposed to be issued
-product-2-name | The name of the second most recently updated product associated with the currency that is proposed to be transfered
-product-2-image-url | The URL of the image of the second most recently updated product associated with the currency that is proposed to be issued
-product-2-price-cents | The price of the second most recently product associated with the currency that is proposed to be transferred, by multiple of 100, and denominated in the currency of the store where the product is sold
-product-2-sub-category-id | The ID of the sub-category of the second most recently updated product associated with the currency that is proposed to be issued
-product-2-sub-category-id | The name of the sub-category of the second most recently updated product associated with the currency that is proposed to be issued
-product-3-name | The name of the third most recently updated product associated with the currency that is proposed to be issued
-product-3-image-url | The URL of the image of the third most recently updated product associated with the currency that is proposed to be issued
-product-3-price-cents | The price of the third most recently product associated with the currency that is proposed to be issued, by multiple of 100, and denominated in the currency of the store where the product is sold
-product-3-sub-category-id | The ID of the sub-category of the third most recently updated product associated with the currency that is proposed to be issued
-product-3-sub-category-id | The name of the sub-category of the third most recently updated product associated with the currency that is proposed to be issued
+products | The three most recently updated products associated with the currency of the proposed_issuance
 created-at | The time and date when the proposed issuance was created
 updated-at | The time and date when the proposed issuance was last updated
 
@@ -7507,21 +7543,19 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
         "offer-receiver-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
         "offer-sender-id": 2,
         "offer-sender-username": "spiderman",
-        "offer-sender-avatar-url": "/avatars/original/missing.png",
+        "offer-sender-avatar-url": "/system/users/avatars/original/missing.png",
         "previous-offer-id": 9,
-        "offer-type": 2,
-        "active": false,
-        "self-cancellation": false,
-        "created-at": "2019-07-21T18:32:48.989-07:00",
-        "updated-at": "2019-07-21T18:32:48.989-07:00"
-      },
-      "relationships": {
         "proposed-transfers": {
           "data": []
         },
         "proposed-issuances": {
           "data": []
-        }
+        },
+        "offer-type": 2,
+        "active": false,
+        "self-cancellation": false,
+        "created-at": "2019-07-21T18:32:48.989-07:00",
+        "updated-at": "2019-07-21T18:32:48.989-07:00"
       }
     },
     {
@@ -7530,23 +7564,108 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
       "attributes": {
         "offer-receiver-id": 2,
         "offer-receiver-username": "spiderman",
-        "offer-receiver-avatar-url": "/avatars/original/missing.png",
+        "offer-receiver-avatar-url": "/system/users/avatars/original/missing.png",
         "offer-sender-id": 3,
         "offer-sender-username": "Hannibal",
         "offer-sender-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
         "previous-offer-id": 8,
-        "offer-type": 1,
-        "active": false,
-        "self-cancellation": false,
-        "created-at": "2019-07-21T18:32:30.701-07:00",
-        "updated-at": "2019-07-21T18:32:49.017-07:00"
-      },
-      "relationships": {
         "proposed-transfers": {
           "data": [
             {
               "id": "9",
-              "type": "proposed-transfers"
+              "type": "proposed-transfers",
+              "attributes": {
+                "offer-id": 9,
+                "source-currency-holding-id": 2,
+                "source-currency-id": 1,
+                "source-currency-name": "Micro Asteroid bucks",
+                "source-currency-icon-url": "/system/currencies/icons/missing.png",
+                "source-currency-burn-rate": 450,
+                "source-currency-daily-burn-rate": "0.00012614",
+                "source-currency-store-count": 2,
+                "currency-sender-id": 3,
+                "currency-sender-username": "Hannibal",
+                "amount-atomic": 50000000000,
+                "products": {
+                  "data": [
+                    {
+                      "id": "51",
+                      "type": "products",
+                      "attributes": {
+                        "sub-category-id": 12,
+                        "sub-category-name": "computer accessories",
+                        "currency-id": 1,
+                        "currency-name": "Micro Asteroid bucks",
+                        "currency-icon-url": "/system/currencies/icons/missing.png",
+                        "days-to-cancellation": null,
+                        "minutes-to-cancellation": null,
+                        "store-id": 28,
+                        "store-name": "Moon Store",
+                        "product-name": "Lunar solar panels",
+                        "product-description": "solar panels designed to be installed on the moon",
+                        "price-cents": 100000,
+                        "active": true,
+                        "continued": true,
+                        "last-activated-at": "2019-07-29T16:56:30.169-07:00",
+                        "created-at": "2019-07-29T16:56:30.169-07:00",
+                        "updated-at": "2019-07-29T16:56:30.169-07:00",
+                        "get-image-url": "/system/products/images/original/missing.png"
+                      }
+                    },
+                    {
+                      "id": "40",
+                      "type": "products",
+                      "attributes": {
+                        "sub-category-id": 15,
+                        "sub-category-name": "audio equipment",
+                        "currency-id": 1,
+                        "currency-name": "Micro Asteroid bucks",
+                        "currency-icon-url": "/system/currencies/icons/missing.png",
+                        "days-to-cancellation": null,
+                        "minutes-to-cancellation": null,
+                        "store-id": 1,
+                        "store-name": "Asteroid Industries",
+                        "product-name": "goliath rocket 2",
+                        "product-description": "second version of rocket for reaching the moon",
+                        "price-cents": 1000000,
+                        "active": true,
+                        "continued": true,
+                        "last-activated-at": "2019-07-26T04:57:32.173-07:00",
+                        "created-at": "2019-07-26T04:57:32.173-07:00",
+                        "updated-at": "2019-07-26T04:57:32.173-07:00",
+                        "get-image-url": "/system/products/images/original/missing.png"
+                      }
+                    },
+                    {
+                      "id": "39",
+                      "type": "products",
+                      "attributes": {
+                        "sub-category-id": 15,
+                        "sub-category-name": "audio equipment",
+                        "currency-id": 1,
+                        "currency-name": "Micro Asteroid bucks",
+                        "currency-icon-url": "/system/currencies/icons/missing.png",
+                        "days-to-cancellation": null,
+                        "minutes-to-cancellation": null,
+                        "store-id": 1,
+                        "store-name": "Asteroid Industries",
+                        "product-name": "goliath rocket",
+                        "product-description": "rocket for reaching the moon",
+                        "price-cents": 1000000,
+                        "active": true,
+                        "continued": true,
+                        "last-activated-at": "2019-07-26T04:51:29.353-07:00",
+                        "created-at": "2019-07-26T04:51:29.353-07:00",
+                        "updated-at": "2019-07-26T04:51:29.353-07:00",
+                        "get-image-url": "/system/products/images/original/missing.png"
+                      }
+                    }
+                  ]
+                },
+                "active": false,
+                "created-at": "2019-07-21T18:32:30.727-07:00",
+                "updated-at": "2019-07-21T18:32:49.019-07:00"
+              }
             }
           ]
         },
@@ -7554,10 +7673,58 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
           "data": [
             {
               "id": "9",
-              "type": "proposed-issuances"
+              "type": "proposed-issuances",
+              "attributes": {
+                "offer-id": 9,
+                "source-currency-id": 4,
+                "source-currency-name": "spiderman pizza dollars",
+                "source-currency-icon-url": "/system/currencies/icons/missing.png",
+                "source-currency-burn-rate": 420,
+                "source-currency-daily-burn-rate": "0.000117548",
+                "source-currency-store-count": 3,
+                "currency-issuer-id": 2,
+                "currency-issuer-username": "spiderman",
+                "amount-atomic": 50000000000,
+                "products": {
+                  "data": [
+                    {
+                      "id": "52",
+                      "type": "products",
+                      "attributes": {
+                        "sub-category-id": 20,
+                        "sub-category-name": "kid's clothing",
+                        "currency-id": 4,
+                        "currency-name": "spiderman pizza dollars",
+                        "currency-icon-url": "/system/currencies/icons/missing.png",
+                        "days-to-cancellation": null,
+                        "minutes-to-cancellation": null,
+                        "store-id": 29,
+                        "store-name": "Spiderman store",
+                        "product-name": "spidermask",
+                        "product-description": "a spiderman mask",
+                        "price-cents": 200,
+                        "active": true,
+                        "continued": true,
+                        "last-activated-at": "2019-07-29T17:07:27.574-07:00",
+                        "created-at": "2019-07-29T17:07:27.574-07:00",
+                        "updated-at": "2019-07-29T17:07:27.574-07:00",
+                        "get-image-url": "/system/products/images/original/missing.png"
+                      }
+                    }
+                  ]
+                },
+                "active": false,
+                "created-at": "2019-07-21T18:32:30.728-07:00",
+                "updated-at": "2019-07-21T18:32:49.020-07:00"
+              }
             }
           ]
-        }
+        },
+        "offer-type": 1,
+        "active": false,
+        "self-cancellation": false,
+        "created-at": "2019-07-21T18:32:30.701-07:00",
+        "updated-at": "2019-07-21T18:32:49.017-07:00"
       }
     },
     {
@@ -7569,20 +7736,105 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
         "offer-receiver-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
         "offer-sender-id": 2,
         "offer-sender-username": "spiderman",
-        "offer-sender-avatar-url": "/avatars/original/missing.png",
+        "offer-sender-avatar-url": "/system/users/avatars/original/missing.png",
         "previous-offer-id": 7,
-        "offer-type": 1,
-        "active": false,
-        "self-cancellation": false,
-        "created-at": "2019-07-21T18:30:26.893-07:00",
-        "updated-at": "2019-07-21T18:32:30.719-07:00"
-      },
-      "relationships": {
         "proposed-transfers": {
           "data": [
             {
               "id": "8",
-              "type": "proposed-transfers"
+              "type": "proposed-transfers",
+              "attributes": {
+                "offer-id": 8,
+                "source-currency-holding-id": 2,
+                "source-currency-id": 1,
+                "source-currency-name": "Micro Asteroid bucks",
+                "source-currency-icon-url": "/system/currencies/icons/missing.png",
+                "source-currency-burn-rate": 450,
+                "source-currency-daily-burn-rate": "0.00012614",
+                "source-currency-store-count": 2,
+                "currency-sender-id": 3,
+                "currency-sender-username": "Hannibal",
+                "amount-atomic": 55000000000,
+                "products": {
+                  "data": [
+                    {
+                      "id": "51",
+                      "type": "products",
+                      "attributes": {
+                        "sub-category-id": 12,
+                        "sub-category-name": "computer accessories",
+                        "currency-id": 1,
+                        "currency-name": "Micro Asteroid bucks",
+                        "currency-icon-url": "/system/currencies/icons/missing.png",
+                        "days-to-cancellation": null,
+                        "minutes-to-cancellation": null,
+                        "store-id": 28,
+                        "store-name": "Moon Store",
+                        "product-name": "Lunar solar panels",
+                        "product-description": "solar panels designed to be installed on the moon",
+                        "price-cents": 100000,
+                        "active": true,
+                        "continued": true,
+                        "last-activated-at": "2019-07-29T16:56:30.169-07:00",
+                        "created-at": "2019-07-29T16:56:30.169-07:00",
+                        "updated-at": "2019-07-29T16:56:30.169-07:00",
+                        "get-image-url": "/system/products/images/original/missing.png"
+                      }
+                    },
+                    {
+                      "id": "40",
+                      "type": "products",
+                      "attributes": {
+                        "sub-category-id": 15,
+                        "sub-category-name": "audio equipment",
+                        "currency-id": 1,
+                        "currency-name": "Micro Asteroid bucks",
+                        "currency-icon-url": "/system/currencies/icons/missing.png",
+                        "days-to-cancellation": null,
+                        "minutes-to-cancellation": null,
+                        "store-id": 1,
+                        "store-name": "Asteroid Industries",
+                        "product-name": "goliath rocket 2",
+                        "product-description": "second version of rocket for reaching the moon",
+                        "price-cents": 1000000,
+                        "active": true,
+                        "continued": true,
+                        "last-activated-at": "2019-07-26T04:57:32.173-07:00",
+                        "created-at": "2019-07-26T04:57:32.173-07:00",
+                        "updated-at": "2019-07-26T04:57:32.173-07:00",
+                        "get-image-url": "/system/products/images/original/missing.png"
+                      }
+                    },
+                    {
+                      "id": "39",
+                      "type": "products",
+                      "attributes": {
+                        "sub-category-id": 15,
+                        "sub-category-name": "audio equipment",
+                        "currency-id": 1,
+                        "currency-name": "Micro Asteroid bucks",
+                        "currency-icon-url": "/system/currencies/icons/missing.png",
+                        "days-to-cancellation": null,
+                        "minutes-to-cancellation": null,
+                        "store-id": 1,
+                        "store-name": "Asteroid Industries",
+                        "product-name": "goliath rocket",
+                        "product-description": "rocket for reaching the moon",
+                        "price-cents": 1000000,
+                        "active": true,
+                        "continued": true,
+                        "last-activated-at": "2019-07-26T04:51:29.353-07:00",
+                        "created-at": "2019-07-26T04:51:29.353-07:00",
+                        "updated-at": "2019-07-26T04:51:29.353-07:00",
+                        "get-image-url": "/system/products/images/original/missing.png"
+                      }
+                    }
+                  ]
+                },
+                "active": false,
+                "created-at": "2019-07-21T18:30:26.916-07:00",
+                "updated-at": "2019-07-21T18:32:30.723-07:00"
+              }
             }
           ]
         },
@@ -7590,10 +7842,58 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
           "data": [
             {
               "id": "8",
-              "type": "proposed-issuances"
+              "type": "proposed-issuances",
+              "attributes": {
+                "offer-id": 8,
+                "source-currency-id": 4,
+                "source-currency-name": "spiderman pizza dollars",
+                "source-currency-icon-url": "/system/currencies/icons/missing.png",
+                "source-currency-burn-rate": 420,
+                "source-currency-daily-burn-rate": "0.000117548",
+                "source-currency-store-count": 3,
+                "currency-issuer-id": 2,
+                "currency-issuer-username": "spiderman",
+                "amount-atomic": 50000000000,
+                "products": {
+                  "data": [
+                    {
+                      "id": "52",
+                      "type": "products",
+                      "attributes": {
+                        "sub-category-id": 20,
+                        "sub-category-name": "kid's clothing",
+                        "currency-id": 4,
+                        "currency-name": "spiderman pizza dollars",
+                        "currency-icon-url": "/system/currencies/icons/missing.png",
+                        "days-to-cancellation": null,
+                        "minutes-to-cancellation": null,
+                        "store-id": 29,
+                        "store-name": "Spiderman store",
+                        "product-name": "spidermask",
+                        "product-description": "a spiderman mask",
+                        "price-cents": 200,
+                        "active": true,
+                        "continued": true,
+                        "last-activated-at": "2019-07-29T17:07:27.574-07:00",
+                        "created-at": "2019-07-29T17:07:27.574-07:00",
+                        "updated-at": "2019-07-29T17:07:27.574-07:00",
+                        "get-image-url": "/system/products/images/original/missing.png"
+                      }
+                    }
+                  ]
+                },
+                "active": false,
+                "created-at": "2019-07-21T18:30:26.917-07:00",
+                "updated-at": "2019-07-21T18:32:30.726-07:00"
+              }
             }
           ]
-        }
+        },
+        "offer-type": 1,
+        "active": false,
+        "self-cancellation": false,
+        "created-at": "2019-07-21T18:30:26.893-07:00",
+        "updated-at": "2019-07-21T18:32:30.719-07:00"
       }
     },
     {
@@ -7602,23 +7902,108 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
       "attributes": {
         "offer-receiver-id": 2,
         "offer-receiver-username": "spiderman",
-        "offer-receiver-avatar-url": "/avatars/original/missing.png",
+        "offer-receiver-avatar-url": "/system/users/avatars/original/missing.png",
         "offer-sender-id": 3,
         "offer-sender-username": "Hannibal",
         "offer-sender-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
         "previous-offer-id": 0,
-        "offer-type": 0,
-        "active": false,
-        "self-cancellation": false,
-        "created-at": "2019-07-21T18:29:36.808-07:00",
-        "updated-at": "2019-07-21T18:30:26.909-07:00"
-      },
-      "relationships": {
         "proposed-transfers": {
           "data": [
             {
               "id": "7",
-              "type": "proposed-transfers"
+              "type": "proposed-transfers",
+              "attributes": {
+                "offer-id": 7,
+                "source-currency-holding-id": 2,
+                "source-currency-id": 1,
+                "source-currency-name": "Micro Asteroid bucks",
+                "source-currency-icon-url": "/system/currencies/icons/missing.png",
+                "source-currency-burn-rate": 450,
+                "source-currency-daily-burn-rate": "0.00012614",
+                "source-currency-store-count": 2,
+                "currency-sender-id": 3,
+                "currency-sender-username": "Hannibal",
+                "amount-atomic": 50000000000,
+                "products": {
+                  "data": [
+                    {
+                      "id": "51",
+                      "type": "products",
+                      "attributes": {
+                        "sub-category-id": 12,
+                        "sub-category-name": "computer accessories",
+                        "currency-id": 1,
+                        "currency-name": "Micro Asteroid bucks",
+                        "currency-icon-url": "/system/currencies/icons/missing.png",
+                        "days-to-cancellation": null,
+                        "minutes-to-cancellation": null,
+                        "store-id": 28,
+                        "store-name": "Moon Store",
+                        "product-name": "Lunar solar panels",
+                        "product-description": "solar panels designed to be installed on the moon",
+                        "price-cents": 100000,
+                        "active": true,
+                        "continued": true,
+                        "last-activated-at": "2019-07-29T16:56:30.169-07:00",
+                        "created-at": "2019-07-29T16:56:30.169-07:00",
+                        "updated-at": "2019-07-29T16:56:30.169-07:00",
+                        "get-image-url": "/system/products/images/original/missing.png"
+                      }
+                    },
+                    {
+                      "id": "40",
+                      "type": "products",
+                      "attributes": {
+                        "sub-category-id": 15,
+                        "sub-category-name": "audio equipment",
+                        "currency-id": 1,
+                        "currency-name": "Micro Asteroid bucks",
+                        "currency-icon-url": "/system/currencies/icons/missing.png",
+                        "days-to-cancellation": null,
+                        "minutes-to-cancellation": null,
+                        "store-id": 1,
+                        "store-name": "Asteroid Industries",
+                        "product-name": "goliath rocket 2",
+                        "product-description": "second version of rocket for reaching the moon",
+                        "price-cents": 1000000,
+                        "active": true,
+                        "continued": true,
+                        "last-activated-at": "2019-07-26T04:57:32.173-07:00",
+                        "created-at": "2019-07-26T04:57:32.173-07:00",
+                        "updated-at": "2019-07-26T04:57:32.173-07:00",
+                        "get-image-url": "/system/products/images/original/missing.png"
+                      }
+                    },
+                    {
+                      "id": "39",
+                      "type": "products",
+                      "attributes": {
+                        "sub-category-id": 15,
+                        "sub-category-name": "audio equipment",
+                        "currency-id": 1,
+                        "currency-name": "Micro Asteroid bucks",
+                        "currency-icon-url": "/system/currencies/icons/missing.png",
+                        "days-to-cancellation": null,
+                        "minutes-to-cancellation": null,
+                        "store-id": 1,
+                        "store-name": "Asteroid Industries",
+                        "product-name": "goliath rocket",
+                        "product-description": "rocket for reaching the moon",
+                        "price-cents": 1000000,
+                        "active": true,
+                        "continued": true,
+                        "last-activated-at": "2019-07-26T04:51:29.353-07:00",
+                        "created-at": "2019-07-26T04:51:29.353-07:00",
+                        "updated-at": "2019-07-26T04:51:29.353-07:00",
+                        "get-image-url": "/system/products/images/original/missing.png"
+                      }
+                    }
+                  ]
+                },
+                "active": false,
+                "created-at": "2019-07-21T18:29:36.824-07:00",
+                "updated-at": "2019-07-21T18:30:26.912-07:00"
+              }
             }
           ]
         },
@@ -7626,228 +8011,67 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
           "data": [
             {
               "id": "7",
-              "type": "proposed-issuances"
+              "type": "proposed-issuances",
+              "attributes": {
+                "offer-id": 7,
+                "source-currency-id": 4,
+                "source-currency-name": "spiderman pizza dollars",
+                "source-currency-icon-url": "/system/currencies/icons/missing.png",
+                "source-currency-burn-rate": 420,
+                "source-currency-daily-burn-rate": "0.000117548",
+                "source-currency-store-count": 3,
+                "currency-issuer-id": 2,
+                "currency-issuer-username": "spiderman",
+                "amount-atomic": 50000000000,
+                "products": {
+                  "data": [
+                    {
+                      "id": "52",
+                      "type": "products",
+                      "attributes": {
+                        "sub-category-id": 20,
+                        "sub-category-name": "kid's clothing",
+                        "currency-id": 4,
+                        "currency-name": "spiderman pizza dollars",
+                        "currency-icon-url": "/system/currencies/icons/missing.png",
+                        "days-to-cancellation": null,
+                        "minutes-to-cancellation": null,
+                        "store-id": 29,
+                        "store-name": "Spiderman store",
+                        "product-name": "spidermask",
+                        "product-description": "a spiderman mask",
+                        "price-cents": 200,
+                        "active": true,
+                        "continued": true,
+                        "last-activated-at": "2019-07-29T17:07:27.574-07:00",
+                        "created-at": "2019-07-29T17:07:27.574-07:00",
+                        "updated-at": "2019-07-29T17:07:27.574-07:00",
+                        "get-image-url": "/system/products/images/original/missing.png"
+                      }
+                    }
+                  ]
+                },
+                "active": false,
+                "created-at": "2019-07-21T18:29:36.825-07:00",
+                "updated-at": "2019-07-21T18:30:26.915-07:00"
+              }
             }
           ]
-        }
-      }
-    }
-  ],
-  "included": [
-    {
-      "id": "9",
-      "type": "proposed-transfers",
-      "attributes": {
-        "offer-id": 9,
-        "source-currency-holding-id": 2,
-        "source-currency-id": 1,
-        "source-currency-name": "Micro Asteroid bucks",
-        "source-currency-icon-url": "/icons/original/missing.png",
-        "source-currency-burn-rate": 450,
-        "source-currency-daily-burn-rate": "0.00012614",
-        "source-currency-store-count": 1,
-        "currency-sender-id": 3,
-        "currency-sender-username": "Hannibal",
-        "amount-atomic": 50000000000,
+        },
+        "offer-type": 0,
         "active": false,
-        "product-1-name": "GPS satellite",
-        "product-1-image-url": "/images/original/missing.png",
-        "product-1-price-cents": 1000000,
-        "product-1-sub-category-id": 16,
-        "product-1-sub-category-name": "prepared food",
-        "product-2-name": "XeeLine spacesuit",
-        "product-2-image-url": "/images/original/missing.png",
-        "product-2-price-cents": 400000,
-        "product-2-sub-category-id": 57,
-        "product-2-sub-category-name": "general labor",
-        "product-3-name": null,
-        "product-3-image-url": "/images/original/missing.png",
-        "product-3-price-cents": 100000,
-        "product-3-sub-category-id": 57,
-        "product-3-sub-category-name": "general labor",
-        "created-at": "2019-07-21T18:32:30.727-07:00",
-        "updated-at": "2019-07-21T18:32:49.019-07:00"
-      }
-    },
-    {
-      "id": "9",
-      "type": "proposed-issuances",
-      "attributes": {
-        "offer-id": 9,
-        "source-currency-id": 4,
-        "source-currency-name": "spiderman pizza dollars",
-        "source-currency-icon-url": "/icons/original/missing.png",
-        "source-currency-burn-rate": 420,
-        "source-currency-daily-burn-rate": "0.000117548",
-        "source-currency-store-count": 0,
-        "currency-issuer-id": 2,
-        "currency-issuer-username": "spiderman",
-        "amount-atomic": 50000000000,
-        "active": false,
-        "product-1-name": null,
-        "product-1-image-url": null,
-        "product-1-price-cents": null,
-        "product-1-sub-category-id": null,
-        "product-1-sub-category-name": null,
-        "product-2-name": null,
-        "product-2-image-url": null,
-        "product-2-price-cents": null,
-        "product-2-sub-category-id": null,
-        "product-2-sub-category-name": null,
-        "product-3-name": null,
-        "product-3-image-url": null,
-        "product-3-price-cents": null,
-        "product-3-sub-category-id": null,
-        "product-3-sub-category-name": null,
-        "created-at": "2019-07-21T18:32:30.728-07:00",
-        "updated-at": "2019-07-21T18:32:49.020-07:00"
-      }
-    },
-    {
-      "id": "8",
-      "type": "proposed-transfers",
-      "attributes": {
-        "offer-id": 8,
-        "source-currency-holding-id": 2,
-        "source-currency-id": 1,
-        "source-currency-name": "Micro Asteroid bucks",
-        "source-currency-icon-url": "/icons/original/missing.png",
-        "source-currency-burn-rate": 450,
-        "source-currency-daily-burn-rate": "0.00012614",
-        "source-currency-store-count": 1,
-        "currency-sender-id": 3,
-        "currency-sender-username": "Hannibal",
-        "amount-atomic": 55000000000,
-        "active": false,
-        "product-1-name": "GPS satellite",
-        "product-1-image-url": "/images/original/missing.png",
-        "product-1-price-cents": 1000000,
-        "product-1-sub-category-id": 16,
-        "product-1-sub-category-name": "prepared food",
-        "product-2-name": "XeeLine spacesuit",
-        "product-2-image-url": "/images/original/missing.png",
-        "product-2-price-cents": 400000,
-        "product-2-sub-category-id": 57,
-        "product-2-sub-category-name": "general labor",
-        "product-3-name": null,
-        "product-3-image-url": "/images/original/missing.png",
-        "product-3-price-cents": 100000,
-        "product-3-sub-category-id": 57,
-        "product-3-sub-category-name": "general labor",
-        "created-at": "2019-07-21T18:30:26.916-07:00",
-        "updated-at": "2019-07-21T18:32:30.723-07:00"
-      }
-    },
-    {
-      "id": "8",
-      "type": "proposed-issuances",
-      "attributes": {
-        "offer-id": 8,
-        "source-currency-id": 4,
-        "source-currency-name": "spiderman pizza dollars",
-        "source-currency-icon-url": "/icons/original/missing.png",
-        "source-currency-burn-rate": 420,
-        "source-currency-daily-burn-rate": "0.000117548",
-        "source-currency-store-count": 0,
-        "currency-issuer-id": 2,
-        "currency-issuer-username": "spiderman",
-        "amount-atomic": 50000000000,
-        "active": false,
-        "product-1-name": null,
-        "product-1-image-url": null,
-        "product-1-price-cents": null,
-        "product-1-sub-category-id": null,
-        "product-1-sub-category-name": null,
-        "product-2-name": null,
-        "product-2-image-url": null,
-        "product-2-price-cents": null,
-        "product-2-sub-category-id": null,
-        "product-2-sub-category-name": null,
-        "product-3-name": null,
-        "product-3-image-url": null,
-        "product-3-price-cents": null,
-        "product-3-sub-category-id": null,
-        "product-3-sub-category-name": null,
-        "created-at": "2019-07-21T18:30:26.917-07:00",
-        "updated-at": "2019-07-21T18:32:30.726-07:00"
-      }
-    },
-    {
-      "id": "7",
-      "type": "proposed-transfers",
-      "attributes": {
-        "offer-id": 7,
-        "source-currency-holding-id": 2,
-        "source-currency-id": 1,
-        "source-currency-name": "Micro Asteroid bucks",
-        "source-currency-icon-url": "/icons/original/missing.png",
-        "source-currency-burn-rate": 450,
-        "source-currency-daily-burn-rate": "0.00012614",
-        "source-currency-store-count": 1,
-        "currency-sender-id": 3,
-        "currency-sender-username": "Hannibal",
-        "amount-atomic": 50000000000,
-        "active": false,
-        "product-1-name": "GPS satellite",
-        "product-1-image-url": "/images/original/missing.png",
-        "product-1-price-cents": 1000000,
-        "product-1-sub-category-id": 16,
-        "product-1-sub-category-name": "prepared food",
-        "product-2-name": "XeeLine spacesuit",
-        "product-2-image-url": "/images/original/missing.png",
-        "product-2-price-cents": 400000,
-        "product-2-sub-category-id": 57,
-        "product-2-sub-category-name": "general labor",
-        "product-3-name": null,
-        "product-3-image-url": "/images/original/missing.png",
-        "product-3-price-cents": 100000,
-        "product-3-sub-category-id": 57,
-        "product-3-sub-category-name": "general labor",
-        "created-at": "2019-07-21T18:29:36.824-07:00",
-        "updated-at": "2019-07-21T18:30:26.912-07:00"
-      }
-    },
-    {
-      "id": "7",
-      "type": "proposed-issuances",
-      "attributes": {
-        "offer-id": 7,
-        "source-currency-id": 4,
-        "source-currency-name": "spiderman pizza dollars",
-        "source-currency-icon-url": "/icons/original/missing.png",
-        "source-currency-burn-rate": 420,
-        "source-currency-daily-burn-rate": "0.000117548",
-        "source-currency-store-count": 0,
-        "currency-issuer-id": 2,
-        "currency-issuer-username": "spiderman",
-        "amount-atomic": 50000000000,
-        "active": false,
-        "product-1-name": null,
-        "product-1-image-url": null,
-        "product-1-price-cents": null,
-        "product-1-sub-category-id": null,
-        "product-1-sub-category-name": null,
-        "product-2-name": null,
-        "product-2-image-url": null,
-        "product-2-price-cents": null,
-        "product-2-sub-category-id": null,
-        "product-2-sub-category-name": null,
-        "product-3-name": null,
-        "product-3-image-url": null,
-        "product-3-price-cents": null,
-        "product-3-sub-category-id": null,
-        "product-3-sub-category-name": null,
-        "created-at": "2019-07-21T18:29:36.825-07:00",
-        "updated-at": "2019-07-21T18:30:26.915-07:00"
+        "self-cancellation": false,
+        "created-at": "2019-07-21T18:29:36.808-07:00",
+        "updated-at": "2019-07-21T18:30:26.909-07:00"
       }
     }
   ],
   "links": {
-    "self": "https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=10",
-    "first": "https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=10&page=1&per_page=25",
+    "self": "https://api.mycurrency.com/users/2/offers?index_type=offer_chain&offer_id=10",
+    "first": "https://api.mycurrency.com/users/2/offers?index_type=offer_chain&offer_id=10&page=1&per_page=25",
     "prev": null,
     "next": null,
-    "last": "https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=10&page=1&per_page=25"
+    "last": "https://api.mycurrency.com/users/2/offers?index_type=offer_chain&offer_id=10&page=1&per_page=25"
   },
   "meta": {
     "pagination": {
@@ -7903,6 +8127,8 @@ offer-sender-avatar-url | The URL of the avatar of the user that made the offer
 previous-offer-id | The ID of the offer that is being counter-offered. If the first offer of an offer-chain, the value will be 0
 offer-type | 0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, and 3 is an offer acceptance
 active | Whether the offer is still active and can be countered or accepted/rejected
+proposed-transfers | The proposed_transfers included in the offer
+proposed-issuances | The proposed_issuances included in the offer
 self-cancellation | Whether the offer sender has cancelled the offer by disactivating their user account
 created-at | The time and date when the offer was created
 updated-at | The time and date when the offer was last updated
@@ -7924,21 +8150,7 @@ currency-sender-id | The ID of the user that would send the proposed transfer
 currency-sender-username | The username of the user that would send the proposed transfer
 amount-atomic | The amount of currency that is proposed to be transferred, in atomic units (each whole unit is composed of 10^10 atomic units)
 active | Whether the proposed transfer is still valid or not
-product-1-name | The name of the most recently updated product associated with the currency that is proposed to be transfered
-product-1-image-url | The URL of the image of the most recently updated product associated with the currency that is proposed to be transfered
-product-1-price-cents | The price of the most recently product associated with the currency that is proposed to be transferred, by multiple of 100, and denominated in the currency of the store where the product is sold
-product-1-sub-category-id | The ID of the sub-category of the most recently updated product associated with the currency that is proposed to be transfered
-product-1-sub-category-id | The name of the sub-category of the most recently updated product associated with the currency that is proposed to be transfered
-product-2-name | The name of the second most recently updated product associated with the currency that is proposed to be transfered
-product-2-image-url | The URL of the image of the second most recently updated product associated with the currency that is proposed to be transfered
-product-2-price-cents | The price of the second most recently product associated with the currency that is proposed to be transferred, by multiple of 100, and denominated in the currency of the store where the product is sold
-product-2-sub-category-id | The ID of the sub-category of the second most recently updated product associated with the currency that is proposed to be transfered
-product-2-sub-category-id | The name of the sub-category of the second most recently updated product associated with the currency that is proposed to be transfered
-product-3-name | The name of the third most recently updated product associated with the currency that is proposed to be transfered
-product-3-image-url | The URL of the image of the third most recently updated product associated with the currency that is proposed to be transfered
-product-3-price-cents | The price of the third most recently product associated with the currency that is proposed to be transferred, by multiple of 100, and denominated in the currency of the store where the product is sold
-product-3-sub-category-id | The ID of the sub-category of the third most recently updated product associated with the currency that is proposed to be transfered
-product-3-sub-category-id | The name of the sub-category of the third most recently updated product associated with the currency that is proposed to be transfered
+products | The three most recently updated products associated with the currency of the proposed_transfer
 created-at | The time and date when the proposed transfer was created
 updated-at | The time and date when the proposed transfer was last updated
 
@@ -7958,23 +8170,32 @@ currency-issuer-id | The ID of the user that would issue the proposed issuance
 currency-issuer-username | The username of the user that would issue the proposed issuance
 amount-atomic | The amount of currency that is proposed to be issued, in atomic units (each whole unit is composed of 10^10 atomic units)
 active | Whether the proposed issuance is still valid or not
-product-1-name | The name of the most recently updated product associated with the currency that is proposed to be issued
-product-1-image-url | The URL of the image of the most recently updated product associated with the currency that is proposed to be issued
-product-1-price-cents | The price of the most recently product associated with the currency that is proposed to be issued, by multiple of 100, and denominated in the currency of the store where the product is sold
-product-1-sub-category-id | The ID of the sub-category of the most recently updated product associated with the currency that is proposed to be issued
-product-1-sub-category-id | The name of the sub-category of the most recently updated product associated with the currency that is proposed to be issued
-product-2-name | The name of the second most recently updated product associated with the currency that is proposed to be transfered
-product-2-image-url | The URL of the image of the second most recently updated product associated with the currency that is proposed to be issued
-product-2-price-cents | The price of the second most recently product associated with the currency that is proposed to be transferred, by multiple of 100, and denominated in the currency of the store where the product is sold
-product-2-sub-category-id | The ID of the sub-category of the second most recently updated product associated with the currency that is proposed to be issued
-product-2-sub-category-id | The name of the sub-category of the second most recently updated product associated with the currency that is proposed to be issued
-product-3-name | The name of the third most recently updated product associated with the currency that is proposed to be issued
-product-3-image-url | The URL of the image of the third most recently updated product associated with the currency that is proposed to be issued
-product-3-price-cents | The price of the third most recently product associated with the currency that is proposed to be issued, by multiple of 100, and denominated in the currency of the store where the product is sold
-product-3-sub-category-id | The ID of the sub-category of the third most recently updated product associated with the currency that is proposed to be issued
-product-3-sub-category-id | The name of the sub-category of the third most recently updated product associated with the currency that is proposed to be issued
+products | The three most recently updated products associated with the currency of the proposed_issuance
 created-at | The time and date when the proposed issuance was created
 updated-at | The time and date when the proposed issuance was last updated
+
+### Products
+
+Parameter | Description
+--------- | -----------
+id | The ID of the product
+sub-category-id | The sub category that the product belongs to
+sub-category-name | The name of the sub category that the product belongs to
+currency-id | The ID of the currency that the product can be redeemed by
+currency-name | The name of the currency that the product can be redeemed by
+currency-icon-url | The URL of the icon of the currency that the product can be redeemed by 
+days-to-cancellation | How many days until the product's product-discontinual is activated and the product is cancelled. A NULL value if the product has no product discontinual
+store-id | The ID of the store where the product is sold
+store-name | The name of the store where the product is sold
+product-name | The name of the product
+product-description | The description of the product
+price-cents | The price of the product by multiple of 100, and denominated in the currency of the store where the product is sold
+active | Whether the product is active or not
+continued | Whether the product is continued or not. Discontinued products cannot be recontinued
+last-activated-at | The time and date when the product was last activated
+created-at | The time and date when the product was created
+updated-at | The time and date when the product was last updated
+get-image-url | The URL at which the product image picture can be found
 
 ## Create Offer
 
@@ -7994,23 +8215,108 @@ curl https://api.mycurrency.com/users/3/offers -d '{ "offer": {"previous_offer_i
     "attributes": {
       "offer-receiver-id": 2,
       "offer-receiver-username": "spiderman",
-      "offer-receiver-avatar-url": "/avatars/original/missing.png",
+      "offer-receiver-avatar-url": "/system/users/avatars/original/missing.png",
       "offer-sender-id": 3,
       "offer-sender-username": "Hannibal",
       "offer-sender-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
       "previous-offer-id": 8,
-      "offer-type": 1,
-      "active": true,
-      "self-cancellation": false,
-      "created-at": "2019-07-21T18:32:30.701-07:00",
-      "updated-at": "2019-07-21T18:32:30.701-07:00"
-    },
-    "relationships": {
       "proposed-transfers": {
         "data": [
           {
             "id": "9",
-            "type": "proposed-transfers"
+            "type": "proposed-transfers",
+            "attributes": {
+              "offer-id": 9,
+              "source-currency-holding-id": 2,
+              "source-currency-id": 1,
+              "source-currency-name": "Micro Asteroid bucks",
+              "source-currency-icon-url": "/system/currencies/icons/missing.png",
+              "source-currency-burn-rate": 450,
+              "source-currency-daily-burn-rate": "0.00012614",
+              "source-currency-store-count": 2,
+              "currency-sender-id": 3,
+              "currency-sender-username": "Hannibal",
+              "amount-atomic": 50000000000,
+              "products": {
+                "data": [
+                  {
+                    "id": "51",
+                    "type": "products",
+                    "attributes": {
+                      "sub-category-id": 12,
+                      "sub-category-name": "computer accessories",
+                      "currency-id": 1,
+                      "currency-name": "Micro Asteroid bucks",
+                      "currency-icon-url": "/system/currencies/icons/missing.png",
+                      "days-to-cancellation": null,
+                      "minutes-to-cancellation": null,
+                      "store-id": 28,
+                      "store-name": "Moon Store",
+                      "product-name": "Lunar solar panels",
+                      "product-description": "solar panels designed to be installed on the moon",
+                      "price-cents": 100000,
+                      "active": true,
+                      "continued": true,
+                      "last-activated-at": "2019-07-29T16:56:30.169-07:00",
+                      "created-at": "2019-07-29T16:56:30.169-07:00",
+                      "updated-at": "2019-07-29T16:56:30.169-07:00",
+                      "get-image-url": "/system/products/images/original/missing.png"
+                    }
+                  },
+                  {
+                    "id": "40",
+                    "type": "products",
+                    "attributes": {
+                      "sub-category-id": 15,
+                      "sub-category-name": "audio equipment",
+                      "currency-id": 1,
+                      "currency-name": "Micro Asteroid bucks",
+                      "currency-icon-url": "/system/currencies/icons/missing.png",
+                      "days-to-cancellation": null,
+                      "minutes-to-cancellation": null,
+                      "store-id": 1,
+                      "store-name": "Asteroid Industries",
+                      "product-name": "goliath rocket 2",
+                      "product-description": "second version of rocket for reaching the moon",
+                      "price-cents": 1000000,
+                      "active": true,
+                      "continued": true,
+                      "last-activated-at": "2019-07-26T04:57:32.173-07:00",
+                      "created-at": "2019-07-26T04:57:32.173-07:00",
+                      "updated-at": "2019-07-26T04:57:32.173-07:00",
+                      "get-image-url": "/system/products/images/original/missing.png"
+                    }
+                  },
+                  {
+                    "id": "39",
+                    "type": "products",
+                    "attributes": {
+                      "sub-category-id": 15,
+                      "sub-category-name": "audio equipment",
+                      "currency-id": 1,
+                      "currency-name": "Micro Asteroid bucks",
+                      "currency-icon-url": "/system/currencies/icons/missing.png",
+                      "days-to-cancellation": null,
+                      "minutes-to-cancellation": null,
+                      "store-id": 1,
+                      "store-name": "Asteroid Industries",
+                      "product-name": "goliath rocket",
+                      "product-description": "rocket for reaching the moon",
+                      "price-cents": 1000000,
+                      "active": true,
+                      "continued": true,
+                      "last-activated-at": "2019-07-26T04:51:29.353-07:00",
+                      "created-at": "2019-07-26T04:51:29.353-07:00",
+                      "updated-at": "2019-07-26T04:51:29.353-07:00",
+                      "get-image-url": "/system/products/images/original/missing.png"
+                    }
+                  }
+                ]
+              },
+              "active": true,
+              "created-at": "2019-07-21T18:32:30.727-07:00",
+              "updated-at": "2019-07-21T18:32:49.019-07:00"
+            }
           }
         ]
       },
@@ -8018,83 +8324,60 @@ curl https://api.mycurrency.com/users/3/offers -d '{ "offer": {"previous_offer_i
         "data": [
           {
             "id": "9",
-            "type": "proposed-issuances"
+            "type": "proposed-issuances",
+            "attributes": {
+              "offer-id": 9,
+              "source-currency-id": 4,
+              "source-currency-name": "spiderman pizza dollars",
+              "source-currency-icon-url": "/system/currencies/icons/missing.png",
+              "source-currency-burn-rate": 420,
+              "source-currency-daily-burn-rate": "0.000117548",
+              "source-currency-store-count": 3,
+              "currency-issuer-id": 2,
+              "currency-issuer-username": "spiderman",
+              "amount-atomic": 50000000000,
+              "products": {
+                "data": [
+                  {
+                    "id": "52",
+                    "type": "products",
+                    "attributes": {
+                      "sub-category-id": 20,
+                      "sub-category-name": "kid's clothing",
+                      "currency-id": 4,
+                      "currency-name": "spiderman pizza dollars",
+                      "currency-icon-url": "/system/currencies/icons/missing.png",
+                      "days-to-cancellation": null,
+                      "minutes-to-cancellation": null,
+                      "store-id": 29,
+                      "store-name": "Spiderman store",
+                      "product-name": "spidermask",
+                      "product-description": "a spiderman mask",
+                      "price-cents": 200,
+                      "active": true,
+                      "continued": true,
+                      "last-activated-at": "2019-07-29T17:07:27.574-07:00",
+                      "created-at": "2019-07-29T17:07:27.574-07:00",
+                      "updated-at": "2019-07-29T17:07:27.574-07:00",
+                      "get-image-url": "/system/products/images/original/missing.png"
+                    }
+                  }
+                ]
+              },
+              "active": true,
+              "created-at": "2019-07-21T18:32:30.728-07:00",
+              "updated-at": "2019-07-21T18:32:49.020-07:00"
+            }
           }
         ]
-      }
+      },
+      "offer-type": 1,
+      "active": true,
+      "self-cancellation": false,
+      "created-at": "2019-07-21T18:32:30.701-07:00",
+      "updated-at": "2019-07-21T18:32:49.017-07:00"
     }
-  },
-  "included": [
-    {
-      "id": "9",
-      "type": "proposed-transfers",
-      "attributes": {
-        "offer-id": 9,
-        "source-currency-holding-id": 2,
-        "source-currency-id": 1,
-        "source-currency-name": "Micro Asteroid bucks",
-        "source-currency-icon-url": "/icons/original/missing.png",
-        "source-currency-burn-rate": 450,
-        "source-currency-daily-burn-rate": "0.00012614",
-        "source-currency-store-count": 1,
-        "currency-sender-id": 3,
-        "currency-sender-username": "Hannibal",
-        "amount-atomic": 50000000000,
-        "active": true,
-        "product-1-name": "GPS satellite",
-        "product-1-image-url": "/images/original/missing.png",
-        "product-1-price-cents": 1000000,
-        "product-1-sub-category-id": 16,
-        "product-1-sub-category-name": "prepared food",
-        "product-2-name": "XeeLine spacesuit",
-        "product-2-image-url": "/images/original/missing.png",
-        "product-2-price-cents": 400000,
-        "product-2-sub-category-id": 57,
-        "product-2-sub-category-name": "general labor",
-        "product-3-name": null,
-        "product-3-image-url": "/images/original/missing.png",
-        "product-3-price-cents": 100000,
-        "product-3-sub-category-id": 57,
-        "product-3-sub-category-name": "general labor",
-        "created-at": "2019-07-21T18:32:30.727-07:00",
-        "updated-at": "2019-07-21T18:32:30.727-07:00"
-      }
-    },
-    {
-      "id": "9",
-      "type": "proposed-issuances",
-      "attributes": {
-        "offer-id": 9,
-        "source-currency-id": 4,
-        "source-currency-name": "spiderman pizza dollars",
-        "source-currency-icon-url": "/icons/original/missing.png",
-        "source-currency-burn-rate": 420,
-        "source-currency-daily-burn-rate": "0.000117548",
-        "source-currency-store-count": 0,
-        "currency-issuer-id": 2,
-        "currency-issuer-username": "spiderman",
-        "amount-atomic": 50000000000,
-        "active": true,
-        "product-1-name": null,
-        "product-1-image-url": null,
-        "product-1-price-cents": null,
-        "product-1-sub-category-id": null,
-        "product-1-sub-category-name": null,
-        "product-2-name": null,
-        "product-2-image-url": null,
-        "product-2-price-cents": null,
-        "product-2-sub-category-id": null,
-        "product-2-sub-category-name": null,
-        "product-3-name": null,
-        "product-3-image-url": null,
-        "product-3-price-cents": null,
-        "product-3-sub-category-id": null,
-        "product-3-sub-category-name": null,
-        "created-at": "2019-07-21T18:32:30.728-07:00",
-        "updated-at": "2019-07-21T18:32:30.728-07:00"
-      }
-    }
-  ]
+  }
 }
 ```
 
@@ -8157,6 +8440,8 @@ offer-sender-avatar-url | The URL of the avatar of the user that made the offer
 previous-offer-id | The ID of the offer that is being counter-offered. If the first offer of an offer-chain, the value will be 0
 offer-type | 0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, and 3 is an offer acceptance
 active | Whether the offer is still active and can be countered or accepted/rejected
+proposed-transfers | The proposed_transfers included in the offer
+proposed-issuances | The proposed_issuances included in the offer
 self-cancellation | Whether the offer sender has cancelled the offer by disactivating their user account
 created-at | The time and date when the offer was created
 updated-at | The time and date when the offer was last updated
@@ -8178,21 +8463,7 @@ currency-sender-id | The ID of the user that would send the proposed transfer
 currency-sender-username | The username of the user that would send the proposed transfer
 amount-atomic | The amount of currency that is proposed to be transferred, in atomic units (each whole unit is composed of 10^10 atomic units)
 active | Whether the proposed transfer is still valid or not
-product-1-name | The name of the most recently updated product associated with the currency that is proposed to be transfered
-product-1-image-url | The URL of the image of the most recently updated product associated with the currency that is proposed to be transfered
-product-1-price-cents | The price of the most recently product associated with the currency that is proposed to be transferred, by multiple of 100, and denominated in the currency of the store where the product is sold
-product-1-sub-category-id | The ID of the sub-category of the most recently updated product associated with the currency that is proposed to be transfered
-product-1-sub-category-id | The name of the sub-category of the most recently updated product associated with the currency that is proposed to be transfered
-product-2-name | The name of the second most recently updated product associated with the currency that is proposed to be transfered
-product-2-image-url | The URL of the image of the second most recently updated product associated with the currency that is proposed to be transfered
-product-2-price-cents | The price of the second most recently product associated with the currency that is proposed to be transferred, by multiple of 100, and denominated in the currency of the store where the product is sold
-product-2-sub-category-id | The ID of the sub-category of the second most recently updated product associated with the currency that is proposed to be transfered
-product-2-sub-category-id | The name of the sub-category of the second most recently updated product associated with the currency that is proposed to be transfered
-product-3-name | The name of the third most recently updated product associated with the currency that is proposed to be transfered
-product-3-image-url | The URL of the image of the third most recently updated product associated with the currency that is proposed to be transfered
-product-3-price-cents | The price of the third most recently product associated with the currency that is proposed to be transferred, by multiple of 100, and denominated in the currency of the store where the product is sold
-product-3-sub-category-id | The ID of the sub-category of the third most recently updated product associated with the currency that is proposed to be transfered
-product-3-sub-category-id | The name of the sub-category of the third most recently updated product associated with the currency that is proposed to be transfered
+products | The three most recently updated products associated with the currency of the proposed_transfer
 created-at | The time and date when the proposed transfer was created
 updated-at | The time and date when the proposed transfer was last updated
 
@@ -8212,23 +8483,32 @@ currency-issuer-id | The ID of the user that would issue the proposed issuance
 currency-issuer-username | The username of the user that would issue the proposed issuance
 amount-atomic | The amount of currency that is proposed to be issued, in atomic units (each whole unit is composed of 10^10 atomic units)
 active | Whether the proposed issuance is still valid or not
-product-1-name | The name of the most recently updated product associated with the currency that is proposed to be issued
-product-1-image-url | The URL of the image of the most recently updated product associated with the currency that is proposed to be issued
-product-1-price-cents | The price of the most recently product associated with the currency that is proposed to be issued, by multiple of 100, and denominated in the currency of the store where the product is sold
-product-1-sub-category-id | The ID of the sub-category of the most recently updated product associated with the currency that is proposed to be issued
-product-1-sub-category-id | The name of the sub-category of the most recently updated product associated with the currency that is proposed to be issued
-product-2-name | The name of the second most recently updated product associated with the currency that is proposed to be transfered
-product-2-image-url | The URL of the image of the second most recently updated product associated with the currency that is proposed to be issued
-product-2-price-cents | The price of the second most recently product associated with the currency that is proposed to be transferred, by multiple of 100, and denominated in the currency of the store where the product is sold
-product-2-sub-category-id | The ID of the sub-category of the second most recently updated product associated with the currency that is proposed to be issued
-product-2-sub-category-id | The name of the sub-category of the second most recently updated product associated with the currency that is proposed to be issued
-product-3-name | The name of the third most recently updated product associated with the currency that is proposed to be issued
-product-3-image-url | The URL of the image of the third most recently updated product associated with the currency that is proposed to be issued
-product-3-price-cents | The price of the third most recently product associated with the currency that is proposed to be issued, by multiple of 100, and denominated in the currency of the store where the product is sold
-product-3-sub-category-id | The ID of the sub-category of the third most recently updated product associated with the currency that is proposed to be issued
-product-3-sub-category-id | The name of the sub-category of the third most recently updated product associated with the currency that is proposed to be issued
+products | The three most recently updated products associated with the currency of the proposed_issuance
 created-at | The time and date when the proposed issuance was created
 updated-at | The time and date when the proposed issuance was last updated
+
+### Products
+
+Parameter | Description
+--------- | -----------
+id | The ID of the product
+sub-category-id | The sub category that the product belongs to
+sub-category-name | The name of the sub category that the product belongs to
+currency-id | The ID of the currency that the product can be redeemed by
+currency-name | The name of the currency that the product can be redeemed by
+currency-icon-url | The URL of the icon of the currency that the product can be redeemed by 
+days-to-cancellation | How many days until the product's product-discontinual is activated and the product is cancelled. A NULL value if the product has no product discontinual
+store-id | The ID of the store where the product is sold
+store-name | The name of the store where the product is sold
+product-name | The name of the product
+product-description | The description of the product
+price-cents | The price of the product by multiple of 100, and denominated in the currency of the store where the product is sold
+active | Whether the product is active or not
+continued | Whether the product is continued or not. Discontinued products cannot be recontinued
+last-activated-at | The time and date when the product was last activated
+created-at | The time and date when the product was created
+updated-at | The time and date when the product was last updated
+get-image-url | The URL at which the product image picture can be found
 
 # Listing
 
