@@ -3110,7 +3110,7 @@ curl "https://api.mycurrency.com/stores/3/products" \
 }
 ```
 
-This endpoint retrieves all products belonging to a particular currency. Only products that are active and not discontinued are shown to non-authorized users while authorized users see all of the store's products if the API call has a :show_canceled argument of TRUE.
+This endpoint retrieves all products belonging to a particular currency. Only products that are active and not discontinued are shown to non-authorized users. If a user is viewing the products of their own store, they are shown only products that have not been discontinued, whether active or inactive, by default. If they pass :show_canceled argument set to TRUE, they will also be shown products that have been discontinued.
 
 ### HTTP Request
 
