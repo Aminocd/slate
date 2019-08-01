@@ -5294,13 +5294,29 @@ Authentication: not required
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all products belonging to a particular currency. Only products that are active and not discontinued are shown to non-authorized users while authorized users see all of the store&#39;s products.</p>
+<p>This endpoint retrieves all products belonging to a particular currency. Only products that are active and not discontinued are shown to non-authorized users while authorized users see all of the store&#39;s products if the API call has a :show_canceled argument of TRUE.</p>
 <h3 id='http-request-34'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/stores/&lt;STORE-ID&gt;/products</code></p>
 
 <aside class="notice">
 Authentication: not required to see the products of a store that are active and that have not been discontinued. To view details of a store's products that are inactive and/or discontinued, the request requires the OAuth access-token associated with the User that the specified store belongs to
 </aside>
+<h3 id='arguments-10'>ARGUMENTS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>show_canceled</td>
+<td>boolean</td>
+<td>no</td>
+<td>Whether canceled products will be shown when user is looking at products of stores they own</td>
+</tr>
+</tbody></table>
 <h3 id='response-34'>RESPONSE</h3>
 <table><thead>
 <tr>
@@ -5431,7 +5447,7 @@ Authentication: not required to see the products of a store that are active and 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the USER-ID 
 </aside>
-<h3 id='arguments-10'>ARGUMENTS</h3>
+<h3 id='arguments-11'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5625,7 +5641,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the USER-ID 
 </aside>
-<h3 id='arguments-11'>ARGUMENTS</h3>
+<h3 id='arguments-12'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5912,7 +5928,7 @@ Authentication: not required
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='arguments-12'>ARGUMENTS</h3>
+<h3 id='arguments-13'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6026,7 +6042,7 @@ Authentication: not required
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='arguments-13'>ARGUMENTS</h3>
+<h3 id='arguments-14'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6127,7 +6143,7 @@ Authentication: not required
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='arguments-14'>ARGUMENTS</h3>
+<h3 id='arguments-15'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6215,7 +6231,7 @@ Authentication: not required
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the USER-ID 
 </aside>
-<h3 id='arguments-15'>ARGUMENTS</h3>
+<h3 id='arguments-16'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6493,7 +6509,7 @@ Authentication: not required for product discontinuals that have not been execut
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the USER-ID 
 </aside>
-<h3 id='arguments-16'>ARGUMENTS</h3>
+<h3 id='arguments-17'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6779,7 +6795,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='arguments-17'>ARGUMENTS</h3>
+<h3 id='arguments-18'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6983,7 +6999,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='arguments-18'>ARGUMENTS</h3>
+<h3 id='arguments-19'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -7182,7 +7198,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='arguments-19'>ARGUMENTS</h3>
+<h3 id='arguments-20'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -7407,7 +7423,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='arguments-20'>ARGUMENTS</h3>
+<h3 id='arguments-21'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -7661,7 +7677,7 @@ Authentication: not required
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='arguments-21'>ARGUMENTS</h3>
+<h3 id='arguments-22'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -7792,7 +7808,7 @@ Authentication: not required
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='arguments-22'>ARGUMENTS</h3>
+<h3 id='arguments-23'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -7955,7 +7971,7 @@ Authentication: not required
 <aside class="notice">
 Authentication: not required
 </aside>
-<h3 id='arguments-23'>ARGUMENTS</h3>
+<h3 id='arguments-24'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10689,7 +10705,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the USER-ID 
 </aside>
-<h3 id='arguments-24'>ARGUMENTS</h3>
+<h3 id='arguments-25'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10882,7 +10898,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the USER-ID 
 </aside>
-<h3 id='arguments-25'>ARGUMENTS</h3>
+<h3 id='arguments-26'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11041,7 +11057,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='arguments-26'>ARGUMENTS</h3>
+<h3 id='arguments-27'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11350,7 +11366,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='arguments-27'>ARGUMENTS</h3>
+<h3 id='arguments-28'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12461,7 +12477,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='arguments-28'>ARGUMENTS</h3>
+<h3 id='arguments-29'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -14386,7 +14402,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='arguments-29'>ARGUMENTS</h3>
+<h3 id='arguments-30'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -14542,7 +14558,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='arguments-30'>ARGUMENTS</h3>
+<h3 id='arguments-31'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -16897,7 +16913,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='arguments-31'>ARGUMENTS</h3>
+<h3 id='arguments-32'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -17060,7 +17076,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='arguments-32'>ARGUMENTS</h3>
+<h3 id='arguments-33'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -17880,7 +17896,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='arguments-33'>ARGUMENTS</h3>
+<h3 id='arguments-34'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -18217,7 +18233,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='arguments-34'>ARGUMENTS</h3>
+<h3 id='arguments-35'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -18344,7 +18360,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='arguments-35'>ARGUMENTS</h3>
+<h3 id='arguments-36'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
