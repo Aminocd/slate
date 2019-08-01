@@ -971,66 +971,120 @@ curl "https://api.mycurrency.com/currencies?user_id=3" \
 {
   "data": [
     {
-      "id": "3",
+      "id": "75",
       "type": "currencies",
       "attributes": {
         "issuer-id": 3,
-        "issuer-user-id": 4,
-        "issuer-user-username": "ScipioAfricanus",
-        "issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
-        "issuer-public-currency-holding-id": 7,
-        "burn-rate": 420,
-        "daily-burn-rate": "0.000117548",
-        "store-count": 4,
-        "listing-count": 1,
-        "product-count": 28,
-        "name": "Horizon Cloud Computing dollars",
-        "description": "Redeemable for Horizon Cloud Computing services",
-        "created-at": "2018-09-22T17:10:21.588-07:00",
-        "updated-at": "2018-09-22T17:10:21.588-07:00",
-        "get-icon-url": "/system/currencies/icons/000/000/003/original/horizon-cloud.png?1534243939"
-        "number-of-reviews": 3,
-        "average-score": "4.00"
+        "issuer-user-id": 3,
+        "issuer-user-name": "Hannibal",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
+        "issuer-public-currency-holding-id": null,
+        "burn-rate": 1000,
+        "daily-burn-rate": "0.000288618",
+        "store-count": 0,
+        "listing-count": 0,
+        "product-count": 0,
+        "name": "Saint Patricks Day Money",
+        "description": "Money for saint paddies",
+        "created-at": "2019-07-16T22:39:39.161-07:00",
+        "updated-at": "2019-07-16T22:39:39.161-07:00",
+        "get-icon-url": "/system/currencies/icons/000/000/075/original/currency.jpg?1563341979",
+        "number-of-reviews": 0,
+        "average-score": null,
+        "public-amount-atomic": 0,
+        "public-currency-holding-id": null
       }
-    },  
+    },
     {
-      "id": "2",
+      "id": "74",
       "type": "currencies",
       "attributes": {
-        "issuer-id": 2,
+        "issuer-id": 3,
         "issuer-user-id": 3,
-        "issuer-user-username": "Hannibal",
-        "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
-        "issuer-public-currency-holding-id": 4,
+        "issuer-user-name": "Hannibal",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
+        "issuer-public-currency-holding-id": 53,
+        "burn-rate": 0,
+        "daily-burn-rate": "0.0",
+        "store-count": 0,
+        "listing-count": 0,
+        "product-count": 0,
+        "name": "sam dollar",
+        "description": "store clothing",
+        "created-at": "2019-07-14T14:32:28.237-07:00",
+        "updated-at": "2019-07-14T14:32:28.237-07:00",
+        "get-icon-url": "/system/currencies/icons/000/000/074/original/currency.jpg?1563139948",
+        "number-of-reviews": 0,
+        "average-score": null,
+        "public-amount-atomic": 3000000000000,
+        "public-currency-holding-id": 53
+      }
+    },
+    {
+      "id": "60",
+      "type": "currencies",
+      "attributes": {
+        "issuer-id": 3,
+        "issuer-user-id": 3,
+        "issuer-user-name": "Hannibal",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
+        "issuer-public-currency-holding-id": 50,
+        "burn-rate": 500,
+        "daily-burn-rate": "0.00014052",
+        "store-count": 0,
+        "listing-count": 0,
+        "product-count": 0,
+        "name": "Hoola Hoop Cash",
+        "description": "Hoola hoop cash is redeemable for hoola hoop branded clothing",
+        "created-at": "2019-07-08T02:31:29.667-07:00",
+        "updated-at": "2019-07-14T13:16:22.734-07:00",
+        "get-icon-url": "/system/currencies/icons/000/000/060/original/currency.jpg?1562578289",
+        "number-of-reviews": 0,
+        "average-score": null,
+        "public-amount-atomic": 2400000000000,
+        "public-currency-holding-id": 50
+      }
+    },
+    {
+      "id": "1",
+      "type": "currencies",
+      "attributes": {
+        "issuer-id": 3,
+        "issuer-user-id": 3,
+        "issuer-user-name": "Hannibal",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
+        "issuer-public-currency-holding-id": 2,
         "burn-rate": 450,
         "daily-burn-rate": "0.00012614",
         "store-count": 2,
-        "listing-count": 5,
-        "product-count": 10,
-        "name": "ACME Toon Shop dollars",
-        "description": "Spendable at any ACME Toon Shop",
-        "created-at": "2018-08-12T01:17:31.176-07:00",
-        "updated-at": "2018-08-12T23:49:56.793-07:00",
-        "get-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
-        "number-of-reviews": 5,
-        "average-score": "3.67"
+        "listing-count": 0,
+        "product-count": 19,
+        "name": "Micro Asteroid bucks",
+        "description": "credit toward asteroid mining missions",
+        "created-at": "2018-11-05T02:19:23.338-08:00",
+        "updated-at": "2019-07-14T13:13:50.979-07:00",
+        "get-icon-url": "/system/currencies/icons/missing.png",
+        "number-of-reviews": 1,
+        "average-score": "4.29",
+        "public-amount-atomic": 3599957849922,
+        "public-currency-holding-id": 2
       }
     }
   ],
   "links": {
-    "self": "http://api.mycurrency.com/currencies?user_id=3",
-    "first": "http://api.mycurrency.com/currencies?page=1&per_page=25&user_id=3",
+    "self": "https://api.mycurrency.com/currencies?user_id=3",
+    "first": "https://api.mycurrency.com/currencies?page=1&per_page=25&user_id=3",
     "prev": null,
     "next": null,
-    "last": "http://api.mycurrency.com/currencies?page=1&per_page=25&user_id=3"
+    "last": "https://api.mycurrency.com/currencies?page=1&per_page=25&user_id=3"
   },
   "meta": {
     "pagination": {
       "per-page": null,
       "total-pages": "1",
-      "total-count": "2"
+      "total-count": "4"
     }
-  } 
+  }
 }
 ```
 
