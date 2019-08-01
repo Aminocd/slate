@@ -2229,6 +2229,7 @@ curl -X POST https://api.mycurrency.com/users/4/issuer/currencies/5/stores \
       "average-score": null,
       "number-of-products": 0,
       "number-of-product-cancellations": 0,
+      "issuer-public-currency-holding-id": 7,
       "currency-id": 5,
       "currency-name": "Chilli pesos",
       "currency-icon-url": "/system/currencies/icons/000/000/005/original/chilli-pesos.png?153414511"
@@ -2316,6 +2317,7 @@ curl -X PUT https://api.mycurrency.com/users/4/issuer/currencies/5/stores/3 \
       "average-score": null,
       "number-of-products": 0,
       "number-of-product-cancellations": 0,
+      "issuer-public-currency-holding-id": 7,
       "currency-id": 5,
       "currency-name": "Chilli pesos",
       "currency-icon-url": "/system/currencies/icons/000/000/005/original/chilli-pesos.png?153414511"
@@ -3204,6 +3206,7 @@ curl -X PUT https://api.mycurrency.com/users/4/issuer/currencies/5/stores/3/prod
       "currency-id": 5,
       "currency-name": "Freds Fishing Supplies dollars",
       "currency-icon-url": "/icons/original/missing.png",
+      "issuer-public-currency-holding-id": 2,
       "days-to-cancellation": null,
       "store-id": 3,
       "store-name": "Freds Fishing Supplies",
@@ -4260,11 +4263,12 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_combined_currenc
         "currency-icon-url": "/system/currencies/icons/missing.png",
         "currency-burn-rate": 450,
         "currency-daily-burn-rate": "0.00012614",
-        "store-count": 1,
+        "store-count": 2,
         "is-issuer-active": true,
         "issuer-user-id": 3,
         "issuer-user-name": "Hannibal",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
+        "issuer-public-currency-holding-id": 2,
         "amount-atomic": 10245784992346
       }
     },
@@ -4282,6 +4286,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_combined_currenc
         "issuer-user-id": 3,
         "issuer-user-name": "Hannibal",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
+        "issuer-public-currency-holding-id": 50,
         "amount-atomic": 9000000000000
       }
     },
@@ -4299,6 +4304,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_combined_currenc
         "issuer-user-id": 3,
         "issuer-user-name": "Hannibal",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
+        "issuer-public-currency-holding-id": 53,
         "amount-atomic": 7000000000000
       }
     },
@@ -4316,6 +4322,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_combined_currenc
         "issuer-user-id": 3,
         "issuer-user-name": "Hannibal",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
+        "issuer-public-currency-holding-id": null,
         "amount-atomic": 10000000000000
       }
     }
@@ -4334,7 +4341,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_combined_currenc
       "total-count": "4"
     },
     "user-data": {
-      "number-of-reviews": 5,
+      "number-of-reviews": 1,
       "currency-count": 4
     }
   }
@@ -4376,6 +4383,7 @@ is-issuer-active | Whether the issuer of the currency is active
 issuer-user-id | The ID of the user that issues the currency
 issuer-user-name | The username of the user that issues the currency
 issuer-user-avatar-url | The URL of the avatar of the user that issues the currency
+issuer-public-currency-holding-id | The user ID of the public currency holding of the issuer of the currency in the holding pair
 
 ### USER INFO
 
@@ -4387,7 +4395,7 @@ currency-count | The number of currencies owned by the logged-in user
 ## List User's Externally Issued Combined Currency Holdings with Authorization
 
 ```shell
-curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_combined_currency_holdings' \
+curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_combined_currency_holdings?per_page=5' \
   -H 'Accept: application/json' -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
 ```
@@ -4411,6 +4419,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_combined_c
         "issuer-user-id": 4,
         "issuer-user-name": "ScipioAfricanus",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "issuer-public-currency-holding-id": 42,
         "amount-atomic": 10009994565314
       }
     },
@@ -4428,6 +4437,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_combined_c
         "issuer-user-id": 4,
         "issuer-user-name": "ScipioAfricanus",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "issuer-public-currency-holding-id": null,
         "amount-atomic": 10195351440486
       }
     },
@@ -4440,11 +4450,12 @@ curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_combined_c
         "currency-icon-url": "/system/currencies/icons/missing.png",
         "currency-burn-rate": 420,
         "currency-daily-burn-rate": "0.000117548",
-        "store-count": 0,
+        "store-count": 3,
         "is-issuer-active": true,
         "issuer-user-id": 2,
         "issuer-user-name": "spiderman",
         "issuer-user-avatar-url": "/system/users/avatars/original/missing.png",
+        "issuer-public-currency-holding-id": 54,
         "amount-atomic": 4198236987252
       }
     },
@@ -4462,6 +4473,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_combined_c
         "issuer-user-id": 4,
         "issuer-user-name": "ScipioAfricanus",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "issuer-public-currency-holding-id": null,
         "amount-atomic": 5098738679556
       }
     },
@@ -4479,110 +4491,26 @@ curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_combined_c
         "issuer-user-id": 4,
         "issuer-user-name": "ScipioAfricanus",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "issuer-public-currency-holding-id": null,
         "amount-atomic": 13995965387034
-      }
-    },
-    {
-      "id": "8",
-      "type": "combined-currency-holdings",
-      "attributes": {
-        "currency-id": 8,
-        "currency-name": "Alex Token",
-        "currency-icon-url": "/system/currencies/icons/missing.png",
-        "currency-burn-rate": 350,
-        "currency-daily-burn-rate": "0.000097604",
-        "store-count": 0,
-        "is-issuer-active": true,
-        "issuer-user-id": 9,
-        "issuer-user-name": "alex",
-        "issuer-user-avatar-url": "/system/users/avatars/original/missing.png",
-        "amount-atomic": 3000000000000
-      }
-    },
-    {
-      "id": "9",
-      "type": "combined-currency-holdings",
-      "attributes": {
-        "currency-id": 9,
-        "currency-name": "Alabama steak coins",
-        "currency-icon-url": "/system/currencies/icons/missing.png",
-        "currency-burn-rate": 550,
-        "currency-daily-burn-rate": "0.000154976",
-        "store-count": 1,
-        "is-issuer-active": false,
-        "issuer-user-id": 4,
-        "issuer-user-name": "ScipioAfricanus",
-        "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
-        "amount-atomic": 1000000000000
-      }
-    },
-    {
-      "id": "10",
-      "type": "combined-currency-holdings",
-      "attributes": {
-        "currency-id": 10,
-        "currency-name": "Turbo points",
-        "currency-icon-url": "/system/currencies/icons/missing.png",
-        "currency-burn-rate": 600,
-        "currency-daily-burn-rate": "0.000169508",
-        "store-count": 1,
-        "is-issuer-active": false,
-        "issuer-user-id": 4,
-        "issuer-user-name": "ScipioAfricanus",
-        "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
-        "amount-atomic": 5600000000000
-      }
-    },
-    {
-      "id": "21",
-      "type": "combined-currency-holdings",
-      "attributes": {
-        "currency-id": 21,
-        "currency-name": "new",
-        "currency-icon-url": "/system/currencies/icons/000/000/021/original/currency.jpg?1561624253",
-        "currency-burn-rate": 500,
-        "currency-daily-burn-rate": "0.00014052",
-        "store-count": 1,
-        "is-issuer-active": true,
-        "issuer-user-id": 5,
-        "issuer-user-name": "Kostya",
-        "issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/avatar.jpg?1561060914",
-        "amount-atomic": 0
-      }
-    },
-    {
-      "id": "57",
-      "type": "combined-currency-holdings",
-      "attributes": {
-        "currency-id": 57,
-        "currency-name": "Rails Programming Dollars",
-        "currency-icon-url": "/system/currencies/icons/000/000/057/original/currency.jpg?1562376330",
-        "currency-burn-rate": 500,
-        "currency-daily-burn-rate": "0.00014052",
-        "store-count": 0,
-        "is-issuer-active": false,
-        "issuer-user-id": 4,
-        "issuer-user-name": "ScipioAfricanus",
-        "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
-        "amount-atomic": 3000000000000
       }
     }
   ],
   "links": {
-    "self": "https://api.mycurrency.com/users/3/authorized_externally_issued_combined_currency_holdings?",
-    "first": "https://api.mycurrency.com/users/3/authorized_externally_issued_combined_currency_holdings?page=1&per_page=25",
+    "self": "https://api.mycurrency.com/users/3/authorized_externally_issued_combined_currency_holdings?per_page=5",
+    "first": "https://api.mycurrency.com/users/3/authorized_externally_issued_combined_currency_holdings?page=1&per_page=5",
     "prev": null,
-    "next": null,
-    "last": "https://api.mycurrency.com/users/3/authorized_externally_issued_combined_currency_holdings?page=1&per_page=25"
+    "next": "https://api.mycurrency.com/users/3/authorized_externally_issued_combined_currency_holdings?page=2&per_page=5",
+    "last": "https://api.mycurrency.com/users/3/authorized_externally_issued_combined_currency_holdings?page=2&per_page=5"
   },
   "meta": {
     "pagination": {
-      "per-page": null,
-      "total-pages": "1",
+      "per-page": "5",
+      "total-pages": "2",
       "total-count": "10"
     },
     "user-data": {
-      "number-of-reviews": 5,
+      "number-of-reviews": 1,
       "currency-count": 4
     }
   }
@@ -4624,6 +4552,7 @@ is-issuer-active | Whether the issuer of the currency is active
 issuer-user-id | The ID of the user that issues the currency
 issuer-user-name | The username of the user that issues the currency
 issuer-user-avatar-url | The URL of the avatar of the user that issues the currency
+issuer-public-currency-holding-id | The user ID of the public currency holding of the issuer of the currency in the holding pair
 
 ### USER INFO
 
