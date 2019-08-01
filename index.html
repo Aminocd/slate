@@ -5294,7 +5294,7 @@ Authentication: not required
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all products belonging to a particular currency. Only products that are active and not discontinued are shown to non-authorized users while authorized users see all of the store&#39;s products if the API call has a :show_canceled argument of TRUE.</p>
+<p>This endpoint retrieves all products belonging to a particular currency. Only products that are active and not discontinued are shown to non-authorized users. If a user is viewing the products of their own store, they are shown only products that have not been discontinued, whether active or inactive, by default. If they pass :show_canceled argument set to TRUE, they will also be shown products that have been discontinued.</p>
 <h3 id='http-request-34'>HTTP Request</h3>
 <p><code>GET https://api.mycurrency.com/stores/&lt;STORE-ID&gt;/products</code></p>
 
