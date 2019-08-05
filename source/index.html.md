@@ -8370,7 +8370,7 @@ curl https://api.mycurrency.com/users/2/offers -d '{ "offer": {"offer_sender_id"
 }
 ```
 
-Creates an offer. 
+Creates an offer. For each proposed requesting attribute hash, the server will attempt to create a proposed transfer or proposed issuance from the offer receiver, while for each proposed offering attribute hash, the server will attempt to create a proposed transfer or proposed issuance from the offer sender. The server will check if the proposed sender has enough units of currency in the holding of the specified currency, and if so, create a proposed transfer. If not, the server will check if the proposed sender is also the issuer of the specified currency, and if so, then it will create a proposed issuance from the proposed sender. If the proposed sender neither has a public holding of the specified currency, not is the issuer of the specified currency, then no proposed transfer or proposed issuance is created from the proposed offering/requesting attribute hash.
 
 ### HTTP Request
 
