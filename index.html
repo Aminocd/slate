@@ -11606,6 +11606,7 @@ Authentication: the request requires the OAuth access-token associated with the 
               </span><span class="s2">"source-currency-store-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
               </span><span class="s2">"currency-sender-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
               </span><span class="s2">"currency-sender-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"currency-sender-public-holding-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">3599957849922</span><span class="p">,</span><span class="w">
               </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000000</span><span class="p">,</span><span class="w">
               </span><span class="s2">"products"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -11837,6 +11838,10 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The username of the user that would send the proposed transfer</td>
 </tr>
 <tr>
+<td>currency-sender-public-holding-amount-atomic</td>
+<td>The amount of currency in the public holding that the transfer would be sent from, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
 <td>amount-atomic</td>
 <td>The amount of currency that is proposed to be transferred, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
 </tr>
@@ -12037,6 +12042,7 @@ Authentication: the request requires the OAuth access-token associated with the 
                 </span><span class="s2">"source-currency-store-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"currency-sender-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"currency-sender-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"currency-sender-public-holding-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">3599957849922</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000000</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"products"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -12158,6 +12164,7 @@ Authentication: the request requires the OAuth access-token associated with the 
                 </span><span class="s2">"source-currency-store-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"currency-sender-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"currency-sender-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"currency-sender-public-holding-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">3599957849922</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">55000000000</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"products"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -12383,6 +12390,7 @@ Authentication: the request requires the OAuth access-token associated with the 
                 </span><span class="s2">"source-currency-store-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"currency-sender-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"currency-sender-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hannibal"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"currency-sender-public-holding-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">3599957849922</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000000</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"products"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -12685,6 +12693,10 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The username of the user that would send the proposed transfer</td>
 </tr>
 <tr>
+<td>currency-sender-public-holding-amount-atomic</td>
+<td>The amount of currency in the public holding that the transfer would be sent from, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
 <td>amount-atomic</td>
 <td>The amount of currency that is proposed to be transferred, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
 </tr>
@@ -12914,6 +12926,7 @@ Authentication: the request requires the OAuth access-token associated with the 
               </span><span class="s2">"source-currency-store-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
               </span><span class="s2">"currency-sender-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
               </span><span class="s2">"currency-sender-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spiderman"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"currency-sender-public-holding-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">3200000000000</span><span class="p">,</span><span class="w">
               </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000000</span><span class="p">,</span><span class="w">
               </span><span class="s2">"products"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -13201,6 +13214,10 @@ Authentication: the request requires the OAuth access-token associated with the 
 <tr>
 <td>currency-sender-username</td>
 <td>The username of the user that would send the proposed transfer</td>
+</tr>
+<tr>
+<td>currency-sender-public-holding-amount-atomic</td>
+<td>The amount of currency in the public holding that the transfer would be sent from, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
 </tr>
 <tr>
 <td>amount-atomic</td>
