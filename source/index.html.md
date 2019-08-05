@@ -7343,6 +7343,7 @@ curl 'https://api.mycurrency.com/users/2/offers/9' -H 'Accept: application/json'
               "source-currency-store-count": 3,
               "currency-issuer-id": 2,
               "currency-issuer-username": "spiderman",
+              "currency-sender-public-holding-amount-atomic": 3200000000000,
               "amount-atomic": 50000000000,
               "products": {
                 "data": [
@@ -7564,6 +7565,7 @@ source-currency-daily-burn-rate | The daily burn rate of the currency that is pr
 source-currency-store-count | The number of stores associated with the currency that is proposed to be transferred
 currency-issuer-id | The ID of the user that would issue the proposed issuance
 currency-issuer-username | The username of the user that would issue the proposed issuance
+currency-sender-public-holding-amount-atomic | The amount of currency in the proposed issuer's public holding of the currency that would be issued, in atomic units (each whole unit is composed of 10^10 atomic units)
 amount-atomic | The amount of currency that is proposed to be issued, in atomic units (each whole unit is composed of 10^10 atomic units)
 active | Whether the proposed issuance is still valid or not
 products | The three most recently updated products associated with the currency of the proposed_issuance
@@ -7633,6 +7635,7 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
                 "source-currency-store-count": 3,
                 "currency-issuer-id": 2,
                 "currency-issuer-username": "spiderman",
+                "currency-sender-public-holding-amount-atomic": 3200000000000,
                 "amount-atomic": 50000000000,
                 "products": {
                   "data": [
@@ -7911,6 +7914,7 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
                 "source-currency-store-count": 3,
                 "currency-issuer-id": 2,
                 "currency-issuer-username": "spiderman",
+                "currency-sender-public-holding-amount-atomic": 3200000000000,
                 "amount-atomic": 50000000000,
                 "products": {
                   "data": [
@@ -7981,6 +7985,7 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
                 "source-currency-store-count": 3,
                 "currency-issuer-id": 2,
                 "currency-issuer-username": "spiderman",
+                "currency-sender-public-holding-amount-atomic": 3200000000000,
                 "amount-atomic": 50000000000,
                 "products": {
                   "data": [
@@ -8235,6 +8240,7 @@ source-currency-daily-burn-rate | The daily burn rate of the currency that is pr
 source-currency-store-count | The number of stores associated with the currency that is proposed to be transferred
 currency-issuer-id | The ID of the user that would issue the proposed issuance
 currency-issuer-username | The username of the user that would issue the proposed issuance
+currency-sender-public-holding-amount-atomic | The amount of currency in the proposed issuer's public holding of the currency that would be issued, in atomic units (each whole unit is composed of 10^10 atomic units)
 amount-atomic | The amount of currency that is proposed to be issued, in atomic units (each whole unit is composed of 10^10 atomic units)
 active | Whether the proposed issuance is still valid or not
 products | The three most recently updated products associated with the currency of the proposed_issuance
@@ -8480,6 +8486,7 @@ source-currency-daily-burn-rate | The daily burn rate of the currency that is pr
 source-currency-store-count | The number of stores associated with the currency that is proposed to be transferred
 currency-issuer-id | The ID of the user that would issue the proposed issuance
 currency-issuer-username | The username of the user that would issue the proposed issuance
+currency-sender-public-holding-amount-atomic | The amount of currency in the proposed issuer's public holding of the currency that would be issued, in atomic units (each whole unit is composed of 10^10 atomic units)
 amount-atomic | The amount of currency that is proposed to be issued, in atomic units (each whole unit is composed of 10^10 atomic units)
 active | Whether the proposed issuance is still valid or not
 products | The three most recently updated products associated with the currency of the proposed_issuance
