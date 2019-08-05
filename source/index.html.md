@@ -7396,6 +7396,7 @@ curl 'https://api.mycurrency.com/users/2/offers/9' -H 'Accept: application/json'
               "source-currency-store-count": 2,
               "currency-sender-id": 3,
               "currency-sender-username": "Hannibal",
+              "currency-sender-public-holding-amount-atomic": 3599957849922,
               "amount-atomic": 50000000000,
               "products": {
                 "data": [
@@ -7542,6 +7543,7 @@ source-currency-daily-burn-rate | The daily burn rate of the currency that is pr
 source-currency-store-count | The number of stores associated with the currency that is proposed to be transferred
 currency-sender-id | The ID of the user that would send the proposed transfer
 currency-sender-username | The username of the user that would send the proposed transfer
+currency-sender-public-holding-amount-atomic | The amount of currency in the public holding that the transfer would be sent from, in atomic units (each whole unit is composed of 10^10 atomic units)
 amount-atomic | The amount of currency that is proposed to be transferred, in atomic units (each whole unit is composed of 10^10 atomic units)
 active | Whether the proposed transfer is still valid or not
 products | The three most recently updated products associated with the currency of the proposed_transfer
@@ -7684,6 +7686,7 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
                 "source-currency-store-count": 2,
                 "currency-sender-id": 3,
                 "currency-sender-username": "Hannibal",
+                "currency-sender-public-holding-amount-atomic": 3599957849922,
                 "amount-atomic": 50000000000,
                 "products": {
                   "data": [
@@ -7805,6 +7808,7 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
                 "source-currency-store-count": 2,
                 "currency-sender-id": 3,
                 "currency-sender-username": "Hannibal",
+                "currency-sender-public-holding-amount-atomic": 3599957849922,
                 "amount-atomic": 55000000000,
                 "products": {
                   "data": [
@@ -8030,6 +8034,7 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
                 "source-currency-store-count": 2,
                 "currency-sender-id": 3,
                 "currency-sender-username": "Hannibal",
+                "currency-sender-public-holding-amount-atomic": 3599957849922,
                 "amount-atomic": 50000000000,
                 "products": {
                   "data": [
@@ -8209,6 +8214,7 @@ source-currency-daily-burn-rate | The daily burn rate of the currency that is pr
 source-currency-store-count | The number of stores associated with the currency that is proposed to be transferred
 currency-sender-id | The ID of the user that would send the proposed transfer
 currency-sender-username | The username of the user that would send the proposed transfer
+currency-sender-public-holding-amount-atomic | The amount of currency in the public holding that the transfer would be sent from, in atomic units (each whole unit is composed of 10^10 atomic units)
 amount-atomic | The amount of currency that is proposed to be transferred, in atomic units (each whole unit is composed of 10^10 atomic units)
 active | Whether the proposed transfer is still valid or not
 products | The three most recently updated products associated with the currency of the proposed_transfer
@@ -8323,6 +8329,7 @@ curl https://api.mycurrency.com/users/2/offers -d '{ "offer": {"offer_sender_id"
               "source-currency-store-count": 3,
               "currency-sender-id": 2,
               "currency-sender-username": "spiderman",
+              "currency-sender-public-holding-amount-atomic": 3200000000000,
               "amount-atomic": 50000000000,
               "products": {
                 "data": [
@@ -8452,6 +8459,7 @@ source-currency-daily-burn-rate | The daily burn rate of the currency that is pr
 source-currency-store-count | The number of stores associated with the currency that is proposed to be transferred
 currency-sender-id | The ID of the user that would send the proposed transfer
 currency-sender-username | The username of the user that would send the proposed transfer
+currency-sender-public-holding-amount-atomic | The amount of currency in the public holding that the transfer would be sent from, in atomic units (each whole unit is composed of 10^10 atomic units)
 amount-atomic | The amount of currency that is proposed to be transferred, in atomic units (each whole unit is composed of 10^10 atomic units)
 active | Whether the proposed transfer is still valid or not
 products | The three most recently updated products associated with the currency of the proposed_transfer
