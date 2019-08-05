@@ -7517,8 +7517,8 @@ offer-sender-id | The ID of the user that made the offer
 offer-sender-username | The username of the user that made the offer
 offer-sender-avatar-url | The URL of the avatar of the user that made the offer
 previous-offer-id | The ID of the offer that is being counter-offered. If the first offer of an offer-chain, the value will be 0
-requested-proposed-transactions | All the proposed transactions being requested from the offer receiver
-offered-proposed-transactions | All the proposed transactions being offered by the offer receiver
+requested-proposed-transactions | An array of proposed transfers and proposed issuances being requested from the offer receiver
+offered-proposed-transactions | An array of proposed transfers and proposed issuances being offered by the offer sender
 offer-type | 0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, and 3 is an offer acceptance
 active | Whether the offer is still active and can be countered or accepted/rejected
 proposed-transfers | The proposed_transfers included in the offer
@@ -7526,20 +7526,6 @@ proposed-issuances | The proposed_issuances included in the offer
 self-cancellation | Whether the offer sender has cancelled the offer by disactivating their user account
 created-at | The time and date when the offer was created
 updated-at | The time and date when the offer was last updated
-
-### Requested Proposed Transactions
-
-Parameter | Description
---------- | -----------
-proposed-transfers | An array of proposed-transfer entities that are being requested from the offer receiver 
-proposed-issuances | An array of proposed-issuance entities that are being requested from the offer receiver 
-
-### Offered Proposed Transactions
-
-Parameter | Description
---------- | -----------
-proposed-transfers | An array of proposed-transfer entities that are being offered by the offer receiver 
-proposed-issuances | An array of proposed-issuance entities that are being offered by the offer receiver 
 
 ### Proposed Transfers
 
@@ -8198,8 +8184,8 @@ offer-sender-id | The ID of the user that made the offer
 offer-sender-username | The username of the user that made the offer
 offer-sender-avatar-url | The URL of the avatar of the user that made the offer
 previous-offer-id | The ID of the offer that is being counter-offered. If the first offer of an offer-chain, the value will be 0
-requested-proposed-transactions | All the proposed transactions being requested from the offer receiver
-offered-proposed-transactions | All the proposed transactions being offered by the offer receiver
+requested-proposed-transactions | An array of proposed transfers and proposed issuances being requested from the offer receiver
+offered-proposed-transactions | An array of proposed transfers and proposed issuances being offered by the offer sender
 offer-type | 0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, and 3 is an offer acceptance
 active | Whether the offer is still active and can be countered or accepted/rejected
 proposed-transfers | The proposed_transfers included in the offer
@@ -8207,20 +8193,6 @@ proposed-issuances | The proposed_issuances included in the offer
 self-cancellation | Whether the offer sender has cancelled the offer by disactivating their user account
 created-at | The time and date when the offer was created
 updated-at | The time and date when the offer was last updated
-
-### Requested Proposed Transactions
-
-Parameter | Description
---------- | -----------
-proposed-transfers | An array of proposed-transfer entities that are being requested from the offer receiver 
-proposed-issuances | An array of proposed-issuance entities that are being requested from the offer receiver 
-
-### Offered Proposed Transactions
-
-Parameter | Description
---------- | -----------
-proposed-transfers | An array of proposed-transfer entities that are being offered by the offer receiver 
-proposed-issuances | An array of proposed-issuance entities that are being offered by the offer receiver 
 
 ### Proposed Transfers
 
@@ -8455,8 +8427,8 @@ offer-sender-id | The ID of the user that made the offer
 offer-sender-username | The username of the user that made the offer
 offer-sender-avatar-url | The URL of the avatar of the user that made the offer
 previous-offer-id | The ID of the offer that is being counter-offered. If the first offer of an offer-chain, the value will be 0
-requested-proposed-transactions | All the proposed transactions being requested from the offer receiver
-offered-proposed-transactions | All the proposed transactions being offered by the offer receiver
+requested-proposed-transactions | An array of proposed transfers and proposed issuances being requested from the offer receiver
+offered-proposed-transactions | An array of proposed transfers and proposed issuances being offered by the offer sender
 offer-type | 0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, and 3 is an offer acceptance
 active | Whether the offer is still active and can be countered or accepted/rejected
 proposed-transfers | The proposed_transfers included in the offer
@@ -8464,20 +8436,6 @@ proposed-issuances | The proposed_issuances included in the offer
 self-cancellation | Whether the offer sender has cancelled the offer by disactivating their user account
 created-at | The time and date when the offer was created
 updated-at | The time and date when the offer was last updated
-
-### Requested Proposed Transactions
-
-Parameter | Description
---------- | -----------
-proposed-transfers | An array of proposed-transfer entities that are being requested from the offer receiver 
-proposed-issuances | An array of proposed-issuance entities that are being requested from the offer receiver 
-
-### Offered Proposed Transactions
-
-Parameter | Description
---------- | -----------
-proposed-transfers | An array of proposed-transfer entities that are being offered by the offer receiver 
-proposed-issuances | An array of proposed-issuance entities that are being offered by the offer receiver 
 
 ### Proposed Transfers
 
