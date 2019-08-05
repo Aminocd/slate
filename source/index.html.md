@@ -7328,7 +7328,59 @@ curl 'https://api.mycurrency.com/users/2/offers/9' -H 'Accept: application/json'
       "offer-sender-username": "Hannibal",
       "offer-sender-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
       "previous-offer-id": 8,
-      "proposed-transfers": {
+      "requested-proposed-transactions": {
+        "data": [
+          {
+            "id": "9",
+            "type": "proposed-issuances",
+            "attributes": {
+              "offer-id": 9,
+              "source-currency-id": 4,
+              "source-currency-name": "spiderman pizza dollars",
+              "source-currency-icon-url": "/system/currencies/icons/missing.png",
+              "source-currency-burn-rate": 420,
+              "source-currency-daily-burn-rate": "0.000117548",
+              "source-currency-store-count": 3,
+              "currency-issuer-id": 2,
+              "currency-issuer-username": "spiderman",
+              "amount-atomic": 50000000000,
+              "products": {
+                "data": [
+                  {
+                    "id": "52",
+                    "type": "products",
+                    "attributes": {
+                      "sub-category-id": 20,
+                      "sub-category-name": "kid's clothing",
+                      "currency-id": 4,
+                      "currency-name": "spiderman pizza dollars",
+                      "currency-icon-url": "/system/currencies/icons/missing.png",
+                      "issuer-public-currency-holding-id": 54,
+                      "days-to-cancellation": null,
+                      "minutes-to-cancellation": null,
+                      "store-id": 29,
+                      "store-name": "Spiderman store",
+                      "product-name": "spidermask",
+                      "product-description": "a spiderman mask",
+                      "price-cents": 200,
+                      "active": true,
+                      "continued": true,
+                      "last-activated-at": "2019-07-29T17:07:27.574-07:00",
+                      "created-at": "2019-07-29T17:07:27.574-07:00",
+                      "updated-at": "2019-07-29T17:07:27.574-07:00",
+                      "get-image-url": "/system/products/images/original/missing.png"
+                    }
+                  }
+                ]
+              },
+              "active": false,
+              "created-at": "2019-07-21T18:32:30.728-07:00",
+              "updated-at": "2019-07-21T18:32:49.020-07:00"
+            }
+          }
+        ]
+      },
+      "offered-proposed-transactions": {
         "data": [
           {
             "id": "9",
@@ -7356,6 +7408,7 @@ curl 'https://api.mycurrency.com/users/2/offers/9' -H 'Accept: application/json'
                       "currency-id": 1,
                       "currency-name": "Micro Asteroid bucks",
                       "currency-icon-url": "/system/currencies/icons/missing.png",
+                      "issuer-public-currency-holding-id": 2,
                       "days-to-cancellation": null,
                       "minutes-to-cancellation": null,
                       "store-id": 28,
@@ -7380,6 +7433,7 @@ curl 'https://api.mycurrency.com/users/2/offers/9' -H 'Accept: application/json'
                       "currency-id": 1,
                       "currency-name": "Micro Asteroid bucks",
                       "currency-icon-url": "/system/currencies/icons/missing.png",
+                      "issuer-public-currency-holding-id": 2,
                       "days-to-cancellation": null,
                       "minutes-to-cancellation": null,
                       "store-id": 1,
@@ -7404,6 +7458,7 @@ curl 'https://api.mycurrency.com/users/2/offers/9' -H 'Accept: application/json'
                       "currency-id": 1,
                       "currency-name": "Micro Asteroid bucks",
                       "currency-icon-url": "/system/currencies/icons/missing.png",
+                      "issuer-public-currency-holding-id": 2,
                       "days-to-cancellation": null,
                       "minutes-to-cancellation": null,
                       "store-id": 1,
@@ -7424,57 +7479,6 @@ curl 'https://api.mycurrency.com/users/2/offers/9' -H 'Accept: application/json'
               "active": false,
               "created-at": "2019-07-21T18:32:30.727-07:00",
               "updated-at": "2019-07-21T18:32:49.019-07:00"
-            }
-          }
-        ]
-      },
-      "proposed-issuances": {
-        "data": [
-          {
-            "id": "9",
-            "type": "proposed-issuances",
-            "attributes": {
-              "offer-id": 9,
-              "source-currency-id": 4,
-              "source-currency-name": "spiderman pizza dollars",
-              "source-currency-icon-url": "/system/currencies/icons/missing.png",
-              "source-currency-burn-rate": 420,
-              "source-currency-daily-burn-rate": "0.000117548",
-              "source-currency-store-count": 3,
-              "currency-issuer-id": 2,
-              "currency-issuer-username": "spiderman",
-              "amount-atomic": 50000000000,
-              "products": {
-                "data": [
-                  {
-                    "id": "52",
-                    "type": "products",
-                    "attributes": {
-                      "sub-category-id": 20,
-                      "sub-category-name": "kid's clothing",
-                      "currency-id": 4,
-                      "currency-name": "spiderman pizza dollars",
-                      "currency-icon-url": "/system/currencies/icons/missing.png",
-                      "days-to-cancellation": null,
-                      "minutes-to-cancellation": null,
-                      "store-id": 29,
-                      "store-name": "Spiderman store",
-                      "product-name": "spidermask",
-                      "product-description": "a spiderman mask",
-                      "price-cents": 200,
-                      "active": true,
-                      "continued": true,
-                      "last-activated-at": "2019-07-29T17:07:27.574-07:00",
-                      "created-at": "2019-07-29T17:07:27.574-07:00",
-                      "updated-at": "2019-07-29T17:07:27.574-07:00",
-                      "get-image-url": "/system/products/images/original/missing.png"
-                    }
-                  }
-                ]
-              },
-              "active": false,
-              "created-at": "2019-07-21T18:32:30.728-07:00",
-              "updated-at": "2019-07-21T18:32:49.020-07:00"
             }
           }
         ]
@@ -7513,6 +7517,8 @@ offer-sender-id | The ID of the user that made the offer
 offer-sender-username | The username of the user that made the offer
 offer-sender-avatar-url | The URL of the avatar of the user that made the offer
 previous-offer-id | The ID of the offer that is being counter-offered. If the first offer of an offer-chain, the value will be 0
+requested-proposed-transactions | All the proposed transactions being requested from the offer receiver
+offered-proposed-transactions | All the proposed transactions being offered by the offer receiver
 offer-type | 0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, and 3 is an offer acceptance
 active | Whether the offer is still active and can be countered or accepted/rejected
 proposed-transfers | The proposed_transfers included in the offer
@@ -7520,6 +7526,20 @@ proposed-issuances | The proposed_issuances included in the offer
 self-cancellation | Whether the offer sender has cancelled the offer by disactivating their user account
 created-at | The time and date when the offer was created
 updated-at | The time and date when the offer was last updated
+
+### Requested Proposed Transactions
+
+Parameter | Description
+--------- | -----------
+proposed-transfers | An array of proposed-transfer entities that are being requested from the offer receiver 
+proposed-issuances | An array of proposed-issuance entities that are being requested from the offer receiver 
+
+### Offered Proposed Transactions
+
+Parameter | Description
+--------- | -----------
+proposed-transfers | An array of proposed-transfer entities that are being offered by the offer receiver 
+proposed-issuances | An array of proposed-issuance entities that are being offered by the offer receiver 
 
 ### Proposed Transfers
 
@@ -7586,10 +7606,10 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
         "offer-sender-username": "spiderman",
         "offer-sender-avatar-url": "/system/users/avatars/original/missing.png",
         "previous-offer-id": 9,
-        "proposed-transfers": {
+        "requested-proposed-transactions": {
           "data": []
         },
-        "proposed-issuances": {
+        "offered-proposed-transactions": {
           "data": []
         },
         "offer-type": 2,
@@ -7610,7 +7630,59 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
         "offer-sender-username": "Hannibal",
         "offer-sender-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
         "previous-offer-id": 8,
-        "proposed-transfers": {
+        "requested-proposed-transactions": {
+          "data": [
+            {
+              "id": "9",
+              "type": "proposed-issuances",
+              "attributes": {
+                "offer-id": 9,
+                "source-currency-id": 4,
+                "source-currency-name": "spiderman pizza dollars",
+                "source-currency-icon-url": "/system/currencies/icons/missing.png",
+                "source-currency-burn-rate": 420,
+                "source-currency-daily-burn-rate": "0.000117548",
+                "source-currency-store-count": 3,
+                "currency-issuer-id": 2,
+                "currency-issuer-username": "spiderman",
+                "amount-atomic": 50000000000,
+                "products": {
+                  "data": [
+                    {
+                      "id": "52",
+                      "type": "products",
+                      "attributes": {
+                        "sub-category-id": 20,
+                        "sub-category-name": "kid's clothing",
+                        "currency-id": 4,
+                        "currency-name": "spiderman pizza dollars",
+                        "currency-icon-url": "/system/currencies/icons/missing.png",
+                        "issuer-public-currency-holding-id": 54,
+                        "days-to-cancellation": null,
+                        "minutes-to-cancellation": null,
+                        "store-id": 29,
+                        "store-name": "Spiderman store",
+                        "product-name": "spidermask",
+                        "product-description": "a spiderman mask",
+                        "price-cents": 200,
+                        "active": true,
+                        "continued": true,
+                        "last-activated-at": "2019-07-29T17:07:27.574-07:00",
+                        "created-at": "2019-07-29T17:07:27.574-07:00",
+                        "updated-at": "2019-07-29T17:07:27.574-07:00",
+                        "get-image-url": "/system/products/images/original/missing.png"
+                      }
+                    }
+                  ]
+                },
+                "active": false,
+                "created-at": "2019-07-21T18:32:30.728-07:00",
+                "updated-at": "2019-07-21T18:32:49.020-07:00"
+              }
+            }
+          ]
+        },
+        "offered-proposed-transactions": {
           "data": [
             {
               "id": "9",
@@ -7638,6 +7710,7 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
                         "currency-id": 1,
                         "currency-name": "Micro Asteroid bucks",
                         "currency-icon-url": "/system/currencies/icons/missing.png",
+                        "issuer-public-currency-holding-id": 2,
                         "days-to-cancellation": null,
                         "minutes-to-cancellation": null,
                         "store-id": 28,
@@ -7662,6 +7735,7 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
                         "currency-id": 1,
                         "currency-name": "Micro Asteroid bucks",
                         "currency-icon-url": "/system/currencies/icons/missing.png",
+                        "issuer-public-currency-holding-id": 2,
                         "days-to-cancellation": null,
                         "minutes-to-cancellation": null,
                         "store-id": 1,
@@ -7686,6 +7760,7 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
                         "currency-id": 1,
                         "currency-name": "Micro Asteroid bucks",
                         "currency-icon-url": "/system/currencies/icons/missing.png",
+                        "issuer-public-currency-holding-id": 2,
                         "days-to-cancellation": null,
                         "minutes-to-cancellation": null,
                         "store-id": 1,
@@ -7710,57 +7785,6 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
             }
           ]
         },
-        "proposed-issuances": {
-          "data": [
-            {
-              "id": "9",
-              "type": "proposed-issuances",
-              "attributes": {
-                "offer-id": 9,
-                "source-currency-id": 4,
-                "source-currency-name": "spiderman pizza dollars",
-                "source-currency-icon-url": "/system/currencies/icons/missing.png",
-                "source-currency-burn-rate": 420,
-                "source-currency-daily-burn-rate": "0.000117548",
-                "source-currency-store-count": 3,
-                "currency-issuer-id": 2,
-                "currency-issuer-username": "spiderman",
-                "amount-atomic": 50000000000,
-                "products": {
-                  "data": [
-                    {
-                      "id": "52",
-                      "type": "products",
-                      "attributes": {
-                        "sub-category-id": 20,
-                        "sub-category-name": "kid's clothing",
-                        "currency-id": 4,
-                        "currency-name": "spiderman pizza dollars",
-                        "currency-icon-url": "/system/currencies/icons/missing.png",
-                        "days-to-cancellation": null,
-                        "minutes-to-cancellation": null,
-                        "store-id": 29,
-                        "store-name": "Spiderman store",
-                        "product-name": "spidermask",
-                        "product-description": "a spiderman mask",
-                        "price-cents": 200,
-                        "active": true,
-                        "continued": true,
-                        "last-activated-at": "2019-07-29T17:07:27.574-07:00",
-                        "created-at": "2019-07-29T17:07:27.574-07:00",
-                        "updated-at": "2019-07-29T17:07:27.574-07:00",
-                        "get-image-url": "/system/products/images/original/missing.png"
-                      }
-                    }
-                  ]
-                },
-                "active": false,
-                "created-at": "2019-07-21T18:32:30.728-07:00",
-                "updated-at": "2019-07-21T18:32:49.020-07:00"
-              }
-            }
-          ]
-        },
         "offer-type": 1,
         "active": false,
         "self-cancellation": false,
@@ -7779,7 +7803,7 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
         "offer-sender-username": "spiderman",
         "offer-sender-avatar-url": "/system/users/avatars/original/missing.png",
         "previous-offer-id": 7,
-        "proposed-transfers": {
+        "requested-proposed-transactions": {
           "data": [
             {
               "id": "8",
@@ -7807,6 +7831,7 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
                         "currency-id": 1,
                         "currency-name": "Micro Asteroid bucks",
                         "currency-icon-url": "/system/currencies/icons/missing.png",
+                        "issuer-public-currency-holding-id": 2,
                         "days-to-cancellation": null,
                         "minutes-to-cancellation": null,
                         "store-id": 28,
@@ -7831,6 +7856,7 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
                         "currency-id": 1,
                         "currency-name": "Micro Asteroid bucks",
                         "currency-icon-url": "/system/currencies/icons/missing.png",
+                        "issuer-public-currency-holding-id": 2,
                         "days-to-cancellation": null,
                         "minutes-to-cancellation": null,
                         "store-id": 1,
@@ -7855,6 +7881,7 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
                         "currency-id": 1,
                         "currency-name": "Micro Asteroid bucks",
                         "currency-icon-url": "/system/currencies/icons/missing.png",
+                        "issuer-public-currency-holding-id": 2,
                         "days-to-cancellation": null,
                         "minutes-to-cancellation": null,
                         "store-id": 1,
@@ -7879,7 +7906,7 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
             }
           ]
         },
-        "proposed-issuances": {
+        "offered-proposed-transactions": {
           "data": [
             {
               "id": "8",
@@ -7906,6 +7933,7 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
                         "currency-id": 4,
                         "currency-name": "spiderman pizza dollars",
                         "currency-icon-url": "/system/currencies/icons/missing.png",
+                        "issuer-public-currency-holding-id": 54,
                         "days-to-cancellation": null,
                         "minutes-to-cancellation": null,
                         "store-id": 29,
@@ -7948,7 +7976,59 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
         "offer-sender-username": "Hannibal",
         "offer-sender-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
         "previous-offer-id": 0,
-        "proposed-transfers": {
+        "requested-proposed-transactions": {
+          "data": [
+            {
+              "id": "7",
+              "type": "proposed-issuances",
+              "attributes": {
+                "offer-id": 7,
+                "source-currency-id": 4,
+                "source-currency-name": "spiderman pizza dollars",
+                "source-currency-icon-url": "/system/currencies/icons/missing.png",
+                "source-currency-burn-rate": 420,
+                "source-currency-daily-burn-rate": "0.000117548",
+                "source-currency-store-count": 3,
+                "currency-issuer-id": 2,
+                "currency-issuer-username": "spiderman",
+                "amount-atomic": 50000000000,
+                "products": {
+                  "data": [
+                    {
+                      "id": "52",
+                      "type": "products",
+                      "attributes": {
+                        "sub-category-id": 20,
+                        "sub-category-name": "kid's clothing",
+                        "currency-id": 4,
+                        "currency-name": "spiderman pizza dollars",
+                        "currency-icon-url": "/system/currencies/icons/missing.png",
+                        "issuer-public-currency-holding-id": 54,
+                        "days-to-cancellation": null,
+                        "minutes-to-cancellation": null,
+                        "store-id": 29,
+                        "store-name": "Spiderman store",
+                        "product-name": "spidermask",
+                        "product-description": "a spiderman mask",
+                        "price-cents": 200,
+                        "active": true,
+                        "continued": true,
+                        "last-activated-at": "2019-07-29T17:07:27.574-07:00",
+                        "created-at": "2019-07-29T17:07:27.574-07:00",
+                        "updated-at": "2019-07-29T17:07:27.574-07:00",
+                        "get-image-url": "/system/products/images/original/missing.png"
+                      }
+                    }
+                  ]
+                },
+                "active": false,
+                "created-at": "2019-07-21T18:29:36.825-07:00",
+                "updated-at": "2019-07-21T18:30:26.915-07:00"
+              }
+            }
+          ]
+        },
+        "offered-proposed-transactions": {
           "data": [
             {
               "id": "7",
@@ -7976,6 +8056,7 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
                         "currency-id": 1,
                         "currency-name": "Micro Asteroid bucks",
                         "currency-icon-url": "/system/currencies/icons/missing.png",
+                        "issuer-public-currency-holding-id": 2,
                         "days-to-cancellation": null,
                         "minutes-to-cancellation": null,
                         "store-id": 28,
@@ -8000,6 +8081,7 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
                         "currency-id": 1,
                         "currency-name": "Micro Asteroid bucks",
                         "currency-icon-url": "/system/currencies/icons/missing.png",
+                        "issuer-public-currency-holding-id": 2,
                         "days-to-cancellation": null,
                         "minutes-to-cancellation": null,
                         "store-id": 1,
@@ -8024,6 +8106,7 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
                         "currency-id": 1,
                         "currency-name": "Micro Asteroid bucks",
                         "currency-icon-url": "/system/currencies/icons/missing.png",
+                        "issuer-public-currency-holding-id": 2,
                         "days-to-cancellation": null,
                         "minutes-to-cancellation": null,
                         "store-id": 1,
@@ -8048,57 +8131,6 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
             }
           ]
         },
-        "proposed-issuances": {
-          "data": [
-            {
-              "id": "7",
-              "type": "proposed-issuances",
-              "attributes": {
-                "offer-id": 7,
-                "source-currency-id": 4,
-                "source-currency-name": "spiderman pizza dollars",
-                "source-currency-icon-url": "/system/currencies/icons/missing.png",
-                "source-currency-burn-rate": 420,
-                "source-currency-daily-burn-rate": "0.000117548",
-                "source-currency-store-count": 3,
-                "currency-issuer-id": 2,
-                "currency-issuer-username": "spiderman",
-                "amount-atomic": 50000000000,
-                "products": {
-                  "data": [
-                    {
-                      "id": "52",
-                      "type": "products",
-                      "attributes": {
-                        "sub-category-id": 20,
-                        "sub-category-name": "kid's clothing",
-                        "currency-id": 4,
-                        "currency-name": "spiderman pizza dollars",
-                        "currency-icon-url": "/system/currencies/icons/missing.png",
-                        "days-to-cancellation": null,
-                        "minutes-to-cancellation": null,
-                        "store-id": 29,
-                        "store-name": "Spiderman store",
-                        "product-name": "spidermask",
-                        "product-description": "a spiderman mask",
-                        "price-cents": 200,
-                        "active": true,
-                        "continued": true,
-                        "last-activated-at": "2019-07-29T17:07:27.574-07:00",
-                        "created-at": "2019-07-29T17:07:27.574-07:00",
-                        "updated-at": "2019-07-29T17:07:27.574-07:00",
-                        "get-image-url": "/system/products/images/original/missing.png"
-                      }
-                    }
-                  ]
-                },
-                "active": false,
-                "created-at": "2019-07-21T18:29:36.825-07:00",
-                "updated-at": "2019-07-21T18:30:26.915-07:00"
-              }
-            }
-          ]
-        },
         "offer-type": 0,
         "active": false,
         "self-cancellation": false,
@@ -8108,11 +8140,11 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
     }
   ],
   "links": {
-    "self": "https://api.mycurrency.com/users/2/offers?index_type=offer_chain&offer_id=10",
-    "first": "https://api.mycurrency.com/users/2/offers?index_type=offer_chain&offer_id=10&page=1&per_page=25",
+    "self": "https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=10",
+    "first": "https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=10&page=1&per_page=25",
     "prev": null,
     "next": null,
-    "last": "https://api.mycurrency.com/users/2/offers?index_type=offer_chain&offer_id=10&page=1&per_page=25"
+    "last": "https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=10&page=1&per_page=25"
   },
   "meta": {
     "pagination": {
@@ -8166,6 +8198,8 @@ offer-sender-id | The ID of the user that made the offer
 offer-sender-username | The username of the user that made the offer
 offer-sender-avatar-url | The URL of the avatar of the user that made the offer
 previous-offer-id | The ID of the offer that is being counter-offered. If the first offer of an offer-chain, the value will be 0
+requested-proposed-transactions | All the proposed transactions being requested from the offer receiver
+offered-proposed-transactions | All the proposed transactions being offered by the offer receiver
 offer-type | 0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, and 3 is an offer acceptance
 active | Whether the offer is still active and can be countered or accepted/rejected
 proposed-transfers | The proposed_transfers included in the offer
@@ -8173,6 +8207,20 @@ proposed-issuances | The proposed_issuances included in the offer
 self-cancellation | Whether the offer sender has cancelled the offer by disactivating their user account
 created-at | The time and date when the offer was created
 updated-at | The time and date when the offer was last updated
+
+### Requested Proposed Transactions
+
+Parameter | Description
+--------- | -----------
+proposed-transfers | An array of proposed-transfer entities that are being requested from the offer receiver 
+proposed-issuances | An array of proposed-issuance entities that are being requested from the offer receiver 
+
+### Offered Proposed Transactions
+
+Parameter | Description
+--------- | -----------
+proposed-transfers | An array of proposed-transfer entities that are being offered by the offer receiver 
+proposed-issuances | An array of proposed-issuance entities that are being offered by the offer receiver 
 
 ### Proposed Transfers
 
@@ -8241,7 +8289,7 @@ get-image-url | The URL at which the product image picture can be found
 ## Create Offer
 
 ```shell
-curl https://api.mycurrency.com/users/3/offers -d '{ "offer": {"previous_offer_id": "8", "offer_sender_id": "3", "offer_receiver_id": "2", "offer_type": "1", "proposed_transfers_attributes": [{"source_currency_holding_id": "2", "amount_atomic": "50000000000"}], "proposed_issuances_attributes": [{"source_currency_id": "4", "amount_atomic": "50000000000"}] }}' \
+curl https://api.mycurrency.com/users/2/offers -d '{ "offer": {"offer_sender_id": "2", "offer_receiver_id": "3", "offer_type": "0", "proposed_requesting_attributes": [{"currency_id": "75", "amount_atomic": "100000000000"}], "proposed_offering_attributes": [{"currency_id": "4", "amount_atomic": "50000000000"}] }}' \
   -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' \
   -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
@@ -8251,131 +8299,58 @@ curl https://api.mycurrency.com/users/3/offers -d '{ "offer": {"previous_offer_i
 ```json
 {
   "data": {
-    "id": "9",
+    "id": "42",
     "type": "offers",
     "attributes": {
-      "offer-receiver-id": 2,
-      "offer-receiver-username": "spiderman",
-      "offer-receiver-avatar-url": "/system/users/avatars/original/missing.png",
-      "offer-sender-id": 3,
-      "offer-sender-username": "Hannibal",
-      "offer-sender-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
-      "previous-offer-id": 8,
-      "proposed-transfers": {
+      "offer-receiver-id": 3,
+      "offer-receiver-username": "Hannibal",
+      "offer-receiver-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
+      "offer-sender-id": 2,
+      "offer-sender-username": "spiderman",
+      "offer-sender-avatar-url": "/system/users/avatars/original/missing.png",
+      "previous-offer-id": 0,
+      "requested-proposed-transactions": {
         "data": [
           {
-            "id": "9",
-            "type": "proposed-transfers",
+            "id": "45",
+            "type": "proposed-issuances",
             "attributes": {
-              "offer-id": 9,
-              "source-currency-holding-id": 2,
-              "source-currency-id": 1,
-              "source-currency-name": "Micro Asteroid bucks",
-              "source-currency-icon-url": "/system/currencies/icons/missing.png",
-              "source-currency-burn-rate": 450,
-              "source-currency-daily-burn-rate": "0.00012614",
-              "source-currency-store-count": 2,
-              "currency-sender-id": 3,
-              "currency-sender-username": "Hannibal",
-              "amount-atomic": 50000000000,
+              "offer-id": 42,
+              "source-currency-id": 75,
+              "source-currency-name": "Saint Patricks Day Money",
+              "source-currency-icon-url": "/system/currencies/icons/000/000/075/original/currency.jpg?1563341979",
+              "source-currency-burn-rate": 1000,
+              "source-currency-daily-burn-rate": "0.000288618",
+              "source-currency-store-count": 0,
+              "currency-issuer-id": 3,
+              "currency-issuer-username": "Hannibal",
+              "amount-atomic": 100000000000,
               "products": {
-                "data": [
-                  {
-                    "id": "51",
-                    "type": "products",
-                    "attributes": {
-                      "sub-category-id": 12,
-                      "sub-category-name": "computer accessories",
-                      "currency-id": 1,
-                      "currency-name": "Micro Asteroid bucks",
-                      "currency-icon-url": "/system/currencies/icons/missing.png",
-                      "days-to-cancellation": null,
-                      "minutes-to-cancellation": null,
-                      "store-id": 28,
-                      "store-name": "Moon Store",
-                      "product-name": "Lunar solar panels",
-                      "product-description": "solar panels designed to be installed on the moon",
-                      "price-cents": 100000,
-                      "active": true,
-                      "continued": true,
-                      "last-activated-at": "2019-07-29T16:56:30.169-07:00",
-                      "created-at": "2019-07-29T16:56:30.169-07:00",
-                      "updated-at": "2019-07-29T16:56:30.169-07:00",
-                      "get-image-url": "/system/products/images/original/missing.png"
-                    }
-                  },
-                  {
-                    "id": "40",
-                    "type": "products",
-                    "attributes": {
-                      "sub-category-id": 15,
-                      "sub-category-name": "audio equipment",
-                      "currency-id": 1,
-                      "currency-name": "Micro Asteroid bucks",
-                      "currency-icon-url": "/system/currencies/icons/missing.png",
-                      "days-to-cancellation": null,
-                      "minutes-to-cancellation": null,
-                      "store-id": 1,
-                      "store-name": "Asteroid Industries",
-                      "product-name": "goliath rocket 2",
-                      "product-description": "second version of rocket for reaching the moon",
-                      "price-cents": 1000000,
-                      "active": true,
-                      "continued": true,
-                      "last-activated-at": "2019-07-26T04:57:32.173-07:00",
-                      "created-at": "2019-07-26T04:57:32.173-07:00",
-                      "updated-at": "2019-07-26T04:57:32.173-07:00",
-                      "get-image-url": "/system/products/images/original/missing.png"
-                    }
-                  },
-                  {
-                    "id": "39",
-                    "type": "products",
-                    "attributes": {
-                      "sub-category-id": 15,
-                      "sub-category-name": "audio equipment",
-                      "currency-id": 1,
-                      "currency-name": "Micro Asteroid bucks",
-                      "currency-icon-url": "/system/currencies/icons/missing.png",
-                      "days-to-cancellation": null,
-                      "minutes-to-cancellation": null,
-                      "store-id": 1,
-                      "store-name": "Asteroid Industries",
-                      "product-name": "goliath rocket",
-                      "product-description": "rocket for reaching the moon",
-                      "price-cents": 1000000,
-                      "active": true,
-                      "continued": true,
-                      "last-activated-at": "2019-07-26T04:51:29.353-07:00",
-                      "created-at": "2019-07-26T04:51:29.353-07:00",
-                      "updated-at": "2019-07-26T04:51:29.353-07:00",
-                      "get-image-url": "/system/products/images/original/missing.png"
-                    }
-                  }
-                ]
+                "data": []
               },
               "active": true,
-              "created-at": "2019-07-21T18:32:30.727-07:00",
-              "updated-at": "2019-07-21T18:32:49.019-07:00"
+              "created-at": "2019-08-03T16:17:13.346-07:00",
+              "updated-at": "2019-08-03T16:17:13.346-07:00"
             }
           }
         ]
       },
-      "proposed-issuances": {
+      "offered-proposed-transactions": {
         "data": [
           {
-            "id": "9",
-            "type": "proposed-issuances",
+            "id": "48",
+            "type": "proposed-transfers",
             "attributes": {
-              "offer-id": 9,
+              "offer-id": 42,
+              "source-currency-holding-id": 54,
               "source-currency-id": 4,
               "source-currency-name": "spiderman pizza dollars",
               "source-currency-icon-url": "/system/currencies/icons/missing.png",
               "source-currency-burn-rate": 420,
               "source-currency-daily-burn-rate": "0.000117548",
               "source-currency-store-count": 3,
-              "currency-issuer-id": 2,
-              "currency-issuer-username": "spiderman",
+              "currency-sender-id": 2,
+              "currency-sender-username": "spiderman",
               "amount-atomic": 50000000000,
               "products": {
                 "data": [
@@ -8388,6 +8363,7 @@ curl https://api.mycurrency.com/users/3/offers -d '{ "offer": {"previous_offer_i
                       "currency-id": 4,
                       "currency-name": "spiderman pizza dollars",
                       "currency-icon-url": "/system/currencies/icons/missing.png",
+                      "issuer-public-currency-holding-id": 54,
                       "days-to-cancellation": null,
                       "minutes-to-cancellation": null,
                       "store-id": 29,
@@ -8406,17 +8382,17 @@ curl https://api.mycurrency.com/users/3/offers -d '{ "offer": {"previous_offer_i
                 ]
               },
               "active": true,
-              "created-at": "2019-07-21T18:32:30.728-07:00",
-              "updated-at": "2019-07-21T18:32:49.020-07:00"
+              "created-at": "2019-08-03T16:17:13.345-07:00",
+              "updated-at": "2019-08-03T16:17:13.345-07:00"
             }
           }
         ]
       },
-      "offer-type": 1,
+      "offer-type": 0,
       "active": true,
       "self-cancellation": false,
-      "created-at": "2019-07-21T18:32:30.701-07:00",
-      "updated-at": "2019-07-21T18:32:49.017-07:00"
+      "created-at": "2019-08-03T16:17:13.293-07:00",
+      "updated-at": "2019-08-03T16:17:13.293-07:00"
     }
   }
 }
@@ -8451,19 +8427,19 @@ Value | Description
 2 | An offer rejection
 3 | An offer acceptance
 
-### PROPOSED TRANSFER ARGUMENTS
+### PROPOSED REQUESTING ATTRIBUTES
 
 Parameter | Type | Required | Description
 --------- | ------- | ------- | -----------
-source_currency_holding_id | integer | yes | The ID of the public currency holding from which the proposed transfer would be sent 
-amount_atomic | integer | yes | The amount of currency that is proposed to be transferred, in atomic units (each whole unit is composed of 10^10 atomic units)
+currency_id | integer | yes | The ID of the currency that is being requested 
+amount_atomic | integer | yes | The amount of currency that is being requested, in atomic units (each whole unit is composed of 10^10 atomic units)
 
-### PROPOSED ISSUANCE ARGUMENTS
+### PROPOSED OFFERING ATTRIBUTES
 
 Parameter | Type | Required | Description
 --------- | ------- | ------- | -----------
-source_currency_id | integer| yes | The ID of the currency that is proposed to be issued
-amount-atomic | integer | yes | The amount of currency that is proposed to be issued, in atomic units (each whole unit is composed of 10^10 atomic units)
+currency_id | integer | yes | The ID of the currency that is being offered 
+amount_atomic | integer | yes | The amount of currency that is being offered, in atomic units (each whole unit is composed of 10^10 atomic units)
 
 ### RESPONSE
 
@@ -8479,6 +8455,8 @@ offer-sender-id | The ID of the user that made the offer
 offer-sender-username | The username of the user that made the offer
 offer-sender-avatar-url | The URL of the avatar of the user that made the offer
 previous-offer-id | The ID of the offer that is being counter-offered. If the first offer of an offer-chain, the value will be 0
+requested-proposed-transactions | All the proposed transactions being requested from the offer receiver
+offered-proposed-transactions | All the proposed transactions being offered by the offer receiver
 offer-type | 0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, and 3 is an offer acceptance
 active | Whether the offer is still active and can be countered or accepted/rejected
 proposed-transfers | The proposed_transfers included in the offer
@@ -8486,6 +8464,20 @@ proposed-issuances | The proposed_issuances included in the offer
 self-cancellation | Whether the offer sender has cancelled the offer by disactivating their user account
 created-at | The time and date when the offer was created
 updated-at | The time and date when the offer was last updated
+
+### Requested Proposed Transactions
+
+Parameter | Description
+--------- | -----------
+proposed-transfers | An array of proposed-transfer entities that are being requested from the offer receiver 
+proposed-issuances | An array of proposed-issuance entities that are being requested from the offer receiver 
+
+### Offered Proposed Transactions
+
+Parameter | Description
+--------- | -----------
+proposed-transfers | An array of proposed-transfer entities that are being offered by the offer receiver 
+proposed-issuances | An array of proposed-issuance entities that are being offered by the offer receiver 
 
 ### Proposed Transfers
 
