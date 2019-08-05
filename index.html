@@ -11553,6 +11553,7 @@ Authentication: the request requires the OAuth access-token associated with the 
               </span><span class="s2">"source-currency-store-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
               </span><span class="s2">"currency-issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
               </span><span class="s2">"currency-issuer-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spiderman"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"currency-sender-public-holding-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">3200000000000</span><span class="p">,</span><span class="w">
               </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000000</span><span class="p">,</span><span class="w">
               </span><span class="s2">"products"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -11910,6 +11911,10 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The username of the user that would issue the proposed issuance</td>
 </tr>
 <tr>
+<td>currency-sender-public-holding-amount-atomic</td>
+<td>The amount of currency in the proposed issuer&#39;s public holding of the currency that would be issued, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
+</tr>
+<tr>
 <td>amount-atomic</td>
 <td>The amount of currency that is proposed to be issued, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
 </tr>
@@ -11989,6 +11994,7 @@ Authentication: the request requires the OAuth access-token associated with the 
                 </span><span class="s2">"source-currency-store-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"currency-issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"currency-issuer-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spiderman"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"currency-sender-public-holding-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">3200000000000</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000000</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"products"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -12267,6 +12273,7 @@ Authentication: the request requires the OAuth access-token associated with the 
                 </span><span class="s2">"source-currency-store-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"currency-issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"currency-issuer-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spiderman"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"currency-sender-public-holding-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">3200000000000</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000000</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"products"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -12337,6 +12344,7 @@ Authentication: the request requires the OAuth access-token associated with the 
                 </span><span class="s2">"source-currency-store-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"currency-issuer-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"currency-issuer-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spiderman"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"currency-sender-public-holding-amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">3200000000000</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"amount-atomic"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000000</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"products"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -12763,6 +12771,10 @@ Authentication: the request requires the OAuth access-token associated with the 
 <tr>
 <td>currency-issuer-username</td>
 <td>The username of the user that would issue the proposed issuance</td>
+</tr>
+<tr>
+<td>currency-sender-public-holding-amount-atomic</td>
+<td>The amount of currency in the proposed issuer&#39;s public holding of the currency that would be issued, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
 </tr>
 <tr>
 <td>amount-atomic</td>
@@ -13286,6 +13298,10 @@ Authentication: the request requires the OAuth access-token associated with the 
 <tr>
 <td>currency-issuer-username</td>
 <td>The username of the user that would issue the proposed issuance</td>
+</tr>
+<tr>
+<td>currency-sender-public-holding-amount-atomic</td>
+<td>The amount of currency in the proposed issuer&#39;s public holding of the currency that would be issued, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
 </tr>
 <tr>
 <td>amount-atomic</td>
