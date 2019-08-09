@@ -4758,7 +4758,7 @@ Authentication: not required
 Parameter | Type | Required | Description
 --------- | ------- | ------- | -----------
 user_id | integer | yes | The ID of the user which owns the currency holdings, provided in URL path
-min_amount | integer | no | The set of currency holdings returned will only include those with balances exceeding min_amount. The default min_amount is zero resulting in currency holdings with a zero balance not being returned.
+min_amount | integer | no | The set of currency holdings returned will only include those with balances exceeding min_amount. By default all currency holdings are returned, including those with a balance of zero
 
 ### RESPONSE
 
