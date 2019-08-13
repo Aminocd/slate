@@ -11330,6 +11330,7 @@ curl 'https://api.mycurrency.com/order_sets/1' -H 'Accept: application/json' \
       "amount-atomic": 100000000000,
       "product-id": 5,
       "product-name": "fishing bait",
+      "product-image-url": "/system/products/images/000/000/005/original/fish_bait.jpg?1535342847",
       "product-quantity": 1,
       "created-at": "2018-10-03T00:39:37.860-07:00",
       "updated-at": "2018-10-03T00:39:37.860-07:00"
@@ -11450,6 +11451,7 @@ curl 'https://api.mycurrency.com/order_sets?ordering_user_id=3' \
         "amount-atomic": 100000000000,
         "product-id": 5,
         "product-name": "fishing bait",
+        "product-image-url": "/system/products/images/000/000/005/original/fish_bait.jpg?1535342847",
         "product-quantity": 1,
         "created-at": "2018-10-03T00:39:37.860-07:00",
         "updated-at": "2018-10-03T00:39:37.860-07:00"
@@ -11552,6 +11554,7 @@ curl -X POST https://api.mycurrency.com/users/3/order_sets \
       "amount-atomic": 100000000000,
       "product-id": 5,
       "product-name": "fishing bait",
+      "product-image-url": "/system/products/images/000/000/005/original/fish_bait.jpg?1535342847",
       "product-quantity": 1,
       "created-at": "2018-10-03T00:39:37.860-07:00",
       "updated-at": "2018-10-03T00:39:37.860-07:00"
@@ -12377,6 +12380,7 @@ curl 'https://api.mycurrency.com/vouchers?holding_user_id=3' \
         "holding-user-username": "Hannibal" 
         "product-id": 5,
         "product-name": "fishing bait",
+        "product-image-url": "/system/products/images/000/000/005/original/fish_bait.jpg?1535342847",
         "product-quantity": 1,
         "store-id": 3,
         "code": "NQG05A1DGHC1ATZ0PLM5B",
@@ -12498,6 +12502,7 @@ curl -X PUT 'https://api.mycurrency.com/users/4/vouchers/1' \
       "holding-user-username": "Hannibal",
       "product-id": 5,
       "product-name": "fishing bait",
+      "product-image-url": "/system/products/images/000/000/005/original/fish_bait.jpg?1535342847",
       "product-quantity": 1,
       "store-id": 3,
       "expiration": "2018-11-02T00:39:37.861-07:00",
