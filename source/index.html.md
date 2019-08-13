@@ -12258,18 +12258,20 @@ curl 'https://api.mycurrency.com/vouchers/3' \
     "type": "vouchers",
     "attributes": {
       "micro-currency-order-id": 3,
-      "holding-user-id": 3
-      "holding-user-username": "Hannibal" 
-      "product-id": 7,
-      "product-name": "fishing rod",
-      "product-image-url": "/system/products/images/000/000/007/original/fish_rod.jpg?1535411381",
+      "holding-user-id": 21,
+      "holding-user-username": "deleted_user",
+      "product-id": 1,
+      "product-name": "mine 1 pound of X-group asteroid",
+      "product-image-url": "/system/products/images/original/missing.png",
+      "product-sub-category-id": 57,
+      "product-sub-category-name": "general labor",
       "product-quantity": 1,
-      "store-id": 3,
-      "code": "ARCW97G8QJBZXZ5F7TC0K",
-      "expiration": "2018-11-02T01:58:03.223-07:00",
+      "store-id": 1,
+      "store-name": "Asteroid Industries",
+      "expiration": "2019-08-22T17:25:56.353-07:00",
       "redeemed": false,
-      "created-at": "2018-10-03T01:58:03.467-07:00",
-      "updated-at": "2018-10-03T01:58:03.467-07:00"
+      "created-at": "2019-07-23T17:25:56.398-07:00",
+      "updated-at": "2019-07-23T17:25:56.398-07:00"
     }
   }
 }
@@ -12296,8 +12298,11 @@ holding-user-username | The username of the user that purchased the voucher
 product-id | The ID of the product for which the voucher is redeemable for
 product-name | The name of the product for which the voucher is redeemable for
 product-image-url | The URL of the image of the product for which the voucher is redeemable for
+product-sub-category-id | The ID of the sub_category that the product for which the voucher is redeemable for belongs to
+product-sub-category-name | The name of the sub_category that the product for which the voucher is redeemable for belongs to
 product-quantity | The quantity of the product for which the voucher is redeemable for
 store-id | The ID of the store at which the product that the voucher can be redeemed for is sold at
+store-name | The name of the store at which the product that the voucher can be redeemed for is sold at
 code | The secret code that the voucher holder must reveal to the store owner in order to redeem their voucher, only shown if the logged-in user is the voucher holder
 expiration | The date at which the voucher expires, which is one month after it is issued to the buyer
 redeemed | Whether the voucher has been redeemed or not
@@ -12307,7 +12312,7 @@ updated-at | The time and date when the voucher was last updated
 ## Get an Order's Voucher
 
 ```shell
-curl 'https://api.mycurrency.com/order_sets/3/voucher' \
+curl 'https://api.mycurrency.com/order_sets/3/associated_voucher' \
   -H 'Accept: application/json' -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
 ```
@@ -12321,18 +12326,20 @@ curl 'https://api.mycurrency.com/order_sets/3/voucher' \
     "type": "vouchers",
     "attributes": {
       "micro-currency-order-id": 3,
-      "holding-user-id": 3
-      "holding-user-username": "Hannibal" 
-      "product-id": 7,
-      "product-name": "fishing rod",
-      "product-image-url": "/system/products/images/000/000/007/original/fish_rod.jpg?1535411381",
+      "holding-user-id": 21,
+      "holding-user-username": "deleted_user",
+      "product-id": 1,
+      "product-name": "mine 1 pound of X-group asteroid",
+      "product-image-url": "/system/products/images/original/missing.png",
+      "product-sub-category-id": 57,
+      "product-sub-category-name": "general labor",
       "product-quantity": 1,
-      "store-id": 3,
-      "code": "ARCW97G8QJBZXZ5F7TC0K",
-      "expiration": "2018-11-02T01:58:03.223-07:00",
+      "store-id": 1,
+      "store-name": "Asteroid Industries",
+      "expiration": "2019-08-22T17:25:56.353-07:00",
       "redeemed": false,
-      "created-at": "2018-10-03T01:58:03.467-07:00",
-      "updated-at": "2018-10-03T01:58:03.467-07:00"
+      "created-at": "2019-07-23T17:25:56.398-07:00",
+      "updated-at": "2019-07-23T17:25:56.398-07:00"
     }
   }
 }
@@ -12342,7 +12349,7 @@ This endpoint retrieves the voucher associated with a particular order. The logg
 
 ### HTTP Request
 
-`GET https://api.mycurrency.com/order_sets/<ORDER-SET-ID>/voucher`
+`GET https://api.mycurrency.com/order_sets/<ORDER-SET-ID>/associated_voucher`
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User that issued the voucher or the user that holds it
@@ -12359,8 +12366,11 @@ holding-user-username | The username of the user that purchased the voucher
 product-id | The ID of the product for which the voucher is redeemable for
 product-name | The name of the product for which the voucher is redeemable for
 product-image-url | The URL of the image of the product for which the voucher is redeemable for
+product-sub-category-id | The ID of the sub_category that the product for which the voucher is redeemable for belongs to
+product-sub-category-name | The name of the sub_category that the product for which the voucher is redeemable for belongs to
 product-quantity | The quantity of the product for which the voucher is redeemable for
 store-id | The ID of the store at which the product that the voucher can be redeemed for is sold at
+store-name | The name of the store at which the product that the voucher can be redeemed for is sold at
 code | The secret code that the voucher holder must reveal to the store owner in order to redeem their voucher, only shown if the logged-in user is the voucher holder
 expiration | The date at which the voucher expires, which is one month after it is issued to the buyer
 redeemed | Whether the voucher has been redeemed or not
@@ -12381,60 +12391,201 @@ curl 'https://api.mycurrency.com/vouchers?holding_user_id=3' \
 {
   "data": [
     {
-      "id": "1",
+      "id": "12",
       "type": "vouchers",
       "attributes": {
-        "micro-currency-order-id": 1,
-        "holding-user-id": 3
-        "holding-user-username": "Hannibal" 
-        "product-id": 5,
-        "product-name": "fishing bait",
-        "product-image-url": "/system/products/images/000/000/005/original/fish_bait.jpg?1535342847",
+        "micro-currency-order-id": 12,
+        "holding-user-id": 3,
+        "holding-user-username": "Hannibal",
+        "product-id": 52,
+        "product-name": "spidermask",
+        "product-image-url": "/system/products/images/original/missing.png",
+        "product-sub-category-id": 20,
+        "product-sub-category-name": "kid's clothing",
         "product-quantity": 1,
-        "store-id": 3,
-        "code": "NQG05A1DGHC1ATZ0PLM5B",
-        "expiration": "2018-11-02T00:39:37.861-07:00",
+        "store-id": 29,
+        "store-name": "Spiderman store",
+        "code": "J575ECXNWAPDN8X8U0WBI",
+        "expiration": "2019-09-12T04:43:46.827-07:00",
         "redeemed": false,
-        "created-at": "2018-10-03T00:39:37.942-07:00",
-        "updated-at": "2018-10-03T00:39:37.942-07:00"
+        "created-at": "2019-08-13T04:43:46.847-07:00",
+        "updated-at": "2019-08-13T04:43:46.847-07:00"
       }
     },
     {
-      "id": "2",
+      "id": "11",
       "type": "vouchers",
       "attributes": {
-        "micro-currency-order-id": 2,
-        "holding-user-id": 3
-        "holding-user-username": "Hannibal" 
-        "product-id": 6,
-        "product-name": "tackle",
+        "micro-currency-order-id": 11,
+        "holding-user-id": 3,
+        "holding-user-username": "Hannibal",
+        "product-id": 52,
+        "product-name": "spidermask",
+        "product-image-url": "/system/products/images/original/missing.png",
+        "product-sub-category-id": 20,
+        "product-sub-category-name": "kid's clothing",
         "product-quantity": 1,
-        "product-image-url": "/system/products/images/000/000/006/original/tackle.jpg?1535101001",
-        "store-id": 3,
-        "code": "QT3W19RS0RMX07CCG5XWG",
-        "expiration": "2018-11-02T00:43:31.756-07:00",
+        "store-id": 29,
+        "store-name": "Spiderman store",
+        "code": "0X4ULLIO08A28MXMLJLSX",
+        "expiration": "2019-09-12T04:43:16.819-07:00",
         "redeemed": false,
-        "created-at": "2018-10-03T00:43:31.834-07:00",
-        "updated-at": "2018-10-03T00:43:31.834-07:00"
+        "created-at": "2019-08-13T04:43:16.873-07:00",
+        "updated-at": "2019-08-13T04:43:16.873-07:00"
       }
     },
     {
-      "id": "3",
+      "id": "10",
       "type": "vouchers",
       "attributes": {
-        "micro-currency-order-id": 3,
-        "holding-user-id": 3
-        "holding-user-username": "Hannibal" 
-        "product-id": 7,
-        "product-name": "fishing rod",
-        "product-image-url": "/system/products/images/000/000/007/original/fish_rod.jpg?1535411381",
+        "micro-currency-order-id": 10,
+        "holding-user-id": 3,
+        "holding-user-username": "Hannibal",
+        "product-id": 52,
+        "product-name": "spidermask",
+        "product-image-url": "/system/products/images/original/missing.png",
+        "product-sub-category-id": 20,
+        "product-sub-category-name": "kid's clothing",
         "product-quantity": 1,
-        "store-id": 3,
-        "code": "ARCW97G8QJBZXZ5F7TC0K",
-        "expiration": "2018-11-02T01:58:03.223-07:00",
+        "store-id": 29,
+        "store-name": "Spiderman store",
+        "code": "OYY48JWD47XSS1AVCS7WJ",
+        "expiration": "2019-09-12T03:53:08.267-07:00",
         "redeemed": false,
-        "created-at": "2018-10-03T01:58:03.467-07:00",
-        "updated-at": "2018-10-03T01:58:03.467-07:00"
+        "created-at": "2019-08-13T03:53:08.727-07:00",
+        "updated-at": "2019-08-13T03:53:08.727-07:00"
+      }
+    },
+    {
+      "id": "9",
+      "type": "vouchers",
+      "attributes": {
+        "micro-currency-order-id": 9,
+        "holding-user-id": 3,
+        "holding-user-username": "Hannibal",
+        "product-id": 52,
+        "product-name": "spidermask",
+        "product-image-url": "/system/products/images/original/missing.png",
+        "product-sub-category-id": 20,
+        "product-sub-category-name": "kid's clothing",
+        "product-quantity": 1,
+        "store-id": 29,
+        "store-name": "Spiderman store",
+        "code": "COX1CTO6Q4R3EOJICBRPU",
+        "expiration": "2019-09-12T03:51:28.943-07:00",
+        "redeemed": false,
+        "created-at": "2019-08-13T03:51:28.962-07:00",
+        "updated-at": "2019-08-13T03:51:28.962-07:00"
+      }
+    },
+    {
+      "id": "8",
+      "type": "vouchers",
+      "attributes": {
+        "micro-currency-order-id": 8,
+        "holding-user-id": 3,
+        "holding-user-username": "Hannibal",
+        "product-id": 52,
+        "product-name": "spidermask",
+        "product-image-url": "/system/products/images/original/missing.png",
+        "product-sub-category-id": 20,
+        "product-sub-category-name": "kid's clothing",
+        "product-quantity": 1,
+        "store-id": 29,
+        "store-name": "Spiderman store",
+        "code": "83LMETZC9EH4JW5H2X84B",
+        "expiration": "2019-09-12T03:51:19.317-07:00",
+        "redeemed": false,
+        "created-at": "2019-08-13T03:51:19.403-07:00",
+        "updated-at": "2019-08-13T03:51:19.403-07:00"
+      }
+    },
+    {
+      "id": "7",
+      "type": "vouchers",
+      "attributes": {
+        "micro-currency-order-id": 7,
+        "holding-user-id": 3,
+        "holding-user-username": "Hannibal",
+        "product-id": 52,
+        "product-name": "spidermask",
+        "product-image-url": "/system/products/images/original/missing.png",
+        "product-sub-category-id": 20,
+        "product-sub-category-name": "kid's clothing",
+        "product-quantity": 1,
+        "store-id": 29,
+        "store-name": "Spiderman store",
+        "code": "D1BTR6J6U2BYCIOXTDLI0",
+        "expiration": "2019-09-12T03:48:39.248-07:00",
+        "redeemed": false,
+        "created-at": "2019-08-13T03:48:39.296-07:00",
+        "updated-at": "2019-08-13T03:48:39.296-07:00"
+      }
+    },
+    {
+      "id": "6",
+      "type": "vouchers",
+      "attributes": {
+        "micro-currency-order-id": 6,
+        "holding-user-id": 3,
+        "holding-user-username": "Hannibal",
+        "product-id": 52,
+        "product-name": "spidermask",
+        "product-image-url": "/system/products/images/original/missing.png",
+        "product-sub-category-id": 20,
+        "product-sub-category-name": "kid's clothing",
+        "product-quantity": 1,
+        "store-id": 29,
+        "store-name": "Spiderman store",
+        "code": "W7DAAYDDUZXEH8I6C3R97",
+        "expiration": "2019-09-12T03:45:16.287-07:00",
+        "redeemed": false,
+        "created-at": "2019-08-13T03:45:16.390-07:00",
+        "updated-at": "2019-08-13T03:45:16.390-07:00"
+      }
+    },
+    {
+      "id": "5",
+      "type": "vouchers",
+      "attributes": {
+        "micro-currency-order-id": 5,
+        "holding-user-id": 3,
+        "holding-user-username": "Hannibal",
+        "product-id": 52,
+        "product-name": "spidermask",
+        "product-image-url": "/system/products/images/original/missing.png",
+        "product-sub-category-id": 20,
+        "product-sub-category-name": "kid's clothing",
+        "product-quantity": 1,
+        "store-id": 29,
+        "store-name": "Spiderman store",
+        "code": "6LO8OA821UWY8RX1XPN10",
+        "expiration": "2019-09-12T03:27:55.950-07:00",
+        "redeemed": false,
+        "created-at": "2019-08-13T03:27:56.075-07:00",
+        "updated-at": "2019-08-13T03:27:56.075-07:00"
+      }
+    },
+    {
+      "id": "4",
+      "type": "vouchers",
+      "attributes": {
+        "micro-currency-order-id": 4,
+        "holding-user-id": 3,
+        "holding-user-username": "Hannibal",
+        "product-id": 52,
+        "product-name": "spidermask",
+        "product-image-url": "/system/products/images/original/missing.png",
+        "product-sub-category-id": 20,
+        "product-sub-category-name": "kid's clothing",
+        "product-quantity": 1,
+        "store-id": 29,
+        "store-name": "Spiderman store",
+        "code": "EQ2O4NVCOJ91KDKW0EZQW",
+        "expiration": "2019-09-12T02:21:58.436-07:00",
+        "redeemed": false,
+        "created-at": "2019-08-13T02:21:58.501-07:00",
+        "updated-at": "2019-08-13T02:21:58.501-07:00"
       }
     }
   ],
@@ -12442,14 +12593,14 @@ curl 'https://api.mycurrency.com/vouchers?holding_user_id=3' \
     "self": "https://api.mycurrency.com/vouchers?holding_user_id=3",
     "first": "https://api.mycurrency.com/vouchers?holding_user_id=3&page=1&per_page=25",
     "prev": null,
-    "next": "https://api.mycurrency.com/vouchers?holding_user_id=3&page=2&per_page=25",
-    "last": "https://api.mycurrency.com/vouchers?holding_user_id=3&page=0&per_page=25"
+    "next": null,
+    "last": "https://api.mycurrency.com/vouchers?holding_user_id=3&page=1&per_page=25"
   },
   "meta": {
     "pagination": {
       "per-page": null,
       "total-pages": "1",
-      "total-count": "3"
+      "total-count": "9"
     }
   }
 }
@@ -12459,7 +12610,7 @@ This endpoint retrieves a user's vouchers.
 
 ### HTTP Request
 
-`GET https://api.mycurrency.com/vouchers?issueing_user_id={}&store_id={}`
+`GET https://api.mycurrency.com/vouchers?issueing_user_id=3&store_id=29`
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
@@ -12484,8 +12635,11 @@ holding-user-username | The username of the user that purchased the voucher
 product-id | The ID of the product for which the voucher is redeemable for
 product-name | The name of the product for which the voucher is redeemable for
 product-image-url | The URL of the image of the product for which the voucher is redeemable for
+product-sub-category-id | The ID of the sub_category that the product for which the voucher is redeemable for belongs to
+product-sub-category-name | The name of the sub_category that the product for which the voucher is redeemable for belongs to
 product-quantity | The quantity of the product for which the voucher is redeemable for
 store-id | The ID of the store at which the product that the voucher can be redeemed for is sold at
+store-name | The name of the store at which the product that the voucher can be redeemed for is sold at
 code | The secret code that the voucher holder must reveal to the store owner in order to redeem their voucher, only shown if the logged-in user is the voucher holder
 expiration | The date at which the voucher expires, which is one month after it is issued to the buyer
 redeemed | Whether the voucher has been redeemed or not
@@ -12495,7 +12649,7 @@ updated-at | The time and date when the voucher was last updated
 ## Update Voucher
 
 ```shell
-curl -X PUT 'https://api.mycurrency.com/users/4/vouchers/1' \
+curl -X PUT 'https://api.mycurrency.com/users/3/vouchers/1' \
   -d '{"voucher": { "redeemed": true, "code": "NQG05A1DGHC1ATZ0PLM5B" } }' \
   -H 'Accept: application/json' -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
@@ -12506,21 +12660,24 @@ curl -X PUT 'https://api.mycurrency.com/users/4/vouchers/1' \
 ```json
 {
   "data": {
-    "id": "1",
+    "id": "3",
     "type": "vouchers",
     "attributes": {
-      "micro-currency-order-id": 1,
-      "holding-user-id": 3,
-      "holding-user-username": "Hannibal",
-      "product-id": 5,
-      "product-name": "fishing bait",
-      "product-image-url": "/system/products/images/000/000/005/original/fish_bait.jpg?1535342847",
+      "micro-currency-order-id": 3,
+      "holding-user-id": 21,
+      "holding-user-username": "deleted_user",
+      "product-id": 1,
+      "product-name": "mine 1 pound of X-group asteroid",
+      "product-image-url": "/system/products/images/original/missing.png",
+      "product-sub-category-id": 57,
+      "product-sub-category-name": "general labor",
       "product-quantity": 1,
-      "store-id": 3,
-      "expiration": "2018-11-02T00:39:37.861-07:00",
+      "store-id": 1,
+      "store-name": "Asteroid Industries",
+      "expiration": "2019-08-22T17:25:56.353-07:00",
       "redeemed": true,
-      "created-at": "2018-10-03T00:39:37.942-07:00",
-      "updated-at": "2018-10-20T01:45:15.259-07:00"
+      "created-at": "2019-07-23T17:25:56.398-07:00",
+      "updated-at": "2019-07-23T17:25:56.398-07:00"
     }
   }
 }
@@ -12558,8 +12715,11 @@ holding-user-username | The username of the user that purchased the voucher
 product-id | The ID of the product for which the voucher is redeemable for
 product-name | The name of the product for which the voucher is redeemable for
 product-image-url | The URL of the image of the product for which the voucher is redeemable for
+product-sub-category-id | The ID of the sub_category that the product for which the voucher is redeemable for belongs to
+product-sub-category-name | The name of the sub_category that the product for which the voucher is redeemable for belongs to
 product-quantity | The quantity of the product for which the voucher is redeemable for
 store-id | The ID of the store at which the product that the voucher can be redeemed for is sold at
+store-name | The name of the store at which the product that the voucher can be redeemed for is sold at
 code | The secret code that the voucher holder must reveal to the store owner in order to redeem their voucher, only shown if the logged-in user is the voucher holder
 expiration | The date at which the voucher expires, which is one month after it is issued to the buyer
 redeemed | Whether the voucher has been redeemed or not
