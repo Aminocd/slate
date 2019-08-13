@@ -11370,6 +11370,7 @@ day-counter | The day counter of the currency holding when it was debited by the
 amount-atomic | The amount of currency spent, in atomic units (each whole unit is composed of 10^10 atomic units)
 product-id | The ID of the product that was ordered
 product-name | The name of the product that was ordered
+product-image-url | The URL of the image of the product that was ordered 
 product-quantity | The quantity of the product that was ordered
 created-at | The time and date when the micro currency order was created
 updated-at | The time and date when the micro currency order was last updated
@@ -11405,6 +11406,7 @@ curl 'https://api.mycurrency.com/order_sets?ordering_user_id=3' \
         "amount-atomic": 100000000000,
         "product-id": 7,
         "product-name": "fishing rod",
+        "product-image-url": "/system/products/images/000/000/007/original/fish_rod.jpg?1535411381",
         "product-quantity": 1,
         "created-at": "2018-10-03T01:58:03.223-07:00",
         "updated-at": "2018-10-03T01:58:03.223-07:00"
@@ -11428,6 +11430,7 @@ curl 'https://api.mycurrency.com/order_sets?ordering_user_id=3' \
         "amount-atomic": 100000000000,
         "product-id": 6,
         "product-name": "tackle",
+        "product-image-url": "/system/products/images/000/000/006/original/tackle.jpg?1535101001",
         "product-quantity": 1,
         "created-at": "2018-10-03T00:43:31.756-07:00",
         "updated-at": "2018-10-03T00:43:31.756-07:00"
@@ -11519,6 +11522,7 @@ day-counter | The day counter of the currency holding when it was debited by the
 amount-atomic | The amount of currency spent, in atomic units (each whole unit is composed of 10^10 atomic units)
 product-id | The ID of the product that was ordered
 product-name | The name of the product that was ordered
+product-image-url | The URL of the image of the product that was ordered 
 product-quantity | The quantity of the product that was ordered
 created-at | The time and date when the micro currency order was created
 updated-at | The time and date when the micro currency order was last updated
@@ -11606,6 +11610,7 @@ day-counter | The day counter of the currency holding when it was debited by the
 amount-atomic | The amount of currency spent, in atomic units (each whole unit is composed of 10^10 atomic units)
 product-id | The ID of the product that was ordered
 product-name | The name of the product that was ordered
+product-image-url | The URL of the image of the product that was ordered 
 product-quantity | The quantity of the product that was ordered
 created-at | The time and date when the micro currency order was created
 updated-at | The time and date when the micro currency order was last updated
@@ -12257,6 +12262,7 @@ curl 'https://api.mycurrency.com/vouchers/3' \
       "holding-user-username": "Hannibal" 
       "product-id": 7,
       "product-name": "fishing rod",
+      "product-image-url": "/system/products/images/000/000/007/original/fish_rod.jpg?1535411381",
       "product-quantity": 1,
       "store-id": 3,
       "code": "ARCW97G8QJBZXZ5F7TC0K",
@@ -12289,6 +12295,7 @@ holding-user-id | The ID of the user that purchased the voucher
 holding-user-username | The username of the user that purchased the voucher
 product-id | The ID of the product for which the voucher is redeemable for
 product-name | The name of the product for which the voucher is redeemable for
+product-image-url | The URL of the image of the product for which the voucher is redeemable for
 product-quantity | The quantity of the product for which the voucher is redeemable for
 store-id | The ID of the store at which the product that the voucher can be redeemed for is sold at
 code | The secret code that the voucher holder must reveal to the store owner in order to redeem their voucher, only shown if the logged-in user is the voucher holder
@@ -12318,6 +12325,7 @@ curl 'https://api.mycurrency.com/order_sets/3/voucher' \
       "holding-user-username": "Hannibal" 
       "product-id": 7,
       "product-name": "fishing rod",
+      "product-image-url": "/system/products/images/000/000/007/original/fish_rod.jpg?1535411381",
       "product-quantity": 1,
       "store-id": 3,
       "code": "ARCW97G8QJBZXZ5F7TC0K",
@@ -12350,6 +12358,7 @@ holding-user-id | The ID of the user that purchased the voucher
 holding-user-username | The username of the user that purchased the voucher
 product-id | The ID of the product for which the voucher is redeemable for
 product-name | The name of the product for which the voucher is redeemable for
+product-image-url | The URL of the image of the product for which the voucher is redeemable for
 product-quantity | The quantity of the product for which the voucher is redeemable for
 store-id | The ID of the store at which the product that the voucher can be redeemed for is sold at
 code | The secret code that the voucher holder must reveal to the store owner in order to redeem their voucher, only shown if the logged-in user is the voucher holder
@@ -12400,6 +12409,7 @@ curl 'https://api.mycurrency.com/vouchers?holding_user_id=3' \
         "product-id": 6,
         "product-name": "tackle",
         "product-quantity": 1,
+        "product-image-url": "/system/products/images/000/000/006/original/tackle.jpg?1535101001",
         "store-id": 3,
         "code": "QT3W19RS0RMX07CCG5XWG",
         "expiration": "2018-11-02T00:43:31.756-07:00",
@@ -12417,6 +12427,7 @@ curl 'https://api.mycurrency.com/vouchers?holding_user_id=3' \
         "holding-user-username": "Hannibal" 
         "product-id": 7,
         "product-name": "fishing rod",
+        "product-image-url": "/system/products/images/000/000/007/original/fish_rod.jpg?1535411381",
         "product-quantity": 1,
         "store-id": 3,
         "code": "ARCW97G8QJBZXZ5F7TC0K",
@@ -12472,6 +12483,7 @@ holding-user-id | The ID of the user that purchased the voucher
 holding-user-username | The username of the user that purchased the voucher
 product-id | The ID of the product for which the voucher is redeemable for
 product-name | The name of the product for which the voucher is redeemable for
+product-image-url | The URL of the image of the product for which the voucher is redeemable for
 product-quantity | The quantity of the product for which the voucher is redeemable for
 store-id | The ID of the store at which the product that the voucher can be redeemed for is sold at
 code | The secret code that the voucher holder must reveal to the store owner in order to redeem their voucher, only shown if the logged-in user is the voucher holder
@@ -12545,6 +12557,7 @@ holding-user-id | The ID of the user that purchased the voucher
 holding-user-username | The username of the user that purchased the voucher
 product-id | The ID of the product for which the voucher is redeemable for
 product-name | The name of the product for which the voucher is redeemable for
+product-image-url | The URL of the image of the product for which the voucher is redeemable for
 product-quantity | The quantity of the product for which the voucher is redeemable for
 store-id | The ID of the store at which the product that the voucher can be redeemed for is sold at
 code | The secret code that the voucher holder must reveal to the store owner in order to redeem their voucher, only shown if the logged-in user is the voucher holder
