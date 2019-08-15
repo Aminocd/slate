@@ -11332,6 +11332,8 @@ curl 'https://api.mycurrency.com/order_sets/1' -H 'Accept: application/json' \
       "product-name": "fishing bait",
       "product-image-url": "/system/products/images/000/000/005/original/fish_bait.jpg?1535342847",
       "product-quantity": 1,
+      "product-sub-category-id": 28,
+      "product-sub-category-id": "outdoor sporting goods",
       "created-at": "2018-10-03T00:39:37.860-07:00",
       "updated-at": "2018-10-03T00:39:37.860-07:00"
     }
@@ -11372,6 +11374,8 @@ product-id | The ID of the product that was ordered
 product-name | The name of the product that was ordered
 product-image-url | The URL of the image of the product that was ordered 
 product-quantity | The quantity of the product that was ordered
+product-sub-category-id | The ID of the sub_category of the product that was ordered
+product-sub-category-name | The name of the sub_category of the product that was ordered
 created-at | The time and date when the micro currency order was created
 updated-at | The time and date when the micro currency order was last updated
 
@@ -11408,6 +11412,8 @@ curl 'https://api.mycurrency.com/order_sets?ordering_user_id=3' \
         "product-name": "fishing rod",
         "product-image-url": "/system/products/images/000/000/007/original/fish_rod.jpg?1535411381",
         "product-quantity": 1,
+        "product-sub-category-id": 28,
+        "product-sub-category-id": "outdoor sporting goods",
         "created-at": "2018-10-03T01:58:03.223-07:00",
         "updated-at": "2018-10-03T01:58:03.223-07:00"
       }
@@ -11432,6 +11438,8 @@ curl 'https://api.mycurrency.com/order_sets?ordering_user_id=3' \
         "product-name": "tackle",
         "product-image-url": "/system/products/images/000/000/006/original/tackle.jpg?1535101001",
         "product-quantity": 1,
+        "product-sub-category-id": 28,
+        "product-sub-category-id": "outdoor sporting goods",
         "created-at": "2018-10-03T00:43:31.756-07:00",
         "updated-at": "2018-10-03T00:43:31.756-07:00"
       }
@@ -11456,6 +11464,8 @@ curl 'https://api.mycurrency.com/order_sets?ordering_user_id=3' \
         "product-name": "fishing bait",
         "product-image-url": "/system/products/images/000/000/005/original/fish_bait.jpg?1535342847",
         "product-quantity": 1,
+        "product-sub-category-id": 28,
+        "product-sub-category-id": "outdoor sporting goods",
         "created-at": "2018-10-03T00:39:37.860-07:00",
         "updated-at": "2018-10-03T00:39:37.860-07:00"
       }
@@ -11524,6 +11534,8 @@ product-id | The ID of the product that was ordered
 product-name | The name of the product that was ordered
 product-image-url | The URL of the image of the product that was ordered 
 product-quantity | The quantity of the product that was ordered
+product-sub-category-id | The ID of the sub_category of the product that was ordered
+product-sub-category-name | The name of the sub_category of the product that was ordered
 created-at | The time and date when the micro currency order was created
 updated-at | The time and date when the micro currency order was last updated
 
@@ -11560,6 +11572,8 @@ curl -X POST https://api.mycurrency.com/users/3/order_sets \
       "product-name": "fishing bait",
       "product-image-url": "/system/products/images/000/000/005/original/fish_bait.jpg?1535342847",
       "product-quantity": 1,
+      "product-sub-category-id": 28,
+      "product-sub-category-id": "outdoor sporting goods",
       "created-at": "2018-10-03T00:39:37.860-07:00",
       "updated-at": "2018-10-03T00:39:37.860-07:00"
     }
@@ -11612,6 +11626,8 @@ product-id | The ID of the product that was ordered
 product-name | The name of the product that was ordered
 product-image-url | The URL of the image of the product that was ordered 
 product-quantity | The quantity of the product that was ordered
+product-sub-category-id | The ID of the sub_category of the product that was ordered
+product-sub-category-name | The name of the sub_category of the product that was ordered
 created-at | The time and date when the micro currency order was created
 updated-at | The time and date when the micro currency order was last updated
 
