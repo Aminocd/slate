@@ -4329,6 +4329,10 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_combined_currenc
         "issuer-user-name": "Hannibal",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
         "issuer-public-currency-holding-id": 2,
+        "public-currency-holding-id": 2,
+        "public-currency-holding-amount-atomic": 3599957849922,
+        "private-currency-holding-id": 1,
+        "private-currency-holding-amount-atomic": 6645827142424,
         "amount-atomic": 10245784992346
       }
     },
@@ -4347,6 +4351,10 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_combined_currenc
         "issuer-user-name": "Hannibal",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
         "issuer-public-currency-holding-id": 50,
+        "public-currency-holding-id": 50,
+        "public-currency-holding-amount-atomic": 2400000000000,
+        "private-currency-holding-id": 107,
+        "private-currency-holding-amount-atomic": 6600000000000,
         "amount-atomic": 9000000000000
       }
     },
@@ -4365,6 +4373,10 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_combined_currenc
         "issuer-user-name": "Hannibal",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
         "issuer-public-currency-holding-id": 53,
+        "public-currency-holding-id": 53,
+        "public-currency-holding-amount-atomic": 3000000000000,
+        "private-currency-holding-id": 134,
+        "private-currency-holding-amount-atomic": 4000000000000,
         "amount-atomic": 7000000000000
       }
     },
@@ -4382,7 +4394,33 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_combined_currenc
         "issuer-user-id": 3,
         "issuer-user-name": "Hannibal",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
-        "issuer-public-currency-holding-id": null,
+        "issuer-public-currency-holding-id": 122,
+        "public-currency-holding-id": 122,
+        "public-currency-holding-amount-atomic": 0,
+        "private-currency-holding-id": 143,
+        "private-currency-holding-amount-atomic": 10000000000000,
+        "amount-atomic": 10000000000000
+      }
+    },
+    {
+      "id": "86",
+      "type": "combined-currency-holdings",
+      "attributes": {
+        "currency-id": 86,
+        "currency-name": "Hastings-Sunrise dollars",
+        "currency-icon-url": "/system/currencies/icons/000/000/086/original/currency.jpg?1565312742",
+        "currency-burn-rate": 300,
+        "currency-daily-burn-rate": "0.000083447",
+        "store-count": 0,
+        "is-issuer-active": true,
+        "issuer-user-id": 3,
+        "issuer-user-name": "Hannibal",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
+        "issuer-public-currency-holding-id": 128,
+        "public-currency-holding-id": 128,
+        "public-currency-holding-amount-atomic": 0,
+        "private-currency-holding-id": 169,
+        "private-currency-holding-amount-atomic": 10000000000000,
         "amount-atomic": 10000000000000
       }
     }
@@ -4398,11 +4436,11 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_combined_currenc
     "pagination": {
       "per-page": null,
       "total-pages": "1",
-      "total-count": "4"
+      "total-count": "5"
     },
     "user-data": {
       "number-of-reviews": 1,
-      "currency-count": 4
+      "currency-count": 5
     }
   }
 }
@@ -4438,12 +4476,16 @@ currency-icon-url | The URL at which the icon picture of the currency that the c
 currency-burn-rate | The annual rate at which the currency contained within the currency holding burns, by basis point (100 = 1%) 
 currency-daily-burn-rate | The daily rate at which the currency contained within the currency holding burns, by fraction of 1 (0.01 = 1%) 
 store-count | The number of stores associated with the currency
-amount-atomic | The amount of currency held in both the private and public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
 is-issuer-active | Whether the issuer of the currency is active
 issuer-user-id | The ID of the user that issues the currency
 issuer-user-name | The username of the user that issues the currency
 issuer-user-avatar-url | The URL of the avatar of the user that issues the currency
 issuer-public-currency-holding-id | The user ID of the public currency holding of the issuer of the currency in the holding pair
+public-currency-holding-id | The ID of the user's public currency holding of the specified currency
+public-currency-holding-amount-atomic | The amount of currency held in the public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
+private-currency-holding-id | The ID of the user's private currency holding of the specified currency
+private-currency-holding-amount-atomic | The amount of currency held in the private holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
+amount-atomic | The amount of currency held in both the private and public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
 
 ### USER INFO
 
@@ -4480,6 +4522,10 @@ curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_combined_c
         "issuer-user-name": "ScipioAfricanus",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "issuer-public-currency-holding-id": 42,
+        "public-currency-holding-id": 15,
+        "public-currency-holding-amount-atomic": 0,
+        "private-currency-holding-id": 3,
+        "private-currency-holding-amount-atomic": 10009994565314,
         "amount-atomic": 10009994565314
       }
     },
@@ -4497,7 +4543,11 @@ curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_combined_c
         "issuer-user-id": 4,
         "issuer-user-name": "ScipioAfricanus",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
-        "issuer-public-currency-holding-id": null,
+        "issuer-public-currency-holding-id": 68,
+        "public-currency-holding-id": 4,
+        "public-currency-holding-amount-atomic": 5997675720243,
+        "private-currency-holding-id": 6,
+        "private-currency-holding-amount-atomic": 4197675720243,
         "amount-atomic": 10195351440486
       }
     },
@@ -4516,7 +4566,11 @@ curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_combined_c
         "issuer-user-name": "spiderman",
         "issuer-user-avatar-url": "/system/users/avatars/original/missing.png",
         "issuer-public-currency-holding-id": 54,
-        "amount-atomic": 4198236987252
+        "public-currency-holding-id": 6,
+        "public-currency-holding-amount-atomic": 1899118493626,
+        "private-currency-holding-id": 9,
+        "private-currency-holding-amount-atomic": 2119118493626,
+        "amount-atomic": 4018236987252
       }
     },
     {
@@ -4533,7 +4587,11 @@ curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_combined_c
         "issuer-user-id": 4,
         "issuer-user-name": "ScipioAfricanus",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
-        "issuer-public-currency-holding-id": null,
+        "issuer-public-currency-holding-id": 69,
+        "public-currency-holding-id": null,
+        "public-currency-holding-amount-atomic": null,
+        "private-currency-holding-id": 13,
+        "private-currency-holding-amount-atomic": 5098738679556,
         "amount-atomic": 5098738679556
       }
     },
@@ -4551,27 +4609,141 @@ curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_combined_c
         "issuer-user-id": 4,
         "issuer-user-name": "ScipioAfricanus",
         "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
-        "issuer-public-currency-holding-id": null,
+        "issuer-public-currency-holding-id": 70,
+        "public-currency-holding-id": null,
+        "public-currency-holding-amount-atomic": null,
+        "private-currency-holding-id": 12,
+        "private-currency-holding-amount-atomic": 13995965387034,
         "amount-atomic": 13995965387034
+      }
+    },
+    {
+      "id": "8",
+      "type": "combined-currency-holdings",
+      "attributes": {
+        "currency-id": 8,
+        "currency-name": "Alex Token",
+        "currency-icon-url": "/system/currencies/icons/missing.png",
+        "currency-burn-rate": 350,
+        "currency-daily-burn-rate": "0.000097604",
+        "store-count": 0,
+        "is-issuer-active": true,
+        "issuer-user-id": 9,
+        "issuer-user-name": "alex",
+        "issuer-user-avatar-url": "/system/users/avatars/original/missing.png",
+        "issuer-public-currency-holding-id": 72,
+        "public-currency-holding-id": 52,
+        "public-currency-holding-amount-atomic": 400000000000,
+        "private-currency-holding-id": 94,
+        "private-currency-holding-amount-atomic": 2600000000000,
+        "amount-atomic": 3000000000000
+      }
+    },
+    {
+      "id": "9",
+      "type": "combined-currency-holdings",
+      "attributes": {
+        "currency-id": 9,
+        "currency-name": "Alabama steak coins",
+        "currency-icon-url": "/system/currencies/icons/missing.png",
+        "currency-burn-rate": 550,
+        "currency-daily-burn-rate": "0.000154976",
+        "store-count": 1,
+        "is-issuer-active": false,
+        "issuer-user-id": 4,
+        "issuer-user-name": "ScipioAfricanus",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "issuer-public-currency-holding-id": 11,
+        "public-currency-holding-id": null,
+        "public-currency-holding-amount-atomic": null,
+        "private-currency-holding-id": 106,
+        "private-currency-holding-amount-atomic": 1000000000000,
+        "amount-atomic": 1000000000000
+      }
+    },
+    {
+      "id": "10",
+      "type": "combined-currency-holdings",
+      "attributes": {
+        "currency-id": 10,
+        "currency-name": "Turbo points",
+        "currency-icon-url": "/system/currencies/icons/missing.png",
+        "currency-burn-rate": 600,
+        "currency-daily-burn-rate": "0.000169508",
+        "store-count": 1,
+        "is-issuer-active": false,
+        "issuer-user-id": 4,
+        "issuer-user-name": "ScipioAfricanus",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "issuer-public-currency-holding-id": 12,
+        "public-currency-holding-id": 14,
+        "public-currency-holding-amount-atomic": 0,
+        "private-currency-holding-id": 23,
+        "private-currency-holding-amount-atomic": 5600000000000,
+        "amount-atomic": 5600000000000
+      }
+    },
+    {
+      "id": "21",
+      "type": "combined-currency-holdings",
+      "attributes": {
+        "currency-id": 21,
+        "currency-name": "new",
+        "currency-icon-url": "/system/currencies/icons/000/000/021/original/currency.jpg?1561624253",
+        "currency-burn-rate": 500,
+        "currency-daily-burn-rate": "0.00014052",
+        "store-count": 1,
+        "is-issuer-active": true,
+        "issuer-user-id": 5,
+        "issuer-user-name": "Kostya",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/avatar.jpg?1561060914",
+        "issuer-public-currency-holding-id": 19,
+        "public-currency-holding-id": null,
+        "public-currency-holding-amount-atomic": null,
+        "private-currency-holding-id": 97,
+        "private-currency-holding-amount-atomic": 0,
+        "amount-atomic": 0
+      }
+    },
+    {
+      "id": "57",
+      "type": "combined-currency-holdings",
+      "attributes": {
+        "currency-id": 57,
+        "currency-name": "Rails Programming Dollars",
+        "currency-icon-url": "/system/currencies/icons/000/000/057/original/currency.jpg?1562376330",
+        "currency-burn-rate": 500,
+        "currency-daily-burn-rate": "0.00014052",
+        "store-count": 0,
+        "is-issuer-active": false,
+        "issuer-user-id": 4,
+        "issuer-user-name": "ScipioAfricanus",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "issuer-public-currency-holding-id": 107,
+        "public-currency-holding-id": null,
+        "public-currency-holding-amount-atomic": null,
+        "private-currency-holding-id": 90,
+        "private-currency-holding-amount-atomic": 3000000000000,
+        "amount-atomic": 3000000000000
       }
     }
   ],
   "links": {
-    "self": "https://api.mycurrency.com/users/3/authorized_externally_issued_combined_currency_holdings?per_page=5",
-    "first": "https://api.mycurrency.com/users/3/authorized_externally_issued_combined_currency_holdings?page=1&per_page=5",
+    "self": "https://api.mycurrency.com/users/3/authorized_externally_issued_combined_currency_holdings?",
+    "first": "https://api.mycurrency.com/users/3/authorized_externally_issued_combined_currency_holdings?page=1&per_page=25",
     "prev": null,
-    "next": "https://api.mycurrency.com/users/3/authorized_externally_issued_combined_currency_holdings?page=2&per_page=5",
-    "last": "https://api.mycurrency.com/users/3/authorized_externally_issued_combined_currency_holdings?page=2&per_page=5"
+    "next": null,
+    "last": "https://api.mycurrency.com/users/3/authorized_externally_issued_combined_currency_holdings?page=1&per_page=25"
   },
   "meta": {
     "pagination": {
-      "per-page": "5",
-      "total-pages": "2",
+      "per-page": null,
+      "total-pages": "1",
       "total-count": "10"
     },
     "user-data": {
       "number-of-reviews": 1,
-      "currency-count": 4
+      "currency-count": 5
     }
   }
 }
@@ -4607,12 +4779,16 @@ currency-icon-url | The URL at which the icon picture of the currency that the c
 currency-burn-rate | The annual rate at which the currency contained within the currency holding burns, by basis point (100 = 1%) 
 currency-daily-burn-rate | The daily rate at which the currency contained within the currency holding burns, by fraction of 1 (0.01 = 1%) 
 store-count | The number of stores associated with the currency
-amount-atomic | The amount of currency held in both the private and public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
 is-issuer-active | Whether the issuer of the currency is active
 issuer-user-id | The ID of the user that issues the currency
 issuer-user-name | The username of the user that issues the currency
 issuer-user-avatar-url | The URL of the avatar of the user that issues the currency
 issuer-public-currency-holding-id | The user ID of the public currency holding of the issuer of the currency in the holding pair
+public-currency-holding-id | The ID of the user's public currency holding of the specified currency
+public-currency-holding-amount-atomic | The amount of currency held in the public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
+private-currency-holding-id | The ID of the user's private currency holding of the specified currency
+private-currency-holding-amount-atomic | The amount of currency held in the private holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
+amount-atomic | The amount of currency held in both the private and public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
 
 ### USER INFO
 
