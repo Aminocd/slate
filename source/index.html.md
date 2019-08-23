@@ -12452,6 +12452,7 @@ curl 'https://api.mycurrency.com/vouchers/3' \
       "micro-currency-order-id": 3,
       "holding-user-id": 21,
       "holding-user-username": "deleted_user",
+      "holding-user-avatar-url": "/avatars/original/missing.png",
       "product-id": 1,
       "product-name": "mine 1 pound of X-group asteroid",
       "product-image-url": "/system/products/images/original/missing.png",
@@ -12487,6 +12488,7 @@ id | The ID of the voucher
 micro-currency-order-id | The ID of the micro currency order that purchased the voucher
 holding-user-id | The ID of the user that purchased the voucher
 holding-user-username | The username of the user that purchased the voucher
+holding-user-avatar-url | The URL of the avatar of the user that purchased the voucher
 product-id | The ID of the product for which the voucher is redeemable for
 product-name | The name of the product for which the voucher is redeemable for
 product-image-url | The URL of the image of the product for which the voucher is redeemable for
@@ -12520,6 +12522,7 @@ curl 'https://api.mycurrency.com/order_sets/3/associated_voucher' \
       "micro-currency-order-id": 3,
       "holding-user-id": 21,
       "holding-user-username": "deleted_user",
+      "holding-user-avatar-url": "/avatars/original/missing.png",
       "product-id": 1,
       "product-name": "mine 1 pound of X-group asteroid",
       "product-image-url": "/system/products/images/original/missing.png",
@@ -12555,6 +12558,7 @@ id | The ID of the voucher
 micro-currency-order-id | The ID of the micro currency order that purchased the voucher
 holding-user-id | The ID of the user that purchased the voucher
 holding-user-username | The username of the user that purchased the voucher
+holding-user-avatar-url | The URL of the avatar of the user that purchased the voucher
 product-id | The ID of the product for which the voucher is redeemable for
 product-name | The name of the product for which the voucher is redeemable for
 product-image-url | The URL of the image of the product for which the voucher is redeemable for
@@ -12589,6 +12593,7 @@ curl 'https://api.mycurrency.com/vouchers?holding_user_id=3' \
         "micro-currency-order-id": 12,
         "holding-user-id": 3,
         "holding-user-username": "Hannibal",
+        "holding-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "product-id": 52,
         "product-name": "spidermask",
         "product-image-url": "/system/products/images/original/missing.png",
@@ -12611,6 +12616,7 @@ curl 'https://api.mycurrency.com/vouchers?holding_user_id=3' \
         "micro-currency-order-id": 11,
         "holding-user-id": 3,
         "holding-user-username": "Hannibal",
+        "holding-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "product-id": 52,
         "product-name": "spidermask",
         "product-image-url": "/system/products/images/original/missing.png",
@@ -12633,6 +12639,7 @@ curl 'https://api.mycurrency.com/vouchers?holding_user_id=3' \
         "micro-currency-order-id": 10,
         "holding-user-id": 3,
         "holding-user-username": "Hannibal",
+        "holding-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "product-id": 52,
         "product-name": "spidermask",
         "product-image-url": "/system/products/images/original/missing.png",
@@ -12655,6 +12662,7 @@ curl 'https://api.mycurrency.com/vouchers?holding_user_id=3' \
         "micro-currency-order-id": 9,
         "holding-user-id": 3,
         "holding-user-username": "Hannibal",
+        "holding-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "product-id": 52,
         "product-name": "spidermask",
         "product-image-url": "/system/products/images/original/missing.png",
@@ -12677,6 +12685,7 @@ curl 'https://api.mycurrency.com/vouchers?holding_user_id=3' \
         "micro-currency-order-id": 8,
         "holding-user-id": 3,
         "holding-user-username": "Hannibal",
+        "holding-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "product-id": 52,
         "product-name": "spidermask",
         "product-image-url": "/system/products/images/original/missing.png",
@@ -12699,6 +12708,7 @@ curl 'https://api.mycurrency.com/vouchers?holding_user_id=3' \
         "micro-currency-order-id": 7,
         "holding-user-id": 3,
         "holding-user-username": "Hannibal",
+        "holding-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "product-id": 52,
         "product-name": "spidermask",
         "product-image-url": "/system/products/images/original/missing.png",
@@ -12721,6 +12731,7 @@ curl 'https://api.mycurrency.com/vouchers?holding_user_id=3' \
         "micro-currency-order-id": 6,
         "holding-user-id": 3,
         "holding-user-username": "Hannibal",
+        "holding-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "product-id": 52,
         "product-name": "spidermask",
         "product-image-url": "/system/products/images/original/missing.png",
@@ -12743,6 +12754,7 @@ curl 'https://api.mycurrency.com/vouchers?holding_user_id=3' \
         "micro-currency-order-id": 5,
         "holding-user-id": 3,
         "holding-user-username": "Hannibal",
+        "holding-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "product-id": 52,
         "product-name": "spidermask",
         "product-image-url": "/system/products/images/original/missing.png",
@@ -12765,6 +12777,7 @@ curl 'https://api.mycurrency.com/vouchers?holding_user_id=3' \
         "micro-currency-order-id": 4,
         "holding-user-id": 3,
         "holding-user-username": "Hannibal",
+        "holding-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "product-id": 52,
         "product-name": "spidermask",
         "product-image-url": "/system/products/images/original/missing.png",
@@ -12824,6 +12837,7 @@ id | The ID of the voucher
 micro-currency-order-id | The ID of the micro currency order that purchased the voucher
 holding-user-id | The ID of the user that purchased the voucher
 holding-user-username | The username of the user that purchased the voucher
+holding-user-avatar-url | The URL of the avatar of the user that purchased the voucher
 product-id | The ID of the product for which the voucher is redeemable for
 product-name | The name of the product for which the voucher is redeemable for
 product-image-url | The URL of the image of the product for which the voucher is redeemable for
@@ -12858,6 +12872,7 @@ curl -X PUT 'https://api.mycurrency.com/users/3/vouchers/1' \
       "micro-currency-order-id": 3,
       "holding-user-id": 21,
       "holding-user-username": "deleted_user",
+      "holding-user-avatar-url": "/avatars/original/missing.png",
       "product-id": 1,
       "product-name": "mine 1 pound of X-group asteroid",
       "product-image-url": "/system/products/images/original/missing.png",
@@ -12904,6 +12919,7 @@ id | The ID of the voucher
 micro-currency-order-id | The ID of the micro currency order that purchased the voucher
 holding-user-id | The ID of the user that purchased the voucher
 holding-user-username | The username of the user that purchased the voucher
+holding-user-avatar-url | The URL of the avatar of the user that purchased the voucher
 product-id | The ID of the product for which the voucher is redeemable for
 product-name | The name of the product for which the voucher is redeemable for
 product-image-url | The URL of the image of the product for which the voucher is redeemable for
