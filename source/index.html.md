@@ -6320,6 +6320,8 @@ curl 'https://api.mycurrency.com/users/3/recent_transactions?per_page=10' \
       "attributes": {
         "day-counter": 0,
         "amount-atomic": 100000000000000,
+        "proposed-issuance-id": 86,
+        "is-genesis-issuance": false,
         "issuance-receiver-currency-holding-id": 185,
         "issuance-receiver-currency-holding-type": "PrivateCurrencyHolding",
         "issued-currency-id": 7,
@@ -6393,6 +6395,8 @@ curl 'https://api.mycurrency.com/users/3/recent_transactions?per_page=10' \
         "receiving-user-id": 3,
         "receiver-username": "Hannibal",
         "receiving-user-avatar-url": "/system/users/avatars/000/000/003/original/avatar.jpg?1562578009",
+        "proposed-issuance-id": null,
+        "is-genesis-issuance": false,
         "issuance-receiver-currency-holding-id": 1,
         "issuance-receiver-currency-holding-type": "PrivateCurrencyHolding",
         "issued-currency-id": 1,
@@ -6434,6 +6438,8 @@ curl 'https://api.mycurrency.com/users/3/recent_transactions?per_page=10' \
       "attributes": {
         "day-counter": 0,
         "amount-atomic": 10000000000000,
+        "proposed-issuance-id": 85,
+        "is-genesis-issuance": false,
         "issuance-receiver-currency-holding-id": 185,
         "issuance-receiver-currency-holding-type": "PrivateCurrencyHolding",
         "issued-currency-id": 7,
@@ -6456,6 +6462,8 @@ curl 'https://api.mycurrency.com/users/3/recent_transactions?per_page=10' \
         "receiving-user-id": 7,
         "receiver-username": "Kian",
         "receiving-user-avatar-url": "/system/users/avatars/original/missing.png",
+        "proposed-issuance-id": 84,
+        "is-genesis-issuance": false,
         "issued-currency-id": 1,
         "issued-currency-name": "Micro Asteroid bucks",
         "issued-currency-icon-url": "/system/currencies/icons/missing.png",
@@ -6572,6 +6580,8 @@ amount-atomic | The amount of currency issued, in atomic units (each whole unit 
 receiving-user-id | The ID of the issuance receiver, only shown if the issuer is the logged-in user
 receiver-username | The username of the issuance sender, only shown if the issuer is the logged-in user 
 receiving-user-avatar-url | The URL of the avatar of the issuance receiver, only shown if the issuer is the logged-in user
+proposed-issuance-id | The ID of the proposed issuance that initiated the creation of the issuance, null if the issuance has no associated proposed_issuance
+is-genesis-issuance | Whether the issuance was created as part of the creation of a new currency. When a new currency is created, 1000 units of the currency are issued to the currency issuer without the 5 percent issuance_fee being paid to the site administration
 issuance-receiver-currency-holding-id | The ID of the public or private currency holding that the issuance credited to, only shown if the issuance receiver is the logged-in user
 issuance-receiver-currency-holding-type | Whether the currency holding that the issuance credited to is a "PublicCurrencyHolding" or a "PrivateCurrencyHolding", only shown if the issuance receiver is the logged-in user
 issued-currency-id | The ID of the issued currency
