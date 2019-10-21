@@ -4441,6 +4441,9 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_combined_currenc
     "user-data": {
       "number-of-reviews": 1,
       "currency-count": 5
+    },
+    "authorized-externally-issued-combined-currency-holdings-data": {
+      "count": "5"
     }
   }
 }
@@ -4468,9 +4471,7 @@ exclude_empty | boolean | no | If set to true, currency holding public private p
 ### COMBINED CURRENCY HOLDING
 
 Parameter | Description
---------- | -----------
-id | The ID of the currency holding
-currency-id | The ID of the currency that the currency holding holds
+--------- | ----------- id | The ID of the currency holding currency-id | The ID of the currency that the currency holding holds
 currency-name | The name of the currency that the currency holding holds
 currency-icon-url | The URL at which the icon picture of the currency that the currency holding holds can be found
 currency-burn-rate | The annual rate at which the currency contained within the currency holding burns, by basis point (100 = 1%) 
@@ -4493,6 +4494,12 @@ Parameter | Description
 --------- | -----------
 number-of-reviews | The number of store reviews received by stores owned by the logged-in user
 currency-count | The number of currencies owned by the logged-in user
+
+### EXTERNALLY ISSUED CURRENCY HOLDINGS INFO
+
+Parameter | Description
+--------- | -----------
+count | The number of externally issued currencies the logged-in user has
 
 ## List User's Externally Issued Combined Currency Holdings with Authorization
 
@@ -4744,6 +4751,9 @@ curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_combined_c
     "user-data": {
       "number-of-reviews": 1,
       "currency-count": 5
+    },
+    "authorized-externally-issued-combined-currency-holdings-data": {
+      "count": "5"
     }
   }
 }
@@ -4796,6 +4806,12 @@ Parameter | Description
 --------- | -----------
 number-of-reviews | The number of store reviews received by stores owned by the logged-in user
 currency-count | The number of currencies owned by the logged-in user
+
+### EXTERNALLY ISSUED CURRENCY HOLDINGS INFO
+
+Parameter | Description
+--------- | -----------
+count | The number of externally issued currencies the logged-in user has
 
 # Public Currency Holdings
 
