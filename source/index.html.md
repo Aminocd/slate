@@ -4443,7 +4443,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_combined_currenc
       "currency-count": 5
     },
     "authorized-externally-issued-combined-currency-holdings-data": {
-      "count": "5"
+      "count": "10"
     }
   }
 }
@@ -4471,7 +4471,8 @@ exclude_empty | boolean | no | If set to true, currency holding public private p
 ### COMBINED CURRENCY HOLDING
 
 Parameter | Description
---------- | ----------- id | The ID of the currency holding currency-id | The ID of the currency that the currency holding holds
+--------- | ----------- 
+id | The ID of the currency holding currency-id | The ID of the currency that the currency holding holds
 currency-name | The name of the currency that the currency holding holds
 currency-icon-url | The URL at which the icon picture of the currency that the currency holding holds can be found
 currency-burn-rate | The annual rate at which the currency contained within the currency holding burns, by basis point (100 = 1%) 
@@ -4753,7 +4754,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_combined_c
       "currency-count": 5
     },
     "authorized-externally-issued-combined-currency-holdings-data": {
-      "count": "5"
+      "count": "10"
     }
   }
 }
