@@ -7225,6 +7225,9 @@ Authentication: the request requires the OAuth access-token associated with the 
     </span><span class="s2">"user-data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"authorized-externally-issued-combined-currency-holdings-data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -7259,81 +7262,23 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 </tbody></table>
 <h3 id='response-47'>RESPONSE</h3><h3 id='combined-currency-holding'>COMBINED CURRENCY HOLDING</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>id</td>
-<td>The ID of the currency holding</td>
-</tr>
-<tr>
-<td>currency-id</td>
-<td>The ID of the currency that the currency holding holds</td>
-</tr>
-<tr>
-<td>currency-name</td>
-<td>The name of the currency that the currency holding holds</td>
-</tr>
-<tr>
-<td>currency-icon-url</td>
-<td>The URL at which the icon picture of the currency that the currency holding holds can be found</td>
-</tr>
-<tr>
-<td>currency-burn-rate</td>
-<td>The annual rate at which the currency contained within the currency holding burns, by basis point (100 = 1%)</td>
-</tr>
-<tr>
-<td>currency-daily-burn-rate</td>
-<td>The daily rate at which the currency contained within the currency holding burns, by fraction of 1 (0.01 = 1%)</td>
-</tr>
-<tr>
-<td>store-count</td>
-<td>The number of stores associated with the currency</td>
-</tr>
-<tr>
-<td>is-issuer-active</td>
-<td>Whether the issuer of the currency is active</td>
-</tr>
-<tr>
-<td>issuer-user-id</td>
-<td>The ID of the user that issues the currency</td>
-</tr>
-<tr>
-<td>issuer-user-name</td>
-<td>The username of the user that issues the currency</td>
-</tr>
-<tr>
-<td>issuer-user-avatar-url</td>
-<td>The URL of the avatar of the user that issues the currency</td>
-</tr>
-<tr>
-<td>issuer-public-currency-holding-id</td>
-<td>The user ID of the public currency holding of the issuer of the currency in the holding pair</td>
-</tr>
-<tr>
-<td>public-currency-holding-id</td>
-<td>The ID of the user&#39;s public currency holding of the specified currency</td>
-</tr>
-<tr>
-<td>public-currency-holding-amount-atomic</td>
-<td>The amount of currency held in the public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
-</tr>
-<tr>
-<td>private-currency-holding-id</td>
-<td>The ID of the user&#39;s private currency holding of the specified currency</td>
-</tr>
-<tr>
-<td>private-currency-holding-amount-atomic</td>
-<td>The amount of currency held in the private holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
-</tr>
-<tr>
-<td>amount-atomic</td>
-<td>The amount of currency held in both the private and public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)</td>
-</tr>
-</tbody></table>
+<p>Parameter | Description
+--------- | ----------- id | The ID of the currency holding currency-id | The ID of the currency that the currency holding holds
+currency-name | The name of the currency that the currency holding holds
+currency-icon-url | The URL at which the icon picture of the currency that the currency holding holds can be found
+currency-burn-rate | The annual rate at which the currency contained within the currency holding burns, by basis point (100 = 1%) 
+currency-daily-burn-rate | The daily rate at which the currency contained within the currency holding burns, by fraction of 1 (0.01 = 1%) 
+store-count | The number of stores associated with the currency
+is-issuer-active | Whether the issuer of the currency is active
+issuer-user-id | The ID of the user that issues the currency
+issuer-user-name | The username of the user that issues the currency
+issuer-user-avatar-url | The URL of the avatar of the user that issues the currency
+issuer-public-currency-holding-id | The user ID of the public currency holding of the issuer of the currency in the holding pair
+public-currency-holding-id | The ID of the user&#39;s public currency holding of the specified currency
+public-currency-holding-amount-atomic | The amount of currency held in the public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
+private-currency-holding-id | The ID of the user&#39;s private currency holding of the specified currency
+private-currency-holding-amount-atomic | The amount of currency held in the private holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
+amount-atomic | The amount of currency held in both the private and public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)</p>
 <h3 id='user-info'>USER INFO</h3>
 <table><thead>
 <tr>
@@ -7348,6 +7293,18 @@ Authentication: the request requires the OAuth access-token associated with the 
 <tr>
 <td>currency-count</td>
 <td>The number of currencies owned by the logged-in user</td>
+</tr>
+</tbody></table>
+<h3 id='externally-issued-currency-holdings-info'>EXTERNALLY ISSUED CURRENCY HOLDINGS INFO</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>count</td>
+<td>The number of externally issued currencies the logged-in user has</td>
 </tr>
 </tbody></table>
 <h2 id='list-user-39-s-externally-issued-combined-currency-holdings-with-authorization'>List User&#39;s Externally Issued Combined Currency Holdings with Authorization</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/users/3/authorized_externally_issued_combined_currency_holdings?per_page=5'</span> <span class="se">\</span>
@@ -7596,6 +7553,9 @@ Authentication: the request requires the OAuth access-token associated with the 
     </span><span class="s2">"user-data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"authorized-externally-issued-combined-currency-holdings-data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -7719,6 +7679,18 @@ Authentication: the request requires the OAuth access-token associated with the 
 <tr>
 <td>currency-count</td>
 <td>The number of currencies owned by the logged-in user</td>
+</tr>
+</tbody></table>
+<h3 id='externally-issued-currency-holdings-info-2'>EXTERNALLY ISSUED CURRENCY HOLDINGS INFO</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>count</td>
+<td>The number of externally issued currencies the logged-in user has</td>
 </tr>
 </tbody></table>
 <h1 id='public-currency-holdings'>Public Currency Holdings</h1>
