@@ -2802,7 +2802,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>new_burn_rate</td>
 <td>integer</td>
 <td>yes</td>
-<td>The value that you want to update the currency&#39;s burn rate to</td>
+<td>The value that you want to update the currency&#39;s burn rate to, maximum value of 2,000 basis points, or 20 percent</td>
 </tr>
 <tr>
 <td>comment</td>
@@ -11672,6 +11672,7 @@ Authentication: the request requires the OAuth access-token associated with the 
         </span><span class="p">]</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="s2">"offer-type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"raw-offer-type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
       </span><span class="s2">"self-cancellation"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
       </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-21T18:32:30.701-07:00"</span><span class="p">,</span><span class="w">
@@ -11736,7 +11737,11 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 <tr>
 <td>offer-type</td>
-<td>0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, and 3 is an offer acceptance</td>
+<td>0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, 3 is an offer acceptance, and 4 is a new offer or counter-offer with a self-cancellation value of true</td>
+</tr>
+<tr>
+<td>raw-offer-type</td>
+<td>The offer type value in the database. 0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, and 3 is an offer acceptance</td>
 </tr>
 <tr>
 <td>active</td>
@@ -11942,6 +11947,7 @@ Authentication: the request requires the OAuth access-token associated with the 
           </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="s2">"offer-type"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"raw-offer-type"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
         </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"self-cancellation"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-21T18:32:48.989-07:00"</span><span class="p">,</span><span class="w">
@@ -12118,6 +12124,7 @@ Authentication: the request requires the OAuth access-token associated with the 
           </span><span class="p">]</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="s2">"offer-type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"raw-offer-type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"self-cancellation"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-21T18:32:30.701-07:00"</span><span class="p">,</span><span class="w">
@@ -12294,6 +12301,7 @@ Authentication: the request requires the OAuth access-token associated with the 
           </span><span class="p">]</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="s2">"offer-type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"raw-offer-type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"self-cancellation"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-21T18:30:26.893-07:00"</span><span class="p">,</span><span class="w">
@@ -12470,6 +12478,7 @@ Authentication: the request requires the OAuth access-token associated with the 
           </span><span class="p">]</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="s2">"offer-type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"raw-offer-type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"self-cancellation"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-21T18:29:36.808-07:00"</span><span class="p">,</span><span class="w">
@@ -12605,7 +12614,11 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 <tr>
 <td>offer-type</td>
-<td>0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, and 3 is an offer acceptance</td>
+<td>0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, 3 is an offer acceptance, and 4 is a new offer or counter-offer with a self-cancellation value of true</td>
+</tr>
+<tr>
+<td>raw-offer-type</td>
+<td>The offer type value in the database. 0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, and 3 is an offer acceptance</td>
 </tr>
 <tr>
 <td>active</td>
@@ -12964,6 +12977,7 @@ Authentication: the request requires the OAuth access-token associated with the 
         </span><span class="p">]</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="s2">"offer-type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"raw-offer-type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="s2">"self-cancellation"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
       </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-03T16:17:13.293-07:00"</span><span class="p">,</span><span class="w">
@@ -13136,7 +13150,11 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 <tr>
 <td>offer-type</td>
-<td>0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, and 3 is an offer acceptance</td>
+<td>0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, 3 is an offer acceptance, and 4 is a new offer or counter-offer with a self-cancellation value of true</td>
+</tr>
+<tr>
+<td>raw-offer-type</td>
+<td>The offer type value in the database. 0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, and 3 is an offer acceptance</td>
 </tr>
 <tr>
 <td>active</td>
