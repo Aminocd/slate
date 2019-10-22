@@ -2440,6 +2440,31 @@ index | Keywords derived from the description of the store and its products that
 created-at | The time and date when the currency was created
 updated-at | The time and date when the currency was last updated
 
+## Delete Store
+
+```shell
+curl -X DELETE https://api.mycurrency.com/users/2/issuer/currencies/2/stores/12 \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao' \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: multipart/form-data'
+```
+
+> The above command returns no JSON
+
+Deletes a store. The user must deactivate or cancel all of their store's products before they can delete the store. If there are any products which have both their :active and :continued values set to true belonging to the store, the delete action will fail and an error message will be returned.
+
+### HTTP Request
+
+`DELETE https://api.mycurrency.com/users/<USER-ID>/issuer/currencies/<CURRENCY-ID>/stores/<ID>`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the USER-ID 
+</aside>
+
+### RESPONSE
+
+no response
+
 # Store Reviews
 
 ## Get a Store Review
