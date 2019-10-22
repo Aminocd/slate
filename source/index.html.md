@@ -730,6 +730,9 @@ curl 'https://api.mycurrency.com/authorized_currencies/4' \
       "amount-of-last-private-tx": -70000000000000,
       "timedate-of-last-public-tx": "2019-06-17T17:06:45-07:00",
       "amount-of-last-public-tx": 2000000000000
+      "private-burn-amount-atomic": 86714320326,
+      "public-burn-amount-atomic": 13092929333,
+      "total-burn-amount-atomic": 99807249659
     }
   }
 }
@@ -779,6 +782,9 @@ timedate-of-last-private-tx | The date when the last transaction in the logged-i
 amount-of-last-private-tx | The amount, in atomic units, that was transferred in the last transaction to/from the logged-in user's private holding of the specified currency
 timedate-of-last-public-tx | The date when the last transaction in the logged-in user's public holding of the specified currency took place
 amount-of-last-public-tx | The amount, in atomic units, that was transferred in the last transaction to/from the logged-in user's public holding of the specified currency
+private-burn-amount-atomic | The amount, in atomic units, that was burned in the logged-in user's private holding of the specified currency
+public-burn-amount-atomic | The amount, in atomic units, that was burned in the logged-in user's public holding of the specified currency
+total-burn-amount-atomic | The total amount, in atomic units, that was burned in the logged-in user's public and private holdings of the specified currency
 
 ## List Currencies
 
