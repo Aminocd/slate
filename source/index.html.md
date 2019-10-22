@@ -7414,6 +7414,7 @@ curl 'https://api.mycurrency.com/users/2/offers/9' -H 'Accept: application/json'
         ]
       },
       "offer-type": 1,
+      "raw-offer-type": 1,
       "active": false,
       "self-cancellation": false,
       "created-at": "2019-07-21T18:32:30.701-07:00",
@@ -7449,7 +7450,8 @@ offer-sender-avatar-url | The URL of the avatar of the user that made the offer
 previous-offer-id | The ID of the offer that is being counter-offered. If the first offer of an offer-chain, the value will be 0
 requested-proposed-transactions | An array of proposed transfers and proposed issuances being requested from the offer receiver
 offered-proposed-transactions | An array of proposed transfers and proposed issuances being offered by the offer sender
-offer-type | 0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, and 3 is an offer acceptance
+offer-type | 0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, 3 is an offer acceptance, and 4 is a new offer or counter-offer with a self-cancellation value of true
+raw-offer-type | The offer type value in the database. 0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, and 3 is an offer acceptance
 active | Whether the offer is still active and can be countered or accepted/rejected
 proposed-transfers | The proposed_transfers included in the offer
 proposed-issuances | The proposed_issuances included in the offer
@@ -7532,6 +7534,7 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
           "data": []
         },
         "offer-type": 2,
+        "raw-offer-type": 2,
         "active": false,
         "self-cancellation": false,
         "created-at": "2019-07-21T18:32:48.989-07:00",
@@ -7708,6 +7711,7 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
           ]
         },
         "offer-type": 1,
+        "raw-offer-type": 1,
         "active": false,
         "self-cancellation": false,
         "created-at": "2019-07-21T18:32:30.701-07:00",
@@ -7884,6 +7888,7 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
           ]
         },
         "offer-type": 1,
+        "raw-offer-type": 1,
         "active": false,
         "self-cancellation": false,
         "created-at": "2019-07-21T18:30:26.893-07:00",
@@ -8060,6 +8065,7 @@ curl 'https://api.mycurrency.com/users/3/offers?index_type=offer_chain&offer_id=
           ]
         },
         "offer-type": 0,
+        "raw-offer-type": 0,
         "active": false,
         "self-cancellation": false,
         "created-at": "2019-07-21T18:29:36.808-07:00",
@@ -8128,7 +8134,8 @@ offer-sender-avatar-url | The URL of the avatar of the user that made the offer
 previous-offer-id | The ID of the offer that is being counter-offered. If the first offer of an offer-chain, the value will be 0
 requested-proposed-transactions | An array of proposed transfers and proposed issuances being requested from the offer receiver
 offered-proposed-transactions | An array of proposed transfers and proposed issuances being offered by the offer sender
-offer-type | 0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, and 3 is an offer acceptance
+offer-type | 0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, 3 is an offer acceptance, and 4 is a new offer or counter-offer with a self-cancellation value of true
+raw-offer-type | The offer type value in the database. 0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, and 3 is an offer acceptance
 active | Whether the offer is still active and can be countered or accepted/rejected
 proposed-transfers | The proposed_transfers included in the offer
 proposed-issuances | The proposed_issuances included in the offer
@@ -8307,6 +8314,7 @@ curl https://api.mycurrency.com/users/2/offers -d '{ "offer": {"offer_sender_id"
         ]
       },
       "offer-type": 0,
+      "raw-offer-type": 0,
       "active": true,
       "self-cancellation": false,
       "created-at": "2019-08-03T16:17:13.293-07:00",
@@ -8375,7 +8383,8 @@ offer-sender-avatar-url | The URL of the avatar of the user that made the offer
 previous-offer-id | The ID of the offer that is being counter-offered. If the first offer of an offer-chain, the value will be 0
 requested-proposed-transactions | An array of proposed transfers and proposed issuances being requested from the offer receiver
 offered-proposed-transactions | An array of proposed transfers and proposed issuances being offered by the offer sender
-offer-type | 0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, and 3 is an offer acceptance
+offer-type | 0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, 3 is an offer acceptance, and 4 is a new offer or counter-offer with a self-cancellation value of true
+raw-offer-type | The offer type value in the database. 0 is the offer that starts an offer chain, 1 is a counter-offer, 2 is an offer rejection, and 3 is an offer acceptance
 active | Whether the offer is still active and can be countered or accepted/rejected
 proposed-transfers | The proposed_transfers included in the offer
 proposed-issuances | The proposed_issuances included in the offer
