@@ -4333,6 +4333,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_combined_currenc
         "public-currency-holding-amount-atomic": 3599957849922,
         "private-currency-holding-id": 1,
         "private-currency-holding-amount-atomic": 6645827142424,
+        "total-burn-amount-atomic": 47666191538,
         "amount-atomic": 10245784992346
       }
     },
@@ -4355,6 +4356,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_combined_currenc
         "public-currency-holding-amount-atomic": 2400000000000,
         "private-currency-holding-id": 107,
         "private-currency-holding-amount-atomic": 6600000000000,
+        "total-burn-amount-atomic": 35091980457,
         "amount-atomic": 9000000000000
       }
     },
@@ -4377,6 +4379,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_combined_currenc
         "public-currency-holding-amount-atomic": 3000000000000,
         "private-currency-holding-id": 134,
         "private-currency-holding-amount-atomic": 4000000000000,
+        "total-burn-amount-atomic": 9977028307,
         "amount-atomic": 7000000000000
       }
     },
@@ -4399,6 +4402,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_combined_currenc
         "public-currency-holding-amount-atomic": 0,
         "private-currency-holding-id": 143,
         "private-currency-holding-amount-atomic": 10000000000000,
+        "total-burn-amount-atomic": 4581322108,
         "amount-atomic": 10000000000000
       }
     },
@@ -4421,6 +4425,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_combined_currenc
         "public-currency-holding-amount-atomic": 0,
         "private-currency-holding-id": 169,
         "private-currency-holding-amount-atomic": 10000000000000,
+        "total-burn-amount-atomic": 1842388131,
         "amount-atomic": 10000000000000
       }
     }
@@ -4487,6 +4492,7 @@ public-currency-holding-id | The ID of the user's public currency holding of the
 public-currency-holding-amount-atomic | The amount of currency held in the public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
 private-currency-holding-id | The ID of the user's private currency holding of the specified currency
 private-currency-holding-amount-atomic | The amount of currency held in the private holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
+total-burn-amount-atomic | The total amount of currency burned to date in both the private and public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units) 
 amount-atomic | The amount of currency held in both the private and public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
 
 ### USER INFO
@@ -4534,6 +4540,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_combined_c
         "public-currency-holding-amount-atomic": 0,
         "private-currency-holding-id": 3,
         "private-currency-holding-amount-atomic": 10009994565314,
+        "total-burn-amount-atomic": 14788763198,
         "amount-atomic": 10009994565314
       }
     },
@@ -4556,6 +4563,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_combined_c
         "public-currency-holding-amount-atomic": 5997675720243,
         "private-currency-holding-id": 6,
         "private-currency-holding-amount-atomic": 4197675720243,
+        "total-burn-amount-atomic": 57565603087,
         "amount-atomic": 10195351440486
       }
     },
@@ -4578,6 +4586,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_combined_c
         "public-currency-holding-amount-atomic": 1899118493626,
         "private-currency-holding-id": 9,
         "private-currency-holding-amount-atomic": 2119118493626,
+        "total-burn-amount-atomic": 3303335834,
         "amount-atomic": 4018236987252
       }
     },
@@ -4600,6 +4609,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_combined_c
         "public-currency-holding-amount-atomic": null,
         "private-currency-holding-id": 13,
         "private-currency-holding-amount-atomic": 5098738679556,
+        "total-burn-amount-atomic": 41983449141,
         "amount-atomic": 5098738679556
       }
     },
@@ -4622,6 +4632,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_combined_c
         "public-currency-holding-amount-atomic": null,
         "private-currency-holding-id": 12,
         "private-currency-holding-amount-atomic": 13995965387034,
+        "total-burn-amount-atomic": 22460541440,
         "amount-atomic": 13995965387034
       }
     },
@@ -4644,6 +4655,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_combined_c
         "public-currency-holding-amount-atomic": 400000000000,
         "private-currency-holding-id": 94,
         "private-currency-holding-amount-atomic": 2600000000000,
+        "total-burn-amount-atomic": 40194182911,
         "amount-atomic": 3000000000000
       }
     },
@@ -4666,6 +4678,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_combined_c
         "public-currency-holding-amount-atomic": null,
         "private-currency-holding-id": 106,
         "private-currency-holding-amount-atomic": 1000000000000,
+        "total-burn-amount-atomic": 8511474011,
         "amount-atomic": 1000000000000
       }
     },
@@ -4688,6 +4701,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_combined_c
         "public-currency-holding-amount-atomic": 0,
         "private-currency-holding-id": 23,
         "private-currency-holding-amount-atomic": 5600000000000,
+        "total-burn-amount-atomic": 15195784813,
         "amount-atomic": 5600000000000
       }
     },
@@ -4710,6 +4724,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_combined_c
         "public-currency-holding-amount-atomic": null,
         "private-currency-holding-id": 97,
         "private-currency-holding-amount-atomic": 0,
+        "total-burn-amount-atomic": 0,
         "amount-atomic": 0
       }
     },
@@ -4732,6 +4747,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_combined_c
         "public-currency-holding-amount-atomic": null,
         "private-currency-holding-id": 90,
         "private-currency-holding-amount-atomic": 3000000000000,
+        "total-burn-amount-atomic": 0,
         "amount-atomic": 3000000000000
       }
     }
@@ -4799,6 +4815,7 @@ public-currency-holding-id | The ID of the user's public currency holding of the
 public-currency-holding-amount-atomic | The amount of currency held in the public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
 private-currency-holding-id | The ID of the user's private currency holding of the specified currency
 private-currency-holding-amount-atomic | The amount of currency held in the private holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
+total-burn-amount-atomic | The total amount of currency burned to date in both the private and public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units) 
 amount-atomic | The amount of currency held in both the private and public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
 
 ### USER INFO
