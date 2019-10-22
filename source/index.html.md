@@ -1327,7 +1327,7 @@ Parameter | Description
 --------- | -----------
 id | The ID of the burnrate_change
 old-burn-rate | The burn rate before the burnrate_change 
-new-burn-rate | The burn rate after the burnrate_change name 
+new-burn-rate | The burn rate after the burnrate_change name
 currency-id | The ID of the currency that the burnrate_change applies to
 comment | A comment to explain to currency holders why the burn rate was changed
 created-at | The time and date when the currency was created
@@ -1465,7 +1465,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 
 Parameter | Type | Required | Description
 --------- | ------- | ------- | -----------
-new_burn_rate | integer | yes | The value that you want to update the currency's burn rate to
+new_burn_rate | integer | yes | The value that you want to update the currency's burn rate to, maximum value of 2,000 basis points, or 20 percent
 comment | string | no | A comment to explain to currency holders why the burn rate was changed
 
 ### RESPONSE
