@@ -1518,6 +1518,7 @@ curl 'https://api.mycurrency.com/stores/2' \
       "sub-location-name": "Vancouver",
       "mid-location-id": 1,
       "mid-location-name": "British Columbia",
+      "can-be-deleted": false,
       "physical": true,
       "store-name": "Vancouver ACME Toon Shop",
       "store-description": "All manner of ACME Toon items available",
@@ -1559,6 +1560,7 @@ sub-location-id | The sub location where the store is located
 sub-location-name | The name of the sub location where the store is located
 mid-location-id | The mid location where the store is located
 mid-location-name | The name of the mid location where the store is located
+can-be-deleted | Whether the store can be deleted. Stores with one or more products that have both their :active and :continued attributes set to true cannot be deleted. The owning user must deactivate or cancel the store's products first.
 physical | Whether the store is a physical location that customers can visit
 store-name | The name of the store
 store-description | The description of the store
@@ -1596,6 +1598,7 @@ curl "https://api.mycurrency.com/stores" \
         "sub-location-name": "San Francisco",
         "mid-location-id": "2",
         "mid-location-name": "California",
+        "can-be-deleted": false,
         "physical": true,
         "store-name": "San Francisco ACME Toon Shop",
         "store-description": "San Francisco's premier shop for toons",
@@ -1620,6 +1623,7 @@ curl "https://api.mycurrency.com/stores" \
         "sub-location-name": "Vancouver",
         "mid-location-id": 1,
         "mid-location-name": "British Columbia",
+        "can-be-deleted": false,
         "physical": true,
         "store-name": "Vancouver ACME Toon Shop",
         "store-description": "All manner of ACME Toon items available",
@@ -1644,6 +1648,7 @@ curl "https://api.mycurrency.com/stores" \
         "sub-location-name": "San Francisco",
         "mid-location-id": "2",
         "mid-location-name": "California",
+        "can-be-deleted": false,
         "physical": true,
         "store-name": "Calm Spa",
         "store-description": "A full service spa for full relaxation",
@@ -1700,6 +1705,7 @@ sub-location-id | The sub location where the store is located
 sub-location-name | The name of the sub location where the store is located
 mid-location-id | The mid location where the store is located
 mid-location-name | The name of the mid location where the store is located
+can-be-deleted | Whether the store can be deleted. Stores with one or more products that have both their :active and :continued attributes set to true cannot be deleted. The owning user must deactivate or cancel the store's products first.
 physical | Whether the store is a physical location that customers can visit
 store-name | The name of the store
 store-description | The description of the store
@@ -1737,6 +1743,7 @@ curl "https://api.mycurrency.com/users/4/stores" \
         "sub-location-name": "san francisco bay area",
         "mid-location-id": 5,
         "mid-location-name": "California",
+        "can-be-deleted": false,
         "physical": false,
         "store-name": "Moon Hotel",
         "store-description": "situated on the edge of the Sea of Tranquility",
@@ -1761,6 +1768,7 @@ curl "https://api.mycurrency.com/users/4/stores" \
         "sub-location-name": "san francisco bay area",
         "mid-location-id": 5,
         "mid-location-name": "California",
+        "can-be-deleted": false,
         "physical": true,
         "store-name": "San Fran Solar Zap",
         "store-description": "San Francisco's premium solar electricity source",
@@ -1785,6 +1793,7 @@ curl "https://api.mycurrency.com/users/4/stores" \
         "sub-location-name": "vancouver",
         "mid-location-id": 54,
         "mid-location-name": "British Columbia",
+        "can-be-deleted": false,
         "physical": true,
         "store-name": "Vancouver Solar Zap",
         "store-description": "Vancouver's premium solar electricity source",
@@ -1841,6 +1850,7 @@ sub-location-id | The sub location where the store is located
 sub-location-name | The name of the sub location where the store is located
 mid-location-id | The mid location where the store is located
 mid-location-name | The name of the mid location where the store is located
+can-be-deleted | Whether the store can be deleted. Stores with one or more products that have both their :active and :continued attributes set to true cannot be deleted. The owning user must deactivate or cancel the store's products first.
 physical | Whether the store is a physical location that customers can visit
 store-name | The name of the store
 store-description | The description of the store
@@ -1878,6 +1888,7 @@ curl "https://api.mycurrency.com/currencies/2/stores" \
         "sub-location-name": "San Francisco",
         "mid-location-id": "2",
         "mid-location-name": "California",
+        "can-be-deleted": false,
         "physical": true,
         "store-name": "San Francisco ACME Toon Shop",
         "store-description": "San Francisco's premier shop for toons",
@@ -1902,6 +1913,7 @@ curl "https://api.mycurrency.com/currencies/2/stores" \
         "sub-location-name": "Vancouver",
         "mid-location-id": 1,
         "mid-location-name": "British Columbia",
+        "can-be-deleted": false,
         "physical": true,
         "store-name": "Vancouver ACME Toon Shop",
         "store-description": "All manner of ACME Toon items available",
@@ -1958,6 +1970,7 @@ sub-location-id | The sub location where the store is located
 sub-location-name | The name of the sub location where the store is located
 mid-location-id | The mid location where the store is located
 mid-location-name | The name of the mid location where the store is located
+can-be-deleted | Whether the store can be deleted. Stores with one or more products that have both their :active and :continued attributes set to true cannot be deleted. The owning user must deactivate or cancel the store's products first.
 physical | Whether the store is a physical location that customers can visit
 store-name | The name of the store
 store-description | The description of the store
@@ -1995,6 +2008,7 @@ curl "https://api.mycurrency.com/stores?keyword=spa%20services" \
         "sub-location-name": "San Francisco",
         "mid-location-id": "2",
         "mid-location-name": "California",
+        "can-be-deleted": false,
         "physical": true,
         "store-name": "Calm Spa",
         "store-description": "A full service spa for full relaxation",
@@ -2051,6 +2065,7 @@ sub-location-id | The sub location where the store is located
 sub-location-name | The name of the sub location where the store is located
 mid-location-id | The mid location where the store is located
 mid-location-name | The name of the mid location where the store is located
+can-be-deleted | Whether the store can be deleted. Stores with one or more products that have both their :active and :continued attributes set to true cannot be deleted. The owning user must deactivate or cancel the store's products first.
 physical | Whether the store is a physical location that customers can visit
 store-name | The name of the store
 store-description | The description of the store
@@ -2088,6 +2103,7 @@ curl "https://api.mycurrency.com/sub_locations/1/stores" \
         "sub-location-name": "San Francisco",
         "mid-location-id": "2",
         "mid-location-name": "California",
+        "can-be-deleted": false,
         "physical": true,
         "store-name": "San Francisco ACME Toon Shop",
         "store-description": "San Francisco's premier shop for toons",
@@ -2112,6 +2128,7 @@ curl "https://api.mycurrency.com/sub_locations/1/stores" \
         "sub-location-name": "San Francisco",
         "mid-location-id": "2",
         "mid-location-name": "California",
+        "can-be-deleted": false,
         "physical": true,
         "store-name": "Calm Spa",
         "store-description": "A full service spa for full relaxation",
@@ -2168,6 +2185,7 @@ sub-location-id | The sub location where the store is located
 sub-location-name | The name of the sub location where the store is located
 mid-location-id | The mid location where the store is located
 mid-location-name | The name of the mid location where the store is located
+can-be-deleted | Whether the store can be deleted. Stores with one or more products that have both their :active and :continued attributes set to true cannot be deleted. The owning user must deactivate or cancel the store's products first.
 physical | Whether the store is a physical location that customers can visit
 store-name | The name of the store
 store-description | The description of the store
@@ -2205,6 +2223,7 @@ curl "https://api.mycurrency.com/sub_locations/1/stores?keyword=Bugs%20Bunny" \
         "sub-location-name": "San Francisco",
         "mid-location-id": "2",
         "mid-location-name": "California",
+        "can-be-deleted": false,
         "physical": true,
         "store-name": "San Francisco ACME Toon Shop",
         "store-description": "San Francisco's premier shop for toons",
@@ -2261,6 +2280,7 @@ sub-location-id | The sub location where the store is located
 sub-location-name | The name of the sub location where the store is located
 mid-location-id | The mid location where the store is located
 mid-location-name | The name of the mid location where the store is located
+can-be-deleted | Whether the store can be deleted. Stores with one or more products that have both their :active and :continued attributes set to true cannot be deleted. The owning user must deactivate or cancel the store's products first.
 physical | Whether the store is a physical location that customers can visit
 store-name | The name of the store
 store-description | The description of the store
@@ -2297,6 +2317,7 @@ curl -X POST https://api.mycurrency.com/users/4/issuer/currencies/5/stores \
       "sub-location-name": "Vancouver",
       "mid-location-id": 1,
       "mid-location-name": "British Columbia",
+      "can-be-deleted": true,
       "physical": true,
       "store-name": "Freds Fishing Supplies",
       "store-description": "Fishing supply shop",
@@ -2348,6 +2369,7 @@ sub-location-id | The sub location where the store is located
 sub-location-name | The name of the sub location where the store is located
 mid-location-id | The mid location where the store is located
 mid-location-name | The name of the mid location where the store is located
+can-be-deleted | Whether the store can be deleted. Stores with one or more products that have both their :active and :continued attributes set to true cannot be deleted. The owning user must deactivate or cancel the store's products first.
 physical | Whether the store is a physical location that customers can visit
 store-name | The name of the store
 store-description | The description of the store
@@ -2385,6 +2407,7 @@ curl -X PUT https://api.mycurrency.com/users/4/issuer/currencies/5/stores/3 \
       "sub-location-name": "San Francisco",
       "mid-location-id": 2,
       "mid-location-name": "California",
+      "can-be-deleted": false,
       "physical": false,
       "store-name": "Freds Fishing Supplies",
       "store-description": "The finest Fishing shop in San Francisco",
@@ -2433,6 +2456,7 @@ sub-location-id | The sub location where the store is located
 sub-location-name | The name of the sub location where the store is located
 mid-location-id | The mid location where the store is located
 mid-location-name | The name of the mid location where the store is located
+can-be-deleted | Whether the store can be deleted. Stores with one or more products that have both their :active and :continued attributes set to true cannot be deleted. The owning user must deactivate or cancel the store's products first.
 physical | Whether the store is a physical location that customers can visit
 store-name | The name of the store
 store-description | The description of the store
