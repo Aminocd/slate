@@ -2891,6 +2891,7 @@ Authentication: the request requires the OAuth access-token associated with the 
       </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="s2">"mid-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"British Columbia"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"can-be-deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
       </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver ACME Toon Shop"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All manner of ACME Toon items available"</span><span class="p">,</span><span class="w">
@@ -2980,6 +2981,10 @@ Authentication: not required
 <td>The name of the mid location where the store is located</td>
 </tr>
 <tr>
+<td>can-be-deleted</td>
+<td>Whether the store can be deleted. Stores with one or more products that have both their :active and :continued attributes set to true cannot be deleted. The owning user must deactivate or cancel the store&#39;s products first.</td>
+</tr>
+<tr>
 <td>physical</td>
 <td>Whether the store is a physical location that customers can visit</td>
 </tr>
@@ -3030,6 +3035,7 @@ Authentication: not required
         </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mid-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"can-be-deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco ACME Toon Shop"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco's premier shop for toons"</span><span class="p">,</span><span class="w">
@@ -3054,6 +3060,7 @@ Authentication: not required
         </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mid-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"British Columbia"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"can-be-deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver ACME Toon Shop"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All manner of ACME Toon items available"</span><span class="p">,</span><span class="w">
@@ -3078,6 +3085,7 @@ Authentication: not required
         </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mid-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"can-be-deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm Spa"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A full service spa for full relaxation"</span><span class="p">,</span><span class="w">
@@ -3182,6 +3190,10 @@ Authentication: not required
 <td>The name of the mid location where the store is located</td>
 </tr>
 <tr>
+<td>can-be-deleted</td>
+<td>Whether the store can be deleted. Stores with one or more products that have both their :active and :continued attributes set to true cannot be deleted. The owning user must deactivate or cancel the store&#39;s products first.</td>
+</tr>
+<tr>
 <td>physical</td>
 <td>Whether the store is a physical location that customers can visit</td>
 </tr>
@@ -3232,6 +3244,7 @@ Authentication: not required
         </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"san francisco bay area"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mid-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"can-be-deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Moon Hotel"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"situated on the edge of the Sea of Tranquility"</span><span class="p">,</span><span class="w">
@@ -3256,6 +3269,7 @@ Authentication: not required
         </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"san francisco bay area"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mid-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"can-be-deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Fran Solar Zap"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco's premium solar electricity source"</span><span class="p">,</span><span class="w">
@@ -3280,6 +3294,7 @@ Authentication: not required
         </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vancouver"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">54</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mid-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"British Columbia"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"can-be-deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver Solar Zap"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver's premium solar electricity source"</span><span class="p">,</span><span class="w">
@@ -3384,6 +3399,10 @@ Authentication: not required
 <td>The name of the mid location where the store is located</td>
 </tr>
 <tr>
+<td>can-be-deleted</td>
+<td>Whether the store can be deleted. Stores with one or more products that have both their :active and :continued attributes set to true cannot be deleted. The owning user must deactivate or cancel the store&#39;s products first.</td>
+</tr>
+<tr>
 <td>physical</td>
 <td>Whether the store is a physical location that customers can visit</td>
 </tr>
@@ -3434,6 +3453,7 @@ Authentication: not required
         </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mid-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"can-be-deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco ACME Toon Shop"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco's premier shop for toons"</span><span class="p">,</span><span class="w">
@@ -3458,6 +3478,7 @@ Authentication: not required
         </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mid-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"British Columbia"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"can-be-deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver ACME Toon Shop"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All manner of ACME Toon items available"</span><span class="p">,</span><span class="w">
@@ -3562,6 +3583,10 @@ Authentication: not required
 <td>The name of the mid location where the store is located</td>
 </tr>
 <tr>
+<td>can-be-deleted</td>
+<td>Whether the store can be deleted. Stores with one or more products that have both their :active and :continued attributes set to true cannot be deleted. The owning user must deactivate or cancel the store&#39;s products first.</td>
+</tr>
+<tr>
 <td>physical</td>
 <td>Whether the store is a physical location that customers can visit</td>
 </tr>
@@ -3612,6 +3637,7 @@ Authentication: not required
         </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mid-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"can-be-deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm Spa"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A full service spa for full relaxation"</span><span class="p">,</span><span class="w">
@@ -3716,6 +3742,10 @@ Authentication: not required
 <td>The name of the mid location where the store is located</td>
 </tr>
 <tr>
+<td>can-be-deleted</td>
+<td>Whether the store can be deleted. Stores with one or more products that have both their :active and :continued attributes set to true cannot be deleted. The owning user must deactivate or cancel the store&#39;s products first.</td>
+</tr>
+<tr>
 <td>physical</td>
 <td>Whether the store is a physical location that customers can visit</td>
 </tr>
@@ -3766,6 +3796,7 @@ Authentication: not required
         </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mid-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"can-be-deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco ACME Toon Shop"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco's premier shop for toons"</span><span class="p">,</span><span class="w">
@@ -3790,6 +3821,7 @@ Authentication: not required
         </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mid-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"can-be-deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calm Spa"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A full service spa for full relaxation"</span><span class="p">,</span><span class="w">
@@ -3894,6 +3926,10 @@ Authentication: not required
 <td>The name of the mid location where the store is located</td>
 </tr>
 <tr>
+<td>can-be-deleted</td>
+<td>Whether the store can be deleted. Stores with one or more products that have both their :active and :continued attributes set to true cannot be deleted. The owning user must deactivate or cancel the store&#39;s products first.</td>
+</tr>
+<tr>
 <td>physical</td>
 <td>Whether the store is a physical location that customers can visit</td>
 </tr>
@@ -3944,6 +3980,7 @@ Authentication: not required
         </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mid-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"can-be-deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco ACME Toon Shop"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco's premier shop for toons"</span><span class="p">,</span><span class="w">
@@ -4048,6 +4085,10 @@ Authentication: not required
 <td>The name of the mid location where the store is located</td>
 </tr>
 <tr>
+<td>can-be-deleted</td>
+<td>Whether the store can be deleted. Stores with one or more products that have both their :active and :continued attributes set to true cannot be deleted. The owning user must deactivate or cancel the store&#39;s products first.</td>
+</tr>
+<tr>
 <td>physical</td>
 <td>Whether the store is a physical location that customers can visit</td>
 </tr>
@@ -4097,6 +4138,7 @@ Authentication: not required
       </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="s2">"mid-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"British Columbia"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"can-be-deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fishing supply shop"</span><span class="p">,</span><span class="w">
@@ -4226,6 +4268,10 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The name of the mid location where the store is located</td>
 </tr>
 <tr>
+<td>can-be-deleted</td>
+<td>Whether the store can be deleted. Stores with one or more products that have both their :active and :continued attributes set to true cannot be deleted. The owning user must deactivate or cancel the store&#39;s products first.</td>
+</tr>
+<tr>
 <td>physical</td>
 <td>Whether the store is a physical location that customers can visit</td>
 </tr>
@@ -4276,6 +4322,7 @@ Authentication: the request requires the OAuth access-token associated with the 
       </span><span class="s2">"sub-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"mid-location-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
       </span><span class="s2">"mid-location-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"can-be-deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
       </span><span class="s2">"physical"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
       </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freds Fishing Supplies"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"store-description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The finest Fishing shop in San Francisco"</span><span class="p">,</span><span class="w">
@@ -4389,6 +4436,10 @@ Authentication: the request requires the OAuth access-token associated with the 
 <tr>
 <td>mid-location-name</td>
 <td>The name of the mid location where the store is located</td>
+</tr>
+<tr>
+<td>can-be-deleted</td>
+<td>Whether the store can be deleted. Stores with one or more products that have both their :active and :continued attributes set to true cannot be deleted. The owning user must deactivate or cancel the store&#39;s products first.</td>
 </tr>
 <tr>
 <td>physical</td>
