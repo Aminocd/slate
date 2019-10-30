@@ -8556,6 +8556,11 @@ curl 'https://api.mycurrency.com/listings/2' \
       "cl-link": "https://vancouver.craigslist.ca/van/clt/6722934016.html",
       "cl-title": "For sale - 5 Pool coins",
       "offer-currency": true,
+      "currency-icon-url": "/system/currencies/icons/000/000/004/original/currency.jpg?1569902813",
+      "user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
+      "currency-issuer-user-id": 4,
+      "currency-issuer-user-username": "ScipioAfricanus",
+      "currency-issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
       "created-at": "2018-10-13T22:37:59.492-07:00",
       "updated-at": "2018-10-13T22:37:59.492-07:00"
     }
@@ -8613,6 +8618,11 @@ curl 'https://api.mycurrency.com/users/3/authorized_listings/5' \
       "cl-link": "https://vancouver.craigslist.ca/van/clt/6722960191.html",
       "cl-title": "Looking for trade, offering - 5 macaroon dollars",
       "offer-currency": true,
+      "currency-icon-url": "/system/currencies/icons/000/000/003/original/currency.jpg?1561113125,
+      "user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+      "currency-issuer-user-id": 3,
+      "currency-issuer-user-username": "Hannibal",
+      "currency-issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
       "created-at": "2018-10-14T03:07:51.191-07:00",
       "updated-at": "2018-10-14T03:07:51.191-07:00",
       "currency-holding-id": 3,
@@ -8678,6 +8688,11 @@ curl "https://api.mycurrency.com/listings" -H 'Host: api.mycurrency.com' \
         "cl-link": "https://vancouver.craigslist.ca/van/clt/6722934016.html",
         "cl-title": "For sale - 5 Pool coins",
         "offer-currency": true,
+        "currency-icon-url": "/system/currencies/icons/000/000/004/original/currency.jpg?1569902813",
+        "user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
+        "currency-issuer-user-id": 4,
+        "currency-issuer-user-username": "ScipioAfricanus",
+        "currency-issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
         "created-at": "2018-10-13T22:37:59.492-07:00",
         "updated-at": "2018-10-13T22:37:59.492-07:00"
       }
@@ -8694,6 +8709,11 @@ curl "https://api.mycurrency.com/listings" -H 'Host: api.mycurrency.com' \
         "cl-link": "https://vancouver.craigslist.ca/van/clt/6722959469.html",
         "cl-title": "Selling - 5 Pool coins",
         "offer-currency": true,
+        "currency-icon-url": "/system/currencies/icons/000/000/004/original/currency.jpg?1569902813",
+        "user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
+        "currency-issuer-user-id": 4,
+        "currency-issuer-user-username": "ScipioAfricanus",
+        "currency-issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
         "created-at": "2018-10-14T02:56:42.738-07:00",
         "updated-at": "2018-10-14T02:56:42.738-07:00"
       }
@@ -8710,6 +8730,11 @@ curl "https://api.mycurrency.com/listings" -H 'Host: api.mycurrency.com' \
         "cl-link": "https://vancouver.craigslist.ca/van/clt/6722959714.html",
         "cl-title": "Offering - 5 Freds Fishing Supplies dollars",
         "offer-currency": true,
+        "currency-icon-url": "/icons/original/missing.png",
+        "user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
+        "currency-issuer-user-id": 4,
+        "currency-issuer-user-username": "ScipioAfricanus",
+        "currency-issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
         "created-at": "2018-10-14T02:56:57.624-07:00",
         "updated-at": "2018-10-14T02:56:57.624-07:00"
       }
@@ -8726,6 +8751,11 @@ curl "https://api.mycurrency.com/listings" -H 'Host: api.mycurrency.com' \
         "cl-link": "https://vancouver.craigslist.ca/van/clt/6722960191.html",
         "cl-title": "Looking for trade, offering - 5 macaroon dollars",
         "offer-currency": true,
+        "currency-icon-url": "/system/currencies/icons/000/000/003/original/currency.jpg?1561113125,
+        "user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "currency-issuer-user-id": 3,
+        "currency-issuer-user-username": "Hannibal",
+        "currency-issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "created-at": "2018-10-14T03:07:51.191-07:00",
         "updated-at": "2018-10-14T03:07:51.191-07:00"
       }
@@ -8742,6 +8772,11 @@ curl "https://api.mycurrency.com/listings" -H 'Host: api.mycurrency.com' \
         "cl-link": "https://vancouver.craigslist.ca/van/clt/6722960432.html",
         "cl-title": "Trading - 5 Pool coins",
         "offer-currency": true,
+        "currency-icon-url": "/system/currencies/icons/000/000/004/original/currency.jpg?1569902813",
+        "user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "currency-issuer-user-id": 4,
+        "currency-issuer-user-username": "ScipioAfricanus",
+        "currency-issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
         "created-at": "2018-10-14T03:13:29.210-07:00",
         "updated-at": "2018-10-14T03:13:29.210-07:00"
       }
@@ -8814,6 +8849,11 @@ curl "https://api.mycurrency.com/users/4/listings" -H 'Host: api.mycurrency.com'
         "cl-link": "https://vancouver.craigslist.ca/van/clt/6722934016.html",
         "cl-title": "For sale - 5 Pool coins",
         "offer-currency": true,
+        "currency-icon-url": "/system/currencies/icons/000/000/004/original/currency.jpg?1569902813",
+        "user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
+        "currency-issuer-user-id": 4,
+        "currency-issuer-user-username": "ScipioAfricanus",
+        "currency-issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
         "created-at": "2018-10-13T22:37:59.492-07:00",
         "updated-at": "2018-10-13T22:37:59.492-07:00"
       }
@@ -8830,6 +8870,11 @@ curl "https://api.mycurrency.com/users/4/listings" -H 'Host: api.mycurrency.com'
         "cl-link": "https://vancouver.craigslist.ca/van/clt/6722959469.html",
         "cl-title": "Selling - 5 Pool coins",
         "offer-currency": true,
+        "currency-icon-url": "/system/currencies/icons/000/000/004/original/currency.jpg?1569902813",
+        "user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
+        "currency-issuer-user-id": 4,
+        "currency-issuer-user-username": "ScipioAfricanus",
+        "currency-issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
         "created-at": "2018-10-14T02:56:42.738-07:00",
         "updated-at": "2018-10-14T02:56:42.738-07:00"
       }
@@ -8846,6 +8891,11 @@ curl "https://api.mycurrency.com/users/4/listings" -H 'Host: api.mycurrency.com'
         "cl-link": "https://vancouver.craigslist.ca/van/clt/6722959714.html",
         "cl-title": "Offering - 5 Freds Fishing Supplies dollars",
         "offer-currency": true,
+        "currency-icon-url": "/icons/original/missing.png",
+        "user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
+        "currency-issuer-user-id": 4,
+        "currency-issuer-user-username": "ScipioAfricanus",
+        "currency-issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
         "created-at": "2018-10-14T02:56:57.624-07:00",
         "updated-at": "2018-10-14T02:56:57.624-07:00"
       }
@@ -8918,6 +8968,11 @@ curl "https://api.mycurrency.com/currencies/4/listings" -H 'Host: api.mycurrency
         "cl-link": "https://vancouver.craigslist.ca/van/clt/6722934016.html",
         "cl-title": "For sale - 5 Pool coins",
         "offer-currency": true,
+        "currency-icon-url": "/system/currencies/icons/000/000/004/original/currency.jpg?1569902813",
+        "user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
+        "currency-issuer-user-id": 4,
+        "currency-issuer-user-username": "ScipioAfricanus",
+        "currency-issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
         "created-at": "2018-10-13T22:37:59.492-07:00",
         "updated-at": "2018-10-13T22:37:59.492-07:00"
       }
@@ -8934,6 +8989,11 @@ curl "https://api.mycurrency.com/currencies/4/listings" -H 'Host: api.mycurrency
         "cl-link": "https://vancouver.craigslist.ca/van/clt/6722959469.html",
         "cl-title": "Selling - 5 Pool coins",
         "offer-currency": true,
+        "currency-icon-url": "/system/currencies/icons/000/000/004/original/currency.jpg?1569902813",
+        "user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
+        "currency-issuer-user-id": 4,
+        "currency-issuer-user-username": "ScipioAfricanus",
+        "currency-issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
         "created-at": "2018-10-14T02:56:42.738-07:00",
         "updated-at": "2018-10-14T02:56:42.738-07:00"
       }
@@ -8950,6 +9010,11 @@ curl "https://api.mycurrency.com/currencies/4/listings" -H 'Host: api.mycurrency
         "cl-link": "https://vancouver.craigslist.ca/van/clt/6722960432.html",
         "cl-title": "Trading - 5 Pool coins",
         "offer-currency": true,
+        "currency-icon-url": "/system/currencies/icons/000/000/004/original/currency.jpg?1569902813",
+        "user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "currency-issuer-user-id": 4,
+        "currency-issuer-user-username": "ScipioAfricanus",
+        "currency-issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
         "created-at": "2018-10-14T03:13:29.210-07:00",
         "updated-at": "2018-10-14T03:13:29.210-07:00"
       }
@@ -9022,6 +9087,11 @@ curl "https://api.mycurrency.com/sub_locations/1/listings" -H 'Host: api.mycurre
         "cl-link": "https://vancouver.craigslist.ca/van/clt/6722934016.html",
         "cl-title": "For sale - 5 Pool coins",
         "offer-currency": true,
+        "currency-icon-url": "/system/currencies/icons/000/000/004/original/currency.jpg?1569902813",
+        "user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
+        "currency-issuer-user-id": 4,
+        "currency-issuer-user-username": "ScipioAfricanus",
+        "currency-issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
         "created-at": "2018-10-13T22:37:59.492-07:00",
         "updated-at": "2018-10-13T22:37:59.492-07:00"
       }
@@ -9038,6 +9108,11 @@ curl "https://api.mycurrency.com/sub_locations/1/listings" -H 'Host: api.mycurre
         "cl-link": "https://vancouver.craigslist.ca/van/clt/6722959469.html",
         "cl-title": "Selling - 5 Pool coins",
         "offer-currency": true,
+        "currency-icon-url": "/system/currencies/icons/000/000/004/original/currency.jpg?1569902813",
+        "user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
+        "currency-issuer-user-id": 4,
+        "currency-issuer-user-username": "ScipioAfricanus",
+        "currency-issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
         "created-at": "2018-10-14T02:56:42.738-07:00",
         "updated-at": "2018-10-14T02:56:42.738-07:00"
       }
@@ -9054,6 +9129,11 @@ curl "https://api.mycurrency.com/sub_locations/1/listings" -H 'Host: api.mycurre
         "cl-link": "https://vancouver.craigslist.ca/van/clt/6722959714.html",
         "cl-title": "Offering - 5 Freds Fishing Supplies dollars",
         "offer-currency": true,
+        "currency-icon-url": "/icons/original/missing.png",
+        "user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
+        "currency-issuer-user-id": 4,
+        "currency-issuer-user-username": "ScipioAfricanus",
+        "currency-issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
         "created-at": "2018-10-14T02:56:57.624-07:00",
         "updated-at": "2018-10-14T02:56:57.624-07:00"
       }
@@ -9070,6 +9150,11 @@ curl "https://api.mycurrency.com/sub_locations/1/listings" -H 'Host: api.mycurre
         "cl-link": "https://vancouver.craigslist.ca/van/clt/6722960191.html",
         "cl-title": "Looking for trade, offering - 5 macaroon dollars",
         "offer-currency": true,
+        "currency-icon-url": "/system/currencies/icons/000/000/003/original/currency.jpg?1561113125,
+        "user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "currency-issuer-user-id": 3,
+        "currency-issuer-user-username": "Hannibal",
+        "currency-issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
         "created-at": "2018-10-14T03:07:51.191-07:00",
         "updated-at": "2018-10-14T03:07:51.191-07:00"
       }
@@ -9086,6 +9171,11 @@ curl "https://api.mycurrency.com/sub_locations/1/listings" -H 'Host: api.mycurre
         "cl-link": "https://vancouver.craigslist.ca/van/clt/6722960432.html",
         "cl-title": "Trading - 5 Pool coins",
         "offer-currency": true,
+        "currency-icon-url": "/system/currencies/icons/000/000/004/original/currency.jpg?1569902813",
+        "user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?155914441",
+        "currency-issuer-user-id": 4,
+        "currency-issuer-user-username": "ScipioAfricanus",
+        "currency-issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
         "created-at": "2018-10-14T03:13:29.210-07:00",
         "updated-at": "2018-10-14T03:13:29.210-07:00"
       }
@@ -9160,6 +9250,11 @@ curl https://api.mycurrency.com/users/4/authorized_listings \
         "cl-link": "https://vancouver.craigslist.ca/van/clt/6722658767.html",
         "cl-title": "For sale - 5 Pool coins",
         "offer-currency": true,
+        "currency-icon-url": "/system/currencies/icons/000/000/004/original/currency.jpg?1569902813",
+        "user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?155914441",
+        "currency-issuer-user-id": 4,
+        "currency-issuer-user-username": "ScipioAfricanus",
+        "currency-issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
         "created-at": "2018-10-12T22:35:43.000-07:00",
         "updated-at": "2018-10-12T22:35:43.000-07:00",
         "currency-holding-id": 5,
@@ -9180,6 +9275,11 @@ curl https://api.mycurrency.com/users/4/authorized_listings \
         "cl-link": "https://vancouver.craigslist.ca/van/clt/6722934016.html",
         "cl-title": "For sale - 5 Pool coins",
         "offer-currency": true,
+        "currency-icon-url": "/system/currencies/icons/000/000/004/original/currency.jpg?1569902813",
+        "user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?155914441",
+        "currency-issuer-user-id": 4,
+        "currency-issuer-user-username": "ScipioAfricanus",
+        "currency-issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
         "created-at": "2018-10-13T22:37:59.492-07:00",
         "updated-at": "2018-10-13T22:37:59.492-07:00",
         "currency-holding-id": 5,
@@ -9200,6 +9300,11 @@ curl https://api.mycurrency.com/users/4/authorized_listings \
         "cl-link": "https://vancouver.craigslist.ca/van/clt/6722959469.html",
         "cl-title": "Selling - 5 Pool coins",
         "offer-currency": true,
+        "currency-icon-url": "/system/currencies/icons/000/000/004/original/currency.jpg?1569902813",
+        "user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?155914441",
+        "currency-issuer-user-id": 4,
+        "currency-issuer-user-username": "ScipioAfricanus",
+        "currency-issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
         "created-at": "2018-10-14T02:56:42.738-07:00",
         "updated-at": "2018-10-14T02:56:42.738-07:00",
         "currency-holding-id": 4,
@@ -9220,6 +9325,11 @@ curl https://api.mycurrency.com/users/4/authorized_listings \
         "cl-link": "https://vancouver.craigslist.ca/van/clt/6722959714.html",
         "cl-title": "Offering - 5 Freds Fishing Supplies dollars",
         "offer-currency": true,
+        "currency-icon-url": "/icons/original/missing.png",
+        "user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
+        "currency-issuer-user-id": 4,
+        "currency-issuer-user-username": "ScipioAfricanus",
+        "currency-issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
         "created-at": "2018-10-14T02:56:57.624-07:00",
         "updated-at": "2018-10-14T02:56:57.624-07:00",
         "currency-holding-id": 5,
@@ -9299,6 +9409,11 @@ curl https://api.mycurrency.com/users/4/authorized_listings \
       "cl-link": "https://vancouver.craigslist.ca/van/clt/6722959469.html",
       "cl-title": "Selling - 5 Pool coins",
       "offer-currency": true,
+      "currency-icon-url": "/system/currencies/icons/000/000/004/original/currency.jpg?1569902813",
+      "user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?155914441",
+      "currency-issuer-user-id": 4,
+      "currency-issuer-user-username": "ScipioAfricanus",
+      "currency-issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
       "created-at": "2018-10-14T02:56:42.738-07:00",
       "updated-at": "2018-10-14T02:56:42.738-07:00",
       "currency-holding-id": 4,
@@ -9375,6 +9490,11 @@ curl -X PUT https://api.mycurrency.com/users/4/authorized_listings/4 \
       "cl-link": "https://vancouver.craigslist.ca/van/clt/6722959714.html",
       "cl-title": "Offering - 5 Freds Fishing Supplies dollars",
       "offer-currency": true,
+      "currency-icon-url": "/icons/original/missing.png",
+      "user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
+      "currency-issuer-user-id": 4,
+      "currency-issuer-user-username": "ScipioAfricanus",
+      "currency-issuer-user-avatar-url": "/system/users/avatars/000/000/005/original/portrait.jpg?1559144410",
       "created-at": "2018-10-14T02:56:57.624-07:00",
       "updated-at": "2018-10-14T17:48:29.981-07:00",
       "currency-holding-id": 5,
