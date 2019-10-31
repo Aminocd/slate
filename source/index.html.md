@@ -8662,6 +8662,11 @@ amount-atomic | The amount of currency being offered, in atomic units (each whol
 cl-link | The link to the Craigslist post containing the description of the listing
 cl-title | The title of the Craiglist post containing the description of the listing. Must match the cl-title value
 offer-currency | Whether the listing is offering currency. If true, the user must have an adequate amount of currency in the source currency holding they designate to cover the amount offered
+currency-icon-url | The URL for the icon of the currency being offered
+user-avatar-url | The URL of the avatar of the user that created the listing
+currency-issuer-user-id | The ID of the user that issues the currency being offered
+currency-issuer-user-username | The username of the user that issues the currency being offered
+currency-issuer-user-avatar-url | The URL of the avatar of the user that issues the currency being offered
 created-at | The time and date when the listing was created
 updated-at | The time and date when the listing was last updated
 currency-holding-id | The ID of the public or private currency holding that the currency being offered is held in
@@ -8827,6 +8832,11 @@ amount-atomic | The amount of currency being offered, in atomic units (each whol
 cl-link | The link to the Craigslist post containing the description of the listing
 cl-title | The title of the Craiglist post containing the description of the listing. Must match the cl-title value
 offer-currency | Whether the listing is offering currency. If true, the user must have an adequate amount of currency in the source currency holding they designate to cover the amount offered
+currency-icon-url | The URL for the icon of the currency being offered
+user-avatar-url | The URL of the avatar of the user that created the listing
+currency-issuer-user-id | The ID of the user that issues the currency being offered
+currency-issuer-user-username | The username of the user that issues the currency being offered
+currency-issuer-user-avatar-url | The URL of the avatar of the user that issues the currency being offered
 created-at | The time and date when the listing was created
 updated-at | The time and date when the listing was last updated
 
@@ -8946,6 +8956,11 @@ amount-atomic | The amount of currency being offered, in atomic units (each whol
 cl-link | The link to the Craigslist post containing the description of the listing
 cl-title | The title of the Craiglist post containing the description of the listing. Must match the cl-title value
 offer-currency | Whether the listing is offering currency. If true, the user must have an adequate amount of currency in the source currency holding they designate to cover the amount offered
+currency-icon-url | The URL for the icon of the currency being offered
+user-avatar-url | The URL of the avatar of the user that created the listing
+currency-issuer-user-id | The ID of the user that issues the currency being offered
+currency-issuer-user-username | The username of the user that issues the currency being offered
+currency-issuer-user-avatar-url | The URL of the avatar of the user that issues the currency being offered
 created-at | The time and date when the listing was created
 updated-at | The time and date when the listing was last updated
 
@@ -9065,6 +9080,11 @@ amount-atomic | The amount of currency being offered, in atomic units (each whol
 cl-link | The link to the Craigslist post containing the description of the listing
 cl-title | The title of the Craiglist post containing the description of the listing. Must match the cl-title value
 offer-currency | Whether the listing is offering currency. If true, the user must have an adequate amount of currency in the source currency holding they designate to cover the amount offered
+currency-icon-url | The URL for the icon of the currency being offered
+user-avatar-url | The URL of the avatar of the user that created the listing
+currency-issuer-user-id | The ID of the user that issues the currency being offered
+currency-issuer-user-username | The username of the user that issues the currency being offered
+currency-issuer-user-avatar-url | The URL of the avatar of the user that issues the currency being offered
 created-at | The time and date when the listing was created
 updated-at | The time and date when the listing was last updated
 
@@ -9226,6 +9246,11 @@ amount-atomic | The amount of currency being offered, in atomic units (each whol
 cl-link | The link to the Craigslist post containing the description of the listing
 cl-title | The title of the Craiglist post containing the description of the listing. Must match the cl-title value
 offer-currency | Whether the listing is offering currency. If true, the user must have an adequate amount of currency in the source currency holding they designate to cover the amount offered
+currency-icon-url | The URL for the icon of the currency being offered
+user-avatar-url | The URL of the avatar of the user that created the listing
+currency-issuer-user-id | The ID of the user that issues the currency being offered
+currency-issuer-user-username | The username of the user that issues the currency being offered
+currency-issuer-user-avatar-url | The URL of the avatar of the user that issues the currency being offered
 created-at | The time and date when the listing was created
 updated-at | The time and date when the listing was last updated
 
@@ -9384,6 +9409,11 @@ amount-atomic | The amount of currency being offered, in atomic units (each whol
 cl-link | The link to the Craigslist post containing the description of the listing
 cl-title | The title of the Craiglist post containing the description of the listing. Must match the cl-title value
 offer-currency | Whether the listing is offering currency. If true, the user must have an adequate amount of currency in the source currency holding they designate to cover the amount offered
+currency-icon-url | The URL for the icon of the currency being offered
+user-avatar-url | The URL of the avatar of the user that created the listing
+currency-issuer-user-id | The ID of the user that issues the currency being offered
+currency-issuer-user-username | The username of the user that issues the currency being offered
+currency-issuer-user-avatar-url | The URL of the avatar of the user that issues the currency being offered
 created-at | The time and date when the listing was created
 updated-at | The time and date when the listing was last updated
 currency-holding-id | The ID of the public or private currency holding that the currency being offered is held in
@@ -9465,6 +9495,11 @@ amount-atomic | The amount of currency being offered, in atomic units (each whol
 cl-link | The link to the Craigslist post containing the description of the listing
 cl-title | The title of the Craiglist post containing the description of the listing. Must match the cl-title value
 offer-currency | Whether the listing is offering currency. If true, the user must have an adequate amount of currency in the source currency holding they designate to cover the amount offered
+currency-icon-url | The URL for the icon of the currency being offered
+user-avatar-url | The URL of the avatar of the user that created the listing
+currency-issuer-user-id | The ID of the user that issues the currency being offered
+currency-issuer-user-username | The username of the user that issues the currency being offered
+currency-issuer-user-avatar-url | The URL of the avatar of the user that issues the currency being offered
 created-at | The time and date when the listing was created
 updated-at | The time and date when the listing was last updated
 currency-holding-id | The ID of the public or private currency holding that the currency being offered is held in
@@ -9541,6 +9576,11 @@ amount-atomic | The amount of currency being offered, in atomic units (each whol
 cl-link | The link to the Craigslist post containing the description of the listing
 cl-title | The title of the Craiglist post containing the description of the listing. Must match the cl-title value
 offer-currency | Whether the listing is offering currency. If true, the user must have an adequate amount of currency in the source currency holding they designate to cover the amount offered
+currency-icon-url | The URL for the icon of the currency being offered
+user-avatar-url | The URL of the avatar of the user that created the listing
+currency-issuer-user-id | The ID of the user that issues the currency being offered
+currency-issuer-user-username | The username of the user that issues the currency being offered
+currency-issuer-user-avatar-url | The URL of the avatar of the user that issues the currency being offered
 created-at | The time and date when the listing was created
 updated-at | The time and date when the listing was last updated
 currency-holding-id | The ID of the public or private currency holding that the currency being offered is held in
