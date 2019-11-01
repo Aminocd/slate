@@ -4503,7 +4503,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_self_issued_combined_currenc
       "currency-count": 5
     },
     "authorized-externally-issued-combined-currency-holdings-data": {
-      "count": "10"
+      "count": 10
     }
   }
 }
@@ -4825,7 +4825,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_externally_issued_combined_c
       "currency-count": 5
     },
     "authorized-externally-issued-combined-currency-holdings-data": {
-      "count": "10"
+      "count": 10
     }
   }
 }
