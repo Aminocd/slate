@@ -6316,7 +6316,7 @@ curl 'https://api.mycurrency.com/users/3/authorized_private_currency_holdings/9/
 
 ### HTTP Request
 
-`GET https://api.mycurrency.com/users/<USER-ID>/authorized_public_currency_holdings/<PRIVATE-CURRENCY-HOLDING-ID>/pr_h_transactions`
+`GET https://api.mycurrency.com/users/<USER-ID>/authorized_private_currency_holdings/<PRIVATE-CURRENCY-HOLDING-ID>/pr_h_transactions`
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
