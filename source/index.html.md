@@ -6703,6 +6703,97 @@ after-amount-atomic | The balance, in atomic units, of the currency holding afte
 created-at | The time and date when the micro currency order was created
 updated-at | The time and date when the micro currency order was last updated
 
+## Authenticate with Transaction to Private Currency Holding
+
+This endpoint verifies whether an issuance or transfer of the amount and after the time provided, respectively, credited the specified private currency holding.
+
+```shell
+curl 'https://api.mycurrency.com/users/2/authorized_private_currency_holdings/2/pr_h_authentication_transaction?amount=100&start_time=1555333832' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "type": "transaction-authentication-status",
+    "attributes": {
+      "transaction-authentication-status": true
+    }
+  }
+}
+```
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/authorized_private_currency_holdings/<PRIVATE-CURRENCY-HOLDING-ID>/pr_h_authentication_transaction?amount={}&start_time={}`
+
+<aside class="notice"> Authentication: the request requires the OAuth access-token associated with the User referenced by the ID
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+user_id | integer | yes | The ID of the logged in user, provided in URL path
+authorized_private_currency_holding_id | integer | yes | The ID of the logged in user's private currency holding, provided in URL path
+amount | integer | yes | The amount that a transfer or issuance has to match in order for the endpoint to return true, in whole units
+start_time | integer | no | A unix timestamp. The transfers and issuances received by the private currency holding after the provided timestamp are checked to see if they match the amount value. If no start_time argument is provided, the endpoint defaults to a unix timestamp of 0, which results in all issuances and transfers that the private currency holding has ever received being checked.
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+transaction-authentication-status | Whether a transaction of the amount and after the start_time provided was received by the specified private currency holding 
+
+## Authenticate with Transaction to Public Currency Holding
+
+This endpoint verifies whether an issuance or transfer of the amount and after the time provided, respectively, credited the specified public currency holding.
+
+```shell
+curl 'https://api.mycurrency.com/users/2/authorized_public_currency_holdings/94/pu_h_authentication_transaction?amount=100&start_time=1555333832' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "type": "transaction-authentication-status",
+    "attributes": {
+      "transaction-authentication-status": true
+    }
+  }
+}
+```
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/users/<USER-ID>/authorized_public_currency_holdings/<PUBLIC-CURRENCY-HOLDING-ID>/pu_h_authentication_transaction?amount={}&start_time={}`
+
+<aside class="notice">
+Authentication: the request requires the OAuth access-token associated with the User referenced by the ID
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+user_id | integer | yes | The ID of the logged in user, provided in URL path
+authorized_public_currency_holding_id | integer | yes | The ID of the logged in user's public currency holding, provided in URL path
+amount | integer | yes | The amount that a transfer or issuance has to match in order for the endpoint to return true, in whole units
+start_time | integer | no | A unix timestamp. The transfers and issuances received by the public currency holding after the provided timestamp are checked to see if they match the amount value. If no start_time argument is provided, the endpoint defaults to a unix timestamp of 0, which results in all issuances and transfers that the public currency holding has ever received being checked.
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+transaction-authentication-status | Whether a transaction of the amount and after the start_time provided was received by the specified public currency holding 
+
 # Issuances
 
 ## Get an Issuance
