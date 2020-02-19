@@ -1164,6 +1164,8 @@ curl "https://api.mycurrency.com/search_currencies?keyword=ACME%20Toon" \
         "get-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
         "number-of-reviews": 5,
         "average-score": "3.67"
+        "public-amount-atomic": 0,
+        "public-currency-holding-id": null
       }
     }
   ],
