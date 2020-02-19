@@ -1129,6 +1129,96 @@ average-score | The average score of the store reviews created for all stores as
 public-amount-atomic | The amount held in the logged-in user's public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
 public-currency-holding-id | The ID of the logged-in user's public holding of the specified currency
 
+## Search Currencies
+
+```shell
+curl "https://api.mycurrency.com/search_currencies?keyword=ACME%20Toon" \
+  -H 'Host: api.mycurrency.com' \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "2",
+      "type": "currencies",
+      "attributes": {
+        "issuer-id": 2,
+        "issuer-user-id": 3,
+        "issuer-user-username": "Hannibal",
+        "issuer-user-avatar-url": "/system/users/avatars/000/000/004/original/1.jpg?1559736060",
+        "issuer-public-currency-holding-id": 4,
+        "burn-rate": 450,
+        "daily-burn-rate": "0.00012614",
+        "store-count": 2,
+        "listing-count": 5,
+        "product-count": 52,
+        "name": "ACME Toon Shop dollars",
+        "description": "Spendable at any ACME Toon Shop",
+        "created-at": "2018-08-12T01:17:31.176-07:00",
+        "updated-at": "2018-08-12T23:49:56.793-07:00",
+        "get-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
+        "number-of-reviews": 5,
+        "average-score": "3.67"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/search_currencies?keyword=ACME%20Toon",
+    "first": "https://api.mycurrency.com/search_currencies?keyword=ACME%20Toon&page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/search_currencies?keyword=ACME%20Toon&page=1&per_page=25"
+  },
+  "meta": {
+    "pagination": {
+      "per-page": null,
+      "total-pages": "1",
+      "total-count": "1"
+    }
+  }
+}
+```
+
+This endpoint retrieves all currencies that have an active owner that have a name that contains text that matches the search keyword provided, sorted by ID in descending order.
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/search_currencies?keyword={}`
+
+<aside class="notice">
+Authentication: required
+</aside>
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the currency
+issuer-id | The ID of the issuer account that issued the currency
+issuer-user-id | The ID of the user account that issued the currency
+issuer-user-username | The ID of the user account that issued the currency
+issuer-user-avatar-url | The URL at which the avatar picture of the user that issues the currency can be found
+issuer-public-currency-holding-id | The user ID of the public currency holding of the issuer of the currency
+burn-rate | The annual rate at which holdings of the currency burn, by basis point (100 = 1%) 
+daily-burn-rate | The daily rate at which the currency burns, by fraction of 1 (0.01 = 1%)
+store-count | The number of stores associated with the currency
+listing-count | The number of active listings associated with the currency
+product-count | The number of products associated with the currency
+name | The name of the currency
+description | The description of the currency
+created-at | The time and date when the currency was created
+updated-at | The time and date when the currency was last updated
+get-icon-url | The URL at which the currency icon picture can be found
+number-of-reviews | The number of store reviews created for the store
+average-score | The average score of the store reviews created for all stores associated with the currency, out of 5
+public-amount-atomic | The amount held in the logged-in user's public holding of the specified currency, in atomic units (each whole unit is composed of 10^10 atomic units)
+public-currency-holding-id | The ID of the logged-in user's public holding of the specified currency
+
 ## Create Currency
 
 ```shell
