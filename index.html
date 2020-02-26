@@ -1590,7 +1590,8 @@ Authentication: not required
       </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-12T23:49:56.793-07:00"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"get-icon-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"</span><span class="w">
       </span><span class="s2">"number-of-reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.67"</span><span class="w">
+      </span><span class="s2">"average-score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.67"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"user-is-active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1680,6 +1681,10 @@ Authentication: not required
 <tr>
 <td>average-score</td>
 <td>The average score of store reviews created for all stores associated with the currency, out of 5</td>
+</tr>
+<tr>
+<td>user-is-active</td>
+<td>Whether the user that issues the currency is active</td>
 </tr>
 </tbody></table>
 <h2 id='get-a-currency-with-authorization'>Get a Currency with Authorization</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/authorized_currencies/4'</span> <span class="se">\</span>
