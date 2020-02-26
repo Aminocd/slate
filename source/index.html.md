@@ -646,7 +646,8 @@ curl 'https://api.mycurrency.com/currencies/2' \
       "updated-at": "2018-08-12T23:49:56.793-07:00",
       "get-icon-url": "/system/currencies/icons/000/000/002/original/DaffyDuck.png?1534142996"
       "number-of-reviews": 5,
-      "average-score": "3.67"
+      "average-score": "3.67",
+      "user-is-active": true
     }
   }
 }
@@ -684,6 +685,7 @@ updated-at | The time and date when the currency was last updated
 get-icon-url | The URL at which the currency icon picture can be found
 number-of-reviews | The number of store reviews created for all stores associated with the currency
 average-score | The average score of store reviews created for all stores associated with the currency, out of 5
+user-is-active | Whether the user that issues the currency is active
 
 ## Get a Currency with Authorization
 
