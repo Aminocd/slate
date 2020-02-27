@@ -672,6 +672,9 @@
                     <a href="#list-vouchers" class="toc-h2 toc-link" data-title="List Vouchers">List Vouchers</a>
                   </li>
                   <li>
+                    <a href="#list-product-39-s-vouchers" class="toc-h2 toc-link" data-title="List Product's Vouchers">List Product's Vouchers</a>
+                  </li>
+                  <li>
                     <a href="#update-voucher" class="toc-h2 toc-link" data-title="Update Voucher">Update Voucher</a>
                   </li>
               </ul>
@@ -19198,7 +19201,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span></code></pre>
 <p>This endpoint retrieves a user&#39;s vouchers. </p>
 <h3 id='http-request-114'>HTTP Request</h3>
-<p><code>GET https://api.mycurrency.com/vouchers?issueing_user_id=3&amp;store_id=29</code></p>
+<p><code>GET https://api.mycurrency.com/vouchers?issueing_user_id={}&amp;store_id={}</code></p>
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
@@ -19232,6 +19235,174 @@ Authentication: the request requires the OAuth access-token associated with the 
 </tr>
 </tbody></table>
 <h3 id='response-114'>RESPONSE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the voucher</td>
+</tr>
+<tr>
+<td>micro-currency-order-id</td>
+<td>The ID of the micro currency order that purchased the voucher</td>
+</tr>
+<tr>
+<td>holding-user-id</td>
+<td>The ID of the user that purchased the voucher</td>
+</tr>
+<tr>
+<td>holding-user-username</td>
+<td>The username of the user that purchased the voucher</td>
+</tr>
+<tr>
+<td>holding-user-avatar-url</td>
+<td>The URL of the avatar of the user that purchased the voucher</td>
+</tr>
+<tr>
+<td>product-id</td>
+<td>The ID of the product for which the voucher is redeemable for</td>
+</tr>
+<tr>
+<td>product-name</td>
+<td>The name of the product for which the voucher is redeemable for</td>
+</tr>
+<tr>
+<td>product-image-url</td>
+<td>The URL of the image of the product for which the voucher is redeemable for</td>
+</tr>
+<tr>
+<td>product-sub-category-id</td>
+<td>The ID of the sub_category that the product for which the voucher is redeemable for belongs to</td>
+</tr>
+<tr>
+<td>product-sub-category-name</td>
+<td>The name of the sub_category that the product for which the voucher is redeemable for belongs to</td>
+</tr>
+<tr>
+<td>product-quantity</td>
+<td>The quantity of the product for which the voucher is redeemable for</td>
+</tr>
+<tr>
+<td>store-id</td>
+<td>The ID of the store at which the product that the voucher can be redeemed for is sold at</td>
+</tr>
+<tr>
+<td>store-name</td>
+<td>The name of the store at which the product that the voucher can be redeemed for is sold at</td>
+</tr>
+<tr>
+<td>code</td>
+<td>The secret code that the voucher holder must reveal to the store owner in order to redeem their voucher, only shown if the logged-in user is the voucher holder</td>
+</tr>
+<tr>
+<td>expiration</td>
+<td>The date at which the voucher expires, which is one month after it is issued to the buyer</td>
+</tr>
+<tr>
+<td>redeemed</td>
+<td>Whether the voucher has been redeemed or not</td>
+</tr>
+<tr>
+<td>created-at</td>
+<td>The time and date when the voucher was created</td>
+</tr>
+<tr>
+<td>updated-at</td>
+<td>The time and date when the voucher was last updated</td>
+</tr>
+</tbody></table>
+<h2 id='list-product-39-s-vouchers'>List Product&#39;s Vouchers</h2><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.mycurrency.com/products/55/product_vouchers'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"27"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vouchers"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"micro-currency-order-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">27</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"holding-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"holding-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spiderman"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"holding-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/002/original/avatar.jpg?1568543223"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">55</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"coke"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-image-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/products/images/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-sub-category-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-sub-category-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prepared food"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Cafe"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CDYZAAUGJII5PTS2SE1UN"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"expiration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-26T02:29:22.854-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"redeemed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-25T01:29:23.027-08:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-25T01:30:29.335-08:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vouchers"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"micro-currency-order-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"holding-user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"holding-user-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spiderman"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"holding-user-avatar-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/avatars/000/000/002/original/avatar.jpg?1568543223"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">55</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"coke"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-image-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/products/images/original/missing.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-sub-category-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-sub-category-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prepared food"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product-quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME Toon Cafe"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXFXLWD5GCP2YSW1FEXQU"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"expiration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-19T01:57:05.274-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"redeemed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-18T00:57:05.481-08:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-18T00:57:36.499-08:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/products/55/product_vouchers?"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/products/55/product_vouchers?page=1&amp;per_page=25"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"prev"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mycurrency.com/products/55/product_vouchers?page=1&amp;per_page=25"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves vouchers for the specified product. If the logged in user owns the store that the product belongs to, they will see all vouchers issued for that product. If the logged in user does not own the store that the product belongs to, they will only see the vouchers for that product that were issued to them. </p>
+<h3 id='http-request-115'>HTTP Request</h3>
+<p><code>GET https://api.mycurrency.com/products/&lt;PRODUCT-ID&gt;/product_vouchers</code></p>
+
+<aside class="notice">
+Authentication: required
+</aside>
+<h3 id='arguments-38'>ARGUMENTS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>product_id</td>
+<td>integer</td>
+<td>yes</td>
+<td>The ID of the product that the vouchers are returned for, provided in URL path.</td>
+</tr>
+</tbody></table>
+<h3 id='response-115'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -19345,7 +19516,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Updates a voucher.</p>
-<h3 id='http-request-115'>HTTP Request</h3>
+<h3 id='http-request-116'>HTTP Request</h3>
 <p><code>POST https://api.mycurrency.com/users/&lt;USER-ID&gt;/vouchers/&lt;ID&gt;</code></p>
 
 <p>Optional path, only viable if code provided:</p>
@@ -19355,7 +19526,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
 </aside>
-<h3 id='arguments-38'>ARGUMENTS</h3>
+<h3 id='arguments-39'>ARGUMENTS</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -19377,7 +19548,7 @@ Authentication: the request requires the OAuth access-token associated with the 
 <td>The voucher&#39;s secret code, must be provided to redeem voucher</td>
 </tr>
 </tbody></table>
-<h3 id='response-115'>RESPONSE</h3>
+<h3 id='response-116'>RESPONSE</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
