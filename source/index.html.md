@@ -12998,7 +12998,7 @@ This endpoint retrieves a user's vouchers.
 
 ### HTTP Request
 
-`GET https://api.mycurrency.com/vouchers?issueing_user_id=3&store_id=29`
+`GET https://api.mycurrency.com/vouchers?issueing_user_id={}&store_id={}`
 
 <aside class="notice">
 Authentication: the request requires the OAuth access-token associated with the User referenced by the ID 
@@ -13011,6 +13011,115 @@ Parameter | Type | Required | Description
 holding_user_id | integer | required if :issueing_user_id not provided | The ID of the user that purchased the vouchers. If provided, the vouchers purchased by the logged-in are returned.
 issueing_user_id | integer | required if :holding_user_id not provided | The ID of the user that owns the stores that issued the vouchers. If provided, the vouchers issued by the stored owned by the specified user are returned.
 store_id | integer | no | The vouchers issued by the specified store are returned if store_id is provided. This parameter needs to be provided along with a :issueing_user_id with a value that matches the ID of the user that owns the store.
+
+### RESPONSE
+
+Parameter | Description
+--------- | -----------
+id | The ID of the voucher
+micro-currency-order-id | The ID of the micro currency order that purchased the voucher
+holding-user-id | The ID of the user that purchased the voucher
+holding-user-username | The username of the user that purchased the voucher
+holding-user-avatar-url | The URL of the avatar of the user that purchased the voucher
+product-id | The ID of the product for which the voucher is redeemable for
+product-name | The name of the product for which the voucher is redeemable for
+product-image-url | The URL of the image of the product for which the voucher is redeemable for
+product-sub-category-id | The ID of the sub_category that the product for which the voucher is redeemable for belongs to
+product-sub-category-name | The name of the sub_category that the product for which the voucher is redeemable for belongs to
+product-quantity | The quantity of the product for which the voucher is redeemable for
+store-id | The ID of the store at which the product that the voucher can be redeemed for is sold at
+store-name | The name of the store at which the product that the voucher can be redeemed for is sold at
+code | The secret code that the voucher holder must reveal to the store owner in order to redeem their voucher, only shown if the logged-in user is the voucher holder
+expiration | The date at which the voucher expires, which is one month after it is issued to the buyer
+redeemed | Whether the voucher has been redeemed or not
+created-at | The time and date when the voucher was created
+updated-at | The time and date when the voucher was last updated
+
+## List Product's Vouchers
+
+```shell
+curl 'https://api.mycurrency.com/products/55/product_vouchers' \
+  -H 'Accept: application/json' -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer j47lbjj8r9n5yy8mup6cxqc8h70yvhnilm0g84kg0raqckus0k1koj9f75ao'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "27",
+      "type": "vouchers",
+      "attributes": {
+        "micro-currency-order-id": 27,
+        "holding-user-id": 2,
+        "holding-user-username": "Spiderman",
+        "holding-user-avatar-url": "/system/users/avatars/000/000/002/original/avatar.jpg?1568543223",
+        "product-id": 55,
+        "product-name": "coke",
+        "product-image-url": "/system/products/images/original/missing.png",
+        "product-sub-category-id": 16,
+        "product-sub-category-name": "prepared food",
+        "product-quantity": 1,
+        "store-id": 59,
+        "store-name": "ACME Toon Cafe",
+        "code": "CDYZAAUGJII5PTS2SE1UN",
+        "expiration": "2020-03-26T02:29:22.854-07:00",
+        "redeemed": true,
+        "created-at": "2020-02-25T01:29:23.027-08:00",
+        "updated-at": "2020-02-25T01:30:29.335-08:00"
+      }
+    },
+    {
+      "id": "20",
+      "type": "vouchers",
+      "attributes": {
+        "micro-currency-order-id": 20,
+        "holding-user-id": 2,
+        "holding-user-username": "Spiderman",
+        "holding-user-avatar-url": "/system/users/avatars/000/000/002/original/avatar.jpg?1568543223",
+        "product-id": 55,
+        "product-name": "coke",
+        "product-image-url": "/system/products/images/original/missing.png",
+        "product-sub-category-id": 16,
+        "product-sub-category-name": "prepared food",
+        "product-quantity": 1,
+        "store-id": 59,
+        "store-name": "ACME Toon Cafe",
+        "code": "XXFXLWD5GCP2YSW1FEXQU",
+        "expiration": "2020-03-19T01:57:05.274-07:00",
+        "redeemed": true,
+        "created-at": "2020-02-18T00:57:05.481-08:00",
+        "updated-at": "2020-02-18T00:57:36.499-08:00"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.mycurrency.com/products/55/product_vouchers?",
+    "first": "https://api.mycurrency.com/products/55/product_vouchers?page=1&per_page=25",
+    "prev": null,
+    "next": null,
+    "last": "https://api.mycurrency.com/products/55/product_vouchers?page=1&per_page=25"
+  }
+}
+```
+
+This endpoint retrieves vouchers for the specified product. If the logged in user owns the store that the product belongs to, they will see all vouchers issued for that product. If the logged in user does not own the store that the product belongs to, they will only see the vouchers for that product that were issued to them. 
+
+### HTTP Request
+
+`GET https://api.mycurrency.com/products/<PRODUCT-ID>/product_vouchers`
+
+<aside class="notice">
+Authentication: required
+</aside>
+
+### ARGUMENTS
+
+Parameter | Type | Required | Description
+--------- | ------- | ------- | -----------
+product_id | integer | yes | The ID of the product that the vouchers are returned for, provided in URL path.
 
 ### RESPONSE
 
